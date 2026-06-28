@@ -132,12 +132,29 @@
     matrix: document.getElementById("matrix"),
   };
 
+  function normalizeLang(value) {
+    const lang = String(value || "").toLowerCase().replace("_", "-");
+    if (lang === "cn" || lang.startsWith("zh")) return "zh";
+    if (lang.startsWith("en")) return "en";
+    return "";
+  }
+
+  function getUrlLang() {
+    const params = new URLSearchParams(window.location.search);
+    return normalizeLang(params.get("lang") || params.get("language"));
+  }
+
+  function setUrlLang(lang) {
+    const url = new URL(window.location.href);
+    url.searchParams.set("lang", lang);
+    window.history.replaceState(null, "", url.toString());
+  }
+
   const hashId = decodeURIComponent(window.location.hash.replace(/^#/, ""));
   const initialId = data.valkyries.some((item) => item.id === hashId) ? hashId : data.valkyries[0].id;
-  const storedLang = localStorage.getItem("bv-wiki-lang");
-  const browserLang = navigator.language && navigator.language.toLowerCase().startsWith("zh") ? "zh" : "en";
+  const initialLang = getUrlLang() || "en";
   const state = {
-    lang: storedLang === "en" || storedLang === "zh" ? storedLang : browserLang,
+    lang: initialLang,
     selectedId: initialId,
     query: "",
   };
@@ -547,7 +564,7 @@
   document.querySelectorAll("[data-lang]").forEach((button) => {
     button.addEventListener("click", () => {
       state.lang = button.dataset.lang;
-      localStorage.setItem("bv-wiki-lang", state.lang);
+      setUrlLang(state.lang);
       renderAll();
     });
   });
