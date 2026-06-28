@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "preview": "node tools/preview.mjs"
+  }
+}

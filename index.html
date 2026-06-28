@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Battle Valkyries mod wiki for Battle Brothers with Chinese and English content.">
+    <title>Battle Valkyries Wiki</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="Battle Valkyries Wiki">
+          <img src="assets/ui/valkyries_hub_icon.png" alt="" class="brand-icon">
+          <span class="brand-copy">
+            <strong>Battle Valkyries</strong>
+            <span data-i18n="brandSub">Mod Wiki</span>
+          </span>
+        </a>
+
+        <nav class="section-nav" aria-label="Wiki sections">
+          <button type="button" class="nav-button" data-scroll-target="#overview">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13h7V4H4v9Zm9 7h7V4h-7v16ZM4 20h7v-5H4v5Z"/></svg>
+            <span data-i18n="navOverview">Overview</span>
+          </button>
+          <button type="button" class="nav-button" data-scroll-target="#detail">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v6c0 5 3.4 7.7 8 9 4.6-1.3 8-4 8-9V7l-8-4Zm0 3.2 5 2.5V13c0 3.5-2 5.4-5 6.5-3-1.1-5-3-5-6.5V8.7l5-2.5Z"/></svg>
+            <span data-i18n="navValkyries">Valkyries</span>
+          </button>
+          <button type="button" class="nav-button" data-scroll-target="#mechanics">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v3H4V5Zm0 5h10v3H4v-3Zm0 5h16v3H4v-3Zm12-5h4v3h-4v-3Z"/></svg>
+            <span data-i18n="navMechanics">Mechanics</span>
+          </button>
+        </nav>
+
+        <div class="header-actions">
+          <label class="search-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 19.6-5.2-5.2a7 7 0 1 0-1.4 1.4L19.6 21 21 19.6ZM5 10a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z"/></svg>
+            <input id="searchInput" type="search" autocomplete="off">
+          </label>
+          <div class="language-toggle" role="group" aria-label="Language">
+            <button type="button" data-lang="zh">中文</button>
+            <button type="button" data-lang="en">EN</button>
+          </div>
+        </div>
+      </header>
+
+      <main id="top" class="layout">
+        <aside class="roster-panel" aria-labelledby="rosterTitle">
+          <div class="roster-heading">
+            <div>
+              <p class="eyebrow" data-i18n="rosterEyebrow">Roster</p>
+              <h1 id="rosterTitle" data-i18n="rosterTitle">Valkyrie Index</h1>
+            </div>
+            <span id="rosterCount" class="count-pill"></span>
+          </div>
+          <div id="rosterList" class="roster-list"></div>
+        </aside>
+
+        <section class="content-panel" aria-live="polite">
+          <section id="overview" class="overview-section"></section>
+          <article id="detail" class="detail-section"></article>
+          <section id="mechanics" class="mechanics-section"></section>
+          <section id="matrix" class="matrix-section"></section>
+        </section>
+      </main>
+    </div>
+
+    <script src="data/wiki-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
