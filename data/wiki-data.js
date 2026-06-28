@@ -5,6 +5,8 @@ window.BV_WIKI_DATA = {
     "contentSource": [
       "src/battle-valkyries/battle-valkyries/config/valkyrie_data.nut",
       "src/battle-valkyries/battle-valkyries/config/valkyrie_skill_data.nut",
+      "src/battle-valkyries/battle-valkyries/config/mod_settings.nut",
+      "src/battle-valkyries/battle-valkyries/config/skin_data.nut",
       "src/battle-valkyries/battle-valkyries/hooks/valkyrie_summon.nut",
       "i18n/en.json",
       "i18n/zh_CN.json"
@@ -76,6 +78,38 @@ window.BV_WIKI_DATA = {
       {
         "max": 20,
         "cost": 80000
+      }
+    ]
+  },
+  "settings": {
+    "modName": {
+      "en": "Battle Valkyries",
+      "zh": "战斗女武神"
+    },
+    "pageTitle": {
+      "en": "Valkyries",
+      "zh": "女武神"
+    },
+    "sectionTitle": {
+      "en": "Summon System",
+      "zh": "召唤系统"
+    },
+    "screenshot": "assets/ui/mod-settings.jpg",
+    "options": [
+      {
+        "id": "HideWeapons",
+        "type": "boolean",
+        "default": true,
+        "text": {
+          "en": {
+            "name": "Hide Weapons",
+            "description": "Hide the equipped weapon and shield sprites while a summoned Valkyrie skin is active."
+          },
+          "zh": {
+            "name": "隐藏武器",
+            "description": "召唤女武神外观生效时隐藏已装备的武器和盾牌贴图。"
+          }
+        }
       }
     ]
   },

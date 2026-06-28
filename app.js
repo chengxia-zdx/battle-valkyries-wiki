@@ -14,6 +14,7 @@
       navOverview: "Overview",
       navValkyries: "Valkyries",
       navMechanics: "Mechanics",
+      navSettings: "Settings",
       rosterEyebrow: "Roster",
       rosterTitle: "Valkyrie Index",
       searchPlaceholder: "Search Valkyries, traits, skills",
@@ -39,6 +40,16 @@
       traitBonuses: "Trait bonuses",
       mechanicsTitle: "Summon Mechanics",
       mechanicsBody: "The in-game hub summons one Valkyrie at a time, scales crown cost by the next summoned count, and keeps Valkyries inside a dedicated roster ceiling.",
+      settingsTitle: "Mod Settings",
+      settingsBody: "Battle Valkyries settings are available from MSU's Mod Settings menu. Choose Battle Valkyries, open the Valkyries page, then review the options under Summon System.",
+      settingsPathLabel: "Path",
+      settingDefault: "Default",
+      settingEnabled: "Enabled",
+      settingDisabled: "Disabled",
+      settingTypeBoolean: "Checkbox",
+      settingVisualOnly: "This option only changes the Valkyrie appearance layer; the equipped weapon and shield remain equipped and still provide their combat effects.",
+      settingsScreenshot: "In-game Mod Settings screen",
+      noSettings: "No player-facing mod settings are currently exposed.",
       rosterMax: "Roster cap",
       formationSlots: "Formation slots",
       combatSlots: "Combat slots",
@@ -58,6 +69,7 @@
       navOverview: "总览",
       navValkyries: "女武神",
       navMechanics: "机制",
+      navSettings: "配置",
       rosterEyebrow: "名册",
       rosterTitle: "女武神索引",
       searchPlaceholder: "搜索女武神、特性、技能",
@@ -83,6 +95,16 @@
       traitBonuses: "特性加成",
       mechanicsTitle: "召唤机制",
       mechanicsBody: "游戏内女武神界面每次召唤一名角色，费用按下一名已召唤序号递增，并使用专门的名册上限控制。",
+      settingsTitle: "MOD 配置",
+      settingsBody: "Battle Valkyries 的玩家配置位于 MSU 的 Mod Settings 菜单中。选择 Battle Valkyries，进入 Valkyries 页面，即可在 Summon System 下查看当前选项。",
+      settingsPathLabel: "路径",
+      settingDefault: "默认",
+      settingEnabled: "开启",
+      settingDisabled: "关闭",
+      settingTypeBoolean: "勾选项",
+      settingVisualOnly: "该选项只影响女武神外观层；武器和盾牌仍然处于装备状态，并保留原本的战斗效果。",
+      settingsScreenshot: "游戏内 MOD 设置界面",
+      noSettings: "当前没有公开给玩家调整的 MOD 配置项。",
       rosterMax: "名册上限",
       formationSlots: "阵型槽位",
       combatSlots: "战斗槽位",
@@ -106,6 +128,7 @@
     overview: document.getElementById("overview"),
     detail: document.getElementById("detail"),
     mechanics: document.getElementById("mechanics"),
+    settings: document.getElementById("settings"),
     matrix: document.getElementById("matrix"),
   };
 
@@ -138,6 +161,18 @@
 
   function skillText(skill) {
     return skill.text[state.lang] || skill.text.en;
+  }
+
+  function localizedValue(value, fallback = "") {
+    if (value && typeof value === "object") {
+      return value[state.lang] || value.en || fallback;
+    }
+
+    return value || fallback;
+  }
+
+  function settingText(setting) {
+    return (setting.text && (setting.text[state.lang] || setting.text.en)) || {};
   }
 
   function statLabel(key) {
@@ -378,6 +413,65 @@
     `;
   }
 
+  function renderSettingCard(setting) {
+    const txt = settingText(setting);
+    const defaultText = setting.default === true ? t("settingEnabled") : t("settingDisabled");
+
+    return `
+      <div class="settings-card">
+        <div class="settings-card-top">
+          <div>
+            <p class="skill-label">${escapeHtml(setting.id)}</p>
+            <h3>${escapeHtml(txt.name || setting.id)}</h3>
+          </div>
+          <div class="tag-row">
+            <span class="tag">${escapeHtml(t("settingTypeBoolean"))}</span>
+            <span class="tag">${escapeHtml(t("settingDefault"))}: <strong>&nbsp;${escapeHtml(defaultText)}</strong></span>
+          </div>
+        </div>
+        <p>${escapeHtml(txt.description || "")}</p>
+        <ul class="bullet-list">
+          <li>${escapeHtml(t("settingVisualOnly"))}</li>
+        </ul>
+      </div>
+    `;
+  }
+
+  function renderSettings() {
+    const settings = data.settings || {};
+    const options = Array.isArray(settings.options) ? settings.options : [];
+    const modName = localizedValue(settings.modName, "Battle Valkyries");
+    const pageTitle = localizedValue(settings.pageTitle, "Valkyries");
+    const sectionTitle = localizedValue(settings.sectionTitle, "Summon System");
+    const pathItems = ["MSU Mod Settings", modName, pageTitle, sectionTitle];
+    const cards = options.length > 0
+      ? options.map((setting) => renderSettingCard(setting)).join("")
+      : `<div class="empty-state">${escapeHtml(t("noSettings"))}</div>`;
+    const screenshot = settings.screenshot ? `
+      <figure class="settings-preview">
+        <img src="${escapeHtml(settings.screenshot)}" alt="${escapeHtml(t("settingsScreenshot"))}">
+        <figcaption>${escapeHtml(t("settingsScreenshot"))}</figcaption>
+      </figure>
+    ` : "";
+
+    refs.settings.innerHTML = `
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">${escapeHtml(t("settingsPathLabel"))}</p>
+          <h2>${escapeHtml(t("settingsTitle"))}</h2>
+        </div>
+      </div>
+      <p>${escapeHtml(t("settingsBody"))}</p>
+      <div class="settings-path">
+        ${pathItems.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
+      </div>
+      <div class="settings-layout">
+        <div class="settings-list">${cards}</div>
+        ${screenshot}
+      </div>
+    `;
+  }
+
   function renderMatrix() {
     const rows = data.valkyries.map((valkyrie) => {
       const txt = textFor(valkyrie);
@@ -416,6 +510,7 @@
     renderRoster();
     renderDetail();
     renderMechanics();
+    renderSettings();
     renderMatrix();
   }
 

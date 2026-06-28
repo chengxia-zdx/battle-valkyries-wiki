@@ -123,6 +123,11 @@ function numberMap(text) {
   return Object.fromEntries(entries.map(([, key, value]) => [key, Number(value)]));
 }
 
+function booleanMap(text) {
+  const entries = Array.from(text.matchAll(/\b([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(true|false)/g));
+  return Object.fromEntries(entries.map(([, key, value]) => [key, value === "true"]));
+}
+
 function resolveToken(token, dictionary) {
   if (!token) return "";
   return token.replace(/\$bv\{([^}]+)\}/g, (_match, key) => dictionary[key] || "");
@@ -192,6 +197,8 @@ const dictionaries = { en, zh };
 
 const valkyrieData = readUtf8(sourceRoot, "battle-valkyries", "config", "valkyrie_data.nut");
 const skillData = readUtf8(sourceRoot, "battle-valkyries", "config", "valkyrie_skill_data.nut");
+const settingsData = readUtf8(sourceRoot, "battle-valkyries", "config", "mod_settings.nut");
+const skinData = readUtf8(sourceRoot, "battle-valkyries", "config", "skin_data.nut");
 const summonData = readUtf8(sourceRoot, "battle-valkyries", "hooks", "valkyrie_summon.nut");
 
 const order = stringsIn(assignedArray(valkyrieData, "ValkyrieOrder"));
@@ -239,6 +246,28 @@ const statLabels = {
     MentalMorale: "精神士气抗性",
   },
 };
+
+const settingDefaults = booleanMap(assignedBlock(skinData, "Settings"));
+const settingsOptions = Array.from(settingsData.matchAll(
+  /^\s*local\s+([A-Za-z_][A-Za-z0-9_]*)\s*=\s*page\.addBooleanSetting\("([^"]+)"\s*,[^,]+,\s*"([^"]+)"\);\s*\r?\n\s*\1\.setDescription\("([^"]+)"\);/gm,
+), (match) => {
+  const [, , id, nameToken, descriptionToken] = match;
+  return {
+    id,
+    type: "boolean",
+    default: settingDefaults[id] === true,
+    text: {
+      en: {
+        name: resolveToken(nameToken, en),
+        description: resolveToken(descriptionToken, en),
+      },
+      zh: {
+        name: resolveToken(nameToken, zh),
+        description: resolveToken(descriptionToken, zh),
+      },
+    },
+  };
+});
 
 function buildSkill(id, type, fallbackKey, specBlock, overrideBlock) {
   const sourceBlock = objectField(overrideBlock, type) || objectField(specBlock, type);
@@ -349,6 +378,8 @@ const data = {
     contentSource: [
       "src/battle-valkyries/battle-valkyries/config/valkyrie_data.nut",
       "src/battle-valkyries/battle-valkyries/config/valkyrie_skill_data.nut",
+      "src/battle-valkyries/battle-valkyries/config/mod_settings.nut",
+      "src/battle-valkyries/battle-valkyries/config/skin_data.nut",
       "src/battle-valkyries/battle-valkyries/hooks/valkyrie_summon.nut",
       "i18n/en.json",
       "i18n/zh_CN.json",
@@ -361,6 +392,22 @@ const data = {
     formationSlots: numberConstant(summonData, "ValkyrieSummonFormationSlots", 27),
     combatSlots: numberConstant(summonData, "ValkyrieSummonCombatSlots", 18),
     costSteps,
+  },
+  settings: {
+    modName: {
+      en: translate(en, "mod.name", "Battle Valkyries"),
+      zh: translate(zh, "mod.name", translate(en, "mod.name", "Battle Valkyries")),
+    },
+    pageTitle: {
+      en: translate(en, "settings.page_title", "Valkyries"),
+      zh: translate(zh, "settings.page_title", translate(en, "settings.page_title", "Valkyries")),
+    },
+    sectionTitle: {
+      en: translate(en, "settings.system_title", "Summon System"),
+      zh: translate(zh, "settings.system_title", translate(en, "settings.system_title", "Summon System")),
+    },
+    screenshot: "assets/ui/mod-settings.jpg",
+    options: settingsOptions,
   },
   valkyries,
 };
