@@ -2,12 +2,22 @@ window.BV_WIKI_DATA = {
   "meta": {
     "title": "Battle Valkyries Wiki",
     "source": "battle-valkyries mod",
+    "updatedAt": "2026-07-04",
+    "sourceDocument": "文档/游戏mod内容介绍/index.md",
     "contentSource": [
+      "文档/游戏mod内容介绍/index.md",
+      "文档/装备词条系统设计.md",
+      "src/battle-valkyries/battle-valkyries/load.nut",
       "src/battle-valkyries/battle-valkyries/config/valkyrie_data.nut",
       "src/battle-valkyries/battle-valkyries/config/valkyrie_skill_data.nut",
       "src/battle-valkyries/battle-valkyries/config/mod_settings.nut",
       "src/battle-valkyries/battle-valkyries/config/skin_data.nut",
       "src/battle-valkyries/battle-valkyries/hooks/valkyrie_summon.nut",
+      "src/battle-valkyries/battle-valkyries/hooks/bond_system.nut",
+      "src/battle-valkyries/battle-valkyries/hooks/tactical_enemy_tooltip.nut",
+      "src/battle-valkyries/battle-valkyries/hooks/test_origin.nut",
+      "src/battle-valkyries/battle-valkyries/equipment/equipment_data.nut",
+      "src/battle-valkyries/battle-valkyries/equipment/equipment_system.nut",
       "i18n/en.json",
       "i18n/zh_CN.json"
     ]
@@ -57,27 +67,27 @@ window.BV_WIKI_DATA = {
       },
       {
         "max": 2,
-        "cost": 5000
+        "cost": 3000
       },
       {
         "max": 3,
-        "cost": 10000
+        "cost": 6000
       },
       {
         "max": 6,
-        "cost": 20000
+        "cost": 10000
       },
       {
         "max": 10,
-        "cost": 30000
+        "cost": 18000
       },
       {
         "max": 15,
-        "cost": 50000
+        "cost": 28000
       },
       {
         "max": 20,
-        "cost": 80000
+        "cost": 44800
       }
     ]
   },
@@ -110,8 +120,2657 @@ window.BV_WIKI_DATA = {
             "description": "召唤女武神外观生效时隐藏已装备的武器和盾牌贴图。"
           }
         }
+      },
+      {
+        "id": "EnableEquipmentSystem",
+        "type": "boolean",
+        "default": true,
+        "text": {
+          "en": {
+            "name": "Enable Equipment System",
+            "description": "Read only once when a new campaign is created. When enabled, ordinary equipment, named items, legendary items, enemy gear, and alchemy enchanting enter the Battle Valkyries equipment system; after campaign creation this state is locked into the save."
+          },
+          "zh": {
+            "name": "启用装备系统",
+            "description": "只在新开战役时读取一次。开启后普通装备、Named 装备、Legendary 装备、敌人装备和炼金附魔会进入 Battle Valkyries 装备系统；战役创建后此开关状态会锁定到存档。"
+          }
+        }
       }
     ]
+  },
+  "systems": {
+    "intro": {
+      "en": "Current content goes beyond the 20-character roster: it includes the Valkyrie hub, identity-driven skins, Xilian's bond events, enemy tooltip upgrades, a test origin, save recovery helpers, and an optional equipment system.",
+      "zh": "当前内容不止 20 名女武神名册：还包括女武神 Hub、身份驱动皮肤、昔涟羁绊事件、敌人 tooltip 增强、测试开局、存档恢复辅助，以及一个可选装备系统。"
+    },
+    "baselineNote": {
+      "en": "The current gameplay and future design baseline does not assume the optional equipment system unless the player or maintainer explicitly enables or extends it.",
+      "zh": "当前游玩和后续设计默认不以可选装备系统为前提；只有玩家或维护者明确启用、维护或扩展它时才纳入考虑。"
+    },
+    "cards": [
+      {
+        "id": "hub",
+        "title": {
+          "en": "Valkyrie Hub",
+          "zh": "女武神 Hub"
+        },
+        "body": {
+          "en": "Ctrl + M opens the main interface for summoning, character details, skin item grants, tasks, and the optional alchemy tab.",
+          "zh": "按 Ctrl + M 打开主界面，用于召唤、查看角色详情、授予皮肤物品、承载任务页，以及进入可选炼金页。"
+        },
+        "bullets": {
+          "en": [
+            "Tabs: Summon, Tasks, Alchemy.",
+            "The summon detail view shows portrait art, skin preview, background, trait, passive skill, active skill, and the current price."
+          ],
+          "zh": [
+            "顶部标签：召唤、任务、炼金。",
+            "召唤详情会展示立绘、皮肤预览、背景、人物特性、被动技能、主动技能和当前价格。"
+          ]
+        },
+        "sourceFiles": [
+          "src/battle-valkyries/battle-valkyries/hooks/hub_backend.nut",
+          "src/battle-valkyries/ui/mods/battle-valkyries/valkyries_hub.js"
+        ]
+      },
+      {
+        "id": "skins",
+        "title": {
+          "en": "Identity-driven Skins",
+          "zh": "身份驱动皮肤"
+        },
+        "body": {
+          "en": "Each summoned Valkyrie stores identity and skin IDs on actor flags. Appearance is reapplied after summon, load, combat entry, world refresh, and equipment changes.",
+          "zh": "每名召唤女武神都会把身份和皮肤 ID 写入 actor flags。召唤、读档、进入战斗、回到大地图和装备变化后都会重新应用外观。"
+        },
+        "bullets": {
+          "en": [
+            "Whole-bust skins hide the original body, head, hair, helmet, armor, quiver, injuries, and related layers.",
+            "Dedicated death brushes keep Valkyries from falling back to vanilla corpse visuals."
+          ],
+          "zh": [
+            "整张 bust 皮肤会隐藏原版身体、头、头发、头盔、盔甲、箭袋、伤痕等图层。",
+            "专属死亡 brush 会避免女武神死亡后退回原版尸体外观。"
+          ]
+        },
+        "sourceFiles": [
+          "src/battle-valkyries/battle-valkyries/config/skin_data.nut",
+          "src/battle-valkyries/battle-valkyries/hooks/skin_appearance.nut",
+          "src/battle-valkyries/battle-valkyries/hooks/death_state_fix.nut"
+        ]
+      },
+      {
+        "id": "voice",
+        "title": {
+          "en": "Selective Voice Replacement",
+          "zh": "选择性语音替换"
+        },
+        "body": {
+          "en": "Voice hooks replace hurt, death, fatigue, and flee sounds only for actors carrying a supported Valkyrie skin.",
+          "zh": "语音 hook 只会替换拥有对应女武神皮肤角色的受击、死亡、疲劳和逃跑音效。"
+        },
+        "bullets": {
+          "en": [
+            "Supported skins: Chisaki, Changli, Jinhsi, Yuno, Feixue, Cartethyia."
+          ],
+          "zh": [
+            "已接入皮肤：千咲、长离、今汐、尤诺、绯雪、卡提希娅。"
+          ]
+        },
+        "sourceFiles": [
+          "src/battle-valkyries/battle-valkyries/hooks/valkyrie_voice_sounds.nut"
+        ]
+      },
+      {
+        "id": "bond",
+        "title": {
+          "en": "Xilian Bond",
+          "zh": "昔涟羁绊"
+        },
+        "body": {
+          "en": "Xilian has the first implemented character growth track: battle progress, a bond item, and five world-event milestones.",
+          "zh": "昔涟拥有第一套已落地的角色养成线：战斗进度、羁绊道具和五段世界事件。"
+        },
+        "bullets": {
+          "en": [
+            "Surviving a battle grants +2 bond.",
+            "Xilian Memory Shards grant +20 bond when a valid Xilian is in the roster.",
+            "The bond cap is 100."
+          ],
+          "zh": [
+            "昔涟参战并存活后羁绊 +2。",
+            "队伍中有有效昔涟时，昔涟记忆碎晶提供 +20 羁绊。",
+            "羁绊上限为 100。"
+          ]
+        },
+        "sourceFiles": [
+          "src/battle-valkyries/battle-valkyries/hooks/bond_system.nut",
+          "src/battle-valkyries/scripts/events/events/battle_valkyries_xilian_bond_event.nut",
+          "src/battle-valkyries/scripts/items/misc/xilian_bond_crystal_item.nut"
+        ]
+      },
+      {
+        "id": "enemy_tooltip",
+        "title": {
+          "en": "Enemy Tooltip Upgrade",
+          "zh": "敌人信息增强"
+        },
+        "body": {
+          "en": "Enemy tactical tooltips show concrete head armor, body armor, hitpoint, fatigue, and equipment values.",
+          "zh": "战斗中的敌人 tooltip 会显示头部护甲、身体护甲、生命、疲劳和装备的具体数值。"
+        },
+        "bullets": {
+          "en": [
+            "If the equipment system is enabled, equipment names are colored by rarity."
+          ],
+          "zh": [
+            "如果装备系统开启，装备名称会按稀有度颜色显示。"
+          ]
+        },
+        "sourceFiles": [
+          "src/battle-valkyries/battle-valkyries/hooks/tactical_enemy_tooltip.nut"
+        ]
+      },
+      {
+        "id": "test_origin",
+        "title": {
+          "en": "Test Origin",
+          "zh": "测试开局"
+        },
+        "body": {
+          "en": "The Battle Valkyries test company exists for rapid validation of summons, equipment, strong enemies, and Xilian bond items.",
+          "zh": "战斗女武神测试战团用于快速验证召唤、装备、强敌和昔涟羁绊物品。"
+        },
+        "bullets": {
+          "en": [
+            "Starts with three basic brothers, 3,000,000 Crowns, food, fixed legendary equipment, and 10 Xilian Memory Shards.",
+            "Spawns five legendary locations plus nearby strong beast, orc, and mercenary parties that actively chase the player."
+          ],
+          "zh": [
+            "开局提供 3 名基础队员、3,000,000 克朗、粮食、固定传奇装备和 10 个昔涟记忆碎晶。",
+            "会在附近生成 5 个传奇地点，以及主动追击玩家的野兽、兽人和雇佣兵强队。"
+          ]
+        },
+        "sourceFiles": [
+          "src/battle-valkyries/battle-valkyries/hooks/test_origin.nut",
+          "src/battle-valkyries/scripts/scenarios/world/battle_valkyries_test_company_scenario.nut"
+        ]
+      },
+      {
+        "id": "save_compat",
+        "title": {
+          "en": "Save Recovery",
+          "zh": "存档兼容"
+        },
+        "body": {
+          "en": "Template skills are restored from Valkyrie identity rather than serialized as permanent custom skill state.",
+          "zh": "模板技能通过女武神身份恢复，而不是作为长期自定义 skill 状态写入存档。"
+        },
+        "bullets": {
+          "en": [
+            "Key helpers sync identity, restore template skills, refresh roster state, and protect death-state edge cases."
+          ],
+          "zh": [
+            "关键 helper 会同步身份、补回模板技能、刷新名册状态，并兜底死亡状态异常。"
+          ]
+        },
+        "sourceFiles": [
+          "src/battle-valkyries/battle-valkyries/hooks/skill_msu_compat.nut",
+          "src/battle-valkyries/battle-valkyries/hooks/valkyrie_summon.nut",
+          "src/battle-valkyries/battle-valkyries/hooks/death_state_fix.nut"
+        ]
+      }
+    ],
+    "bond": {
+      "title": {
+        "en": "Xilian Bond Stages",
+        "zh": "昔涟羁绊阶段"
+      },
+      "item": {
+        "en": "Xilian Memory Shard",
+        "zh": "昔涟记忆碎晶"
+      },
+      "gainPerBattle": 2,
+      "itemGain": 20,
+      "max": 100,
+      "stages": [
+        {
+          "value": 20,
+          "rewardMoney": 100,
+          "rewardPerkPoints": 1,
+          "text": {
+            "en": {
+              "stage": "First Hearttrace",
+              "eventTitle": "Shard of Light"
+            },
+            "zh": {
+              "stage": "心痕初现",
+              "eventTitle": "碎光入账"
+            }
+          }
+        },
+        {
+          "value": 40,
+          "rewardMoney": 100,
+          "rewardPerkPoints": 1,
+          "text": {
+            "en": {
+              "stage": "Shared Memory",
+              "eventTitle": "Old Shadows by the Fire"
+            },
+            "zh": {
+              "stage": "同行之忆",
+              "eventTitle": "营火里的旧影"
+            }
+          }
+        },
+        {
+          "value": 60,
+          "rewardMoney": 100,
+          "rewardPerkPoints": 1,
+          "text": {
+            "en": {
+              "stage": "Memory Shelter",
+              "eventTitle": "White Flower in Rain"
+            },
+            "zh": {
+              "stage": "记忆庇护",
+              "eventTitle": "雨中的白花"
+            }
+          }
+        },
+        {
+          "value": 80,
+          "rewardMoney": 100,
+          "rewardPerkPoints": 1,
+          "text": {
+            "en": {
+              "stage": "Beyond the Loop",
+              "eventTitle": "A Night That Will Not Repeat"
+            },
+            "zh": {
+              "stage": "闭环之外",
+              "eventTitle": "不再重来的夜"
+            }
+          }
+        },
+        {
+          "value": 100,
+          "rewardMoney": 100,
+          "rewardPerkPoints": 2,
+          "text": {
+            "en": {
+              "stage": "Eternal Echo",
+              "eventTitle": "The First Page of Tomorrow"
+            },
+            "zh": {
+              "stage": "永恒回声",
+              "eventTitle": "明日的第一页"
+            }
+          }
+        }
+      ]
+    },
+    "equipment": {
+      "title": {
+        "en": "Optional Equipment System",
+        "zh": "可选装备系统"
+      },
+      "body": {
+        "en": "When enabled for a new campaign, eligible weapons, helmets, armor, and shields gain rarity, affix slots, alchemy enchanting, removal stones, disassembly rewards, and enemy gear generation.",
+        "zh": "新战役启用后，符合条件的武器、头盔、盔甲和盾牌会获得稀有度、词条槽、炼金附魔、消除石、拆解奖励和敌人装备生成。"
+      },
+      "rules": {
+        "en": [
+          "Named items migrate to red rarity and legendary items migrate to prismatic rarity.",
+          "Basic affixes can roll on any rarity; advanced affixes unlock from purple rarity, and legendary affixes unlock from red rarity.",
+          "Enchanting adds a non-duplicate affix while slots remain; once full, it replaces the last affix.",
+          "Weapon on-hit affixes only trigger from weapon attack skills and still respect target immunities.",
+          "Disassemble, enchant, and remove-affix actions each cost 100 Crowns before material costs."
+        ],
+        "zh": [
+          "原版 Named 装备迁移为红装，Legendary 装备迁移为彩装。",
+          "基础词条可出现在全部稀有度；进阶词条从紫装开始，传奇词条从红装开始。",
+          "附魔在词条未满时新增不重复词条；词条满后会替换最后一条。",
+          "武器命中触发类词条只由武器攻击技能触发，并仍会遵守目标免疫。",
+          "拆解、附魔、删除词条都会先消耗 100 克朗，再计算材料消耗。"
+        ]
+      },
+      "affixIntro": {
+        "en": "The table below is generated from the current equipment affix definitions. Basic affixes show the lowest and highest possible tier ranges; special affixes show fixed values or trigger chances.",
+        "zh": "下表由当前装备词条定义生成。基础词条展示最低与最高词条等级的数值区间；特殊词条展示固定数值或触发概率。"
+      },
+      "rarities": [
+        {
+          "id": "white",
+          "rank": 1,
+          "affixCount": 1,
+          "color": "#d8d0bd",
+          "text": {
+            "en": {
+              "name": "Common Equipment"
+            },
+            "zh": {
+              "name": "普通装备"
+            }
+          }
+        },
+        {
+          "id": "green",
+          "rank": 2,
+          "affixCount": 2,
+          "color": "#6fd27d",
+          "text": {
+            "en": {
+              "name": "Fine Equipment"
+            },
+            "zh": {
+              "name": "优良装备"
+            }
+          }
+        },
+        {
+          "id": "blue",
+          "rank": 3,
+          "affixCount": 3,
+          "color": "#74b7ff",
+          "text": {
+            "en": {
+              "name": "Superior Equipment"
+            },
+            "zh": {
+              "name": "精良装备"
+            }
+          }
+        },
+        {
+          "id": "purple",
+          "rank": 4,
+          "affixCount": 4,
+          "color": "#9b4dff",
+          "text": {
+            "en": {
+              "name": "Rare Equipment"
+            },
+            "zh": {
+              "name": "珍稀装备"
+            }
+          }
+        },
+        {
+          "id": "red",
+          "rank": 5,
+          "affixCount": 4,
+          "color": "#ff6b5f",
+          "text": {
+            "en": {
+              "name": "Named Equipment"
+            },
+            "zh": {
+              "name": "名品装备"
+            }
+          }
+        },
+        {
+          "id": "prismatic",
+          "rank": 6,
+          "affixCount": 5,
+          "color": "#ffd36f",
+          "text": {
+            "en": {
+              "name": "Legendary Equipment"
+            },
+            "zh": {
+              "name": "传奇装备"
+            }
+          }
+        }
+      ],
+      "affixes": [
+        {
+          "id": "sharp",
+          "parts": [
+            "weapon"
+          ],
+          "kind": "basic",
+          "effect": "weapon_damage_percent",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              3,
+              5
+            ],
+            "green": [
+              6,
+              9
+            ],
+            "blue": [
+              10,
+              14
+            ],
+            "purple": [
+              15,
+              20
+            ],
+            "red": [
+              21,
+              27
+            ],
+            "prismatic": [
+              28,
+              35
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Sharp",
+              "effect": "Damage",
+              "summary": "Damage: Common Equipment +3%~+5% / Legendary Equipment +28%~+35%"
+            },
+            "zh": {
+              "name": "锋利",
+              "effect": "伤害",
+              "summary": "伤害: 普通装备 +3%~+5% / 传奇装备 +28%~+35%"
+            }
+          }
+        },
+        {
+          "id": "steady_edge",
+          "parts": [
+            "weapon"
+          ],
+          "kind": "basic",
+          "effect": "weapon_min_damage_flat",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              1,
+              2
+            ],
+            "green": [
+              3,
+              4
+            ],
+            "blue": [
+              5,
+              7
+            ],
+            "purple": [
+              8,
+              10
+            ],
+            "red": [
+              11,
+              14
+            ],
+            "prismatic": [
+              15,
+              20
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Steady Edge",
+              "effect": "Minimum damage",
+              "summary": "Minimum damage: Common Equipment +1~+2 / Legendary Equipment +15~+20"
+            },
+            "zh": {
+              "name": "稳刃",
+              "effect": "最小伤害",
+              "summary": "最小伤害: 普通装备 +1~+2 / 传奇装备 +15~+20"
+            }
+          }
+        },
+        {
+          "id": "armor_breaker",
+          "parts": [
+            "weapon"
+          ],
+          "kind": "basic",
+          "effect": "armor_damage_percent",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              6,
+              10
+            ],
+            "green": [
+              12,
+              16
+            ],
+            "blue": [
+              18,
+              23
+            ],
+            "purple": [
+              24,
+              30
+            ],
+            "red": [
+              31,
+              38
+            ],
+            "prismatic": [
+              40,
+              48
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Armor Breaker",
+              "effect": "Armor damage",
+              "summary": "Armor damage: Common Equipment +6%~+10% / Legendary Equipment +40%~+48%"
+            },
+            "zh": {
+              "name": "破甲",
+              "effect": "破甲",
+              "summary": "破甲: 普通装备 +6%~+10% / 传奇装备 +40%~+48%"
+            }
+          }
+        },
+        {
+          "id": "piercing",
+          "parts": [
+            "weapon"
+          ],
+          "kind": "basic",
+          "effect": "direct_damage_percent",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              2,
+              3
+            ],
+            "green": [
+              4,
+              5
+            ],
+            "blue": [
+              6,
+              8
+            ],
+            "purple": [
+              9,
+              11
+            ],
+            "red": [
+              12,
+              15
+            ],
+            "prismatic": [
+              16,
+              20
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Piercing",
+              "effect": "Ignore armor",
+              "summary": "Ignore armor: Common Equipment +2%~+3% / Legendary Equipment +16%~+20%"
+            },
+            "zh": {
+              "name": "穿刺",
+              "effect": "无视护甲",
+              "summary": "无视护甲: 普通装备 +2%~+3% / 传奇装备 +16%~+20%"
+            }
+          }
+        },
+        {
+          "id": "precise",
+          "parts": [
+            "weapon"
+          ],
+          "kind": "basic",
+          "effect": "hit_chance",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              1,
+              2
+            ],
+            "green": [
+              3,
+              4
+            ],
+            "blue": [
+              5,
+              6
+            ],
+            "purple": [
+              7,
+              8
+            ],
+            "red": [
+              9,
+              11
+            ],
+            "prismatic": [
+              12,
+              14
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Precise",
+              "effect": "Hit chance",
+              "summary": "Hit chance: Common Equipment +1~+2 / Legendary Equipment +12~+14"
+            },
+            "zh": {
+              "name": "精准",
+              "effect": "命中",
+              "summary": "命中: 普通装备 +1~+2 / 传奇装备 +12~+14"
+            }
+          }
+        },
+        {
+          "id": "headhunter",
+          "parts": [
+            "weapon"
+          ],
+          "kind": "basic",
+          "effect": "head_chance",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              3,
+              4
+            ],
+            "green": [
+              5,
+              7
+            ],
+            "blue": [
+              8,
+              10
+            ],
+            "purple": [
+              11,
+              13
+            ],
+            "red": [
+              14,
+              17
+            ],
+            "prismatic": [
+              18,
+              21
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Headhunter",
+              "effect": "Head hit chance",
+              "summary": "Head hit chance: Common Equipment +3~+4 / Legendary Equipment +18~+21"
+            },
+            "zh": {
+              "name": "猎首",
+              "effect": "爆头",
+              "summary": "爆头: 普通装备 +3~+4 / 传奇装备 +18~+21"
+            }
+          }
+        },
+        {
+          "id": "shield_smasher",
+          "parts": [
+            "weapon"
+          ],
+          "kind": "basic",
+          "effect": "shield_damage_percent",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              15,
+              25
+            ],
+            "green": [
+              30,
+              45
+            ],
+            "blue": [
+              50,
+              70
+            ],
+            "purple": [
+              75,
+              100
+            ],
+            "red": [
+              110,
+              145
+            ],
+            "prismatic": [
+              160,
+              200
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Shield Smasher",
+              "effect": "Shield damage",
+              "summary": "Shield damage: Common Equipment +15%~+25% / Legendary Equipment +160%~+200%"
+            },
+            "zh": {
+              "name": "碎盾",
+              "effect": "盾伤",
+              "summary": "盾伤: 普通装备 +15%~+25% / 传奇装备 +160%~+200%"
+            }
+          }
+        },
+        {
+          "id": "light",
+          "parts": [
+            "weapon"
+          ],
+          "kind": "basic",
+          "effect": "stamina",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              1,
+              2
+            ],
+            "green": [
+              3,
+              4
+            ],
+            "blue": [
+              5,
+              6
+            ],
+            "purple": [
+              7,
+              8
+            ],
+            "red": [
+              9,
+              11
+            ],
+            "prismatic": [
+              12,
+              14
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Light",
+              "effect": "Max fatigue",
+              "summary": "Max fatigue: Common Equipment +1~+2 / Legendary Equipment +12~+14"
+            },
+            "zh": {
+              "name": "轻盈",
+              "effect": "最大疲劳",
+              "summary": "最大疲劳: 普通装备 +1~+2 / 传奇装备 +12~+14"
+            }
+          }
+        },
+        {
+          "id": "sturdy",
+          "parts": [
+            "weapon"
+          ],
+          "kind": "basic",
+          "effect": "durability_percent",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              10,
+              20
+            ],
+            "green": [
+              25,
+              40
+            ],
+            "blue": [
+              45,
+              65
+            ],
+            "purple": [
+              70,
+              100
+            ],
+            "red": [
+              110,
+              150
+            ],
+            "prismatic": [
+              160,
+              220
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Sturdy",
+              "effect": "Durability",
+              "summary": "Durability: Common Equipment +10%~+20% / Legendary Equipment +160%~+220%"
+            },
+            "zh": {
+              "name": "坚固",
+              "effect": "耐久",
+              "summary": "耐久: 普通装备 +10%~+20% / 传奇装备 +160%~+220%"
+            }
+          }
+        },
+        {
+          "id": "thick_cast",
+          "parts": [
+            "helmet",
+            "armor"
+          ],
+          "kind": "basic",
+          "effect": "armor_max_percent",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              5,
+              8
+            ],
+            "green": [
+              10,
+              14
+            ],
+            "blue": [
+              16,
+              22
+            ],
+            "purple": [
+              24,
+              30
+            ],
+            "red": [
+              32,
+              40
+            ],
+            "prismatic": [
+              42,
+              52
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Thick-Cast",
+              "effect": "Armor max",
+              "summary": "Armor max: Common Equipment +5%~+8% / Legendary Equipment +42%~+52%"
+            },
+            "zh": {
+              "name": "厚铸",
+              "effect": "护甲上限",
+              "summary": "护甲上限: 普通装备 +5%~+8% / 传奇装备 +42%~+52%"
+            }
+          }
+        },
+        {
+          "id": "hard_plate",
+          "parts": [
+            "helmet",
+            "armor"
+          ],
+          "kind": "basic",
+          "effect": "armor_max_flat",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              5,
+              10
+            ],
+            "green": [
+              12,
+              20
+            ],
+            "blue": [
+              24,
+              36
+            ],
+            "purple": [
+              40,
+              55
+            ],
+            "red": [
+              60,
+              85
+            ],
+            "prismatic": [
+              100,
+              100
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Hard Plate",
+              "effect": "Armor",
+              "summary": "Armor: Common Equipment +5~+10 / Legendary Equipment +100"
+            },
+            "zh": {
+              "name": "坚甲",
+              "effect": "护甲",
+              "summary": "护甲: 普通装备 +5~+10 / 传奇装备 +100"
+            }
+          }
+        },
+        {
+          "id": "light_armor",
+          "parts": [
+            "helmet",
+            "armor"
+          ],
+          "kind": "basic",
+          "effect": "stamina",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              1,
+              2
+            ],
+            "green": [
+              3,
+              4
+            ],
+            "blue": [
+              5,
+              6
+            ],
+            "purple": [
+              7,
+              8
+            ],
+            "red": [
+              9,
+              11
+            ],
+            "prismatic": [
+              12,
+              14
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Light Armor",
+              "effect": "Max fatigue",
+              "summary": "Max fatigue: Common Equipment +1~+2 / Legendary Equipment +12~+14"
+            },
+            "zh": {
+              "name": "轻装",
+              "effect": "最大疲劳",
+              "summary": "最大疲劳: 普通装备 +1~+2 / 传奇装备 +12~+14"
+            }
+          }
+        },
+        {
+          "id": "tempered",
+          "parts": [
+            "helmet",
+            "armor"
+          ],
+          "kind": "basic",
+          "effect": "armor_damage_received_percent",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              3,
+              4
+            ],
+            "green": [
+              5,
+              7
+            ],
+            "blue": [
+              8,
+              11
+            ],
+            "purple": [
+              12,
+              16
+            ],
+            "red": [
+              17,
+              22
+            ],
+            "prismatic": [
+              23,
+              28
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Tempered",
+              "effect": "Armor damage taken",
+              "summary": "Armor damage taken: Common Equipment -3%~-4% / Legendary Equipment -23%~-28%"
+            },
+            "zh": {
+              "name": "韧化",
+              "effect": "护甲伤害",
+              "summary": "护甲伤害: 普通装备 -3%~-4% / 传奇装备 -23%~-28%"
+            }
+          }
+        },
+        {
+          "id": "cushioned",
+          "parts": [
+            "helmet",
+            "armor"
+          ],
+          "kind": "basic",
+          "effect": "direct_damage_reduction_flat",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              1,
+              1
+            ],
+            "green": [
+              2,
+              2
+            ],
+            "blue": [
+              3,
+              4
+            ],
+            "purple": [
+              5,
+              6
+            ],
+            "red": [
+              7,
+              8
+            ],
+            "prismatic": [
+              9,
+              11
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Cushioned",
+              "effect": "Direct HP damage",
+              "summary": "Direct HP damage: Common Equipment -1 / Legendary Equipment -9~-11"
+            },
+            "zh": {
+              "name": "缓冲",
+              "effect": "穿透生命伤害",
+              "summary": "穿透生命伤害: 普通装备 -1 / 传奇装备 -9~-11"
+            }
+          }
+        },
+        {
+          "id": "vented",
+          "parts": [
+            "helmet",
+            "armor"
+          ],
+          "kind": "basic",
+          "effect": "fatigue_recovery",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              1,
+              1
+            ],
+            "green": [
+              1,
+              2
+            ],
+            "blue": [
+              2,
+              3
+            ],
+            "purple": [
+              3,
+              4
+            ],
+            "red": [
+              4,
+              5
+            ],
+            "prismatic": [
+              6,
+              6
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Vented",
+              "effect": "Fatigue recovery per turn",
+              "summary": "Fatigue recovery per turn: Common Equipment +1 / Legendary Equipment +6"
+            },
+            "zh": {
+              "name": "通气",
+              "effect": "每回合疲劳恢复",
+              "summary": "每回合疲劳恢复: 普通装备 +1 / 传奇装备 +6"
+            }
+          }
+        },
+        {
+          "id": "clear_sight",
+          "parts": [
+            "helmet"
+          ],
+          "kind": "basic",
+          "effect": "vision",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              1,
+              1
+            ],
+            "green": [
+              1,
+              1
+            ],
+            "blue": [
+              1,
+              2
+            ],
+            "purple": [
+              2,
+              2
+            ],
+            "red": [
+              2,
+              3
+            ],
+            "prismatic": [
+              3,
+              3
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Clear Sight",
+              "effect": "Vision",
+              "summary": "Vision: Common Equipment +1 / Legendary Equipment +3"
+            },
+            "zh": {
+              "name": "明视",
+              "effect": "视野",
+              "summary": "视野: 普通装备 +1 / 传奇装备 +3"
+            }
+          }
+        },
+        {
+          "id": "skull_guard",
+          "parts": [
+            "helmet"
+          ],
+          "kind": "basic",
+          "effect": "head_damage_received_percent",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              3,
+              4
+            ],
+            "green": [
+              5,
+              7
+            ],
+            "blue": [
+              8,
+              11
+            ],
+            "purple": [
+              12,
+              16
+            ],
+            "red": [
+              17,
+              22
+            ],
+            "prismatic": [
+              23,
+              28
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Skull Guard",
+              "effect": "Head HP damage",
+              "summary": "Head HP damage: Common Equipment -3%~-4% / Legendary Equipment -23%~-28%"
+            },
+            "zh": {
+              "name": "护颅",
+              "effect": "头部生命伤害",
+              "summary": "头部生命伤害: 普通装备 -3%~-4% / 传奇装备 -23%~-28%"
+            }
+          }
+        },
+        {
+          "id": "life_lined",
+          "parts": [
+            "armor"
+          ],
+          "kind": "basic",
+          "effect": "hitpoints",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              2,
+              3
+            ],
+            "green": [
+              4,
+              5
+            ],
+            "blue": [
+              6,
+              8
+            ],
+            "purple": [
+              9,
+              11
+            ],
+            "red": [
+              12,
+              15
+            ],
+            "prismatic": [
+              16,
+              20
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Life-Lined",
+              "effect": "Hitpoints",
+              "summary": "Hitpoints: Common Equipment +2~+3 / Legendary Equipment +16~+20"
+            },
+            "zh": {
+              "name": "衬命",
+              "effect": "生命",
+              "summary": "生命: 普通装备 +2~+3 / 传奇装备 +16~+20"
+            }
+          }
+        },
+        {
+          "id": "iron_face",
+          "parts": [
+            "shield"
+          ],
+          "kind": "basic",
+          "effect": "durability_flat",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              4,
+              6
+            ],
+            "green": [
+              8,
+              12
+            ],
+            "blue": [
+              14,
+              20
+            ],
+            "purple": [
+              22,
+              30
+            ],
+            "red": [
+              35,
+              45
+            ],
+            "prismatic": [
+              60,
+              60
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Iron Face",
+              "effect": "Durability",
+              "summary": "Durability: Common Equipment +4~+6 / Legendary Equipment +60"
+            },
+            "zh": {
+              "name": "铁面",
+              "effect": "耐久",
+              "summary": "耐久: 普通装备 +4~+6 / 传奇装备 +60"
+            }
+          }
+        },
+        {
+          "id": "guard_stance",
+          "parts": [
+            "shield"
+          ],
+          "kind": "basic",
+          "effect": "melee_defense",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              1,
+              2
+            ],
+            "green": [
+              3,
+              4
+            ],
+            "blue": [
+              5,
+              6
+            ],
+            "purple": [
+              7,
+              9
+            ],
+            "red": [
+              10,
+              12
+            ],
+            "prismatic": [
+              14,
+              16
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Guard Stance",
+              "effect": "Melee defense",
+              "summary": "Melee defense: Common Equipment +1~+2 / Legendary Equipment +14~+16"
+            },
+            "zh": {
+              "name": "守势",
+              "effect": "近防",
+              "summary": "近防: 普通装备 +1~+2 / 传奇装备 +14~+16"
+            }
+          }
+        },
+        {
+          "id": "arrow_cover",
+          "parts": [
+            "shield"
+          ],
+          "kind": "basic",
+          "effect": "ranged_defense",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              1,
+              1
+            ],
+            "green": [
+              2,
+              3
+            ],
+            "blue": [
+              4,
+              5
+            ],
+            "purple": [
+              6,
+              7
+            ],
+            "red": [
+              8,
+              10
+            ],
+            "prismatic": [
+              11,
+              13
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Arrow Cover",
+              "effect": "Ranged defense",
+              "summary": "Ranged defense: Common Equipment +1 / Legendary Equipment +11~+13"
+            },
+            "zh": {
+              "name": "遮矢",
+              "effect": "远防",
+              "summary": "远防: 普通装备 +1 / 传奇装备 +11~+13"
+            }
+          }
+        },
+        {
+          "id": "light_grip",
+          "parts": [
+            "shield"
+          ],
+          "kind": "basic",
+          "effect": "stamina",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              1,
+              2
+            ],
+            "green": [
+              3,
+              4
+            ],
+            "blue": [
+              5,
+              6
+            ],
+            "purple": [
+              7,
+              8
+            ],
+            "red": [
+              9,
+              11
+            ],
+            "prismatic": [
+              12,
+              14
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Light Grip",
+              "effect": "Max fatigue",
+              "summary": "Max fatigue: Common Equipment +1~+2 / Legendary Equipment +12~+14"
+            },
+            "zh": {
+              "name": "轻执",
+              "effect": "最大疲劳",
+              "summary": "最大疲劳: 普通装备 +1~+2 / 传奇装备 +12~+14"
+            }
+          }
+        },
+        {
+          "id": "shield_saver",
+          "parts": [
+            "shield"
+          ],
+          "kind": "basic",
+          "effect": "shield_skill_fatigue_reduction",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              1,
+              1
+            ],
+            "green": [
+              1,
+              1
+            ],
+            "blue": [
+              1,
+              2
+            ],
+            "purple": [
+              2,
+              3
+            ],
+            "red": [
+              3,
+              4
+            ],
+            "prismatic": [
+              4,
+              5
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Shield Saver",
+              "effect": "Shield skill fatigue",
+              "summary": "Shield skill fatigue: Common Equipment -1 / Legendary Equipment -4~-5"
+            },
+            "zh": {
+              "name": "省盾",
+              "effect": "盾牌技能疲劳",
+              "summary": "盾牌技能疲劳: 普通装备 -1 / 传奇装备 -4~-5"
+            }
+          }
+        },
+        {
+          "id": "wallfast",
+          "parts": [
+            "shield"
+          ],
+          "kind": "basic",
+          "effect": "shieldwall_defense",
+          "minRarityRank": 1,
+          "value": null,
+          "chance": null,
+          "ranges": {
+            "white": [
+              1,
+              1
+            ],
+            "green": [
+              2,
+              2
+            ],
+            "blue": [
+              3,
+              3
+            ],
+            "purple": [
+              4,
+              4
+            ],
+            "red": [
+              5,
+              5
+            ],
+            "prismatic": [
+              7,
+              7
+            ]
+          },
+          "kindText": {
+            "en": "Basic",
+            "zh": "基础"
+          },
+          "unlockText": {
+            "en": "Any rarity",
+            "zh": "全部稀有度"
+          },
+          "text": {
+            "en": {
+              "name": "Wallfast",
+              "effect": "Shieldwall defense",
+              "summary": "Shieldwall defense: Common Equipment +1 / Legendary Equipment +7"
+            },
+            "zh": {
+              "name": "固壁",
+              "effect": "盾墙防御",
+              "summary": "盾墙防御: 普通装备 +1 / 传奇装备 +7"
+            }
+          }
+        },
+        {
+          "id": "bleeding_edge",
+          "parts": [
+            "weapon"
+          ],
+          "kind": "advanced",
+          "effect": "hit_bleed",
+          "minRarityRank": 4,
+          "value": null,
+          "chance": 35,
+          "ranges": {},
+          "kindText": {
+            "en": "Advanced",
+            "zh": "进阶"
+          },
+          "unlockText": {
+            "en": "Rare Equipment+",
+            "zh": "珍稀装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Bleeding Edge",
+              "effect": "Bleed on hit for 2 turns",
+              "summary": "Bleed on hit for 2 turns (35%)"
+            },
+            "zh": {
+              "name": "裂脉",
+              "effect": "命中流血2回合",
+              "summary": "命中流血2回合 (35%)"
+            }
+          }
+        },
+        {
+          "id": "heavy_shock",
+          "parts": [
+            "weapon"
+          ],
+          "kind": "advanced",
+          "effect": "hit_daze_stagger",
+          "minRarityRank": 4,
+          "value": null,
+          "chance": 30,
+          "ranges": {},
+          "kindText": {
+            "en": "Advanced",
+            "zh": "进阶"
+          },
+          "unlockText": {
+            "en": "Rare Equipment+",
+            "zh": "珍稀装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Heavy Shock",
+              "effect": "Daze and stagger on hit",
+              "summary": "Daze and stagger on hit (30%)"
+            },
+            "zh": {
+              "name": "重震",
+              "effect": "命中恍惚+踉跄",
+              "summary": "命中恍惚+踉跄 (30%)"
+            }
+          }
+        },
+        {
+          "id": "breaking_force",
+          "parts": [
+            "weapon"
+          ],
+          "kind": "advanced",
+          "effect": "hit_debilitate",
+          "minRarityRank": 4,
+          "value": null,
+          "chance": 35,
+          "ranges": {},
+          "kindText": {
+            "en": "Advanced",
+            "zh": "进阶"
+          },
+          "unlockText": {
+            "en": "Rare Equipment+",
+            "zh": "珍稀装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Breaking Force",
+              "effect": "Debilitate on hit",
+              "summary": "Debilitate on hit (35%)"
+            },
+            "zh": {
+              "name": "断势",
+              "effect": "命中虚弱",
+              "summary": "命中虚弱 (35%)"
+            }
+          }
+        },
+        {
+          "id": "spider_bind",
+          "parts": [
+            "weapon"
+          ],
+          "kind": "advanced",
+          "effect": "hit_web",
+          "minRarityRank": 4,
+          "value": null,
+          "chance": 25,
+          "ranges": {},
+          "kindText": {
+            "en": "Advanced",
+            "zh": "进阶"
+          },
+          "unlockText": {
+            "en": "Rare Equipment+",
+            "zh": "珍稀装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Spider Bind",
+              "effect": "Web on hit",
+              "summary": "Web on hit (25%)"
+            },
+            "zh": {
+              "name": "缚蛛",
+              "effect": "命中蛛网",
+              "summary": "命中蛛网 (25%)"
+            }
+          }
+        },
+        {
+          "id": "blood_surge",
+          "parts": [
+            "weapon"
+          ],
+          "kind": "advanced",
+          "effect": "hit_lifesteal_fatigue",
+          "minRarityRank": 4,
+          "value": null,
+          "chance": null,
+          "ranges": {},
+          "kindText": {
+            "en": "Advanced",
+            "zh": "进阶"
+          },
+          "unlockText": {
+            "en": "Rare Equipment+",
+            "zh": "珍稀装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Blood Surge",
+              "effect": "10% HP damage as healing, recover 5 fatigue on hit",
+              "summary": "10% HP damage as healing, recover 5 fatigue on hit"
+            },
+            "zh": {
+              "name": "血涌",
+              "effect": "生命伤害10%治疗，命中回5疲劳",
+              "summary": "生命伤害10%治疗，命中回5疲劳"
+            }
+          }
+        },
+        {
+          "id": "rotblood",
+          "parts": [
+            "weapon"
+          ],
+          "kind": "legendary",
+          "effect": "hit_rotblood",
+          "minRarityRank": 5,
+          "value": null,
+          "chance": 35,
+          "ranges": {},
+          "kindText": {
+            "en": "Legendary",
+            "zh": "传奇"
+          },
+          "unlockText": {
+            "en": "Named Equipment+",
+            "zh": "名品装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Rotblood",
+              "effect": "Bleed, poisons, and acid on hit",
+              "summary": "Bleed, poisons, and acid on hit (35%)"
+            },
+            "zh": {
+              "name": "腐血",
+              "effect": "命中流血+双毒+酸蚀",
+              "summary": "命中流血+双毒+酸蚀 (35%)"
+            }
+          }
+        },
+        {
+          "id": "soul_still",
+          "parts": [
+            "weapon"
+          ],
+          "kind": "legendary",
+          "effect": "hit_stun",
+          "minRarityRank": 5,
+          "value": null,
+          "chance": 25,
+          "ranges": {},
+          "kindText": {
+            "en": "Legendary",
+            "zh": "传奇"
+          },
+          "unlockText": {
+            "en": "Named Equipment+",
+            "zh": "名品装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Soul-Still",
+              "effect": "Stun on hit",
+              "summary": "Stun on hit (25%)"
+            },
+            "zh": {
+              "name": "镇魂",
+              "effect": "命中眩晕",
+              "summary": "命中眩晕 (25%)"
+            }
+          }
+        },
+        {
+          "id": "disarming",
+          "parts": [
+            "weapon"
+          ],
+          "kind": "legendary",
+          "effect": "hit_disarm",
+          "minRarityRank": 5,
+          "value": null,
+          "chance": 30,
+          "ranges": {},
+          "kindText": {
+            "en": "Legendary",
+            "zh": "传奇"
+          },
+          "unlockText": {
+            "en": "Named Equipment+",
+            "zh": "名品装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Disarming",
+              "effect": "Disarm on hit",
+              "summary": "Disarm on hit (30%)"
+            },
+            "zh": {
+              "name": "夺械",
+              "effect": "命中缴械",
+              "summary": "命中缴械 (30%)"
+            }
+          }
+        },
+        {
+          "id": "clear_breath",
+          "parts": [
+            "weapon"
+          ],
+          "kind": "legendary",
+          "effect": "hit_clear_fatigue",
+          "minRarityRank": 5,
+          "value": null,
+          "chance": null,
+          "ranges": {},
+          "kindText": {
+            "en": "Legendary",
+            "zh": "传奇"
+          },
+          "unlockText": {
+            "en": "Named Equipment+",
+            "zh": "名品装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Clear Breath",
+              "effect": "Recover 30 fatigue after hit",
+              "summary": "Recover 30 fatigue after hit"
+            },
+            "zh": {
+              "name": "澄息",
+              "effect": "命中后恢复30疲劳",
+              "summary": "命中后恢复30疲劳"
+            }
+          }
+        },
+        {
+          "id": "sleeping",
+          "parts": [
+            "weapon"
+          ],
+          "kind": "legendary",
+          "effect": "hit_sleep",
+          "minRarityRank": 5,
+          "value": null,
+          "chance": 20,
+          "ranges": {},
+          "kindText": {
+            "en": "Legendary",
+            "zh": "传奇"
+          },
+          "unlockText": {
+            "en": "Named Equipment+",
+            "zh": "名品装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Sleepbound",
+              "effect": "Sleep on hit",
+              "summary": "Sleep on hit (20%)"
+            },
+            "zh": {
+              "name": "安眠",
+              "effect": "命中睡眠",
+              "summary": "命中睡眠 (20%)"
+            }
+          }
+        },
+        {
+          "id": "reach",
+          "parts": [
+            "weapon"
+          ],
+          "kind": "legendary",
+          "effect": "range_bonus",
+          "minRarityRank": 5,
+          "value": 1,
+          "chance": null,
+          "ranges": {},
+          "kindText": {
+            "en": "Legendary",
+            "zh": "传奇"
+          },
+          "unlockText": {
+            "en": "Named Equipment+",
+            "zh": "名品装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Reach",
+              "effect": "Attack range",
+              "summary": "Attack range +1"
+            },
+            "zh": {
+              "name": "延锋",
+              "effect": "攻击距离",
+              "summary": "攻击距离 +1"
+            }
+          }
+        },
+        {
+          "id": "battle_rhythm",
+          "parts": [
+            "weapon"
+          ],
+          "kind": "legendary",
+          "effect": "action_points",
+          "minRarityRank": 5,
+          "value": 5,
+          "chance": null,
+          "ranges": {},
+          "kindText": {
+            "en": "Legendary",
+            "zh": "传奇"
+          },
+          "unlockText": {
+            "en": "Named Equipment+",
+            "zh": "名品装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Battle Rhythm",
+              "effect": "Max AP",
+              "summary": "Max AP +5"
+            },
+            "zh": {
+              "name": "战律",
+              "effect": "最大 AP",
+              "summary": "最大 AP +5"
+            }
+          }
+        },
+        {
+          "id": "sealed_blood",
+          "parts": [
+            "helmet",
+            "armor"
+          ],
+          "kind": "advanced",
+          "effect": "immune_bleeding",
+          "minRarityRank": 4,
+          "value": null,
+          "chance": null,
+          "ranges": {},
+          "kindText": {
+            "en": "Advanced",
+            "zh": "进阶"
+          },
+          "unlockText": {
+            "en": "Rare Equipment+",
+            "zh": "珍稀装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Sealed Blood",
+              "effect": "Immune to bleeding",
+              "summary": "Immune to bleeding"
+            },
+            "zh": {
+              "name": "封血",
+              "effect": "免疫流血",
+              "summary": "免疫流血"
+            }
+          }
+        },
+        {
+          "id": "war_rune",
+          "parts": [
+            "helmet",
+            "armor"
+          ],
+          "kind": "advanced",
+          "effect": "bravery_on_morale_check",
+          "minRarityRank": 4,
+          "value": 15,
+          "chance": null,
+          "ranges": {},
+          "kindText": {
+            "en": "Advanced",
+            "zh": "进阶"
+          },
+          "unlockText": {
+            "en": "Rare Equipment+",
+            "zh": "珍稀装备+"
+          },
+          "text": {
+            "en": {
+              "name": "War Rune",
+              "effect": "Resolve on morale checks",
+              "summary": "Resolve on morale checks +15"
+            },
+            "zh": {
+              "name": "战纹",
+              "effect": "士气检查决心",
+              "summary": "士气检查决心 +15"
+            }
+          }
+        },
+        {
+          "id": "living_plate",
+          "parts": [
+            "helmet",
+            "armor"
+          ],
+          "kind": "advanced",
+          "effect": "armor_regen",
+          "minRarityRank": 4,
+          "value": 15,
+          "chance": null,
+          "ranges": {},
+          "kindText": {
+            "en": "Advanced",
+            "zh": "进阶"
+          },
+          "unlockText": {
+            "en": "Rare Equipment+",
+            "zh": "珍稀装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Living Plate",
+              "effect": "Armor restored per turn",
+              "summary": "Armor restored per turn +15"
+            },
+            "zh": {
+              "name": "活甲",
+              "effect": "每回合恢复护甲",
+              "summary": "每回合恢复护甲 +15"
+            }
+          }
+        },
+        {
+          "id": "holy_wall",
+          "parts": [
+            "helmet",
+            "armor"
+          ],
+          "kind": "legendary",
+          "effect": "immune_stun_daze",
+          "minRarityRank": 5,
+          "value": null,
+          "chance": null,
+          "ranges": {},
+          "kindText": {
+            "en": "Legendary",
+            "zh": "传奇"
+          },
+          "unlockText": {
+            "en": "Named Equipment+",
+            "zh": "名品装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Holy Wall",
+              "effect": "Immune to stun and daze",
+              "summary": "Immune to stun and daze"
+            },
+            "zh": {
+              "name": "圣壁",
+              "effect": "免疫眩晕和恍惚",
+              "summary": "免疫眩晕和恍惚"
+            }
+          }
+        },
+        {
+          "id": "immovable",
+          "parts": [
+            "armor"
+          ],
+          "kind": "legendary",
+          "effect": "immune_movement",
+          "minRarityRank": 5,
+          "value": null,
+          "chance": null,
+          "ranges": {},
+          "kindText": {
+            "en": "Legendary",
+            "zh": "传奇"
+          },
+          "unlockText": {
+            "en": "Named Equipment+",
+            "zh": "名品装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Immovable",
+              "effect": "Immune to knockback, pulls, and roots",
+              "summary": "Immune to knockback, pulls, and roots"
+            },
+            "zh": {
+              "name": "不动",
+              "effect": "免疫击退/拉拽/定身",
+              "summary": "免疫击退/拉拽/定身"
+            }
+          }
+        },
+        {
+          "id": "iron_brow",
+          "parts": [
+            "helmet"
+          ],
+          "kind": "legendary",
+          "effect": "immune_headshot",
+          "minRarityRank": 5,
+          "value": null,
+          "chance": null,
+          "ranges": {},
+          "kindText": {
+            "en": "Legendary",
+            "zh": "传奇"
+          },
+          "unlockText": {
+            "en": "Named Equipment+",
+            "zh": "名品装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Iron Brow",
+              "effect": "Immune to head hits",
+              "summary": "Immune to head hits"
+            },
+            "zh": {
+              "name": "铁额",
+              "effect": "免疫爆头",
+              "summary": "免疫爆头"
+            }
+          }
+        },
+        {
+          "id": "blade_return",
+          "parts": [
+            "armor"
+          ],
+          "kind": "legendary",
+          "effect": "damage_reflect",
+          "minRarityRank": 5,
+          "value": 10,
+          "chance": null,
+          "ranges": {},
+          "kindText": {
+            "en": "Legendary",
+            "zh": "传奇"
+          },
+          "unlockText": {
+            "en": "Named Equipment+",
+            "zh": "名品装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Blade Return",
+              "effect": "Damage reflected",
+              "summary": "Damage reflected +10"
+            },
+            "zh": {
+              "name": "返刃",
+              "effect": "反弹伤害",
+              "summary": "反弹伤害 +10"
+            }
+          }
+        },
+        {
+          "id": "regeneration",
+          "parts": [
+            "armor"
+          ],
+          "kind": "legendary",
+          "effect": "hitpoint_regen",
+          "minRarityRank": 5,
+          "value": 5,
+          "chance": null,
+          "ranges": {},
+          "kindText": {
+            "en": "Legendary",
+            "zh": "传奇"
+          },
+          "unlockText": {
+            "en": "Named Equipment+",
+            "zh": "名品装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Regeneration",
+              "effect": "Hitpoints per turn",
+              "summary": "Hitpoints per turn +5"
+            },
+            "zh": {
+              "name": "再生",
+              "effect": "每回合生命",
+              "summary": "每回合生命 +5"
+            }
+          }
+        },
+        {
+          "id": "quiet_dream",
+          "parts": [
+            "helmet"
+          ],
+          "kind": "legendary",
+          "effect": "immune_sleep_charm_horror",
+          "minRarityRank": 5,
+          "value": null,
+          "chance": null,
+          "ranges": {},
+          "kindText": {
+            "en": "Legendary",
+            "zh": "传奇"
+          },
+          "unlockText": {
+            "en": "Named Equipment+",
+            "zh": "名品装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Quiet Dream",
+              "effect": "Immune to sleep, charm, and horror",
+              "summary": "Immune to sleep, charm, and horror"
+            },
+            "zh": {
+              "name": "静梦",
+              "effect": "免疫睡眠/魅惑/惊骇",
+              "summary": "免疫睡眠/魅惑/惊骇"
+            }
+          }
+        },
+        {
+          "id": "arrow_meet",
+          "parts": [
+            "shield"
+          ],
+          "kind": "advanced",
+          "effect": "ranged_damage_reduction",
+          "minRarityRank": 4,
+          "value": 15,
+          "chance": null,
+          "ranges": {},
+          "kindText": {
+            "en": "Advanced",
+            "zh": "进阶"
+          },
+          "unlockText": {
+            "en": "Rare Equipment+",
+            "zh": "珍稀装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Arrow Meet",
+              "effect": "Ranged damage",
+              "summary": "Ranged damage -15%"
+            },
+            "zh": {
+              "name": "迎矢",
+              "effect": "远程伤害",
+              "summary": "远程伤害 -15%"
+            }
+          }
+        },
+        {
+          "id": "holdfast",
+          "parts": [
+            "shield"
+          ],
+          "kind": "advanced",
+          "effect": "shieldwall_shield_damage_reduction",
+          "minRarityRank": 4,
+          "value": 50,
+          "chance": null,
+          "ranges": {},
+          "kindText": {
+            "en": "Advanced",
+            "zh": "进阶"
+          },
+          "unlockText": {
+            "en": "Rare Equipment+",
+            "zh": "珍稀装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Holdfast",
+              "effect": "Shield damage during Shieldwall",
+              "summary": "Shield damage during Shieldwall -50%"
+            },
+            "zh": {
+              "name": "固守",
+              "effect": "盾墙时盾伤",
+              "summary": "盾墙时盾伤 -50%"
+            }
+          }
+        },
+        {
+          "id": "golden_wall",
+          "parts": [
+            "shield"
+          ],
+          "kind": "legendary",
+          "effect": "shieldwall_extra_turn",
+          "minRarityRank": 5,
+          "value": null,
+          "chance": null,
+          "ranges": {},
+          "kindText": {
+            "en": "Legendary",
+            "zh": "传奇"
+          },
+          "unlockText": {
+            "en": "Named Equipment+",
+            "zh": "名品装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Golden Wall",
+              "effect": "Shieldwall +1 turn",
+              "summary": "Shieldwall +1 turn"
+            },
+            "zh": {
+              "name": "金城",
+              "effect": "盾墙+1回合",
+              "summary": "盾墙+1回合"
+            }
+          }
+        },
+        {
+          "id": "unbroken",
+          "parts": [
+            "shield"
+          ],
+          "kind": "legendary",
+          "effect": "shield_unbreakable",
+          "minRarityRank": 5,
+          "value": null,
+          "chance": null,
+          "ranges": {},
+          "kindText": {
+            "en": "Legendary",
+            "zh": "传奇"
+          },
+          "unlockText": {
+            "en": "Named Equipment+",
+            "zh": "名品装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Unbroken",
+              "effect": "Shield cannot break",
+              "summary": "Shield cannot break"
+            },
+            "zh": {
+              "name": "不碎",
+              "effect": "盾牌不破",
+              "summary": "盾牌不破"
+            }
+          }
+        },
+        {
+          "id": "shock_aegis",
+          "parts": [
+            "shield"
+          ],
+          "kind": "legendary",
+          "effect": "shield_hit_daze",
+          "minRarityRank": 5,
+          "value": null,
+          "chance": 35,
+          "ranges": {},
+          "kindText": {
+            "en": "Legendary",
+            "zh": "传奇"
+          },
+          "unlockText": {
+            "en": "Named Equipment+",
+            "zh": "名品装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Shock Aegis",
+              "effect": "Daze attacker when blocking melee",
+              "summary": "Daze attacker when blocking melee (35%)"
+            },
+            "zh": {
+              "name": "震慑",
+              "effect": "格挡近战使攻击者恍惚",
+              "summary": "格挡近战使攻击者恍惚 (35%)"
+            }
+          }
+        },
+        {
+          "id": "counter_guard",
+          "parts": [
+            "shield"
+          ],
+          "kind": "legendary",
+          "effect": "shield_counter_guard",
+          "minRarityRank": 5,
+          "value": null,
+          "chance": null,
+          "ranges": {},
+          "kindText": {
+            "en": "Legendary",
+            "zh": "传奇"
+          },
+          "unlockText": {
+            "en": "Named Equipment+",
+            "zh": "名品装备+"
+          },
+          "text": {
+            "en": {
+              "name": "Counter Guard",
+              "effect": "First block each turn restores 2 AP/10 fatigue",
+              "summary": "First block each turn restores 2 AP/10 fatigue"
+            },
+            "zh": {
+              "name": "反制",
+              "effect": "每回合首次格挡回2AP/10疲劳",
+              "summary": "每回合首次格挡回2AP/10疲劳"
+            }
+          }
+        }
+      ]
+    }
   },
   "valkyries": [
     {
@@ -253,12 +2912,11 @@ window.BV_WIKI_DATA = {
           "backgroundName": "Valkyrie Silver Wolf",
           "backgroundDescription": "Silver Wolf is a Stellaron Hunter and genius hacker who treats the universe like a game waiting to be cleared. Carefree and provocative on the surface, she can edit reality through aether hacking and still executes Elio's scripts with unnerving precision.",
           "traitName": "Silver Wolf Trait",
-          "traitDescription": "Silver Wolf's aether editing increases Melee Skill by 15, Ranged Skill by 15, Initiative by 30, and maximum Action Points by 6, but her own damage is reduced by 50%.",
+          "traitDescription": "Silver Wolf's aether editing increases Melee Skill by 15, Ranged Skill by 15, Initiative by 30, and maximum Action Points by 6.",
           "traitTooltip": [
             "Melee Skill +15.",
             "Ranged Skill +15.",
-            "Initiative +30 and maximum AP +6.",
-            "Damage dealt -50%."
+            "Initiative +30 and maximum AP +6."
           ]
         },
         "zh": {
@@ -266,12 +2924,11 @@ window.BV_WIKI_DATA = {
           "backgroundName": "女武神银狼",
           "backgroundDescription": "银狼是星核猎手成员兼天才黑客，把宇宙视为一场可被通关的游戏。她擅长以以太编辑改写现实，性格散漫挑衅，却总能在关键任务中精准执行艾利欧的剧本。",
           "traitName": "银狼特性",
-          "traitDescription": "银狼的以太编辑让她的近战技能提高 15，远程技能提高 15，主动值提高 30，最大行动点提高 6，但她自身造成的伤害降低 50%。",
+          "traitDescription": "银狼的以太编辑让她的近战技能提高 15，远程技能提高 15，主动值提高 30，最大行动点提高 6。",
           "traitTooltip": [
             "近战技能 +15。",
             "远程技能 +15。",
-            "主动值 +30，最大 AP +6。",
-            "自身造成的伤害 -50%。"
+            "主动值 +30，最大 AP +6。"
           ]
         }
       },

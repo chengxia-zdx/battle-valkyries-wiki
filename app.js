@@ -2,6 +2,7 @@
   "use strict";
 
   const data = window.BV_WIKI_DATA;
+  const downloadUrl = "https://www.nexusmods.com/battlebrothers/mods/1053";
 
   if (!data || !Array.isArray(data.valkyries)) {
     document.body.innerHTML = "<main class=\"empty-state\">Battle Valkyries wiki data is missing.</main>";
@@ -14,16 +15,20 @@
       navOverview: "Overview",
       navValkyries: "Valkyries",
       navMechanics: "Mechanics",
+      navSystems: "Systems",
       navSettings: "Settings",
+      navDownload: "Download",
       rosterEyebrow: "Roster",
       rosterTitle: "Valkyrie Index",
       searchPlaceholder: "Search Valkyries, traits, skills",
       overviewTitle: "A Battle Brothers roster wiki for summoned Valkyries",
       overviewBody: "Battle Valkyries adds a dedicated summon interface, custom skins, character traits, and two exclusive combat skills for each Valkyrie.",
+      downloadLabel: "Download on Nexus Mods",
+      downloadHint: "Latest public release and optional files are hosted on Nexus Mods.",
       metricValkyries: "Valkyries",
       metricSkills: "Exclusive skills",
       metricRoster: "Summon roster cap",
-      metricCost: "Summon cost range",
+      metricTotalCost: "Full roster total",
       selectedPrefix: "No.",
       idLabel: "ID",
       skinLabel: "Skin",
@@ -48,13 +53,36 @@
       settingDisabled: "Disabled",
       settingTypeBoolean: "Checkbox",
       settingVisualOnly: "This option only changes the Valkyrie appearance layer; the equipped weapon and shield remain equipped and still provide their combat effects.",
+      settingEquipmentLockNote: "This option is read once when a new campaign is created, then locked into that save.",
+      settingEquipmentBaselineNote: "The current wiki treats the equipment system as optional; core Valkyrie content does not assume it is enabled.",
       settingsScreenshot: "In-game Mod Settings screen",
       noSettings: "No player-facing mod settings are currently exposed.",
       rosterMax: "Roster cap",
       formationSlots: "Formation slots",
       combatSlots: "Combat slots",
+      totalSummonCost: "Full roster cost",
       costTableIndex: "Summon number",
       costTableCost: "Crowns",
+      systemsTitle: "Implemented Systems",
+      systemsUpdated: "Updated",
+      bondStageValue: "Bond",
+      bondStageName: "Stage",
+      bondEventTitle: "Event",
+      bondReward: "Reward",
+      equipmentRarity: "Rarity",
+      equipmentRank: "Rank",
+      equipmentAffixes: "Affix slots",
+      equipmentColor: "Color",
+      equipmentAffixTitle: "Affix Overview",
+      equipmentAffixName: "Affix",
+      equipmentAffixKind: "Type",
+      equipmentAffixParts: "Parts",
+      equipmentAffixUnlock: "Unlock",
+      equipmentAffixEffect: "Effect",
+      equipmentPartWeapon: "Weapon",
+      equipmentPartHelmet: "Helmet",
+      equipmentPartArmor: "Armor",
+      equipmentPartShield: "Shield",
       matrixTitle: "Skill Matrix",
       matrixName: "Valkyrie",
       matrixTrait: "Trait",
@@ -69,16 +97,20 @@
       navOverview: "总览",
       navValkyries: "女武神",
       navMechanics: "机制",
+      navSystems: "系统",
       navSettings: "配置",
+      navDownload: "下载",
       rosterEyebrow: "名册",
       rosterTitle: "女武神索引",
       searchPlaceholder: "搜索女武神、特性、技能",
       overviewTitle: "战场兄弟女武神召唤 Mod 百科",
       overviewBody: "Battle Valkyries 为战场兄弟加入专属召唤界面、角色皮肤、人物特性，以及每名女武神两项专属战斗技能。",
+      downloadLabel: "前往 Nexus Mods 下载",
+      downloadHint: "公开版本与可选文件发布在 Nexus Mods 页面。",
       metricValkyries: "名女武神",
       metricSkills: "项专属技能",
       metricRoster: "召唤名册上限",
-      metricCost: "召唤费用区间",
+      metricTotalCost: "完整名册总价",
       selectedPrefix: "序号",
       idLabel: "ID",
       skinLabel: "皮肤",
@@ -103,13 +135,36 @@
       settingDisabled: "关闭",
       settingTypeBoolean: "勾选项",
       settingVisualOnly: "该选项只影响女武神外观层；武器和盾牌仍然处于装备状态，并保留原本的战斗效果。",
+      settingEquipmentLockNote: "该选项只在新开战役时读取一次，之后会锁定到该存档内。",
+      settingEquipmentBaselineNote: "当前 wiki 将装备系统视为可选内容；女武神核心内容不默认假设它已开启。",
       settingsScreenshot: "游戏内 MOD 设置界面",
       noSettings: "当前没有公开给玩家调整的 MOD 配置项。",
       rosterMax: "名册上限",
       formationSlots: "阵型槽位",
       combatSlots: "战斗槽位",
+      totalSummonCost: "完整名册总价",
       costTableIndex: "召唤序号",
       costTableCost: "克朗",
+      systemsTitle: "已实现系统",
+      systemsUpdated: "更新时间",
+      bondStageValue: "羁绊",
+      bondStageName: "阶段",
+      bondEventTitle: "事件",
+      bondReward: "奖励",
+      equipmentRarity: "稀有度",
+      equipmentRank: "等级",
+      equipmentAffixes: "词条槽",
+      equipmentColor: "颜色",
+      equipmentAffixTitle: "词条一览",
+      equipmentAffixName: "词条",
+      equipmentAffixKind: "类型",
+      equipmentAffixParts: "部位",
+      equipmentAffixUnlock: "解锁",
+      equipmentAffixEffect: "效果",
+      equipmentPartWeapon: "武器",
+      equipmentPartHelmet: "头盔",
+      equipmentPartArmor: "盔甲",
+      equipmentPartShield: "盾牌",
       matrixTitle: "技能矩阵",
       matrixName: "女武神",
       matrixTrait: "特性",
@@ -128,6 +183,7 @@
     overview: document.getElementById("overview"),
     detail: document.getElementById("detail"),
     mechanics: document.getElementById("mechanics"),
+    systems: document.getElementById("systems"),
     settings: document.getElementById("settings"),
     matrix: document.getElementById("matrix"),
   };
@@ -188,6 +244,24 @@
     return value || fallback;
   }
 
+  function localizedArray(value) {
+    if (Array.isArray(value)) return value;
+    if (value && typeof value === "object") {
+      return value[state.lang] || value.en || [];
+    }
+
+    return [];
+  }
+
+  function totalSummonCost() {
+    let previousMax = 0;
+    return data.summon.costSteps.reduce((total, step) => {
+      const count = Math.max(0, step.max - previousMax);
+      previousMax = step.max;
+      return total + (count * step.cost);
+    }, 0);
+  }
+
   function settingText(setting) {
     return (setting.text && (setting.text[state.lang] || setting.text.en)) || {};
   }
@@ -244,14 +318,19 @@
 
   function renderOverview() {
     const first = selectedValkyrie();
-    const costMin = data.summon.costSteps[0]?.cost || 0;
-    const costMax = data.summon.costSteps[data.summon.costSteps.length - 1]?.cost || 0;
     refs.overview.innerHTML = `
       <div class="overview-hero">
         <div class="overview-copy">
           <p class="eyebrow">${escapeHtml(data.meta.source)}</p>
           <h2>${escapeHtml(t("overviewTitle"))}</h2>
           <p>${escapeHtml(t("overviewBody"))}</p>
+          <div class="download-row">
+            <a class="download-button" href="${escapeHtml(downloadUrl)}" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.2l3.6-3.6L17 11l-5 5-5-5 1.4-1.4 3.6 3.6V3h2Zm-7 15h14v2H5v-2Z"/></svg>
+              <span>${escapeHtml(t("downloadLabel"))}</span>
+            </a>
+            <span>${escapeHtml(t("downloadHint"))}</span>
+          </div>
         </div>
         <div class="overview-art">
           <img src="${escapeHtml(first.images.card)}" alt="${escapeHtml(textFor(first).name)}">
@@ -261,7 +340,7 @@
         <div class="metric"><strong>${data.valkyries.length}</strong><span>${escapeHtml(t("metricValkyries"))}</span></div>
         <div class="metric"><strong>${data.valkyries.length * 2}</strong><span>${escapeHtml(t("metricSkills"))}</span></div>
         <div class="metric"><strong>${data.summon.rosterMax}</strong><span>${escapeHtml(t("metricRoster"))}</span></div>
-        <div class="metric"><strong>${formatNumber(costMin)} - ${formatNumber(costMax)}</strong><span>${escapeHtml(t("metricCost"))}</span></div>
+        <div class="metric"><strong>${formatNumber(totalSummonCost())}</strong><span>${escapeHtml(t("metricTotalCost"))}</span></div>
       </div>
     `;
   }
@@ -414,6 +493,17 @@
         <td>${escapeHtml(formatNumber(step.cost))}</td>
       </tr>
     `).join("");
+    const mechanicCards = [
+      [t("rosterMax"), data.summon.rosterMax],
+      [t("formationSlots"), data.summon.formationSlots],
+      [t("combatSlots"), data.summon.combatSlots],
+      [t("totalSummonCost"), formatNumber(totalSummonCost())],
+    ].map(([label, value]) => `
+      <div class="mechanic-card">
+        <strong>${escapeHtml(value)}</strong>
+        <p>${escapeHtml(label)}</p>
+      </div>
+    `).join("");
 
     refs.mechanics.innerHTML = `
       <div class="section-title">
@@ -423,6 +513,7 @@
         </div>
       </div>
       <p>${escapeHtml(t("mechanicsBody"))}</p>
+      <div class="mechanic-grid">${mechanicCards}</div>
       <table class="cost-table">
         <thead><tr><th>${escapeHtml(t("costTableIndex"))}</th><th>${escapeHtml(t("costTableCost"))}</th></tr></thead>
         <tbody>${rows}</tbody>
@@ -430,9 +521,173 @@
     `;
   }
 
+  function renderBulletList(items) {
+    const bullets = localizedArray(items).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+    return bullets ? `<ul class="bullet-list">${bullets}</ul>` : "";
+  }
+
+  function renderSourceFiles(files) {
+    if (!Array.isArray(files) || files.length === 0) return "";
+    const items = files.map((file) => `<li>${escapeHtml(file)}</li>`).join("");
+    return `<ul class="source-list compact-source-list">${items}</ul>`;
+  }
+
+  function formatBondReward(stage) {
+    if (state.lang === "zh") {
+      return `${formatNumber(stage.rewardMoney)} 克朗，${formatNumber(stage.rewardPerkPoints)} 技能点`;
+    }
+
+    const perkLabel = stage.rewardPerkPoints === 1 ? "perk point" : "perk points";
+    return `${formatNumber(stage.rewardMoney)} Crowns, ${formatNumber(stage.rewardPerkPoints)} ${perkLabel}`;
+  }
+
+  function affixText(affix) {
+    return (affix.text && (affix.text[state.lang] || affix.text.en)) || {};
+  }
+
+  function affixPartLabel(part) {
+    const key = `equipmentPart${String(part || "").charAt(0).toUpperCase()}${String(part || "").slice(1)}`;
+    return t(key);
+  }
+
+  function renderAffixParts(parts) {
+    const items = Array.isArray(parts) ? parts : [];
+    return `<span class="part-list">${items.map((part) => `<span>${escapeHtml(affixPartLabel(part))}</span>`).join("")}</span>`;
+  }
+
+  function renderSystems() {
+    const systems = data.systems || {};
+    const cards = Array.isArray(systems.cards) ? systems.cards : [];
+    const systemCards = cards.map((card) => `
+      <div class="system-card">
+        <div>
+          <p class="skill-label">${escapeHtml(card.id || "")}</p>
+          <h3>${escapeHtml(localizedValue(card.title, card.id || ""))}</h3>
+        </div>
+        <p>${escapeHtml(localizedValue(card.body, ""))}</p>
+        ${renderBulletList(card.bullets)}
+        ${renderSourceFiles(card.sourceFiles)}
+      </div>
+    `).join("");
+    const bond = systems.bond || {};
+    const bondRows = Array.isArray(bond.stages) ? bond.stages.map((stage) => {
+      const txt = stage.text && (stage.text[state.lang] || stage.text.en) || {};
+      return `
+        <tr>
+          <td>${escapeHtml(stage.value)}</td>
+          <td>${escapeHtml(txt.stage || "")}</td>
+          <td>${escapeHtml(txt.eventTitle || "")}</td>
+          <td>${escapeHtml(formatBondReward(stage))}</td>
+        </tr>
+      `;
+    }).join("") : "";
+    const equipment = systems.equipment || {};
+    const rarityRows = Array.isArray(equipment.rarities) ? equipment.rarities.map((rarity) => {
+      const txt = rarity.text && (rarity.text[state.lang] || rarity.text.en) || {};
+      return `
+        <tr>
+          <td><span class="rarity-name"><span class="rarity-swatch" style="--rarity-color: ${escapeHtml(rarity.color)}"></span>${escapeHtml(txt.name || rarity.id)}</span></td>
+          <td>${escapeHtml(rarity.rank)}</td>
+          <td>${escapeHtml(rarity.affixCount)}</td>
+          <td><code>${escapeHtml(rarity.color)}</code></td>
+        </tr>
+      `;
+    }).join("") : "";
+    const affixRows = Array.isArray(equipment.affixes) ? equipment.affixes.map((affix) => {
+      const txt = affixText(affix);
+      return `
+        <tr>
+          <td>
+            <span class="affix-name">
+              <strong>${escapeHtml(txt.name || affix.id)}</strong>
+              <code>${escapeHtml(affix.id)}</code>
+            </span>
+          </td>
+          <td><span class="affix-kind affix-kind-${escapeHtml(affix.kind || "basic")}">${escapeHtml(localizedValue(affix.kindText, affix.kind || ""))}</span></td>
+          <td>${renderAffixParts(affix.parts)}</td>
+          <td>${escapeHtml(localizedValue(affix.unlockText, ""))}</td>
+          <td class="affix-summary">${escapeHtml(txt.summary || txt.effect || affix.effect || "")}</td>
+        </tr>
+      `;
+    }).join("") : "";
+
+    refs.systems.innerHTML = `
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">${escapeHtml(`${t("systemsUpdated")}: ${data.meta.updatedAt || ""}`)}</p>
+          <h2>${escapeHtml(t("systemsTitle"))}</h2>
+        </div>
+      </div>
+      <p>${escapeHtml(localizedValue(systems.intro, ""))}</p>
+      <p class="baseline-note">${escapeHtml(localizedValue(systems.baselineNote, ""))}</p>
+      <div class="system-grid">${systemCards}</div>
+      <div class="subsection-block">
+        <div>
+          <h3>${escapeHtml(localizedValue(bond.title, ""))}</h3>
+          <p>${escapeHtml(`${localizedValue(bond.item, "")}: +${bond.itemGain || 0}; ${t("bondStageValue")} ${bond.max || 0}`)}</p>
+        </div>
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th>${escapeHtml(t("bondStageValue"))}</th>
+              <th>${escapeHtml(t("bondStageName"))}</th>
+              <th>${escapeHtml(t("bondEventTitle"))}</th>
+              <th>${escapeHtml(t("bondReward"))}</th>
+            </tr>
+          </thead>
+          <tbody>${bondRows}</tbody>
+        </table>
+      </div>
+      <div class="subsection-block">
+        <div>
+          <h3>${escapeHtml(localizedValue(equipment.title, ""))}</h3>
+          <p>${escapeHtml(localizedValue(equipment.body, ""))}</p>
+          ${renderBulletList(equipment.rules)}
+        </div>
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th>${escapeHtml(t("equipmentRarity"))}</th>
+              <th>${escapeHtml(t("equipmentRank"))}</th>
+              <th>${escapeHtml(t("equipmentAffixes"))}</th>
+              <th>${escapeHtml(t("equipmentColor"))}</th>
+            </tr>
+          </thead>
+          <tbody>${rarityRows}</tbody>
+        </table>
+        <div class="affix-overview">
+          <h3>${escapeHtml(t("equipmentAffixTitle"))}</h3>
+          <p>${escapeHtml(localizedValue(equipment.affixIntro, ""))}</p>
+          <table class="matrix-table affix-table">
+            <thead>
+              <tr>
+                <th>${escapeHtml(t("equipmentAffixName"))}</th>
+                <th>${escapeHtml(t("equipmentAffixKind"))}</th>
+                <th>${escapeHtml(t("equipmentAffixParts"))}</th>
+                <th>${escapeHtml(t("equipmentAffixUnlock"))}</th>
+                <th>${escapeHtml(t("equipmentAffixEffect"))}</th>
+              </tr>
+            </thead>
+            <tbody>${affixRows}</tbody>
+          </table>
+        </div>
+      </div>
+    `;
+  }
+
   function renderSettingCard(setting) {
     const txt = settingText(setting);
     const defaultText = setting.default === true ? t("settingEnabled") : t("settingDisabled");
+    const notes = [];
+    if (setting.id === "HideWeapons") {
+      notes.push(t("settingVisualOnly"));
+    }
+    if (setting.id === "EnableEquipmentSystem") {
+      notes.push(t("settingEquipmentLockNote"), t("settingEquipmentBaselineNote"));
+    }
+    const noteList = notes.length > 0
+      ? `<ul class="bullet-list">${notes.map((note) => `<li>${escapeHtml(note)}</li>`).join("")}</ul>`
+      : "";
 
     return `
       <div class="settings-card">
@@ -447,9 +702,7 @@
           </div>
         </div>
         <p>${escapeHtml(txt.description || "")}</p>
-        <ul class="bullet-list">
-          <li>${escapeHtml(t("settingVisualOnly"))}</li>
-        </ul>
+        ${noteList}
       </div>
     `;
   }
@@ -527,6 +780,7 @@
     renderRoster();
     renderDetail();
     renderMechanics();
+    renderSystems();
     renderSettings();
     renderMatrix();
   }

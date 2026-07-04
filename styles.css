@@ -47,6 +47,10 @@ button {
   color: inherit;
 }
 
+a {
+  color: inherit;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -129,9 +133,11 @@ img {
   gap: 8px;
   padding: 0 12px;
   color: var(--muted);
+  text-decoration: none;
 }
 
 .nav-button:hover,
+.nav-button:focus-visible,
 .language-toggle button:hover,
 .language-toggle button.is-active {
   color: var(--text);
@@ -140,11 +146,16 @@ img {
 }
 
 .nav-button svg,
-.search-box svg {
+.search-box svg,
+.download-button svg {
   width: 18px;
   height: 18px;
   flex: 0 0 auto;
   fill: currentColor;
+}
+
+.nav-download {
+  color: var(--gold-2);
 }
 
 .header-actions {
@@ -345,6 +356,7 @@ img {
 .overview-section,
 .detail-section,
 .mechanics-section,
+.systems-section,
 .settings-section,
 .matrix-section {
   min-width: 0;
@@ -355,6 +367,7 @@ img {
 .overview-section,
 .detail-section,
 .mechanics-section,
+.systems-section,
 .settings-section,
 .matrix-section {
   background: rgba(24, 23, 20, 0.86);
@@ -391,6 +404,43 @@ img {
   margin: 0;
   color: var(--muted);
   line-height: 1.7;
+}
+
+.download-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.download-row > span {
+  max-width: 420px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 16px;
+  color: #15120c;
+  text-decoration: none;
+  border: 1px solid rgba(241, 201, 106, 0.72);
+  border-radius: 6px;
+  background: linear-gradient(180deg, var(--gold-2), var(--gold));
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+  font-weight: 800;
+}
+
+.download-button:hover,
+.download-button:focus-visible {
+  color: #15120c;
+  filter: brightness(1.08);
 }
 
 .overview-art {
@@ -678,12 +728,14 @@ img {
 }
 
 .mechanics-section,
+.systems-section,
 .settings-section,
 .matrix-section {
   padding: 24px;
 }
 
 .mechanics-section > p,
+.systems-section > p,
 .settings-section > p {
   margin: 10px 0 0;
   color: var(--muted);
@@ -704,6 +756,141 @@ img {
 .mechanic-card strong {
   display: block;
   font-size: 1.38rem;
+}
+
+.baseline-note {
+  padding: 12px 14px;
+  border: 1px solid rgba(99, 169, 154, 0.28);
+  border-radius: 8px;
+  background: rgba(23, 53, 48, 0.28);
+}
+
+.system-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.system-card {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid rgba(216, 170, 82, 0.2);
+  border-radius: 8px;
+  background: rgba(17, 16, 14, 0.64);
+}
+
+.system-card h3,
+.subsection-block h3 {
+  margin: 0;
+  font-size: 1.08rem;
+}
+
+.system-card p,
+.subsection-block p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.62;
+}
+
+.subsection-block {
+  min-width: 0;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.compact-source-list {
+  margin-top: 12px;
+}
+
+.rarity-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+  font-weight: 800;
+}
+
+.rarity-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--rarity-color);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
+
+.affix-overview {
+  margin-top: 18px;
+}
+
+.affix-name {
+  display: grid;
+  gap: 4px;
+  min-width: 120px;
+}
+
+.affix-name code {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.affix-kind {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 3px 8px;
+  border: 1px solid rgba(216, 170, 82, 0.25);
+  border-radius: 999px;
+  color: var(--gold-2);
+  background: rgba(216, 170, 82, 0.1);
+  font-size: 0.78rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.affix-kind-advanced {
+  border-color: rgba(155, 77, 255, 0.34);
+  color: #c9a8ff;
+  background: rgba(155, 77, 255, 0.12);
+}
+
+.affix-kind-legendary {
+  border-color: rgba(255, 107, 95, 0.34);
+  color: #ffb2aa;
+  background: rgba(255, 107, 95, 0.12);
+}
+
+.part-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 136px;
+}
+
+.part-list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 2px 7px;
+  border: 1px solid rgba(99, 169, 154, 0.26);
+  border-radius: 999px;
+  color: var(--text);
+  background: rgba(99, 169, 154, 0.1);
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.affix-summary {
+  min-width: 240px;
+  line-height: 1.5;
+}
+
+code {
+  color: var(--gold-2);
+  font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
 }
 
 .settings-path {
@@ -970,6 +1157,7 @@ img {
   .detail-header,
   .detail-body,
   .mechanics-section,
+  .systems-section,
   .settings-section,
   .matrix-section {
     padding: 18px;
@@ -981,6 +1169,7 @@ img {
   }
 
   .skills-grid,
+  .system-grid,
   .stat-grid,
   .metric-grid,
   .mechanic-grid,
