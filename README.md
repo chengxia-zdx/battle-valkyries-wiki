@@ -1,6 +1,6 @@
 # Battle Valkyries Wiki
 
-Static bilingual wiki for the `battle-valkyries` Battle Brothers mod.
+Static bilingual wiki for the Battle Valkyries and Alchemy & Enchantment Battle Brothers mods.
 
 ## Tech Stack
 
@@ -14,10 +14,22 @@ Static bilingual wiki for the `battle-valkyries` Battle Brothers mod.
 From this repository:
 
 ```powershell
-node tools\extract-wiki-data.mjs F:\code\battle-valkyries
+npm run refresh
 ```
 
-The extractor reads the mod configuration, i18n dictionaries, summon hook, and image assets, then regenerates `data/wiki-data.js` and `assets/`.
+The extractor reads the current source tree for both mods, including Valkyrie and Lily configuration, skills, skins, summoning rules, and the complete equipment rarity and affix catalog. It regenerates `data/wiki-data.js` and the local `assets/` tree.
+
+To use a mod checkout in another location, pass it directly:
+
+```powershell
+node tools\extract-wiki-data.mjs D:\path\to\battle-valkyries
+```
+
+Verify the generated counts and every referenced asset with:
+
+```powershell
+npm run check
+```
 
 ## Local Preview
 

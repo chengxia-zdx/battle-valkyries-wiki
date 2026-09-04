@@ -307,6 +307,12 @@ img {
   background: rgba(58, 49, 38, 0.92);
 }
 
+.roster-card > span {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+}
+
 .roster-thumb {
   width: 64px;
   height: 62px;
@@ -318,6 +324,7 @@ img {
 }
 
 .roster-name {
+  display: block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -325,6 +332,7 @@ img {
 }
 
 .roster-sub {
+  display: block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -357,6 +365,7 @@ img {
 .detail-section,
 .mechanics-section,
 .systems-section,
+.alchemy-section,
 .settings-section,
 .matrix-section {
   min-width: 0;
@@ -368,6 +377,7 @@ img {
 .detail-section,
 .mechanics-section,
 .systems-section,
+.alchemy-section,
 .settings-section,
 .matrix-section {
   background: rgba(24, 23, 20, 0.86);
@@ -404,6 +414,15 @@ img {
   margin: 0;
   color: var(--muted);
   line-height: 1.7;
+}
+
+.source-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 16px;
+  color: var(--soft);
+  font-size: 0.82rem;
 }
 
 .download-row {
@@ -687,6 +706,69 @@ img {
   gap: 14px;
 }
 
+.skills-grid-all {
+  align-items: start;
+}
+
+.skin-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+}
+
+.skin-card {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(216, 170, 82, 0.2);
+  border-radius: 8px;
+  background: rgba(17, 16, 14, 0.64);
+}
+
+.skin-card > div {
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+  background: #0b0a08;
+}
+
+.skin-card-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.skin-card-preview {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 72px;
+  height: 96px;
+  object-fit: contain;
+  background: rgba(8, 8, 7, 0.82);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+}
+
+.skin-card figcaption {
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.skin-card figcaption strong {
+  color: var(--text);
+  font-size: 0.92rem;
+}
+
+.skin-card figcaption span {
+  margin-top: 4px;
+  line-height: 1.45;
+}
+
 .skill-card {
   display: grid;
   grid-template-columns: 64px minmax(0, 1fr);
@@ -729,6 +811,7 @@ img {
 
 .mechanics-section,
 .systems-section,
+.alchemy-section,
 .settings-section,
 .matrix-section {
   padding: 24px;
@@ -736,6 +819,7 @@ img {
 
 .mechanics-section > p,
 .systems-section > p,
+.alchemy-section > p,
 .settings-section > p {
   margin: 10px 0 0;
   color: var(--muted);
@@ -744,7 +828,7 @@ img {
 
 .mechanic-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
   margin-top: 16px;
 }
@@ -791,6 +875,63 @@ img {
   margin: 10px 0 0;
   color: var(--muted);
   line-height: 1.62;
+}
+
+.source-details {
+  margin-top: 14px;
+  color: var(--soft);
+  font-size: 0.82rem;
+}
+
+.source-details summary {
+  cursor: pointer;
+  color: var(--gold-2);
+}
+
+.table-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+  margin-top: 18px;
+}
+
+.table-pair > *,
+.subsection-block {
+  min-width: 0;
+}
+
+.table-pair h3,
+.operation-grid h4 {
+  margin: 0;
+}
+
+.operation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.operation-grid article {
+  padding: 15px;
+  border: 1px solid rgba(216, 170, 82, 0.2);
+  border-radius: 8px;
+  background: rgba(17, 16, 14, 0.64);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 5px 10px;
+  color: #ffb2aa;
+  border: 1px solid rgba(255, 107, 95, 0.34);
+  border-radius: 999px;
+  background: rgba(255, 107, 95, 0.1);
+  font-size: 0.82rem;
+  font-weight: 800;
+  white-space: nowrap;
 }
 
 .subsection-block {
@@ -860,6 +1001,12 @@ img {
   border-color: rgba(255, 107, 95, 0.34);
   color: #ffb2aa;
   background: rgba(255, 107, 95, 0.12);
+}
+
+.affix-kind-mythic {
+  border-color: rgba(255, 211, 111, 0.48);
+  color: #ffe5a6;
+  background: linear-gradient(100deg, rgba(155, 77, 255, 0.16), rgba(255, 107, 95, 0.13), rgba(255, 211, 111, 0.15));
 }
 
 .part-list {
@@ -985,6 +1132,7 @@ code {
 .cost-table,
 .matrix-table {
   width: 100%;
+  max-width: 100%;
   border-collapse: collapse;
   margin-top: 16px;
   overflow: hidden;
@@ -1017,10 +1165,21 @@ code {
   background: rgba(255, 255, 255, 0.035);
 }
 
+.table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
 .table-name {
   min-width: 170px;
   color: var(--text);
   font-weight: 800;
+}
+
+.table-name a {
+  color: var(--text);
+  text-decoration-color: rgba(216, 170, 82, 0.45);
+  text-underline-offset: 3px;
 }
 
 .mini-skill {
@@ -1028,6 +1187,13 @@ code {
   align-items: center;
   gap: 8px;
   color: var(--text);
+}
+
+.matrix-skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  min-width: 360px;
 }
 
 .mini-skill img {
@@ -1094,7 +1260,8 @@ code {
 
   .metric-grid,
   .stat-grid,
-  .mechanic-grid {
+  .mechanic-grid,
+  .table-pair {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -1158,6 +1325,7 @@ code {
   .detail-body,
   .mechanics-section,
   .systems-section,
+  .alchemy-section,
   .settings-section,
   .matrix-section {
     padding: 18px;
@@ -1173,6 +1341,8 @@ code {
   .stat-grid,
   .metric-grid,
   .mechanic-grid,
+  .table-pair,
+  .operation-grid,
   .settings-layout {
     grid-template-columns: 1fr;
   }

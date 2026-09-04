@@ -3,202 +3,62 @@
 
   const data = window.BV_WIKI_DATA;
   const downloadUrl = "https://www.nexusmods.com/battlebrothers/mods/1053";
-
   if (!data || !Array.isArray(data.valkyries)) {
-    document.body.innerHTML = "<main class=\"empty-state\">Battle Valkyries wiki data is missing.</main>";
+    document.body.innerHTML = '<main class="empty-state">Battle Valkyries wiki data is missing.</main>';
     return;
   }
 
   const copy = {
     en: {
-      brandSub: "Mod Wiki",
-      navOverview: "Overview",
-      navValkyries: "Valkyries",
-      navMechanics: "Mechanics",
-      navSystems: "Systems",
-      navSettings: "Settings",
-      navDownload: "Download",
-      rosterEyebrow: "Roster",
-      rosterTitle: "Valkyrie Index",
-      searchPlaceholder: "Search Valkyries, traits, skills",
-      overviewTitle: "A Battle Brothers roster wiki for summoned Valkyries",
-      overviewBody: "Battle Valkyries adds a dedicated summon interface, custom skins, character traits, and two exclusive combat skills for each Valkyrie.",
-      downloadLabel: "Download on Nexus Mods",
-      downloadHint: "Latest public release and optional files are hosted on Nexus Mods.",
-      metricValkyries: "Valkyries",
-      metricSkills: "Exclusive skills",
-      metricRoster: "Summon roster cap",
-      metricTotalCost: "Full roster total",
-      selectedPrefix: "No.",
-      idLabel: "ID",
-      skinLabel: "Skin",
-      wageLabel: "Daily wage",
-      levelLabel: "Level",
-      summonArt: "Summon art",
-      skinArt: "Skin art",
-      backgroundTitle: "Background",
-      statsTitle: "Base Attributes",
-      talentsTitle: "Talent Stars",
-      traitTitle: "Character Trait",
-      passiveTitle: "Passive Skill",
-      activeTitle: "Active Skill",
-      traitBonuses: "Trait bonuses",
-      mechanicsTitle: "Summon Mechanics",
-      mechanicsBody: "The in-game hub summons one Valkyrie at a time, scales crown cost by the next summoned count, and keeps Valkyries inside a dedicated roster ceiling.",
-      settingsTitle: "Mod Settings",
-      settingsBody: "Battle Valkyries settings are available from MSU's Mod Settings menu. Choose Battle Valkyries, open the Valkyries page, then review the options under Summon System.",
-      settingsPathLabel: "Path",
-      settingDefault: "Default",
-      settingEnabled: "Enabled",
-      settingDisabled: "Disabled",
-      settingTypeBoolean: "Checkbox",
-      settingVisualOnly: "This option only changes the Valkyrie appearance layer; the equipped weapon and shield remain equipped and still provide their combat effects.",
-      settingEquipmentLockNote: "This option is read once when a new campaign is created, then locked into that save.",
-      settingEquipmentBaselineNote: "The current wiki treats the equipment system as optional; core Valkyrie content does not assume it is enabled.",
-      settingsScreenshot: "In-game Mod Settings screen",
-      noSettings: "No player-facing mod settings are currently exposed.",
-      rosterMax: "Roster cap",
-      formationSlots: "Formation slots",
-      combatSlots: "Combat slots",
-      totalSummonCost: "Full roster cost",
-      costTableIndex: "Summon number",
-      costTableCost: "Crowns",
-      systemsTitle: "Implemented Systems",
-      systemsUpdated: "Updated",
-      bondStageValue: "Bond",
-      bondStageName: "Stage",
-      bondEventTitle: "Event",
-      bondReward: "Reward",
-      equipmentRarity: "Rarity",
-      equipmentRank: "Rank",
-      equipmentAffixes: "Affix slots",
-      equipmentColor: "Color",
-      equipmentAffixTitle: "Affix Overview",
-      equipmentAffixName: "Affix",
-      equipmentAffixKind: "Type",
-      equipmentAffixParts: "Parts",
-      equipmentAffixUnlock: "Unlock",
-      equipmentAffixEffect: "Effect",
-      equipmentPartWeapon: "Weapon",
-      equipmentPartHelmet: "Helmet",
-      equipmentPartArmor: "Armor",
-      equipmentPartShield: "Shield",
-      matrixTitle: "Skill Matrix",
-      matrixName: "Valkyrie",
-      matrixTrait: "Trait",
-      matrixPassive: "Passive",
-      matrixActive: "Active",
-      sourceTitle: "Source files",
-      sourceBody: "Generated from the mod configuration, summon hook, i18n dictionaries, and bundled UI art.",
-      noResults: "No Valkyries match the current search.",
+      brandSub: "Source-driven Mod Wiki", navOverview: "Overview", navValkyries: "Valkyries", navMechanics: "Summoning", navSystems: "Systems", navAlchemy: "Alchemy", navSettings: "Settings", navDownload: "Download",
+      rosterEyebrow: "Current roster", rosterTitle: "Valkyrie Index", searchPlaceholder: "Search names, traits, and skills", overviewTitle: "The current Battle Valkyries reference", overviewBody: "A bilingual wiki generated from the latest local source tree, covering every built-in Valkyrie, full skill loadouts, summoning, progression systems, and the standalone Alchemy & Enchantment mod.",
+      downloadLabel: "Download on Nexus Mods", downloadHint: "Public releases and optional files are hosted on Nexus Mods.", metricValkyries: "built-in Valkyries", metricSkills: "loadout skills", metricSkins: "selectable skins", metricAffixes: "equipment affixes",
+      sourceRevision: "Source revision", updated: "Generated", selectedPrefix: "No.", idLabel: "ID", wageLabel: "Daily wage", levelLabel: "Level", profileLabel: "Legends profile", layoutLabel: "Detail layout", skinsLabel: "Skins", skillsLabel: "Skills", summonArt: "Summon art", skinArt: "Battlefield preview", statsTitle: "Base Attributes", talentsTitle: "Talent Stars", traitTitle: "Character Trait", skillsTitle: "Complete Loadout", passiveTitle: "Passive", activeTitle: "Active", transientTitle: "Transient", skinCollection: "Skin Collection", traitBonuses: "Trait bonuses",
+      mechanicsTitle: "Summoning & Gacha", mechanicsBody: "There are more available Valkyries than the active roster cap. Direct summoning follows the Crown cost ladder; gacha mode is enabled by default and uses a four-pull target guarantee.", rosterMax: "Roster cap", formationSlots: "Formation slots", combatSlots: "Combat slots", availableRoster: "Available Valkyries", directCosts: "Direct summon costs", summonNumber: "Summon number", crowns: "Crowns", gachaCosts: "Gacha costs", completedGuarantees: "Completed guarantees", guaranteeProgress: "Target guarantee", pulls: "pulls",
+      systemsTitle: "Implemented Systems", systemsBody: "These are implemented code paths in the current source tree, not roadmap items.", sourceFiles: "Source files",
+      alchemyTitle: "Alchemy & Enchantment", optionalStandalone: "Optional standalone mod", defaultOff: "Disabled by default", alchemyBody: "The equipment system is packaged separately from Battle Valkyries. Its setting is read for a new campaign and should remain stable for that save.", rarityTitle: "Rarity & slots", rarity: "Rarity", rank: "Rank", affixSlots: "Affix slots", color: "Color", workflowsTitle: "Workshop operations", enchant: "Enchant", enchantBody: "Spend 100 Crowns and one enchantment stone. Add a non-duplicate affix while a slot is open; otherwise replace the final affix.", removeAffix: "Remove affix", removeAffixBody: "Spend 100 Crowns and one removal stone to delete any removable affix.", reforge: "Quality reforge", reforgeBody: "Upgrade white to green, green to blue, or blue to purple. The item stays the same, but all affixes are rerolled.", disassemble: "Disassemble", disassembleBody: "Destroy eligible unlocked equipment for enchantment stones and a chance at a removal stone. Batch mode validates the entire selection first.", reforgeTable: "Reforge recipes", from: "From", to: "To", materials: "Materials", cost: "Cost", disassembleTable: "Disassembly yields", stoneYield: "Stone yield", removalChance: "Removal-stone chance", affixTitle: "All affixes", affixIntro: "Values and availability below are generated from equipment_data.nut. Basic affixes show the lowest and highest tier values; special affixes use their implemented effect text.", affixName: "Affix", affixKind: "Type", affixParts: "Parts", affixUnlock: "Unlock", affixEffect: "Effect", partWeapon: "Weapon", partHelmet: "Helmet", partArmor: "Armor", partShield: "Shield",
+      settingsTitle: "Battle Valkyries Settings", settingsBody: "Player-facing options in MSU Mod Settings. Debug switches that are commented out in source are intentionally omitted.", settingDefault: "Default", enabled: "Enabled", disabled: "Disabled", settingType: "Checkbox", noSettings: "No player-facing settings.", settingHideWeaponsNote: "Visual only: equipment remains equipped and keeps its combat effects.", settingGachaNote: "When enabled, direct summoning is disabled and the gacha panel is used instead.", settingScalingNote: "Controls the optional enemy scaling path for Valkyrie encounters.",
+      matrixTitle: "Roster Skill Matrix", matrixName: "Valkyrie", matrixTrait: "Trait", matrixSkills: "Loadout", noResults: "No Valkyries match this search.", noTooltip: "See the in-game tooltip for runtime details.",
     },
     zh: {
-      brandSub: "Mod 百科",
-      navOverview: "总览",
-      navValkyries: "女武神",
-      navMechanics: "机制",
-      navSystems: "系统",
-      navSettings: "配置",
-      navDownload: "下载",
-      rosterEyebrow: "名册",
-      rosterTitle: "女武神索引",
-      searchPlaceholder: "搜索女武神、特性、技能",
-      overviewTitle: "战场兄弟女武神召唤 Mod 百科",
-      overviewBody: "Battle Valkyries 为战场兄弟加入专属召唤界面、角色皮肤、人物特性，以及每名女武神两项专属战斗技能。",
-      downloadLabel: "前往 Nexus Mods 下载",
-      downloadHint: "公开版本与可选文件发布在 Nexus Mods 页面。",
-      metricValkyries: "名女武神",
-      metricSkills: "项专属技能",
-      metricRoster: "召唤名册上限",
-      metricTotalCost: "完整名册总价",
-      selectedPrefix: "序号",
-      idLabel: "ID",
-      skinLabel: "皮肤",
-      wageLabel: "日薪",
-      levelLabel: "等级",
-      summonArt: "召唤立绘",
-      skinArt: "皮肤立绘",
-      backgroundTitle: "背景",
-      statsTitle: "基础属性",
-      talentsTitle: "天赋星级",
-      traitTitle: "人物特性",
-      passiveTitle: "被动技能",
-      activeTitle: "主动技能",
-      traitBonuses: "特性加成",
-      mechanicsTitle: "召唤机制",
-      mechanicsBody: "游戏内女武神界面每次召唤一名角色，费用按下一名已召唤序号递增，并使用专门的名册上限控制。",
-      settingsTitle: "MOD 配置",
-      settingsBody: "Battle Valkyries 的玩家配置位于 MSU 的 Mod Settings 菜单中。选择 Battle Valkyries，进入 Valkyries 页面，即可在 Summon System 下查看当前选项。",
-      settingsPathLabel: "路径",
-      settingDefault: "默认",
-      settingEnabled: "开启",
-      settingDisabled: "关闭",
-      settingTypeBoolean: "勾选项",
-      settingVisualOnly: "该选项只影响女武神外观层；武器和盾牌仍然处于装备状态，并保留原本的战斗效果。",
-      settingEquipmentLockNote: "该选项只在新开战役时读取一次，之后会锁定到该存档内。",
-      settingEquipmentBaselineNote: "当前 wiki 将装备系统视为可选内容；女武神核心内容不默认假设它已开启。",
-      settingsScreenshot: "游戏内 MOD 设置界面",
-      noSettings: "当前没有公开给玩家调整的 MOD 配置项。",
-      rosterMax: "名册上限",
-      formationSlots: "阵型槽位",
-      combatSlots: "战斗槽位",
-      totalSummonCost: "完整名册总价",
-      costTableIndex: "召唤序号",
-      costTableCost: "克朗",
-      systemsTitle: "已实现系统",
-      systemsUpdated: "更新时间",
-      bondStageValue: "羁绊",
-      bondStageName: "阶段",
-      bondEventTitle: "事件",
-      bondReward: "奖励",
-      equipmentRarity: "稀有度",
-      equipmentRank: "等级",
-      equipmentAffixes: "词条槽",
-      equipmentColor: "颜色",
-      equipmentAffixTitle: "词条一览",
-      equipmentAffixName: "词条",
-      equipmentAffixKind: "类型",
-      equipmentAffixParts: "部位",
-      equipmentAffixUnlock: "解锁",
-      equipmentAffixEffect: "效果",
-      equipmentPartWeapon: "武器",
-      equipmentPartHelmet: "头盔",
-      equipmentPartArmor: "盔甲",
-      equipmentPartShield: "盾牌",
-      matrixTitle: "技能矩阵",
-      matrixName: "女武神",
-      matrixTrait: "特性",
-      matrixPassive: "被动",
-      matrixActive: "主动",
-      sourceTitle: "数据来源",
-      sourceBody: "由 mod 配置、召唤 hook、i18n 字典和内置 UI 美术生成。",
-      noResults: "当前搜索没有匹配的女武神。",
+      brandSub: "源码驱动 Mod 百科", navOverview: "总览", navValkyries: "女武神", navMechanics: "召唤", navSystems: "系统", navAlchemy: "附魔炼金", navSettings: "设置", navDownload: "下载",
+      rosterEyebrow: "当前名册", rosterTitle: "女武神索引", searchPlaceholder: "搜索角色、特性与技能", overviewTitle: "最新 Battle Valkyries 内容百科", overviewBody: "这是一份从当前本地源码直接生成的双语 Wiki，覆盖全部内置女武神、完整技能编成、召唤与养成系统，以及独立的附魔炼金模组。",
+      downloadLabel: "前往 Nexus Mods 下载", downloadHint: "公开版本与可选文件发布在 Nexus Mods 页面。", metricValkyries: "名内置女武神", metricSkills: "项编成技能", metricSkins: "套可选皮肤", metricAffixes: "条装备词条",
+      sourceRevision: "源码版本", updated: "生成日期", selectedPrefix: "序号", idLabel: "ID", wageLabel: "日薪", levelLabel: "等级", profileLabel: "Legends 定位", layoutLabel: "详情页布局", skinsLabel: "皮肤", skillsLabel: "技能", summonArt: "召唤立绘", skinArt: "战场预览", statsTitle: "基础属性", talentsTitle: "天赋星级", traitTitle: "人物特性", skillsTitle: "完整技能编成", passiveTitle: "被动", activeTitle: "主动", transientTitle: "临时", skinCollection: "皮肤收藏", traitBonuses: "特性加成",
+      mechanicsTitle: "召唤与抽卡", mechanicsBody: "可选女武神数量已经超过实际名册上限。直接召唤按克朗阶梯计价；抽卡模式默认开启，并使用四抽定向保底。", rosterMax: "名册上限", formationSlots: "阵型槽位", combatSlots: "战斗槽位", availableRoster: "可选女武神", directCosts: "直接召唤费用", summonNumber: "召唤序号", crowns: "克朗", gachaCosts: "抽卡费用", completedGuarantees: "已完成保底", guaranteeProgress: "定向保底", pulls: "抽",
+      systemsTitle: "已实现系统", systemsBody: "以下内容均来自当前源码中的已实现路径，不包含仅停留在规划阶段的功能。", sourceFiles: "对应源码",
+      alchemyTitle: "附魔炼金系统", optionalStandalone: "独立可选模组", defaultOff: "默认关闭", alchemyBody: "装备系统已从 Battle Valkyries 拆成独立包。开关在新战役创建时读取，此后应在该存档中保持不变。", rarityTitle: "品质与词条槽", rarity: "品质", rank: "等级", affixSlots: "词条槽", color: "颜色", workflowsTitle: "炼金操作", enchant: "附魔", enchantBody: "消耗 100 克朗与 1 个所选等级附魔石。有空位时添加不重复词条，词条已满时替换最后一条。", removeAffix: "移除词条", removeAffixBody: "消耗 100 克朗与 1 个消除石，可删除任意可移除词条。", reforge: "品质重铸", reforgeBody: "可将白升绿、绿升蓝、蓝升紫。保留原装备实例，但重新生成全部词条。", disassemble: "拆解", disassembleBody: "销毁符合条件且未锁定的装备，获得附魔石并有概率得到消除石。批量模式会先统一校验全部选择。", reforgeTable: "重铸配方", from: "原品质", to: "目标品质", materials: "材料", cost: "费用", disassembleTable: "拆解产出", stoneYield: "附魔石数量", removalChance: "消除石概率", affixTitle: "全部词条", affixIntro: "下列数值与解锁条件直接由 equipment_data.nut 生成。基础词条显示最低/最高词条等级数值，特殊词条显示当前实现效果。", affixName: "词条", affixKind: "类型", affixParts: "部位", affixUnlock: "解锁", affixEffect: "效果", partWeapon: "武器", partHelmet: "头盔", partArmor: "铠甲", partShield: "盾牌",
+      settingsTitle: "Battle Valkyries 设置", settingsBody: "以下是 MSU Mod Settings 中真实开放给玩家的选项；源码中已注释的调试开关不会列入。", settingDefault: "默认", enabled: "开启", disabled: "关闭", settingType: "勾选项", noSettings: "当前没有玩家设置。", settingHideWeaponsNote: "仅影响外观；装备仍然生效并保留战斗效果。", settingGachaNote: "开启后禁用直接召唤，改用抽卡面板。", settingScalingNote: "控制女武神遭遇中的可选敌人强度缩放逻辑。",
+      matrixTitle: "名册技能矩阵", matrixName: "女武神", matrixTrait: "特性", matrixSkills: "技能编成", noResults: "没有匹配当前搜索的女武神。", noTooltip: "运行期细节请以游戏内 Tooltip 为准。",
     },
   };
 
   const refs = {
-    search: document.getElementById("searchInput"),
-    rosterList: document.getElementById("rosterList"),
-    rosterCount: document.getElementById("rosterCount"),
-    overview: document.getElementById("overview"),
-    detail: document.getElementById("detail"),
-    mechanics: document.getElementById("mechanics"),
-    systems: document.getElementById("systems"),
-    settings: document.getElementById("settings"),
-    matrix: document.getElementById("matrix"),
+    search: document.getElementById("searchInput"), rosterList: document.getElementById("rosterList"), rosterCount: document.getElementById("rosterCount"), overview: document.getElementById("overview"), detail: document.getElementById("detail"), mechanics: document.getElementById("mechanics"), systems: document.getElementById("systems"), alchemy: document.getElementById("alchemy"), settings: document.getElementById("settings"), matrix: document.getElementById("matrix"),
   };
 
-  function normalizeLang(value) {
-    const lang = String(value || "").toLowerCase().replace("_", "-");
-    if (lang === "cn" || lang.startsWith("zh")) return "zh";
-    if (lang.startsWith("en")) return "en";
-    return "";
-  }
+  const normalizeLang = (value) => String(value || "").toLowerCase().replace("_", "-").startsWith("zh") ? "zh" : String(value || "").toLowerCase().startsWith("en") ? "en" : "";
+  const params = new URLSearchParams(window.location.search);
+  const requestedLang = normalizeLang(params.get("lang") || params.get("language"));
+  const hashId = decodeURIComponent(window.location.hash.replace(/^#/, ""));
+  const state = {
+    lang: requestedLang || normalizeLang(navigator.language) || "zh",
+    selectedId: data.valkyries.some((item) => item.id === hashId) ? hashId : data.valkyries[0].id,
+    query: "",
+  };
 
-  function getUrlLang() {
-    const params = new URLSearchParams(window.location.search);
-    return normalizeLang(params.get("lang") || params.get("language"));
-  }
+  const t = (key) => copy[state.lang][key] || copy.en[key] || key;
+  const escapeHtml = (value) => String(value ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  const localizedValue = (value, fallback = "") => value && typeof value === "object" ? (value[state.lang] || value.en || fallback) : (value || fallback);
+  const localizedArray = (value) => Array.isArray(value) ? value : value && typeof value === "object" ? (value[state.lang] || value.en || []) : [];
+  const textFor = (item) => item.text?.[state.lang] || item.text?.en || {};
+  const formatNumber = (value) => new Intl.NumberFormat(state.lang === "zh" ? "zh-CN" : "en-US").format(value);
+  const selectedValkyrie = () => data.valkyries.find((item) => item.id === state.selectedId) || data.valkyries[0];
+  const totalSkills = () => data.valkyries.reduce((total, item) => total + item.skills.length, 0);
+  const totalSkins = () => data.valkyries.reduce((total, item) => total + item.skins.length, 0);
+  const statLabel = (key) => data.statLabels?.[state.lang]?.[key] || data.statLabels?.en?.[key] || key;
+  const rarityById = (id) => data.systems.equipment.rarities.find((item) => item.id === id);
+  const rarityName = (id) => textFor(rarityById(id) || {}).name || id;
 
   function setUrlLang(lang) {
     const url = new URL(window.location.href);
@@ -206,114 +66,21 @@
     window.history.replaceState(null, "", url.toString());
   }
 
-  const hashId = decodeURIComponent(window.location.hash.replace(/^#/, ""));
-  const initialId = data.valkyries.some((item) => item.id === hashId) ? hashId : data.valkyries[0].id;
-  const initialLang = getUrlLang() || "en";
-  const state = {
-    lang: initialLang,
-    selectedId: initialId,
-    query: "",
-  };
-
-  function t(key) {
-    return copy[state.lang][key] || copy.en[key] || key;
-  }
-
-  function escapeHtml(value) {
-    return String(value ?? "")
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#39;");
-  }
-
-  function textFor(valkyrie) {
-    return valkyrie.text[state.lang] || valkyrie.text.en;
-  }
-
-  function skillText(skill) {
-    return skill.text[state.lang] || skill.text.en;
-  }
-
-  function localizedValue(value, fallback = "") {
-    if (value && typeof value === "object") {
-      return value[state.lang] || value.en || fallback;
-    }
-
-    return value || fallback;
-  }
-
-  function localizedArray(value) {
-    if (Array.isArray(value)) return value;
-    if (value && typeof value === "object") {
-      return value[state.lang] || value.en || [];
-    }
-
-    return [];
-  }
-
-  function totalSummonCost() {
-    let previousMax = 0;
-    return data.summon.costSteps.reduce((total, step) => {
-      const count = Math.max(0, step.max - previousMax);
-      previousMax = step.max;
-      return total + (count * step.cost);
-    }, 0);
-  }
-
-  function settingText(setting) {
-    return (setting.text && (setting.text[state.lang] || setting.text.en)) || {};
-  }
-
-  function statLabel(key) {
-    return (data.statLabels[state.lang] && data.statLabels[state.lang][key])
-      || data.statLabels.en[key]
-      || key;
-  }
-
-  function formatNumber(value) {
-    return new Intl.NumberFormat(state.lang === "zh" ? "zh-CN" : "en-US").format(value);
-  }
-
-  function selectedValkyrie() {
-    return data.valkyries.find((item) => item.id === state.selectedId) || data.valkyries[0];
-  }
-
   function searchableText(valkyrie) {
     const txt = textFor(valkyrie);
-    const passive = skillText(valkyrie.skills.passive);
-    const active = skillText(valkyrie.skills.active);
-    return [
-      valkyrie.id,
-      valkyrie.skinId,
-      txt.name,
-      txt.backgroundName,
-      txt.backgroundDescription,
-      txt.traitName,
-      txt.traitDescription,
-      passive.name,
-      passive.description,
-      active.name,
-      active.description,
-    ].join(" ").toLowerCase();
+    return [valkyrie.id, txt.name, txt.backgroundName, txt.backgroundDescription, txt.traitName, txt.traitDescription, ...valkyrie.skills.flatMap((skill) => [skill.key, textFor(skill).name, textFor(skill).description])].join(" ").toLowerCase();
   }
 
   function visibleValkyries() {
-    const q = state.query.trim().toLowerCase();
-    if (!q) return data.valkyries;
-    return data.valkyries.filter((valkyrie) => searchableText(valkyrie).includes(q));
+    const query = state.query.trim().toLowerCase();
+    return query ? data.valkyries.filter((item) => searchableText(item).includes(query)) : data.valkyries;
   }
 
   function updateStaticText() {
     document.documentElement.lang = state.lang === "zh" ? "zh-CN" : "en";
-    document.querySelectorAll("[data-i18n]").forEach((node) => {
-      node.textContent = t(node.dataset.i18n);
-    });
+    document.querySelectorAll("[data-i18n]").forEach((node) => { node.textContent = t(node.dataset.i18n); });
     refs.search.placeholder = t("searchPlaceholder");
-    document.querySelectorAll("[data-lang]").forEach((button) => {
-      button.classList.toggle("is-active", button.dataset.lang === state.lang);
-    });
+    document.querySelectorAll("[data-lang]").forEach((button) => button.classList.toggle("is-active", button.dataset.lang === state.lang));
   }
 
   function renderOverview() {
@@ -321,523 +88,147 @@
     refs.overview.innerHTML = `
       <div class="overview-hero">
         <div class="overview-copy">
-          <p class="eyebrow">${escapeHtml(data.meta.source)}</p>
+          <p class="eyebrow">Battle Valkyries ${escapeHtml(data.meta.valkyrieVersion)} + Alchemy ${escapeHtml(data.meta.alchemyVersion)}</p>
           <h2>${escapeHtml(t("overviewTitle"))}</h2>
           <p>${escapeHtml(t("overviewBody"))}</p>
-          <div class="download-row">
-            <a class="download-button" href="${escapeHtml(downloadUrl)}" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.2l3.6-3.6L17 11l-5 5-5-5 1.4-1.4 3.6 3.6V3h2Zm-7 15h14v2H5v-2Z"/></svg>
-              <span>${escapeHtml(t("downloadLabel"))}</span>
-            </a>
-            <span>${escapeHtml(t("downloadHint"))}</span>
-          </div>
+          <div class="source-meta"><span>${escapeHtml(t("sourceRevision"))}: <code>${escapeHtml(data.meta.sourceRevision)}</code></span><span>${escapeHtml(t("updated"))}: ${escapeHtml(data.meta.updatedAt)}</span></div>
+          <div class="download-row"><a class="download-button" href="${downloadUrl}" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.2l3.6-3.6L17 11l-5 5-5-5 1.4-1.4 3.6 3.6V3h2Zm-7 15h14v2H5v-2Z"/></svg><span>${escapeHtml(t("downloadLabel"))}</span></a><span>${escapeHtml(t("downloadHint"))}</span></div>
         </div>
-        <div class="overview-art">
-          <img src="${escapeHtml(first.images.card)}" alt="${escapeHtml(textFor(first).name)}">
-        </div>
+        <div class="overview-art"><img src="${escapeHtml(first.images.card)}" alt="${escapeHtml(textFor(first).name)}"></div>
       </div>
       <div class="metric-grid">
         <div class="metric"><strong>${data.valkyries.length}</strong><span>${escapeHtml(t("metricValkyries"))}</span></div>
-        <div class="metric"><strong>${data.valkyries.length * 2}</strong><span>${escapeHtml(t("metricSkills"))}</span></div>
-        <div class="metric"><strong>${data.summon.rosterMax}</strong><span>${escapeHtml(t("metricRoster"))}</span></div>
-        <div class="metric"><strong>${formatNumber(totalSummonCost())}</strong><span>${escapeHtml(t("metricTotalCost"))}</span></div>
-      </div>
-    `;
+        <div class="metric"><strong>${totalSkills()}</strong><span>${escapeHtml(t("metricSkills"))}</span></div>
+        <div class="metric"><strong>${totalSkins()}</strong><span>${escapeHtml(t("metricSkins"))}</span></div>
+        <div class="metric"><strong>${data.systems.equipment.affixes.length}</strong><span>${escapeHtml(t("metricAffixes"))}</span></div>
+      </div>`;
   }
 
   function renderRoster() {
     const items = visibleValkyries();
     refs.rosterCount.textContent = items.length;
-
-    if (items.length === 0) {
-      refs.rosterList.innerHTML = `<div class="empty-state">${escapeHtml(t("noResults"))}</div>`;
-      return;
-    }
-
-    refs.rosterList.innerHTML = items.map((valkyrie) => {
-      const txt = textFor(valkyrie);
-      const passive = skillText(valkyrie.skills.passive);
-      return `
-        <button type="button" class="roster-card ${valkyrie.id === state.selectedId ? "is-active" : ""}" data-id="${escapeHtml(valkyrie.id)}">
-          <img class="roster-thumb" src="${escapeHtml(valkyrie.images.card)}" alt="${escapeHtml(txt.name)}">
-          <span>
-            <span class="roster-name">${escapeHtml(txt.name)}</span>
-            <span class="roster-sub">${escapeHtml(passive.name)}</span>
-          </span>
-          <img class="roster-skill-icon" src="${escapeHtml(valkyrie.skills.passive.image)}" alt="">
-        </button>
-      `;
-    }).join("");
+    refs.rosterList.innerHTML = items.length ? items.map((valkyrie) => {
+      const skill = valkyrie.skills[0];
+      return `<button type="button" class="roster-card ${valkyrie.id === state.selectedId ? "is-active" : ""}" data-id="${escapeHtml(valkyrie.id)}"><img class="roster-thumb" src="${escapeHtml(valkyrie.images.card)}" alt="${escapeHtml(textFor(valkyrie).name)}"><span><span class="roster-name">${escapeHtml(textFor(valkyrie).name)}</span><span class="roster-sub">${escapeHtml(valkyrie.skills.map((item) => textFor(item).name).join(" / "))}</span></span>${skill ? `<img class="roster-skill-icon" src="${escapeHtml(skill.image)}" alt="">` : ""}</button>`;
+    }).join("") : `<div class="empty-state">${escapeHtml(t("noResults"))}</div>`;
   }
 
-  function renderTag(label, value) {
-    return `<span class="tag">${escapeHtml(label)}: <strong>&nbsp;${escapeHtml(value)}</strong></span>`;
-  }
+  const renderTag = (label, value) => `<span class="tag">${escapeHtml(label)}: <strong>&nbsp;${escapeHtml(value)}</strong></span>`;
 
-  function renderStatGrid(valkyrie, title, values, maxValue) {
+  function renderStatGrid(title, values, maxValue) {
     const cells = data.statKeys.map((key) => {
       const value = Number(values[key] || 0);
       const width = Math.max(5, Math.min(100, Math.round((value / maxValue) * 100)));
-      return `
-        <div class="stat-item">
-          <div class="stat-top">
-            <span class="stat-label">${escapeHtml(statLabel(key))}</span>
-            <span class="stat-value">${escapeHtml(value)}</span>
-          </div>
-          <div class="stat-bar" style="--bar: ${width}%"><span></span></div>
-        </div>
-      `;
+      return `<div class="stat-item"><div class="stat-top"><span class="stat-label">${escapeHtml(statLabel(key))}</span><span class="stat-value">${value}</span></div><div class="stat-bar" style="--bar:${width}%"><span></span></div></div>`;
     }).join("");
-
-    return `
-      <div class="section-block">
-        <div class="section-title"><h3>${escapeHtml(title)}</h3></div>
-        <div class="stat-grid">${cells}</div>
-      </div>
-    `;
+    return `<div class="section-block"><div class="section-title"><h3>${escapeHtml(title)}</h3></div><div class="stat-grid">${cells}</div></div>`;
   }
 
   function traitChips(valkyrie) {
     const bonuses = Object.entries(valkyrie.traitBonuses || {});
-    if (bonuses.length > 0) {
-      return bonuses.map(([key, value]) => `
-        <span class="chip"><strong>${escapeHtml(value > 0 ? `+${value}` : value)}</strong>&nbsp;${escapeHtml(statLabel(key))}</span>
-      `).join("");
-    }
-
-    const tips = textFor(valkyrie).traitTooltip || [];
-    return tips.map((tip) => `<span class="chip">${escapeHtml(tip)}</span>`).join("");
+    if (bonuses.length) return bonuses.map(([key, value]) => `<span class="chip"><strong>${value > 0 ? "+" : ""}${escapeHtml(value)}</strong>&nbsp;${escapeHtml(statLabel(key))}</span>`).join("");
+    return (textFor(valkyrie).traitTooltip || []).map((item) => `<span class="chip">${escapeHtml(item)}</span>`).join("");
   }
 
-  function renderSkillCard(skill, title) {
-    const txt = skillText(skill);
-    const bullets = (txt.tooltip || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
-    return `
-      <div class="skill-card">
-        <img class="skill-icon" src="${escapeHtml(skill.image)}" alt="">
-        <div>
-          <p class="skill-label">${escapeHtml(title)}</p>
-          <h4>${escapeHtml(txt.name)}</h4>
-          <p>${escapeHtml(txt.description)}</p>
-          ${bullets ? `<ul class="bullet-list">${bullets}</ul>` : ""}
-        </div>
-      </div>
-    `;
+  function renderSkillCard(skill) {
+    const txt = textFor(skill);
+    const tooltip = (txt.tooltip || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+    const label = skill.kind === "passive" ? t("passiveTitle") : skill.lifetime === "transient" ? t("transientTitle") : t("activeTitle");
+    return `<div class="skill-card"><img class="skill-icon" src="${escapeHtml(skill.image)}" alt=""><div><p class="skill-label">${escapeHtml(label)} · <code>${escapeHtml(skill.key)}</code></p><h4>${escapeHtml(txt.name || skill.key)}</h4><p>${escapeHtml(txt.description || t("noTooltip"))}</p>${tooltip ? `<ul class="bullet-list">${tooltip}</ul>` : ""}</div></div>`;
   }
 
   function renderDetail() {
     const valkyrie = selectedValkyrie();
     const txt = textFor(valkyrie);
-    const tags = [
-      renderTag(t("selectedPrefix"), valkyrie.order),
-      renderTag(t("idLabel"), valkyrie.id),
-      renderTag(t("skinLabel"), valkyrie.skinId),
-      renderTag(t("levelLabel"), valkyrie.level),
-      renderTag(t("wageLabel"), valkyrie.dailyWage),
-    ].join("");
-
+    const tags = [renderTag(t("selectedPrefix"), valkyrie.order), renderTag(t("idLabel"), valkyrie.id), renderTag(t("levelLabel"), valkyrie.level), renderTag(t("wageLabel"), valkyrie.dailyWage), renderTag(t("skillsLabel"), valkyrie.skills.length), renderTag(t("skinsLabel"), valkyrie.skins.length), renderTag(t("profileLabel"), valkyrie.legendsPerkProfile || "—")].join("");
+    const skinGallery = valkyrie.skins.map((skin) => `<figure class="skin-card"><div><img class="skin-card-portrait" src="${escapeHtml(skin.images.portrait)}" alt="${escapeHtml(textFor(skin).name)}"><img class="skin-card-preview" src="${escapeHtml(skin.images.preview)}" alt=""></div><figcaption><strong>${escapeHtml(textFor(skin).name)}</strong><code>${escapeHtml(skin.id)}</code>${textFor(skin).description ? `<span>${escapeHtml(textFor(skin).description)}</span>` : ""}</figcaption></figure>`).join("");
     refs.detail.innerHTML = `
-      <div class="detail-header">
-        <div class="detail-title">
-          <p class="eyebrow">${escapeHtml(txt.backgroundName)}</p>
-          <h2>${escapeHtml(txt.name)}</h2>
-          <p>${escapeHtml(txt.backgroundDescription)}</p>
-          <div class="tag-row">${tags}</div>
-        </div>
-        <div class="detail-art-grid">
-          <figure class="art-frame">
-            <img src="${escapeHtml(valkyrie.images.card)}" alt="${escapeHtml(txt.name)}">
-            <figcaption>${escapeHtml(t("summonArt"))}</figcaption>
-          </figure>
-          <figure class="art-frame">
-            <img src="${escapeHtml(valkyrie.images.skin)}" alt="${escapeHtml(txt.name)}">
-            <figcaption>${escapeHtml(t("skinArt"))}</figcaption>
-          </figure>
-        </div>
-      </div>
+      <div class="detail-header"><div class="detail-title"><p class="eyebrow">${escapeHtml(txt.backgroundName)}</p><h2>${escapeHtml(txt.name)}</h2><p>${escapeHtml(txt.backgroundDescription)}</p><div class="tag-row">${tags}</div></div><div class="detail-art-grid"><figure class="art-frame"><img src="${escapeHtml(valkyrie.images.card)}" alt="${escapeHtml(txt.name)}"><figcaption>${escapeHtml(t("summonArt"))}</figcaption></figure><figure class="art-frame"><img src="${escapeHtml(valkyrie.images.skin)}" alt="${escapeHtml(txt.name)}"><figcaption>${escapeHtml(t("skinArt"))}</figcaption></figure></div></div>
       <div class="detail-body">
-        <div class="section-block">
-          <div class="section-title"><h3>${escapeHtml(t("traitTitle"))}</h3></div>
-          <div class="trait-block">
-            <img src="${escapeHtml(valkyrie.images.trait)}" alt="">
-            <div>
-              <h4>${escapeHtml(txt.traitName)}</h4>
-              <p>${escapeHtml(txt.traitDescription)}</p>
-              <div class="chip-row">${traitChips(valkyrie)}</div>
-            </div>
-          </div>
-        </div>
-        ${renderStatGrid(valkyrie, t("statsTitle"), valkyrie.baseAttributes, 140)}
-        ${renderStatGrid(valkyrie, t("talentsTitle"), valkyrie.talents, 3)}
-        <div class="section-block">
-          <div class="section-title"><h3>${escapeHtml(t("passiveTitle"))} / ${escapeHtml(t("activeTitle"))}</h3></div>
-          <div class="skills-grid">
-            ${renderSkillCard(valkyrie.skills.passive, t("passiveTitle"))}
-            ${renderSkillCard(valkyrie.skills.active, t("activeTitle"))}
-          </div>
-        </div>
-      </div>
-    `;
-  }
-
-  function costRange(index, step) {
-    const prevMax = index === 0 ? 0 : data.summon.costSteps[index - 1].max;
-    const start = prevMax + 1;
-    return start === step.max ? `${start}` : `${start} - ${step.max}`;
+        <div class="section-block"><div class="section-title"><h3>${escapeHtml(t("traitTitle"))}</h3></div><div class="trait-block"><img src="${escapeHtml(valkyrie.images.trait)}" alt=""><div><h4>${escapeHtml(txt.traitName)}</h4><p>${escapeHtml(txt.traitDescription)}</p><div class="chip-row">${traitChips(valkyrie)}</div></div></div></div>
+        ${renderStatGrid(t("statsTitle"), valkyrie.baseAttributes, 145)}${renderStatGrid(t("talentsTitle"), valkyrie.talents, 3)}
+        <div class="section-block"><div class="section-title"><h3>${escapeHtml(t("skinCollection"))}</h3></div><div class="skin-gallery">${skinGallery}</div></div>
+        <div class="section-block"><div class="section-title"><h3>${escapeHtml(t("skillsTitle"))}</h3></div><div class="skills-grid skills-grid-all">${valkyrie.skills.map(renderSkillCard).join("")}</div></div>
+      </div>`;
   }
 
   function renderMechanics() {
-    const rows = data.summon.costSteps.map((step, index) => `
-      <tr>
-        <td>${escapeHtml(costRange(index, step))}</td>
-        <td>${escapeHtml(formatNumber(step.cost))}</td>
-      </tr>
-    `).join("");
-    const mechanicCards = [
-      [t("rosterMax"), data.summon.rosterMax],
-      [t("formationSlots"), data.summon.formationSlots],
-      [t("combatSlots"), data.summon.combatSlots],
-      [t("totalSummonCost"), formatNumber(totalSummonCost())],
-    ].map(([label, value]) => `
-      <div class="mechanic-card">
-        <strong>${escapeHtml(value)}</strong>
-        <p>${escapeHtml(label)}</p>
-      </div>
-    `).join("");
-
-    refs.mechanics.innerHTML = `
-      <div class="section-title">
-        <div>
-          <p class="eyebrow">${escapeHtml(data.meta.source)}</p>
-          <h2>${escapeHtml(t("mechanicsTitle"))}</h2>
-        </div>
-      </div>
-      <p>${escapeHtml(t("mechanicsBody"))}</p>
-      <div class="mechanic-grid">${mechanicCards}</div>
-      <table class="cost-table">
-        <thead><tr><th>${escapeHtml(t("costTableIndex"))}</th><th>${escapeHtml(t("costTableCost"))}</th></tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
-    `;
+    const directRows = data.summon.costSteps.map((step, index) => { const start = index === 0 ? 1 : data.summon.costSteps[index - 1].max + 1; return `<tr><td>${start === step.max ? start : `${start}–${step.max}`}</td><td>${formatNumber(step.cost)}</td></tr>`; }).join("");
+    const gachaRows = data.summon.gacha.costSteps.map((step, index, steps) => {
+      const label = index === steps.length - 1 ? `${steps[index - 1].maxGuarantees + 1}+` : step.maxGuarantees;
+      return `<tr><td>${label}</td><td>${formatNumber(step.cost)}</td></tr>`;
+    }).join("");
+    const metrics = [[t("availableRoster"), data.valkyries.length], [t("rosterMax"), data.summon.rosterMax], [t("formationSlots"), data.summon.formationSlots], [t("combatSlots"), data.summon.combatSlots]].map(([label, value]) => `<div class="mechanic-card"><strong>${value}</strong><p>${escapeHtml(label)}</p></div>`).join("");
+    refs.mechanics.innerHTML = `<div class="section-title"><div><p class="eyebrow">${escapeHtml(t("guaranteeProgress"))}: ${data.summon.gacha.progressMax} ${escapeHtml(t("pulls"))}</p><h2>${escapeHtml(t("mechanicsTitle"))}</h2></div></div><p>${escapeHtml(t("mechanicsBody"))}</p><div class="mechanic-grid">${metrics}</div><div class="table-pair"><div><h3>${escapeHtml(t("directCosts"))}</h3><table class="matrix-table"><thead><tr><th>${escapeHtml(t("summonNumber"))}</th><th>${escapeHtml(t("crowns"))}</th></tr></thead><tbody>${directRows}</tbody></table></div><div><h3>${escapeHtml(t("gachaCosts"))}</h3><table class="matrix-table"><thead><tr><th>${escapeHtml(t("completedGuarantees"))}</th><th>${escapeHtml(t("crowns"))}</th></tr></thead><tbody>${gachaRows}</tbody></table></div></div>`;
   }
 
-  function renderBulletList(items) {
-    const bullets = localizedArray(items).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
-    return bullets ? `<ul class="bullet-list">${bullets}</ul>` : "";
-  }
-
-  function renderSourceFiles(files) {
-    if (!Array.isArray(files) || files.length === 0) return "";
-    const items = files.map((file) => `<li>${escapeHtml(file)}</li>`).join("");
-    return `<ul class="source-list compact-source-list">${items}</ul>`;
-  }
-
-  function formatBondReward(stage) {
-    if (state.lang === "zh") {
-      return `${formatNumber(stage.rewardMoney)} 克朗，${formatNumber(stage.rewardPerkPoints)} 技能点`;
-    }
-
-    const perkLabel = stage.rewardPerkPoints === 1 ? "perk point" : "perk points";
-    return `${formatNumber(stage.rewardMoney)} Crowns, ${formatNumber(stage.rewardPerkPoints)} ${perkLabel}`;
-  }
-
-  function affixText(affix) {
-    return (affix.text && (affix.text[state.lang] || affix.text.en)) || {};
-  }
-
-  function affixPartLabel(part) {
-    const key = `equipmentPart${String(part || "").charAt(0).toUpperCase()}${String(part || "").slice(1)}`;
-    return t(key);
-  }
-
-  function renderAffixParts(parts) {
-    const items = Array.isArray(parts) ? parts : [];
-    return `<span class="part-list">${items.map((part) => `<span>${escapeHtml(affixPartLabel(part))}</span>`).join("")}</span>`;
+  function renderBulletList(value) {
+    const items = localizedArray(value);
+    return items.length ? `<ul class="bullet-list">${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : "";
   }
 
   function renderSystems() {
-    const systems = data.systems || {};
-    const cards = Array.isArray(systems.cards) ? systems.cards : [];
-    const systemCards = cards.map((card) => `
-      <div class="system-card">
-        <div>
-          <p class="skill-label">${escapeHtml(card.id || "")}</p>
-          <h3>${escapeHtml(localizedValue(card.title, card.id || ""))}</h3>
-        </div>
-        <p>${escapeHtml(localizedValue(card.body, ""))}</p>
-        ${renderBulletList(card.bullets)}
-        ${renderSourceFiles(card.sourceFiles)}
-      </div>
-    `).join("");
-    const bond = systems.bond || {};
-    const bondRows = Array.isArray(bond.stages) ? bond.stages.map((stage) => {
-      const txt = stage.text && (stage.text[state.lang] || stage.text.en) || {};
-      return `
-        <tr>
-          <td>${escapeHtml(stage.value)}</td>
-          <td>${escapeHtml(txt.stage || "")}</td>
-          <td>${escapeHtml(txt.eventTitle || "")}</td>
-          <td>${escapeHtml(formatBondReward(stage))}</td>
-        </tr>
-      `;
-    }).join("") : "";
-    const equipment = systems.equipment || {};
-    const rarityRows = Array.isArray(equipment.rarities) ? equipment.rarities.map((rarity) => {
-      const txt = rarity.text && (rarity.text[state.lang] || rarity.text.en) || {};
-      return `
-        <tr>
-          <td><span class="rarity-name"><span class="rarity-swatch" style="--rarity-color: ${escapeHtml(rarity.color)}"></span>${escapeHtml(txt.name || rarity.id)}</span></td>
-          <td>${escapeHtml(rarity.rank)}</td>
-          <td>${escapeHtml(rarity.affixCount)}</td>
-          <td><code>${escapeHtml(rarity.color)}</code></td>
-        </tr>
-      `;
-    }).join("") : "";
-    const affixRows = Array.isArray(equipment.affixes) ? equipment.affixes.map((affix) => {
-      const txt = affixText(affix);
-      return `
-        <tr>
-          <td>
-            <span class="affix-name">
-              <strong>${escapeHtml(txt.name || affix.id)}</strong>
-              <code>${escapeHtml(affix.id)}</code>
-            </span>
-          </td>
-          <td><span class="affix-kind affix-kind-${escapeHtml(affix.kind || "basic")}">${escapeHtml(localizedValue(affix.kindText, affix.kind || ""))}</span></td>
-          <td>${renderAffixParts(affix.parts)}</td>
-          <td>${escapeHtml(localizedValue(affix.unlockText, ""))}</td>
-          <td class="affix-summary">${escapeHtml(txt.summary || txt.effect || affix.effect || "")}</td>
-        </tr>
-      `;
-    }).join("") : "";
-
-    refs.systems.innerHTML = `
-      <div class="section-title">
-        <div>
-          <p class="eyebrow">${escapeHtml(`${t("systemsUpdated")}: ${data.meta.updatedAt || ""}`)}</p>
-          <h2>${escapeHtml(t("systemsTitle"))}</h2>
-        </div>
-      </div>
-      <p>${escapeHtml(localizedValue(systems.intro, ""))}</p>
-      <p class="baseline-note">${escapeHtml(localizedValue(systems.baselineNote, ""))}</p>
-      <div class="system-grid">${systemCards}</div>
-      <div class="subsection-block">
-        <div>
-          <h3>${escapeHtml(localizedValue(bond.title, ""))}</h3>
-          <p>${escapeHtml(`${localizedValue(bond.item, "")}: +${bond.itemGain || 0}; ${t("bondStageValue")} ${bond.max || 0}`)}</p>
-        </div>
-        <table class="matrix-table">
-          <thead>
-            <tr>
-              <th>${escapeHtml(t("bondStageValue"))}</th>
-              <th>${escapeHtml(t("bondStageName"))}</th>
-              <th>${escapeHtml(t("bondEventTitle"))}</th>
-              <th>${escapeHtml(t("bondReward"))}</th>
-            </tr>
-          </thead>
-          <tbody>${bondRows}</tbody>
-        </table>
-      </div>
-      <div class="subsection-block">
-        <div>
-          <h3>${escapeHtml(localizedValue(equipment.title, ""))}</h3>
-          <p>${escapeHtml(localizedValue(equipment.body, ""))}</p>
-          ${renderBulletList(equipment.rules)}
-        </div>
-        <table class="matrix-table">
-          <thead>
-            <tr>
-              <th>${escapeHtml(t("equipmentRarity"))}</th>
-              <th>${escapeHtml(t("equipmentRank"))}</th>
-              <th>${escapeHtml(t("equipmentAffixes"))}</th>
-              <th>${escapeHtml(t("equipmentColor"))}</th>
-            </tr>
-          </thead>
-          <tbody>${rarityRows}</tbody>
-        </table>
-        <div class="affix-overview">
-          <h3>${escapeHtml(t("equipmentAffixTitle"))}</h3>
-          <p>${escapeHtml(localizedValue(equipment.affixIntro, ""))}</p>
-          <table class="matrix-table affix-table">
-            <thead>
-              <tr>
-                <th>${escapeHtml(t("equipmentAffixName"))}</th>
-                <th>${escapeHtml(t("equipmentAffixKind"))}</th>
-                <th>${escapeHtml(t("equipmentAffixParts"))}</th>
-                <th>${escapeHtml(t("equipmentAffixUnlock"))}</th>
-                <th>${escapeHtml(t("equipmentAffixEffect"))}</th>
-              </tr>
-            </thead>
-            <tbody>${affixRows}</tbody>
-          </table>
-        </div>
-      </div>
-    `;
+    refs.systems.innerHTML = `<div class="section-title"><div><p class="eyebrow">${escapeHtml(data.meta.updatedAt)}</p><h2>${escapeHtml(t("systemsTitle"))}</h2></div></div><p>${escapeHtml(t("systemsBody"))}</p><p class="baseline-note">${escapeHtml(localizedValue(data.systems.intro))}</p><div class="system-grid">${data.systems.cards.map((card) => `<article class="system-card"><div><p class="skill-label">${escapeHtml(card.id)}</p><h3>${escapeHtml(localizedValue(card.title))}</h3></div><p>${escapeHtml(localizedValue(card.body))}</p>${renderBulletList(card.bullets)}<details class="source-details"><summary>${escapeHtml(t("sourceFiles"))}</summary><ul class="source-list compact-source-list">${card.sourceFiles.map((file) => `<li>${escapeHtml(file)}</li>`).join("")}</ul></details></article>`).join("")}</div>`;
   }
 
-  function renderSettingCard(setting) {
-    const txt = settingText(setting);
-    const defaultText = setting.default === true ? t("settingEnabled") : t("settingDisabled");
-    const notes = [];
-    if (setting.id === "HideWeapons") {
-      notes.push(t("settingVisualOnly"));
-    }
-    if (setting.id === "EnableEquipmentSystem") {
-      notes.push(t("settingEquipmentLockNote"), t("settingEquipmentBaselineNote"));
-    }
-    const noteList = notes.length > 0
-      ? `<ul class="bullet-list">${notes.map((note) => `<li>${escapeHtml(note)}</li>`).join("")}</ul>`
-      : "";
+  function affixPartLabel(part) {
+    return t(`part${String(part || "").charAt(0).toUpperCase()}${String(part || "").slice(1)}`);
+  }
 
-    return `
-      <div class="settings-card">
-        <div class="settings-card-top">
-          <div>
-            <p class="skill-label">${escapeHtml(setting.id)}</p>
-            <h3>${escapeHtml(txt.name || setting.id)}</h3>
-          </div>
-          <div class="tag-row">
-            <span class="tag">${escapeHtml(t("settingTypeBoolean"))}</span>
-            <span class="tag">${escapeHtml(t("settingDefault"))}: <strong>&nbsp;${escapeHtml(defaultText)}</strong></span>
-          </div>
-        </div>
-        <p>${escapeHtml(txt.description || "")}</p>
-        ${noteList}
-      </div>
-    `;
+  function renderAlchemy() {
+    const equipment = data.systems.equipment;
+    const rarityRows = equipment.rarities.map((rarity) => `<tr><td><span class="rarity-name"><span class="rarity-swatch" style="--rarity-color:${escapeHtml(rarity.color)}"></span>${escapeHtml(textFor(rarity).name)}</span></td><td>${rarity.rank}</td><td>${rarity.affixCount}</td><td><code>${escapeHtml(rarity.color)}</code></td></tr>`).join("");
+    const reforgeRows = equipment.reforgeRules.map((rule) => `<tr><td>${escapeHtml(rarityName(rule.from))}</td><td>${escapeHtml(rarityName(rule.to))}</td><td>${rule.materialCost} × ${escapeHtml(rarityName(rule.materialTier))}</td><td>${formatNumber(rule.moneyCost)} ${escapeHtml(t("crowns"))}</td></tr>`).join("");
+    const disassembleRows = equipment.disassembleRules.map((rule) => `<tr><td>${escapeHtml(rarityName(rule.rarity))}</td><td>${formatNumber(rule.moneyCost)} ${escapeHtml(t("crowns"))}</td><td>${rule.stoneCountMin === rule.stoneCountMax ? rule.stoneCountMin : `${rule.stoneCountMin}–${rule.stoneCountMax}`}</td><td>${rule.removalStoneChance}%</td></tr>`).join("");
+    const affixRows = equipment.affixes.map((affix) => `<tr><td><span class="affix-name"><strong>${escapeHtml(textFor(affix).name)}</strong><code>${escapeHtml(affix.id)}</code></span></td><td><span class="affix-kind affix-kind-${escapeHtml(affix.kind)}">${escapeHtml(localizedValue(affix.kindText))}</span></td><td><span class="part-list">${affix.parts.map((part) => `<span>${escapeHtml(affixPartLabel(part))}</span>`).join("")}</span></td><td>${escapeHtml(localizedValue(affix.unlockText))}</td><td class="affix-summary">${escapeHtml(textFor(affix).summary || textFor(affix).effect)}</td></tr>`).join("");
+    const kindCounts = ["basic", "advanced", "legendary", "mythic"].map((kind) => `<span class="chip"><strong>${equipment.affixes.filter((item) => item.kind === kind).length}</strong>&nbsp;${escapeHtml(localizedValue(equipment.affixes.find((item) => item.kind === kind)?.kindText, kind))}</span>`).join("");
+    refs.alchemy.innerHTML = `
+      <div class="section-title"><div><p class="eyebrow">${escapeHtml(t("optionalStandalone"))} · v${escapeHtml(equipment.version)}</p><h2>${escapeHtml(t("alchemyTitle"))}</h2></div><span class="status-badge">${escapeHtml(t("defaultOff"))}</span></div><p>${escapeHtml(t("alchemyBody"))}</p><p>${escapeHtml(localizedValue(equipment.body))}</p>${renderBulletList(equipment.rules)}
+      <div class="subsection-block"><h3>${escapeHtml(t("workflowsTitle"))}</h3><div class="operation-grid"><article><h4>${escapeHtml(t("enchant"))}</h4><p>${escapeHtml(t("enchantBody"))}</p></article><article><h4>${escapeHtml(t("removeAffix"))}</h4><p>${escapeHtml(t("removeAffixBody"))}</p></article><article><h4>${escapeHtml(t("reforge"))}</h4><p>${escapeHtml(t("reforgeBody"))}</p></article><article><h4>${escapeHtml(t("disassemble"))}</h4><p>${escapeHtml(t("disassembleBody"))}</p></article></div></div>
+      <div class="table-pair subsection-block"><div><h3>${escapeHtml(t("rarityTitle"))}</h3><table class="matrix-table"><thead><tr><th>${escapeHtml(t("rarity"))}</th><th>${escapeHtml(t("rank"))}</th><th>${escapeHtml(t("affixSlots"))}</th><th>${escapeHtml(t("color"))}</th></tr></thead><tbody>${rarityRows}</tbody></table></div><div><h3>${escapeHtml(t("reforgeTable"))}</h3><table class="matrix-table"><thead><tr><th>${escapeHtml(t("from"))}</th><th>${escapeHtml(t("to"))}</th><th>${escapeHtml(t("materials"))}</th><th>${escapeHtml(t("cost"))}</th></tr></thead><tbody>${reforgeRows}</tbody></table></div></div>
+      <div class="subsection-block"><h3>${escapeHtml(t("disassembleTable"))}</h3><table class="matrix-table"><thead><tr><th>${escapeHtml(t("rarity"))}</th><th>${escapeHtml(t("cost"))}</th><th>${escapeHtml(t("stoneYield"))}</th><th>${escapeHtml(t("removalChance"))}</th></tr></thead><tbody>${disassembleRows}</tbody></table></div>
+      <div class="subsection-block affix-overview"><div class="section-title"><div><h3>${escapeHtml(t("affixTitle"))}</h3><p>${escapeHtml(t("affixIntro"))}</p></div><div class="chip-row">${kindCounts}</div></div><div class="table-scroll"><table class="matrix-table affix-table"><thead><tr><th>${escapeHtml(t("affixName"))}</th><th>${escapeHtml(t("affixKind"))}</th><th>${escapeHtml(t("affixParts"))}</th><th>${escapeHtml(t("affixUnlock"))}</th><th>${escapeHtml(t("affixEffect"))}</th></tr></thead><tbody>${affixRows}</tbody></table></div></div>`;
+  }
+
+  function settingNote(id) {
+    if (id === "HideWeapons") return t("settingHideWeaponsNote");
+    if (id === "GachaMode") return t("settingGachaNote");
+    if (id === "EnableValkyrieEnemyScaling") return t("settingScalingNote");
+    return "";
   }
 
   function renderSettings() {
-    const settings = data.settings || {};
-    const options = Array.isArray(settings.options) ? settings.options : [];
-    const modName = localizedValue(settings.modName, "Battle Valkyries");
-    const pageTitle = localizedValue(settings.pageTitle, "Valkyries");
-    const sectionTitle = localizedValue(settings.sectionTitle, "Summon System");
-    const pathItems = ["MSU Mod Settings", modName, pageTitle, sectionTitle];
-    const cards = options.length > 0
-      ? options.map((setting) => renderSettingCard(setting)).join("")
-      : `<div class="empty-state">${escapeHtml(t("noSettings"))}</div>`;
-    const screenshot = settings.screenshot ? `
-      <figure class="settings-preview">
-        <img src="${escapeHtml(settings.screenshot)}" alt="${escapeHtml(t("settingsScreenshot"))}">
-        <figcaption>${escapeHtml(t("settingsScreenshot"))}</figcaption>
-      </figure>
-    ` : "";
-
-    refs.settings.innerHTML = `
-      <div class="section-title">
-        <div>
-          <p class="eyebrow">${escapeHtml(t("settingsPathLabel"))}</p>
-          <h2>${escapeHtml(t("settingsTitle"))}</h2>
-        </div>
-      </div>
-      <p>${escapeHtml(t("settingsBody"))}</p>
-      <div class="settings-path">
-        ${pathItems.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
-      </div>
-      <div class="settings-layout">
-        <div class="settings-list">${cards}</div>
-        ${screenshot}
-      </div>
-    `;
+    const cards = data.settings.options.map((setting) => { const txt = textFor(setting); const note = settingNote(setting.id); return `<article class="settings-card"><div class="settings-card-top"><div><p class="skill-label">${escapeHtml(setting.id)}</p><h3>${escapeHtml(txt.name || setting.id)}</h3></div><div class="tag-row"><span class="tag">${escapeHtml(t("settingType"))}</span><span class="tag">${escapeHtml(t("settingDefault"))}: <strong>&nbsp;${escapeHtml(setting.default ? t("enabled") : t("disabled"))}</strong></span></div></div><p>${escapeHtml(txt.description)}</p>${note ? `<p class="setting-note">${escapeHtml(note)}</p>` : ""}</article>`; }).join("");
+    refs.settings.innerHTML = `<div class="section-title"><div><p class="eyebrow">MSU Mod Settings</p><h2>${escapeHtml(t("settingsTitle"))}</h2></div></div><p>${escapeHtml(t("settingsBody"))}</p><div class="settings-list">${cards || `<div class="empty-state">${escapeHtml(t("noSettings"))}</div>`}</div>`;
   }
 
   function renderMatrix() {
-    const rows = data.valkyries.map((valkyrie) => {
-      const txt = textFor(valkyrie);
-      const passive = skillText(valkyrie.skills.passive);
-      const active = skillText(valkyrie.skills.active);
-      const trait = (txt.traitTooltip && txt.traitTooltip.length > 0) ? txt.traitTooltip.join(" ") : txt.traitDescription;
-      return `
-        <tr>
-          <td class="table-name">${escapeHtml(txt.name)}</td>
-          <td>${escapeHtml(trait)}</td>
-          <td><span class="mini-skill"><img src="${escapeHtml(valkyrie.skills.passive.image)}" alt="">${escapeHtml(passive.name)}</span></td>
-          <td><span class="mini-skill"><img src="${escapeHtml(valkyrie.skills.active.image)}" alt="">${escapeHtml(active.name)}</span></td>
-        </tr>
-      `;
-    }).join("");
-
-    refs.matrix.innerHTML = `
-      <div class="section-title"><h2>${escapeHtml(t("matrixTitle"))}</h2></div>
-      <table class="matrix-table">
-        <thead>
-          <tr>
-            <th>${escapeHtml(t("matrixName"))}</th>
-            <th>${escapeHtml(t("matrixTrait"))}</th>
-            <th>${escapeHtml(t("matrixPassive"))}</th>
-            <th>${escapeHtml(t("matrixActive"))}</th>
-          </tr>
-        </thead>
-        <tbody>${rows}</tbody>
-      </table>
-    `;
+    const rows = data.valkyries.map((valkyrie) => `<tr><td class="table-name"><a href="#${encodeURIComponent(valkyrie.id)}" data-matrix-id="${escapeHtml(valkyrie.id)}">${escapeHtml(textFor(valkyrie).name)}</a></td><td>${escapeHtml(textFor(valkyrie).traitName)}</td><td><span class="matrix-skill-list">${valkyrie.skills.map((skill) => `<span class="mini-skill"><img src="${escapeHtml(skill.image)}" alt="">${escapeHtml(textFor(skill).name)}</span>`).join("")}</span></td></tr>`).join("");
+    refs.matrix.innerHTML = `<div class="section-title"><h2>${escapeHtml(t("matrixTitle"))}</h2></div><div class="table-scroll"><table class="matrix-table"><thead><tr><th>${escapeHtml(t("matrixName"))}</th><th>${escapeHtml(t("matrixTrait"))}</th><th>${escapeHtml(t("matrixSkills"))}</th></tr></thead><tbody>${rows}</tbody></table></div>`;
   }
 
   function renderAll() {
-    updateStaticText();
-    renderOverview();
-    renderRoster();
-    renderDetail();
-    renderMechanics();
-    renderSystems();
-    renderSettings();
-    renderMatrix();
+    updateStaticText(); renderOverview(); renderRoster(); renderDetail(); renderMechanics(); renderSystems(); renderAlchemy(); renderSettings(); renderMatrix();
   }
 
   function selectValkyrie(id, shouldScroll) {
     if (!data.valkyries.some((item) => item.id === id)) return;
     state.selectedId = id;
     history.replaceState(null, "", `#${encodeURIComponent(id)}`);
-    renderOverview();
-    renderRoster();
-    renderDetail();
-    if (shouldScroll) {
-      refs.detail.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    renderOverview(); renderRoster(); renderDetail();
+    if (shouldScroll) refs.detail.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   refs.search.addEventListener("input", (event) => {
     state.query = event.target.value;
     const matches = visibleValkyries();
-    if (matches.length > 0 && !matches.some((item) => item.id === state.selectedId)) {
-      state.selectedId = matches[0].id;
-      history.replaceState(null, "", `#${encodeURIComponent(state.selectedId)}`);
-      renderOverview();
-      renderDetail();
-    }
-    renderRoster();
+    if (matches.length && !matches.some((item) => item.id === state.selectedId)) state.selectedId = matches[0].id;
+    renderRoster(); renderOverview(); renderDetail();
   });
-
-  refs.rosterList.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-id]");
-    if (!button) return;
-    selectValkyrie(button.dataset.id, true);
-  });
-
-  document.querySelectorAll("[data-lang]").forEach((button) => {
-    button.addEventListener("click", () => {
-      state.lang = button.dataset.lang;
-      setUrlLang(state.lang);
-      renderAll();
-    });
-  });
-
-  document.querySelectorAll("[data-scroll-target]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const target = document.querySelector(button.dataset.scrollTarget);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    });
-  });
-
-  window.addEventListener("hashchange", () => {
-    const id = decodeURIComponent(window.location.hash.replace(/^#/, ""));
-    if (id && id !== state.selectedId) {
-      selectValkyrie(id, false);
-    }
-  });
-
+  refs.rosterList.addEventListener("click", (event) => { const button = event.target.closest("[data-id]"); if (button) selectValkyrie(button.dataset.id, true); });
+  refs.matrix.addEventListener("click", (event) => { const link = event.target.closest("[data-matrix-id]"); if (link) { event.preventDefault(); selectValkyrie(link.dataset.matrixId, true); } });
+  document.querySelectorAll("[data-lang]").forEach((button) => button.addEventListener("click", () => { state.lang = button.dataset.lang; setUrlLang(state.lang); renderAll(); }));
+  document.querySelectorAll("[data-scroll-target]").forEach((button) => button.addEventListener("click", () => document.querySelector(button.dataset.scrollTarget)?.scrollIntoView({ behavior: "smooth", block: "start" })));
+  window.addEventListener("hashchange", () => { const id = decodeURIComponent(window.location.hash.replace(/^#/, "")); if (id && id !== state.selectedId) selectValkyrie(id, false); });
   renderAll();
 }());
