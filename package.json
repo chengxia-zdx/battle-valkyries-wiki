@@ -2,7 +2,7 @@
   "scripts": {
     "refresh": "node tools/extract-wiki-data.mjs ../battle-valkyries",
     "verify": "node tools/verify-wiki-data.mjs",
-    "check": "node --check app.js && node tools/verify-wiki-data.mjs",
+    "check": "node --check app.js && node --check tools/extract-wiki-data.mjs && node --check tools/extract-reference-data.mjs && node tools/verify-wiki-data.mjs",
     "preview": "node tools/preview.mjs"
   }
 }

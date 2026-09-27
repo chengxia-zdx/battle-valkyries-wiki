@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
+import { buildReferenceData } from "./extract-reference-data.mjs";
 
 const workspaceRoot = process.cwd();
 const modRoot = path.resolve(process.argv[2] || path.join(workspaceRoot, "..", "battle-valkyries"));
@@ -219,6 +220,38 @@ const lilySkinData = readUtf8(valkyrieCodeRoot, "config", "lily_skin_data.nut");
 const summonData = readUtf8(valkyrieCodeRoot, "hooks", "valkyrie_summon.nut");
 const settingsData = readUtf8(valkyrieCodeRoot, "config", "mod_settings.nut");
 const equipmentData = readUtf8(alchemyCodeRoot, "equipment_data.nut");
+// Follow the actual include list: chapter rewards can register skins and skills
+// outside the original roster files.
+const loadedConfigFiles = [...readUtf8(valkyrieCodeRoot, "load.nut").matchAll(/config\/([^"\n]+\.nut)/g)].map((match) => match[1]);
+const missingConfigFiles = loadedConfigFiles.filter(file => !fs.existsSync(path.join(valkyrieCodeRoot, "config", file)));
+if (missingConfigFiles.length) console.warn(`Development snapshot: included config files are still missing: ${missingConfigFiles.join(", ")}. Their content is not exported.`);
+const loadedConfigs = loadedConfigFiles.filter(file => !missingConfigFiles.includes(file)).map((file) => ({ file, source: readUtf8(valkyrieCodeRoot, "config", file) }));
+const supplementalSkins = new Map();
+const supplementalSkills = new Map();
+for (const { source } of loadedConfigs) {
+  for (const match of source.matchAll(/\.Skins\.([\w]+)\s*<-/g)) supplementalSkins.set(match[1], assignedBlock(source, `Skins.${match[1]}`));
+  for (const match of source.matchAll(/\.ValkyrieSkillCatalog\.([\w]+)\s*<-/g)) supplementalSkills.set(match[1], assignedBlock(source, `ValkyrieSkillCatalog.${match[1]}`));
+  // Compact registration tables used by chapter reward catalogs.
+  if (source.includes("ValkyrieSkillCatalog[entry.Key]")) {
+    for (const match of source.matchAll(/\{\s*Key\s*=\s*"([^"]+)"[^{}]*\}/g)) supplementalSkills.set(match[1], match[0]);
+  }
+  if (/ValkyrieSkillCatalog\[[^\n]*entry\[0\]/.test(source)) {
+    const keyExpression = /ValkyrieSkillCatalog\[(.+)\]\s*<-/.exec(source)[1];
+    const iconExpression = /\bIcon\s*=\s*([^,\n]+)/.exec(source)[1];
+    const evaluate = (expression, entry) => [...expression.matchAll(/"([^"]*)"|entry\[(\d+)\]/g)].map(([, literal, index]) => index === undefined ? literal : entry[+index]).join("");
+    for (const match of source.matchAll(/^\s*\["/gm)) {
+      const start = source.indexOf("[", match.index), end = findMatching(source, start, "[", "]");
+      const entry = JSON.parse(source.slice(start, end + 1));
+      const key = evaluate(keyExpression, entry);
+      const nameIndex = +/Name\s*=\s*entry\[(\d+)\]/.exec(source)[1];
+      const descriptionIndex = +/Description\s*=\s*entry\[(\d+)\]/.exec(source)[1];
+      supplementalSkills.set(key, `{ Name = ${JSON.stringify(entry[nameIndex])}, Description = ${JSON.stringify(entry[descriptionIndex])}, Icon = ${JSON.stringify(evaluate(iconExpression, entry))}, Kind = "passive", Lifetime = "persistent" }`);
+    }
+  }
+  if (source.includes("ValkyrieSkillCatalog[key]") && /foreach \(key in \[/.test(source)) {
+    for (const key of stringsIn(/foreach \(key in (\[[^\]]+\])/.exec(source)[1])) supplementalSkills.set(key, `{ Icon = "${key}", Kind = "passive", Lifetime = "persistent" }`);
+  }
+}
 
 const order = [...stringsIn(assignedArray(valkyrieData, "ValkyrieOrder")), "lily"];
 const valkyriesRoot = assignedBlock(valkyrieData, "Valkyries");
@@ -235,11 +268,11 @@ function traitBlock(id) {
 }
 
 function skinBlock(id) {
-  return namedObject(skinsRoot, id) || assignedBlock(lilySkinData, `Skins.${id}`);
+  return supplementalSkins.get(id) || namedObject(skinsRoot, id) || assignedBlock(lilySkinData, `Skins.${id}`);
 }
 
 function skillBlock(id) {
-  return namedObject(skillsRoot, id) || assignedBlock(lilySkillCatalogData, `ValkyrieSkillCatalog.${id}`);
+  return supplementalSkills.get(id) || namedObject(skillsRoot, id) || assignedBlock(lilySkillCatalogData, `ValkyrieSkillCatalog.${id}`);
 }
 
 const statKeys = ["Hitpoints", "Bravery", "Stamina", "MeleeSkill", "RangedSkill", "MeleeDefense", "RangedDefense", "Initiative"];
@@ -250,12 +283,13 @@ const statLabels = {
 
 const copiedSkillIcons = new Set();
 function buildSkill(key) {
-  const block = skillBlock(key);
+  const block = skillBlock(key) || (key.startsWith("lily_spirit_") ? '{ Kind = "active", Lifetime = "transient" }' : "");
   const icon = stringField(block, "Icon") || key;
   const specBlock = objectField(block, "Spec");
-  const image = `assets/skills/${icon}.png`;
+  const image = `assets/skills/${path.basename(icon).replace(/\.png$/, "")}.png`;
   if (!copiedSkillIcons.has(icon)) {
-    copyAsset(path.join(valkyrieRoot, "gfx", "skills", "battle-valkyries", `${icon}.png`), path.join(outAssetsDir, "skills", `${icon}.png`));
+    if (icon.includes("/")) copyGfxAsset(valkyrieRoot, icon, image);
+    else copyAsset(path.join(valkyrieRoot, "gfx", "skills", "battle-valkyries", `${icon}.png`), path.join(workspaceRoot, image));
     copiedSkillIcons.add(icon);
   }
   return {
@@ -272,8 +306,8 @@ function buildSkill(key) {
         tooltip: collectPrefixValues(en, `skill.${key}.tooltip`),
       },
       zh: {
-        name: translate(zh, `skill.${key}.name`, translate(en, `skill.${key}.name`, key)),
-        description: translate(zh, `skill.${key}.description`, translate(en, `skill.${key}.description`, "")),
+        name: translate(zh, `skill.${key}.name`, resolveToken(stringField(block, "Name"), zh) || translate(en, `skill.${key}.name`, key)),
+        description: translate(zh, `skill.${key}.description`, resolveToken(stringField(block, "Description"), zh) || translate(en, `skill.${key}.description`, "")),
         tooltip: collectPrefixValues(zh, `skill.${key}.tooltip`),
       },
     },
@@ -299,6 +333,7 @@ function buildSkin(id, template, valkyrieID) {
   }
   return {
     id,
+    unlockChapter: stringField(block, "UnlockChapter"),
     images: { portrait: portraitOut, preview: previewOut },
     text: {
       en: { name: resolveToken(stringField(block, "Name"), en) || id, description: resolveToken(stringField(block, "Description"), en) },
@@ -313,6 +348,14 @@ const valkyries = order.map((id, index) => {
   const tBlock = traitBlock(id);
   const defaultSkinId = stringField(block, "SkinID");
   const skinIDs = stringsIn(arrayField(block, "SkinIDs"));
+  for (const { source } of loadedConfigs) {
+    for (const skinID of stringsIn(assignedArray(source, `Valkyries.${id}.SkinIDs`))) {
+      if (!skinIDs.includes(skinID)) skinIDs.push(skinID);
+    }
+    for (const match of source.matchAll(new RegExp(`Valkyries\\.${escapeRegExp(id)}\\.SkinIDs\\.push\\("([^"\\n]+)"\\)`, "g"))) {
+      if (!skinIDs.includes(match[1])) skinIDs.push(match[1]);
+    }
+  }
   if (!skinIDs.includes(defaultSkinId)) skinIDs.unshift(defaultSkinId);
   const traitIconPath = normalizeSourcePath(stringField(block, "TraitIcon"));
   const traitIconName = path.basename(traitIconPath || `${id}_trait_icon.png`);
@@ -367,6 +410,12 @@ const settingsOptions = Array.from(settingsData.matchAll(/^\s*local\s+[A-Za-z_][
       zh: { name: resolveToken(nameToken, zh), description: resolveToken(descriptionToken, zh) },
     },
   }));
+const numericDefaults = numberMap(assignedBlock(skinData, "Settings"));
+for (const match of settingsData.matchAll(/^\s*local\s+(\w+)\s*=\s*page\.addRangeSetting\("([^"]+)"\s*,[^,]+,\s*(\d+),\s*(\d+),\s*(\d+),\s*"([^"]+)"\);/gm)) {
+  const [, variable, id, min, max, step, nameToken] = match;
+  const descriptionToken = new RegExp(`${variable}\\.setDescription\\("([^"\\n]+)"\\)`).exec(settingsData)?.[1] || "";
+  settingsOptions.push({ id, type: "range", default: numericDefaults[id], min: +min, max: +max, step: +step, text: Object.fromEntries([["en", en], ["zh", zh]].map(([lang, dictionary]) => [lang, { name: resolveToken(nameToken, dictionary), description: resolveToken(descriptionToken, dictionary) }])) });
+}
 
 const costSteps = Array.from(summonData.matchAll(/\{\s*Max\s*=\s*(\d+)\s*,\s*Cost\s*=\s*(\d+)\s*\}/g), ([, max, cost]) => ({ max: Number(max), cost: Number(cost) }));
 const gachaCostSteps = Array.from(summonData.matchAll(/\{\s*MaxGuarantees\s*=\s*(\d+)\s*,\s*Cost\s*=\s*(\d+)\s*\}/g), ([, maxGuarantees, cost]) => ({ maxGuarantees: Number(maxGuarantees), cost: Number(cost) }));
@@ -552,6 +601,8 @@ const data = {
     title: "Battle Valkyries Wiki",
     source: "battle-valkyries source",
     updatedAt: new Date().toISOString().slice(0, 10),
+    generatedAt: new Date().toISOString(),
+    missingConfigFiles,
     sourceRevision: revision,
     valkyrieVersion: variants.valkyries.version,
     alchemyVersion: variants.alchemy.version,
@@ -564,6 +615,7 @@ const data = {
       "src/alchemy-enchantment-system/alchemy-enchantment-system/equipment_data.nut",
       "i18n/en.json",
       "i18n/zh_CN.json",
+      ...loadedConfigFiles.map(file => `src/battle-valkyries/battle-valkyries/config/${file}`),
     ],
   },
   statKeys,
@@ -583,6 +635,8 @@ const data = {
   systems,
   valkyries,
 };
+
+Object.assign(data, buildReferenceData({ fs, path, modRoot, valkyrieRoot, valkyrieCodeRoot, workspaceRoot, loadedConfigs, en, zh, valkyries, systems, buildSkill, supplementalSkills, skillsRoot, lilySkillCatalogData, readUtf8, findMatching, assignedBlock, assignedArray, objectField, arrayField, namedObject, stringField, numberField, numberMap, stringsIn, topLevelObjectKeys, resolveToken, copyGfxAsset }));
 
 ensureDir(outDataDir);
 ensureDir(outAssetsDir);

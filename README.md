@@ -17,7 +17,11 @@ From this repository:
 npm run refresh
 ```
 
-The extractor reads the current source tree for both mods, including Valkyrie and Lily configuration, skills, skins, summoning rules, and the complete equipment rarity and affix catalog. It regenerates `data/wiki-data.js` and the local `assets/` tree.
+The extractor reads the current source tree for both mods, including uncommitted development work. It regenerates `data/wiki-data.js` and copies referenced art into `assets/` without changing the game repository.
+
+Coverage includes character loadouts, conditional/weapon/spirit skills, chapter-registered skins, all loaded chapters (objectives, materials, rewards and CG unlocks), expanded enemies, bounty camps, bond stages, signature equipment, Lily spirits, the memory shop, volume settings, summoning, and the equipment rarity/affix catalog. Chapter and supplemental skill discovery follows `load.nut`; files that have not entered the loading chain are not presented as playable chapters.
+
+The site labels its content as a development snapshot. `sourceRevision`, `updatedAt` and `generatedAt` identify the checkout and extraction time; `+working-tree` means the source includes uncommitted changes. This does not imply that all content is in the downloadable release or has passed in-game testing. See [the synchronization audit](docs/wiki-sync-2026-09-27.md) for the current differences from the previous Wiki.
 
 To use a mod checkout in another location, pass it directly:
 
@@ -25,11 +29,13 @@ To use a mod checkout in another location, pass it directly:
 node tools\extract-wiki-data.mjs D:\path\to\battle-valkyries
 ```
 
-Verify the generated counts and every referenced asset with:
+Verify snapshot counts, chapter-to-character/skill/skin links, reward stages, translated currencies, volume ranges and every referenced asset with:
 
 ```powershell
 npm run check
 ```
+
+When a later refresh intentionally changes the roster/catalog sizes, review the source additions before updating the snapshot count assertions in `tools/verify-wiki-data.mjs`. The structural checks should remain in place. System explanations are maintained in `tools/extract-reference-data.mjs`; review them when gameplay behavior changes.
 
 ## Local Preview
 

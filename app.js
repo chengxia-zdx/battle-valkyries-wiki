@@ -36,6 +36,14 @@
   const refs = {
     search: document.getElementById("searchInput"), rosterList: document.getElementById("rosterList"), rosterCount: document.getElementById("rosterCount"), overview: document.getElementById("overview"), detail: document.getElementById("detail"), mechanics: document.getElementById("mechanics"), systems: document.getElementById("systems"), alchemy: document.getElementById("alchemy"), settings: document.getElementById("settings"), matrix: document.getElementById("matrix"),
   };
+  Object.assign(copy.zh, {
+    chaptersTitle: "篇章攻略与奖励", enemiesTitle: "扩展敌人目录", bountyTitle: "悬赏营地", itemsTitle: "专属装备", spiritsTitle: "莉莉灵魂", shopTitle: "记忆商店", catalogTitle: "扩展技能目录",
+    requirements: "开启条件：以下角色均已入队且存活", stages: "阶段", objectives: "目标与提交材料", rewards: "奖励", medicine: "药品", tools: "工具", perksEach: "每名参与角色 Perk 点", gallery: "CG 解锁一览（含剧透）", fullImage: "查看完整原图", relatedChapters: "关联篇章", bondTitle: "羁绊阶段与奖励", additionalSkills: "武器、变身与篇章技能", additionalNote: "以下技能可能需要装备、变身、篇章进度或灵魂编成条件，并非入队时全部拥有。", unlockedBy: "篇章解锁", group: "分组", tier: "阶级", enemy: "敌人", multiplier: "生命 / 伤害倍率", naturalSpawn: "支持自然生成", dedicatedSpawn: "专属遭遇", owned: "持有女武神", budget: "基础预算", size: "目标规模", unlock: "解锁秽蚀", effect: "效果", costLabel: "费用", referenceIntro: "数值和登记条目来自本页所示源码快照。任务与奖励详情含剧透。", snapshot: "开发中源码快照；内容可能领先于下载版本。", itemsNote: "下列物品来自实际装备脚本；获取途径、阶段升级与角色专属效果分别列出，最终面板以游戏内为准。", enemyNote: "倍率相对于该单位所用的原版模板，不能直接当成最终面板数值。自然生成还受开关、天数、预算、兵种与场景限制。", rangeSetting: "音量滑块", skillFilter: "筛选技能名称或描述", allSkills: "已登记技能（含条件技能）", spiritsNote: "解锁列为累计秽蚀要求；初始拥有 6 个灵魂，最多同时配置 6 个。", currencyFragment: "记忆碎片", currencyCrystal: "记忆结晶", currencyRadiance: "记忆光辉", currencyEcho: "记忆回响"
+  });
+  Object.assign(copy.en, {
+    chaptersTitle: "Chapter guides & rewards", enemiesTitle: "Expanded enemy catalog", bountyTitle: "Bounty camps", itemsTitle: "Signature equipment", spiritsTitle: "Lily spirits", shopTitle: "Memory shop", catalogTitle: "Additional skill catalog",
+    requirements: "Unlock: recruit all these characters and keep them alive", stages: "Stage", objectives: "Objectives & materials to submit", rewards: "Rewards", medicine: "Medicine", tools: "Tools", perksEach: "Perk points per participant", gallery: "CG unlocks (spoilers)", fullImage: "View full image", relatedChapters: "Related chapters", bondTitle: "Bond stages & rewards", additionalSkills: "Weapon, transformation & chapter skills", additionalNote: "These skills may require equipment, transformation, chapter progress or a spirit loadout; they are not all available on recruitment.", unlockedBy: "Chapter unlock", group: "Group", tier: "Tier", enemy: "Enemy", multiplier: "HP / damage multiplier", naturalSpawn: "Natural spawn support", dedicatedSpawn: "Dedicated encounters", owned: "Owned Valkyries", budget: "Base budget", size: "Target size", unlock: "Blight to unlock", effect: "Effect", costLabel: "Cost", referenceIntro: "Values and registrations follow this source snapshot. Quest and reward details contain spoilers.", snapshot: "Development source snapshot; content may precede the downloadable release.", itemsNote: "These items come from concrete equipment scripts. Acquisition, progression and character-specific effects are listed below; final stats follow the game.", enemyNote: "Multipliers are relative to each unit's host template, not final stats. Natural spawning also depends on settings, day, budget, unit role and encounter type.", rangeSetting: "Volume slider", skillFilter: "Filter skills by name or description", allSkills: "Registered skills (including conditional skills)", spiritsNote: "Unlock is the cumulative blight requirement. Six spirits are initially available; up to six can be equipped.", currencyFragment: "Memory Fragments", currencyCrystal: "Memory Crystals", currencyRadiance: "Memory Radiance", currencyEcho: "Memory Echoes"
+  });
 
   const normalizeLang = (value) => String(value || "").toLowerCase().replace("_", "-").startsWith("zh") ? "zh" : String(value || "").toLowerCase().startsWith("en") ? "en" : "";
   const params = new URLSearchParams(window.location.search);
@@ -68,7 +76,7 @@
 
   function searchableText(valkyrie) {
     const txt = textFor(valkyrie);
-    return [valkyrie.id, txt.name, txt.backgroundName, txt.backgroundDescription, txt.traitName, txt.traitDescription, ...valkyrie.skills.flatMap((skill) => [skill.key, textFor(skill).name, textFor(skill).description])].join(" ").toLowerCase();
+    return [valkyrie.id, txt.name, txt.backgroundName, txt.backgroundDescription, txt.traitName, txt.traitDescription, ...[...valkyrie.skills, ...(valkyrie.additionalSkills || [])].flatMap((skill) => [skill.key, textFor(skill).name, textFor(skill).description])].join(" ").toLowerCase();
   }
 
   function visibleValkyries() {
@@ -79,7 +87,12 @@
   function updateStaticText() {
     document.documentElement.lang = state.lang === "zh" ? "zh-CN" : "en";
     document.querySelectorAll("[data-i18n]").forEach((node) => { node.textContent = t(node.dataset.i18n); });
+    document.querySelectorAll(".nav-button").forEach((button) => {
+      const label = button.querySelector("[data-i18n]")?.textContent;
+      if (label) { button.setAttribute("aria-label", label); button.title = label; }
+    });
     refs.search.placeholder = t("searchPlaceholder");
+    refs.search.setAttribute("aria-label", t("searchPlaceholder"));
     document.querySelectorAll("[data-lang]").forEach((button) => button.classList.toggle("is-active", button.dataset.lang === state.lang));
   }
 
@@ -102,6 +115,7 @@
         <div class="metric"><strong>${totalSkins()}</strong><span>${escapeHtml(t("metricSkins"))}</span></div>
         <div class="metric"><strong>${data.systems.equipment.affixes.length}</strong><span>${escapeHtml(t("metricAffixes"))}</span></div>
       </div>`;
+    refs.overview.insertAdjacentHTML("beforeend", `<p class="snapshot-note">${escapeHtml(t("snapshot"))}</p><nav class="reference-nav overview-links"><a class="chip" href="#chapters">${escapeHtml(t("chaptersTitle"))}</a><a class="chip" href="#enemies">${escapeHtml(t("enemiesTitle"))}</a><a class="chip" href="#items">${escapeHtml(t("itemsTitle"))}</a></nav>`);
   }
 
   function renderRoster() {
@@ -141,7 +155,7 @@
     const valkyrie = selectedValkyrie();
     const txt = textFor(valkyrie);
     const tags = [renderTag(t("selectedPrefix"), valkyrie.order), renderTag(t("idLabel"), valkyrie.id), renderTag(t("levelLabel"), valkyrie.level), renderTag(t("wageLabel"), valkyrie.dailyWage), renderTag(t("skillsLabel"), valkyrie.skills.length), renderTag(t("skinsLabel"), valkyrie.skins.length), renderTag(t("profileLabel"), valkyrie.legendsPerkProfile || "—")].join("");
-    const skinGallery = valkyrie.skins.map((skin) => `<figure class="skin-card"><div><img class="skin-card-portrait" src="${escapeHtml(skin.images.portrait)}" alt="${escapeHtml(textFor(skin).name)}"><img class="skin-card-preview" src="${escapeHtml(skin.images.preview)}" alt=""></div><figcaption><strong>${escapeHtml(textFor(skin).name)}</strong><code>${escapeHtml(skin.id)}</code>${textFor(skin).description ? `<span>${escapeHtml(textFor(skin).description)}</span>` : ""}</figcaption></figure>`).join("");
+    const skinGallery = valkyrie.skins.map((skin) => `<figure class="skin-card"><div><a href="${escapeHtml(skin.images.portrait)}" target="_blank" rel="noopener" title="${escapeHtml(t("fullImage"))}"><img class="skin-card-portrait" loading="lazy" src="${escapeHtml(skin.images.portrait)}" alt="${escapeHtml(textFor(skin).name)}"></a><img class="skin-card-preview" loading="lazy" src="${escapeHtml(skin.images.preview)}" alt=""></div><figcaption><strong>${escapeHtml(textFor(skin).name)}</strong><code>${escapeHtml(skin.id)}</code>${textFor(skin).description ? `<span>${escapeHtml(textFor(skin).description)}</span>` : ""}${skin.unlockChapter ? `<a href="#chapter-${escapeHtml(skin.unlockChapter)}">${escapeHtml(t("unlockedBy"))}</a>` : ""}</figcaption></figure>`).join("");
     refs.detail.innerHTML = `
       <div class="detail-header"><div class="detail-title"><p class="eyebrow">${escapeHtml(txt.backgroundName)}</p><h2>${escapeHtml(txt.name)}</h2><p>${escapeHtml(txt.backgroundDescription)}</p><div class="tag-row">${tags}</div></div><div class="detail-art-grid"><figure class="art-frame"><img src="${escapeHtml(valkyrie.images.card)}" alt="${escapeHtml(txt.name)}"><figcaption>${escapeHtml(t("summonArt"))}</figcaption></figure><figure class="art-frame"><img src="${escapeHtml(valkyrie.images.skin)}" alt="${escapeHtml(txt.name)}"><figcaption>${escapeHtml(t("skinArt"))}</figcaption></figure></div></div>
       <div class="detail-body">
@@ -149,7 +163,15 @@
         ${renderStatGrid(t("statsTitle"), valkyrie.baseAttributes, 145)}${renderStatGrid(t("talentsTitle"), valkyrie.talents, 3)}
         <div class="section-block"><div class="section-title"><h3>${escapeHtml(t("skinCollection"))}</h3></div><div class="skin-gallery">${skinGallery}</div></div>
         <div class="section-block"><div class="section-title"><h3>${escapeHtml(t("skillsTitle"))}</h3></div><div class="skills-grid skills-grid-all">${valkyrie.skills.map(renderSkillCard).join("")}</div></div>
+        ${valkyrie.bond ? `<div class="section-block"><h3>${escapeHtml(t("bondTitle"))}</h3>${valkyrie.bond.stages.map(stage => `<article class="system-card"><h4>${stage.value} · ${escapeHtml(localizedValue(stage.name))}</h4><p>${escapeHtml(localizedValue(stage.challenge))}</p></article>`).join("")}</div>` : ""}
+        ${valkyrie.chapters?.length ? `<div class="section-block"><h3>${escapeHtml(t("relatedChapters"))}</h3><div class="chip-row">${valkyrie.chapters.map(id => `<a class="chip" href="#chapter-${escapeHtml(id)}">${escapeHtml(localizedValue(data.chapters.find(chapter => chapter.id === id).name))}</a>`).join("")}</div></div>` : ""}
+        ${valkyrie.additionalSkills?.length ? `<div class="section-block"><h3>${escapeHtml(t("additionalSkills"))}</h3><p>${escapeHtml(t("additionalNote"))}</p><div class="skills-grid">${valkyrie.additionalSkills.map(renderSkillCard).join("")}</div></div>` : ""}
       </div>`;
+    refs.detail.querySelectorAll(".art-frame img").forEach(img => {
+      const link = document.createElement("a");
+      link.href = img.getAttribute("src"); link.target = "_blank"; link.rel = "noopener"; link.title = t("fullImage");
+      img.replaceWith(link); link.append(img);
+    });
   }
 
   function renderMechanics() {
@@ -169,6 +191,33 @@
 
   function renderSystems() {
     refs.systems.innerHTML = `<div class="section-title"><div><p class="eyebrow">${escapeHtml(data.meta.updatedAt)}</p><h2>${escapeHtml(t("systemsTitle"))}</h2></div></div><p>${escapeHtml(t("systemsBody"))}</p><p class="baseline-note">${escapeHtml(localizedValue(data.systems.intro))}</p><div class="system-grid">${data.systems.cards.map((card) => `<article class="system-card"><div><p class="skill-label">${escapeHtml(card.id)}</p><h3>${escapeHtml(localizedValue(card.title))}</h3></div><p>${escapeHtml(localizedValue(card.body))}</p>${renderBulletList(card.bullets)}<details class="source-details"><summary>${escapeHtml(t("sourceFiles"))}</summary><ul class="source-list compact-source-list">${card.sourceFiles.map((file) => `<li>${escapeHtml(file)}</li>`).join("")}</ul></details></article>`).join("")}</div>`;
+    refs.systems.insertAdjacentHTML("beforeend", renderReference());
+    const filter = document.getElementById("skillCatalogFilter");
+    filter.addEventListener("input", () => {
+      const query = filter.value.trim().toLowerCase();
+      document.querySelectorAll("#skillCatalogCards .skill-card").forEach(card => { card.hidden = !card.textContent.toLowerCase().includes(query); });
+    });
+  }
+
+  function renderReference() {
+    const e = escapeHtml, l = value => e(localizedValue(value));
+    const table = (headers, rows) => `<div class="table-scroll"><table class="matrix-table"><thead><tr>${headers.map(header => `<th>${e(header)}</th>`).join("")}</tr></thead><tbody>${rows.join("")}</tbody></table></div>`;
+    const section = (id, title, body) => `<section id="${id}" class="reference-block"><h3>${e(t(title))}</h3>${body}</section>`;
+    const actorName = id => e(textFor(data.valkyries.find(actor => actor.id === id) || {}).name || id);
+    const links = [["chapters", "chaptersTitle"], ["bounty-camps", "bountyTitle"], ["enemies", "enemiesTitle"], ["items", "itemsTitle"], ["spirits", "spiritsTitle"], ["memory-shop", "shopTitle"], ["skill-catalog", "catalogTitle"]];
+    const navigation = `<nav class="reference-nav" aria-label="${e(t("systemsTitle"))}">${links.map(([id, title]) => `<a class="chip" href="#${id}">${e(t(title))}</a>`).join("")}</nav>`;
+    const chapters = data.chapters.map(chapter => `<article id="chapter-${e(chapter.id)}" class="chapter-card">
+      <div class="chapter-heading"><img loading="lazy" src="${e(chapter.poster)}" alt="${l(chapter.name)}"><div><h4>${l(chapter.name)}</h4><p>${l(chapter.description)}</p><p>${e(t("requirements"))}: ${chapter.actors.map(actorName).join(" / ")}</p><p>${chapter.stages.length} ${e(t("stages"))} · ${chapter.gallery.length} CG</p></div></div>
+      <details><summary>${e(t("objectives"))} / ${e(t("rewards"))}</summary>${table([t("stages"), t("objectives"), t("rewards")], chapter.stages.map(stage => `<tr><td><strong>${stage.number}. ${l(stage.name)}</strong><p>${l(stage.brief)}</p></td><td><ul>${stage.goals.map(goal => `<li>${l(goal.name)}</li>`).join("")}${stage.materials.map(material => `<li>${l(material.name)} × ${material.count}${localizedValue(material.source) ? `<small>${l(material.source)}</small>` : ""}</li>`).join("")}</ul></td><td><p>${l(stage.reward)}</p><small>${stage.money} ${e(t("crowns"))} · ${stage.medicine} ${e(t("medicine"))} · ${stage.tools} ${e(t("tools"))}<br>${e(t("perksEach"))}: ${stage.perksEach}</small></td></tr>`))}</details>
+      <details><summary>${e(t("gallery"))}</summary><div class="cg-grid">${chapter.gallery.map(cg => `<figure><a href="${e(cg.image)}" target="_blank" rel="noopener" title="${e(t("fullImage"))}"><img loading="lazy" src="${e(cg.image)}" alt="${l(cg.title)}"></a><figcaption><strong>${l(cg.title)}</strong> · ${e(t("stages"))} ${cg.stage}<p>${l(cg.caption)}</p></figcaption></figure>`).join("")}</div></details>
+      <small class="source-path">${e(chapter.source)}</small></article>`).join("");
+    const bounty = table([t("owned"), t("budget"), t("size"), t("rewards")], data.bounty.rules.map((rule, i) => `<tr><td>${rule.MinOwned}–${rule.MaxOwned}</td><td>${rule.MinBudget}–${rule.MaxBudget}</td><td>${rule.MinSize}–${rule.MaxSize}</td><td>${data.bounty.rewards[i]} ${e(t("crowns"))}</td></tr>`)) + `<div class="chip-row">${data.bounty.themes.map(theme => `<span class="chip">${l(theme.name)}</span>`).join("")}</div>`;
+    const enemies = `<p>${e(t("enemyNote"))}</p>` + data.enemyGroups.map(group => `<details class="catalog-group"><summary>${l(group.name)} (${group.enemies.length}) · ${e(t(group.naturalSpawn ? "naturalSpawn" : "dedicatedSpawn"))}</summary>${table([t("enemy"), t("tier"), t("multiplier"), t("traitBonuses")], group.enemies.map(enemy => `<tr><td>${l(enemy.name)}<small>${e(enemy.id)}</small></td><td>${e(enemy.tier.toUpperCase().replace("25", "2.5"))}</td><td>${formatNumber(Math.round(enemy.hpMultiplier * 100) / 100)}× / ${formatNumber(enemy.damageMultiplier)}×</td><td>${Object.entries(enemy.bonuses).filter(([, value]) => value !== 0).map(([key, value]) => `${e(statLabel(key))} ${value > 0 ? "+" : ""}${value}`).join(" / ") || "—"}</td></tr>`))}</details>`).join("");
+    const items = `<p>${e(t("itemsNote"))}</p><div class="system-grid">${data.items.map(item => `<article class="system-card"><h4>${l(item.name)}</h4><p class="acquisition">${l(item.acquisition)}</p><p>${l(item.description)}</p><small class="source-path">${e(item.source)}</small></article>`).join("")}</div>`;
+    const spirits = `<p>${e(t("spiritsNote"))}</p>` + table([t("matrixName"), t("unlock"), "AP", t("effect")], data.spirits.map(spirit => `<tr><td>${l(spirit.name)}</td><td>${spirit.stats.Unlock}</td><td>${spirit.stats.AP}</td><td>${l(spirit.description)}</td></tr>`));
+    const shop = table([t("matrixName"), t("costLabel"), t("effect")], data.shop.map(item => `<tr><td>${l(item.name)}</td><td>${Object.entries(item.cost).map(([key, value]) => `${l(data.currencies[key] || key)} × ${value}`).join(" / ")}</td><td>${l(item.effect)}</td></tr>`));
+    const catalog = `<p>${e(t("additionalNote"))}</p><details><summary>${e(t("allSkills"))} (${data.skillCatalog.length})</summary><label class="catalog-filter">${e(t("skillFilter"))}<input id="skillCatalogFilter" type="search"></label><div id="skillCatalogCards" class="skills-grid">${data.skillCatalog.map(renderSkillCard).join("")}</div></details>`;
+    return `<p class="baseline-note">${e(t("referenceIntro"))}</p>${navigation}${section("chapters", "chaptersTitle", chapters)}${section("bounty-camps", "bountyTitle", bounty)}${section("enemies", "enemiesTitle", enemies)}${section("items", "itemsTitle", items)}${section("spirits", "spiritsTitle", spirits)}${section("memory-shop", "shopTitle", shop)}${section("skill-catalog", "catalogTitle", catalog)}`;
   }
 
   function affixPartLabel(part) {
@@ -198,7 +247,7 @@
   }
 
   function renderSettings() {
-    const cards = data.settings.options.map((setting) => { const txt = textFor(setting); const note = settingNote(setting.id); return `<article class="settings-card"><div class="settings-card-top"><div><p class="skill-label">${escapeHtml(setting.id)}</p><h3>${escapeHtml(txt.name || setting.id)}</h3></div><div class="tag-row"><span class="tag">${escapeHtml(t("settingType"))}</span><span class="tag">${escapeHtml(t("settingDefault"))}: <strong>&nbsp;${escapeHtml(setting.default ? t("enabled") : t("disabled"))}</strong></span></div></div><p>${escapeHtml(txt.description)}</p>${note ? `<p class="setting-note">${escapeHtml(note)}</p>` : ""}</article>`; }).join("");
+    const cards = data.settings.options.map((setting) => { const txt = textFor(setting); const note = settingNote(setting.id); return `<article class="settings-card"><div class="settings-card-top"><div><p class="skill-label">${escapeHtml(setting.id)}</p><h3>${escapeHtml(txt.name || setting.id)}</h3></div><div class="tag-row"><span class="tag">${escapeHtml(t(setting.type === "range" ? "rangeSetting" : "settingType"))}</span><span class="tag">${escapeHtml(t("settingDefault"))}: <strong>&nbsp;${escapeHtml(setting.type === "range" ? `${setting.default}% (${setting.min}–${setting.max}%)` : setting.default ? t("enabled") : t("disabled"))}</strong></span></div></div><p>${escapeHtml(txt.description)}</p>${note ? `<p class="setting-note">${escapeHtml(note)}</p>` : ""}</article>`; }).join("");
     refs.settings.innerHTML = `<div class="section-title"><div><p class="eyebrow">MSU Mod Settings</p><h2>${escapeHtml(t("settingsTitle"))}</h2></div></div><p>${escapeHtml(t("settingsBody"))}</p><div class="settings-list">${cards || `<div class="empty-state">${escapeHtml(t("noSettings"))}</div>`}</div>`;
   }
 
