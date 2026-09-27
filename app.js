@@ -10,7 +10,7 @@
 
   const copy = {
     en: {
-      brandSub: "Source-driven Mod Wiki", navOverview: "Overview", navValkyries: "Valkyries", navMechanics: "Summoning", navSystems: "Systems", navAlchemy: "Alchemy", navSettings: "Settings", navDownload: "Download",
+      brandSub: "Source-driven Mod Wiki", navOverview: "Overview", navValkyries: "Valkyries", navChapters: "Chapters", navMechanics: "Summoning", navSystems: "Systems", navAlchemy: "Alchemy", navSettings: "Settings", navDownload: "Download",
       rosterEyebrow: "Current roster", rosterTitle: "Valkyrie Index", searchPlaceholder: "Search names, traits, and skills", overviewTitle: "The current Battle Valkyries reference", overviewBody: "A bilingual wiki generated from the latest local source tree, covering every built-in Valkyrie, full skill loadouts, summoning, progression systems, and the standalone Alchemy & Enchantment mod.",
       downloadLabel: "Download on Nexus Mods", downloadHint: "Public releases and optional files are hosted on Nexus Mods.", metricValkyries: "built-in Valkyries", metricSkills: "loadout skills", metricSkins: "selectable skins", metricAffixes: "equipment affixes",
       sourceRevision: "Source revision", updated: "Generated", selectedPrefix: "No.", idLabel: "ID", wageLabel: "Daily wage", levelLabel: "Level", profileLabel: "Legends profile", layoutLabel: "Detail layout", skinsLabel: "Skins", skillsLabel: "Skills", summonArt: "Summon art", skinArt: "Battlefield preview", statsTitle: "Base Attributes", talentsTitle: "Talent Stars", traitTitle: "Character Trait", skillsTitle: "Complete Loadout", passiveTitle: "Passive", activeTitle: "Active", transientTitle: "Transient", skinCollection: "Skin Collection", traitBonuses: "Trait bonuses",
@@ -21,7 +21,7 @@
       matrixTitle: "Roster Skill Matrix", matrixName: "Valkyrie", matrixTrait: "Trait", matrixSkills: "Loadout", noResults: "No Valkyries match this search.", noTooltip: "See the in-game tooltip for runtime details.",
     },
     zh: {
-      brandSub: "源码驱动 Mod 百科", navOverview: "总览", navValkyries: "女武神", navMechanics: "召唤", navSystems: "系统", navAlchemy: "附魔炼金", navSettings: "设置", navDownload: "下载",
+      brandSub: "源码驱动 Mod 百科", navOverview: "总览", navValkyries: "女武神", navChapters: "篇章", navMechanics: "召唤", navSystems: "系统", navAlchemy: "附魔炼金", navSettings: "设置", navDownload: "下载",
       rosterEyebrow: "当前名册", rosterTitle: "女武神索引", searchPlaceholder: "搜索角色、特性与技能", overviewTitle: "最新 Battle Valkyries 内容百科", overviewBody: "这是一份从当前本地源码直接生成的双语 Wiki，覆盖全部内置女武神、完整技能编成、召唤与养成系统，以及独立的附魔炼金模组。",
       downloadLabel: "前往 Nexus Mods 下载", downloadHint: "公开版本与可选文件发布在 Nexus Mods 页面。", metricValkyries: "名内置女武神", metricSkills: "项编成技能", metricSkins: "套可选皮肤", metricAffixes: "条装备词条",
       sourceRevision: "源码版本", updated: "生成日期", selectedPrefix: "序号", idLabel: "ID", wageLabel: "日薪", levelLabel: "等级", profileLabel: "Legends 定位", layoutLabel: "详情页布局", skinsLabel: "皮肤", skillsLabel: "技能", summonArt: "召唤立绘", skinArt: "战场预览", statsTitle: "基础属性", talentsTitle: "天赋星级", traitTitle: "人物特性", skillsTitle: "完整技能编成", passiveTitle: "被动", activeTitle: "主动", transientTitle: "临时", skinCollection: "皮肤收藏", traitBonuses: "特性加成",
