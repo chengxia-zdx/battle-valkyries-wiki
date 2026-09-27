@@ -303,12 +303,12 @@ function buildSkill(key) {
       en: {
         name: translate(en, `skill.${key}.name`, resolveToken(stringField(block, "Name"), en) || key),
         description: translate(en, `skill.${key}.description`, resolveToken(stringField(block, "Description"), en)),
-        tooltip: collectPrefixValues(en, `skill.${key}.tooltip`),
+        tooltip: [...collectPrefixValues(en, `skill.${key}.tooltip`), ...[en[`skill.${key}.rules`], key === "ye_shunguang_heart_recalled" ? en[`skill.${key}.unavailable`] : ""].filter(Boolean)],
       },
       zh: {
         name: translate(zh, `skill.${key}.name`, resolveToken(stringField(block, "Name"), zh) || translate(en, `skill.${key}.name`, key)),
         description: translate(zh, `skill.${key}.description`, resolveToken(stringField(block, "Description"), zh) || translate(en, `skill.${key}.description`, "")),
-        tooltip: collectPrefixValues(zh, `skill.${key}.tooltip`),
+        tooltip: [...collectPrefixValues(zh, `skill.${key}.tooltip`), ...[zh[`skill.${key}.rules`], key === "ye_shunguang_heart_recalled" ? zh[`skill.${key}.unavailable`] : ""].filter(Boolean)],
       },
     },
   };

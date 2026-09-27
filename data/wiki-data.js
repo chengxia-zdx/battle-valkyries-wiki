@@ -57,7 +57,13 @@ window.BV_WIKI_DATA = {
       "src/battle-valkyries/battle-valkyries/config/enemy_expansion_combat.nut",
       "src/battle-valkyries/battle-valkyries/config/valkyrie_bounty_camps.nut",
       "src/battle-valkyries/battle-valkyries/config/enemy_expansion_spawn.nut"
-    ]
+    ],
+    "partialUpdates": {
+      "ye_shunguang_bond": {
+        "sourceRevision": "1c164ce6+working-tree",
+        "generatedAt": "2026-09-27T12:39:35.256Z"
+      }
+    }
   },
   "statKeys": [
     "Hitpoints",
@@ -517,12 +523,16 @@ window.BV_WIKI_DATA = {
           "en": [
             "Entering the enlightened state plays the combat cinematic at most once per battle, with character voices and combat effects.",
             "Bond 20 / 60 awards Heartbound Circlet / Homeward Vestment. Bond 40 gives 1,000 Crowns and 30 tools; bond 80 gives 1,500 Crowns and 30 medicine.",
-            "Win the bond-100 challenge to unlock Heart Recalled: once per battle, 2 AP and 10 fatigue, restore Sword Stance to 6 without resetting the enlightened state's spent stance or block. A participated victory grants 4 bond."
+            "Win the bond-100 challenge to unlock Heart Recalled: once per battle, 2 AP and 10 fatigue, restore Sword Stance to 6 without automatically entering Enlightened State or resetting its spent stance or block. Its use is independent of Qingming Unsheathed.",
+            "A Heart at Home has five two-page stories and five CGs. Gain 4 bond by participating and surviving a victory; Ye Shunguang must also participate and survive each camp victory, but need not land the killing blow. Clear each stage before advancing. A full stash preserves pending rewards.",
+            "Heartbound Circlet: 240 armor, −4 maximum fatigue, +10 Resolve. Homeward Vestment: 300 armor, −8 maximum fatigue, +10 Initiative. Only Ye Shunguang may equip them."
           ],
           "zh": [
             "进入明心境时播放战斗 CG 动画，每场战斗最多一次，并接入人物语音与战斗特效。",
             "羁绊 20 / 60 奖励系心额 / 归途衣；40 阶段奖励 1000 克朗与 30 工具，80 阶段奖励 1500 克朗与 30 药品。",
-            "击破 100 阶段营地解锁一念归真：每战一次，2 AP、10 疲劳，将剑势补至 6 层，不重置明心境已消耗剑势与格挡。亲自参战并获胜时获得 4 羁绊。"
+            "击破 100 阶段营地解锁一念归真：每战一次，2 AP、10 疲劳，将剑势补至 6 层；不自动进入明心境，不重置已消耗剑势与格挡，与青溟出匣次数独立。",
+            "《此心有归》包含五阶段双页剧情与五张 CG。亲自参战、存活且获胜增加 4 羁绊；营地结算同样要求叶瞬光参战并存活，无需最后一击。阶段依次完成，仓库满时保留待领奖励。",
+            "系心额：240 防护、最大疲劳 −4、决心 +10；归途衣：300 防护、最大疲劳 −8、主动值 +10。两件防具仅限叶瞬光装备。"
           ]
         },
         "sourceFiles": [
@@ -9190,12 +9200,18 @@ window.BV_WIKI_DATA = {
             "en": {
               "name": "Heart Recalled",
               "description": "Gather your resolve and immediately fill Qingming Sword Stance to 6 stacks. Once per battle; does not automatically enter the Enlightened State.",
-              "tooltip": []
+              "tooltip": [
+                "Costs 2 AP and 10 fatigue. Works inside or outside Enlightened State; preserves spent stance and the current block limit. Its use is independent of Qingming Unsheathed. Deals no damage.",
+                "Requires the final bond camp, an active battle, fewer than 6 stance stacks, and an unused charge this battle."
+              ]
             },
             "zh": {
               "name": "一念归真",
               "description": "将心意凝为归处，立即把青溟剑势补至 6 层。每场战斗仅可使用一次；不会自动进入明心境。",
-              "tooltip": []
+              "tooltip": [
+                "消耗 2 AP、10 疲劳。常态与明心境内均可补层；不清除已消耗剑势、不刷新格挡。与青溟出匣独立计次，无伤害。",
+                "需要完成最终羁绊营地、处于战斗、剑势未满且本场尚未使用。"
+              ]
             }
           }
         }
@@ -9270,6 +9286,26 @@ window.BV_WIKI_DATA = {
       "bond": {
         "actor": "ye_shunguang",
         "source": "config/ye_shunguang_bond_data.nut",
+        "name": {
+          "en": "A Heart at Home",
+          "zh": "此心有归"
+        },
+        "description": {
+          "en": "The road traveled together becomes a home she chooses for herself. Gain 4 bond when she participates and survives a victory. Rewards follow completed challenges.",
+          "zh": "与团长并肩走过的路，会成为她亲手选择的归处。实际参战并存活获胜时羁绊 +4；每阶段挑战完成后发奖。"
+        },
+        "rules": {
+          "en": "Confirm to reveal a nearby camp with a persistent highlight. Ye Shunguang must participate and survive victory; she need not land the killing blow.",
+          "zh": "确认后在附近显露并持续高亮营地。叶瞬光须实际参战并存活获胜，不要求最后一击。"
+        },
+        "delivery": {
+          "en": "Your reward is recorded and delivery is pending. Free a stash slot; subsequent event checks will retry. Saving and loading preserves your entitlement.",
+          "zh": "奖励已记账，暂未发放。请腾出行囊空间；稍后事件检查会自动重试，读档不会丢失奖励。"
+        },
+        "progression": {
+          "en": "Progress through 20 / 40 / 60 / 80 / 100 bond in order. Each stage has two story pages and one camp; an unfinished earlier challenge blocks the next. This campaign does not require the Yunki chapter. Story rings are keepsakes, not equipment rewards.",
+          "zh": "羁绊按 20 / 40 / 60 / 80 / 100 顺序推进，每阶段两页剧情与一座营地；前一挑战未完成时不能越级。无需先完成《云岿山伏魔录》。剧情中的戒指是纪念物，不是装备奖励。"
+        },
         "stages": [
           {
             "value": 20,
@@ -9280,7 +9316,33 @@ window.BV_WIKI_DATA = {
             "challenge": {
               "en": "First camp victory reward: Heartbound Circlet.",
               "zh": "第一营地胜利奖励：系心额。"
-            }
+            },
+            "location": {
+              "en": "Severed Cord Tollgate",
+              "zh": "断绳关卡"
+            },
+            "locationDescription": {
+              "en": "A Heart at Home: A Knot in Red. Ye Shunguang must participate and survive a victory here to earn this bond reward.",
+              "zh": "此心有归：红绳有结。叶瞬光必须实际参战并存活获胜；击败此处后获得本阶段羁绊奖励。"
+            },
+            "story": {
+              "en": "[p]Everyone has eaten before Ye Shunguang lifts her lukewarm soup. As she lowers her head, a thin silver plate falls into her lap. A blade has cut halfway through its fastening cord; the remaining threads have only just given way.[/p][p]\"When did that happen?\" you ask.[/p][p]\"At the pass.\" She turns the circlet over and tries to twist the broken threads together. \"It is all right. It missed my ears.\"[/p][p]You draw a length of red cord from the repair bag. She glances from your hands to your unfinished cloak. \"You have not mended yours yet.\"[/p][p]\"A cloak can be pulled over a tear. If this falls again, it will land in the fire.\"[/p][p]She hands it over, but does not quite withdraw her fingers. On your third turn of the cord, she gently pins the end. \"A little looser here. Otherwise it pulls my hair when I turn.\"[/p][p]You undo the knot and start again. This time she does not say that anything will do. She tests the fit twice before murmuring, \"That is just right.\"[/p]",
+              "zh": "[p]营火边的人都吃过了，叶瞬光才端起已经不热的汤。她低头时，额前一片薄银落在膝上。系带被刀锋割断了一半，剩下那点纤维撑到了现在。[/p][p]“什么时候坏的？”你问。[/p][p]“过山口的时候。”她把护额翻过来，试图将断线重新拧到一起，“不碍事，耳朵没碰到。”[/p][p]你从修甲袋里抽出一截红绳。她看了看你的手，又看了看还没补完的披风：“你的还没修。”[/p][p]“披风可以盖住。这个再掉，就落进火里了。”[/p][p]她把护额递过来，手却没有立刻收回。你绕到第三圈时，她轻轻按住绳头：“这里要松一点。太紧的话，转头会扯到头发。”[/p][p]于是你拆开重系。她不再说随便，只在结打好后认真试了两次，才轻声说：“这样正好。”[/p]"
+            },
+            "reveal": {
+              "en": "[p]At dawn you stop beside the abandoned outer barricade. Yesterday's wheel tracks turn uphill toward the tollgate. The smith's wagon is there, along with several travelers who refused to surrender their last sack of grain.[/p][p]Ye Shunguang holds the repaired circlet against her chest. The red cord is bright, but a dangerous crack remains in the silver.[/p][p]\"The cord alone will not do,\" you say. \"Let us bring them back, and ask the smith to fit a new backing.\"[/p][p]She looks at you and smiles. \"So this time, saying I am fine will not settle it?\"[/p][p]\"Not this time.\"[/p][p]She wraps the circlet carefully and starts up the path. After two steps she looks back to make sure you are following.[/p][p]\"Together, then. And when we return, that cloak of yours gets finished too.\"[/p]",
+              "zh": "[p]黎明，你们停在山口废弃的外栅旁。昨日的车辙到了这里，便被拖向更高处的税卡。铁匠的货车也在那里，连同几个不肯交出最后一袋粮食的旅人。[/p][p]叶瞬光把修好的护额捧到胸前。红绳很醒目，银片上却还有一道危险的裂缝。[/p][p]“只修绳子不够。”你说，“把人接回来，也请铁匠替它换块内衬。”[/p][p]她看着你，忽然笑了：“所以这次，不是我说不碍事就算了？”[/p][p]“这次不算。”[/p][p]她将护额小心包好，自己先踏上山道。走出两步，又回头确认你跟上了。[/p][p]“那就一起去。回来时，你那件披风也得补完。”[/p]"
+            },
+            "victory": {
+              "en": "[p]The smith fits a thin steel backing beneath the silver ornament, leaving the old red cord in place. Ye Shunguang puts on the finished Heartbound Circlet and touches its slightly clumsy knot. \"Keep this one. I know it.\"[/p]",
+              "zh": "[p]铁匠用收回的薄钢在银饰背面补上护片，旧红绳被原样保留。她把完成的「系心额」戴好，指尖碰了碰那个有些笨拙的结：“这个不用换。我认得。”[/p]"
+            },
+            "introImage": "assets/bonds/events/battle-valkyries/ye_shunguang_bond_20_intro.png",
+            "cgImage": "assets/bonds/events/battle-valkyries/ye_shunguang_bond_20_cg.png",
+            "item": "ye_shunguang_heartbound_circlet",
+            "money": 0,
+            "tools": 0,
+            "medicine": 0
           },
           {
             "value": 40,
@@ -9291,7 +9353,33 @@ window.BV_WIKI_DATA = {
             "challenge": {
               "en": "Second camp victory reward: 1,000 crowns and 30 tools and supplies.",
               "zh": "第二营地胜利奖励：1000 克朗与 30 工具补给。"
-            }
+            },
+            "location": {
+              "en": "Reedlight Ambush Camp",
+              "zh": "芦灯伏营"
+            },
+            "locationDescription": {
+              "en": "A Heart at Home: Leave a Light. Ye Shunguang must participate and survive a victory here to earn this bond reward.",
+              "zh": "此心有归：留一盏灯。叶瞬光必须实际参战并存活获胜；击败此处后获得本阶段羁绊奖励。"
+            },
+            "story": {
+              "en": "[p]Rain has delayed tonight's patrol. While you update the supply ledger by lamplight, Ye Shunguang brings two cups of hot water and slides one toward you.[/p][p]\"Do you write this much every day?\"[/p][p]\"Mostly money. And who mistook our last bag of salt for sugar.\"[/p][p]She laughs, then asks with sudden seriousness, \"What about that bird beside the road?\"[/p][p]Your pen stops. She describes how it tried to drag a piece of bread into the grass, failed, pecked off a little, then tried again. You passed the same spot together, yet you never saw it.[/p][p]\"You want to record things like that too?\"[/p][p]\"Yes.\" She shields the flame from a draft. \"Not only because I might forget. When I tell you about something, it feels as though today lasted a little longer.\"[/p][p]You turn to a blank page and ask how round the bird was. When she sees the ball you draw, she laughs too hard to drink.[/p]",
+              "zh": "[p]雨把今晚的巡路推迟了。你正在灯下补写补给账，叶瞬光端来两杯热水，将其中一杯推到你手边。[/p][p]她望着摊开的本子：“你每天都记这么多？”[/p][p]“主要是钱。还有谁把最后一袋盐当糖用了。”[/p][p]她笑出声，随后认真问：“那今天路边的那只鸟呢？”[/p][p]你停下笔。她比划着说，那只鸟把面包拖进草丛，拖不动，又退回来啄走一点，来回折腾了很久。你们明明同时经过，你却没看见。[/p][p]“这种事，也想记下来？”[/p][p]“嗯。”她用手挡住被风吹偏的火苗，“不是怕忘掉才想记。有些事讲给你听，就会觉得今天过得长了一点。”[/p][p]你把账本翻到空白处，问她那只鸟究竟有多胖。她看着你画出的圆球，笑得连水都喝不下去。[/p]"
+            },
+            "reveal": {
+              "en": "[p]Three short flashes appear among the reeds after nightfall. The rescued smith recognizes the road signal, but the messenger on watch has been missing for two days.[/p][p]Across the stream, a goblin palisade hides behind the lights. Captives have been tied beside the lanterns to lure rescuers into bow range.[/p][p]Ye Shunguang does not draw her sword at once. First she ties a red ribbon to a low branch on your bank and sets the lantern behind a stone.[/p][p]\"The wounded will need to see the way back.\"[/p][p]You mark the sentries; she checks the depth of the water. Before you separate to scout, she catches your sleeve.[/p][p]\"When we return, I will draw that bird properly for you.\"[/p][p]\"I will leave the light.\"[/p][p]\"I know.\" She releases your sleeve. \"So make sure you come back too.\"[/p]",
+              "zh": "[p]入夜后，芦苇深处出现了三次短促的灯光。被救回的铁匠认出那是驿路的信号，可值夜的信使已经两天没回来。[/p][p]你们沿溪探到对岸，灯后藏着哥布林的木栅。它们把灯挂在被捆的旅人身边，等救援者涉水进入射程。[/p][p]叶瞬光没有立刻拔剑。她先在岸边低枝上系好一条红带，再把提灯放在石头内侧。[/p][p]“伤员回来时，得看得见这条路。”她说。[/p][p]你记下哨位，她记下水深。分开侦察前，她轻轻拉住你的袖口。[/p][p]“还有，回来以后，那只鸟我重新画给你看。”[/p][p]“灯会留着。”你说。[/p][p]“我知道。”她松开手，“所以你也要回来。”[/p]"
+            },
+            "victory": {
+              "en": "[p]The rescued messenger drinks beside the lantern while she redraws the bird at your side. Halfway through, she admits your round version was rather close. The escort payment and recovered tools join the company supplies.[/p]",
+              "zh": "[p]救回的信使坐在灯边喝热水，她就在你身旁重新画那只鸟。画到一半，她承认你的圆球也挺像。护送报酬与回收工具一同入账。[/p]"
+            },
+            "introImage": "assets/bonds/events/battle-valkyries/ye_shunguang_bond_40_intro.png",
+            "cgImage": "assets/bonds/events/battle-valkyries/ye_shunguang_bond_40_cg.png",
+            "item": "",
+            "money": 1000,
+            "tools": 30,
+            "medicine": 0
           },
           {
             "value": 60,
@@ -9302,7 +9390,33 @@ window.BV_WIKI_DATA = {
             "challenge": {
               "en": "Third camp victory reward: Homeward Vestment.",
               "zh": "第三营地胜利奖励：归途衣。"
-            }
+            },
+            "location": {
+              "en": "Cold Forge Stockade",
+              "zh": "寒炉寨"
+            },
+            "locationDescription": {
+              "en": "A Heart at Home: Through Wind and Snow. Ye Shunguang must participate and survive a victory here to earn this bond reward.",
+              "zh": "此心有归：风雪共衣。叶瞬光必须实际参战并存活获胜；击败此处后获得本阶段羁绊奖励。"
+            },
+            "story": {
+              "en": "[p]The smith brings an unfinished suit of light armor. Thin plates lie beneath white cloth; the shoulders allow a free lift of the arm, and no hard buckle obstructs a turn. Ye Shunguang tries a few sword movements, then lays it beneath the lamp to inspect it.[/p][p]\"The soft lining is still missing,\" you say. \"Once the shipment arrives, you can wear it through winter.\"[/p][p]Instead of answering, she catches your wrist. Beneath the rolled sleeve is the scrape you earned moving a wagon for the wounded.[/p][p]\"You said this had healed.\"[/p][p]\"Almost.\"[/p][p]She presses a dressing against it and looks up. You remember giving her precisely that look beside the fire.[/p][p]You sit. Only after winding a clean bandage does she move the remaining cloth aside.[/p][p]\"This coat can wait a little,\" she says. \"You cannot keep putting yourself last.\"[/p]",
+              "zh": "[p]铁匠送来一件尚未完工的轻甲样衣。白色外衣下缝着薄片，肩口可以抬臂，腰侧没有妨碍转身的硬扣。叶瞬光试了几个出剑动作，又将衣服脱下，放在灯下翻看。[/p][p]“里面的软衬还没做。”你说，“等货到了，冬天也能穿。”[/p][p]她没有应声，忽然捉住你的手腕。袖口往上卷时，你上次替伤员搬车留下的擦伤露了出来。[/p][p]“你不是说已经好了？”[/p][p]“快好了。”[/p][p]她将药布按住，抬眼看你。那个眼神让你想起自己问护额的晚上。[/p][p]你只好坐下。她替你缠好新的绷带，才把余下的软布推向桌边。[/p][p]“这件衣服可以慢一点。”她说，“但你不能一直把自己排到最后。”[/p]"
+            },
+            "reveal": {
+              "en": "[p]The caravan carrying the lining has been trapped outside Cold Forge Stockade. The barbarians took the cargo, sent those who could walk to carry ore, and locked the others in an old shed.[/p][p]At the mountain pass, Ye Shunguang wears the trial coat before its inner armor is complete. Wind finds a shoulder seam. She stops to tighten the collar rather than pretend she is warm, then offers you another cloak.[/p][p]\"That one is for you. Put it on yourself.\"[/p][p]You take it and ask how she knew to bring a spare.[/p][p]\"I can watch the weather too.\" She straightens the red fastening. \"You prepare mine; I prepare yours. Is that so difficult?\"[/p][p]The forge flares below. You mark the prisoners' shed and agree on the approach and retreat. Before folding the map, she checks your bandage once more.[/p][p]\"Bring them home. When the coat is finished, we will try it together.\"[/p]",
+              "zh": "[p]送衬料的商队被困在寒炉寨外。占住锻炉的蛮族收走了货，把能走的人赶去背矿，不能走的人锁在废棚里。[/p][p]去山口侦察时，叶瞬光穿着那件尚未配齐内甲的样衣。风钻进肩缝，她没逞强，停下来重新系紧领口。随后，她把另一件斗篷递给你。[/p][p]“不用给我披，你自己穿。”[/p][p]你接过斗篷，问她怎么连这个也带了。[/p][p]“因为我也会看天气。”她将红色系带拉正，“你准备我的，我准备你的，很难懂吗？”[/p][p]山下的炉火亮了一瞬。你们把俘虏所在的废棚圈在图上，定好进寨与撤回的路线。她最后检查了你手腕的绷带，才把地图收起。[/p][p]“把人带回来。等衣服做好，下次再一起试。”[/p]"
+            },
+            "victory": {
+              "en": "[p]The complete inner plates and supple lining are finally sewn into the Homeward Vestment. She raises an arm, turns, and nods in satisfaction. When you say you can rest easy, she first fastens your cloak. \"Only when both of us are dressed properly.\"[/p]",
+              "zh": "[p]完整内甲与柔韧衬里终于缝进「归途衣」。她试着抬臂，再转身，满意地点头。你说这回可以放心，她却先替你把披风扣紧：“两个人都穿好了，才算。”[/p]"
+            },
+            "introImage": "assets/bonds/events/battle-valkyries/ye_shunguang_bond_60_intro.png",
+            "cgImage": "assets/bonds/events/battle-valkyries/ye_shunguang_bond_60_cg.png",
+            "item": "ye_shunguang_homeward_vestment",
+            "money": 0,
+            "tools": 0,
+            "medicine": 0
           },
           {
             "value": 80,
@@ -9313,7 +9427,33 @@ window.BV_WIKI_DATA = {
             "challenge": {
               "en": "Fourth camp victory reward: 1,500 crowns and 30 medical supplies.",
               "zh": "第四营地胜利奖励：1500 克朗与 30 医疗补给。"
-            }
+            },
+            "location": {
+              "en": "Broken Bridge Bastion",
+              "zh": "断桥烽垒"
+            },
+            "locationDescription": {
+              "en": "A Heart at Home: A Promise for Tomorrow. Ye Shunguang must participate and survive a victory here to earn this bond reward.",
+              "zh": "此心有归：明日之约。叶瞬光必须实际参战并存活获胜；击败此处后获得本阶段羁绊奖励。"
+            },
+            "story": {
+              "en": "[p]You find Ye Shunguang outside camp, her sword against a tree and fine wood shavings at her feet.[/p][p]The round little bird has finally become a carving, although its wings do not quite match. She gives it to you, then speaks before you can. \"Do not say it looks like bread.\"[/p][p]You swallow the words. Your expression makes her laugh first.[/p][p]After a while sitting together, she asks, \"If one day we did not have to hurry away, what would you want to do?\"[/p][p]Perhaps find a roof that does not leak, you say, and sleep until you wake naturally.[/p][p]\"I would like to learn to cook well. Better than merely edible.\" She considers it. \"And there should be room to put things beside the window.\"[/p][p]She glances at the wooden bird in your hands.[/p][p]\"If you would like, it could sit there.\"[/p]",
+              "zh": "[p]你在营地外找到叶瞬光。剑靠在树边，她正低头削一块小木头，脚下落满细薄的木屑。[/p][p]那只圆滚滚的鸟终于有了立体的样子，只是两边翅膀不太一样。她把它递给你，又在你说话前补了一句：“不许说像面包。”[/p][p]你把到了嘴边的话咽回去。她看见你的表情，反倒先笑了。[/p][p]你们并肩坐了一会儿。她忽然问：“如果有一天，真的不用赶着出发，你会想做什么？”[/p][p]你说也许找个屋顶不漏雨的地方，睡到自然醒。[/p][p]“我想学着把饭做好。”她想了想，“不是能吃就行的那种。还有，窗边要能放东西。”[/p][p]她看了一眼你手里的木鸟。[/p][p]“如果你愿意，它可以放在那里。”[/p]"
+            },
+            "reveal": {
+              "en": "[p]Orcs have blocked the old bridge downstream. Families trying to go home crowd the near bank. A carpenter cradles a window frame and says his repaired house is just across the river. He can see the chimney, but cannot reach it.[/p][p]Ye Shunguang touches the wooden bird in her palm. She neither puts it aside nor postpones your conversation until the whole world is at peace.[/p][p]\"Let us clear their road first. We can look for our window along the way.\"[/p][p]You mark the sound sections of the broken bridge. Wind pulls a red ribbon taut. She offers her hand so you can step over a loose stone.[/p][p]Once you are steady, she still does not let go.[/p][p]\"What I said earlier was not just a passing thought.\"[/p][p]\"I will remember.\"[/p][p]She nods, and together you look toward the bastion beyond the bridge.[/p]",
+              "zh": "[p]下游的旧桥被兽人堵住，返乡的人挤在桥这边。一个木匠抱着拆下的窗框，说修好的房子就在对岸，已经能看见烟囱，却回不去。[/p][p]叶瞬光摸了摸收在掌中的木鸟。她没有把它扔下，也没有说等天下太平以后再谈刚才的话。[/p][p]“先替他们把路打通。”她说，“我们的窗子，也可以一边走一边找。”[/p][p]你们在断桥前标记了能通行的位置。风把红带拉得笔直，她伸手给你，示意你跨过脚边那块松动的石板。[/p][p]站稳之后，她仍没有松开。[/p][p]“我刚才说的，不是随口想想。”[/p][p]“我记住了。”[/p][p]她点点头，和你一起望向桥后的烽垒。[/p]"
+            },
+            "victory": {
+              "en": "[p]Before crossing, the carpenter gives you two silver rings set with small red stones: thanks for leaving someone a road home. Ye Shunguang meets your eyes. \"Keep them safe. We will choose a good day.\" The company receives its payment and medical supplies; the rings remain keepsakes in the story.[/p]",
+              "zh": "[p]木匠过桥前，把两枚镶着小块红石的银环交给你们，说这是有人替自己留路的谢礼。叶瞬光没有躲开你的目光：“先收好。等我们找个合适的日子。”戒指属于叙事道具，不额外占据物品栏；本阶段结算报酬与医疗补给。[/p]"
+            },
+            "introImage": "assets/bonds/events/battle-valkyries/ye_shunguang_bond_80_intro.png",
+            "cgImage": "assets/bonds/events/battle-valkyries/ye_shunguang_bond_80_cg.png",
+            "item": "",
+            "money": 1500,
+            "tools": 0,
+            "medicine": 30
           },
           {
             "value": 100,
@@ -9324,7 +9464,33 @@ window.BV_WIKI_DATA = {
             "challenge": {
               "en": "Final camp victory reward: permanently unlock Heart Recalled.",
               "zh": "最终营地胜利奖励：永久解锁一念归真。"
-            }
+            },
+            "location": {
+              "en": "Court of No Return",
+              "zh": "无归古庭"
+            },
+            "locationDescription": {
+              "en": "A Heart at Home: A Heart at Home. Ye Shunguang must participate and survive a victory here to earn this bond reward.",
+              "zh": "此心有归：此心有归。叶瞬光必须实际参战并存活获胜；击败此处后获得本阶段羁绊奖励。"
+            },
+            "story": {
+              "en": "[p]When you lift the tent flap, Ye Shunguang is arranging her veil against the lamplight. An ivory skirt pools at her feet, silver thread traces its neckline, and her familiar red flowers rest beside her ears. Seeing you, her fingers tighten, but she does not pull the curtain closed.[/p][p]\"Do not stand there. Help me see whether the veil is pressing on my ears.\"[/p][p]You loosen the gauze. She opens a small box, takes out the silver rings, and gives one to you. Once hers is on, she lifts her left hand toward the lamp and studies it for a long time.[/p][p]\"I wondered whether we should wait until everything was settled.\"[/p][p]She looks at you. \"But there is always another stretch of road. I do not want to keep saying later.\"[/p][p]You take her hand. She returns your grip, her voice steadier now.[/p][p]\"I chose to wear this today. I chose the ring too. Not because we are going into battle, or because I am afraid there is no time left.\"[/p]",
+              "zh": "[p]你掀开帐帘时，叶瞬光正背对灯火整理头纱。象牙白的裙摆铺在脚边，银线沿领口绕出细细的纹样，耳旁仍是她惯用的红花。她回头看见你，手指紧了一下，却没有把帘子拉回去。[/p][p]“别站在那里。”她说，“帮我看看，头纱是不是压住耳朵了？”[/p][p]你替她把薄纱拨松。她从小盒里取出上次收好的银环，把其中一枚交给你。戴好后，她抬起左手，靠近灯，认真看了很久。[/p][p]“我想过，是不是要等所有事情都安稳下来。”[/p][p]她望向你：“可是路总会有下一段。我不想每次都说以后。”[/p][p]你握住她的手。她轻轻回握，声音比刚才稳了些。[/p][p]“所以今天穿这件，是我自己想的。戒指也是。不是因为要出征，更不是怕来不及。”[/p]"
+            },
+            "reveal": {
+              "en": "[p]At dawn you reach the old cloister. Through its arches you can see the final stretch of the return road. The ancient court seals the pass; its dead guards still obey orders no living person remembers. The evacuation wagons must pass through it.[/p][p]Ye Shunguang still wears her wedding dress. She wanted you to see it in the morning light before returning to camp to put on her armor. She raises her ringed left hand and reaches for you.[/p][p]\"I cannot promise never to be hurt again, or to remember every detail perfectly.\" She pauses. \"But I know who I want beside me today, and on the road ahead.\"[/p][p]You promise there will be someone to leave a light for her.[/p][p]She shakes her head, smiling as she tightens her grip. \"We come back together this time. Whoever arrives first lights it.\"[/p][p]Wind passes beneath the arch. A slender thread of sword intent gathers quietly near her hand, not yet a blade. She glances at it, then at you.[/p][p]\"We will try the rest after we have finished this road.\"[/p]",
+              "zh": "[p]天亮时，你们来到旧回廊。透过石拱，能够看见最后一段归路：古庭的石门封着山口，守门的亡者还在执行早已无人记得的军令。撤离的车队必须从那里过去。[/p][p]叶瞬光仍穿着婚纱。她想先让你看见晨光下的样子，再回营换好护甲。她抬起戴戒指的左手，让你握住。[/p][p]“我不能答应以后永远不会受伤，也不能保证所有事情都记得分毫不差。”她停了一会儿，“但我知道今天想和谁走下去。”[/p][p]你说，归来时会有人替她留灯。[/p][p]她摇头，笑着把你的手握紧：“这次一起回来。谁先到，谁点灯。”[/p][p]山风从石拱间穿过。她掌边浮起一缕细亮的剑意，安静地停住，尚未结成锋芒。她看了它一眼，又看向你。[/p][p]“剩下的路，走完再试。”[/p]"
+            },
+            "victory": {
+              "en": "[p]The last shield falls in the ancient court, and the wagon wheels finally pass the stone gate. Ye Shunguang makes certain that you and the others are there before resting her hand on her sword. Six clear threads of sword intent settle into place, complete, without borrowing anyone else's voice. She touches her ring. \"So I can call it home myself.\" Heart Recalled is permanently unlocked.[/p]",
+              "zh": "[p]古庭的最后一面盾落地，身后的车轮终于转过石门。叶瞬光先确认你和其他人都在，才将手按在剑上。六缕剑意依次归位，清澈、完整，不需要借谁的声音。她碰了碰戒指：“原来，我自己也能唤它回来。”结算后永久解锁「一念归真」。[/p]"
+            },
+            "introImage": "assets/bonds/events/battle-valkyries/ye_shunguang_bond_100_intro.png",
+            "cgImage": "assets/bonds/events/battle-valkyries/ye_shunguang_bond_100_cg.png",
+            "item": "",
+            "money": 0,
+            "tools": 0,
+            "medicine": 0
           }
         ]
       }
@@ -20630,6 +20796,26 @@ window.BV_WIKI_DATA = {
     {
       "actor": "ye_shunguang",
       "source": "config/ye_shunguang_bond_data.nut",
+      "name": {
+        "en": "A Heart at Home",
+        "zh": "此心有归"
+      },
+      "description": {
+        "en": "The road traveled together becomes a home she chooses for herself. Gain 4 bond when she participates and survives a victory. Rewards follow completed challenges.",
+        "zh": "与团长并肩走过的路，会成为她亲手选择的归处。实际参战并存活获胜时羁绊 +4；每阶段挑战完成后发奖。"
+      },
+      "rules": {
+        "en": "Confirm to reveal a nearby camp with a persistent highlight. Ye Shunguang must participate and survive victory; she need not land the killing blow.",
+        "zh": "确认后在附近显露并持续高亮营地。叶瞬光须实际参战并存活获胜，不要求最后一击。"
+      },
+      "delivery": {
+        "en": "Your reward is recorded and delivery is pending. Free a stash slot; subsequent event checks will retry. Saving and loading preserves your entitlement.",
+        "zh": "奖励已记账，暂未发放。请腾出行囊空间；稍后事件检查会自动重试，读档不会丢失奖励。"
+      },
+      "progression": {
+        "en": "Progress through 20 / 40 / 60 / 80 / 100 bond in order. Each stage has two story pages and one camp; an unfinished earlier challenge blocks the next. This campaign does not require the Yunki chapter. Story rings are keepsakes, not equipment rewards.",
+        "zh": "羁绊按 20 / 40 / 60 / 80 / 100 顺序推进，每阶段两页剧情与一座营地；前一挑战未完成时不能越级。无需先完成《云岿山伏魔录》。剧情中的戒指是纪念物，不是装备奖励。"
+      },
       "stages": [
         {
           "value": 20,
@@ -20640,7 +20826,33 @@ window.BV_WIKI_DATA = {
           "challenge": {
             "en": "First camp victory reward: Heartbound Circlet.",
             "zh": "第一营地胜利奖励：系心额。"
-          }
+          },
+          "location": {
+            "en": "Severed Cord Tollgate",
+            "zh": "断绳关卡"
+          },
+          "locationDescription": {
+            "en": "A Heart at Home: A Knot in Red. Ye Shunguang must participate and survive a victory here to earn this bond reward.",
+            "zh": "此心有归：红绳有结。叶瞬光必须实际参战并存活获胜；击败此处后获得本阶段羁绊奖励。"
+          },
+          "story": {
+            "en": "[p]Everyone has eaten before Ye Shunguang lifts her lukewarm soup. As she lowers her head, a thin silver plate falls into her lap. A blade has cut halfway through its fastening cord; the remaining threads have only just given way.[/p][p]\"When did that happen?\" you ask.[/p][p]\"At the pass.\" She turns the circlet over and tries to twist the broken threads together. \"It is all right. It missed my ears.\"[/p][p]You draw a length of red cord from the repair bag. She glances from your hands to your unfinished cloak. \"You have not mended yours yet.\"[/p][p]\"A cloak can be pulled over a tear. If this falls again, it will land in the fire.\"[/p][p]She hands it over, but does not quite withdraw her fingers. On your third turn of the cord, she gently pins the end. \"A little looser here. Otherwise it pulls my hair when I turn.\"[/p][p]You undo the knot and start again. This time she does not say that anything will do. She tests the fit twice before murmuring, \"That is just right.\"[/p]",
+            "zh": "[p]营火边的人都吃过了，叶瞬光才端起已经不热的汤。她低头时，额前一片薄银落在膝上。系带被刀锋割断了一半，剩下那点纤维撑到了现在。[/p][p]“什么时候坏的？”你问。[/p][p]“过山口的时候。”她把护额翻过来，试图将断线重新拧到一起，“不碍事，耳朵没碰到。”[/p][p]你从修甲袋里抽出一截红绳。她看了看你的手，又看了看还没补完的披风：“你的还没修。”[/p][p]“披风可以盖住。这个再掉，就落进火里了。”[/p][p]她把护额递过来，手却没有立刻收回。你绕到第三圈时，她轻轻按住绳头：“这里要松一点。太紧的话，转头会扯到头发。”[/p][p]于是你拆开重系。她不再说随便，只在结打好后认真试了两次，才轻声说：“这样正好。”[/p]"
+          },
+          "reveal": {
+            "en": "[p]At dawn you stop beside the abandoned outer barricade. Yesterday's wheel tracks turn uphill toward the tollgate. The smith's wagon is there, along with several travelers who refused to surrender their last sack of grain.[/p][p]Ye Shunguang holds the repaired circlet against her chest. The red cord is bright, but a dangerous crack remains in the silver.[/p][p]\"The cord alone will not do,\" you say. \"Let us bring them back, and ask the smith to fit a new backing.\"[/p][p]She looks at you and smiles. \"So this time, saying I am fine will not settle it?\"[/p][p]\"Not this time.\"[/p][p]She wraps the circlet carefully and starts up the path. After two steps she looks back to make sure you are following.[/p][p]\"Together, then. And when we return, that cloak of yours gets finished too.\"[/p]",
+            "zh": "[p]黎明，你们停在山口废弃的外栅旁。昨日的车辙到了这里，便被拖向更高处的税卡。铁匠的货车也在那里，连同几个不肯交出最后一袋粮食的旅人。[/p][p]叶瞬光把修好的护额捧到胸前。红绳很醒目，银片上却还有一道危险的裂缝。[/p][p]“只修绳子不够。”你说，“把人接回来，也请铁匠替它换块内衬。”[/p][p]她看着你，忽然笑了：“所以这次，不是我说不碍事就算了？”[/p][p]“这次不算。”[/p][p]她将护额小心包好，自己先踏上山道。走出两步，又回头确认你跟上了。[/p][p]“那就一起去。回来时，你那件披风也得补完。”[/p]"
+          },
+          "victory": {
+            "en": "[p]The smith fits a thin steel backing beneath the silver ornament, leaving the old red cord in place. Ye Shunguang puts on the finished Heartbound Circlet and touches its slightly clumsy knot. \"Keep this one. I know it.\"[/p]",
+            "zh": "[p]铁匠用收回的薄钢在银饰背面补上护片，旧红绳被原样保留。她把完成的「系心额」戴好，指尖碰了碰那个有些笨拙的结：“这个不用换。我认得。”[/p]"
+          },
+          "introImage": "assets/bonds/events/battle-valkyries/ye_shunguang_bond_20_intro.png",
+          "cgImage": "assets/bonds/events/battle-valkyries/ye_shunguang_bond_20_cg.png",
+          "item": "ye_shunguang_heartbound_circlet",
+          "money": 0,
+          "tools": 0,
+          "medicine": 0
         },
         {
           "value": 40,
@@ -20651,7 +20863,33 @@ window.BV_WIKI_DATA = {
           "challenge": {
             "en": "Second camp victory reward: 1,000 crowns and 30 tools and supplies.",
             "zh": "第二营地胜利奖励：1000 克朗与 30 工具补给。"
-          }
+          },
+          "location": {
+            "en": "Reedlight Ambush Camp",
+            "zh": "芦灯伏营"
+          },
+          "locationDescription": {
+            "en": "A Heart at Home: Leave a Light. Ye Shunguang must participate and survive a victory here to earn this bond reward.",
+            "zh": "此心有归：留一盏灯。叶瞬光必须实际参战并存活获胜；击败此处后获得本阶段羁绊奖励。"
+          },
+          "story": {
+            "en": "[p]Rain has delayed tonight's patrol. While you update the supply ledger by lamplight, Ye Shunguang brings two cups of hot water and slides one toward you.[/p][p]\"Do you write this much every day?\"[/p][p]\"Mostly money. And who mistook our last bag of salt for sugar.\"[/p][p]She laughs, then asks with sudden seriousness, \"What about that bird beside the road?\"[/p][p]Your pen stops. She describes how it tried to drag a piece of bread into the grass, failed, pecked off a little, then tried again. You passed the same spot together, yet you never saw it.[/p][p]\"You want to record things like that too?\"[/p][p]\"Yes.\" She shields the flame from a draft. \"Not only because I might forget. When I tell you about something, it feels as though today lasted a little longer.\"[/p][p]You turn to a blank page and ask how round the bird was. When she sees the ball you draw, she laughs too hard to drink.[/p]",
+            "zh": "[p]雨把今晚的巡路推迟了。你正在灯下补写补给账，叶瞬光端来两杯热水，将其中一杯推到你手边。[/p][p]她望着摊开的本子：“你每天都记这么多？”[/p][p]“主要是钱。还有谁把最后一袋盐当糖用了。”[/p][p]她笑出声，随后认真问：“那今天路边的那只鸟呢？”[/p][p]你停下笔。她比划着说，那只鸟把面包拖进草丛，拖不动，又退回来啄走一点，来回折腾了很久。你们明明同时经过，你却没看见。[/p][p]“这种事，也想记下来？”[/p][p]“嗯。”她用手挡住被风吹偏的火苗，“不是怕忘掉才想记。有些事讲给你听，就会觉得今天过得长了一点。”[/p][p]你把账本翻到空白处，问她那只鸟究竟有多胖。她看着你画出的圆球，笑得连水都喝不下去。[/p]"
+          },
+          "reveal": {
+            "en": "[p]Three short flashes appear among the reeds after nightfall. The rescued smith recognizes the road signal, but the messenger on watch has been missing for two days.[/p][p]Across the stream, a goblin palisade hides behind the lights. Captives have been tied beside the lanterns to lure rescuers into bow range.[/p][p]Ye Shunguang does not draw her sword at once. First she ties a red ribbon to a low branch on your bank and sets the lantern behind a stone.[/p][p]\"The wounded will need to see the way back.\"[/p][p]You mark the sentries; she checks the depth of the water. Before you separate to scout, she catches your sleeve.[/p][p]\"When we return, I will draw that bird properly for you.\"[/p][p]\"I will leave the light.\"[/p][p]\"I know.\" She releases your sleeve. \"So make sure you come back too.\"[/p]",
+            "zh": "[p]入夜后，芦苇深处出现了三次短促的灯光。被救回的铁匠认出那是驿路的信号，可值夜的信使已经两天没回来。[/p][p]你们沿溪探到对岸，灯后藏着哥布林的木栅。它们把灯挂在被捆的旅人身边，等救援者涉水进入射程。[/p][p]叶瞬光没有立刻拔剑。她先在岸边低枝上系好一条红带，再把提灯放在石头内侧。[/p][p]“伤员回来时，得看得见这条路。”她说。[/p][p]你记下哨位，她记下水深。分开侦察前，她轻轻拉住你的袖口。[/p][p]“还有，回来以后，那只鸟我重新画给你看。”[/p][p]“灯会留着。”你说。[/p][p]“我知道。”她松开手，“所以你也要回来。”[/p]"
+          },
+          "victory": {
+            "en": "[p]The rescued messenger drinks beside the lantern while she redraws the bird at your side. Halfway through, she admits your round version was rather close. The escort payment and recovered tools join the company supplies.[/p]",
+            "zh": "[p]救回的信使坐在灯边喝热水，她就在你身旁重新画那只鸟。画到一半，她承认你的圆球也挺像。护送报酬与回收工具一同入账。[/p]"
+          },
+          "introImage": "assets/bonds/events/battle-valkyries/ye_shunguang_bond_40_intro.png",
+          "cgImage": "assets/bonds/events/battle-valkyries/ye_shunguang_bond_40_cg.png",
+          "item": "",
+          "money": 1000,
+          "tools": 30,
+          "medicine": 0
         },
         {
           "value": 60,
@@ -20662,7 +20900,33 @@ window.BV_WIKI_DATA = {
           "challenge": {
             "en": "Third camp victory reward: Homeward Vestment.",
             "zh": "第三营地胜利奖励：归途衣。"
-          }
+          },
+          "location": {
+            "en": "Cold Forge Stockade",
+            "zh": "寒炉寨"
+          },
+          "locationDescription": {
+            "en": "A Heart at Home: Through Wind and Snow. Ye Shunguang must participate and survive a victory here to earn this bond reward.",
+            "zh": "此心有归：风雪共衣。叶瞬光必须实际参战并存活获胜；击败此处后获得本阶段羁绊奖励。"
+          },
+          "story": {
+            "en": "[p]The smith brings an unfinished suit of light armor. Thin plates lie beneath white cloth; the shoulders allow a free lift of the arm, and no hard buckle obstructs a turn. Ye Shunguang tries a few sword movements, then lays it beneath the lamp to inspect it.[/p][p]\"The soft lining is still missing,\" you say. \"Once the shipment arrives, you can wear it through winter.\"[/p][p]Instead of answering, she catches your wrist. Beneath the rolled sleeve is the scrape you earned moving a wagon for the wounded.[/p][p]\"You said this had healed.\"[/p][p]\"Almost.\"[/p][p]She presses a dressing against it and looks up. You remember giving her precisely that look beside the fire.[/p][p]You sit. Only after winding a clean bandage does she move the remaining cloth aside.[/p][p]\"This coat can wait a little,\" she says. \"You cannot keep putting yourself last.\"[/p]",
+            "zh": "[p]铁匠送来一件尚未完工的轻甲样衣。白色外衣下缝着薄片，肩口可以抬臂，腰侧没有妨碍转身的硬扣。叶瞬光试了几个出剑动作，又将衣服脱下，放在灯下翻看。[/p][p]“里面的软衬还没做。”你说，“等货到了，冬天也能穿。”[/p][p]她没有应声，忽然捉住你的手腕。袖口往上卷时，你上次替伤员搬车留下的擦伤露了出来。[/p][p]“你不是说已经好了？”[/p][p]“快好了。”[/p][p]她将药布按住，抬眼看你。那个眼神让你想起自己问护额的晚上。[/p][p]你只好坐下。她替你缠好新的绷带，才把余下的软布推向桌边。[/p][p]“这件衣服可以慢一点。”她说，“但你不能一直把自己排到最后。”[/p]"
+          },
+          "reveal": {
+            "en": "[p]The caravan carrying the lining has been trapped outside Cold Forge Stockade. The barbarians took the cargo, sent those who could walk to carry ore, and locked the others in an old shed.[/p][p]At the mountain pass, Ye Shunguang wears the trial coat before its inner armor is complete. Wind finds a shoulder seam. She stops to tighten the collar rather than pretend she is warm, then offers you another cloak.[/p][p]\"That one is for you. Put it on yourself.\"[/p][p]You take it and ask how she knew to bring a spare.[/p][p]\"I can watch the weather too.\" She straightens the red fastening. \"You prepare mine; I prepare yours. Is that so difficult?\"[/p][p]The forge flares below. You mark the prisoners' shed and agree on the approach and retreat. Before folding the map, she checks your bandage once more.[/p][p]\"Bring them home. When the coat is finished, we will try it together.\"[/p]",
+            "zh": "[p]送衬料的商队被困在寒炉寨外。占住锻炉的蛮族收走了货，把能走的人赶去背矿，不能走的人锁在废棚里。[/p][p]去山口侦察时，叶瞬光穿着那件尚未配齐内甲的样衣。风钻进肩缝，她没逞强，停下来重新系紧领口。随后，她把另一件斗篷递给你。[/p][p]“不用给我披，你自己穿。”[/p][p]你接过斗篷，问她怎么连这个也带了。[/p][p]“因为我也会看天气。”她将红色系带拉正，“你准备我的，我准备你的，很难懂吗？”[/p][p]山下的炉火亮了一瞬。你们把俘虏所在的废棚圈在图上，定好进寨与撤回的路线。她最后检查了你手腕的绷带，才把地图收起。[/p][p]“把人带回来。等衣服做好，下次再一起试。”[/p]"
+          },
+          "victory": {
+            "en": "[p]The complete inner plates and supple lining are finally sewn into the Homeward Vestment. She raises an arm, turns, and nods in satisfaction. When you say you can rest easy, she first fastens your cloak. \"Only when both of us are dressed properly.\"[/p]",
+            "zh": "[p]完整内甲与柔韧衬里终于缝进「归途衣」。她试着抬臂，再转身，满意地点头。你说这回可以放心，她却先替你把披风扣紧：“两个人都穿好了，才算。”[/p]"
+          },
+          "introImage": "assets/bonds/events/battle-valkyries/ye_shunguang_bond_60_intro.png",
+          "cgImage": "assets/bonds/events/battle-valkyries/ye_shunguang_bond_60_cg.png",
+          "item": "ye_shunguang_homeward_vestment",
+          "money": 0,
+          "tools": 0,
+          "medicine": 0
         },
         {
           "value": 80,
@@ -20673,7 +20937,33 @@ window.BV_WIKI_DATA = {
           "challenge": {
             "en": "Fourth camp victory reward: 1,500 crowns and 30 medical supplies.",
             "zh": "第四营地胜利奖励：1500 克朗与 30 医疗补给。"
-          }
+          },
+          "location": {
+            "en": "Broken Bridge Bastion",
+            "zh": "断桥烽垒"
+          },
+          "locationDescription": {
+            "en": "A Heart at Home: A Promise for Tomorrow. Ye Shunguang must participate and survive a victory here to earn this bond reward.",
+            "zh": "此心有归：明日之约。叶瞬光必须实际参战并存活获胜；击败此处后获得本阶段羁绊奖励。"
+          },
+          "story": {
+            "en": "[p]You find Ye Shunguang outside camp, her sword against a tree and fine wood shavings at her feet.[/p][p]The round little bird has finally become a carving, although its wings do not quite match. She gives it to you, then speaks before you can. \"Do not say it looks like bread.\"[/p][p]You swallow the words. Your expression makes her laugh first.[/p][p]After a while sitting together, she asks, \"If one day we did not have to hurry away, what would you want to do?\"[/p][p]Perhaps find a roof that does not leak, you say, and sleep until you wake naturally.[/p][p]\"I would like to learn to cook well. Better than merely edible.\" She considers it. \"And there should be room to put things beside the window.\"[/p][p]She glances at the wooden bird in your hands.[/p][p]\"If you would like, it could sit there.\"[/p]",
+            "zh": "[p]你在营地外找到叶瞬光。剑靠在树边，她正低头削一块小木头，脚下落满细薄的木屑。[/p][p]那只圆滚滚的鸟终于有了立体的样子，只是两边翅膀不太一样。她把它递给你，又在你说话前补了一句：“不许说像面包。”[/p][p]你把到了嘴边的话咽回去。她看见你的表情，反倒先笑了。[/p][p]你们并肩坐了一会儿。她忽然问：“如果有一天，真的不用赶着出发，你会想做什么？”[/p][p]你说也许找个屋顶不漏雨的地方，睡到自然醒。[/p][p]“我想学着把饭做好。”她想了想，“不是能吃就行的那种。还有，窗边要能放东西。”[/p][p]她看了一眼你手里的木鸟。[/p][p]“如果你愿意，它可以放在那里。”[/p]"
+          },
+          "reveal": {
+            "en": "[p]Orcs have blocked the old bridge downstream. Families trying to go home crowd the near bank. A carpenter cradles a window frame and says his repaired house is just across the river. He can see the chimney, but cannot reach it.[/p][p]Ye Shunguang touches the wooden bird in her palm. She neither puts it aside nor postpones your conversation until the whole world is at peace.[/p][p]\"Let us clear their road first. We can look for our window along the way.\"[/p][p]You mark the sound sections of the broken bridge. Wind pulls a red ribbon taut. She offers her hand so you can step over a loose stone.[/p][p]Once you are steady, she still does not let go.[/p][p]\"What I said earlier was not just a passing thought.\"[/p][p]\"I will remember.\"[/p][p]She nods, and together you look toward the bastion beyond the bridge.[/p]",
+            "zh": "[p]下游的旧桥被兽人堵住，返乡的人挤在桥这边。一个木匠抱着拆下的窗框，说修好的房子就在对岸，已经能看见烟囱，却回不去。[/p][p]叶瞬光摸了摸收在掌中的木鸟。她没有把它扔下，也没有说等天下太平以后再谈刚才的话。[/p][p]“先替他们把路打通。”她说，“我们的窗子，也可以一边走一边找。”[/p][p]你们在断桥前标记了能通行的位置。风把红带拉得笔直，她伸手给你，示意你跨过脚边那块松动的石板。[/p][p]站稳之后，她仍没有松开。[/p][p]“我刚才说的，不是随口想想。”[/p][p]“我记住了。”[/p][p]她点点头，和你一起望向桥后的烽垒。[/p]"
+          },
+          "victory": {
+            "en": "[p]Before crossing, the carpenter gives you two silver rings set with small red stones: thanks for leaving someone a road home. Ye Shunguang meets your eyes. \"Keep them safe. We will choose a good day.\" The company receives its payment and medical supplies; the rings remain keepsakes in the story.[/p]",
+            "zh": "[p]木匠过桥前，把两枚镶着小块红石的银环交给你们，说这是有人替自己留路的谢礼。叶瞬光没有躲开你的目光：“先收好。等我们找个合适的日子。”戒指属于叙事道具，不额外占据物品栏；本阶段结算报酬与医疗补给。[/p]"
+          },
+          "introImage": "assets/bonds/events/battle-valkyries/ye_shunguang_bond_80_intro.png",
+          "cgImage": "assets/bonds/events/battle-valkyries/ye_shunguang_bond_80_cg.png",
+          "item": "",
+          "money": 1500,
+          "tools": 0,
+          "medicine": 30
         },
         {
           "value": 100,
@@ -20684,7 +20974,33 @@ window.BV_WIKI_DATA = {
           "challenge": {
             "en": "Final camp victory reward: permanently unlock Heart Recalled.",
             "zh": "最终营地胜利奖励：永久解锁一念归真。"
-          }
+          },
+          "location": {
+            "en": "Court of No Return",
+            "zh": "无归古庭"
+          },
+          "locationDescription": {
+            "en": "A Heart at Home: A Heart at Home. Ye Shunguang must participate and survive a victory here to earn this bond reward.",
+            "zh": "此心有归：此心有归。叶瞬光必须实际参战并存活获胜；击败此处后获得本阶段羁绊奖励。"
+          },
+          "story": {
+            "en": "[p]When you lift the tent flap, Ye Shunguang is arranging her veil against the lamplight. An ivory skirt pools at her feet, silver thread traces its neckline, and her familiar red flowers rest beside her ears. Seeing you, her fingers tighten, but she does not pull the curtain closed.[/p][p]\"Do not stand there. Help me see whether the veil is pressing on my ears.\"[/p][p]You loosen the gauze. She opens a small box, takes out the silver rings, and gives one to you. Once hers is on, she lifts her left hand toward the lamp and studies it for a long time.[/p][p]\"I wondered whether we should wait until everything was settled.\"[/p][p]She looks at you. \"But there is always another stretch of road. I do not want to keep saying later.\"[/p][p]You take her hand. She returns your grip, her voice steadier now.[/p][p]\"I chose to wear this today. I chose the ring too. Not because we are going into battle, or because I am afraid there is no time left.\"[/p]",
+            "zh": "[p]你掀开帐帘时，叶瞬光正背对灯火整理头纱。象牙白的裙摆铺在脚边，银线沿领口绕出细细的纹样，耳旁仍是她惯用的红花。她回头看见你，手指紧了一下，却没有把帘子拉回去。[/p][p]“别站在那里。”她说，“帮我看看，头纱是不是压住耳朵了？”[/p][p]你替她把薄纱拨松。她从小盒里取出上次收好的银环，把其中一枚交给你。戴好后，她抬起左手，靠近灯，认真看了很久。[/p][p]“我想过，是不是要等所有事情都安稳下来。”[/p][p]她望向你：“可是路总会有下一段。我不想每次都说以后。”[/p][p]你握住她的手。她轻轻回握，声音比刚才稳了些。[/p][p]“所以今天穿这件，是我自己想的。戒指也是。不是因为要出征，更不是怕来不及。”[/p]"
+          },
+          "reveal": {
+            "en": "[p]At dawn you reach the old cloister. Through its arches you can see the final stretch of the return road. The ancient court seals the pass; its dead guards still obey orders no living person remembers. The evacuation wagons must pass through it.[/p][p]Ye Shunguang still wears her wedding dress. She wanted you to see it in the morning light before returning to camp to put on her armor. She raises her ringed left hand and reaches for you.[/p][p]\"I cannot promise never to be hurt again, or to remember every detail perfectly.\" She pauses. \"But I know who I want beside me today, and on the road ahead.\"[/p][p]You promise there will be someone to leave a light for her.[/p][p]She shakes her head, smiling as she tightens her grip. \"We come back together this time. Whoever arrives first lights it.\"[/p][p]Wind passes beneath the arch. A slender thread of sword intent gathers quietly near her hand, not yet a blade. She glances at it, then at you.[/p][p]\"We will try the rest after we have finished this road.\"[/p]",
+            "zh": "[p]天亮时，你们来到旧回廊。透过石拱，能够看见最后一段归路：古庭的石门封着山口，守门的亡者还在执行早已无人记得的军令。撤离的车队必须从那里过去。[/p][p]叶瞬光仍穿着婚纱。她想先让你看见晨光下的样子，再回营换好护甲。她抬起戴戒指的左手，让你握住。[/p][p]“我不能答应以后永远不会受伤，也不能保证所有事情都记得分毫不差。”她停了一会儿，“但我知道今天想和谁走下去。”[/p][p]你说，归来时会有人替她留灯。[/p][p]她摇头，笑着把你的手握紧：“这次一起回来。谁先到，谁点灯。”[/p][p]山风从石拱间穿过。她掌边浮起一缕细亮的剑意，安静地停住，尚未结成锋芒。她看了它一眼，又看向你。[/p][p]“剩下的路，走完再试。”[/p]"
+          },
+          "victory": {
+            "en": "[p]The last shield falls in the ancient court, and the wagon wheels finally pass the stone gate. Ye Shunguang makes certain that you and the others are there before resting her hand on her sword. Six clear threads of sword intent settle into place, complete, without borrowing anyone else's voice. She touches her ring. \"So I can call it home myself.\" Heart Recalled is permanently unlocked.[/p]",
+            "zh": "[p]古庭的最后一面盾落地，身后的车轮终于转过石门。叶瞬光先确认你和其他人都在，才将手按在剑上。六缕剑意依次归位，清澈、完整，不需要借谁的声音。她碰了碰戒指：“原来，我自己也能唤它回来。”结算后永久解锁「一念归真」。[/p]"
+          },
+          "introImage": "assets/bonds/events/battle-valkyries/ye_shunguang_bond_100_intro.png",
+          "cgImage": "assets/bonds/events/battle-valkyries/ye_shunguang_bond_100_cg.png",
+          "item": "",
+          "money": 0,
+          "tools": 0,
+          "medicine": 0
         }
       ]
     }
@@ -21427,6 +21743,15 @@ window.BV_WIKI_DATA = {
         "ConditionMax": 300,
         "StaminaModifier": -8
       },
+      "owner": {
+        "en": "Only Ye Shunguang may equip this item.",
+        "zh": "仅叶瞬光可装备。"
+      },
+      "bonus": {
+        "en": "Initiative +10.",
+        "zh": "主动值 +10。"
+      },
+      "image": "assets/bonds/items/battle-valkyries/ye_shunguang_homeward_vestment.png",
       "source": "scripts/items/armor/battle_valkyries/ye_shunguang_homeward_vestment.nut"
     },
     {
@@ -21490,6 +21815,15 @@ window.BV_WIKI_DATA = {
         "ConditionMax": 240,
         "StaminaModifier": -4
       },
+      "owner": {
+        "en": "Only Ye Shunguang may equip this item.",
+        "zh": "仅叶瞬光可装备。"
+      },
+      "bonus": {
+        "en": "Resolve +10.",
+        "zh": "决心 +10。"
+      },
+      "image": "assets/bonds/items/battle-valkyries/ye_shunguang_heartbound_circlet.png",
       "source": "scripts/items/helmets/battle_valkyries/ye_shunguang_heartbound_circlet.nut"
     },
     {
@@ -27084,12 +27418,18 @@ window.BV_WIKI_DATA = {
         "en": {
           "name": "Heart Recalled",
           "description": "Gather your resolve and immediately fill Qingming Sword Stance to 6 stacks. Once per battle; does not automatically enter the Enlightened State.",
-          "tooltip": []
+          "tooltip": [
+            "Costs 2 AP and 10 fatigue. Works inside or outside Enlightened State; preserves spent stance and the current block limit. Its use is independent of Qingming Unsheathed. Deals no damage.",
+            "Requires the final bond camp, an active battle, fewer than 6 stance stacks, and an unused charge this battle."
+          ]
         },
         "zh": {
           "name": "一念归真",
           "description": "将心意凝为归处，立即把青溟剑势补至 6 层。每场战斗仅可使用一次；不会自动进入明心境。",
-          "tooltip": []
+          "tooltip": [
+            "消耗 2 AP、10 疲劳。常态与明心境内均可补层；不清除已消耗剑势、不刷新格挡。与青溟出匣独立计次，无伤害。",
+            "需要完成最终羁绊营地、处于战斗、剑势未满且本场尚未使用。"
+          ]
         }
       }
     },

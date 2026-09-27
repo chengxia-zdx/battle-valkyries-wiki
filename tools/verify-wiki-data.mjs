@@ -21,6 +21,7 @@ const referencedAssets = data.valkyries.flatMap((item) => [
   ...item.skins.flatMap((skin) => [skin.images.portrait, skin.images.preview]),
 ]);
 referencedAssets.push(...data.skillCatalog.map(skill => skill.image), ...data.chapters.flatMap(chapter => [chapter.poster, ...chapter.gallery.map(cg => cg.image)]));
+referencedAssets.push(...data.bonds.flatMap(bond => bond.stages.flatMap(stage => [stage.introImage, stage.cgImage].filter(Boolean))), ...data.items.map(item => item.image).filter(Boolean));
 
 assert(data.valkyries.length === 49, "expected the 49-character source snapshot, including Lily");
 assert(unique(data.valkyries.map((item) => item.id)), "Valkyrie IDs must be unique");
@@ -58,6 +59,10 @@ for (const chapter of data.chapters) {
 }
 assert(skins.every(skin => !skin.unlockChapter || chapterIDs.has(skin.unlockChapter)), "every skin chapter must resolve");
 assert(data.bonds.length === 5 && data.bonds.every(bond => bond.stages.length === 5), "expected the five loaded five-stage bond campaigns");
+const yeBond = data.bonds.find(bond => bond.actor === "ye_shunguang");
+assert(JSON.stringify(yeBond) === JSON.stringify(data.valkyries.find(actor => actor.id === "ye_shunguang").bond), "Ye Shunguang profile and bond catalog must agree");
+assert(yeBond.stages.every(stage => stage.introImage && stage.cgImage && ["en", "zh"].every(lang => stage.story?.[lang] && stage.reveal?.[lang] && stage.victory?.[lang] && stage.location?.[lang])), "Ye Shunguang needs five complete bilingual stories and image pairs");
+assert(yeBond.stages.every(stage => !stage.item || data.items.some(item => item.id === stage.item && item.image && item.owner?.en && item.owner?.zh && item.bonus?.en && item.bonus?.zh)), "bond equipment rewards must resolve with art and effects");
 const enemies = data.enemyGroups.flatMap(group => group.enemies);
 assert(enemies.length === 78 && unique(enemies.map(enemy => enemy.id)), "expected 78 registered expanded enemies, not the planned 100");
 assert(enemies.every(enemy => enemy.hpMultiplier > 0 && enemy.damageMultiplier > 0), "invalid enemy multipliers");

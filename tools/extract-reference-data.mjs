@@ -17,6 +17,7 @@ export function buildReferenceData(h) {
   }
   function asset(source, category) {
     if (!source) return "";
+    source = source.replace(/^gfx\//, "").replaceAll("$bvvar{iconPrefix}", "battle-valkyries");
     const target = `assets/${category}/${source.replace(/^ui\//, "")}`;
     if (!copyGfxAsset(valkyrieRoot, source, target)) throw new Error(`Missing reference art: ${source}`);
     return target;
@@ -68,7 +69,25 @@ export function buildReferenceData(h) {
     return { actor, source: `hooks/${file}`, stages: objects(assignedArray(source, `${prefix}BondStages`)).map(block => ({ value: numberField(block, "Value"), name: text(block, "Name"), challenge: text(block, "ChallengeText") })) };
   });
   const yeBondConfig = loadedConfigs.find(entry => entry.file === "ye_shunguang_bond_data.nut");
-  if (yeBondConfig) bonds.push({ actor: "ye_shunguang", source: "config/ye_shunguang_bond_data.nut", stages: objects(assignedArray(yeBondConfig.source, "YeShunguangBondStages")).map(block => ({ value: numberField(block, "Value"), name: text(block, "Name"), challenge: text(block, "RewardText") })) });
+  if (yeBondConfig) {
+    const localizedKey = key => pair(en[key], zh[key]);
+    bonds.push({
+      actor: "ye_shunguang", source: "config/ye_shunguang_bond_data.nut",
+      name: localizedKey("valkyrie.ye_shunguang.bond.name"),
+      description: localizedKey("valkyrie.ye_shunguang.bond.description"),
+      rules: localizedKey("event.ye_shunguang_bond.challenge_rules"),
+      delivery: localizedKey("event.ye_shunguang_bond.pending"),
+      progression: pair("Progress through 20 / 40 / 60 / 80 / 100 bond in order. Each stage has two story pages and one camp; an unfinished earlier challenge blocks the next. This campaign does not require the Yunki chapter. Story rings are keepsakes, not equipment rewards.", "羁绊按 20 / 40 / 60 / 80 / 100 顺序推进，每阶段两页剧情与一座营地；前一挑战未完成时不能越级。无需先完成《云岿山伏魔录》。剧情中的戒指是纪念物，不是装备奖励。"),
+      stages: objects(assignedArray(yeBondConfig.source, "YeShunguangBondStages")).map(block => ({
+        value: numberField(block, "Value"), name: text(block, "Name"), challenge: text(block, "RewardText"),
+        location: text(block, "LocationName"), locationDescription: text(block, "LocationDescription"),
+        story: text(block, "Text"), reveal: text(block, "RevealText"), victory: text(block, "VictoryText"),
+        introImage: asset(stringField(block, "Image"), "bonds"), cgImage: asset(stringField(block, "CGImage"), "bonds"),
+        item: path.posix.basename(stringField(block, "Item")),
+        money: numberField(block, "Money"), tools: numberField(block, "Tools"), medicine: numberField(block, "Medicine"),
+      })),
+    });
+  }
   const spirits = objects(assignedArray(config("lily_spirit_data.nut"), "LilySpirits")).map(block => {
     const id = stringField(block, "Key");
     return { id, type: stringField(block, "Type"), stats: numberMap(block), name: pair(en[`skill.lily_spirit_${id}.name`], zh[`skill.lily_spirit_${id}.name`]), description: pair(en[`skill.lily_spirit_${id}.description`], zh[`skill.lily_spirit_${id}.description`]) };
@@ -112,7 +131,12 @@ export function buildReferenceData(h) {
     const id = path.basename(file, ".nut");
     const fallbackName = id === "ye_shunguang_qingming_casket" ? "$bv{item.qingming_casket.name}" : id;
     const values = Object.fromEntries([...source.matchAll(/this\.m\.(ConditionMax|StaminaModifier|RegularDamage|RegularDamageMax|ArmorDamageMult|DirectDamageMult|Value|RangeMin|RangeMax)\s*=\s*(-?\d+(?:\.\d+)?)\s*;/g)].map(([, key, value]) => [key, +value]));
-    items.push({ id, name: pair(resolveToken(name || fallbackName, en), resolveToken(name || fallbackName, zh)), description: text(source, "Description"), acquisition: acquisition[id] || pair("See the in-game reward details.", "请查看游戏内奖励说明。"), stats: values, source: path.relative(valkyrieRoot, file).replaceAll("\\", "/") });
+    const details = id === "ye_shunguang_heartbound_circlet" || id === "ye_shunguang_homeward_vestment" ? {
+      owner: pair(en[`item.${id}.owner`], zh[`item.${id}.owner`]),
+      bonus: pair(en[`item.${id}.bonus`], zh[`item.${id}.bonus`]),
+      image: asset(`ui/items/battle-valkyries/${id}.png`, "bonds"),
+    } : {};
+    items.push({ id, name: pair(resolveToken(name || fallbackName, en), resolveToken(name || fallbackName, zh)), description: text(source, "Description"), acquisition: acquisition[id] || pair("See the in-game reward details.", "请查看游戏内奖励说明。"), stats: values, ...details, source: path.relative(valkyrieRoot, file).replaceAll("\\", "/") });
   }
 
   systems.intro = pair("Reference snapshot of the development working tree. The downloadable release may differ; disabled videos and design-only rewards are not listed as available.", "本文对应开发中工作区的源码快照，下载版本可能不同；未启用的视频和仅有设计稿的奖励不列为可用内容。");
@@ -135,11 +159,15 @@ export function buildReferenceData(h) {
   if (yeBondConfig) replaceCard("ye_shunguang", { bullets: pair([
     "Entering the enlightened state plays the combat cinematic at most once per battle, with character voices and combat effects.",
     "Bond 20 / 60 awards Heartbound Circlet / Homeward Vestment. Bond 40 gives 1,000 Crowns and 30 tools; bond 80 gives 1,500 Crowns and 30 medicine.",
-    "Win the bond-100 challenge to unlock Heart Recalled: once per battle, 2 AP and 10 fatigue, restore Sword Stance to 6 without resetting the enlightened state's spent stance or block. A participated victory grants 4 bond.",
+    "Win the bond-100 challenge to unlock Heart Recalled: once per battle, 2 AP and 10 fatigue, restore Sword Stance to 6 without automatically entering Enlightened State or resetting its spent stance or block. Its use is independent of Qingming Unsheathed.",
+    "A Heart at Home has five two-page stories and five CGs. Gain 4 bond by participating and surviving a victory; Ye Shunguang must also participate and survive each camp victory, but need not land the killing blow. Clear each stage before advancing. A full stash preserves pending rewards.",
+    "Heartbound Circlet: 240 armor, −4 maximum fatigue, +10 Resolve. Homeward Vestment: 300 armor, −8 maximum fatigue, +10 Initiative. Only Ye Shunguang may equip them.",
   ], [
     "进入明心境时播放战斗 CG 动画，每场战斗最多一次，并接入人物语音与战斗特效。",
     "羁绊 20 / 60 奖励系心额 / 归途衣；40 阶段奖励 1000 克朗与 30 工具，80 阶段奖励 1500 克朗与 30 药品。",
-    "击破 100 阶段营地解锁一念归真：每战一次，2 AP、10 疲劳，将剑势补至 6 层，不重置明心境已消耗剑势与格挡。亲自参战并获胜时获得 4 羁绊。",
+    "击破 100 阶段营地解锁一念归真：每战一次，2 AP、10 疲劳，将剑势补至 6 层；不自动进入明心境，不重置已消耗剑势与格挡，与青溟出匣次数独立。",
+    "《此心有归》包含五阶段双页剧情与五张 CG。亲自参战、存活且获胜增加 4 羁绊；营地结算同样要求叶瞬光参战并存活，无需最后一击。阶段依次完成，仓库满时保留待领奖励。",
+    "系心额：240 防护、最大疲劳 −4、决心 +10；归途衣：300 防护、最大疲劳 −8、主动值 +10。两件防具仅限叶瞬光装备。",
   ]), sourceFiles: ["config/ye_shunguang_bond_data.nut", "systems/ye_shunguang_bond.nut", "systems/valkyrie_combat_cinematic.nut", "config/ye_shunguang_voice_data.nut"] });
   if (chapters.some(chapter => chapter.id === "unclaimed_grail_four_oaths")) card("grail_wishes", "Four Oaths Grail wishes", "四誓圣杯许愿", "Finish stage 8 with Saber, Morgan, Jeanne and Jeanne Alter to receive the unique Grail. Confirm one wish; the choice is permanent for that campaign.", "Saber、摩根、贞德与黑贞的篇章完成第 8 节后获得唯一圣杯。确认一个愿望后，该战役的选择固定。", ["Wealth: 500,000 Crowns.", "Valor: Gungnir, Court Armor, Court Helmet and Oath Ring; all four pieces can be transferred to ordinary brothers or Valkyries.", "Companionship: select one living actor of each required identity; each receives 2 perk points and the corresponding permanent blessing.", "A full stash leaves deliveries pending; it does not allow selecting another wish."], ["财富：500,000 克朗。", "武勇：冈格尼尔、圣杯王庭甲、圣杯王庭盔、四骑誓约戒，可交给普通佣兵或女武神使用。", "同行：分别选择四个身份各一名存活角色，各得 2 点 Perk 与对应永久祝福。", "仓库满时保留待发奖励，不会重新开放选择。"], ["config/grail_chapter_data.nut", "systems/grail_chapter.nut", "systems/grail_equipment.nut"]);
   return { chapters, enemyGroups, bounty, shop, currencies, bonds, spirits, items, skillCatalog };

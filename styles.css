@@ -1366,6 +1366,15 @@ code {
 .reference-block h3 { margin: 0 0 18px; }
 .reference-block h4 { margin: 0; font-size: 1.15rem; }
 .reference-nav { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+.bond-section > .system-card { margin-top: 16px; }
+.bond-story summary { cursor: pointer; color: var(--gold-2); padding: 12px 0; }
+.bond-story h5 { font-size: 1rem; margin: 24px 0 12px; }
+.bond-story p { line-height: 1.8; }
+.bond-picture { display: block; width: fit-content; max-width: 100%; margin: 16px auto; }
+.bond-picture img { max-width: 100%; height: auto; object-fit: contain; border-radius: 6px; }
+.bond-equipment { display: flex; align-items: center; gap: 16px; padding: 12px 0; }
+.bond-equipment > img { width: 64px; max-height: 96px; object-fit: contain; flex: 0 0 64px; }
+.bond-equipment > div { min-width: 0; }
 .overview-links { padding: 0 24px 20px; margin: 0; }
 .snapshot-note { margin: 0; padding: 18px 24px; color: var(--gold-2); line-height: 1.6; }
 .chapter-card { margin-top: 18px; padding: 18px; border: 1px solid var(--line); border-radius: 10px; scroll-margin-top: calc(var(--header-h) + 20px); }
