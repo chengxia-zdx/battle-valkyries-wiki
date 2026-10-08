@@ -19,9 +19,9 @@ npm run refresh
 
 The extractor reads the current source tree for both mods, including uncommitted development work. It regenerates `data/wiki-data.js` and copies referenced art into `assets/` without changing the game repository.
 
-Coverage includes character loadouts, conditional/weapon/spirit skills, chapter-registered skins, all loaded chapters (objectives, materials, rewards and CG unlocks), expanded enemies, bounty camps, bond stages, signature equipment, Lily spirits, the memory shop, volume settings, summoning, and the equipment rarity/affix catalog. Chapter and supplemental skill discovery follows `load.nut`; files that have not entered the loading chain are not presented as playable chapters.
+Coverage includes character loadouts, conditional/weapon/spirit skills, chapter-registered skins, all loaded chapters (objectives, optional supply recovery, evidence, materials, rewards and CG unlocks), expanded enemies with vanilla and Legends values, guaranteed enemy loot, bounty camps, bond stages, signature equipment, Lily spirits, Sword Maiden hunt milestones, memory archive thresholds and shop products, roster/formation controls, volume settings, summoning, and the equipment rarity/affix catalog. Character order, supplemental templates, traits, skills and skins follow `load.nut`, including the eight-character registration module; files that have not entered the loading chain are not presented as playable chapters.
 
-The site labels its content as a development snapshot. `sourceRevision`, `updatedAt` and `generatedAt` identify the checkout and extraction time; `+working-tree` means the source includes uncommitted changes. This does not imply that all content is in the downloadable release or has passed in-game testing. See [the synchronization audit](docs/wiki-sync-2026-09-27.md) for the current differences from the previous Wiki.
+The site labels its content as a development snapshot. `sourceRevision`, `updatedAt` (Asia/Shanghai) and `generatedAt` (UTC) identify the checkout and extraction time; `+working-tree` means the source includes uncommitted changes. This does not imply that all content is in the downloadable release or has passed in-game testing. See [the October synchronization audit](docs/wiki-sync-2026-10-08.md) for the current differences and [the September audit](docs/wiki-sync-2026-09-27.md) for earlier work. Version labels come from `variants/`, not release-note titles.
 
 To use a mod checkout in another location, pass it directly:
 
@@ -29,7 +29,7 @@ To use a mod checkout in another location, pass it directly:
 node tools\extract-wiki-data.mjs D:\path\to\battle-valkyries
 ```
 
-Verify snapshot counts, chapter-to-character/skill/skin links, reward stages, translated currencies, volume ranges and every referenced asset with:
+Verify snapshot counts, bilingual character and skill completeness, chapter-to-character/skill/skin links, goal prerequisites and evidence, reward stages, translated currencies, roster/volume setting types, enemy profiles and every referenced asset with:
 
 ```powershell
 npm run check

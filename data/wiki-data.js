@@ -2,10 +2,10 @@ window.BV_WIKI_DATA = {
   "meta": {
     "title": "Battle Valkyries Wiki",
     "source": "battle-valkyries source",
-    "updatedAt": "2026-09-27",
-    "generatedAt": "2026-09-27T12:11:30.577Z",
+    "updatedAt": "2026-10-08",
+    "generatedAt": "2026-10-08T00:33:23.559Z",
     "missingConfigFiles": [],
-    "sourceRevision": "1c164ce6+working-tree",
+    "sourceRevision": "5edbef090+working-tree",
     "valkyrieVersion": "2.0.0",
     "alchemyVersion": "1.0.1",
     "contentSource": [
@@ -22,14 +22,16 @@ window.BV_WIKI_DATA = {
       "src/battle-valkyries/battle-valkyries/config/valkyrie_data.nut",
       "src/battle-valkyries/battle-valkyries/config/lily_valkyrie_data.nut",
       "src/battle-valkyries/battle-valkyries/config/valkyrie_legends_perk_profiles.nut",
-      "src/battle-valkyries/battle-valkyries/config/valkyrie_bounty_data.nut",
       "src/battle-valkyries/battle-valkyries/config/memory_archive_data.nut",
       "src/battle-valkyries/battle-valkyries/config/memory_shop_data.nut",
       "src/battle-valkyries/battle-valkyries/config/valkyrie_trait_data.nut",
       "src/battle-valkyries/battle-valkyries/config/lily_trait_data.nut",
+      "src/battle-valkyries/battle-valkyries/config/eight_valkyries_data.nut",
+      "src/battle-valkyries/battle-valkyries/config/valkyrie_bounty_data.nut",
       "src/battle-valkyries/battle-valkyries/config/valkyrie_skill_catalog.nut",
       "src/battle-valkyries/battle-valkyries/config/lily_spirit_data.nut",
       "src/battle-valkyries/battle-valkyries/config/lily_skill_catalog.nut",
+      "src/battle-valkyries/battle-valkyries/config/eight_valkyries_skill_catalog.nut",
       "src/battle-valkyries/battle-valkyries/config/yunki_skill_catalog.nut",
       "src/battle-valkyries/battle-valkyries/config/ye_shunguang_bond_data.nut",
       "src/battle-valkyries/battle-valkyries/config/valkyrie_chapter_data.nut",
@@ -51,19 +53,15 @@ window.BV_WIKI_DATA = {
       "src/battle-valkyries/battle-valkyries/config/mod_settings.nut",
       "src/battle-valkyries/battle-valkyries/config/keybinds.nut",
       "src/battle-valkyries/battle-valkyries/config/valkyrie_skill_audio.nut",
+      "src/battle-valkyries/battle-valkyries/config/eight_valkyries_media.nut",
       "src/battle-valkyries/battle-valkyries/config/shared_voice_data.nut",
       "src/battle-valkyries/battle-valkyries/config/ye_shunguang_voice_data.nut",
       "src/battle-valkyries/battle-valkyries/config/enemy_expansion_catalog.nut",
       "src/battle-valkyries/battle-valkyries/config/enemy_expansion_combat.nut",
+      "src/battle-valkyries/battle-valkyries/config/enemy_expansion_rewards.nut",
       "src/battle-valkyries/battle-valkyries/config/valkyrie_bounty_camps.nut",
       "src/battle-valkyries/battle-valkyries/config/enemy_expansion_spawn.nut"
-    ],
-    "partialUpdates": {
-      "ye_shunguang_bond": {
-        "sourceRevision": "1c164ce6+working-tree",
-        "generatedAt": "2026-09-27T12:39:35.256Z"
-      }
-    }
+    ]
   },
   "statKeys": [
     "Hitpoints",
@@ -104,7 +102,22 @@ window.BV_WIKI_DATA = {
     }
   },
   "summon": {
-    "rosterMax": 20,
+    "rosterMax": 200,
+    "rosterExpansion": {
+      "enabledByDefault": true,
+      "capacity": 200,
+      "combatDefault": 0,
+      "combatChoices": [
+        0,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        27
+      ]
+    },
     "formationSlots": 27,
     "combatSlots": 18,
     "costSteps": [
@@ -174,10 +187,129 @@ window.BV_WIKI_DATA = {
       "zh": "战斗女武神"
     },
     "pageTitle": {
-      "en": "Valkyries",
-      "zh": "女武神"
+      "en": "Company",
+      "zh": "编队人数"
     },
     "options": [
+      {
+        "id": "EnableRosterExpansion",
+        "type": "boolean",
+        "default": true,
+        "text": {
+          "en": {
+            "name": "Enable formation UI and roster expansion",
+            "description": "Controls the new formation UI, combat limit choices and reserve expansion together. Enabled by default. Disabling hides formation access in the character screen and Hub and returns roster limits, formation, hiring and deployment to vanilla or other mods. Your chosen limits remain saved. Reopen the character screen or Hub after switching. Disabling rebuilds formation using the current native rules without deleting members or equipment. Cannot switch during combat; reduce the company to the capacity supported by vanilla or other mods before disabling."
+          },
+          "zh": {
+            "name": "启用编队界面与人数扩容",
+            "description": "统一控制新编队界面、出战人数档位和后备扩容，默认开启。关闭后隐藏人物页与 Hub 的编队入口，人数、站位、雇佣及战斗部署交回原版或其他 Mod；之前选择的档位仍会保留。切换后重新打开人物页或 Hub。关闭时按当前原生规则重新编队，不删除成员或装备。战斗中不能切换；关闭前须先将总人数减至原版或其他 Mod 支持的容量。"
+          }
+        }
+      },
+      {
+        "id": "RosterCapacity",
+        "type": "range",
+        "unit": "",
+        "default": 200,
+        "min": 50,
+        "max": 200,
+        "step": 25,
+        "text": {
+          "en": {
+            "name": "Company roster capacity",
+            "description": "Only applies while formation UI and roster expansion are enabled. Expands company and reserve capacity without changing your origin combat limit. Lowering this setting never removes members; recruitment pauses while over capacity. Native wages, food and Legends camp rules still apply."
+          },
+          "zh": {
+            "name": "战团总人数上限",
+            "description": "仅在「启用编队界面与人数扩容」开启时生效。扩展随队成员和后备容量，不改变当前起源的出战上限。降低设置不会删除已有成员，超出容量时暂停招募。工资、粮食和传奇营地规则保持原有计算。"
+          }
+        }
+      },
+      {
+        "id": "CombatCapacity",
+        "type": "select",
+        "default": 0,
+        "values": [
+          0,
+          16,
+          18,
+          20,
+          22,
+          24,
+          26,
+          27
+        ],
+        "labels": {
+          "en": [
+            "Default (native limit)",
+            "16",
+            "18",
+            "20",
+            "22",
+            "24",
+            "26",
+            "27"
+          ],
+          "zh": [
+            "默认（原版人数）",
+            "16",
+            "18",
+            "20",
+            "22",
+            "24",
+            "26",
+            "27"
+          ]
+        },
+        "text": {
+          "en": {
+            "name": "Combat deployment limit",
+            "description": "Only applies while formation UI and roster expansion are enabled. Default follows the current vanilla or Legends origin rules. Choose a fixed limit of 16, 18, 20, 22, 24, 26 or 27. Formation uses three rows with 27 positions. Takes effect when reopening the character screen or entering the next battle. Lowering the limit moves excess deployed members to reserve without removing anyone. Arena and other scripted line-ups still follow their scenario rules."
+          },
+          "zh": {
+            "name": "出战人数上限",
+            "description": "仅在「启用编队界面与人数扩容」开启时生效。默认沿用当前原版或传奇起源的出战人数规则。可选 16、18、20、22、24、26、27 人固定上限；编队固定三排，共 27 个站位。重新打开人物页或进入下一场战斗时生效。降低上限会将多出的出战成员转入后备，不删除人物。竞技场等指定参战名单仍遵循场景规则。"
+          }
+        }
+      },
+      {
+        "id": "VoiceVolumePercent",
+        "type": "range",
+        "unit": "%",
+        "default": 300,
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "text": {
+          "en": {
+            "name": "Valkyrie Voice Volume (%)",
+            "description": "Adjust shared and dedicated Valkyrie combat voices independently. Defaults to 300%, up to 300%; 0% mutes voices. Changes apply to the next line. Music, weapon sounds, and skill effects are unaffected."
+          },
+          "zh": {
+            "name": "女武神语音音量（%）",
+            "description": "单独调整女武神的通用与专属战斗人声。默认300%，最高300%；0%关闭人声。修改后对下一句生效；音乐和武器、技能效果音不受影响。"
+          }
+        }
+      },
+      {
+        "id": "SkillSoundVolume",
+        "type": "range",
+        "unit": "%",
+        "default": 100,
+        "min": 0,
+        "max": 200,
+        "step": 10,
+        "text": {
+          "en": {
+            "name": "Skill sound volume (%)",
+            "description": "Adjust registered Valkyrie skill sound effects independently of character voices. Set to 0 to mute; the loaded catalogs include the eight new characters' skill effects."
+          },
+          "zh": {
+            "name": "技能音效音量（%）",
+            "description": "独立调整已登记的女武神技能效果音，设为 0 可静音，不改变人物语音。当前加载目录也包含八名新角色的技能音效。"
+          }
+        }
+      },
       {
         "id": "HideWeapons",
         "type": "boolean",
@@ -222,42 +354,6 @@ window.BV_WIKI_DATA = {
             "description": "开启后，后续生成的敌人将随存活女武神数量、等级与游戏进度提高编成预算，并可能出现扩展精英。已有队伍保持不变。"
           }
         }
-      },
-      {
-        "id": "VoiceVolumePercent",
-        "type": "range",
-        "default": 100,
-        "min": 0,
-        "max": 300,
-        "step": 10,
-        "text": {
-          "en": {
-            "name": "Valkyrie Voice Volume (%)",
-            "description": "Adjust shared and dedicated Valkyrie combat voices independently. Defaults to 100%, five times the previous default volume, up to 300%; 0% mutes voices. Changes apply to the next line. Music, weapon sounds, and skill effects are unaffected."
-          },
-          "zh": {
-            "name": "女武神语音音量（%）",
-            "description": "单独调整女武神的通用与专属战斗人声。默认100%，对应原默认音量的5倍，最高300%；0%关闭人声。修改后对下一句生效；音乐和武器、技能效果音不受影响。"
-          }
-        }
-      },
-      {
-        "id": "SkillSoundVolume",
-        "type": "range",
-        "default": 100,
-        "min": 0,
-        "max": 200,
-        "step": 10,
-        "text": {
-          "en": {
-            "name": "Skill sound volume (%)",
-            "description": "Volume of custom Valkyrie skill effects, independent of voice volume. Set to 0 to mute. Currently covers Saber, Silver Wolf and Jeanne."
-          },
-          "zh": {
-            "name": "技能音效音量（%）",
-            "description": "女武神专属技能音效的音量，独立于人物语音。设为 0 可关闭。目前覆盖 Saber、银狼与贞德。"
-          }
-        }
       }
     ]
   },
@@ -279,12 +375,14 @@ window.BV_WIKI_DATA = {
         },
         "bullets": {
           "en": [
-            "Gacha mode is enabled by default.",
-            "A selected target is guaranteed after four failed pulls; pull costs scale with completed guarantees."
+            "Gacha is enabled by default. A new campaign starts with a ready guarantee: select an unowned target before the first pull.",
+            "After a guaranteed pull, progress resets to 0. Each of the next four successful random pulls adds one progress; the following pull is guaranteed. A random hit on the selected target clears the selection but still adds progress.",
+            "Costs depend on completed guarantees, not total pulls. Direct summoning uses the final 44,800-Crown tier from the 16th summon onward, including beyond 20 when roster capacity allows."
           ],
           "zh": [
-            "抽卡模式默认开启。",
-            "连续 4 次未命中后可定向保底；完成的保底次数越多，后续抽取消耗越高。"
+            "抽卡默认开启，新战役初始即为保底就绪；首抽前先选择尚未拥有的目标。",
+            "完成定向保底后进度归零；随后每次成功随机招募加 1 进度，累计四次后，下一抽定向保底。随机抽中自选目标会清除选择，但仍累计进度。",
+            "抽卡费用按已完成保底次数计算。直接召唤自第 16 次起一直采用末档 44,800 克朗，扩容后超过第 20 次也沿用该档。"
           ]
         },
         "sourceFiles": [
@@ -355,21 +453,24 @@ window.BV_WIKI_DATA = {
           "zh": "记忆铭刻与商店"
         },
         "body": {
-          "en": "Ordinary brothers can be archived into biographies and four memory currencies, then exchanged for ten permanent-growth keepsakes.",
-          "zh": "普通战团成员可以被铭刻为生平记录与四类记忆资源，并在商店兑换 10 种永久成长信物。"
+          "en": "Archive eligible ordinary brothers into a permanent biography and memory currencies. Evaluation uses eight base attributes and their thresholds; equipment bonuses and enemy kill totals are not the grading criteria.",
+          "zh": "普通佣兵可铭刻为永久生平与记忆资源。评价读取八项基础属性及其阈值，装备加成和敌人击杀数不是评级依据。"
         },
         "bullets": {
           "en": [
-            "Eight attributes use three achievement thresholds.",
-            "Archive rank also reflects elite and legendary enemy victories."
+            "Each attribute at tier 1 grants 2 fragments; tier 2 additionally grants 2 crystals; tier 3 additionally grants 2 eternal memories. Rewards accumulate across all eight attributes.",
+            "Let E be attributes at tier 2 or higher, and L attributes at tier 3. E ≥ 2 / 3 / 4 / 5 cumulatively adds 2 crystals / 1 eternal memory / 1 emblem / 1 emblem. L ≥ 2 / 3 / 4 cumulatively adds 2 eternal memories / 1 emblem / 1 emblem.",
+            "Archiving removes the brother from the company after moving equipment to the stash. Valkyries, protected protagonists and other protected identities cannot be archived; stash space is checked first."
           ],
           "zh": [
-            "八项属性各有三档达成阈值。",
-            "铭刻评价还会统计精英与传奇敌人的击杀记录。"
+            "每项属性达到一档给 2 碎片，二档额外给 2 结晶，三档额外给 2 永恒记忆；八项属性的奖励累计。",
+            "E 为达到二档及以上的属性数，L 为达到三档的属性数。E 达 2 / 3 / 4 / 5 时依次累计加 2 结晶 / 1 永恒记忆 / 1 徽记 / 1 徽记；L 达 2 / 3 / 4 时依次累计加 2 永恒记忆 / 1 徽记 / 1 徽记。",
+            "铭刻会先将装备移入仓库，再从名册移除该佣兵。女武神、起源主角等受保护身份不可铭刻；仓库空间不足时不能执行。"
           ]
         },
         "sourceFiles": [
           "config/memory_archive_data.nut",
+          "systems/memory_archive_service.nut",
           "config/memory_shop_data.nut"
         ]
       },
@@ -554,12 +655,12 @@ window.BV_WIKI_DATA = {
         },
         "bullets": {
           "en": [
-            "Voice volume: 0–300%; skill sounds: 0–200%. Both default to 100%.",
-            "Character dialogue, combat effects and fullscreen profiles are refreshed from the current assets."
+            "Voice volume: 0–300%, default 300%. Skill sounds: 0–200%, default 100%. A value of 0 mutes that channel.",
+            "When migrating an old VoiceVolume preference, the saved value is divided by four; an existing VoiceVolumePercent preference takes priority. Changes affect the next voice line."
           ],
           "zh": [
-            "人物语音范围 0–300%，技能音效范围 0–200%，默认均为 100%。",
-            "角色台词、战斗表现与全屏档案资源随当前源码更新。"
+            "人物语音 0–300%，默认 300%；技能音效 0–200%，默认 100%。设为 0 可分别静音。",
+            "旧 VoiceVolume 偏好迁移时除以四；已有 VoiceVolumePercent 时优先保留新值。修改对下一句语音生效。"
           ]
         },
         "sourceFiles": [
@@ -608,12 +709,12 @@ window.BV_WIKI_DATA = {
         },
         "bullets": {
           "en": [
-            "Lily's 26 spirits and all ten memory shop products now have dedicated reference tables.",
-            "Additional characters since the previous Wiki snapshot: Abigail Williams, Katsushika Hokusai, C.C., Enterprise, Sakiko Togawa, M4A1, Morgan and Meltryllis."
+            "Mika and Hina receive unique firearms on recruitment. Weapon damage, range, fatigue and ownership restrictions are listed below.",
+            "The loaded roster contains 57 characters. New profiles: Suisui, Misono Mika, Sorasaki Hina, Hsin (Xin), Shizuna Rem Misurugi, Lumiore, Prestigious Gold, Argente, Purest Silver, Sekka, Fatebound Fox."
           ],
           "zh": [
-            "莉莉的 26 个灵魂与记忆商店全部 10 种商品均补充了独立索引。",
-            "相较旧 Wiki 新增：阿比盖尔、葛饰北斋、C.C.、企业、丰川祥子、M4A1、摩根和梅尔特莉莉丝。"
+            "未花与日奈入队时配发专属枪械，下方补齐伤害、射程、疲劳和使用者限制。",
+            "已加载名册共 57 人，本次新增：穗穗、圣园未花、空崎日奈、心、静名 雷姆 御摺木、金色威信 璐米欧儿、银色清纯 雅尔贞特、宿命的狐火 雪华。"
           ]
         },
         "sourceFiles": [
@@ -651,6 +752,94 @@ window.BV_WIKI_DATA = {
           "config/grail_chapter_data.nut",
           "systems/grail_chapter.nut",
           "systems/grail_equipment.nut"
+        ]
+      },
+      {
+        "id": "roster",
+        "title": {
+          "en": "Formation and reserves",
+          "zh": "编队与后备扩容"
+        },
+        "body": {
+          "en": "Open Formation from the character screen or Hub. Deploy, swap and reserve members, with one-step undo while the roster is unchanged.",
+          "zh": "从人物页或 Hub 打开编队，安排出战、交换站位和转入后备；名册状态未变化时可撤销上一步。"
+        },
+        "bullets": {
+          "en": [
+            "Enabled by default: 200 total members, adjustable from 50 to 200 in steps of 25. A higher native/other-mod capacity is preserved. Lowering capacity never deletes members; recruitment pauses while full.",
+            "27 formation positions in three rows. Combat defaults to the current origin rules; fixed choices are 16, 18, 20, 22, 24, 26 and 27. Old 28-person preferences migrate to 27.",
+            "Lowering the combat limit moves excess members to reserve. Wages, food, Legends camp rules and scripted arena line-ups still use their respective rules.",
+            "Cannot edit or toggle during combat. Before disabling, reduce the company to native/other-mod capacity; reopen the character screen or Hub after switching. The last deployed member cannot be reserved."
+          ],
+          "zh": [
+            "默认开启，总人数默认 200，可按 25 人步进选择 50–200；若原版或其他 Mod 的容量更高则保留更高值。调低容量不删除人物，满员时暂停招募。",
+            "三排共 27 个站位。默认沿用当前起源的出战上限，也可选 16、18、20、22、24、26、27 人；旧 28 人设置迁移为 27。",
+            "调低出战上限会将多余成员转入后备。工资、粮食、Legends 营地与竞技场指定参战仍按各自规则计算。",
+            "战斗中不能编队或切换总开关。关闭前须满足原版或其他 Mod 的人数容量；切换后重新打开人物页或 Hub。不能将最后一名出战成员转入后备。"
+          ]
+        },
+        "sourceFiles": [
+          "config/mod_settings.nut",
+          "systems/roster_service.nut",
+          "hooks/roster_expansion.nut"
+        ]
+      },
+      {
+        "id": "chapter_preparation",
+        "title": {
+          "en": "Chapter preparation and local supplies",
+          "zh": "篇章整备与现场材料"
+        },
+        "body": {
+          "en": "Updated preparation stages use site investigations, evidence and local reserves. The stage tables list the current objectives and costs.",
+          "zh": "整备阶段已改为地点调查、剧情凭证与现场备用材料，下面的阶段表列出最新目标和消耗。"
+        },
+        "bullets": {
+          "en": [
+            "Optional supply recovery is unnecessary when the stash already contains the required materials. Local reserves satisfy the linked stage requirement without adding loot to the stash.",
+            "Tools and medicine are company resources; other materials consume whole stash items. Goals with prerequisites must be completed in order.",
+            "For Yunki, stage 1 now needs one tooth and one silk; stage 3 needs one poison gland; stage 5 needs 10 tools; stage 7 no longer requires vampire dust or a heart of the forest."
+          ],
+          "zh": [
+            "仓库已有足够材料时，不必完成标为可选的备用材料调查。现场材料只抵扣关联阶段需求，不作为战利品加入仓库。",
+            "工具和药品从战团资源扣除；其他材料按仓库整件物品扣除。有前置条件的调查需要依次完成。",
+            "云岿山第 1 节现需牙齿 1、蛛丝 1；第 3 节需毒腺 1；第 5 节需工具 10；第 7 节不再要求吸血鬼灰烬与森林之心。"
+          ]
+        },
+        "sourceFiles": [
+          "config/*_chapter_data.nut",
+          "systems/valkyrie_chapter_service.nut"
+        ]
+      },
+      {
+        "id": "enemy_rewards",
+        "title": {
+          "en": "Expanded enemy balance and guaranteed loot",
+          "zh": "扩展敌人平衡与保底战利品"
+        },
+        "body": {
+          "en": "T2.5, T4 and T5 use different combat profiles. Legends has separate HP multipliers and scales profile stat additions to 80%; both sets are shown in the index.",
+          "zh": "T2.5、T4、T5 使用不同战斗配置。Legends 单独使用生命倍率，并将配置中的属性增量缩为 80%；目录同时列出两套数值。"
+        },
+        "bullets": {
+          "en": [
+            "T2.5 uses 0.81× HP, 0.90× damage, −8 melee/ranged skill and −5 melee/ranged defense relative to its inherited template.",
+            "Eligible original T4 troops award one Named item and 1 memory fragment; T5 troops award two Named items, 2 fragments and 1 crystal after defeat and victory. The optional Alchemy mod is not required.",
+            "Humanoids use the same rolled equipment that later becomes loot; creatures carry treasure. Combat wear persists, and destroyed guaranteed gear is salvaged at 1 durability after victory.",
+            "Summoned children, splits, tails and test groups do not create duplicate rewards. Unclaimed guaranteed loot is retained for later delivery when stash space is available."
+          ],
+          "zh": [
+            "T2.5 相对继承模板：生命 0.81 倍、伤害 0.90 倍、近远命中各 −8、近远防御各 −5。",
+            "符合条件的原始 T4 单位被击败且战斗获胜后，提供 1 件 Named 装备与 1 记忆碎片；T5 提供 2 件 Named、2 碎片与 1 结晶。无需启用附魔模组。",
+            "人形敌人使用的随机装备就是战后奖励，野兽携带宝物。战损保留，完全损坏的保底装备在胜利后以 1 耐久回收。",
+            "召唤物、分裂体、尾部及测试队伍不重复产生奖励。未取走的保底战利品保留待发，腾出仓库后补领。"
+          ]
+        },
+        "sourceFiles": [
+          "config/enemy_expansion_combat.nut",
+          "config/enemy_expansion_rewards.nut",
+          "systems/enemy_expansion.nut",
+          "systems/enemy_expansion_rewards.nut"
         ]
       }
     ],
@@ -3769,7 +3958,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "ranged_damage",
-      "detailLayout": "fullscreen_v1",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 65,
         "Bravery": 75,
@@ -3800,6 +3989,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "abigail_williams_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/abigail_williams_card.png",
             "preview": "assets/valkyries/abigail_williams_skin_preview.png"
@@ -4048,7 +4241,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "ranged_damage",
-      "detailLayout": "fullscreen_v1",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 75,
         "Bravery": 70,
@@ -4079,6 +4272,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "katsushika_hokusai_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/katsushika_hokusai_card.png",
             "preview": "assets/valkyries/katsushika_hokusai_skin_preview.png"
@@ -4327,7 +4524,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "melee_support",
-      "detailLayout": "fullscreen_v1",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 80,
         "Bravery": 65,
@@ -4358,6 +4555,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "c_c_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/c_c_card.png",
             "preview": "assets/valkyries/c_c_skin_preview.png"
@@ -4520,7 +4721,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "ranged_damage",
-      "detailLayout": "fullscreen_v1",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 85,
         "Bravery": 70,
@@ -4551,6 +4752,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "enterprise_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/enterprise_card.png",
             "preview": "assets/valkyries/enterprise_skin_preview.png"
@@ -4569,8 +4774,12 @@ window.BV_WIKI_DATA = {
         {
           "id": "enterprise_snowline_homecoming_skin",
           "unlockChapter": "grey_falcon_last_order",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
-            "portrait": "assets/valkyries/enterprise_standing.png",
+            "portrait": "assets/valkyries/enterprise_snowline_homecoming_card.png",
             "preview": "assets/valkyries/enterprise_snowline_homecoming_skin_preview.png"
           },
           "text": {
@@ -4791,7 +5000,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "melee_support",
-      "detailLayout": "fullscreen_v1",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 75,
         "Bravery": 65,
@@ -4827,6 +5036,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "togawa_sakiko_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/togawa_sakiko_card.png",
             "preview": "assets/valkyries/togawa_sakiko_skin_preview.png"
@@ -4845,6 +5058,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "togawa_sakiko_morning_rehearsal_skin",
           "unlockChapter": "silent_city_encore",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/togawa_sakiko_standing.png",
             "preview": "assets/valkyries/togawa_sakiko_morning_rehearsal_skin_preview.png"
@@ -4978,7 +5195,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "ranged_damage",
-      "detailLayout": "fullscreen_v1",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 75,
         "Bravery": 55,
@@ -5015,6 +5232,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "m4a1_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/m4a1_card.png",
             "preview": "assets/valkyries/m4a1_skin_preview.png"
@@ -5033,8 +5254,12 @@ window.BV_WIKI_DATA = {
         {
           "id": "m4a1_armistice_day_skin",
           "unlockChapter": "grey_falcon_last_order",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
-            "portrait": "assets/valkyries/m4a1_standing.png",
+            "portrait": "assets/valkyries/m4a1_armistice_day_card.png",
             "preview": "assets/valkyries/m4a1_armistice_day_skin_preview.png"
           },
           "text": {
@@ -5284,7 +5509,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "ranged_damage",
-      "detailLayout": "fullscreen_v1",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 80,
         "Bravery": 65,
@@ -5320,6 +5545,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "morgan_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/morgan_card.png",
             "preview": "assets/valkyries/morgan_skin_preview.png"
@@ -5338,8 +5567,12 @@ window.BV_WIKI_DATA = {
         {
           "id": "morgan_oath_traveler_skin",
           "unlockChapter": "unclaimed_grail_four_oaths",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
-            "portrait": "assets/valkyries/morgan_card.png",
+            "portrait": "assets/valkyries/morgan_oath_traveler_card.png",
             "preview": "assets/valkyries/morgan_oath_traveler_skin_preview.png"
           },
           "text": {
@@ -5545,12 +5778,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Four Oaths",
-              "description": "Once per battle, recover 5 fatigue after successfully completing your signature action.",
+              "description": "Once per battle, recover 5 fatigue after your own Lake Grace successfully completes while you remain alive. Rebuilding skills and extra turns do not refresh this.",
               "tooltip": []
             },
             "zh": {
               "name": "四骑誓约",
-              "description": "每战一次，在自己的招牌行动成功完成后恢复 5 疲劳。",
+              "description": "每战一次，自己的湖之加护成功完成且仍然存活后，恢复 5 疲劳。重建技能或额外回合不刷新次数。",
               "tooltip": []
             }
           }
@@ -5567,7 +5800,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "melee_frontline",
-      "detailLayout": "fullscreen_v1",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -5602,6 +5835,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "meltryllis_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/meltryllis_card.png",
             "preview": "assets/valkyries/meltryllis_skin_preview.png"
@@ -5784,7 +6021,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "melee_frontline",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -5820,6 +6057,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "saber_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/saber_card.png",
             "preview": "assets/valkyries/saber_skin_preview.png"
@@ -5838,6 +6079,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "saber_oath_traveler_skin",
           "unlockChapter": "unclaimed_grail_four_oaths",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/saber_card.png",
             "preview": "assets/valkyries/saber_oath_traveler_skin_preview.png"
@@ -6010,12 +6255,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Four Oaths",
-              "description": "Once per battle, recover 5 fatigue after successfully completing your signature action.",
+              "description": "Once per battle, recover 5 fatigue after your own Strike Air successfully completes while you remain alive. Rebuilding skills and extra turns do not refresh this.",
               "tooltip": []
             },
             "zh": {
               "name": "四骑誓约",
-              "description": "每战一次，在自己的招牌行动成功完成后恢复 5 疲劳。",
+              "description": "每战一次，自己的风王铁锤成功完成且仍然存活后，恢复 5 疲劳。重建技能或额外回合不刷新次数。",
               "tooltip": []
             }
           }
@@ -6032,7 +6277,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "hybrid_skirmisher",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -6063,6 +6308,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "silver_wolf_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/silver_wolf_card.png",
             "preview": "assets/valkyries/silver_wolf_skin_preview.png"
@@ -6081,6 +6330,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "silver_wolf_blackgold_soiree_skin",
           "unlockChapter": "blackgold_thirteenth_lot",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/silver_wolf_standing.png",
             "preview": "assets/valkyries/silver_wolf_blackgold_soiree_skin_preview.png"
@@ -6262,7 +6515,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "ranged_support",
-      "detailLayout": "fullscreen_v1",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 82,
         "Bravery": 70,
@@ -6293,6 +6546,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "robin_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/robin_card.png",
             "preview": "assets/valkyries/robin_skin_preview.png"
@@ -6311,8 +6568,12 @@ window.BV_WIKI_DATA = {
         {
           "id": "robin_wind_encore_skin",
           "unlockChapter": "silent_city_encore",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
-            "portrait": "assets/valkyries/robin_standing.png",
+            "portrait": "assets/valkyries/robin_wind_encore_card.png",
             "preview": "assets/valkyries/robin_wind_encore_skin_preview.png"
           },
           "text": {
@@ -6530,7 +6791,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "melee_support",
-      "detailLayout": "fullscreen_v1",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 95,
         "Bravery": 70,
@@ -6568,6 +6829,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "jeanne_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/jeanne_card.png",
             "preview": "assets/valkyries/jeanne_skin_preview.png"
@@ -6586,6 +6851,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "jeanne_summer_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/jeanne_summer_card.png",
             "preview": "assets/valkyries/jeanne_summer_skin_preview.png"
@@ -6604,6 +6873,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "jeanne_beach_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/jeanne_beach_card.png",
             "preview": "assets/valkyries/jeanne_beach_skin_preview.png"
@@ -6622,8 +6895,12 @@ window.BV_WIKI_DATA = {
         {
           "id": "jeanne_oath_traveler_skin",
           "unlockChapter": "unclaimed_grail_four_oaths",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
-            "portrait": "assets/valkyries/jeanne_card.png",
+            "portrait": "assets/valkyries/jeanne_oath_traveler_card.png",
             "preview": "assets/valkyries/jeanne_oath_traveler_skin_preview.png"
           },
           "text": {
@@ -6909,12 +7186,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Four Oaths",
-              "description": "Once per battle, recover 5 fatigue after successfully completing your signature action.",
+              "description": "Once per battle, recover 5 fatigue after your own Luminosite Eternelle successfully completes while you remain alive. Rebuilding skills and extra turns do not refresh this.",
               "tooltip": []
             },
             "zh": {
               "name": "四骑誓约",
-              "description": "每战一次，在自己的招牌行动成功完成后恢复 5 疲劳。",
+              "description": "每战一次，自己的吾主在此成功完成且仍然存活后，恢复 5 疲劳。重建技能或额外回合不刷新次数。",
               "tooltip": []
             }
           }
@@ -6991,7 +7268,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "melee_frontline",
-      "detailLayout": "fullscreen_v1",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 105,
         "Bravery": 80,
@@ -7022,6 +7299,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "sword_maiden_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/sword_maiden_card.png",
             "preview": "assets/valkyries/sword_maiden_skin_preview.png"
@@ -7337,7 +7618,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "melee_frontline",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -7368,6 +7649,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "jeanne_alter_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/jeanne_alter_card.png",
             "preview": "assets/valkyries/jeanne_alter_skin_preview.png"
@@ -7386,6 +7671,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "jeanne_alter_oath_traveler_skin",
           "unlockChapter": "unclaimed_grail_four_oaths",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/jeanne_alter_card.png",
             "preview": "assets/valkyries/jeanne_alter_oath_traveler_skin_preview.png"
@@ -7493,12 +7782,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Four Oaths",
-              "description": "Once per battle, recover 5 fatigue after successfully completing your signature action.",
+              "description": "Once per battle, recover 5 fatigue after your own La Grondement Du Haine successfully completes while you remain alive. Rebuilding skills and extra turns do not refresh this.",
               "tooltip": []
             },
             "zh": {
               "name": "四骑誓约",
-              "description": "每战一次，在自己的招牌行动成功完成后恢复 5 疲劳。",
+              "description": "每战一次，自己的咆哮吧，吾之愤怒成功完成且仍然存活后，恢复 5 疲劳。重建技能或额外回合不刷新次数。",
               "tooltip": []
             }
           }
@@ -7515,7 +7804,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "melee_mobile",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -7546,6 +7835,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "jingliu_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/jingliu_card.png",
             "preview": "assets/valkyries/jingliu_skin_preview.png"
@@ -7564,6 +7857,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "jingliu_frostmoon_tide_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/jingliu_frostmoon_tide_card.png",
             "preview": "assets/valkyries/jingliu_frostmoon_tide_skin_preview.png"
@@ -7582,6 +7879,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "jingliu_bride_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/jingliu_bride_card.png",
             "preview": "assets/valkyries/jingliu_bride_skin_preview.png"
@@ -7694,7 +7995,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "melee_mobile",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -7725,6 +8026,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "skirk_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/skirk_card.png",
             "preview": "assets/valkyries/skirk_skin_preview.png"
@@ -7863,7 +8168,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "melee_mobile",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -7899,6 +8204,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "jinhsi_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/jinhsi_card.png",
             "preview": "assets/valkyries/jinhsi_skin_preview.png"
@@ -8033,7 +8342,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "ranged_support",
-      "detailLayout": "fullscreen_v1",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 75,
         "Bravery": 75,
@@ -8069,6 +8378,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "nahida_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/nahida_card.png",
             "preview": "assets/valkyries/nahida_skin_preview.png"
@@ -8279,7 +8592,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "ranged_support",
-      "detailLayout": "fullscreen_v1",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 82,
         "Bravery": 65,
@@ -8315,6 +8628,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "hakurei_reimu_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/hakurei_reimu_card.png",
             "preview": "assets/valkyries/hakurei_reimu_skin_preview.png"
@@ -8515,7 +8832,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "ranged_damage",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -8551,6 +8868,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "yae_miko_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/yae_miko_card.png",
             "preview": "assets/valkyries/yae_miko_skin_preview.png"
@@ -8665,7 +8986,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "melee_mobile",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -8701,6 +9022,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "chisaki_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/chisaki_card.png",
             "preview": "assets/valkyries/chisaki_skin_preview.png"
@@ -8819,7 +9144,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "ranged_support",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -8855,6 +9180,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "kafka_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/kafka_card.png",
             "preview": "assets/valkyries/kafka_skin_preview.png"
@@ -8873,6 +9202,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "kafka_blackgold_soiree_skin",
           "unlockChapter": "blackgold_thirteenth_lot",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/kafka_standing.png",
             "preview": "assets/valkyries/kafka_blackgold_soiree_skin_preview.png"
@@ -9048,7 +9381,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "melee_mobile",
-      "detailLayout": "fullscreen_v1",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -9084,6 +9417,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "ye_shunguang_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/ye_shunguang_card.png",
             "preview": "assets/valkyries/ye_shunguang_skin_preview.png"
@@ -9299,8 +9636,8 @@ window.BV_WIKI_DATA = {
           "zh": "确认后在附近显露并持续高亮营地。叶瞬光须实际参战并存活获胜，不要求最后一击。"
         },
         "delivery": {
-          "en": "Your reward is recorded and delivery is pending. Free a stash slot; subsequent event checks will retry. Saving and loading preserves your entitlement.",
-          "zh": "奖励已记账，暂未发放。请腾出行囊空间；稍后事件检查会自动重试，读档不会丢失奖励。"
+          "en": "Your reward entitlement is saved, but delivery is pending. It will retry and survives loading. Check the log if delivery continues to fail.",
+          "zh": "奖励资格已保留，尚未完成发放。稍后会自动重试，读档不会丢失；持续失败时请查看日志。"
         },
         "progression": {
           "en": "Progress through 20 / 40 / 60 / 80 / 100 bond in order. Each stage has two story pages and one camp; an unfinished earlier challenge blocks the next. This campaign does not require the Yunki chapter. Story rings are keepsakes, not equipment rewards.",
@@ -9501,7 +9838,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "hybrid_skirmisher",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -9538,6 +9875,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "himeko_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/himeko_card.png",
             "preview": "assets/valkyries/himeko_skin_preview.png"
@@ -9556,6 +9897,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "himeko_departure_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/himeko_departure_card.png",
             "preview": "assets/valkyries/himeko_departure_skin_preview.png"
@@ -9807,7 +10152,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "melee_mobile",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -9843,6 +10188,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "feixue_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/feixue_card.png",
             "preview": "assets/valkyries/feixue_skin_preview.png"
@@ -9981,7 +10330,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "melee_mobile",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -10017,6 +10366,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "feixiao_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/feixiao_card.png",
             "preview": "assets/valkyries/feixiao_skin_preview.png"
@@ -10187,7 +10540,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "melee_mobile",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -10223,6 +10576,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "changli_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/changli_card.png",
             "preview": "assets/valkyries/changli_skin_preview.png"
@@ -10373,7 +10730,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "melee_frontline",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -10409,6 +10766,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "raiden_shogun_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/raiden_shogun_card.png",
             "preview": "assets/valkyries/raiden_shogun_skin_preview.png"
@@ -10527,7 +10888,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "melee_frontline",
-      "detailLayout": "fullscreen_v1",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -10563,6 +10924,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "yixuan_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/yixuan_card.png",
             "preview": "assets/valkyries/yixuan_skin_preview.png"
@@ -10581,6 +10946,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "yixuan_ink_shadow_skin",
           "unlockChapter": "yunki_demon_chronicle",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/yixuan_ink_shadow_card.png",
             "preview": "assets/valkyries/yixuan_ink_shadow_skin_preview.png"
@@ -10783,7 +11152,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "ranged_support",
-      "detailLayout": "fullscreen_v1",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -10819,6 +11188,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "xilian_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/xilian_card.png",
             "preview": "assets/valkyries/xilian_skin_preview.png"
@@ -10996,7 +11369,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "melee_frontline",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -11032,6 +11405,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "liuying_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/liuying_card.png",
             "preview": "assets/valkyries/liuying_skin_preview.png"
@@ -11295,7 +11672,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "melee_mobile",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -11332,6 +11709,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "cartethyia_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/cartethyia_card.png",
             "preview": "assets/valkyries/cartethyia_skin_preview.png"
@@ -11502,7 +11883,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "ranged_damage",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 55,
@@ -11533,6 +11914,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "castorice_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/castorice_card.png",
             "preview": "assets/valkyries/castorice_skin_preview.png"
@@ -11551,6 +11936,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "castorice_white_flower_return_skin",
           "unlockChapter": "spring_passes_here",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/castorice_soft.png",
             "preview": "assets/valkyries/castorice_white_flower_return_skin_preview.png"
@@ -11722,7 +12111,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "ranged_damage",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 105,
         "Bravery": 60,
@@ -11758,6 +12147,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "changyeyue_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/changyeyue_card.png",
             "preview": "assets/valkyries/changyeyue_skin_preview.png"
@@ -11866,7 +12259,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "hybrid_skirmisher",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 55,
@@ -11902,6 +12295,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "hysilens_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/hysilens_card.png",
             "preview": "assets/valkyries/hysilens_skin_preview.png"
@@ -11920,6 +12317,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "hysilens_returning_sword_banner_skin",
           "unlockChapter": "royal_banner_returning_tide",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/hysilens_soft.png",
             "preview": "assets/valkyries/hysilens_returning_sword_banner_skin_preview.png"
@@ -12045,7 +12446,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "ranged_support",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -12078,6 +12479,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "tilixibiesi_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/tilixibiesi_card.png",
             "preview": "assets/valkyries/tilixibiesi_skin_preview.png"
@@ -12184,7 +12589,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "hybrid_skirmisher",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 80,
         "Bravery": 50,
@@ -12221,6 +12626,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "cipher_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/cipher_card.png",
             "preview": "assets/valkyries/cipher_skin_preview.png"
@@ -12355,7 +12764,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "ranged_support",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 85,
         "Bravery": 65,
@@ -12392,6 +12801,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "cerydra_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/cerydra_card.png",
             "preview": "assets/valkyries/cerydra_skin_preview.png"
@@ -12410,6 +12823,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "cerydra_tidal_regalia_skin",
           "unlockChapter": "royal_banner_returning_tide",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/cerydra_soft.png",
             "preview": "assets/valkyries/cerydra_tidal_regalia_skin_preview.png"
@@ -12571,7 +12988,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "ranged_support",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -12602,6 +13019,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "fengjin_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/fengjin_card.png",
             "preview": "assets/valkyries/fengjin_skin_preview.png"
@@ -12620,6 +13041,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "fengjin_waystation_green_skin",
           "unlockChapter": "spring_passes_here",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/fengjin_soft.png",
             "preview": "assets/valkyries/fengjin_waystation_green_skin_preview.png"
@@ -12775,7 +13200,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "ranged_support",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -12811,6 +13236,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "yuno_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/yuno_card.png",
             "preview": "assets/valkyries/yuno_skin_preview.png"
@@ -12932,7 +13361,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "ranged_support",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -12968,6 +13397,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "phoebe_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/phoebe_card.png",
             "preview": "assets/valkyries/phoebe_skin_preview.png"
@@ -13089,7 +13522,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "ranged_damage",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 60,
@@ -13125,6 +13558,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "wisadel_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/wisadel_card.png",
             "preview": "assets/valkyries/wisadel_skin_preview.png"
@@ -13250,7 +13687,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "melee_mobile",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 60,
@@ -13286,6 +13723,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "aglaea_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/aglaea_card.png",
             "preview": "assets/valkyries/aglaea_skin_preview.png"
@@ -13400,7 +13841,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "hybrid_skirmisher",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -13436,6 +13877,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "mai_shiranui_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/mai_shiranui_card.png",
             "preview": "assets/valkyries/mai_shiranui_skin_preview.png"
@@ -13552,7 +13997,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "melee_mobile",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 50,
@@ -13588,6 +14033,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "scarlet_shadow_kimono_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/scarlet_shadow_kimono_card.png",
             "preview": "assets/valkyries/scarlet_shadow_skin_preview.png"
@@ -13720,7 +14169,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "melee_mobile",
-      "detailLayout": "fullscreen_v1",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 90,
         "Bravery": 55,
@@ -13756,6 +14205,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "texas_omertosa_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/texas_omertosa_card.png",
             "preview": "assets/valkyries/texas_omertosa_skin_preview.png"
@@ -13926,7 +14379,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "ranged_damage",
-      "detailLayout": "classic",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 85,
         "Bravery": 55,
@@ -13962,6 +14415,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "sparxie_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/sparxie_card.png",
             "preview": "assets/valkyries/sparxie_skin_preview.png"
@@ -14130,7 +14587,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "ranged_damage",
-      "detailLayout": "fullscreen_v1",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 85,
         "Bravery": 65,
@@ -14166,6 +14623,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "the_herta_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/the_herta_card.png",
             "preview": "assets/valkyries/the_herta_skin_preview.png"
@@ -14325,7 +14786,7 @@ window.BV_WIKI_DATA = {
       "level": 1,
       "dailyWage": 1,
       "legendsPerkProfile": "ranged_support",
-      "detailLayout": "fullscreen_v1",
+      "combatResource": null,
       "baseAttributes": {
         "Hitpoints": 78,
         "Bravery": 75,
@@ -14360,6 +14821,10 @@ window.BV_WIKI_DATA = {
         {
           "id": "lily_skin",
           "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
           "images": {
             "portrait": "assets/valkyries/lily_card.png",
             "preview": "assets/valkyries/lily_skin_preview.png"
@@ -15044,6 +15509,1745 @@ window.BV_WIKI_DATA = {
       ],
       "chapters": [],
       "bond": null
+    },
+    {
+      "id": "suisui",
+      "order": 50,
+      "level": 1,
+      "dailyWage": 1,
+      "legendsPerkProfile": "ranged_support",
+      "combatResource": {
+        "Start": 0,
+        "Cap": 0
+      },
+      "baseAttributes": {
+        "Hitpoints": 80,
+        "Bravery": 80,
+        "Stamina": 125,
+        "MeleeSkill": 60,
+        "RangedSkill": 78,
+        "MeleeDefense": 12,
+        "RangedDefense": 15,
+        "Initiative": 105
+      },
+      "talents": {
+        "Hitpoints": 2,
+        "Bravery": 2,
+        "Stamina": 3,
+        "MeleeSkill": 0,
+        "RangedSkill": 3,
+        "MeleeDefense": 2,
+        "RangedDefense": 1,
+        "Initiative": 2
+      },
+      "traitBonuses": {},
+      "images": {
+        "card": "assets/valkyries/suisui_card.png",
+        "skin": "assets/valkyries/suisui_skin_preview.png",
+        "trait": "assets/traits/suisui_trait_icon.png"
+      },
+      "skins": [
+        {
+          "id": "suisui_skin",
+          "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
+          "images": {
+            "portrait": "assets/valkyries/suisui_card.png",
+            "preview": "assets/valkyries/suisui_skin_preview.png"
+          },
+          "text": {
+            "en": {
+              "name": "Suisui",
+              "description": "Original costume."
+            },
+            "zh": {
+              "name": "穗穗",
+              "description": "原版服装。"
+            }
+          }
+        }
+      ],
+      "skills": [
+        {
+          "key": "suisui_clear_current",
+          "icon": "suisui_clear_current",
+          "image": "assets/skills/suisui_clear_current.png",
+          "kind": "passive",
+          "lifetime": "persistent",
+          "spec": {},
+          "text": {
+            "en": {
+              "name": "Clear Current",
+              "description": "At each normal turn start, heal up to 3 injured roster allies within 3 tiles (including self), lowest HP ratio first, for 8 + 0.04R HP. R is current Resolve capped at 150.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "清流往复",
+              "description": "每个正常回合开始，治疗自身3格内缺血比例最高的最多3名名册友军（含自己）各8+0.04R生命。满血者不占名额；不会清除硬控或伤残。R=100为每人12，总量至多36。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "suisui_water_fan",
+          "icon": "suisui_water_fan",
+          "image": "assets/skills/suisui_water_fan.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 3,
+            "Fatigue": 12,
+            "Min": 1,
+            "Max": 5,
+            "Cooldown": 0,
+            "Resource": 0,
+            "Damage": 60,
+            "Resolve": 0.35,
+            "Armor": 1.25,
+            "Pierce": 0.3,
+            "Hit": 20,
+            "Melee": false,
+            "Weapon": false,
+            "IgnoreShield": false
+          },
+          "text": {
+            "en": {
+              "name": "Water Fan",
+              "description": "Deal 60 + 0.35R damage at range 1-5 with +20 ranged accuracy, 125% armor damage and 30% penetration. On hit, chain once to the nearest visible enemy within 1 tile of the original target for half damage with an independent hit roll.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "水扇牵丝",
+              "description": "3 AP / 12疲劳；1–5格，60+0.35R伤害。命中后向主目标1格内另一名最近可见敌人连锁一次，伤害50%；独立命中，不继续扩散。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "suisui_spring_mountain",
+          "icon": "suisui_spring_mountain",
+          "image": "assets/skills/suisui_spring_mountain.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 3,
+            "Fatigue": 18,
+            "Min": 0,
+            "Max": 4,
+            "Cooldown": 2,
+            "Resource": 0,
+            "Damage": 0,
+            "Resolve": 0,
+            "Armor": 1,
+            "Pierce": 0,
+            "Hit": 0,
+            "Melee": false,
+            "Weapon": false,
+            "IgnoreShield": false
+          },
+          "text": {
+            "en": {
+              "name": "Spring Mountain",
+              "description": "Heal the selected roster ally and up to 2 injured roster allies within 1 tile for 25 + 0.15R HP each. Remove one bleeding or poison effect per recipient. Range 0-4; cooldown 2 normal turns.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "春山可望",
+              "description": "3 AP / 18疲劳；0–4格选择己方，治疗主目标及其1格内最多2名缺血比例最高的队友，各25+0.15R生命；每人移除1项流血或中毒。冷却2。主目标满血但需要净化时仍合法，不解除眩晕、缴械或永久伤残。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "suisui_river_realm",
+          "icon": "suisui_river_realm",
+          "image": "assets/skills/suisui_river_realm.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 5,
+            "Fatigue": 30,
+            "Min": 0,
+            "Max": 3,
+            "Cooldown": 4,
+            "Resource": 0,
+            "Damage": 0,
+            "Resolve": 0,
+            "Armor": 1,
+            "Pierce": 0,
+            "Hit": 0,
+            "Melee": false,
+            "Weapon": false,
+            "IgnoreShield": false
+          },
+          "text": {
+            "en": {
+              "name": "River Realm",
+              "description": "Create a stationary radius-2 realm within 3 tiles for 2 normal turns. Heal roster allies inside for 20 HP immediately. While inside: +20% paid direct attack damage and -20% ordinary damage taken. Replaces the previous realm. Cooldown 4; suspended while the caster is incapacitated.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "山河水境",
+              "description": "5 AP / 30疲劳；0–3格选择可见地面，建立半径2固定水境，持续2个自身回合，冷却4。施放时境内名册友军各治疗20；身在境内时主动直接攻击伤害+20%、所受普通伤害−20%。离开即失去两项加成；不随穗穗移动，不给额外AP，也不额外触发被动回血。",
+              "tooltip": []
+            }
+          }
+        }
+      ],
+      "text": {
+        "en": {
+          "name": "Suisui",
+          "backgroundName": "Suisui",
+          "backgroundDescription": "A Valkyrie from 鸣潮. At each normal turn start, heal up to 3 injured roster allies within 3 tiles (including self), lowest HP ratio first, for 8 + 0.04R HP. R is current Resolve capped at 150.",
+          "traitName": "Suisui",
+          "traitDescription": "At each normal turn start, heal up to 3 injured roster allies within 3 tiles (including self), lowest HP ratio first, for 8 + 0.04R HP. R is current Resolve capped at 150.",
+          "traitTooltip": [
+            "At each normal turn start, heal up to 3 injured roster allies within 3 tiles (including self), lowest HP ratio first, for 8 + 0.04R HP. R is current Resolve capped at 150."
+          ]
+        },
+        "zh": {
+          "name": "穗穗",
+          "backgroundName": "穗穗",
+          "backgroundDescription": "明庭出身、昭明商会的年轻理事；冷凝属性、音感仪、水扇。形象以官方立绘中的浅金长发、金瞳、金白旗袍、蓝碧羽饰和暗红手套为准。",
+          "traitName": "穗穗",
+          "traitDescription": "无额外资源，以AP、疲劳、地面水境位置和冷却维持循环。",
+          "traitTooltip": [
+            "无额外资源，以AP、疲劳、地面水境位置和冷却维持循环。"
+          ]
+        }
+      },
+      "additionalSkills": [],
+      "chapters": [],
+      "bond": null
+    },
+    {
+      "id": "misono_mika",
+      "order": 51,
+      "level": 1,
+      "dailyWage": 1,
+      "legendsPerkProfile": "ranged_damage",
+      "combatResource": {
+        "Start": 3,
+        "Cap": 3
+      },
+      "baseAttributes": {
+        "Hitpoints": 100,
+        "Bravery": 65,
+        "Stamina": 130,
+        "MeleeSkill": 65,
+        "RangedSkill": 85,
+        "MeleeDefense": 18,
+        "RangedDefense": 15,
+        "Initiative": 110
+      },
+      "talents": {
+        "Hitpoints": 2,
+        "Bravery": 2,
+        "Stamina": 3,
+        "MeleeSkill": 0,
+        "RangedSkill": 3,
+        "MeleeDefense": 2,
+        "RangedDefense": 1,
+        "Initiative": 2
+      },
+      "traitBonuses": {},
+      "images": {
+        "card": "assets/valkyries/misono_mika_card.png",
+        "skin": "assets/valkyries/misono_mika_skin_preview.png",
+        "trait": "assets/traits/misono_mika_trait_icon.png"
+      },
+      "skins": [
+        {
+          "id": "misono_mika_skin",
+          "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
+          "images": {
+            "portrait": "assets/valkyries/misono_mika_card.png",
+            "preview": "assets/valkyries/misono_mika_skin_preview.png"
+          },
+          "text": {
+            "en": {
+              "name": "Misono Mika",
+              "description": "Original costume."
+            },
+            "zh": {
+              "name": "圣园未花",
+              "description": "原版服装。"
+            }
+          }
+        }
+      ],
+      "skills": [
+        {
+          "key": "misono_mika_innocent_strength",
+          "icon": "misono_mika_innocent_strength",
+          "image": "assets/skills/misono_mika_innocent_strength.png",
+          "kind": "passive",
+          "lifetime": "persistent",
+          "spec": {},
+          "text": {
+            "en": {
+              "name": "Innocent Strength",
+              "description": "Take 20% less ordinary damage. The signature SMG can fire adjacent to enemies. Gun attacks gain +10 accuracy at range 1-2; beyond range 3, lose 5 accuracy per tile. Magazine: 3 bursts at battle start; equipment changes do not refill it.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "天真的怪力",
+              "description": "所受普通伤害−20%。专武可在贴身时射击，不承受额外“邻敌封枪/邻敌减命中”；1–2格枪击额外命中+10。距离4–5格每超过3格命中−5。仍受视线、高差、远程防御与适用控制影响，不保证暴击或命中。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "misono_mika_starlight_burst",
+          "icon": "misono_mika_starlight_burst",
+          "image": "assets/skills/misono_mika_starlight_burst.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 4,
+            "Fatigue": 18,
+            "Min": 1,
+            "Max": 5,
+            "Cooldown": 0,
+            "Resource": 1,
+            "Damage": 0,
+            "Resolve": 0,
+            "Armor": 1.8,
+            "Pierce": 0.5,
+            "Hit": 15,
+            "Melee": false,
+            "Weapon": true,
+            "IgnoreShield": false
+          },
+          "text": {
+            "en": {
+              "name": "Starlight Burst",
+              "description": "Spend 1 magazine group. Fire two independently rolled 1.0x weapon hits at one enemy, range 1-5, +15 ranged accuracy, 180% armor damage, 50% penetration. Stop when the target dies.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "星光连射",
+              "description": "4 AP / 18疲劳 / 1弹组；1–5格同一目标两段1.0M，远程命中+15；对甲1.8、穿甲50%。每段独立命中，目标死亡立即停。按整次动作消耗1弹组，不退未播放的弹光。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "misono_mika_trinity_breach",
+          "icon": "misono_mika_trinity_breach",
+          "image": "assets/skills/misono_mika_trinity_breach.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 2,
+            "Fatigue": 12,
+            "Min": 1,
+            "Max": 2,
+            "Cooldown": 3,
+            "Resource": 0,
+            "Damage": 0,
+            "Resolve": 0,
+            "Armor": 1,
+            "Pierce": 0,
+            "Hit": 0,
+            "Melee": false,
+            "Weapon": true,
+            "IgnoreShield": false
+          },
+          "text": {
+            "en": {
+              "name": "Trinity Breach",
+              "description": "Move along an empty path up to 2 tiles without attacks of opportunity; end within 2 tiles of a visible enemy. Gain a 40 HP barrier until the next normal turn. Cannot move while rooted. Cooldown 3.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "圣三一突破",
+              "description": "2 AP / 12疲劳；沿最多2格合法空路径移动，不触发借机；落点必须位于某个可见敌人2格内。获得自身40生命护盾，持续至下次正常回合开始，冷却3。不可原地刷盾；不增加武器伤害，不解除控制。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "misono_mika_star_magazine",
+          "icon": "misono_mika_star_magazine",
+          "image": "assets/skills/misono_mika_star_magazine.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 2,
+            "Fatigue": 8,
+            "Min": 0,
+            "Max": 0,
+            "Cooldown": 0,
+            "Resource": 0,
+            "Damage": 0,
+            "Resolve": 0,
+            "Armor": 1,
+            "Pierce": 0,
+            "Hit": 0,
+            "Melee": false,
+            "Weapon": true,
+            "IgnoreShield": false
+          },
+          "text": {
+            "en": {
+              "name": "Star Magazine",
+              "description": "Refill the equipped signature SMG to 3 groups. Requires a non-full magazine. Does not refund fatigue or trigger attack discounts.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "星匣更替",
+              "description": "2 AP / 8疲劳；需要装备专武且未满匣，补至3弹组。无疲劳返还；装填本身不触发攻击、充能或任何武器攻击AP折扣。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "misono_mika_kyrie_eleison",
+          "icon": "misono_mika_kyrie_eleison",
+          "image": "assets/skills/misono_mika_kyrie_eleison.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 6,
+            "Fatigue": 35,
+            "Min": 1,
+            "Max": 5,
+            "Cooldown": 2,
+            "Resource": 2,
+            "Damage": 0,
+            "Resolve": 0,
+            "Armor": 1.8,
+            "Pierce": 0.5,
+            "Hit": 25,
+            "Melee": false,
+            "Weapon": true,
+            "IgnoreShield": true
+          },
+          "text": {
+            "en": {
+              "name": "Kyrie Eleison",
+              "description": "Spend 2 magazine groups. Against one enemy at range 1-5, fire four 0.45x hits and one 2.2x finisher. +25 accuracy, ignores shields, 180% armor damage and 50% penetration. Damage increases by up to 25% with the target HP ratio at cast. Stop on death; cooldown 2.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "圣光裁断",
+              "description": "6 AP / 35疲劳 / 2弹组；1–5格单体，四段0.45M＋终结段2.2M，共4.0M。命中+25、忽略盾牌，对甲1.8、穿甲50%。按发动时目标生命比例附加0–25%伤害，五段共用快照；冷却2。目标死亡停火，不溢出转移。",
+              "tooltip": []
+            }
+          }
+        }
+      ],
+      "text": {
+        "en": {
+          "name": "Misono Mika",
+          "backgroundName": "Misono Mika",
+          "backgroundDescription": "A Valkyrie from 蔚蓝档案 / Blue Archive. Take 20% less ordinary damage. The signature SMG can fire adjacent to enemies. Gun attacks gain +10 accuracy at range 1-2; beyond range 3, lose 5 accuracy per tile. Magazine: 3 bursts at battle start; equipment changes do not refill it.",
+          "traitName": "Misono Mika",
+          "traitDescription": "Take 20% less ordinary damage. The signature SMG can fire adjacent to enemies. Gun attacks gain +10 accuracy at range 1-2; beyond range 3, lose 5 accuracy per tile. Magazine: 3 bursts at battle start; equipment changes do not refill it.",
+          "traitTooltip": [
+            "Take 20% less ordinary damage. The signature SMG can fire adjacent to enemies. Gun attacks gain +10 accuracy at range 1-2; beyond range 3, lose 5 accuracy per tile. Magazine: 3 bursts at battle start; equipment changes do not refill it."
+          ]
+        },
+        "zh": {
+          "name": "圣园未花",
+          "backgroundName": "圣园未花",
+          "backgroundDescription": "圣三一茶话会相关角色，活泼外表下有强烈情感与惊人的战斗力。粉色长发、金色眼睛、白色制服裙、羽翼、星环光环，使用装饰过的冲锋枪。",
+          "traitName": "圣园未花",
+          "traitDescription": "短弹匣0–3组，开场3组；不自动回弹。弹组随角色保存于本场战斗状态，换枪不补满。无需决心伤害成长。",
+          "traitTooltip": [
+            "短弹匣0–3组，开场3组；不自动回弹。弹组随角色保存于本场战斗状态，换枪不补满。无需决心伤害成长。"
+          ]
+        }
+      },
+      "additionalSkills": [],
+      "chapters": [],
+      "bond": null
+    },
+    {
+      "id": "sorasaki_hina",
+      "order": 52,
+      "level": 1,
+      "dailyWage": 1,
+      "legendsPerkProfile": "ranged_damage",
+      "combatResource": {
+        "Start": 0,
+        "Cap": 8
+      },
+      "baseAttributes": {
+        "Hitpoints": 85,
+        "Bravery": 75,
+        "Stamina": 135,
+        "MeleeSkill": 55,
+        "RangedSkill": 88,
+        "MeleeDefense": 10,
+        "RangedDefense": 20,
+        "Initiative": 120
+      },
+      "talents": {
+        "Hitpoints": 2,
+        "Bravery": 2,
+        "Stamina": 3,
+        "MeleeSkill": 0,
+        "RangedSkill": 3,
+        "MeleeDefense": 2,
+        "RangedDefense": 1,
+        "Initiative": 2
+      },
+      "traitBonuses": {},
+      "images": {
+        "card": "assets/valkyries/sorasaki_hina_card.png",
+        "skin": "assets/valkyries/sorasaki_hina_skin_preview.png",
+        "trait": "assets/traits/sorasaki_hina_trait_icon.png"
+      },
+      "skins": [
+        {
+          "id": "sorasaki_hina_skin",
+          "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
+          "images": {
+            "portrait": "assets/valkyries/sorasaki_hina_card.png",
+            "preview": "assets/valkyries/sorasaki_hina_skin_preview.png"
+          },
+          "text": {
+            "en": {
+              "name": "Sorasaki Hina",
+              "description": "Original costume."
+            },
+            "zh": {
+              "name": "空崎日奈",
+              "description": "原版服装。"
+            }
+          }
+        }
+      ],
+      "skills": [
+        {
+          "key": "sorasaki_hina_cold_prefect",
+          "icon": "sorasaki_hina_cold_prefect",
+          "image": "assets/skills/sorasaki_hina_cold_prefect.png",
+          "kind": "passive",
+          "lifetime": "persistent",
+          "spec": {},
+          "text": {
+            "en": {
+              "name": "Cold Prefect",
+              "description": "Signature gun hits suppress: -15 melee/ranged skill and -20 initiative through the target next normal turn end; damage against Hina is reduced by 15%. Gun accuracy +10 until Hina moves this normal turn. Heat 0-8, starting at 0; cool 1 on subsequent normal turns.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "冷彻的风纪委员长",
+              "description": "专武命中使目标压制：近/远程技能−15、先攻−20，至目标下次正常行动结束；同名不叠加。该目标对日奈伤害−15%。日奈在本次正常回合尚未移动时，枪击额外命中+10；任何主动或被动位移都失去该加成，等下一正常回合恢复。压制免疫只屏蔽减益。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "sorasaki_hina_cold_burst",
+          "icon": "sorasaki_hina_cold_burst",
+          "image": "assets/skills/sorasaki_hina_cold_burst.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 3,
+            "Fatigue": 12,
+            "Min": 1,
+            "Max": 7,
+            "Cooldown": 0,
+            "Resource": 2,
+            "Damage": 0,
+            "Resolve": 0,
+            "Armor": 1.6,
+            "Pierce": 0.35,
+            "Hit": 15,
+            "Melee": false,
+            "Weapon": true,
+            "IgnoreShield": false
+          },
+          "text": {
+            "en": {
+              "name": "Cold Burst",
+              "description": "Gain 2 heat. Fire two 0.8x weapon hits at one enemy, range 1-7, +15 accuracy, 160% armor damage, 35% penetration. Beyond 4 tiles: -4 accuracy per tile. Adjacent enemies: -20 accuracy. Stop on death; cannot exceed 8 heat.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "冷彻点射",
+              "description": "3 AP / 12疲劳 / 热量+2；1–7格同一目标两段0.8H，对甲1.6、穿甲35%、命中+15。超过4格每格命中−4；有相邻敌人时命中再−20，但仍可射击。逐段命中，击杀停止。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "sorasaki_hina_cool_reload",
+          "icon": "sorasaki_hina_cool_reload",
+          "image": "assets/skills/sorasaki_hina_cool_reload.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 3,
+            "Fatigue": 0,
+            "Min": 0,
+            "Max": 0,
+            "Cooldown": 2,
+            "Resource": 0,
+            "Damage": 0,
+            "Resolve": 0,
+            "Armor": 1,
+            "Pierce": 0,
+            "Hit": 0,
+            "Melee": false,
+            "Weapon": true,
+            "IgnoreShield": false
+          },
+          "text": {
+            "en": {
+              "name": "Calm Reload",
+              "description": "Remove 6 heat and recover 20 fatigue. Cooldown 2 normal turns. Unavailable when both heat and fatigue are zero. Does not trigger attack discounts.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "冷静再装填",
+              "description": "3 AP / 0疲劳；热量−6，并恢复20疲劳；冷却2。热量为0且疲劳为0时不可用。不返AP、不产生攻击事件，不能享受枪击的AP折扣。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "sorasaki_hina_final_sweep",
+          "icon": "sorasaki_hina_final_sweep",
+          "image": "assets/skills/sorasaki_hina_final_sweep.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 6,
+            "Fatigue": 35,
+            "Min": 2,
+            "Max": 6,
+            "Cooldown": 2,
+            "Resource": 5,
+            "Damage": 0,
+            "Resolve": 0,
+            "Armor": 1.6,
+            "Pierce": 0.35,
+            "Hit": 10,
+            "Melee": false,
+            "Weapon": true,
+            "IgnoreShield": false
+          },
+          "text": {
+            "en": {
+              "name": "Final Sweep",
+              "description": "Gain 5 heat. Attack up to 5 previewed enemies in a 60-degree cone, range 2-6, selected target first. Four 0.65x weapon hits per enemy; +10 accuracy, 160% armor damage, 35% penetration. Obeys line of sight and shields; no friendly fire. Unavailable adjacent to enemies. Cooldown 2.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "终幕扫射",
+              "description": "6 AP / 35疲劳 / 热量+5；2–6格、面向选定方向的60度六角扇区，按预览攻击最多5名敌人，每人四段0.65H。命中+10，对甲1.6、穿甲35%；冷却2。优先选中目标，其余按距离/ID；尊重障碍与盾牌，不伤友军，有相邻敌人时不可使用。",
+              "tooltip": []
+            }
+          }
+        }
+      ],
+      "text": {
+        "en": {
+          "name": "Sorasaki Hina",
+          "backgroundName": "Sorasaki Hina",
+          "backgroundDescription": "A Valkyrie from 蔚蓝档案 / Blue Archive. Signature gun hits suppress: -15 melee/ranged skill and -20 initiative through the target next normal turn end; damage against Hina is reduced by 15%. Gun accuracy +10 until Hina moves this normal turn. Heat 0-8, starting at 0; cool 1 on subsequent normal turns.",
+          "traitName": "Sorasaki Hina",
+          "traitDescription": "Signature gun hits suppress: -15 melee/ranged skill and -20 initiative through the target next normal turn end; damage against Hina is reduced by 15%. Gun accuracy +10 until Hina moves this normal turn. Heat 0-8, starting at 0; cool 1 on subsequent normal turns.",
+          "traitTooltip": [
+            "Signature gun hits suppress: -15 melee/ranged skill and -20 initiative through the target next normal turn end; damage against Hina is reduced by 15%. Gun accuracy +10 until Hina moves this normal turn. Heat 0-8, starting at 0; cool 1 on subsequent normal turns."
+          ]
+        },
+        "zh": {
+          "name": "空崎日奈",
+          "backgroundName": "空崎日奈",
+          "backgroundDescription": "格黑娜风纪委员会委员长，怕麻烦却冷静负责。娇小体型、银白长发、紫瞳、角与紫黑冠状光环、深色军装式制服，持机枪“终幕：毁灭者”。",
+          "traitName": "空崎日奈",
+          "traitDescription": "热量0–8，开场0；从第二个正常回合起自动−1。点射+2，扫射+5；会超过8时技能不可用。热量高不额外伤害自己。",
+          "traitTooltip": [
+            "热量0–8，开场0；从第二个正常回合起自动−1。点射+2，扫射+5；会超过8时技能不可用。热量高不额外伤害自己。"
+          ]
+        }
+      },
+      "additionalSkills": [],
+      "chapters": [],
+      "bond": null
+    },
+    {
+      "id": "xin",
+      "order": 53,
+      "level": 1,
+      "dailyWage": 1,
+      "legendsPerkProfile": "ranged_support",
+      "combatResource": {
+        "Start": 2,
+        "Cap": 3
+      },
+      "baseAttributes": {
+        "Hitpoints": 80,
+        "Bravery": 85,
+        "Stamina": 125,
+        "MeleeSkill": 60,
+        "RangedSkill": 83,
+        "MeleeDefense": 12,
+        "RangedDefense": 18,
+        "Initiative": 115
+      },
+      "talents": {
+        "Hitpoints": 2,
+        "Bravery": 2,
+        "Stamina": 3,
+        "MeleeSkill": 0,
+        "RangedSkill": 3,
+        "MeleeDefense": 2,
+        "RangedDefense": 1,
+        "Initiative": 2
+      },
+      "traitBonuses": {},
+      "images": {
+        "card": "assets/valkyries/xin_card.png",
+        "skin": "assets/valkyries/xin_skin_preview.png",
+        "trait": "assets/traits/xin_trait_icon.png"
+      },
+      "skins": [
+        {
+          "id": "xin_skin",
+          "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
+          "images": {
+            "portrait": "assets/valkyries/xin_card.png",
+            "preview": "assets/valkyries/xin_skin_preview.png"
+          },
+          "text": {
+            "en": {
+              "name": "Hsin (Xin)",
+              "description": "Original costume."
+            },
+            "zh": {
+              "name": "心",
+              "description": "原版服装。"
+            }
+          }
+        }
+      ],
+      "skills": [
+        {
+          "key": "xin_myriad_reflections",
+          "icon": "xin_myriad_reflections",
+          "image": "assets/skills/xin_myriad_reflections.png",
+          "kind": "passive",
+          "lifetime": "persistent",
+          "spec": {},
+          "text": {
+            "en": {
+              "name": "Myriad Reflections",
+              "description": "Other roster allies within 5 tiles record paid direct attacks that deal HP or armor damage. Alternating melee/ranged attacks from different allies consume 1 reflection to follow up for 65 + 0.25R damage: +20 ranged accuracy, 150% armor damage, 40% penetration, range 6. At most 2 per round; no free-attack recursion. Start with 2/3 reflections, regain 1 on subsequent normal turns.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "万相分形",
+              "description": "心5格内的其他名册队友完成付费直接攻击且实际造成生命或护甲伤害，记录攻击者及近战/远程类别。与上一条合格记录来自不同队友且类别相反时，若主目标仍在心6格内、可见且存活，消耗1镜相追加65+0.25R伤害（对甲1.5、穿甲40%，远程命中+20）。每轮最多2次、每父行动一次；无镜相或目标死亡不消耗次数。每条合格记录都会更新上一条，心自己的攻击、DOT与免费追击不参与记录。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "xin_worldly_form",
+          "icon": "xin_worldly_form",
+          "image": "assets/skills/xin_worldly_form.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 3,
+            "Fatigue": 12,
+            "Min": 1,
+            "Max": 5,
+            "Cooldown": 0,
+            "Resource": 0,
+            "Damage": 60,
+            "Resolve": 0.35,
+            "Armor": 1.25,
+            "Pierce": 0.3,
+            "Hit": 20,
+            "Melee": false,
+            "Weapon": false,
+            "IgnoreShield": false
+          },
+          "text": {
+            "en": {
+              "name": "Worldly Form",
+              "description": "Deal 60 + 0.35R damage at range 1-5, +20 ranged accuracy, 125% armor damage, 30% penetration. On hit regain 1 reflection, at most once per round. Does not count as an alternating ally.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "应世之相",
+              "description": "3 AP / 12疲劳；1–5格单体，60+0.35R普通伤害；至少命中则镜相+1，每轮此技能最多回1。自身攻击不产生“交替队友”记录。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "xin_unified_thought",
+          "icon": "xin_unified_thought",
+          "image": "assets/skills/xin_unified_thought.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 2,
+            "Fatigue": 12,
+            "Min": 0,
+            "Max": 0,
+            "Cooldown": 3,
+            "Resource": 0,
+            "Damage": 0,
+            "Resolve": 0,
+            "Armor": 1,
+            "Pierce": 0,
+            "Hit": 0,
+            "Melee": false,
+            "Weapon": false,
+            "IgnoreShield": false
+          },
+          "text": {
+            "en": {
+              "name": "Unified Thought",
+              "description": "Gain 2 reflections, capped at 3. Reduce the next hostile direct attack action damage by 30%, including all its segments, until the next normal turn. Cooldown 3.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "万念归一",
+              "description": "2 AP / 12疲劳；镜相+2，并获得下一次敌方直接攻击行动伤害−30%的护持，持续至下次正常回合开始；冷却3。护持只覆盖一个父行动的各段，不提供绝对闪避。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "xin_myriad_palace",
+          "icon": "xin_myriad_palace",
+          "image": "assets/skills/xin_myriad_palace.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 5,
+            "Fatigue": 30,
+            "Min": 0,
+            "Max": 4,
+            "Cooldown": 4,
+            "Resource": 0,
+            "Damage": 0,
+            "Resolve": 0,
+            "Armor": 1,
+            "Pierce": 0,
+            "Hit": 0,
+            "Melee": false,
+            "Weapon": false,
+            "IgnoreShield": false
+          },
+          "text": {
+            "en": {
+              "name": "Myriad Palace",
+              "description": "Create a stationary radius-3 palace within 4 tiles for 2 normal turns and refill reflections to 3. If both alternating allies are inside, follow-up damage becomes 1.5x and the round cap rises to 3. Each follow-up still costs 1 reflection. Cooldown 4.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "万相神宫",
+              "description": "5 AP / 30疲劳；0–4格可见地面建立半径3神宫，持续2个自身回合，冷却4；立即把镜相补到3。两位触发交替的队友都身在神宫时，协同倍率变为1.5、每轮总上限从2升至3。仍逐次消耗镜相，射程/视线不变；不会因为两人走出再走入刷新次数，也不直接造成范围伤害。",
+              "tooltip": []
+            }
+          }
+        }
+      ],
+      "text": {
+        "en": {
+          "name": "Hsin (Xin)",
+          "backgroundName": "Hsin (Xin)",
+          "backgroundDescription": "A Valkyrie from 鸣潮. Other roster allies within 5 tiles record paid direct attacks that deal HP or armor damage. Alternating melee/ranged attacks from different allies consume 1 reflection to follow up for 65 + 0.25R damage: +20 ranged accuracy, 150% armor damage, 40% penetration, range 6. At most 2 per round; no free-attack recursion. Start with 2/3 reflections, regain 1 on subsequent normal turns.",
+          "traitName": "Hsin (Xin)",
+          "traitDescription": "Other roster allies within 5 tiles record paid direct attacks that deal HP or armor damage. Alternating melee/ranged attacks from different allies consume 1 reflection to follow up for 65 + 0.25R damage: +20 ranged accuracy, 150% armor damage, 40% penetration, range 6. At most 2 per round; no free-attack recursion. Start with 2/3 reflections, regain 1 on subsequent normal turns.",
+          "traitTooltip": [
+            "Other roster allies within 5 tiles record paid direct attacks that deal HP or armor damage. Alternating melee/ranged attacks from different allies consume 1 reflection to follow up for 65 + 0.25R damage: +20 ranged accuracy, 150% armor damage, 40% penetration, range 6. At most 2 per round; no free-attack recursion. Start with 2/3 reflections, regain 1 on subsequent normal turns."
+          ]
+        },
+        "zh": {
+          "name": "心",
+          "backgroundName": "心",
+          "backgroundDescription": "梦州岁主、玄方城建造者，权能主题为万相分形；官方发行资料将她列为导电音感仪角色。银白长发与黑尖狐耳、红瞳红纹、黑白红衣装和金色机关饰件。",
+          "traitName": "心",
+          "traitDescription": "镜相0–3，开场2；后续正常回合开始+1，自己的基础攻击可再回1。镜相是虚影状态，不占格、不复制真实单位。交替记录每全局轮开始清空。",
+          "traitTooltip": [
+            "镜相0–3，开场2；后续正常回合开始+1，自己的基础攻击可再回1。镜相是虚影状态，不占格、不复制真实单位。交替记录每全局轮开始清空。"
+          ]
+        }
+      },
+      "additionalSkills": [],
+      "chapters": [],
+      "bond": null
+    },
+    {
+      "id": "shizuna",
+      "order": 54,
+      "level": 1,
+      "dailyWage": 1,
+      "legendsPerkProfile": "melee_mobile",
+      "combatResource": {
+        "Start": 2,
+        "Cap": 3
+      },
+      "baseAttributes": {
+        "Hitpoints": 95,
+        "Bravery": 75,
+        "Stamina": 130,
+        "MeleeSkill": 88,
+        "RangedSkill": 55,
+        "MeleeDefense": 22,
+        "RangedDefense": 12,
+        "Initiative": 130
+      },
+      "talents": {
+        "Hitpoints": 2,
+        "Bravery": 2,
+        "Stamina": 3,
+        "MeleeSkill": 3,
+        "RangedSkill": 0,
+        "MeleeDefense": 2,
+        "RangedDefense": 1,
+        "Initiative": 2
+      },
+      "traitBonuses": {},
+      "images": {
+        "card": "assets/valkyries/shizuna_card.png",
+        "skin": "assets/valkyries/shizuna_skin_preview.png",
+        "trait": "assets/traits/shizuna_trait_icon.png"
+      },
+      "skins": [
+        {
+          "id": "shizuna_skin",
+          "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
+          "images": {
+            "portrait": "assets/valkyries/shizuna_card.png",
+            "preview": "assets/valkyries/shizuna_skin_preview.png"
+          },
+          "text": {
+            "en": {
+              "name": "Shizuna Rem Misurugi",
+              "description": "Original costume."
+            },
+            "zh": {
+              "name": "静名 雷姆 御摺木",
+              "description": "原版服装。"
+            }
+          }
+        }
+      ],
+      "skills": [
+        {
+          "key": "shizuna_observing_eye",
+          "icon": "shizuna_observing_eye",
+          "image": "assets/skills/shizuna_observing_eye.png",
+          "kind": "passive",
+          "lifetime": "persistent",
+          "spec": {},
+          "text": {
+            "en": {
+              "name": "Observing Eye",
+              "description": "Melee defense +10. Gain 1 insight on your first paid melee hit each round, and 1 when your studied enemy first misses you in melee. If that enemy is adjacent, counter once per round for 1.25x melee weapon damage, +20 accuracy and 150% armor damage. Free counters do not charge insight. Start with 2/3 insight.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "观之眼",
+              "description": "近战防御+10。被见切锁定的敌人在1格内近战攻击静名并未命中时，发动1.25W反击，近战命中+20、对甲1.5、穿甲沿武器；每全局轮最多一次，需合法近战武器。只响应读招对象，不因多人围攻产生连续反击。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "shizuna_black_flash",
+          "icon": "shizuna_black_flash",
+          "image": "assets/skills/shizuna_black_flash.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 4,
+            "Fatigue": 18,
+            "Min": 1,
+            "Max": 3,
+            "Cooldown": 0,
+            "Resource": 0,
+            "Damage": 0,
+            "Resolve": 0,
+            "Armor": 1.5,
+            "Pierce": 0.15,
+            "Hit": 20,
+            "Melee": true,
+            "Weapon": true,
+            "IgnoreShield": false
+          },
+          "text": {
+            "en": {
+              "name": "Black Flash",
+              "description": "Select an enemy within 3 tiles. Move at most 2 empty tiles to an adjacent position, provoking normal attacks of opportunity, then strike for 1.4x melee weapon damage, +20 accuracy, 150% armor damage and +15 percentage points penetration (cap 70%). Ignores shields against your studied target.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "黑神一闪",
+              "description": "4 AP / 18疲劳；1–3格选敌，可沿最多2格空路径切入相邻落点，再进行1.4W攻击，命中+20、对甲1.5、额外穿甲+15个百分点（上限70%）。目标已有见切时忽略盾牌。移动不免借机；已有相邻目标可原地斩。无合法落点不能发动。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "shizuna_silver_parry",
+          "icon": "shizuna_silver_parry",
+          "image": "assets/skills/shizuna_silver_parry.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 2,
+            "Fatigue": 12,
+            "Min": 1,
+            "Max": 3,
+            "Cooldown": 2,
+            "Resource": 0,
+            "Damage": 0,
+            "Resolve": 0,
+            "Armor": 1,
+            "Pierce": 0,
+            "Hit": 0,
+            "Melee": true,
+            "Weapon": true,
+            "IgnoreShield": false
+          },
+          "text": {
+            "en": {
+              "name": "Silver Parry",
+              "description": "Study one visible enemy within 3 tiles for 2 normal turns. Against only that enemy melee attacks: +25 melee defense and -20% damage taken. Replaces the previous target. Does not taunt. Cooldown 2.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "白银见切",
+              "description": "2 AP / 12疲劳；1–3格指定唯一可见敌人，持续2个自身回合，冷却2。仅对该敌人的近战攻击获得额外近防+25、所受伤害−20%；不强迫AI攻击她。换目标撤销旧见切，远程与其他敌人不受该防御限制。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "shizuna_severing_world",
+          "icon": "shizuna_severing_world",
+          "image": "assets/skills/shizuna_severing_world.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 6,
+            "Fatigue": 32,
+            "Min": 1,
+            "Max": 2,
+            "Cooldown": 2,
+            "Resource": 3,
+            "Damage": 0,
+            "Resolve": 0,
+            "Armor": 2,
+            "Pierce": 0.25,
+            "Hit": 30,
+            "Melee": true,
+            "Weapon": true,
+            "IgnoreShield": true
+          },
+          "text": {
+            "en": {
+              "name": "Severing World",
+              "description": "Spend 3 insight. One 3.4x weapon hit at range 1-2; 4.0x against your studied enemy, consuming the study even on a miss. +30 accuracy, ignores shields, 200% armor damage and +25 percentage points penetration (cap 75%). Cooldown 2.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "黑神奥义 断界",
+              "description": "6 AP / 32疲劳 / 3明镜；1–2格单体，一次3.4W重斩；目标有本人的见切时提高到4.0W，并消耗见切，无论命中与否。命中+30、忽略盾牌、对甲2.0、额外穿甲+25个百分点（上限75%），冷却2。不溅射、不再附一串固定伤害。",
+              "tooltip": []
+            }
+          }
+        }
+      ],
+      "text": {
+        "en": {
+          "name": "Shizuna Rem Misurugi",
+          "backgroundName": "Shizuna Rem Misurugi",
+          "backgroundDescription": "A Valkyrie from 英雄传说 黎之轨迹. Melee defense +10. Gain 1 insight on your first paid melee hit each round, and 1 when your studied enemy first misses you in melee. If that enemy is adjacent, counter once per round for 1.25x melee weapon damage, +20 accuracy and 150% armor damage. Free counters do not charge insight. Start with 2/3 insight.",
+          "traitName": "Shizuna Rem Misurugi",
+          "traitDescription": "Melee defense +10. Gain 1 insight on your first paid melee hit each round, and 1 when your studied enemy first misses you in melee. If that enemy is adjacent, counter once per round for 1.25x melee weapon damage, +20 accuracy and 150% armor damage. Free counters do not charge insight. Start with 2/3 insight.",
+          "traitTooltip": [
+            "Melee defense +10. Gain 1 insight on your first paid melee hit each round, and 1 when your studied enemy first misses you in melee. If that enemy is adjacent, counter once per round for 1.25x melee weapon damage, +20 accuracy and 150% armor damage. Free counters do not charge insight. Start with 2/3 insight."
+          ]
+        },
+        "zh": {
+          "name": "静名 雷姆 御摺木",
+          "backgroundName": "静名 雷姆 御摺木",
+          "backgroundDescription": "《斑鸠》副团长，黑神一刀流高手，称号“白银剑圣”。黎之轨迹初登场为23岁。银蓝长发、蓝瞳、白色外套与黑色强化服，使用漆黑大太刀。",
+          "traitName": "静名 雷姆 御摺木",
+          "traitDescription": "明镜0–3，开场2。自己的付费近战攻击命中，每轮最多+1；读招对象首次近战未命中静名，每轮最多再+1。免费反击不回明镜。",
+          "traitTooltip": [
+            "明镜0–3，开场2。自己的付费近战攻击命中，每轮最多+1；读招对象首次近战未命中静名，每轮最多再+1。免费反击不回明镜。"
+          ]
+        }
+      },
+      "additionalSkills": [],
+      "chapters": [],
+      "bond": null
+    },
+    {
+      "id": "lumiore",
+      "order": 55,
+      "level": 1,
+      "dailyWage": 1,
+      "legendsPerkProfile": "ranged_damage",
+      "combatResource": {
+        "Start": 5,
+        "Cap": 6
+      },
+      "baseAttributes": {
+        "Hitpoints": 85,
+        "Bravery": 85,
+        "Stamina": 130,
+        "MeleeSkill": 55,
+        "RangedSkill": 83,
+        "MeleeDefense": 10,
+        "RangedDefense": 15,
+        "Initiative": 105
+      },
+      "talents": {
+        "Hitpoints": 2,
+        "Bravery": 2,
+        "Stamina": 3,
+        "MeleeSkill": 0,
+        "RangedSkill": 3,
+        "MeleeDefense": 2,
+        "RangedDefense": 1,
+        "Initiative": 2
+      },
+      "traitBonuses": {},
+      "images": {
+        "card": "assets/valkyries/lumiore_card.png",
+        "skin": "assets/valkyries/lumiore_skin_preview.png",
+        "trait": "assets/traits/lumiore_trait_icon.png"
+      },
+      "skins": [
+        {
+          "id": "lumiore_skin",
+          "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
+          "images": {
+            "portrait": "assets/valkyries/lumiore_card.png",
+            "preview": "assets/valkyries/lumiore_skin_preview.png"
+          },
+          "text": {
+            "en": {
+              "name": "Lumiore, Prestigious Gold",
+              "description": "Original costume."
+            },
+            "zh": {
+              "name": "金色威信 璐米欧儿",
+              "description": "原版服装。"
+            }
+          }
+        }
+      ],
+      "skills": [
+        {
+          "key": "lumiore_golden_prestige",
+          "icon": "lumiore_golden_prestige",
+          "image": "assets/skills/lumiore_golden_prestige.png",
+          "kind": "passive",
+          "lifetime": "persistent",
+          "spec": {},
+          "text": {
+            "en": {
+              "name": "Golden Prestige",
+              "description": "Start with 5/6 scales and 1/3 prestige; regain 2 scales on subsequent normal turns. Paid scale consumption grants equal prestige, except Golden Dragon. The first such action each round echoes after resolving: up to 3 enemies within 1 tile of the cast target position take 25 + 0.25R damage, +20 ranged accuracy, 150% armor damage, 35% penetration. No recursion.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "金色威信",
+              "description": "每轮首次付费消耗龙鳞的技能完整结算后，触发一次焚鳞回响：以主目标施放时位置为中心（没有主目标则以5格内最近可见敌人为中心），1格内最多3名可见敌人各受25+0.25R普通远程伤害，对甲1.5、穿甲35%、命中+20。仅本轮一次，不按消耗鳞数重复，不传播、不递归；无目标不储存。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "lumiore_golden_breath",
+          "icon": "lumiore_golden_breath",
+          "image": "assets/skills/lumiore_golden_breath.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 3,
+            "Fatigue": 12,
+            "Min": 1,
+            "Max": 5,
+            "Cooldown": 0,
+            "Resource": 1,
+            "Damage": 80,
+            "Resolve": 0.4,
+            "Armor": 1.5,
+            "Pierce": 0.35,
+            "Hit": 20,
+            "Melee": false,
+            "Weapon": false,
+            "IgnoreShield": false
+          },
+          "text": {
+            "en": {
+              "name": "Golden Breath",
+              "description": "Spend 1 scale. Deal 80 + 0.4R damage at range 1-5, +20 ranged accuracy, 150% armor damage and 35% penetration. Can trigger the unused scale echo this round.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "金焰龙息",
+              "description": "3 AP / 12疲劳 / 1龙鳞；1–5格单体，80+0.4R伤害，对甲1.5、穿甲35%。本轮尚未触发回响时可同时烧及邻近敌人。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "lumiore_burning_scales",
+          "icon": "lumiore_burning_scales",
+          "image": "assets/skills/lumiore_burning_scales.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 2,
+            "Fatigue": 10,
+            "Min": 0,
+            "Max": 0,
+            "Cooldown": 2,
+            "Resource": 2,
+            "Damage": 0,
+            "Resolve": 0,
+            "Armor": 1,
+            "Pierce": 0,
+            "Hit": 0,
+            "Melee": false,
+            "Weapon": false,
+            "IgnoreShield": false
+          },
+          "text": {
+            "en": {
+              "name": "Burning Scales",
+              "description": "Spend 2 scales, gain 2 prestige (not twice), and recover 25 fatigue. Can trigger the unused echo around the nearest visible enemy within 5 tiles. Cooldown 2.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "焚鳞振翼",
+              "description": "2 AP / 10疲劳 / 2龙鳞；恢复25疲劳，获得2威信，触发本轮仍可用的焚鳞回响；冷却2。威信增加就是消鳞所得，不额外再加一次。资源已经实际消费，不返物品、金币或背包弹药。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "lumiore_golden_dragon",
+          "icon": "lumiore_golden_dragon",
+          "image": "assets/skills/lumiore_golden_dragon.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 6,
+            "Fatigue": 35,
+            "Min": 2,
+            "Max": 6,
+            "Cooldown": 3,
+            "Resource": 3,
+            "Damage": 140,
+            "Resolve": 0.6,
+            "Armor": 1.75,
+            "Pierce": 0.4,
+            "Hit": 25,
+            "Melee": false,
+            "Weapon": false,
+            "IgnoreShield": false
+          },
+          "text": {
+            "en": {
+              "name": "Golden Dragon",
+              "description": "Spend 3 scales and 3 prestige. Deal 140 + 0.6R damage to up to 5 previewed enemies within 2 tiles of the selected enemy at range 2-6. +25 ranged accuracy, 175% armor damage, 40% penetration. Generates no prestige; can trigger the unused echo. Cooldown 3.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "黄金龙威",
+              "description": "6 AP / 35疲劳 / 3龙鳞＋3威信；2–6格选择敌人，半径2最多5敌，各140+0.6R伤害，对甲1.75、穿甲40%、命中+25，冷却3。目标列表施放前预览，主目标优先。大招不产威信；可触发本轮未使用的回响。",
+              "tooltip": []
+            }
+          }
+        }
+      ],
+      "text": {
+        "en": {
+          "name": "Lumiore, Prestigious Gold",
+          "backgroundName": "Lumiore, Prestigious Gold",
+          "backgroundDescription": "A Valkyrie from 影之诗. Start with 5/6 scales and 1/3 prestige; regain 2 scales on subsequent normal turns. Paid scale consumption grants equal prestige, except Golden Dragon. The first such action each round echoes after resolving: up to 3 enemies within 1 tile of the cast target position take 25 + 0.25R damage, +20 ranged accuracy, 150% armor damage, 35% penetration. No recursion.",
+          "traitName": "Lumiore, Prestigious Gold",
+          "traitDescription": "Start with 5/6 scales and 1/3 prestige; regain 2 scales on subsequent normal turns. Paid scale consumption grants equal prestige, except Golden Dragon. The first such action each round echoes after resolving: up to 3 enemies within 1 tile of the cast target position take 25 + 0.25R damage, +20 ranged accuracy, 150% armor damage, 35% penetration. No recursion.",
+          "traitTooltip": [
+            "Start with 5/6 scales and 1/3 prestige; regain 2 scales on subsequent normal turns. Paid scale consumption grants equal prestige, except Golden Dragon. The first such action each round echoes after resolving: up to 3 enemies within 1 tile of the cast target position take 25 + 0.25R damage, +20 ranged accuracy, 150% armor damage, 35% penetration. No recursion."
+          ]
+        },
+        "zh": {
+          "name": "金色威信 璐米欧儿",
+          "backgroundName": "金色威信 璐米欧儿",
+          "backgroundDescription": "龙族卡牌，家族中的长姐；原卡拥有弃牌转全体伤害的核心效果。浅金向珊瑚红渐变头发、赤角、金色单翼与鳞尾、黑白金服装、红宝石饰物。",
+          "traitName": "金色威信 璐米欧儿",
+          "traitDescription": "龙鳞0–6，开场5，后续正常回合+2；威信0–3，开场1。除黄金龙威外，本人付费技能每消耗1龙鳞获得1威信（最多3）；免费回响不返资源。",
+          "traitTooltip": [
+            "龙鳞0–6，开场5，后续正常回合+2；威信0–3，开场1。除黄金龙威外，本人付费技能每消耗1龙鳞获得1威信（最多3）；免费回响不返资源。"
+          ]
+        }
+      },
+      "additionalSkills": [],
+      "chapters": [],
+      "bond": null
+    },
+    {
+      "id": "argente",
+      "order": 56,
+      "level": 1,
+      "dailyWage": 1,
+      "legendsPerkProfile": "melee_frontline",
+      "combatResource": {
+        "Start": 4,
+        "Cap": 6
+      },
+      "baseAttributes": {
+        "Hitpoints": 115,
+        "Bravery": 75,
+        "Stamina": 130,
+        "MeleeSkill": 80,
+        "RangedSkill": 50,
+        "MeleeDefense": 20,
+        "RangedDefense": 18,
+        "Initiative": 90
+      },
+      "talents": {
+        "Hitpoints": 2,
+        "Bravery": 2,
+        "Stamina": 3,
+        "MeleeSkill": 3,
+        "RangedSkill": 0,
+        "MeleeDefense": 2,
+        "RangedDefense": 1,
+        "Initiative": 2
+      },
+      "traitBonuses": {},
+      "images": {
+        "card": "assets/valkyries/argente_card.png",
+        "skin": "assets/valkyries/argente_skin_preview.png",
+        "trait": "assets/traits/argente_trait_icon.png"
+      },
+      "skins": [
+        {
+          "id": "argente_skin",
+          "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
+          "images": {
+            "portrait": "assets/valkyries/argente_card.png",
+            "preview": "assets/valkyries/argente_skin_preview.png"
+          },
+          "text": {
+            "en": {
+              "name": "Argente, Purest Silver",
+              "description": "Original costume."
+            },
+            "zh": {
+              "name": "银色清纯 雅尔贞特",
+              "description": "原版服装。"
+            }
+          }
+        }
+      ],
+      "skills": [
+        {
+          "key": "argente_silver_guard",
+          "icon": "argente_silver_guard",
+          "image": "assets/skills/argente_silver_guard.png",
+          "kind": "passive",
+          "lifetime": "persistent",
+          "spec": {},
+          "text": {
+            "en": {
+              "name": "Silver Guard",
+              "description": "Melee/ranged defense +15; ordinary damage taken -25%. Start with 4/6 scales, regain 1 on subsequent normal turns. Each round, 60 HP damage from paid hostile direct attacks, including own scale-shield absorption, grants 1 scale. First shield granted to another ally each round gives self 30 shield. Guarding shares a cap of 2 hostile actions and 35 transferred HP per action.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "银色守护",
+              "description": "自身近/远防+15、所受普通伤害−25%。每轮首次给其他名册友军施加鳞盾时，自身获得30鳞盾，持续2个自身回合。同源护盾只取较高剩余值并刷新，不相加，上限80。代挡共享每轮最多2个敌方父行动、每父行动最多35生命的转移预算。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "argente_wing_shield_bash",
+          "icon": "argente_wing_shield_bash",
+          "image": "assets/skills/argente_wing_shield_bash.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 3,
+            "Fatigue": 12,
+            "Min": 1,
+            "Max": 2,
+            "Cooldown": 0,
+            "Resource": 0,
+            "Damage": 80,
+            "Resolve": 0.35,
+            "Armor": 1.75,
+            "Pierce": 0.25,
+            "Hit": 20,
+            "Melee": true,
+            "Weapon": false,
+            "IgnoreShield": false
+          },
+          "text": {
+            "en": {
+              "name": "Silver Wing Bash",
+              "description": "At range 1-2, deal 80 + 0.35R damage with +20 melee accuracy, 175% armor damage and 25% penetration. On hit reduce initiative by 30 through the target next normal turn end. Uses fixed base damage, independent of weapon or actual offhand shield.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "银翼盾击",
+              "description": "3 AP / 12疲劳；1–2格近战技能+20，固定80+0.35R伤害，对甲1.75、穿甲25%；命中让目标先攻−30，至目标下次正常行动结束。表现为银翼鳞盾，不额外占用真实副手槽或叠加手持武器伤害。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "argente_silver_shelter",
+          "icon": "argente_silver_shelter",
+          "image": "assets/skills/argente_silver_shelter.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 3,
+            "Fatigue": 15,
+            "Min": 1,
+            "Max": 3,
+            "Cooldown": 2,
+            "Resource": 1,
+            "Damage": 0,
+            "Resolve": 0,
+            "Armor": 1,
+            "Pierce": 0,
+            "Hit": 0,
+            "Melee": true,
+            "Weapon": false,
+            "IgnoreShield": false
+          },
+          "text": {
+            "en": {
+              "name": "Pure Silver Shelter",
+              "description": "Spend 1 scale. Give another roster ally within 3 tiles a 70 HP scale shield for 2 caster normal turns and designate them as the single guarded ally. While visible within 2 tiles, transfer 35% of remaining HP damage after their shield, within the shared budget. Transferred damage bypasses all Argente defenses and can kill her. Cooldown 2.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "纯银庇护",
+              "description": "3 AP / 15疲劳 / 1龙鳞；1–3格选择一名其他名册友军，获得70鳞盾，并建立唯一守护对象，持续2个自身回合，冷却2。该友军在银龙2格内且可见时，鳞盾之后剩余生命伤害的35%由银龙承受，受共享代挡预算限制。换目标撤销旧守护，旧盾可保留至到期。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "argente_silver_oath",
+          "icon": "argente_silver_oath",
+          "image": "assets/skills/argente_silver_oath.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 6,
+            "Fatigue": 30,
+            "Min": 0,
+            "Max": 0,
+            "Cooldown": 3,
+            "Resource": 3,
+            "Damage": 0,
+            "Resolve": 0,
+            "Armor": 1,
+            "Pierce": 0,
+            "Hit": 0,
+            "Melee": true,
+            "Weapon": false,
+            "IgnoreShield": false
+          },
+          "text": {
+            "en": {
+              "name": "Silver Dragon Oath",
+              "description": "Spend 3 scales. Up to 5 roster allies within 2 tiles, including self, lowest HP ratio first: heal 20 HP and grant 55 shield for 2 caster normal turns. Other recipients are guarded until your next normal turn, sharing the same 2-action/35-HP budget. Same-source shields refresh or keep the greater remainder, never add. Cooldown 3.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "银龙之誓",
+              "description": "6 AP / 30疲劳 / 3龙鳞；自身2格内最多5名名册友军（含自己，优先缺血比例）各获得55鳞盾、治疗20，持续2个自身回合，冷却3。除自己外，受术者在接下来1个自身回合内暂视为守护对象，仍需位于2格内并共用两次/35上限；不与单保叠算，不提供AP。",
+              "tooltip": []
+            }
+          }
+        }
+      ],
+      "text": {
+        "en": {
+          "name": "Argente, Purest Silver",
+          "backgroundName": "Argente, Purest Silver",
+          "backgroundDescription": "A Valkyrie from 影之诗. Melee/ranged defense +15; ordinary damage taken -25%. Start with 4/6 scales, regain 1 on subsequent normal turns. Each round, 60 HP damage from paid hostile direct attacks, including own scale-shield absorption, grants 1 scale. First shield granted to another ally each round gives self 30 shield. Guarding shares a cap of 2 hostile actions and 35 transferred HP per action.",
+          "traitName": "Argente, Purest Silver",
+          "traitDescription": "Melee/ranged defense +15; ordinary damage taken -25%. Start with 4/6 scales, regain 1 on subsequent normal turns. Each round, 60 HP damage from paid hostile direct attacks, including own scale-shield absorption, grants 1 scale. First shield granted to another ally each round gives self 30 shield. Guarding shares a cap of 2 hostile actions and 35 transferred HP per action.",
+          "traitTooltip": [
+            "Melee/ranged defense +15; ordinary damage taken -25%. Start with 4/6 scales, regain 1 on subsequent normal turns. Each round, 60 HP damage from paid hostile direct attacks, including own scale-shield absorption, grants 1 scale. First shield granted to another ally each round gives self 30 shield. Guarding shares a cap of 2 hostile actions and 35 transferred HP per action."
+          ]
+        },
+        "zh": {
+          "name": "银色清纯 雅尔贞特",
+          "backgroundName": "银色清纯 雅尔贞特",
+          "backgroundDescription": "官方中文名为“雅尔贞特”（用户写作“雅儿贞特”）。龙族家族的幺妹，原卡拥有守护、弃牌与增加PP上限。银紫发、赤角、银色单翼与鳞尾，紫黑裙甲和大盾。",
+          "traitName": "银色清纯 雅尔贞特",
+          "traitDescription": "龙鳞0–6，开场4，后续正常回合+1。自身因敌方付费直接攻击累计损失/被自身鳞盾吸收60生命伤害时回1鳞，每全局轮最多1；不计转移伤害、友伤、自伤、DOT和装备护甲损失，余量不跨轮。",
+          "traitTooltip": [
+            "龙鳞0–6，开场4，后续正常回合+1。自身因敌方付费直接攻击累计损失/被自身鳞盾吸收60生命伤害时回1鳞，每全局轮最多1；不计转移伤害、友伤、自伤、DOT和装备护甲损失，余量不跨轮。"
+          ]
+        }
+      },
+      "additionalSkills": [],
+      "chapters": [],
+      "bond": null
+    },
+    {
+      "id": "sekka",
+      "order": 57,
+      "level": 1,
+      "dailyWage": 1,
+      "legendsPerkProfile": "melee_mobile",
+      "combatResource": {
+        "Start": 3,
+        "Cap": 9
+      },
+      "baseAttributes": {
+        "Hitpoints": 85,
+        "Bravery": 75,
+        "Stamina": 130,
+        "MeleeSkill": 85,
+        "RangedSkill": 55,
+        "MeleeDefense": 20,
+        "RangedDefense": 15,
+        "Initiative": 135
+      },
+      "talents": {
+        "Hitpoints": 2,
+        "Bravery": 2,
+        "Stamina": 3,
+        "MeleeSkill": 3,
+        "RangedSkill": 0,
+        "MeleeDefense": 2,
+        "RangedDefense": 1,
+        "Initiative": 2
+      },
+      "traitBonuses": {},
+      "images": {
+        "card": "assets/valkyries/sekka_card.png",
+        "skin": "assets/valkyries/sekka_skin_preview.png",
+        "trait": "assets/traits/sekka_trait_icon.png"
+      },
+      "skins": [
+        {
+          "id": "sekka_skin",
+          "unlockChapter": "",
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
+          "images": {
+            "portrait": "assets/valkyries/sekka_card.png",
+            "preview": "assets/valkyries/sekka_skin_preview.png"
+          },
+          "text": {
+            "en": {
+              "name": "Sekka, Fatebound Fox",
+              "description": "Original costume."
+            },
+            "zh": {
+              "name": "宿命的狐火 雪华",
+              "description": "原版服装。"
+            }
+          }
+        }
+      ],
+      "skills": [
+        {
+          "key": "sekka_distant_home",
+          "icon": "sekka_distant_home",
+          "image": "assets/skills/sekka_distant_home.png",
+          "kind": "passive",
+          "lifetime": "persistent",
+          "spec": {},
+          "text": {
+            "en": {
+              "name": "Distant Home",
+              "description": "Melee/ranged defense +10. Moving grants +15 accuracy to the next paid special attack action; does not stack. Start with 3/9 tailfire. Non-finisher special hits grant 1 tailfire, at most 2 per round. Paid ordinary movement into 2 distinct new tiles grants 2, once per round; teleports and free moves do not count. At 9 tailfire: +30 initiative.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "归处尚远",
+              "description": "近/远防+10。主动移动后的下一次专属付费攻击额外命中+15，整次行动享受，发动即消耗；不与自己再次移动叠加。全部狐火/狐爪攻击用近战技能，固定基伤，不需要同时培养远程技能。尾火满9时先攻+30。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "sekka_foxfire_path",
+          "icon": "sekka_foxfire_path",
+          "image": "assets/skills/sekka_foxfire_path.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 3,
+            "Fatigue": 11,
+            "Min": 1,
+            "Max": 2,
+            "Cooldown": 0,
+            "Resource": 0,
+            "Damage": 60,
+            "Resolve": 0.25,
+            "Armor": 1.5,
+            "Pierce": 0.4,
+            "Hit": 20,
+            "Melee": true,
+            "Weapon": false,
+            "IgnoreShield": false
+          },
+          "text": {
+            "en": {
+              "name": "Foxfire Path",
+              "description": "Deal 60 + 0.25R damage at range 1-2, +20 melee accuracy, 150% armor damage, 40% penetration. On hit mark the surviving target for 2 caster normal turns. Ordinary attacks do not consume the mark.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "狐火穿林",
+              "description": "3 AP / 11疲劳；1–2格，以近战技能+20进行狐爪与狐火攻击，60+0.25R伤害，对甲1.5、穿甲40%。命中后在存活目标留下本人的狐火印，持续2个自身回合；普通攻击不消费印记，供九尾决意识别。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "sekka_returning_shadow",
+          "icon": "sekka_returning_shadow",
+          "image": "assets/skills/sekka_returning_shadow.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 2,
+            "Fatigue": 8,
+            "Min": 1,
+            "Max": 3,
+            "Cooldown": 2,
+            "Resource": 0,
+            "Damage": 0,
+            "Resolve": 0,
+            "Armor": 1,
+            "Pierce": 0,
+            "Hit": 0,
+            "Melee": true,
+            "Weapon": false,
+            "IgnoreShield": false
+          },
+          "text": {
+            "en": {
+              "name": "Returning Shadow",
+              "description": "Move up to 3 empty tiles without attacks of opportunity; gain 2 tailfire. Cooldown 2. After Nine-Tail Resolve kills this turn, one free retreat is available instead: end outside all enemy zones of control, gain no tailfire, no cooldown reset; at most once per round. Rooted actors cannot move.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "逸机返影",
+              "description": "2 AP / 8疲劳；沿最多3格合法空路径移动，不触发借机，获得2尾火，冷却2。若本回合九尾决意亲手击杀过敌人，额外解锁一次0 AP/0疲劳撤离：只可离开所有敌方控制区、终点不能邻敌，不回尾火，不刷新冷却，至回合结束失效；每轮一次。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "sekka_nine_tail_resolve",
+          "icon": "sekka_nine_tail_resolve",
+          "image": "assets/skills/sekka_nine_tail_resolve.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "spec": {
+            "AP": 5,
+            "Fatigue": 30,
+            "Min": 1,
+            "Max": 3,
+            "Cooldown": 2,
+            "Resource": 6,
+            "Damage": 65,
+            "Resolve": 0.25,
+            "Armor": 1.75,
+            "Pierce": 0.5,
+            "Hit": 25,
+            "Melee": true,
+            "Weapon": false,
+            "IgnoreShield": true
+          },
+          "text": {
+            "en": {
+              "name": "Nine-Tail Resolve",
+              "description": "Spend 6 tailfire, or all 9 when full. Three melee-accuracy hits: each 65 + 0.25R at six tails, or 95 + 0.4R at nine. +25 accuracy, ignores shields, 175% armor damage, 50% penetration. Concentrate on the main target; on death only, redirect to up to 2 previewed enemies within 1 tile of it. A personal foxfire mark grants +25% damage to that target and is consumed on the first segment, even on a miss. Cooldown 2; no tailfire refunds.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "九尾决意",
+              "description": "5 AP / 30疲劳；至少6尾火，6–8时消费6，满9时消费9；1–3格指定主目标，并预览其1格内最多2个备用敌人。实际3段伤害：六尾每段65+0.25R，九尾每段95+0.4R；表现为每段2/3束狐火。近战命中+25、忽略盾牌、对甲1.75、穿甲50%，冷却2。优先三段打主目标，死后仅向预选名单仍合法目标转移；有本人狐火印的目标伤害+25%，开始攻击该目标即消费印记，三段共享其快照。终结与撤离不回尾火。",
+              "tooltip": []
+            }
+          }
+        }
+      ],
+      "text": {
+        "en": {
+          "name": "Sekka, Fatebound Fox",
+          "backgroundName": "Sekka, Fatebound Fox",
+          "backgroundDescription": "A Valkyrie from 影之诗. Melee/ranged defense +10. Moving grants +15 accuracy to the next paid special attack action; does not stack. Start with 3/9 tailfire. Non-finisher special hits grant 1 tailfire, at most 2 per round. Paid ordinary movement into 2 distinct new tiles grants 2, once per round; teleports and free moves do not count. At 9 tailfire: +30 initiative.",
+          "traitName": "Sekka, Fatebound Fox",
+          "traitDescription": "Melee/ranged defense +10. Moving grants +15 accuracy to the next paid special attack action; does not stack. Start with 3/9 tailfire. Non-finisher special hits grant 1 tailfire, at most 2 per round. Paid ordinary movement into 2 distinct new tiles grants 2, once per round; teleports and free moves do not count. At 9 tailfire: +30 initiative.",
+          "traitTooltip": [
+            "Melee/ranged defense +10. Moving grants +15 accuracy to the next paid special attack action; does not stack. Start with 3/9 tailfire. Non-finisher special hits grant 1 tailfire, at most 2 per round. Paid ordinary movement into 2 distinct new tiles grants 2, once per round; teleports and free moves do not count. At 9 tailfire: +30 initiative."
+          ]
+        },
+        "zh": {
+          "name": "宿命的狐火 雪华",
+          "backgroundName": "宿命的狐火 雪华",
+          "backgroundDescription": "暗黑世界篇的狐族角色，故事主题是寻找归处与自我；精灵卡组中以离场计数和九尾决意形成爆发。棕灰/浅色相间短发、红瞳狐耳、白绒和装、红绳结与狐尾。",
+          "traitName": "宿命的狐火 雪华",
+          "traitDescription": "尾火0–9，开场3。自己的非终结付费专属攻击命中+1，每轮最多2；普通付费移动累计进入2个不同格且离开回合初始位置后+2，每轮一次；传送、突进、免费移动与往返同一格不刷这项。",
+          "traitTooltip": [
+            "尾火0–9，开场3。自己的非终结付费专属攻击命中+1，每轮最多2；普通付费移动累计进入2个不同格且离开回合初始位置后+2，每轮一次；传送、突进、免费移动与往返同一格不刷这项。"
+          ]
+        }
+      },
+      "additionalSkills": [],
+      "chapters": [],
+      "bond": null
     }
   ],
   "chapters": [
@@ -15061,6 +17265,47 @@ window.BV_WIKI_DATA = {
         "yixuan",
         "ye_shunguang"
       ],
+      "evidence": [
+        {
+          "id": "cleansing_bell",
+          "name": {
+            "en": "Bell recovered from the shrine",
+            "zh": "古祠铜铃"
+          },
+          "source": {
+            "en": "Obtained in stage 2 of this chapter; recorded with chapter progress.",
+            "zh": "在本篇第2节取得；完成记录保存在篇章中。"
+          },
+          "stage": 2,
+          "goal": ""
+        },
+        {
+          "id": "casket_resin",
+          "name": {
+            "en": "Resin for the sword casket",
+            "zh": "修匣树脂"
+          },
+          "source": {
+            "en": "Obtained in stage 5 of this chapter; recorded with chapter progress.",
+            "zh": "在本篇第5节取得；完成记录保存在篇章中。"
+          },
+          "stage": 5,
+          "goal": "heartwood"
+        },
+        {
+          "id": "sword_heart",
+          "name": {
+            "en": "Qingming sword heart",
+            "zh": "青溟剑心"
+          },
+          "source": {
+            "en": "Obtained in stage 6 of this chapter; recorded with chapter progress.",
+            "zh": "在本篇第6节取得；完成记录保存在篇章中。"
+          },
+          "stage": 6,
+          "goal": ""
+        }
+      ],
       "poster": "assets/story/chapters/yunki/cover.jpg",
       "stages": [
         {
@@ -15070,8 +17315,8 @@ window.BV_WIKI_DATA = {
             "zh": "匣中有鸣"
           },
           "brief": {
-            "en": "Inspect the overturned wagon. Bring 2 nachzehrer teeth and 1 bundle of web to help Yixuan clear the nightmare mist and rescue the driver.",
-            "zh": "调查翻倒的货车，准备食尸鬼牙齿 2、蛛丝 1，帮助仪玄驱散车底的魇雾，救出车夫。"
+            "en": "Inspect the overturned wagon and prepare one nachzehrer teeth item and one spider silk to dispel the mist. Missing supplies can be recovered from the wagon reserve.",
+            "zh": "调查翻倒的货车，准备食尸鬼牙齿1、蛛丝1，驱雾救人。缺料时可在货箱找回本节备用材料。"
           },
           "reward": {
             "en": "Qingming Casket, 70–90 damage",
@@ -15081,40 +17326,55 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "wreck_cart",
               "name": {
-                "en": "Inspect the wreck and find the driver",
-                "zh": "检查覆车并寻找车夫"
+                "en": "Inspect the wagon and nightmare mist",
+                "zh": "调查货车与车底魇雾"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
+            },
+            {
+              "id": "prep_1_reserve",
+              "name": {
+                "en": "Recover the wagon's ritual supplies",
+                "zh": "找回货车施术材料"
+              },
+              "battle": false,
+              "optional": true,
+              "requires": []
             }
           ],
           "materials": [
             {
               "id": "ghoul_teeth",
               "name": {
-                "en": "Nachzehrer Teeth",
+                "en": "Nachzehrer teeth",
                 "zh": "食尸鬼牙齿"
               },
               "source": {
-                "en": "Loot from defeated Nachzehrers.",
-                "zh": "击败食尸鬼后收集战利品。"
+                "en": "Use your stash stock or recover the reserve at this site. Local supplies are reserved for this stage and do not enter the stash.",
+                "zh": "可使用仓库材料，或在本地点找回备用材料。现场材料仅供本节使用，不进入仓库。"
               },
-              "count": 2
+              "count": 1,
+              "sourceGoal": "prep_1_reserve"
             },
             {
               "id": "spider_silk",
               "name": {
-                "en": "Webknecht Silk",
+                "en": "Spider silk",
                 "zh": "蛛丝"
               },
               "source": {
-                "en": "Loot from Webknechts in wooded areas.",
-                "zh": "击败林地中的蛛魔后收集战利品。"
+                "en": "Use your stash stock or recover the reserve at this site. Local supplies are reserved for this stage and do not enter the stash.",
+                "zh": "可使用仓库材料，或在本地点找回备用材料。现场材料仅供本节使用，不进入仓库。"
               },
-              "count": 1
+              "count": 1,
+              "sourceGoal": "prep_1_reserve"
             }
           ]
         },
@@ -15136,6 +17396,7 @@ window.BV_WIKI_DATA = {
           "medicine": 20,
           "tools": 20,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "temple_victory",
@@ -15143,7 +17404,9 @@ window.BV_WIKI_DATA = {
                 "en": "Recover the shrine bell with both companions alive",
                 "zh": "夺回古祠归铃，两人参战并存活"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -15155,8 +17418,8 @@ window.BV_WIKI_DATA = {
             "zh": "一纸镇惊"
           },
           "brief": {
-            "en": "Gather 2 poison glands and 1 nachzehrer horn to cleanse the bell, so it can wake the entranced before the company enters the thicker mist.",
-            "zh": "收集毒腺 2、食尸鬼角 1，净化铜铃，使它能唤醒被魇迷惑的人，再带队进入浓雾。"
+            "en": "Examine the bell at the preparation site and prepare one poison gland to cleanse it. The shrine medicine chest provides a fixed reserve.",
+            "zh": "前往铜铃整备点辨认魇纹，准备毒腺1净化铜铃。缺料时可找回古祠药箱，不必等待随机掉落。"
           },
           "reward": {
             "en": "Start combat with 2 Sword Stance while wielding Qingming",
@@ -15166,31 +17429,44 @@ window.BV_WIKI_DATA = {
           "medicine": 20,
           "tools": 0,
           "perksEach": 1,
-          "goals": [],
+          "requiredEvidence": [
+            "cleansing_bell"
+          ],
+          "goals": [
+            {
+              "id": "bell_preparation_complete",
+              "name": {
+                "en": "Examine the bell's nightmare marks",
+                "zh": "辨认铜铃上的魇纹"
+              },
+              "battle": false,
+              "optional": false,
+              "requires": []
+            },
+            {
+              "id": "prep_3_reserve",
+              "name": {
+                "en": "Recover the shrine medicine chest",
+                "zh": "找回古祠药箱"
+              },
+              "battle": false,
+              "optional": true,
+              "requires": []
+            }
+          ],
           "materials": [
             {
               "id": "poison_gland",
               "name": {
-                "en": "Poison Gland",
+                "en": "Poison gland",
                 "zh": "毒腺"
               },
               "source": {
-                "en": "Loot from defeated Webknechts.",
-                "zh": "击败蛛魔后收集战利品。"
+                "en": "Use your stash stock or recover the reserve at this site. Local supplies are reserved for this stage and do not enter the stash.",
+                "zh": "可使用仓库材料，或在本地点找回备用材料。现场材料仅供本节使用，不进入仓库。"
               },
-              "count": 2
-            },
-            {
-              "id": "ghoul_horn",
-              "name": {
-                "en": "Nachzehrer Horn",
-                "zh": "食尸鬼角"
-              },
-              "source": {
-                "en": "Hunt larger Nachzehrers for their horns.",
-                "zh": "猎杀成长后的食尸鬼，收集其角。"
-              },
-              "count": 1
+              "count": 1,
+              "sourceGoal": "prep_3_reserve"
             }
           ]
         },
@@ -15212,6 +17488,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 40,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "stone_gate_victory",
@@ -15219,7 +17496,9 @@ window.BV_WIKI_DATA = {
                 "en": "Break the stone gate formation with both companions alive",
                 "zh": "击破石门甲阵，两人参战并存活"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -15231,8 +17510,8 @@ window.BV_WIKI_DATA = {
             "zh": "树下修匣"
           },
           "brief": {
-            "en": "Bring 1 unhold hide and 2 adrenaline glands to the old tree to repair the casket. Tend to the wounded and secure the retreat before attacking the soul array.",
-            "zh": "在古树旁准备巨魔皮 1、肾上腺 2，修补开裂的剑匣。整顿伤员和退路后，再攻牵魂阵。"
+            "en": "Gather resin at the ancient tree, inspect the casket and retreat route, then submit 10 tools for repairs.",
+            "zh": "在古树旁取得修匣树脂，检查剑匣与退路，提交工具10完成修补。"
           },
           "reward": {
             "en": "Casket damage increases to 90–110",
@@ -15242,40 +17521,46 @@ window.BV_WIKI_DATA = {
           "medicine": 30,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [
+            "casket_resin"
+          ],
           "goals": [
             {
               "id": "heartwood",
               "name": {
-                "en": "Repair the casket at the ancient tree",
-                "zh": "在古树旁修复剑匣"
+                "en": "Gather resin for the sword casket",
+                "zh": "取得古树修匣树脂"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
+            },
+            {
+              "id": "prep_5_2",
+              "name": {
+                "en": "Inspect the casket and route back",
+                "zh": "检查剑匣裂口与退路"
+              },
+              "battle": false,
+              "optional": false,
+              "requires": [
+                "heartwood"
+              ]
             }
           ],
           "materials": [
             {
-              "id": "unhold_hide",
+              "id": "tools",
               "name": {
-                "en": "Unhold Hide",
-                "zh": "巨魔皮"
+                "en": "Tools and supplies",
+                "zh": "工具和补给"
               },
               "source": {
-                "en": "Hunt Unholds and recover their hides.",
-                "zh": "猎杀巨魔，收集完整的皮。"
+                "en": "Tools and medicine use company resources; other supplies consume whole items from the stash.",
+                "zh": "工具与医疗从战团资源扣除；其余材料按仓库中的整件物品扣除。"
               },
-              "count": 1
-            },
-            {
-              "id": "adrenaline_gland",
-              "name": {
-                "en": "Adrenaline Gland",
-                "zh": "肾上腺"
-              },
-              "source": {
-                "en": "Loot from defeated Direwolves.",
-                "zh": "猎杀恐狼，收集战利品。"
-              },
-              "count": 2
+              "count": 10,
+              "sourceGoal": ""
             }
           ]
         },
@@ -15297,6 +17582,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 60,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "soul_array_victory",
@@ -15304,7 +17590,9 @@ window.BV_WIKI_DATA = {
                 "en": "Destroy the soul-binding array with both companions alive",
                 "zh": "斩断牵魂阵，两人参战并存活"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -15316,8 +17604,8 @@ window.BV_WIKI_DATA = {
             "zh": "青溟重归手中"
           },
           "brief": {
-            "en": "Bring 1 vampire dust and 1 heart of the forest to the retreat ward. Cleanse the core and restore Qingming before facing the Formless Nightmare.",
-            "zh": "在归路阵眼备齐吸血鬼灰烬 1、森林之心 1，清除剑心中的魇气，修复青溟，再迎战无相魇。"
+            "en": "Use the bell to cleanse the recovered Qingming sword heart, check the return ward and complete the repair.",
+            "zh": "用铜铃净化夺回的青溟剑心，复核归路阵眼并完成修复。"
           },
           "reward": {
             "en": "Permanently obtain the complete Qingming Sword; unlock Qingming Unsheathed",
@@ -15327,42 +17615,35 @@ window.BV_WIKI_DATA = {
           "medicine": 40,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [
+            "cleansing_bell",
+            "sword_heart"
+          ],
           "goals": [
             {
               "id": "ward_home",
               "name": {
-                "en": "Prepare the final tempering at the returning ward",
-                "zh": "在归路阵眼完成淬炼准备"
+                "en": "Purify the recovered sword heart",
+                "zh": "净化夺回的青溟剑心"
               },
-              "battle": false
-            }
-          ],
-          "materials": [
-            {
-              "id": "vampire_dust",
-              "name": {
-                "en": "Vampire Dust",
-                "zh": "吸血鬼灰烬"
-              },
-              "source": {
-                "en": "Loot from defeated Necrosavants.",
-                "zh": "击败吸血鬼后收集灰烬。"
-              },
-              "count": 1
+              "battle": false,
+              "optional": false,
+              "requires": []
             },
             {
-              "id": "heart_of_the_forest",
+              "id": "prep_7_2",
               "name": {
-                "en": "Heart of the Forest",
-                "zh": "森林之心"
+                "en": "Check Qingming and the return ward",
+                "zh": "复核青溟与归路阵眼"
               },
-              "source": {
-                "en": "Loot from defeated Schrats.",
-                "zh": "击败树妖后收集森林之心。"
-              },
-              "count": 1
+              "battle": false,
+              "optional": false,
+              "requires": [
+                "ward_home"
+              ]
             }
-          ]
+          ],
+          "materials": []
         },
         {
           "number": 8,
@@ -15382,6 +17663,7 @@ window.BV_WIKI_DATA = {
           "medicine": 50,
           "tools": 100,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "nightmare_victory",
@@ -15389,7 +17671,9 @@ window.BV_WIKI_DATA = {
                 "en": "Defeat the Faceless Nightmare with both companions alive",
                 "zh": "击败无相魇，两人参战并存活"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -15454,6 +17738,47 @@ window.BV_WIKI_DATA = {
         "abigail_williams",
         "katsushika_hokusai"
       ],
+      "evidence": [
+        {
+          "id": "paint_solvent",
+          "name": {
+            "en": "Solvent recovered from the warehouse",
+            "zh": "仓库洗漆药液"
+          },
+          "source": {
+            "en": "Obtained in stage 2 of this chapter; recorded with chapter progress.",
+            "zh": "在本篇第2节取得；完成记录保存在篇章中。"
+          },
+          "stage": 2,
+          "goal": ""
+        },
+        {
+          "id": "exit_coordinates",
+          "name": {
+            "en": "Surveyed exit coordinates",
+            "zh": "真实出口坐标"
+          },
+          "source": {
+            "en": "Obtained in stage 5 of this chapter; recorded with chapter progress.",
+            "zh": "在本篇第5节取得；完成记录保存在篇章中。"
+          },
+          "stage": 5,
+          "goal": "prep_5_2"
+        },
+        {
+          "id": "rescued_portraits",
+          "name": {
+            "en": "Recovered portraits and names",
+            "zh": "受困者肖像与姓名"
+          },
+          "source": {
+            "en": "Obtained in stage 6 of this chapter; recorded with chapter progress.",
+            "zh": "在本篇第6节取得；完成记录保存在篇章中。"
+          },
+          "stage": 6,
+          "goal": ""
+        }
+      ],
       "poster": "assets/story/chapters/painted_harbor/cover.jpg",
       "stages": [
         {
@@ -15463,8 +17788,8 @@ window.BV_WIKI_DATA = {
             "zh": "潮声落在纸上"
           },
           "brief": {
-            "en": "Investigate the damp ticket at the old ferry and stabilize the entrance.",
-            "zh": "前往旧渡口调查潮湿船票，收集材料稳定入口。"
+            "en": "Compare the ticket and painted entrance. Submit one cloth-roll item to back the damaged paper and stabilize the entrance.",
+            "zh": "调查船票与入口画面，提交布匹1件托住破损画纸、稳定入口。"
           },
           "reward": {
             "en": "Unlock this chapter’s character CG in the Gallery.",
@@ -15474,40 +17799,32 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "ferry_complete",
               "name": {
-                "en": "Old Ferry",
-                "zh": "旧渡口"
+                "en": "Match the ticket to the painted entrance",
+                "zh": "核对船票与入口画面"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": [
             {
-              "id": "spider_silk",
+              "id": "cloth",
               "name": {
-                "en": "Webknecht Silk",
-                "zh": "蛛丝"
+                "en": "Cloth rolls (whole item)",
+                "zh": "布匹（整件）"
               },
               "source": {
-                "en": "Loot from Webknechts in wooded areas.",
-                "zh": "击败林地中的蛛魔后收集战利品。"
+                "en": "Tools and medicine use company resources; other supplies consume whole items from the stash.",
+                "zh": "工具与医疗从战团资源扣除；其余材料按仓库中的整件物品扣除。"
               },
-              "count": 2
-            },
-            {
-              "id": "ghoul_teeth",
-              "name": {
-                "en": "Nachzehrer Teeth",
-                "zh": "食尸鬼牙齿"
-              },
-              "source": {
-                "en": "Loot from defeated Nachzehrers.",
-                "zh": "击败食尸鬼后收集战利品。"
-              },
-              "count": 1
+              "count": 1,
+              "sourceGoal": ""
             }
           ]
         },
@@ -15529,6 +17846,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "warehouse_complete",
@@ -15536,7 +17854,9 @@ window.BV_WIKI_DATA = {
                 "en": "Pigment Warehouse",
                 "zh": "收色仓库"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -15548,8 +17868,8 @@ window.BV_WIKI_DATA = {
             "zh": "窗前的第十二年"
           },
           "brief": {
-            "en": "Visit the old home and use the materials to reveal the painting beneath.",
-            "zh": "前往旧宅，用材料洗去新漆，查明灯节停驻的原因。"
+            "en": "Remove the fresh paint with the recovered solvent and compare the old painting with the fire records. No stash supplies are consumed.",
+            "zh": "用仓库取回的药液洗去新漆，核对旧画与火灾记录。本节不消耗库存材料。"
           },
           "reward": {
             "en": "",
@@ -15559,42 +17879,34 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [
+            "paint_solvent"
+          ],
           "goals": [
             {
               "id": "home_complete",
               "name": {
-                "en": "The Keeper’s Old Home",
-                "zh": "守灯人的旧宅"
+                "en": "Remove the new paint with recovered solvent",
+                "zh": "用仓库药液洗去新漆"
               },
-              "battle": false
-            }
-          ],
-          "materials": [
-            {
-              "id": "poison_gland",
-              "name": {
-                "en": "Poison Gland",
-                "zh": "毒腺"
-              },
-              "source": {
-                "en": "Loot from defeated Webknechts.",
-                "zh": "击败蛛魔后收集战利品。"
-              },
-              "count": 1
+              "battle": false,
+              "optional": false,
+              "requires": []
             },
             {
-              "id": "ghoul_horn",
+              "id": "prep_3_2",
               "name": {
-                "en": "Nachzehrer Horn",
-                "zh": "食尸鬼角"
+                "en": "Compare the old painting and fire records",
+                "zh": "核对旧画与火灾记录"
               },
-              "source": {
-                "en": "Hunt larger Nachzehrers for their horns.",
-                "zh": "猎杀成长后的食尸鬼，收集其角。"
-              },
-              "count": 1
+              "battle": false,
+              "optional": false,
+              "requires": [
+                "home_complete"
+              ]
             }
-          ]
+          ],
+          "materials": []
         },
         {
           "number": 4,
@@ -15614,6 +17926,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "clocktower_complete",
@@ -15621,7 +17934,9 @@ window.BV_WIKI_DATA = {
                 "en": "Silent Clocktower",
                 "zh": "停摆钟楼"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -15633,8 +17948,8 @@ window.BV_WIKI_DATA = {
             "zh": "留给明天的空白"
           },
           "brief": {
-            "en": "Measure the real ruins and paint an accurate destination for the exit.",
-            "zh": "回到真实遗址测量断桩，为出口画下准确坐标。"
+            "en": "Survey the real ruins and draw the exit coordinates. Submit 5 tools to secure the measuring rig and easel.",
+            "zh": "测量真实遗址并绘制出口坐标，提交工具5固定量尺与画架。"
           },
           "reward": {
             "en": "Hokusai learns A Human Brushstroke: once per battle, the first successful ink application gains one extra stack on that target, up to three.\nUnlock this chapter’s character CG in the Gallery.",
@@ -15644,40 +17959,46 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [
+            "exit_coordinates"
+          ],
           "goals": [
             {
               "id": "ruins_complete",
               "name": {
-                "en": "White Tide Ruins",
-                "zh": "白汐港遗址"
+                "en": "Measure the real ruins",
+                "zh": "测量真实遗址的断桩"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
+            },
+            {
+              "id": "prep_5_2",
+              "name": {
+                "en": "Draw the exit coordinates",
+                "zh": "绘制出口坐标"
+              },
+              "battle": false,
+              "optional": false,
+              "requires": [
+                "ruins_complete"
+              ]
             }
           ],
           "materials": [
             {
-              "id": "unhold_hide",
+              "id": "tools",
               "name": {
-                "en": "Unhold Hide",
-                "zh": "巨魔皮"
+                "en": "Tools and supplies",
+                "zh": "工具和补给"
               },
               "source": {
-                "en": "Hunt Unholds and recover their hides.",
-                "zh": "猎杀巨魔，收集完整的皮。"
+                "en": "Tools and medicine use company resources; other supplies consume whole items from the stash.",
+                "zh": "工具与医疗从战团资源扣除；其余材料按仓库中的整件物品扣除。"
               },
-              "count": 1
-            },
-            {
-              "id": "spider_silk",
-              "name": {
-                "en": "Webknecht Silk",
-                "zh": "蛛丝"
-              },
-              "source": {
-                "en": "Loot from Webknechts in wooded areas.",
-                "zh": "击败林地中的蛛魔后收集战利品。"
-              },
-              "count": 2
+              "count": 5,
+              "sourceGoal": ""
             }
           ]
         },
@@ -15699,6 +18020,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "gallery_complete",
@@ -15706,7 +18028,9 @@ window.BV_WIKI_DATA = {
                 "en": "Gallery of Lost Names",
                 "zh": "失名肖像馆"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -15718,8 +18042,8 @@ window.BV_WIKI_DATA = {
             "zh": "只为归途开门"
           },
           "brief": {
-            "en": "Stabilize the threshold and open a way home for everyone.",
-            "zh": "准备稳定门槛的材料，只为所有人的归途开门。"
+            "en": "Match the recovered portraits and names, then align the threshold with the surveyed exit so everyone can return home.",
+            "zh": "核对夺回的肖像与姓名，将门槛对准真实出口，只为所有人的归途开门。"
           },
           "reward": {
             "en": "Abigail learns Homeward Prayer: the first prayer each battle additionally removes 10 Fatigue from each eligible recipient.\nUnlock this chapter’s character CG in the Gallery.",
@@ -15729,42 +18053,35 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [
+            "exit_coordinates",
+            "rescued_portraits"
+          ],
           "goals": [
             {
               "id": "threshold_complete",
               "name": {
-                "en": "Master Scroll Threshold",
-                "zh": "主卷门槛"
+                "en": "Match portraits to the living",
+                "zh": "核对肖像与生者姓名"
               },
-              "battle": false
-            }
-          ],
-          "materials": [
-            {
-              "id": "vampire_dust",
-              "name": {
-                "en": "Vampire Dust",
-                "zh": "吸血鬼灰烬"
-              },
-              "source": {
-                "en": "Loot from defeated Necrosavants.",
-                "zh": "击败吸血鬼后收集灰烬。"
-              },
-              "count": 1
+              "battle": false,
+              "optional": false,
+              "requires": []
             },
             {
-              "id": "heart_of_the_forest",
+              "id": "prep_7_2",
               "name": {
-                "en": "Heart of the Forest",
-                "zh": "森林之心"
+                "en": "Align the threshold with the way home",
+                "zh": "将门槛对准归途坐标"
               },
-              "source": {
-                "en": "Loot from defeated Schrats.",
-                "zh": "击败树妖后收集森林之心。"
-              },
-              "count": 1
+              "battle": false,
+              "optional": false,
+              "requires": [
+                "threshold_complete"
+              ]
             }
-          ]
+          ],
+          "materials": []
         },
         {
           "number": 8,
@@ -15784,6 +18101,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "curator_complete",
@@ -15791,7 +18109,9 @@ window.BV_WIKI_DATA = {
                 "en": "Faceless Gallery",
                 "zh": "无面主卷厅"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -15882,6 +18202,21 @@ window.BV_WIKI_DATA = {
         "jeanne",
         "jeanne_alter"
       ],
+      "evidence": [
+        {
+          "id": "true_register",
+          "name": {
+            "en": "Verified missing-person register",
+            "zh": "真实失踪者名册"
+          },
+          "source": {
+            "en": "Obtained in stage 5 of this chapter; recorded with chapter progress.",
+            "zh": "在本篇第5节取得；完成记录保存在篇章中。"
+          },
+          "stage": 5,
+          "goal": "prep_5_3"
+        }
+      ],
       "poster": "assets/story/chapters/unclaimed_grail_four_oaths/cover.jpg",
       "stages": [
         {
@@ -15891,8 +18226,8 @@ window.BV_WIKI_DATA = {
             "zh": "四封没有署名的邀请"
           },
           "brief": {
-            "en": "Meet the refugees and inspect the invitations. Bring medicine and tools to shelter the wounded.",
-            "zh": "前往城外接应流民，核对四封邀请。准备药品与工具，先把伤者安顿下来。"
+            "en": "Compare the invitations and register the wounded outside the city. Submit 10 medical supplies and one whole bread item to shelter them.",
+            "zh": "在城外核对邀请、登记伤者，提交医疗物资10和面包1件，完成安置。"
           },
           "reward": {
             "en": "",
@@ -15902,14 +18237,29 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "stage1_complete",
               "name": {
-                "en": "Four Unsigned Invitations",
-                "zh": "四封没有署名的邀请"
+                "en": "Compare the four invitations",
+                "zh": "核对四封邀请"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
+            },
+            {
+              "id": "prep_1_2",
+              "name": {
+                "en": "Register the wounded and shelter",
+                "zh": "登记伤者与安置地点"
+              },
+              "battle": false,
+              "optional": false,
+              "requires": [
+                "stage1_complete"
+              ]
             }
           ],
           "materials": [
@@ -15920,22 +18270,24 @@ window.BV_WIKI_DATA = {
                 "zh": "医疗物资"
               },
               "source": {
-                "en": "Purchase in settlements or collect as loot. Consumed on submission, not investigation.",
-                "zh": "城镇补给商店与战利品。提交时消耗，调查不消耗。"
+                "en": "Tools and medicine use company resources; other supplies consume whole items from the stash.",
+                "zh": "工具与医疗从战团资源扣除；其余材料按仓库中的整件物品扣除。"
               },
-              "count": 10
+              "count": 10,
+              "sourceGoal": ""
             },
             {
-              "id": "tools",
+              "id": "bread",
               "name": {
-                "en": "Tools and supplies",
-                "zh": "工具和补给"
+                "en": "Bread (whole item)",
+                "zh": "面包（整件）"
               },
               "source": {
-                "en": "Purchase in settlements or collect as loot. Consumed on submission, not investigation.",
-                "zh": "城镇补给商店与战利品。提交时消耗，调查不消耗。"
+                "en": "Tools and medicine use company resources; other supplies consume whole items from the stash.",
+                "zh": "工具与医疗从战团资源扣除；其余材料按仓库中的整件物品扣除。"
               },
-              "count": 10
+              "count": 1,
+              "sourceGoal": ""
             }
           ]
         },
@@ -15957,6 +18309,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "stage2_complete",
@@ -15964,7 +18317,9 @@ window.BV_WIKI_DATA = {
                 "en": "The Crown That Would Not Fall",
                 "zh": "不愿落下的白冠"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -15976,8 +18331,8 @@ window.BV_WIKI_DATA = {
             "zh": "王庭之外的灯火"
           },
           "brief": {
-            "en": "Inspect the power conduits and prepare an independent supply before dismantling the Grail.",
-            "zh": "检查王庭输能管线，准备替代动力，避免拆除圣杯时伤及居民。"
+            "en": "Trace the circuit shared by homes and the palace, plan independent lighting, and submit 15 tools for the conversion.",
+            "zh": "查清居民与王庭共用的回路，制定独立照明方案，提交工具15完成改造。"
           },
           "reward": {
             "en": "",
@@ -15987,29 +18342,32 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "stage3_complete",
               "name": {
-                "en": "Lights Beyond the Court",
-                "zh": "王庭之外的灯火"
+                "en": "Trace the power conduits",
+                "zh": "查明输能管线"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
+            },
+            {
+              "id": "prep_3_2",
+              "name": {
+                "en": "Prepare independent lighting",
+                "zh": "确定替代照明方案"
+              },
+              "battle": false,
+              "optional": false,
+              "requires": [
+                "stage3_complete"
+              ]
             }
           ],
           "materials": [
-            {
-              "id": "medicine",
-              "name": {
-                "en": "Medical supplies",
-                "zh": "医疗物资"
-              },
-              "source": {
-                "en": "Purchase in settlements or collect as loot. Consumed on submission, not investigation.",
-                "zh": "城镇补给商店与战利品。提交时消耗，调查不消耗。"
-              },
-              "count": 5
-            },
             {
               "id": "tools",
               "name": {
@@ -16017,10 +18375,11 @@ window.BV_WIKI_DATA = {
                 "zh": "工具和补给"
               },
               "source": {
-                "en": "Purchase in settlements or collect as loot. Consumed on submission, not investigation.",
-                "zh": "城镇补给商店与战利品。提交时消耗，调查不消耗。"
+                "en": "Tools and medicine use company resources; other supplies consume whole items from the stash.",
+                "zh": "工具与医疗从战团资源扣除；其余材料按仓库中的整件物品扣除。"
               },
-              "count": 20
+              "count": 15,
+              "sourceGoal": ""
             }
           ]
         },
@@ -16042,6 +18401,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "stage4_complete",
@@ -16049,7 +18409,9 @@ window.BV_WIKI_DATA = {
                 "en": "The Saint Who Refused the Chair",
                 "zh": "不再承受的圣女"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -16061,8 +18423,8 @@ window.BV_WIKI_DATA = {
             "zh": "写给活人的证词"
           },
           "brief": {
-            "en": "Compare original petitions with forged verdicts. Protect witnesses and recover the missing persons register.",
-            "zh": "查阅原始祈愿和伪造判决，保护证人，将死刑名单改回失踪者名册。"
+            "en": "Recover original petitions, verify forged verdicts, protect the witness and separate the copies. No supplies are consumed.",
+            "zh": "取回祈愿原件、核对伪造判决，安置证人并分存副本。本节不消耗补给。"
           },
           "reward": {
             "en": "",
@@ -16072,42 +18434,44 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "stage5_complete",
               "name": {
-                "en": "Testimony for the Living",
-                "zh": "写给活人的证词"
+                "en": "Recover the original petitions",
+                "zh": "取回祈愿原件"
               },
-              "battle": false
-            }
-          ],
-          "materials": [
-            {
-              "id": "medicine",
-              "name": {
-                "en": "Medical supplies",
-                "zh": "医疗物资"
-              },
-              "source": {
-                "en": "Purchase in settlements or collect as loot. Consumed on submission, not investigation.",
-                "zh": "城镇补给商店与战利品。提交时消耗，调查不消耗。"
-              },
-              "count": 5
+              "battle": false,
+              "optional": false,
+              "requires": []
             },
             {
-              "id": "tools",
+              "id": "prep_5_2",
               "name": {
-                "en": "Tools and supplies",
-                "zh": "工具和补给"
+                "en": "Compare the forged verdicts",
+                "zh": "核对伪造判决"
               },
-              "source": {
-                "en": "Purchase in settlements or collect as loot. Consumed on submission, not investigation.",
-                "zh": "城镇补给商店与战利品。提交时消耗，调查不消耗。"
+              "battle": false,
+              "optional": false,
+              "requires": [
+                "stage5_complete"
+              ]
+            },
+            {
+              "id": "prep_5_3",
+              "name": {
+                "en": "Protect the witness and separate copies",
+                "zh": "安置证人并分存副本"
               },
-              "count": 10
+              "battle": false,
+              "optional": false,
+              "requires": [
+                "prep_5_2"
+              ]
             }
-          ]
+          ],
+          "materials": []
         },
         {
           "number": 6,
@@ -16127,6 +18491,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "stage6_complete",
@@ -16134,7 +18499,9 @@ window.BV_WIKI_DATA = {
                 "en": "Burn the Borrowed Oaths",
                 "zh": "焚尽借名的誓言"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -16146,8 +18513,8 @@ window.BV_WIKI_DATA = {
             "zh": "四个人的决定"
           },
           "brief": {
-            "en": "Finish evacuation and resupply. Each companion makes her own decision and learns a modest battle recovery.",
-            "zh": "完成疏散与最后补给。四人分别作出自己的决定，获得一次战斗内的小幅成长。"
+            "en": "Use the true register to confirm the evacuation and backup lamps, then hear all four decisions. Submit to receive the final growth rewards before approaching the Grail core.",
+            "zh": "按真实名册确认疏散与备用灯，听取四人的决定。提交后获得终战前成长，前往圣杯核心。"
           },
           "reward": {
             "en": "Each learns to recover 5 fatigue after her signature action, once per battle.",
@@ -16157,42 +18524,34 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [
+            "true_register"
+          ],
           "goals": [
             {
               "id": "stage7_complete",
               "name": {
-                "en": "Four Freely Made Decisions",
-                "zh": "四个人的决定"
+                "en": "Check evacuation routes and reserve lamps",
+                "zh": "检查疏散与备用灯"
               },
-              "battle": false
-            }
-          ],
-          "materials": [
-            {
-              "id": "medicine",
-              "name": {
-                "en": "Medical supplies",
-                "zh": "医疗物资"
-              },
-              "source": {
-                "en": "Purchase in settlements or collect as loot. Consumed on submission, not investigation.",
-                "zh": "城镇补给商店与战利品。提交时消耗，调查不消耗。"
-              },
-              "count": 10
+              "battle": false,
+              "optional": false,
+              "requires": []
             },
             {
-              "id": "tools",
+              "id": "prep_7_2",
               "name": {
-                "en": "Tools and supplies",
-                "zh": "工具和补给"
+                "en": "Hear the four companions' decisions",
+                "zh": "听取四人的决定"
               },
-              "source": {
-                "en": "Purchase in settlements or collect as loot. Consumed on submission, not investigation.",
-                "zh": "城镇补给商店与战利品。提交时消耗，调查不消耗。"
-              },
-              "count": 20
+              "battle": false,
+              "optional": false,
+              "requires": [
+                "stage7_complete"
+              ]
             }
-          ]
+          ],
+          "materials": []
         },
         {
           "number": 8,
@@ -16212,6 +18571,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "stage8_complete",
@@ -16219,7 +18579,9 @@ window.BV_WIKI_DATA = {
                 "en": "The Empty Cup and the Road Home",
                 "zh": "空杯与归营的路"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -16326,6 +18688,34 @@ window.BV_WIKI_DATA = {
         "castorice",
         "fengjin"
       ],
+      "evidence": [
+        {
+          "id": "cemetery_records",
+          "name": {
+            "en": "Nameplates and cemetery map",
+            "zh": "姓名牌与墓园图"
+          },
+          "source": {
+            "en": "Obtained in stage 4 of this chapter; recorded with chapter progress.",
+            "zh": "在本篇第4节取得；完成记录保存在篇章中。"
+          },
+          "stage": 4,
+          "goal": ""
+        },
+        {
+          "id": "nursery_crystal",
+          "name": {
+            "en": "Nursery crystal",
+            "zh": "育苗场结晶"
+          },
+          "source": {
+            "en": "Obtained in stage 6 of this chapter; recorded with chapter progress.",
+            "zh": "在本篇第6节取得；完成记录保存在篇章中。"
+          },
+          "stage": 6,
+          "goal": ""
+        }
+      ],
       "poster": "assets/story/chapters/spring_passes_here/cover.jpg",
       "stages": [
         {
@@ -16346,17 +18736,33 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "waystation_complete",
               "name": {
-                "en": "Whiteflower Waystation",
-                "zh": "白花驿站"
+                "en": "Assess the gardener and waystation",
+                "zh": "检查园丁与驿站的需要"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": [
+            {
+              "id": "grain",
+              "name": {
+                "en": "Ground grains (whole item)",
+                "zh": "谷物（整件）"
+              },
+              "source": {
+                "en": "Tools and medicine use company resources; other supplies consume whole items from the stash.",
+                "zh": "工具与医疗从战团资源扣除；其余材料按仓库中的整件物品扣除。"
+              },
+              "count": 1,
+              "sourceGoal": ""
+            },
             {
               "id": "medicine",
               "name": {
@@ -16364,22 +18770,11 @@ window.BV_WIKI_DATA = {
                 "zh": "医疗物资"
               },
               "source": {
-                "en": "Buy medical supplies in settlements; uses the company's medical reserve.",
-                "zh": "城镇市场的医疗物资；使用队伍顶部的医疗储备。"
+                "en": "Tools and medicine use company resources; other supplies consume whole items from the stash.",
+                "zh": "工具与医疗从战团资源扣除；其余材料按仓库中的整件物品扣除。"
               },
-              "count": 10
-            },
-            {
-              "id": "grain",
-              "name": {
-                "en": "Grain",
-                "zh": "谷物"
-              },
-              "source": {
-                "en": "Buy a sack of grain at a settlement market.",
-                "zh": "城镇市场，购买一袋谷物。"
-              },
-              "count": 1
+              "count": 10,
+              "sourceGoal": ""
             }
           ]
         },
@@ -16401,6 +18796,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "watermill_complete",
@@ -16408,7 +18804,9 @@ window.BV_WIKI_DATA = {
                 "en": "Old Watermill",
                 "zh": "旧水磨坊"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -16431,14 +18829,17 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "window_complete",
               "name": {
-                "en": "Isolated Seedbeds",
-                "zh": "隔离苗圃"
+                "en": "Inspect the windowsill and quarantine bed",
+                "zh": "检查窗台与隔离花床"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": [
@@ -16449,10 +18850,11 @@ window.BV_WIKI_DATA = {
                 "zh": "工具和补给"
               },
               "source": {
-                "en": "Buy tools and supplies in settlements; uses the company's tool reserve.",
-                "zh": "城镇市场的工具与补给；使用队伍顶部的工具储备。"
+                "en": "Tools and medicine use company resources; other supplies consume whole items from the stash.",
+                "zh": "工具与医疗从战团资源扣除；其余材料按仓库中的整件物品扣除。"
               },
-              "count": 10
+              "count": 10,
+              "sourceGoal": ""
             }
           ]
         },
@@ -16474,6 +18876,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "cemetery_complete",
@@ -16481,7 +18884,9 @@ window.BV_WIKI_DATA = {
                 "en": "Cemetery Courtyard",
                 "zh": "墓园外庭"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -16493,8 +18898,8 @@ window.BV_WIKI_DATA = {
             "zh": "把没做完的事写下来"
           },
           "brief": {
-            "en": "Deliver 10 medical supplies and 10 tools for Mare's care and garden handover.",
-            "zh": "送去 10 份医疗物资与 10 份工具，帮助马雷完成照护和花园交接。"
+            "en": "Match the nameplates and map recovered from the cemetery, then arrange Mare's care and the garden handover.",
+            "zh": "核对墓园带回的姓名牌与地图，完成马雷的照护和花园交接。"
           },
           "reward": {
             "en": "Continue the waystation's care and investigation",
@@ -16504,42 +18909,34 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [
+            "cemetery_records"
+          ],
           "goals": [
             {
               "id": "handover_complete",
               "name": {
-                "en": "The Gardener's Cottage",
-                "zh": "园丁的小屋"
+                "en": "Match nameplates to the cemetery map",
+                "zh": "核对姓名牌与墓园图"
               },
-              "battle": false
-            }
-          ],
-          "materials": [
-            {
-              "id": "medicine",
-              "name": {
-                "en": "Medical supplies",
-                "zh": "医疗物资"
-              },
-              "source": {
-                "en": "Buy medical supplies in settlements; uses the company's medical reserve.",
-                "zh": "城镇市场的医疗物资；使用队伍顶部的医疗储备。"
-              },
-              "count": 10
+              "battle": false,
+              "optional": false,
+              "requires": []
             },
             {
-              "id": "tools",
+              "id": "prep_5_2",
               "name": {
-                "en": "Tools and supplies",
-                "zh": "工具和补给"
+                "en": "Arrange garden care and handover",
+                "zh": "完成花园与照护交接"
               },
-              "source": {
-                "en": "Buy tools and supplies in settlements; uses the company's tool reserve.",
-                "zh": "城镇市场的工具与补给；使用队伍顶部的工具储备。"
-              },
-              "count": 10
+              "battle": false,
+              "optional": false,
+              "requires": [
+                "handover_complete"
+              ]
             }
-          ]
+          ],
+          "materials": []
         },
         {
           "number": 6,
@@ -16559,6 +18956,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "nursery_complete",
@@ -16566,7 +18964,9 @@ window.BV_WIKI_DATA = {
                 "en": "Abandoned Nursery",
                 "zh": "废弃育苗场"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -16578,8 +18978,8 @@ window.BV_WIKI_DATA = {
             "zh": "我们都要回去"
           },
           "brief": {
-            "en": "Deliver 10 medical supplies and 10 tools; tend injuries and complete Springkeeper.",
-            "zh": "送去 10 份医疗物资与 10 份工具，照料伤势并完成留春。"
+            "en": "Purify the crystal recovered from the nursery, complete Liuchun and promise to return.",
+            "zh": "净化育苗场带回的结晶，完成留春与归途约定。"
           },
           "reward": {
             "en": "Springkeeper and two permanent growth skills",
@@ -16589,42 +18989,34 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [
+            "nursery_crystal"
+          ],
           "goals": [
             {
               "id": "forge_complete",
               "name": {
-                "en": "Waystation Smithy",
-                "zh": "驿站铁匠铺"
+                "en": "Purify the nursery crystal",
+                "zh": "净化育苗场结晶"
               },
-              "battle": false
-            }
-          ],
-          "materials": [
-            {
-              "id": "medicine",
-              "name": {
-                "en": "Medical supplies",
-                "zh": "医疗物资"
-              },
-              "source": {
-                "en": "Buy medical supplies in settlements; uses the company's medical reserve.",
-                "zh": "城镇市场的医疗物资；使用队伍顶部的医疗储备。"
-              },
-              "count": 10
+              "battle": false,
+              "optional": false,
+              "requires": []
             },
             {
-              "id": "tools",
+              "id": "prep_7_2",
               "name": {
-                "en": "Tools and supplies",
-                "zh": "工具和补给"
+                "en": "Complete Liuchun and the promise to return",
+                "zh": "完成留春与归途约定"
               },
-              "source": {
-                "en": "Buy tools and supplies in settlements; uses the company's tool reserve.",
-                "zh": "城镇市场的工具与补给；使用队伍顶部的工具储备。"
-              },
-              "count": 10
+              "battle": false,
+              "optional": false,
+              "requires": [
+                "forge_complete"
+              ]
             }
-          ]
+          ],
+          "materials": []
         },
         {
           "number": 8,
@@ -16644,6 +19036,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "bloom_complete",
@@ -16651,7 +19044,9 @@ window.BV_WIKI_DATA = {
                 "en": "Heart of the White Flowers",
                 "zh": "白花深处"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -16764,6 +19159,34 @@ window.BV_WIKI_DATA = {
         "cerydra",
         "hysilens"
       ],
+      "evidence": [
+        {
+          "id": "evacuation_plans",
+          "name": {
+            "en": "Evacuation records and core plans",
+            "zh": "撤离记录与核心图纸"
+          },
+          "source": {
+            "en": "Obtained in stage 4 of this chapter; recorded with chapter progress.",
+            "zh": "在本篇第4节取得；完成记录保存在篇章中。"
+          },
+          "stage": 4,
+          "goal": ""
+        },
+        {
+          "id": "relay_core",
+          "name": {
+            "en": "Recovered core component",
+            "zh": "回收的核心部件"
+          },
+          "source": {
+            "en": "Obtained in stage 6 of this chapter; recorded with chapter progress.",
+            "zh": "在本篇第6节取得；完成记录保存在篇章中。"
+          },
+          "stage": 6,
+          "goal": ""
+        }
+      ],
       "poster": "assets/story/chapters/royal_banner_returning_tide/cover.jpg",
       "stages": [
         {
@@ -16784,14 +19207,17 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "seawall_complete",
               "name": {
-                "en": "White Tide Seawall",
-                "zh": "白潮外堤"
+                "en": "Survey the seawall side route",
+                "zh": "勘察外堤侧路"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": [
@@ -16802,10 +19228,11 @@ window.BV_WIKI_DATA = {
                 "zh": "工具和补给"
               },
               "source": {
-                "en": "Buy tools at settlements or recover them as loot.",
-                "zh": "在城镇市场购买工具，或从战利品补充。"
+                "en": "Tools and medicine use company resources; other supplies consume whole items from the stash.",
+                "zh": "工具与医疗从战团资源扣除；其余材料按仓库中的整件物品扣除。"
               },
-              "count": 10
+              "count": 10,
+              "sourceGoal": ""
             }
           ]
         },
@@ -16827,6 +19254,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "causeway_complete",
@@ -16834,7 +19262,9 @@ window.BV_WIKI_DATA = {
                 "en": "The Captive Light Causeway",
                 "zh": "囚灯长堤"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -16846,8 +19276,8 @@ window.BV_WIKI_DATA = {
             "zh": "一盏灯，两份海图"
           },
           "brief": {
-            "en": "Shelter the wounded at the lighthouse and provide medicine and grain. The keeper can explain why the ancient order sounded again.",
-            "zh": "在灯塔安置伤者，备齐药品与口粮。守灯人将说明旧军令为何重新响起。"
+            "en": "Shelter the keeper and wounded at the lighthouse. Submit 10 medicine and one grain item, then compare the charts.",
+            "zh": "在灯塔安置守灯人与伤者，提交医疗10、谷物1件，核对两份海图。"
           },
           "reward": {
             "en": "Advance the story and reveal the next location.",
@@ -16857,14 +19287,17 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "lighthouse_complete",
               "name": {
-                "en": "Old Lighthouse Watchroom",
-                "zh": "旧灯塔值守室"
+                "en": "Prepare shelter for the keeper and wounded",
+                "zh": "安置守灯人与伤者"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": [
@@ -16875,22 +19308,24 @@ window.BV_WIKI_DATA = {
                 "zh": "医疗物资"
               },
               "source": {
-                "en": "Buy medicine at settlements.",
-                "zh": "在城镇市场购买药品。"
+                "en": "Tools and medicine use company resources; other supplies consume whole items from the stash.",
+                "zh": "工具与医疗从战团资源扣除；其余材料按仓库中的整件物品扣除。"
               },
-              "count": 15
+              "count": 10,
+              "sourceGoal": ""
             },
             {
               "id": "grain",
               "name": {
-                "en": "Grain",
-                "zh": "谷物"
+                "en": "Ground grains (whole item)",
+                "zh": "谷物（整件）"
               },
               "source": {
-                "en": "Buy a whole grain supply item at a settlement.",
-                "zh": "在城镇市场购买整件谷物补给。"
+                "en": "Tools and medicine use company resources; other supplies consume whole items from the stash.",
+                "zh": "工具与医疗从战团资源扣除；其余材料按仓库中的整件物品扣除。"
               },
-              "count": 1
+              "count": 1,
+              "sourceGoal": ""
             }
           ]
         },
@@ -16912,6 +19347,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "archive_complete",
@@ -16919,7 +19355,9 @@ window.BV_WIKI_DATA = {
                 "en": "White Tide Muster Courtyard",
                 "zh": "白潮军籍庭院"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -16931,8 +19369,8 @@ window.BV_WIKI_DATA = {
             "zh": "王帐外的潮声"
           },
           "brief": {
-            "en": "Repair the evacuation route near the royal camp and replenish tools and medicine before planning the outer circuit assault.",
-            "zh": "修复王帐附近的撤离路线，补充工具与药品。决定明日的外环切断方案。"
+            "en": "Compare the evacuation records and core plans, then mark the signal corridor cutoff. No supplies are consumed.",
+            "zh": "核对撤离记录与核心图纸，标定信号回廊的切断点。本节不消耗补给。"
           },
           "reward": {
             "en": "Advance the story and reveal the next location.",
@@ -16942,42 +19380,34 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [
+            "evacuation_plans"
+          ],
           "goals": [
             {
               "id": "royal_tent_complete",
               "name": {
-                "en": "Royal Tidal Camp",
-                "zh": "临潮王帐"
+                "en": "Compare evacuation records and core plans",
+                "zh": "核对撤离记录与核心图纸"
               },
-              "battle": false
-            }
-          ],
-          "materials": [
-            {
-              "id": "tools",
-              "name": {
-                "en": "Tools and supplies",
-                "zh": "工具和补给"
-              },
-              "source": {
-                "en": "Buy tools at settlements or recover them as loot.",
-                "zh": "在城镇市场购买工具，或从战利品补充。"
-              },
-              "count": 15
+              "battle": false,
+              "optional": false,
+              "requires": []
             },
             {
-              "id": "medicine",
+              "id": "prep_5_2",
               "name": {
-                "en": "Medical supplies",
-                "zh": "医疗物资"
+                "en": "Mark the signal corridor cutoff",
+                "zh": "标定信号回廊切断点"
               },
-              "source": {
-                "en": "Buy medicine at settlements.",
-                "zh": "在城镇市场购买药品。"
-              },
-              "count": 10
+              "battle": false,
+              "optional": false,
+              "requires": [
+                "royal_tent_complete"
+              ]
             }
-          ]
+          ],
+          "materials": []
         },
         {
           "number": 6,
@@ -16997,6 +19427,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "signal_corridor_complete",
@@ -17004,7 +19435,9 @@ window.BV_WIKI_DATA = {
                 "en": "Outer Signal Corridor",
                 "zh": "外环信号回廊"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -17016,8 +19449,8 @@ window.BV_WIKI_DATA = {
             "zh": "归来的人，未尽的话"
           },
           "brief": {
-            "en": "Bring medicine, tools and grain to the field forge to restore Returning Oath. Both growth skills and the weapon are granted before the final battle.",
-            "zh": "在临时工坊备齐药品、工具与口粮，修复归潮誓刃。两人成长和武器在最终战前交付。"
+            "en": "Restore Returning Oath with the core parts recovered from the Signal Gallery and 10 Tools and Supplies. The weapon and both companions' growth rewards arrive before the final battle.",
+            "zh": "用信号回廊回收的核心部件修复归潮誓刃，提交工具10完成锻修。归潮誓刃与两人成长在终战前交付。"
           },
           "reward": {
             "en": "Learn both growth skills and receive Returning Oath; delivery waits if the stash is full.",
@@ -17027,14 +19460,19 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [
+            "relay_core"
+          ],
           "goals": [
             {
               "id": "returning_forge_complete",
               "name": {
-                "en": "Returning Tide Field Forge",
-                "zh": "归潮临时工坊"
+                "en": "Inspect recovered parts and the oathblade",
+                "zh": "检查回收部件与誓刃"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": [
@@ -17045,34 +19483,11 @@ window.BV_WIKI_DATA = {
                 "zh": "工具和补给"
               },
               "source": {
-                "en": "Buy tools at settlements or recover them as loot.",
-                "zh": "在城镇市场购买工具，或从战利品补充。"
+                "en": "Tools and medicine use company resources; other supplies consume whole items from the stash.",
+                "zh": "工具与医疗从战团资源扣除；其余材料按仓库中的整件物品扣除。"
               },
-              "count": 20
-            },
-            {
-              "id": "medicine",
-              "name": {
-                "en": "Medical supplies",
-                "zh": "医疗物资"
-              },
-              "source": {
-                "en": "Buy medicine at settlements.",
-                "zh": "在城镇市场购买药品。"
-              },
-              "count": 15
-            },
-            {
-              "id": "grain",
-              "name": {
-                "en": "Grain",
-                "zh": "谷物"
-              },
-              "source": {
-                "en": "Buy a whole grain supply item at a settlement.",
-                "zh": "在城镇市场购买整件谷物补给。"
-              },
-              "count": 1
+              "count": 10,
+              "sourceGoal": ""
             }
           ]
         },
@@ -17094,6 +19509,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "oath_core_complete",
@@ -17101,7 +19517,9 @@ window.BV_WIKI_DATA = {
                 "en": "The Oathbound Throne",
                 "zh": "守誓王座"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -17201,6 +19619,21 @@ window.BV_WIKI_DATA = {
         "robin",
         "togawa_sakiko"
       ],
+      "evidence": [
+        {
+          "id": "instrument_parts",
+          "name": {
+            "en": "Instrument parts and repair plans",
+            "zh": "乐器零件与检修图纸"
+          },
+          "source": {
+            "en": "Obtained in stage 2 of this chapter; recorded with chapter progress.",
+            "zh": "在本篇第2节取得；完成记录保存在篇章中。"
+          },
+          "stage": 2,
+          "goal": ""
+        }
+      ],
       "poster": "assets/story/chapters/silent_city_encore/cover.jpg",
       "stages": [
         {
@@ -17210,8 +19643,8 @@ window.BV_WIKI_DATA = {
             "zh": "没有掌声的试唱"
           },
           "brief": {
-            "en": "Investigate the auditorium; submit 10 tools and one spider silk to reinforce the stage and trace the rumble.",
-            "zh": "前往礼堂调查，提交10工具和1份蛛丝，加固舞台并追查低鸣。"
+            "en": "Investigate the hum at the hall and submit 10 tools to reinforce the stage.",
+            "zh": "调查礼堂低鸣，提交工具10加固试唱舞台。"
           },
           "reward": {
             "en": "Advance the story and unlock this scene for replay.",
@@ -17221,14 +19654,17 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "auditorium_complete",
               "name": {
-                "en": "Bellspring Auditorium",
-                "zh": "钟泉镇旧礼堂"
+                "en": "Inspect the stage and low hum",
+                "zh": "检查试唱舞台与低鸣"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": [
@@ -17239,22 +19675,11 @@ window.BV_WIKI_DATA = {
                 "zh": "工具和补给"
               },
               "source": {
-                "en": "Buy tools and supplies at town markets; deducted from company tools.",
-                "zh": "从城镇市场购买工具和补给；从战团工具储备扣除。"
+                "en": "Tools and medicine use company resources; other supplies consume whole items from the stash.",
+                "zh": "工具与医疗从战团资源扣除；其余材料按仓库中的整件物品扣除。"
               },
-              "count": 10
-            },
-            {
-              "id": "spider_silk",
-              "name": {
-                "en": "Webknecht Silk",
-                "zh": "蛛丝"
-              },
-              "source": {
-                "en": "Loot from Webknechts in wooded areas.",
-                "zh": "击败林地中的蛛魔后收集战利品。"
-              },
-              "count": 1
+              "count": 10,
+              "sourceGoal": ""
             }
           ]
         },
@@ -17276,6 +19701,7 @@ window.BV_WIKI_DATA = {
           "medicine": 10,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "warehouse_complete",
@@ -17283,7 +19709,9 @@ window.BV_WIKI_DATA = {
                 "en": "Instrument Storehouse",
                 "zh": "镇外乐器仓库"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -17295,8 +19723,8 @@ window.BV_WIKI_DATA = {
             "zh": "谱上的休止符"
           },
           "brief": {
-            "en": "Visit the isolated room and submit 8 tools to repair the keyboard and help Noel find his entry.",
-            "zh": "调查断管排练室，提交8工具修好便携琴，帮助诺尔找到重新接入的一拍。"
+            "en": "Repair the piano with the recovered parts and plans, then find the missing beat. No tools are consumed.",
+            "zh": "用仓库取回的零件与图纸修琴，找出缺失的一拍。本节不消耗工具。"
           },
           "reward": {
             "en": "Advance the story and unlock this scene for replay.",
@@ -17306,30 +19734,34 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [
+            "instrument_parts"
+          ],
           "goals": [
             {
               "id": "rehearsal_complete",
               "name": {
-                "en": "Isolated Rehearsal Room",
-                "zh": "断管排练室"
+                "en": "Repair the portable piano with recovered parts",
+                "zh": "用回收零件检修便携琴"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
+            },
+            {
+              "id": "prep_3_2",
+              "name": {
+                "en": "Find the missing beat in the score",
+                "zh": "找出谱中缺失的一拍"
+              },
+              "battle": false,
+              "optional": false,
+              "requires": [
+                "rehearsal_complete"
+              ]
             }
           ],
-          "materials": [
-            {
-              "id": "tools",
-              "name": {
-                "en": "Tools and supplies",
-                "zh": "工具和补给"
-              },
-              "source": {
-                "en": "Buy tools and supplies at town markets; deducted from company tools.",
-                "zh": "从城镇市场购买工具和补给；从战团工具储备扣除。"
-              },
-              "count": 8
-            }
-          ]
+          "materials": []
         },
         {
           "number": 4,
@@ -17349,6 +19781,7 @@ window.BV_WIKI_DATA = {
           "medicine": 10,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "tunnels_complete",
@@ -17356,7 +19789,9 @@ window.BV_WIKI_DATA = {
                 "en": "Old Drainage Tunnels",
                 "zh": "旧排水道"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -17379,14 +19814,17 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "platform_complete",
               "name": {
-                "en": "Quarry Resonance Platform",
-                "zh": "采石场共鸣台"
+                "en": "Mark the platform and escape lines",
+                "zh": "标记共鸣台与撤离绳索位置"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": [
@@ -17397,22 +19835,24 @@ window.BV_WIKI_DATA = {
                 "zh": "工具和补给"
               },
               "source": {
-                "en": "Buy tools and supplies at town markets; deducted from company tools.",
-                "zh": "从城镇市场购买工具和补给；从战团工具储备扣除。"
+                "en": "Tools and medicine use company resources; other supplies consume whole items from the stash.",
+                "zh": "工具与医疗从战团资源扣除；其余材料按仓库中的整件物品扣除。"
               },
-              "count": 15
+              "count": 15,
+              "sourceGoal": ""
             },
             {
               "id": "spider_silk",
               "name": {
-                "en": "Webknecht Silk",
+                "en": "Spider silk",
                 "zh": "蛛丝"
               },
               "source": {
-                "en": "Loot from Webknechts in wooded areas.",
-                "zh": "击败林地中的蛛魔后收集战利品。"
+                "en": "Tools and medicine use company resources; other supplies consume whole items from the stash.",
+                "zh": "工具与医疗从战团资源扣除；其余材料按仓库中的整件物品扣除。"
               },
-              "count": 1
+              "count": 1,
+              "sourceGoal": ""
             }
           ]
         },
@@ -17434,6 +19874,7 @@ window.BV_WIKI_DATA = {
           "medicine": 10,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "quarry_complete",
@@ -17441,7 +19882,9 @@ window.BV_WIKI_DATA = {
                 "en": "Quarry Approach",
                 "zh": "采石场外缘"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -17453,8 +19896,8 @@ window.BV_WIKI_DATA = {
             "zh": "留一拍给你"
           },
           "brief": {
-            "en": "Complete the rehearsal without an audience; submit 10 tools to reinforce the platform and unlock both growth rewards.",
-            "zh": "完成无观众彩排，提交10工具修缮共鸣台，获得终战前的两项成长。"
+            "en": "Run the closed rehearsal and check positions and the route out, gaining both growth rewards before the final battle.",
+            "zh": "完成无观众彩排，确认演出阵线与退路，获得终战前的两项成长。"
           },
           "reward": {
             "en": "Unlock: Hear Your Breath and Begin on This Beat.",
@@ -17464,30 +19907,32 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "dress_rehearsal_complete",
               "name": {
-                "en": "Final Rehearsal Site",
-                "zh": "终战彩排处"
+                "en": "Run the closed rehearsal",
+                "zh": "完成无观众彩排"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
+            },
+            {
+              "id": "prep_7_2",
+              "name": {
+                "en": "Check positions and the route out",
+                "zh": "确认演出阵线与退路"
+              },
+              "battle": false,
+              "optional": false,
+              "requires": [
+                "dress_rehearsal_complete"
+              ]
             }
           ],
-          "materials": [
-            {
-              "id": "tools",
-              "name": {
-                "en": "Tools and supplies",
-                "zh": "工具和补给"
-              },
-              "source": {
-                "en": "Buy tools and supplies at town markets; deducted from company tools.",
-                "zh": "从城镇市场购买工具和补给；从战团工具储备扣除。"
-              },
-              "count": 10
-            }
-          ]
+          "materials": []
         },
         {
           "number": 8,
@@ -17507,6 +19952,7 @@ window.BV_WIKI_DATA = {
           "medicine": 10,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "resonance_complete",
@@ -17514,7 +19960,9 @@ window.BV_WIKI_DATA = {
                 "en": "The Hollow Echo Lair",
                 "zh": "空响之主巢口"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -17601,6 +20049,21 @@ window.BV_WIKI_DATA = {
         "enterprise",
         "m4a1"
       ],
+      "evidence": [
+        {
+          "id": "retreat_order",
+          "name": {
+            "en": "Recovered retreat order",
+            "zh": "被扣下的撤退令"
+          },
+          "source": {
+            "en": "Obtained in stage 4 of this chapter; recorded with chapter progress.",
+            "zh": "在本篇第4节取得；完成记录保存在篇章中。"
+          },
+          "stage": 4,
+          "goal": ""
+        }
+      ],
       "poster": "assets/story/chapters/grey_falcon_last_order/cover.jpg",
       "stages": [
         {
@@ -17621,14 +20084,17 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "aid_post_complete",
               "name": {
-                "en": "Foothill Aid Post",
-                "zh": "山脚伤兵站"
+                "en": "Record survivors listed as dead",
+                "zh": "登记名册上的幸存者"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": [
@@ -17636,13 +20102,14 @@ window.BV_WIKI_DATA = {
               "id": "bread",
               "name": {
                 "en": "Bread (whole item)",
-                "zh": "面包（整份物品）"
+                "zh": "面包（整件）"
               },
               "source": {
-                "en": "Buy at town markets; each whole inventory item counts as one.",
-                "zh": "城镇市场购买；每份按一个背包物品计数。"
+                "en": "Tools and medicine use company resources; other supplies consume whole items from the stash.",
+                "zh": "工具与医疗从战团资源扣除；其余材料按仓库中的整件物品扣除。"
               },
-              "count": 2
+              "count": 2,
+              "sourceGoal": ""
             },
             {
               "id": "medicine",
@@ -17651,10 +20118,11 @@ window.BV_WIKI_DATA = {
                 "zh": "医疗物资"
               },
               "source": {
-                "en": "Replenish company medical supplies at town markets or temples.",
-                "zh": "城镇市场或神殿补充战团医疗物资。"
+                "en": "Tools and medicine use company resources; other supplies consume whole items from the stash.",
+                "zh": "工具与医疗从战团资源扣除；其余材料按仓库中的整件物品扣除。"
               },
-              "count": 10
+              "count": 10,
+              "sourceGoal": ""
             }
           ]
         },
@@ -17676,6 +20144,7 @@ window.BV_WIKI_DATA = {
           "medicine": 10,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "roadblock_complete",
@@ -17683,7 +20152,9 @@ window.BV_WIKI_DATA = {
                 "en": "Blockade Checkpoint",
                 "zh": "封锁路卡"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -17695,8 +20166,8 @@ window.BV_WIKI_DATA = {
             "zh": "最后一锅热汤"
           },
           "brief": {
-            "en": "Inspect the guardhouse; submit 2 bread items and 10 tools to repair the stove and stretchers.",
-            "zh": "调查关内炉灶，提交2份面包和10单位工具，修补炉灶与担架。"
+            "en": "Use the first ration delivery for soup and submit 10 tools to repair the stove and stretchers.",
+            "zh": "用首批口粮制作热汤，提交工具10修补炉灶与担架。"
           },
           "reward": {
             "en": "Supplies and investigation payment",
@@ -17706,29 +20177,20 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "hearth_complete",
               "name": {
-                "en": "Grey Falcon Guardhouse",
-                "zh": "灰隼关炉灶"
+                "en": "Inspect the stove and stretchers",
+                "zh": "检查炉灶与担架"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": [
-            {
-              "id": "bread",
-              "name": {
-                "en": "Bread (whole item)",
-                "zh": "面包（整份物品）"
-              },
-              "source": {
-                "en": "Buy at town markets; each whole inventory item counts as one.",
-                "zh": "城镇市场购买；每份按一个背包物品计数。"
-              },
-              "count": 2
-            },
             {
               "id": "tools",
               "name": {
@@ -17736,10 +20198,11 @@ window.BV_WIKI_DATA = {
                 "zh": "工具和补给"
               },
               "source": {
-                "en": "Replenish company tools at town markets.",
-                "zh": "在城镇市场补充战团工具。"
+                "en": "Tools and medicine use company resources; other supplies consume whole items from the stash.",
+                "zh": "工具与医疗从战团资源扣除；其余材料按仓库中的整件物品扣除。"
               },
-              "count": 10
+              "count": 10,
+              "sourceGoal": ""
             }
           ]
         },
@@ -17761,6 +20224,7 @@ window.BV_WIKI_DATA = {
           "medicine": 10,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "courier_station_complete",
@@ -17768,7 +20232,9 @@ window.BV_WIKI_DATA = {
                 "en": "Seized Courier Station",
                 "zh": "扣信驿站"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -17780,8 +20246,8 @@ window.BV_WIKI_DATA = {
             "zh": "给明天留一条路"
           },
           "brief": {
-            "en": "Survey the quarry road; submit 20 tools and 1 spider silk to repair the road and stretcher bindings.",
-            "zh": "调查旧采石道，提交20单位工具与1份蛛丝，修复担架绑带和路面。"
+            "en": "Check the recovered retreat order, survey the quarry road and submit 15 tools to reinforce the evacuation route.",
+            "zh": "核对夺回的撤退令，勘察旧采石道，提交工具15加固撤离路线。"
           },
           "reward": {
             "en": "Supplies and investigation payment",
@@ -17791,14 +20257,19 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [
+            "retreat_order"
+          ],
           "goals": [
             {
               "id": "quarry_road_complete",
               "name": {
-                "en": "Old Quarry Road",
-                "zh": "旧采石道"
+                "en": "Check the retreat order and quarry road",
+                "zh": "核对撤退令并勘察采石道"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": [
@@ -17809,22 +20280,11 @@ window.BV_WIKI_DATA = {
                 "zh": "工具和补给"
               },
               "source": {
-                "en": "Replenish company tools at town markets.",
-                "zh": "在城镇市场补充战团工具。"
+                "en": "Tools and medicine use company resources; other supplies consume whole items from the stash.",
+                "zh": "工具与医疗从战团资源扣除；其余材料按仓库中的整件物品扣除。"
               },
-              "count": 20
-            },
-            {
-              "id": "spider_silk",
-              "name": {
-                "en": "Webknecht Silk",
-                "zh": "蛛丝"
-              },
-              "source": {
-                "en": "Loot from Webknechts in wooded areas.",
-                "zh": "击败林地中的蛛魔后收集战利品。"
-              },
-              "count": 1
+              "count": 15,
+              "sourceGoal": ""
             }
           ]
         },
@@ -17846,6 +20306,7 @@ window.BV_WIKI_DATA = {
           "medicine": 10,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "pursuit_complete",
@@ -17853,7 +20314,9 @@ window.BV_WIKI_DATA = {
                 "en": "Quarry Exit",
                 "zh": "采石道出口"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -17865,8 +20328,8 @@ window.BV_WIKI_DATA = {
             "zh": "最后的军令"
           },
           "brief": {
-            "en": "Inspect the assembly point; submit 10 tools and 15 medical supplies to unlock both permanent growth rewards.",
-            "zh": "调查撤离集结地，提交10单位工具和15单位医疗物资；解锁两项永久成长。"
+            "en": "Reconcile the survivor register, hand over the retreat order and confirm the assembly. Submission unlocks both permanent growth rewards.",
+            "zh": "核对幸存者名册，交接撤退令并确认集结，提交后解锁两项永久成长。"
           },
           "reward": {
             "en": "Enterprise: Return Route; M4A1: Covering Reload",
@@ -17876,42 +20339,34 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [
+            "retreat_order"
+          ],
           "goals": [
             {
               "id": "last_order_complete",
               "name": {
-                "en": "Evacuation Assembly",
-                "zh": "撤离集结地"
+                "en": "Reconcile survivors at the assembly point",
+                "zh": "核对幸存者与集结名册"
               },
-              "battle": false
-            }
-          ],
-          "materials": [
-            {
-              "id": "medicine",
-              "name": {
-                "en": "Medical supplies",
-                "zh": "医疗物资"
-              },
-              "source": {
-                "en": "Replenish company medical supplies at town markets or temples.",
-                "zh": "城镇市场或神殿补充战团医疗物资。"
-              },
-              "count": 15
+              "battle": false,
+              "optional": false,
+              "requires": []
             },
             {
-              "id": "tools",
+              "id": "prep_7_2",
               "name": {
-                "en": "Tools and supplies",
-                "zh": "工具和补给"
+                "en": "Hand over the retreat order",
+                "zh": "交接撤退令并确认出发"
               },
-              "source": {
-                "en": "Replenish company tools at town markets.",
-                "zh": "在城镇市场补充战团工具。"
-              },
-              "count": 10
+              "battle": false,
+              "optional": false,
+              "requires": [
+                "last_order_complete"
+              ]
             }
-          ]
+          ],
+          "materials": []
         },
         {
           "number": 8,
@@ -17931,6 +20386,7 @@ window.BV_WIKI_DATA = {
           "medicine": 10,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "mountain_exit_complete",
@@ -17938,7 +20394,9 @@ window.BV_WIKI_DATA = {
                 "en": "The Final Pass",
                 "zh": "最后一道山口"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -18025,6 +20483,7 @@ window.BV_WIKI_DATA = {
         "silver_wolf",
         "kafka"
       ],
+      "evidence": [],
       "poster": "assets/story/chapters/blackgold_thirteenth_lot/cover.jpg",
       "stages": [
         {
@@ -18045,6 +20504,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "alias",
@@ -18052,7 +20512,9 @@ window.BV_WIKI_DATA = {
                 "en": "Choose a pair of aliases",
                 "zh": "选择一组入场假名"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
             },
             {
               "id": "escape_route",
@@ -18060,7 +20522,9 @@ window.BV_WIKI_DATA = {
                 "en": "Survey the company’s escape route",
                 "zh": "勘察整队撤离的货道"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -18083,6 +20547,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "depot_clear",
@@ -18090,7 +20555,9 @@ window.BV_WIKI_DATA = {
                 "en": "Recover the toolbox and transfer slip",
                 "zh": "取回工具箱与调运单"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -18113,6 +20580,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "table",
@@ -18120,7 +20588,9 @@ window.BV_WIKI_DATA = {
                 "en": "Count fourteen place settings",
                 "zh": "核对十四份餐具"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
             },
             {
               "id": "accounts",
@@ -18128,7 +20598,9 @@ window.BV_WIKI_DATA = {
                 "en": "Check the twelve registered guests",
                 "zh": "查阅十二名来宾的账目"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
             },
             {
               "id": "plinth",
@@ -18136,7 +20608,9 @@ window.BV_WIKI_DATA = {
                 "en": "Inspect the thirteenth plinth",
                 "zh": "检查十三号展台"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -18159,6 +20633,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "vault_clear",
@@ -18166,7 +20641,9 @@ window.BV_WIKI_DATA = {
                 "en": "Find the rebound deeds and wage note",
                 "zh": "查获重装契册与工钱便条"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -18189,6 +20666,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "witness",
@@ -18196,7 +20674,9 @@ window.BV_WIKI_DATA = {
                 "en": "Help Rutt the bookbinder",
                 "zh": "救助装订匠鲁特"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
             },
             {
               "id": "originals",
@@ -18204,7 +20684,9 @@ window.BV_WIKI_DATA = {
                 "en": "Recover the original deeds",
                 "zh": "取出压书机下的原契"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
             },
             {
               "id": "third_exit",
@@ -18212,7 +20694,9 @@ window.BV_WIKI_DATA = {
                 "en": "Prepare a route for the injured witness",
                 "zh": "准备伤者可用的撤离路线"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -18235,6 +20719,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "backstage_clear",
@@ -18242,7 +20727,9 @@ window.BV_WIKI_DATA = {
                 "en": "Break the service-contract trap",
                 "zh": "击破借役契陷阱"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -18265,6 +20752,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 0,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "evidence_safe",
@@ -18272,7 +20760,9 @@ window.BV_WIKI_DATA = {
                 "en": "Secure the deeds and account copies",
                 "zh": "交接原契与脏账副本"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
             },
             {
               "id": "witness_safe",
@@ -18280,7 +20770,9 @@ window.BV_WIKI_DATA = {
                 "en": "Evacuate the witness across the bridge",
                 "zh": "护送证人通过货桥"
               },
-              "battle": false
+              "battle": false,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -18303,6 +20795,7 @@ window.BV_WIKI_DATA = {
           "medicine": 0,
           "tools": 0,
           "perksEach": 1,
+          "requiredEvidence": [],
           "goals": [
             {
               "id": "yard_clear",
@@ -18310,7 +20803,9 @@ window.BV_WIKI_DATA = {
                 "en": "Defeat Weiss and end the auction",
                 "zh": "击败维斯并终止拍卖"
               },
-              "battle": true
+              "battle": true,
+              "optional": false,
+              "requires": []
             }
           ],
           "materials": []
@@ -18401,9 +20896,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "BanditLeader",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -18414,16 +20921,27 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "BanditLeader",
-          "hpMultiplier": 2.4,
-          "damageMultiplier": 1.3,
+          "hpMultiplier": 1.8,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.6,
           "bonuses": {
-            "MeleeSkill": 20,
-            "RangedSkill": 5,
-            "MeleeDefense": 10,
-            "RangedDefense": 10,
-            "Bravery": 20,
+            "MeleeSkill": 6,
+            "RangedSkill": 1.5,
+            "MeleeDefense": 3,
+            "RangedDefense": 3,
+            "Bravery": 5,
             "Initiative": 0,
-            "Stamina": 30,
+            "Stamina": 9,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 4.8,
+            "RangedSkill": 1.2,
+            "MeleeDefense": 2.4,
+            "RangedDefense": 2.4,
+            "Bravery": 4,
+            "Initiative": 0,
+            "Stamina": 7.2,
             "FatigueRecoveryRate": 0
           },
           "perks": [
@@ -18438,17 +20956,28 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "BanditLeader",
-          "hpMultiplier": 4,
-          "damageMultiplier": 1.5,
+          "hpMultiplier": 2.5,
+          "damageMultiplier": 1.1,
+          "legendsHpMultiplier": 2.2,
           "bonuses": {
-            "MeleeSkill": 35,
-            "RangedSkill": 10,
-            "MeleeDefense": 20,
-            "RangedDefense": 15,
-            "Bravery": 40,
+            "MeleeSkill": 12,
+            "RangedSkill": 3.5,
+            "MeleeDefense": 7,
+            "RangedDefense": 5.2,
+            "Bravery": 10,
             "Initiative": 0,
-            "Stamina": 55,
-            "FatigueRecoveryRate": 5
+            "Stamina": 19.2,
+            "FatigueRecoveryRate": 1.8
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 9.6,
+            "RangedSkill": 2.8,
+            "MeleeDefense": 5.6,
+            "RangedDefense": 4.16,
+            "Bravery": 8,
+            "Initiative": 0,
+            "Stamina": 15.36,
+            "FatigueRecoveryRate": 1.44
           },
           "perks": [
             "perk_battle_forged",
@@ -18473,9 +21002,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "NomadLeader",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -18486,16 +21027,27 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "NomadLeader",
-          "hpMultiplier": 2.2,
-          "damageMultiplier": 1.25,
+          "hpMultiplier": 1.7,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.5,
           "bonuses": {
-            "MeleeSkill": 20,
-            "RangedSkill": 5,
-            "MeleeDefense": 8,
-            "RangedDefense": 10,
-            "Bravery": 20,
-            "Initiative": 5,
-            "Stamina": 30,
+            "MeleeSkill": 6,
+            "RangedSkill": 1.5,
+            "MeleeDefense": 2.4,
+            "RangedDefense": 3,
+            "Bravery": 5,
+            "Initiative": 1.5,
+            "Stamina": 9,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 4.8,
+            "RangedSkill": 1.2,
+            "MeleeDefense": 1.92,
+            "RangedDefense": 2.4,
+            "Bravery": 4,
+            "Initiative": 1.2,
+            "Stamina": 7.2,
             "FatigueRecoveryRate": 0
           },
           "perks": []
@@ -18508,17 +21060,28 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "NomadLeader",
-          "hpMultiplier": 3.4,
-          "damageMultiplier": 1.4,
+          "hpMultiplier": 2.3,
+          "damageMultiplier": 1.1,
+          "legendsHpMultiplier": 2,
           "bonuses": {
-            "MeleeSkill": 35,
-            "RangedSkill": 10,
-            "MeleeDefense": 18,
-            "RangedDefense": 15,
-            "Bravery": 40,
-            "Initiative": 15,
-            "Stamina": 55,
-            "FatigueRecoveryRate": 5
+            "MeleeSkill": 12,
+            "RangedSkill": 3.5,
+            "MeleeDefense": 6.3,
+            "RangedDefense": 5.2,
+            "Bravery": 10,
+            "Initiative": 5.2,
+            "Stamina": 19.2,
+            "FatigueRecoveryRate": 1.8
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 9.6,
+            "RangedSkill": 2.8,
+            "MeleeDefense": 5.04,
+            "RangedDefense": 4.16,
+            "Bravery": 8,
+            "Initiative": 4.16,
+            "Stamina": 15.36,
+            "FatigueRecoveryRate": 1.44
           },
           "perks": []
         }
@@ -18540,9 +21103,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "BarbarianChampion",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -18553,16 +21128,27 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "BarbarianChampion",
-          "hpMultiplier": 2.1538461538461537,
-          "damageMultiplier": 1.15,
+          "hpMultiplier": 1.6,
+          "damageMultiplier": 1,
+          "legendsHpMultiplier": 1.4,
           "bonuses": {
-            "MeleeSkill": 17,
-            "RangedSkill": 5,
-            "MeleeDefense": 7,
-            "RangedDefense": 5,
-            "Bravery": 15,
-            "Initiative": 5,
-            "Stamina": 20,
+            "MeleeSkill": 5.1,
+            "RangedSkill": 1.5,
+            "MeleeDefense": 2.1,
+            "RangedDefense": 1.5,
+            "Bravery": 4.5,
+            "Initiative": 1.5,
+            "Stamina": 6,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 4.08,
+            "RangedSkill": 1.2,
+            "MeleeDefense": 1.68,
+            "RangedDefense": 1.2,
+            "Bravery": 3.6,
+            "Initiative": 1.2,
+            "Stamina": 4.8,
             "FatigueRecoveryRate": 0
           },
           "perks": []
@@ -18575,17 +21161,28 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "BarbarianChampion",
-          "hpMultiplier": 3.3076923076923075,
-          "damageMultiplier": 1.25,
+          "hpMultiplier": 2.1,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.8,
           "bonuses": {
-            "MeleeSkill": 30,
-            "RangedSkill": 10,
-            "MeleeDefense": 15,
-            "RangedDefense": 10,
-            "Bravery": 30,
-            "Initiative": 10,
-            "Stamina": 45,
-            "FatigueRecoveryRate": 5
+            "MeleeSkill": 10.5,
+            "RangedSkill": 3.5,
+            "MeleeDefense": 5.2,
+            "RangedDefense": 3.5,
+            "Bravery": 10,
+            "Initiative": 3.5,
+            "Stamina": 15.7,
+            "FatigueRecoveryRate": 1.8
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 8.4,
+            "RangedSkill": 2.8,
+            "MeleeDefense": 4.16,
+            "RangedDefense": 2.8,
+            "Bravery": 8,
+            "Initiative": 2.8,
+            "Stamina": 12.56,
+            "FatigueRecoveryRate": 1.44
           },
           "perks": []
         }
@@ -18607,9 +21204,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "Knight",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -18620,16 +21229,27 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "Knight",
-          "hpMultiplier": 2.3703703703703702,
-          "damageMultiplier": 1.2,
+          "hpMultiplier": 1.6,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.4,
           "bonuses": {
-            "MeleeSkill": 15,
-            "RangedSkill": 5,
-            "MeleeDefense": 10,
-            "RangedDefense": 10,
-            "Bravery": 20,
+            "MeleeSkill": 4.5,
+            "RangedSkill": 1.5,
+            "MeleeDefense": 3,
+            "RangedDefense": 3,
+            "Bravery": 5,
             "Initiative": 0,
-            "Stamina": 20,
+            "Stamina": 6,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 3.6,
+            "RangedSkill": 1.2,
+            "MeleeDefense": 2.4,
+            "RangedDefense": 2.4,
+            "Bravery": 4,
+            "Initiative": 0,
+            "Stamina": 4.8,
             "FatigueRecoveryRate": 0
           },
           "perks": []
@@ -18642,17 +21262,28 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "Knight",
-          "hpMultiplier": 3.7037037037037037,
-          "damageMultiplier": 1.35,
+          "hpMultiplier": 2.1,
+          "damageMultiplier": 1.1,
+          "legendsHpMultiplier": 1.8,
           "bonuses": {
-            "MeleeSkill": 28,
-            "RangedSkill": 10,
-            "MeleeDefense": 20,
-            "RangedDefense": 18,
-            "Bravery": 35,
-            "Initiative": 5,
-            "Stamina": 45,
-            "FatigueRecoveryRate": 5
+            "MeleeSkill": 9.8,
+            "RangedSkill": 3.5,
+            "MeleeDefense": 7,
+            "RangedDefense": 6.3,
+            "Bravery": 10,
+            "Initiative": 1.8,
+            "Stamina": 15.7,
+            "FatigueRecoveryRate": 1.8
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 7.84,
+            "RangedSkill": 2.8,
+            "MeleeDefense": 5.6,
+            "RangedDefense": 5.04,
+            "Bravery": 8,
+            "Initiative": 1.44,
+            "Stamina": 12.56,
+            "FatigueRecoveryRate": 1.44
           },
           "perks": []
         }
@@ -18674,9 +21305,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "Officer",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -18687,16 +21330,27 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "Officer",
-          "hpMultiplier": 2.5454545454545454,
-          "damageMultiplier": 1.25,
+          "hpMultiplier": 1.7,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.5,
           "bonuses": {
-            "MeleeSkill": 15,
-            "RangedSkill": 5,
-            "MeleeDefense": 7,
-            "RangedDefense": 10,
-            "Bravery": 20,
-            "Initiative": 5,
-            "Stamina": 30,
+            "MeleeSkill": 4.5,
+            "RangedSkill": 1.5,
+            "MeleeDefense": 2.1,
+            "RangedDefense": 3,
+            "Bravery": 5,
+            "Initiative": 1.5,
+            "Stamina": 9,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 3.6,
+            "RangedSkill": 1.2,
+            "MeleeDefense": 1.68,
+            "RangedDefense": 2.4,
+            "Bravery": 4,
+            "Initiative": 1.2,
+            "Stamina": 7.2,
             "FatigueRecoveryRate": 0
           },
           "perks": []
@@ -18709,17 +21363,28 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "Officer",
-          "hpMultiplier": 4,
-          "damageMultiplier": 1.4,
+          "hpMultiplier": 2.3,
+          "damageMultiplier": 1.1,
+          "legendsHpMultiplier": 2,
           "bonuses": {
-            "MeleeSkill": 30,
-            "RangedSkill": 10,
-            "MeleeDefense": 15,
-            "RangedDefense": 15,
-            "Bravery": 40,
-            "Initiative": 10,
-            "Stamina": 55,
-            "FatigueRecoveryRate": 5
+            "MeleeSkill": 10.5,
+            "RangedSkill": 3.5,
+            "MeleeDefense": 5.2,
+            "RangedDefense": 5.2,
+            "Bravery": 10,
+            "Initiative": 3.5,
+            "Stamina": 19.2,
+            "FatigueRecoveryRate": 1.8
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 8.4,
+            "RangedSkill": 2.8,
+            "MeleeDefense": 4.16,
+            "RangedDefense": 4.16,
+            "Bravery": 8,
+            "Initiative": 2.8,
+            "Stamina": 15.36,
+            "FatigueRecoveryRate": 1.44
           },
           "perks": []
         }
@@ -18741,9 +21406,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "MilitiaCaptain",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -18754,16 +21431,27 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "MilitiaCaptain",
-          "hpMultiplier": 2.5714285714285716,
-          "damageMultiplier": 1.25,
+          "hpMultiplier": 1.8,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.6,
           "bonuses": {
-            "MeleeSkill": 25,
-            "RangedSkill": 5,
-            "MeleeDefense": 12,
-            "RangedDefense": 15,
-            "Bravery": 15,
-            "Initiative": 5,
-            "Stamina": 40,
+            "MeleeSkill": 7.5,
+            "RangedSkill": 1.5,
+            "MeleeDefense": 3.6,
+            "RangedDefense": 4.5,
+            "Bravery": 4.5,
+            "Initiative": 1.5,
+            "Stamina": 12,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 6,
+            "RangedSkill": 1.2,
+            "MeleeDefense": 2.88,
+            "RangedDefense": 3.6,
+            "Bravery": 3.6,
+            "Initiative": 1.2,
+            "Stamina": 9.6,
             "FatigueRecoveryRate": 0
           },
           "perks": [
@@ -18778,17 +21466,28 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "MilitiaCaptain",
-          "hpMultiplier": 4.285714285714286,
-          "damageMultiplier": 1.4,
+          "hpMultiplier": 2.5,
+          "damageMultiplier": 1.1,
+          "legendsHpMultiplier": 2.2,
           "bonuses": {
-            "MeleeSkill": 40,
-            "RangedSkill": 10,
-            "MeleeDefense": 20,
-            "RangedDefense": 22,
-            "Bravery": 35,
-            "Initiative": 10,
-            "Stamina": 65,
-            "FatigueRecoveryRate": 5
+            "MeleeSkill": 12,
+            "RangedSkill": 3.5,
+            "MeleeDefense": 7,
+            "RangedDefense": 7.7,
+            "Bravery": 10,
+            "Initiative": 3.5,
+            "Stamina": 22.8,
+            "FatigueRecoveryRate": 1.8
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 9.6,
+            "RangedSkill": 2.8,
+            "MeleeDefense": 5.6,
+            "RangedDefense": 6.16,
+            "Bravery": 8,
+            "Initiative": 2.8,
+            "Stamina": 18.24,
+            "FatigueRecoveryRate": 1.44
           },
           "perks": [
             "perk_steel_brow",
@@ -18813,9 +21512,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "HedgeKnight",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -18826,15 +21537,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "HedgeKnight",
-          "hpMultiplier": 2.3333333333333335,
-          "damageMultiplier": 1.2,
+          "hpMultiplier": 1.6,
+          "damageMultiplier": 1,
+          "legendsHpMultiplier": 1.4,
           "bonuses": {
-            "MeleeSkill": 15,
-            "RangedSkill": 5,
-            "MeleeDefense": 7,
-            "RangedDefense": 10,
-            "Bravery": 20,
-            "Initiative": 5,
+            "MeleeSkill": 4.5,
+            "RangedSkill": 1.5,
+            "MeleeDefense": 2.1,
+            "RangedDefense": 3,
+            "Bravery": 5,
+            "Initiative": 1.5,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 3.6,
+            "RangedSkill": 1.2,
+            "MeleeDefense": 1.68,
+            "RangedDefense": 2.4,
+            "Bravery": 4,
+            "Initiative": 1.2,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -18848,16 +21570,27 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "HedgeKnight",
-          "hpMultiplier": 3.6666666666666665,
-          "damageMultiplier": 1.35,
+          "hpMultiplier": 2.1,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.8,
           "bonuses": {
-            "MeleeSkill": 30,
-            "RangedSkill": 10,
-            "MeleeDefense": 15,
-            "RangedDefense": 15,
-            "Bravery": 35,
-            "Initiative": 10,
-            "Stamina": 25,
+            "MeleeSkill": 10.5,
+            "RangedSkill": 3.5,
+            "MeleeDefense": 5.2,
+            "RangedDefense": 5.2,
+            "Bravery": 10,
+            "Initiative": 3.5,
+            "Stamina": 8.8,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 8.4,
+            "RangedSkill": 2.8,
+            "MeleeDefense": 4.16,
+            "RangedDefense": 4.16,
+            "Bravery": 8,
+            "Initiative": 2.8,
+            "Stamina": 7.04,
             "FatigueRecoveryRate": 0
           },
           "perks": []
@@ -18880,9 +21613,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "BountyHunter",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -18893,16 +21638,27 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "BountyHunterRanged",
-          "hpMultiplier": 2.8333333333333335,
-          "damageMultiplier": 1.15,
+          "hpMultiplier": 1.6,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.4,
           "bonuses": {
-            "MeleeSkill": 10,
-            "RangedSkill": 20,
-            "MeleeDefense": 8,
-            "RangedDefense": 15,
-            "Bravery": 20,
-            "Initiative": 5,
-            "Stamina": 45,
+            "MeleeSkill": 3,
+            "RangedSkill": 6,
+            "MeleeDefense": 2.4,
+            "RangedDefense": 4.5,
+            "Bravery": 5,
+            "Initiative": 1.5,
+            "Stamina": 13.5,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 2.4,
+            "RangedSkill": 4.8,
+            "MeleeDefense": 1.92,
+            "RangedDefense": 3.6,
+            "Bravery": 4,
+            "Initiative": 1.2,
+            "Stamina": 10.8,
             "FatigueRecoveryRate": 0
           },
           "perks": []
@@ -18915,17 +21671,28 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "BountyHunter",
-          "hpMultiplier": 3.75,
-          "damageMultiplier": 1.35,
+          "hpMultiplier": 2.1,
+          "damageMultiplier": 1.1,
+          "legendsHpMultiplier": 1.8,
           "bonuses": {
-            "MeleeSkill": 35,
-            "RangedSkill": 10,
-            "MeleeDefense": 20,
-            "RangedDefense": 22,
-            "Bravery": 40,
-            "Initiative": 15,
-            "Stamina": 60,
-            "FatigueRecoveryRate": 5
+            "MeleeSkill": 12,
+            "RangedSkill": 3.5,
+            "MeleeDefense": 7,
+            "RangedDefense": 7.7,
+            "Bravery": 10,
+            "Initiative": 5.2,
+            "Stamina": 21,
+            "FatigueRecoveryRate": 1.8
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 9.6,
+            "RangedSkill": 2.8,
+            "MeleeDefense": 5.6,
+            "RangedDefense": 6.16,
+            "Bravery": 8,
+            "Initiative": 4.16,
+            "Stamina": 16.8,
+            "FatigueRecoveryRate": 1.44
           },
           "perks": [
             "perk_duelist"
@@ -18949,9 +21716,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "ZombieKnight",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -18962,13 +21741,24 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "ZombieKnight",
-          "hpMultiplier": 2.3333333333333335,
-          "damageMultiplier": 1.25,
+          "hpMultiplier": 1.5,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.2,
           "bonuses": {
-            "MeleeSkill": 20,
+            "MeleeSkill": 6,
             "RangedSkill": 0,
-            "MeleeDefense": 7,
-            "RangedDefense": 5,
+            "MeleeDefense": 2.1,
+            "RangedDefense": 1.5,
+            "Bravery": 0,
+            "Initiative": 0,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 4.8,
+            "RangedSkill": 0,
+            "MeleeDefense": 1.68,
+            "RangedDefense": 1.2,
             "Bravery": 0,
             "Initiative": 0,
             "Stamina": 0,
@@ -18984,15 +21774,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "ZombieKnight",
-          "hpMultiplier": 3.611111111111111,
-          "damageMultiplier": 1.4,
+          "hpMultiplier": 2,
+          "damageMultiplier": 1.1,
+          "legendsHpMultiplier": 1.5,
           "bonuses": {
-            "MeleeSkill": 35,
+            "MeleeSkill": 12,
             "RangedSkill": 0,
-            "MeleeDefense": 15,
-            "RangedDefense": 10,
+            "MeleeDefense": 5.2,
+            "RangedDefense": 3.5,
             "Bravery": 0,
-            "Initiative": 5,
+            "Initiative": 1.8,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 9.6,
+            "RangedSkill": 0,
+            "MeleeDefense": 4.16,
+            "RangedDefense": 2.8,
+            "Bravery": 0,
+            "Initiative": 1.44,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19016,9 +21817,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "SkeletonHeavy",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -19029,15 +21842,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "SkeletonHeavy",
-          "hpMultiplier": 3.076923076923077,
-          "damageMultiplier": 1.25,
+          "hpMultiplier": 1.7,
+          "damageMultiplier": 1,
+          "legendsHpMultiplier": 1.5,
           "bonuses": {
-            "MeleeSkill": 20,
+            "MeleeSkill": 6,
             "RangedSkill": 0,
-            "MeleeDefense": 13,
-            "RangedDefense": 10,
+            "MeleeDefense": 3.9,
+            "RangedDefense": 3,
             "Bravery": 0,
-            "Initiative": 5,
+            "Initiative": 1.5,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 4.8,
+            "RangedSkill": 0,
+            "MeleeDefense": 3.12,
+            "RangedDefense": 2.4,
+            "Bravery": 0,
+            "Initiative": 1.2,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19051,15 +21875,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "SkeletonHeavy",
-          "hpMultiplier": 4.923076923076923,
-          "damageMultiplier": 1.4,
+          "hpMultiplier": 2.3,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 2,
           "bonuses": {
-            "MeleeSkill": 33,
+            "MeleeSkill": 11.5,
             "RangedSkill": 0,
-            "MeleeDefense": 23,
-            "RangedDefense": 15,
+            "MeleeDefense": 8,
+            "RangedDefense": 5.2,
             "Bravery": 0,
-            "Initiative": 10,
+            "Initiative": 3.5,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 9.2,
+            "RangedSkill": 0,
+            "MeleeDefense": 6.4,
+            "RangedDefense": 4.16,
+            "Bravery": 0,
+            "Initiative": 2.8,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19085,9 +21920,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "GreaterFleshGolem",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -19098,15 +21945,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "GreaterFleshGolem",
-          "hpMultiplier": 1.7142857142857142,
-          "damageMultiplier": 1.15,
+          "hpMultiplier": 1.25,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.15,
           "bonuses": {
-            "MeleeSkill": 15,
-            "RangedSkill": 10,
-            "MeleeDefense": 2,
+            "MeleeSkill": 4.5,
+            "RangedSkill": 3,
+            "MeleeDefense": 0.6,
             "RangedDefense": 0,
-            "Bravery": 10,
-            "Initiative": 5,
+            "Bravery": 3,
+            "Initiative": 1.5,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 3.6,
+            "RangedSkill": 2.4,
+            "MeleeDefense": 0.48,
+            "RangedDefense": 0,
+            "Bravery": 2.4,
+            "Initiative": 1.2,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19120,15 +21978,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "GreaterFleshGolem",
-          "hpMultiplier": 2.4285714285714284,
-          "damageMultiplier": 1.25,
+          "hpMultiplier": 1.5,
+          "damageMultiplier": 1.1,
+          "legendsHpMultiplier": 1.3,
           "bonuses": {
-            "MeleeSkill": 25,
-            "RangedSkill": 20,
-            "MeleeDefense": 8,
-            "RangedDefense": 5,
-            "Bravery": 25,
-            "Initiative": 10,
+            "MeleeSkill": 8.8,
+            "RangedSkill": 7,
+            "MeleeDefense": 2.8,
+            "RangedDefense": 1.8,
+            "Bravery": 8.8,
+            "Initiative": 3.5,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 7.04,
+            "RangedSkill": 5.6,
+            "MeleeDefense": 2.24,
+            "RangedDefense": 1.44,
+            "Bravery": 7.04,
+            "Initiative": 2.8,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19152,9 +22021,23 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "OrcWarlord",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5,
+            "Bravery": -15
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5,
+            "Bravery": -15
+          },
           "perks": []
         },
         {
@@ -19165,14 +22048,25 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "OrcWarlord",
-          "hpMultiplier": 2.1666666666666665,
-          "damageMultiplier": 1.2,
+          "hpMultiplier": 1.4,
+          "damageMultiplier": 1,
+          "legendsHpMultiplier": 1.2,
           "bonuses": {
-            "MeleeSkill": 10,
-            "RangedSkill": 5,
-            "MeleeDefense": 10,
-            "RangedDefense": 10,
-            "Bravery": 20,
+            "MeleeSkill": 3,
+            "RangedSkill": 1.5,
+            "MeleeDefense": 3,
+            "RangedDefense": 3,
+            "Bravery": -15,
+            "Initiative": 0,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 2.4,
+            "RangedSkill": 1.2,
+            "MeleeDefense": 2.4,
+            "RangedDefense": 2.4,
+            "Bravery": -15,
             "Initiative": 0,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
@@ -19187,15 +22081,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "OrcWarlord",
-          "hpMultiplier": 3.1666666666666665,
-          "damageMultiplier": 1.35,
+          "hpMultiplier": 1.8,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.5,
           "bonuses": {
-            "MeleeSkill": 22,
-            "RangedSkill": 10,
-            "MeleeDefense": 20,
-            "RangedDefense": 15,
-            "Bravery": 40,
-            "Initiative": 5,
+            "MeleeSkill": 7.7,
+            "RangedSkill": 3.5,
+            "MeleeDefense": 7,
+            "RangedDefense": 5.2,
+            "Bravery": 0,
+            "Initiative": 1.8,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 6.16,
+            "RangedSkill": 2.8,
+            "MeleeDefense": 5.6,
+            "RangedDefense": 4.16,
+            "Bravery": 0,
+            "Initiative": 1.44,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19219,9 +22124,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "GoblinSkirmisher",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -19232,15 +22149,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "GoblinAmbusher",
-          "hpMultiplier": 3.25,
-          "damageMultiplier": 1.15,
+          "hpMultiplier": 1.6,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.4,
           "bonuses": {
-            "MeleeSkill": 5,
-            "RangedSkill": 15,
-            "MeleeDefense": 8,
-            "RangedDefense": 10,
-            "Bravery": 25,
-            "Initiative": 5,
+            "MeleeSkill": 1.5,
+            "RangedSkill": 4.5,
+            "MeleeDefense": 2.4,
+            "RangedDefense": 3,
+            "Bravery": 5,
+            "Initiative": 1.5,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 1.2,
+            "RangedSkill": 3.6,
+            "MeleeDefense": 1.92,
+            "RangedDefense": 2.4,
+            "Bravery": 4,
+            "Initiative": 1.2,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19254,15 +22182,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "GoblinOverseer",
-          "hpMultiplier": 3.142857142857143,
-          "damageMultiplier": 1.25,
+          "hpMultiplier": 2,
+          "damageMultiplier": 1.1,
+          "legendsHpMultiplier": 1.7,
           "bonuses": {
-            "MeleeSkill": 15,
-            "RangedSkill": 20,
-            "MeleeDefense": 13,
-            "RangedDefense": 15,
-            "Bravery": 30,
-            "Initiative": 15,
+            "MeleeSkill": 5.2,
+            "RangedSkill": 7,
+            "MeleeDefense": 4.5,
+            "RangedDefense": 5.2,
+            "Bravery": 10,
+            "Initiative": 5.2,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 4.16,
+            "RangedSkill": 5.6,
+            "MeleeDefense": 3.6,
+            "RangedDefense": 4.16,
+            "Bravery": 8,
+            "Initiative": 4.16,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19286,9 +22225,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "DirewolfHIGH",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -19299,15 +22250,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "DirewolfHIGH",
-          "hpMultiplier": 2,
-          "damageMultiplier": 1.15,
+          "hpMultiplier": 1.5,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.3,
           "bonuses": {
-            "MeleeSkill": 17,
+            "MeleeSkill": 5.1,
             "RangedSkill": 0,
-            "MeleeDefense": 10,
-            "RangedDefense": 10,
-            "Bravery": 15,
-            "Initiative": 5,
+            "MeleeDefense": 3,
+            "RangedDefense": 3,
+            "Bravery": 4.5,
+            "Initiative": 1.5,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 4.08,
+            "RangedSkill": 0,
+            "MeleeDefense": 2.4,
+            "RangedDefense": 2.4,
+            "Bravery": 3.6,
+            "Initiative": 1.2,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19321,15 +22283,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "DirewolfHIGH",
-          "hpMultiplier": 3.066666666666667,
-          "damageMultiplier": 1.3,
+          "hpMultiplier": 1.9,
+          "damageMultiplier": 1.1,
+          "legendsHpMultiplier": 1.6,
           "bonuses": {
-            "MeleeSkill": 30,
+            "MeleeSkill": 10.5,
             "RangedSkill": 0,
-            "MeleeDefense": 18,
-            "RangedDefense": 15,
-            "Bravery": 30,
-            "Initiative": 15,
+            "MeleeDefense": 6.3,
+            "RangedDefense": 5.2,
+            "Bravery": 10,
+            "Initiative": 5.2,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 8.4,
+            "RangedSkill": 0,
+            "MeleeDefense": 5.04,
+            "RangedDefense": 4.16,
+            "Bravery": 8,
+            "Initiative": 4.16,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19353,9 +22326,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "HyenaHIGH",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -19366,15 +22351,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "HyenaHIGH",
-          "hpMultiplier": 2,
-          "damageMultiplier": 1.15,
+          "hpMultiplier": 1.5,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.3,
           "bonuses": {
-            "MeleeSkill": 17,
+            "MeleeSkill": 5.1,
             "RangedSkill": 0,
-            "MeleeDefense": 8,
-            "RangedDefense": 10,
-            "Bravery": 15,
-            "Initiative": 10,
+            "MeleeDefense": 2.4,
+            "RangedDefense": 3,
+            "Bravery": 4.5,
+            "Initiative": 3,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 4.08,
+            "RangedSkill": 0,
+            "MeleeDefense": 1.92,
+            "RangedDefense": 2.4,
+            "Bravery": 3.6,
+            "Initiative": 2.4,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19388,15 +22384,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "HyenaHIGH",
-          "hpMultiplier": 3.0714285714285716,
-          "damageMultiplier": 1.3,
+          "hpMultiplier": 1.9,
+          "damageMultiplier": 1.1,
+          "legendsHpMultiplier": 1.6,
           "bonuses": {
-            "MeleeSkill": 30,
+            "MeleeSkill": 10.5,
             "RangedSkill": 0,
-            "MeleeDefense": 15,
-            "RangedDefense": 15,
-            "Bravery": 30,
-            "Initiative": 20,
+            "MeleeDefense": 5.2,
+            "RangedDefense": 5.2,
+            "Bravery": 10,
+            "Initiative": 7,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 8.4,
+            "RangedSkill": 0,
+            "MeleeDefense": 4.16,
+            "RangedDefense": 4.16,
+            "Bravery": 8,
+            "Initiative": 5.6,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19420,9 +22427,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "Spider",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -19433,15 +22452,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "Spider",
-          "hpMultiplier": 2.8333333333333335,
-          "damageMultiplier": 1.1,
+          "hpMultiplier": 1.4,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.2,
           "bonuses": {
-            "MeleeSkill": 18,
+            "MeleeSkill": 5.4,
             "RangedSkill": 0,
-            "MeleeDefense": 8,
-            "RangedDefense": 5,
-            "Bravery": 20,
-            "Initiative": 5,
+            "MeleeDefense": 2.4,
+            "RangedDefense": 1.5,
+            "Bravery": 5,
+            "Initiative": 1.5,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 4.32,
+            "RangedSkill": 0,
+            "MeleeDefense": 1.92,
+            "RangedDefense": 1.2,
+            "Bravery": 4,
+            "Initiative": 1.2,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19455,15 +22485,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "Spider",
-          "hpMultiplier": 4.333333333333333,
-          "damageMultiplier": 1.2,
+          "hpMultiplier": 1.8,
+          "damageMultiplier": 1.1,
+          "legendsHpMultiplier": 1.5,
           "bonuses": {
-            "MeleeSkill": 30,
+            "MeleeSkill": 10.5,
             "RangedSkill": 0,
-            "MeleeDefense": 15,
-            "RangedDefense": 10,
-            "Bravery": 35,
-            "Initiative": 15,
+            "MeleeDefense": 5.2,
+            "RangedDefense": 3.5,
+            "Bravery": 10,
+            "Initiative": 5.2,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 8.4,
+            "RangedSkill": 0,
+            "MeleeDefense": 4.16,
+            "RangedDefense": 2.8,
+            "Bravery": 8,
+            "Initiative": 4.16,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19487,9 +22528,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "GhoulHIGH",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -19500,15 +22553,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "GhoulHIGH",
-          "hpMultiplier": 1.5789473684210527,
-          "damageMultiplier": 1.15,
+          "hpMultiplier": 1.2,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.1,
           "bonuses": {
-            "MeleeSkill": 12,
+            "MeleeSkill": 3.6,
             "RangedSkill": 0,
-            "MeleeDefense": 4,
-            "RangedDefense": 5,
-            "Bravery": 10,
-            "Initiative": 30,
+            "MeleeDefense": 1.2,
+            "RangedDefense": 1.5,
+            "Bravery": 3,
+            "Initiative": 9,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 2.88,
+            "RangedSkill": 0,
+            "MeleeDefense": 0.96,
+            "RangedDefense": 1.2,
+            "Bravery": 2.4,
+            "Initiative": 7.2,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19522,15 +22586,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "GhoulHIGH",
-          "hpMultiplier": 2.236842105263158,
-          "damageMultiplier": 1.25,
+          "hpMultiplier": 1.45,
+          "damageMultiplier": 1.1,
+          "legendsHpMultiplier": 1.3,
           "bonuses": {
-            "MeleeSkill": 25,
+            "MeleeSkill": 8.8,
             "RangedSkill": 0,
-            "MeleeDefense": 10,
-            "RangedDefense": 10,
-            "Bravery": 25,
-            "Initiative": 35,
+            "MeleeDefense": 3.5,
+            "RangedDefense": 3.5,
+            "Bravery": 8.8,
+            "Initiative": 12.2,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 7.04,
+            "RangedSkill": 0,
+            "MeleeDefense": 2.8,
+            "RangedDefense": 2.8,
+            "Bravery": 7.04,
+            "Initiative": 9.76,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19554,9 +22629,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "Serpent",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -19567,15 +22654,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "Serpent",
-          "hpMultiplier": 2.3076923076923075,
-          "damageMultiplier": 1.15,
+          "hpMultiplier": 1.4,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.2,
           "bonuses": {
-            "MeleeSkill": 20,
+            "MeleeSkill": 6,
             "RangedSkill": 0,
-            "MeleeDefense": 8,
-            "RangedDefense": 5,
-            "Bravery": 10,
-            "Initiative": 10,
+            "MeleeDefense": 2.4,
+            "RangedDefense": 1.5,
+            "Bravery": 3,
+            "Initiative": 3,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 4.8,
+            "RangedSkill": 0,
+            "MeleeDefense": 1.92,
+            "RangedDefense": 1.2,
+            "Bravery": 2.4,
+            "Initiative": 2.4,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19589,15 +22687,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "Serpent",
-          "hpMultiplier": 3.5384615384615383,
-          "damageMultiplier": 1.3,
+          "hpMultiplier": 1.8,
+          "damageMultiplier": 1.1,
+          "legendsHpMultiplier": 1.5,
           "bonuses": {
-            "MeleeSkill": 33,
+            "MeleeSkill": 11.5,
             "RangedSkill": 0,
-            "MeleeDefense": 15,
-            "RangedDefense": 10,
-            "Bravery": 25,
-            "Initiative": 20,
+            "MeleeDefense": 5.2,
+            "RangedDefense": 3.5,
+            "Bravery": 8.8,
+            "Initiative": 7,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 9.2,
+            "RangedSkill": 0,
+            "MeleeDefense": 4.16,
+            "RangedDefense": 2.8,
+            "Bravery": 7.04,
+            "Initiative": 5.6,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19621,9 +22730,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "UnholdFrost",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -19634,13 +22755,24 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "UnholdFrost",
-          "hpMultiplier": 1.4166666666666667,
-          "damageMultiplier": 1.1,
+          "hpMultiplier": 1.15,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.1,
           "bonuses": {
-            "MeleeSkill": 10,
+            "MeleeSkill": 3,
             "RangedSkill": 0,
-            "MeleeDefense": 2,
-            "RangedDefense": 5,
+            "MeleeDefense": 0.6,
+            "RangedDefense": 1.5,
+            "Bravery": 0,
+            "Initiative": 0,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 2.4,
+            "RangedSkill": 0,
+            "MeleeDefense": 0.48,
+            "RangedDefense": 1.2,
             "Bravery": 0,
             "Initiative": 0,
             "Stamina": 0,
@@ -19656,15 +22788,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "UnholdFrost",
-          "hpMultiplier": 1.8333333333333333,
-          "damageMultiplier": 1.2,
+          "hpMultiplier": 1.35,
+          "damageMultiplier": 1.1,
+          "legendsHpMultiplier": 1.2,
           "bonuses": {
-            "MeleeSkill": 20,
+            "MeleeSkill": 7,
             "RangedSkill": 0,
-            "MeleeDefense": 8,
-            "RangedDefense": 10,
+            "MeleeDefense": 2.8,
+            "RangedDefense": 3.5,
             "Bravery": 0,
-            "Initiative": 5,
+            "Initiative": 1.8,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 5.6,
+            "RangedSkill": 0,
+            "MeleeDefense": 2.24,
+            "RangedDefense": 2.8,
+            "Bravery": 0,
+            "Initiative": 1.44,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19688,9 +22831,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "Alp",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -19701,15 +22856,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "Alp",
-          "hpMultiplier": 1.8,
+          "hpMultiplier": 1.3,
           "damageMultiplier": 1,
+          "legendsHpMultiplier": 1.15,
           "bonuses": {
             "MeleeSkill": 0,
             "RangedSkill": 0,
-            "MeleeDefense": 10,
-            "RangedDefense": 10,
-            "Bravery": 10,
-            "Initiative": 20,
+            "MeleeDefense": 3,
+            "RangedDefense": 3,
+            "Bravery": 3,
+            "Initiative": 6,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 0,
+            "RangedSkill": 0,
+            "MeleeDefense": 2.4,
+            "RangedDefense": 2.4,
+            "Bravery": 2.4,
+            "Initiative": 4.8,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19723,15 +22889,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "Alp",
-          "hpMultiplier": 2.6,
+          "hpMultiplier": 1.6,
           "damageMultiplier": 1,
+          "legendsHpMultiplier": 1.35,
           "bonuses": {
             "MeleeSkill": 0,
             "RangedSkill": 0,
-            "MeleeDefense": 18,
-            "RangedDefense": 18,
-            "Bravery": 20,
-            "Initiative": 35,
+            "MeleeDefense": 6.3,
+            "RangedDefense": 6.3,
+            "Bravery": 7,
+            "Initiative": 12.2,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 0,
+            "RangedSkill": 0,
+            "MeleeDefense": 5.04,
+            "RangedDefense": 5.04,
+            "Bravery": 5.6,
+            "Initiative": 9.76,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19755,9 +22932,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "Hexe",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -19768,15 +22957,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "Hexe",
-          "hpMultiplier": 1.75,
+          "hpMultiplier": 1.25,
           "damageMultiplier": 1,
+          "legendsHpMultiplier": 1.1,
           "bonuses": {
             "MeleeSkill": 0,
             "RangedSkill": 0,
-            "MeleeDefense": 10,
-            "RangedDefense": 13,
+            "MeleeDefense": 3,
+            "RangedDefense": 3.9,
             "Bravery": 0,
-            "Initiative": 5,
+            "Initiative": 1.5,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 0,
+            "RangedSkill": 0,
+            "MeleeDefense": 2.4,
+            "RangedDefense": 3.12,
+            "Bravery": 0,
+            "Initiative": 1.2,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19790,15 +22990,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "Hexe",
-          "hpMultiplier": 2.5,
+          "hpMultiplier": 1.5,
           "damageMultiplier": 1,
+          "legendsHpMultiplier": 1.3,
           "bonuses": {
             "MeleeSkill": 0,
             "RangedSkill": 0,
-            "MeleeDefense": 17,
-            "RangedDefense": 20,
+            "MeleeDefense": 5.9,
+            "RangedDefense": 7,
             "Bravery": 0,
-            "Initiative": 10,
+            "Initiative": 3.5,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 0,
+            "RangedSkill": 0,
+            "MeleeDefense": 4.72,
+            "RangedDefense": 5.6,
+            "Bravery": 0,
+            "Initiative": 2.8,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19822,9 +23033,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "SandGolemHIGH",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -19835,15 +23058,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "SandGolemHIGH",
-          "hpMultiplier": 1.5,
-          "damageMultiplier": 1.1,
+          "hpMultiplier": 1.2,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.1,
           "bonuses": {
-            "MeleeSkill": 8,
-            "RangedSkill": 8,
-            "MeleeDefense": 3,
-            "RangedDefense": 5,
+            "MeleeSkill": 2.4,
+            "RangedSkill": 2.4,
+            "MeleeDefense": 0.9,
+            "RangedDefense": 1.5,
             "Bravery": 0,
-            "Initiative": 20,
+            "Initiative": 6,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 1.92,
+            "RangedSkill": 1.92,
+            "MeleeDefense": 0.72,
+            "RangedDefense": 1.2,
+            "Bravery": 0,
+            "Initiative": 4.8,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19857,15 +23091,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "SandGolemHIGH",
-          "hpMultiplier": 2,
-          "damageMultiplier": 1.2,
+          "hpMultiplier": 1.45,
+          "damageMultiplier": 1.1,
+          "legendsHpMultiplier": 1.3,
           "bonuses": {
-            "MeleeSkill": 16,
-            "RangedSkill": 16,
-            "MeleeDefense": 7,
-            "RangedDefense": 10,
+            "MeleeSkill": 5.6,
+            "RangedSkill": 5.6,
+            "MeleeDefense": 2.4,
+            "RangedDefense": 3.5,
             "Bravery": 0,
-            "Initiative": 25,
+            "Initiative": 8.8,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 4.48,
+            "RangedSkill": 4.48,
+            "MeleeDefense": 1.92,
+            "RangedDefense": 2.8,
+            "Bravery": 0,
+            "Initiative": 7.04,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19889,9 +23134,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "Schrat",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -19902,13 +23159,24 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "Schrat",
-          "hpMultiplier": 1.4166666666666667,
-          "damageMultiplier": 1.05,
+          "hpMultiplier": 1.15,
+          "damageMultiplier": 1,
+          "legendsHpMultiplier": 1.05,
           "bonuses": {
-            "MeleeSkill": 10,
+            "MeleeSkill": 3,
             "RangedSkill": 0,
-            "MeleeDefense": 5,
-            "RangedDefense": 5,
+            "MeleeDefense": 1.5,
+            "RangedDefense": 1.5,
+            "Bravery": 0,
+            "Initiative": 0,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 2.4,
+            "RangedSkill": 0,
+            "MeleeDefense": 1.2,
+            "RangedDefense": 1.2,
             "Bravery": 0,
             "Initiative": 0,
             "Stamina": 0,
@@ -19924,15 +23192,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "Schrat",
-          "hpMultiplier": 1.9166666666666667,
-          "damageMultiplier": 1.15,
+          "hpMultiplier": 1.35,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.2,
           "bonuses": {
-            "MeleeSkill": 20,
+            "MeleeSkill": 7,
             "RangedSkill": 0,
-            "MeleeDefense": 13,
-            "RangedDefense": 10,
+            "MeleeDefense": 4.5,
+            "RangedDefense": 3.5,
             "Bravery": 0,
-            "Initiative": 5,
+            "Initiative": 1.8,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 5.6,
+            "RangedSkill": 0,
+            "MeleeDefense": 3.6,
+            "RangedDefense": 2.8,
+            "Bravery": 0,
+            "Initiative": 1.44,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -19956,9 +23235,21 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t25",
           "troop": "Lindwurm",
-          "hpMultiplier": 0.9,
-          "damageMultiplier": 0.95,
-          "bonuses": {},
+          "hpMultiplier": 0.81,
+          "damageMultiplier": 0.9,
+          "legendsHpMultiplier": 0.81,
+          "bonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": -8,
+            "RangedSkill": -8,
+            "MeleeDefense": -5,
+            "RangedDefense": -5
+          },
           "perks": []
         },
         {
@@ -19969,13 +23260,24 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "Lindwurm",
-          "hpMultiplier": 1.6363636363636365,
-          "damageMultiplier": 1.1,
+          "hpMultiplier": 1.2,
+          "damageMultiplier": 1,
+          "legendsHpMultiplier": 1.1,
           "bonuses": {
-            "MeleeSkill": 10,
+            "MeleeSkill": 3,
             "RangedSkill": 0,
-            "MeleeDefense": 5,
-            "RangedDefense": 5,
+            "MeleeDefense": 1.5,
+            "RangedDefense": 1.5,
+            "Bravery": 0,
+            "Initiative": 0,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 2.4,
+            "RangedSkill": 0,
+            "MeleeDefense": 1.2,
+            "RangedDefense": 1.2,
             "Bravery": 0,
             "Initiative": 0,
             "Stamina": 0,
@@ -19991,15 +23293,26 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "Lindwurm",
-          "hpMultiplier": 2.1818181818181817,
-          "damageMultiplier": 1.2,
+          "hpMultiplier": 1.45,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.3,
           "bonuses": {
-            "MeleeSkill": 20,
+            "MeleeSkill": 7,
             "RangedSkill": 0,
-            "MeleeDefense": 10,
-            "RangedDefense": 10,
+            "MeleeDefense": 3.5,
+            "RangedDefense": 3.5,
             "Bravery": 0,
-            "Initiative": 5,
+            "Initiative": 1.8,
+            "Stamina": 0,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 5.6,
+            "RangedSkill": 0,
+            "MeleeDefense": 2.8,
+            "RangedDefense": 2.8,
+            "Bravery": 0,
+            "Initiative": 1.44,
             "Stamina": 0,
             "FatigueRecoveryRate": 0
           },
@@ -20023,17 +23336,28 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "Cultist",
-          "hpMultiplier": 3,
-          "damageMultiplier": 1.15,
+          "hpMultiplier": 1.5,
+          "damageMultiplier": 1,
+          "legendsHpMultiplier": 1.3,
           "bonuses": {
-            "MeleeSkill": 25,
+            "MeleeSkill": 7.5,
             "RangedSkill": 0,
-            "MeleeDefense": 10,
-            "RangedDefense": 8,
-            "Bravery": 20,
-            "Initiative": 10,
-            "Stamina": 50,
-            "FatigueRecoveryRate": 5
+            "MeleeDefense": 3,
+            "RangedDefense": 2.4,
+            "Bravery": 5,
+            "Initiative": 3,
+            "Stamina": 15,
+            "FatigueRecoveryRate": 1.5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 6,
+            "RangedSkill": 0,
+            "MeleeDefense": 2.4,
+            "RangedDefense": 1.92,
+            "Bravery": 4,
+            "Initiative": 2.4,
+            "Stamina": 12,
+            "FatigueRecoveryRate": 1.2
           },
           "perks": []
         },
@@ -20045,17 +23369,28 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "Cultist",
-          "hpMultiplier": 4.666666666666667,
-          "damageMultiplier": 1.25,
+          "hpMultiplier": 1.9,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.6,
           "bonuses": {
-            "MeleeSkill": 40,
-            "RangedSkill": 5,
-            "MeleeDefense": 20,
-            "RangedDefense": 15,
-            "Bravery": 40,
-            "Initiative": 20,
-            "Stamina": 75,
-            "FatigueRecoveryRate": 10
+            "MeleeSkill": 12,
+            "RangedSkill": 1.8,
+            "MeleeDefense": 7,
+            "RangedDefense": 5.2,
+            "Bravery": 10,
+            "Initiative": 7,
+            "Stamina": 26.2,
+            "FatigueRecoveryRate": 3.5
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 9.6,
+            "RangedSkill": 1.44,
+            "MeleeDefense": 5.6,
+            "RangedDefense": 4.16,
+            "Bravery": 8,
+            "Initiative": 5.6,
+            "Stamina": 20.96,
+            "FatigueRecoveryRate": 2.8
           },
           "perks": []
         }
@@ -20077,16 +23412,27 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "Gladiator",
-          "hpMultiplier": 2.3636363636363638,
-          "damageMultiplier": 1.2,
+          "hpMultiplier": 1.6,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.4,
           "bonuses": {
-            "MeleeSkill": 23,
+            "MeleeSkill": 6.9,
             "RangedSkill": 0,
-            "MeleeDefense": 10,
-            "RangedDefense": 10,
-            "Bravery": 20,
-            "Initiative": 10,
-            "Stamina": 25,
+            "MeleeDefense": 3,
+            "RangedDefense": 3,
+            "Bravery": 5,
+            "Initiative": 3,
+            "Stamina": 7.5,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 5.52,
+            "RangedSkill": 0,
+            "MeleeDefense": 2.4,
+            "RangedDefense": 2.4,
+            "Bravery": 4,
+            "Initiative": 2.4,
+            "Stamina": 6,
             "FatigueRecoveryRate": 0
           },
           "perks": []
@@ -20099,17 +23445,28 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "Gladiator",
-          "hpMultiplier": 3.4545454545454546,
-          "damageMultiplier": 1.35,
+          "hpMultiplier": 2.1,
+          "damageMultiplier": 1.1,
+          "legendsHpMultiplier": 1.8,
           "bonuses": {
-            "MeleeSkill": 37,
-            "RangedSkill": 5,
-            "MeleeDefense": 20,
-            "RangedDefense": 18,
-            "Bravery": 35,
-            "Initiative": 20,
-            "Stamina": 50,
-            "FatigueRecoveryRate": 5
+            "MeleeSkill": 12,
+            "RangedSkill": 1.8,
+            "MeleeDefense": 7,
+            "RangedDefense": 6.3,
+            "Bravery": 10,
+            "Initiative": 7,
+            "Stamina": 17.5,
+            "FatigueRecoveryRate": 1.8
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 9.6,
+            "RangedSkill": 1.44,
+            "MeleeDefense": 5.6,
+            "RangedDefense": 5.04,
+            "Bravery": 8,
+            "Initiative": 5.6,
+            "Stamina": 14,
+            "FatigueRecoveryRate": 1.44
           },
           "perks": []
         }
@@ -20131,16 +23488,27 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t4",
           "troop": "Oathbringer",
-          "hpMultiplier": 2.4,
-          "damageMultiplier": 1.2,
+          "hpMultiplier": 1.6,
+          "damageMultiplier": 1.05,
+          "legendsHpMultiplier": 1.4,
           "bonuses": {
-            "MeleeSkill": 20,
-            "RangedSkill": 5,
-            "MeleeDefense": 10,
-            "RangedDefense": 15,
-            "Bravery": 10,
+            "MeleeSkill": 6,
+            "RangedSkill": 1.5,
+            "MeleeDefense": 3,
+            "RangedDefense": 4.5,
+            "Bravery": 3,
             "Initiative": 0,
-            "Stamina": 15,
+            "Stamina": 4.5,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 4.8,
+            "RangedSkill": 1.2,
+            "MeleeDefense": 2.4,
+            "RangedDefense": 3.6,
+            "Bravery": 2.4,
+            "Initiative": 0,
+            "Stamina": 3.6,
             "FatigueRecoveryRate": 0
           },
           "perks": []
@@ -20153,16 +23521,27 @@ window.BV_WIKI_DATA = {
           },
           "tier": "t5",
           "troop": "Oathbringer",
-          "hpMultiplier": 3.68,
-          "damageMultiplier": 1.35,
+          "hpMultiplier": 2.1,
+          "damageMultiplier": 1.1,
+          "legendsHpMultiplier": 1.8,
           "bonuses": {
-            "MeleeSkill": 35,
-            "RangedSkill": 10,
-            "MeleeDefense": 20,
-            "RangedDefense": 23,
-            "Bravery": 20,
-            "Initiative": 5,
-            "Stamina": 40,
+            "MeleeSkill": 12,
+            "RangedSkill": 3.5,
+            "MeleeDefense": 7,
+            "RangedDefense": 8,
+            "Bravery": 7,
+            "Initiative": 1.8,
+            "Stamina": 14,
+            "FatigueRecoveryRate": 0
+          },
+          "legendsBonuses": {
+            "MeleeSkill": 9.6,
+            "RangedSkill": 2.8,
+            "MeleeDefense": 5.6,
+            "RangedDefense": 6.4,
+            "Bravery": 5.6,
+            "Initiative": 1.44,
+            "Stamina": 11.2,
             "FatigueRecoveryRate": 0
           },
           "perks": [
@@ -20179,24 +23558,30 @@ window.BV_WIKI_DATA = {
         "MaxOwned": 3,
         "MinBudget": 1200,
         "MaxBudget": 1800,
-        "MinSize": 12,
-        "MaxSize": 16
+        "MinSize": 10,
+        "MaxSize": 12,
+        "MaxT4": 2,
+        "MaxT5": 0
       },
       {
         "MinOwned": 4,
         "MaxOwned": 7,
         "MinBudget": 2000,
         "MaxBudget": 2800,
-        "MinSize": 16,
-        "MaxSize": 22
+        "MinSize": 12,
+        "MaxSize": 16,
+        "MaxT4": 3,
+        "MaxT5": 1
       },
       {
         "MinOwned": 8,
         "MaxOwned": 12,
         "MinBudget": 3200,
         "MaxBudget": 4200,
-        "MinSize": 22,
-        "MaxSize": 28
+        "MinSize": 16,
+        "MaxSize": 20,
+        "MaxT4": 4,
+        "MaxT5": 2
       }
     ],
     "themes": [
@@ -20809,8 +24194,8 @@ window.BV_WIKI_DATA = {
         "zh": "确认后在附近显露并持续高亮营地。叶瞬光须实际参战并存活获胜，不要求最后一击。"
       },
       "delivery": {
-        "en": "Your reward is recorded and delivery is pending. Free a stash slot; subsequent event checks will retry. Saving and loading preserves your entitlement.",
-        "zh": "奖励已记账，暂未发放。请腾出行囊空间；稍后事件检查会自动重试，读档不会丢失奖励。"
+        "en": "Your reward entitlement is saved, but delivery is pending. It will retry and survives loading. Check the log if delivery continues to fail.",
+        "zh": "奖励资格已保留，尚未完成发放。稍后会自动重试，读档不会丢失；持续失败时请查看日志。"
       },
       "progression": {
         "en": "Progress through 20 / 40 / 60 / 80 / 100 bond in order. Each stage has two story pages and one camp; an unfinished earlier challenge blocks the next. This campaign does not require the Yunki chapter. Story rings are keepsakes, not equipment rewards.",
@@ -21642,6 +25027,11 @@ window.BV_WIKI_DATA = {
         "StaminaModifier": 20,
         "Value": 15000
       },
+      "image": "assets/items/items/battle-valkyries/grail_oath_ring.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
       "source": "scripts/items/accessory/battle_valkyries/grail_oath_ring.nut"
     },
     {
@@ -21661,6 +25051,11 @@ window.BV_WIKI_DATA = {
       "stats": {
         "Value": 30000
       },
+      "image": "assets/items/items/battle-valkyries/himeko_trailblazer_summoner.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
       "source": "scripts/items/accessory/battle_valkyries/himeko_trailblazer_summoner.nut"
     },
     {
@@ -21679,6 +25074,11 @@ window.BV_WIKI_DATA = {
       },
       "stats": {
         "Value": 12000
+      },
+      "image": "assets/items/items/battle-valkyries/liuying_sam_core.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
       },
       "source": "scripts/items/accessory/battle_valkyries/liuying_sam_core_item.nut"
     },
@@ -21701,6 +25101,11 @@ window.BV_WIKI_DATA = {
         "StaminaModifier": -6,
         "Value": 30000
       },
+      "image": "assets/items/items/battle-valkyries/grail_court_armor.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
       "source": "scripts/items/armor/battle_valkyries/grail_court_armor.nut"
     },
     {
@@ -21721,6 +25126,11 @@ window.BV_WIKI_DATA = {
         "Value": 20000,
         "ConditionMax": 300,
         "StaminaModifier": -4
+      },
+      "image": "assets/items/items/battle-valkyries/himeko_navigator_armor.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
       },
       "source": "scripts/items/armor/battle_valkyries/himeko_navigator_armor.nut"
     },
@@ -21743,6 +25153,11 @@ window.BV_WIKI_DATA = {
         "ConditionMax": 300,
         "StaminaModifier": -8
       },
+      "image": "assets/bonds/items/battle-valkyries/ye_shunguang_homeward_vestment.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
       "owner": {
         "en": "Only Ye Shunguang may equip this item.",
         "zh": "仅叶瞬光可装备。"
@@ -21751,7 +25166,6 @@ window.BV_WIKI_DATA = {
         "en": "Initiative +10.",
         "zh": "主动值 +10。"
       },
-      "image": "assets/bonds/items/battle-valkyries/ye_shunguang_homeward_vestment.png",
       "source": "scripts/items/armor/battle_valkyries/ye_shunguang_homeward_vestment.nut"
     },
     {
@@ -21772,6 +25186,11 @@ window.BV_WIKI_DATA = {
         "ConditionMax": 400,
         "StaminaModifier": -4,
         "Value": 25000
+      },
+      "image": "assets/items/items/battle-valkyries/grail_court_helmet.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
       },
       "source": "scripts/items/helmets/battle_valkyries/grail_court_helmet.nut"
     },
@@ -21794,6 +25213,11 @@ window.BV_WIKI_DATA = {
         "ConditionMax": 300,
         "StaminaModifier": -4
       },
+      "image": "assets/items/items/battle-valkyries/himeko_navigator_circlet.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
       "source": "scripts/items/helmets/battle_valkyries/himeko_navigator_circlet.nut"
     },
     {
@@ -21815,6 +25239,11 @@ window.BV_WIKI_DATA = {
         "ConditionMax": 240,
         "StaminaModifier": -4
       },
+      "image": "assets/bonds/items/battle-valkyries/ye_shunguang_heartbound_circlet.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
       "owner": {
         "en": "Only Ye Shunguang may equip this item.",
         "zh": "仅叶瞬光可装备。"
@@ -21823,7 +25252,6 @@ window.BV_WIKI_DATA = {
         "en": "Resolve +10.",
         "zh": "决心 +10。"
       },
-      "image": "assets/bonds/items/battle-valkyries/ye_shunguang_heartbound_circlet.png",
       "source": "scripts/items/helmets/battle_valkyries/ye_shunguang_heartbound_circlet.nut"
     },
     {
@@ -21842,6 +25270,11 @@ window.BV_WIKI_DATA = {
       },
       "stats": {
         "Value": 0
+      },
+      "image": "assets/items/items/battle-valkyries/four_oaths_grail.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
       },
       "source": "scripts/items/misc/battle_valkyries/four_oaths_grail.nut"
     },
@@ -21870,6 +25303,11 @@ window.BV_WIKI_DATA = {
         "RangeMin": 1,
         "RangeMax": 1
       },
+      "image": "assets/items/items/battle-valkyries/castorice_liuchun.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
       "source": "scripts/items/weapons/battle_valkyries/castorice_liuchun.nut"
     },
     {
@@ -21896,6 +25334,11 @@ window.BV_WIKI_DATA = {
         "RegularDamageMax": 80,
         "ArmorDamageMult": 1.3,
         "DirectDamageMult": 0.35
+      },
+      "image": "assets/items/items/battle-valkyries/enterprise_dauntless_wings_70x70.png",
+      "tooltip": {
+        "en": "Only Enterprise can equip this bow. Carrier Fire Control: Eagle Guidance has range 2–7; the bow's +5 accuracy stacks with its +10. Eagle Beacon: replaces Air Lock's aviation bonus against its target with +15 accuracy and ×1.35 base damage. Return and Refit: an airstrike hitting the locked target restores 4 Fatigue, once per global round, including killing blows. Swapping, waiting and extra turns do not reset this limit. Uses normal arrows; aviation retains independent base damage. Always generates as Prismatic Legendary with the equipment system enabled.",
+        "zh": "仅限企业装备。舰装火控：鹰之指引射程 2–7，武器命中 +5 与技能 +10 相加。白鹰航标：航空锁定对该目标的空袭加成替换为命中 +15、基础伤害 ×1.35。归航整备：空袭命中锁定目标后恢复 4 疲劳，每全局轮次一次，击杀亦可触发。换装、等待和额外回合不重置次数。消耗原版箭矢，空袭不继承弓的基础伤害。开启装备系统后固定生成彩色传奇品质。"
       },
       "source": "scripts/items/weapons/battle_valkyries/enterprise_dauntless_wings.nut"
     },
@@ -21924,6 +25367,11 @@ window.BV_WIKI_DATA = {
         "RangeMin": 1,
         "RangeMax": 2
       },
+      "image": "assets/items/items/battle-valkyries/grail_gungnir.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
       "source": "scripts/items/weapons/battle_valkyries/grail_gungnir.nut"
     },
     {
@@ -21951,7 +25399,44 @@ window.BV_WIKI_DATA = {
         "ArmorDamageMult": 1.75,
         "DirectDamageMult": 0.45
       },
+      "image": "assets/items/items/battle-valkyries/himeko_astral_lance_70x70.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
       "source": "scripts/items/weapons/battle_valkyries/himeko_astral_lance.nut"
+    },
+    {
+      "id": "hina_the_end_destroyer",
+      "name": {
+        "en": "The End: Destroyer",
+        "zh": "终幕 毁灭者"
+      },
+      "description": {
+        "en": "Exclusive signature firearm. Its magazine or heat belongs to its owner and is not reset by changing equipment.",
+        "zh": "专属枪械。弹匣或热量保存在持有者的本场战斗状态中，换装不会重置。"
+      },
+      "acquisition": {
+        "en": "Granted and equipped when recruiting Sorasaki Hina. Only Hina may equip it; required by her gun skills.",
+        "zh": "招募空崎日奈时配发并装备，仅限日奈使用；枪械技能需要装备此专武。"
+      },
+      "stats": {
+        "Value": 12000,
+        "StaminaModifier": -15,
+        "RangeMin": 1,
+        "RangeMax": 7,
+        "ConditionMax": 100,
+        "RegularDamage": 50,
+        "RegularDamageMax": 70,
+        "ArmorDamageMult": 1.6,
+        "DirectDamageMult": 0.35
+      },
+      "image": "assets/items/items/battle-valkyries/sorasaki_hina_weapon_icon.png",
+      "tooltip": {
+        "en": "Only Sorasaki Hina may equip this weapon. Occupies both hands; no consumable ammunition.",
+        "zh": "仅空崎日奈可装备，双手占位，不消耗背包弹药。"
+      },
+      "source": "scripts/items/weapons/battle_valkyries/hina_the_end_destroyer.nut"
     },
     {
       "id": "hysilens_returning_oath",
@@ -21977,6 +25462,11 @@ window.BV_WIKI_DATA = {
         "DirectDamageMult": 0.4,
         "RangeMin": 1,
         "RangeMax": 1
+      },
+      "image": "assets/items/items/battle-valkyries/hysilens_returning_oath.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
       },
       "source": "scripts/items/weapons/battle_valkyries/hysilens_returning_oath.nut"
     },
@@ -22005,6 +25495,11 @@ window.BV_WIKI_DATA = {
         "ArmorDamageMult": 1.25,
         "DirectDamageMult": 0.35
       },
+      "image": "assets/items/items/battle-valkyries/jeanne_eternal_standard_70x70.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
       "source": "scripts/items/weapons/battle_valkyries/jeanne_eternal_standard.nut"
     },
     {
@@ -22032,7 +25527,44 @@ window.BV_WIKI_DATA = {
         "ArmorDamageMult": 1.6,
         "DirectDamageMult": 0.45
       },
+      "image": "assets/items/items/battle-valkyries/m4a1_homecoming_rifle_70x70.png",
+      "tooltip": {
+        "en": "M4A1 only; occupies both hands; Maximum Fatigue -10. Base damage 65-85, range 1-7. Each battle: 12 standard rounds loaded, 36 standard and 24 AP in reserve. Uses no campaign ammunition supplies. Re-equipping never refills ammunition.",
+        "zh": "仅限 M4A1 装备，双手占用，最大疲劳 -10。基础伤害 65-85，射程 1-7。每战 12 发标准弹装填、36 发备用标准弹和 24 发穿甲弹；不消耗原版弹药物资。换装不会补弹。"
+      },
       "source": "scripts/items/weapons/battle_valkyries/m4a1_homecoming_rifle.nut"
+    },
+    {
+      "id": "mika_quis_ut_deus",
+      "name": {
+        "en": "Quis ut Deus",
+        "zh": "Quis ut Deus"
+      },
+      "description": {
+        "en": "Exclusive signature firearm. Its magazine or heat belongs to its owner and is not reset by changing equipment.",
+        "zh": "专属枪械。弹匣或热量保存在持有者的本场战斗状态中，换装不会重置。"
+      },
+      "acquisition": {
+        "en": "Granted and equipped when recruiting Misono Mika. Only Mika may equip it; required by her gun skills.",
+        "zh": "招募圣园未花时配发并装备，仅限未花使用；枪械技能需要装备此专武。"
+      },
+      "stats": {
+        "Value": 12000,
+        "StaminaModifier": -10,
+        "RangeMin": 1,
+        "RangeMax": 5,
+        "ConditionMax": 100,
+        "RegularDamage": 70,
+        "RegularDamageMax": 90,
+        "ArmorDamageMult": 1.8,
+        "DirectDamageMult": 0.5
+      },
+      "image": "assets/items/items/battle-valkyries/misono_mika_weapon_icon.png",
+      "tooltip": {
+        "en": "Only Misono Mika may equip this weapon. Occupies both hands; no consumable ammunition.",
+        "zh": "仅圣园未花可装备，双手占位，不消耗背包弹药。"
+      },
+      "source": "scripts/items/weapons/battle_valkyries/mika_quis_ut_deus.nut"
     },
     {
       "id": "xilian_infinite_oath_bow",
@@ -22059,6 +25591,11 @@ window.BV_WIKI_DATA = {
         "ArmorDamageMult": 2,
         "DirectDamageMult": 0.5
       },
+      "image": "assets/items/items/battle-valkyries/xilian_memory_bow_70x70.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
       "source": "scripts/items/weapons/battle_valkyries/xilian_infinite_oath_bow.nut"
     },
     {
@@ -22081,6 +25618,10 @@ window.BV_WIKI_DATA = {
         "StaminaModifier": -12,
         "RangeMin": 1,
         "RangeMax": 2
+      },
+      "tooltip": {
+        "en": "",
+        "zh": ""
       },
       "source": "scripts/items/weapons/battle_valkyries/ye_shunguang_qingming_casket.nut"
     }
@@ -27328,6 +30869,1041 @@ window.BV_WIKI_DATA = {
       }
     },
     {
+      "key": "suisui_clear_current",
+      "icon": "suisui_clear_current",
+      "image": "assets/skills/suisui_clear_current.png",
+      "kind": "passive",
+      "lifetime": "persistent",
+      "spec": {},
+      "text": {
+        "en": {
+          "name": "Clear Current",
+          "description": "At each normal turn start, heal up to 3 injured roster allies within 3 tiles (including self), lowest HP ratio first, for 8 + 0.04R HP. R is current Resolve capped at 150.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "清流往复",
+          "description": "每个正常回合开始，治疗自身3格内缺血比例最高的最多3名名册友军（含自己）各8+0.04R生命。满血者不占名额；不会清除硬控或伤残。R=100为每人12，总量至多36。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "suisui_water_fan",
+      "icon": "suisui_water_fan",
+      "image": "assets/skills/suisui_water_fan.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 3,
+        "Fatigue": 12,
+        "Min": 1,
+        "Max": 5,
+        "Cooldown": 0,
+        "Resource": 0,
+        "Damage": 60,
+        "Resolve": 0.35,
+        "Armor": 1.25,
+        "Pierce": 0.3,
+        "Hit": 20,
+        "Melee": false,
+        "Weapon": false,
+        "IgnoreShield": false
+      },
+      "text": {
+        "en": {
+          "name": "Water Fan",
+          "description": "Deal 60 + 0.35R damage at range 1-5 with +20 ranged accuracy, 125% armor damage and 30% penetration. On hit, chain once to the nearest visible enemy within 1 tile of the original target for half damage with an independent hit roll.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "水扇牵丝",
+          "description": "3 AP / 12疲劳；1–5格，60+0.35R伤害。命中后向主目标1格内另一名最近可见敌人连锁一次，伤害50%；独立命中，不继续扩散。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "suisui_spring_mountain",
+      "icon": "suisui_spring_mountain",
+      "image": "assets/skills/suisui_spring_mountain.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 3,
+        "Fatigue": 18,
+        "Min": 0,
+        "Max": 4,
+        "Cooldown": 2,
+        "Resource": 0,
+        "Damage": 0,
+        "Resolve": 0,
+        "Armor": 1,
+        "Pierce": 0,
+        "Hit": 0,
+        "Melee": false,
+        "Weapon": false,
+        "IgnoreShield": false
+      },
+      "text": {
+        "en": {
+          "name": "Spring Mountain",
+          "description": "Heal the selected roster ally and up to 2 injured roster allies within 1 tile for 25 + 0.15R HP each. Remove one bleeding or poison effect per recipient. Range 0-4; cooldown 2 normal turns.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "春山可望",
+          "description": "3 AP / 18疲劳；0–4格选择己方，治疗主目标及其1格内最多2名缺血比例最高的队友，各25+0.15R生命；每人移除1项流血或中毒。冷却2。主目标满血但需要净化时仍合法，不解除眩晕、缴械或永久伤残。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "suisui_river_realm",
+      "icon": "suisui_river_realm",
+      "image": "assets/skills/suisui_river_realm.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 5,
+        "Fatigue": 30,
+        "Min": 0,
+        "Max": 3,
+        "Cooldown": 4,
+        "Resource": 0,
+        "Damage": 0,
+        "Resolve": 0,
+        "Armor": 1,
+        "Pierce": 0,
+        "Hit": 0,
+        "Melee": false,
+        "Weapon": false,
+        "IgnoreShield": false
+      },
+      "text": {
+        "en": {
+          "name": "River Realm",
+          "description": "Create a stationary radius-2 realm within 3 tiles for 2 normal turns. Heal roster allies inside for 20 HP immediately. While inside: +20% paid direct attack damage and -20% ordinary damage taken. Replaces the previous realm. Cooldown 4; suspended while the caster is incapacitated.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "山河水境",
+          "description": "5 AP / 30疲劳；0–3格选择可见地面，建立半径2固定水境，持续2个自身回合，冷却4。施放时境内名册友军各治疗20；身在境内时主动直接攻击伤害+20%、所受普通伤害−20%。离开即失去两项加成；不随穗穗移动，不给额外AP，也不额外触发被动回血。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "misono_mika_innocent_strength",
+      "icon": "misono_mika_innocent_strength",
+      "image": "assets/skills/misono_mika_innocent_strength.png",
+      "kind": "passive",
+      "lifetime": "persistent",
+      "spec": {},
+      "text": {
+        "en": {
+          "name": "Innocent Strength",
+          "description": "Take 20% less ordinary damage. The signature SMG can fire adjacent to enemies. Gun attacks gain +10 accuracy at range 1-2; beyond range 3, lose 5 accuracy per tile. Magazine: 3 bursts at battle start; equipment changes do not refill it.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "天真的怪力",
+          "description": "所受普通伤害−20%。专武可在贴身时射击，不承受额外“邻敌封枪/邻敌减命中”；1–2格枪击额外命中+10。距离4–5格每超过3格命中−5。仍受视线、高差、远程防御与适用控制影响，不保证暴击或命中。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "misono_mika_starlight_burst",
+      "icon": "misono_mika_starlight_burst",
+      "image": "assets/skills/misono_mika_starlight_burst.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 4,
+        "Fatigue": 18,
+        "Min": 1,
+        "Max": 5,
+        "Cooldown": 0,
+        "Resource": 1,
+        "Damage": 0,
+        "Resolve": 0,
+        "Armor": 1.8,
+        "Pierce": 0.5,
+        "Hit": 15,
+        "Melee": false,
+        "Weapon": true,
+        "IgnoreShield": false
+      },
+      "text": {
+        "en": {
+          "name": "Starlight Burst",
+          "description": "Spend 1 magazine group. Fire two independently rolled 1.0x weapon hits at one enemy, range 1-5, +15 ranged accuracy, 180% armor damage, 50% penetration. Stop when the target dies.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "星光连射",
+          "description": "4 AP / 18疲劳 / 1弹组；1–5格同一目标两段1.0M，远程命中+15；对甲1.8、穿甲50%。每段独立命中，目标死亡立即停。按整次动作消耗1弹组，不退未播放的弹光。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "misono_mika_trinity_breach",
+      "icon": "misono_mika_trinity_breach",
+      "image": "assets/skills/misono_mika_trinity_breach.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 2,
+        "Fatigue": 12,
+        "Min": 1,
+        "Max": 2,
+        "Cooldown": 3,
+        "Resource": 0,
+        "Damage": 0,
+        "Resolve": 0,
+        "Armor": 1,
+        "Pierce": 0,
+        "Hit": 0,
+        "Melee": false,
+        "Weapon": true,
+        "IgnoreShield": false
+      },
+      "text": {
+        "en": {
+          "name": "Trinity Breach",
+          "description": "Move along an empty path up to 2 tiles without attacks of opportunity; end within 2 tiles of a visible enemy. Gain a 40 HP barrier until the next normal turn. Cannot move while rooted. Cooldown 3.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "圣三一突破",
+          "description": "2 AP / 12疲劳；沿最多2格合法空路径移动，不触发借机；落点必须位于某个可见敌人2格内。获得自身40生命护盾，持续至下次正常回合开始，冷却3。不可原地刷盾；不增加武器伤害，不解除控制。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "misono_mika_star_magazine",
+      "icon": "misono_mika_star_magazine",
+      "image": "assets/skills/misono_mika_star_magazine.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 2,
+        "Fatigue": 8,
+        "Min": 0,
+        "Max": 0,
+        "Cooldown": 0,
+        "Resource": 0,
+        "Damage": 0,
+        "Resolve": 0,
+        "Armor": 1,
+        "Pierce": 0,
+        "Hit": 0,
+        "Melee": false,
+        "Weapon": true,
+        "IgnoreShield": false
+      },
+      "text": {
+        "en": {
+          "name": "Star Magazine",
+          "description": "Refill the equipped signature SMG to 3 groups. Requires a non-full magazine. Does not refund fatigue or trigger attack discounts.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "星匣更替",
+          "description": "2 AP / 8疲劳；需要装备专武且未满匣，补至3弹组。无疲劳返还；装填本身不触发攻击、充能或任何武器攻击AP折扣。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "misono_mika_kyrie_eleison",
+      "icon": "misono_mika_kyrie_eleison",
+      "image": "assets/skills/misono_mika_kyrie_eleison.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 6,
+        "Fatigue": 35,
+        "Min": 1,
+        "Max": 5,
+        "Cooldown": 2,
+        "Resource": 2,
+        "Damage": 0,
+        "Resolve": 0,
+        "Armor": 1.8,
+        "Pierce": 0.5,
+        "Hit": 25,
+        "Melee": false,
+        "Weapon": true,
+        "IgnoreShield": true
+      },
+      "text": {
+        "en": {
+          "name": "Kyrie Eleison",
+          "description": "Spend 2 magazine groups. Against one enemy at range 1-5, fire four 0.45x hits and one 2.2x finisher. +25 accuracy, ignores shields, 180% armor damage and 50% penetration. Damage increases by up to 25% with the target HP ratio at cast. Stop on death; cooldown 2.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "圣光裁断",
+          "description": "6 AP / 35疲劳 / 2弹组；1–5格单体，四段0.45M＋终结段2.2M，共4.0M。命中+25、忽略盾牌，对甲1.8、穿甲50%。按发动时目标生命比例附加0–25%伤害，五段共用快照；冷却2。目标死亡停火，不溢出转移。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "sorasaki_hina_cold_prefect",
+      "icon": "sorasaki_hina_cold_prefect",
+      "image": "assets/skills/sorasaki_hina_cold_prefect.png",
+      "kind": "passive",
+      "lifetime": "persistent",
+      "spec": {},
+      "text": {
+        "en": {
+          "name": "Cold Prefect",
+          "description": "Signature gun hits suppress: -15 melee/ranged skill and -20 initiative through the target next normal turn end; damage against Hina is reduced by 15%. Gun accuracy +10 until Hina moves this normal turn. Heat 0-8, starting at 0; cool 1 on subsequent normal turns.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "冷彻的风纪委员长",
+          "description": "专武命中使目标压制：近/远程技能−15、先攻−20，至目标下次正常行动结束；同名不叠加。该目标对日奈伤害−15%。日奈在本次正常回合尚未移动时，枪击额外命中+10；任何主动或被动位移都失去该加成，等下一正常回合恢复。压制免疫只屏蔽减益。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "sorasaki_hina_cold_burst",
+      "icon": "sorasaki_hina_cold_burst",
+      "image": "assets/skills/sorasaki_hina_cold_burst.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 3,
+        "Fatigue": 12,
+        "Min": 1,
+        "Max": 7,
+        "Cooldown": 0,
+        "Resource": 2,
+        "Damage": 0,
+        "Resolve": 0,
+        "Armor": 1.6,
+        "Pierce": 0.35,
+        "Hit": 15,
+        "Melee": false,
+        "Weapon": true,
+        "IgnoreShield": false
+      },
+      "text": {
+        "en": {
+          "name": "Cold Burst",
+          "description": "Gain 2 heat. Fire two 0.8x weapon hits at one enemy, range 1-7, +15 accuracy, 160% armor damage, 35% penetration. Beyond 4 tiles: -4 accuracy per tile. Adjacent enemies: -20 accuracy. Stop on death; cannot exceed 8 heat.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "冷彻点射",
+          "description": "3 AP / 12疲劳 / 热量+2；1–7格同一目标两段0.8H，对甲1.6、穿甲35%、命中+15。超过4格每格命中−4；有相邻敌人时命中再−20，但仍可射击。逐段命中，击杀停止。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "sorasaki_hina_cool_reload",
+      "icon": "sorasaki_hina_cool_reload",
+      "image": "assets/skills/sorasaki_hina_cool_reload.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 3,
+        "Fatigue": 0,
+        "Min": 0,
+        "Max": 0,
+        "Cooldown": 2,
+        "Resource": 0,
+        "Damage": 0,
+        "Resolve": 0,
+        "Armor": 1,
+        "Pierce": 0,
+        "Hit": 0,
+        "Melee": false,
+        "Weapon": true,
+        "IgnoreShield": false
+      },
+      "text": {
+        "en": {
+          "name": "Calm Reload",
+          "description": "Remove 6 heat and recover 20 fatigue. Cooldown 2 normal turns. Unavailable when both heat and fatigue are zero. Does not trigger attack discounts.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "冷静再装填",
+          "description": "3 AP / 0疲劳；热量−6，并恢复20疲劳；冷却2。热量为0且疲劳为0时不可用。不返AP、不产生攻击事件，不能享受枪击的AP折扣。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "sorasaki_hina_final_sweep",
+      "icon": "sorasaki_hina_final_sweep",
+      "image": "assets/skills/sorasaki_hina_final_sweep.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 6,
+        "Fatigue": 35,
+        "Min": 2,
+        "Max": 6,
+        "Cooldown": 2,
+        "Resource": 5,
+        "Damage": 0,
+        "Resolve": 0,
+        "Armor": 1.6,
+        "Pierce": 0.35,
+        "Hit": 10,
+        "Melee": false,
+        "Weapon": true,
+        "IgnoreShield": false
+      },
+      "text": {
+        "en": {
+          "name": "Final Sweep",
+          "description": "Gain 5 heat. Attack up to 5 previewed enemies in a 60-degree cone, range 2-6, selected target first. Four 0.65x weapon hits per enemy; +10 accuracy, 160% armor damage, 35% penetration. Obeys line of sight and shields; no friendly fire. Unavailable adjacent to enemies. Cooldown 2.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "终幕扫射",
+          "description": "6 AP / 35疲劳 / 热量+5；2–6格、面向选定方向的60度六角扇区，按预览攻击最多5名敌人，每人四段0.65H。命中+10，对甲1.6、穿甲35%；冷却2。优先选中目标，其余按距离/ID；尊重障碍与盾牌，不伤友军，有相邻敌人时不可使用。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "xin_myriad_reflections",
+      "icon": "xin_myriad_reflections",
+      "image": "assets/skills/xin_myriad_reflections.png",
+      "kind": "passive",
+      "lifetime": "persistent",
+      "spec": {},
+      "text": {
+        "en": {
+          "name": "Myriad Reflections",
+          "description": "Other roster allies within 5 tiles record paid direct attacks that deal HP or armor damage. Alternating melee/ranged attacks from different allies consume 1 reflection to follow up for 65 + 0.25R damage: +20 ranged accuracy, 150% armor damage, 40% penetration, range 6. At most 2 per round; no free-attack recursion. Start with 2/3 reflections, regain 1 on subsequent normal turns.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "万相分形",
+          "description": "心5格内的其他名册队友完成付费直接攻击且实际造成生命或护甲伤害，记录攻击者及近战/远程类别。与上一条合格记录来自不同队友且类别相反时，若主目标仍在心6格内、可见且存活，消耗1镜相追加65+0.25R伤害（对甲1.5、穿甲40%，远程命中+20）。每轮最多2次、每父行动一次；无镜相或目标死亡不消耗次数。每条合格记录都会更新上一条，心自己的攻击、DOT与免费追击不参与记录。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "xin_worldly_form",
+      "icon": "xin_worldly_form",
+      "image": "assets/skills/xin_worldly_form.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 3,
+        "Fatigue": 12,
+        "Min": 1,
+        "Max": 5,
+        "Cooldown": 0,
+        "Resource": 0,
+        "Damage": 60,
+        "Resolve": 0.35,
+        "Armor": 1.25,
+        "Pierce": 0.3,
+        "Hit": 20,
+        "Melee": false,
+        "Weapon": false,
+        "IgnoreShield": false
+      },
+      "text": {
+        "en": {
+          "name": "Worldly Form",
+          "description": "Deal 60 + 0.35R damage at range 1-5, +20 ranged accuracy, 125% armor damage, 30% penetration. On hit regain 1 reflection, at most once per round. Does not count as an alternating ally.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "应世之相",
+          "description": "3 AP / 12疲劳；1–5格单体，60+0.35R普通伤害；至少命中则镜相+1，每轮此技能最多回1。自身攻击不产生“交替队友”记录。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "xin_unified_thought",
+      "icon": "xin_unified_thought",
+      "image": "assets/skills/xin_unified_thought.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 2,
+        "Fatigue": 12,
+        "Min": 0,
+        "Max": 0,
+        "Cooldown": 3,
+        "Resource": 0,
+        "Damage": 0,
+        "Resolve": 0,
+        "Armor": 1,
+        "Pierce": 0,
+        "Hit": 0,
+        "Melee": false,
+        "Weapon": false,
+        "IgnoreShield": false
+      },
+      "text": {
+        "en": {
+          "name": "Unified Thought",
+          "description": "Gain 2 reflections, capped at 3. Reduce the next hostile direct attack action damage by 30%, including all its segments, until the next normal turn. Cooldown 3.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "万念归一",
+          "description": "2 AP / 12疲劳；镜相+2，并获得下一次敌方直接攻击行动伤害−30%的护持，持续至下次正常回合开始；冷却3。护持只覆盖一个父行动的各段，不提供绝对闪避。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "xin_myriad_palace",
+      "icon": "xin_myriad_palace",
+      "image": "assets/skills/xin_myriad_palace.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 5,
+        "Fatigue": 30,
+        "Min": 0,
+        "Max": 4,
+        "Cooldown": 4,
+        "Resource": 0,
+        "Damage": 0,
+        "Resolve": 0,
+        "Armor": 1,
+        "Pierce": 0,
+        "Hit": 0,
+        "Melee": false,
+        "Weapon": false,
+        "IgnoreShield": false
+      },
+      "text": {
+        "en": {
+          "name": "Myriad Palace",
+          "description": "Create a stationary radius-3 palace within 4 tiles for 2 normal turns and refill reflections to 3. If both alternating allies are inside, follow-up damage becomes 1.5x and the round cap rises to 3. Each follow-up still costs 1 reflection. Cooldown 4.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "万相神宫",
+          "description": "5 AP / 30疲劳；0–4格可见地面建立半径3神宫，持续2个自身回合，冷却4；立即把镜相补到3。两位触发交替的队友都身在神宫时，协同倍率变为1.5、每轮总上限从2升至3。仍逐次消耗镜相，射程/视线不变；不会因为两人走出再走入刷新次数，也不直接造成范围伤害。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "shizuna_observing_eye",
+      "icon": "shizuna_observing_eye",
+      "image": "assets/skills/shizuna_observing_eye.png",
+      "kind": "passive",
+      "lifetime": "persistent",
+      "spec": {},
+      "text": {
+        "en": {
+          "name": "Observing Eye",
+          "description": "Melee defense +10. Gain 1 insight on your first paid melee hit each round, and 1 when your studied enemy first misses you in melee. If that enemy is adjacent, counter once per round for 1.25x melee weapon damage, +20 accuracy and 150% armor damage. Free counters do not charge insight. Start with 2/3 insight.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "观之眼",
+          "description": "近战防御+10。被见切锁定的敌人在1格内近战攻击静名并未命中时，发动1.25W反击，近战命中+20、对甲1.5、穿甲沿武器；每全局轮最多一次，需合法近战武器。只响应读招对象，不因多人围攻产生连续反击。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "shizuna_black_flash",
+      "icon": "shizuna_black_flash",
+      "image": "assets/skills/shizuna_black_flash.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 4,
+        "Fatigue": 18,
+        "Min": 1,
+        "Max": 3,
+        "Cooldown": 0,
+        "Resource": 0,
+        "Damage": 0,
+        "Resolve": 0,
+        "Armor": 1.5,
+        "Pierce": 0.15,
+        "Hit": 20,
+        "Melee": true,
+        "Weapon": true,
+        "IgnoreShield": false
+      },
+      "text": {
+        "en": {
+          "name": "Black Flash",
+          "description": "Select an enemy within 3 tiles. Move at most 2 empty tiles to an adjacent position, provoking normal attacks of opportunity, then strike for 1.4x melee weapon damage, +20 accuracy, 150% armor damage and +15 percentage points penetration (cap 70%). Ignores shields against your studied target.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "黑神一闪",
+          "description": "4 AP / 18疲劳；1–3格选敌，可沿最多2格空路径切入相邻落点，再进行1.4W攻击，命中+20、对甲1.5、额外穿甲+15个百分点（上限70%）。目标已有见切时忽略盾牌。移动不免借机；已有相邻目标可原地斩。无合法落点不能发动。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "shizuna_silver_parry",
+      "icon": "shizuna_silver_parry",
+      "image": "assets/skills/shizuna_silver_parry.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 2,
+        "Fatigue": 12,
+        "Min": 1,
+        "Max": 3,
+        "Cooldown": 2,
+        "Resource": 0,
+        "Damage": 0,
+        "Resolve": 0,
+        "Armor": 1,
+        "Pierce": 0,
+        "Hit": 0,
+        "Melee": true,
+        "Weapon": true,
+        "IgnoreShield": false
+      },
+      "text": {
+        "en": {
+          "name": "Silver Parry",
+          "description": "Study one visible enemy within 3 tiles for 2 normal turns. Against only that enemy melee attacks: +25 melee defense and -20% damage taken. Replaces the previous target. Does not taunt. Cooldown 2.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "白银见切",
+          "description": "2 AP / 12疲劳；1–3格指定唯一可见敌人，持续2个自身回合，冷却2。仅对该敌人的近战攻击获得额外近防+25、所受伤害−20%；不强迫AI攻击她。换目标撤销旧见切，远程与其他敌人不受该防御限制。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "shizuna_severing_world",
+      "icon": "shizuna_severing_world",
+      "image": "assets/skills/shizuna_severing_world.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 6,
+        "Fatigue": 32,
+        "Min": 1,
+        "Max": 2,
+        "Cooldown": 2,
+        "Resource": 3,
+        "Damage": 0,
+        "Resolve": 0,
+        "Armor": 2,
+        "Pierce": 0.25,
+        "Hit": 30,
+        "Melee": true,
+        "Weapon": true,
+        "IgnoreShield": true
+      },
+      "text": {
+        "en": {
+          "name": "Severing World",
+          "description": "Spend 3 insight. One 3.4x weapon hit at range 1-2; 4.0x against your studied enemy, consuming the study even on a miss. +30 accuracy, ignores shields, 200% armor damage and +25 percentage points penetration (cap 75%). Cooldown 2.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "黑神奥义 断界",
+          "description": "6 AP / 32疲劳 / 3明镜；1–2格单体，一次3.4W重斩；目标有本人的见切时提高到4.0W，并消耗见切，无论命中与否。命中+30、忽略盾牌、对甲2.0、额外穿甲+25个百分点（上限75%），冷却2。不溅射、不再附一串固定伤害。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "lumiore_golden_prestige",
+      "icon": "lumiore_golden_prestige",
+      "image": "assets/skills/lumiore_golden_prestige.png",
+      "kind": "passive",
+      "lifetime": "persistent",
+      "spec": {},
+      "text": {
+        "en": {
+          "name": "Golden Prestige",
+          "description": "Start with 5/6 scales and 1/3 prestige; regain 2 scales on subsequent normal turns. Paid scale consumption grants equal prestige, except Golden Dragon. The first such action each round echoes after resolving: up to 3 enemies within 1 tile of the cast target position take 25 + 0.25R damage, +20 ranged accuracy, 150% armor damage, 35% penetration. No recursion.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "金色威信",
+          "description": "每轮首次付费消耗龙鳞的技能完整结算后，触发一次焚鳞回响：以主目标施放时位置为中心（没有主目标则以5格内最近可见敌人为中心），1格内最多3名可见敌人各受25+0.25R普通远程伤害，对甲1.5、穿甲35%、命中+20。仅本轮一次，不按消耗鳞数重复，不传播、不递归；无目标不储存。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "lumiore_golden_breath",
+      "icon": "lumiore_golden_breath",
+      "image": "assets/skills/lumiore_golden_breath.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 3,
+        "Fatigue": 12,
+        "Min": 1,
+        "Max": 5,
+        "Cooldown": 0,
+        "Resource": 1,
+        "Damage": 80,
+        "Resolve": 0.4,
+        "Armor": 1.5,
+        "Pierce": 0.35,
+        "Hit": 20,
+        "Melee": false,
+        "Weapon": false,
+        "IgnoreShield": false
+      },
+      "text": {
+        "en": {
+          "name": "Golden Breath",
+          "description": "Spend 1 scale. Deal 80 + 0.4R damage at range 1-5, +20 ranged accuracy, 150% armor damage and 35% penetration. Can trigger the unused scale echo this round.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "金焰龙息",
+          "description": "3 AP / 12疲劳 / 1龙鳞；1–5格单体，80+0.4R伤害，对甲1.5、穿甲35%。本轮尚未触发回响时可同时烧及邻近敌人。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "lumiore_burning_scales",
+      "icon": "lumiore_burning_scales",
+      "image": "assets/skills/lumiore_burning_scales.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 2,
+        "Fatigue": 10,
+        "Min": 0,
+        "Max": 0,
+        "Cooldown": 2,
+        "Resource": 2,
+        "Damage": 0,
+        "Resolve": 0,
+        "Armor": 1,
+        "Pierce": 0,
+        "Hit": 0,
+        "Melee": false,
+        "Weapon": false,
+        "IgnoreShield": false
+      },
+      "text": {
+        "en": {
+          "name": "Burning Scales",
+          "description": "Spend 2 scales, gain 2 prestige (not twice), and recover 25 fatigue. Can trigger the unused echo around the nearest visible enemy within 5 tiles. Cooldown 2.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "焚鳞振翼",
+          "description": "2 AP / 10疲劳 / 2龙鳞；恢复25疲劳，获得2威信，触发本轮仍可用的焚鳞回响；冷却2。威信增加就是消鳞所得，不额外再加一次。资源已经实际消费，不返物品、金币或背包弹药。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "lumiore_golden_dragon",
+      "icon": "lumiore_golden_dragon",
+      "image": "assets/skills/lumiore_golden_dragon.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 6,
+        "Fatigue": 35,
+        "Min": 2,
+        "Max": 6,
+        "Cooldown": 3,
+        "Resource": 3,
+        "Damage": 140,
+        "Resolve": 0.6,
+        "Armor": 1.75,
+        "Pierce": 0.4,
+        "Hit": 25,
+        "Melee": false,
+        "Weapon": false,
+        "IgnoreShield": false
+      },
+      "text": {
+        "en": {
+          "name": "Golden Dragon",
+          "description": "Spend 3 scales and 3 prestige. Deal 140 + 0.6R damage to up to 5 previewed enemies within 2 tiles of the selected enemy at range 2-6. +25 ranged accuracy, 175% armor damage, 40% penetration. Generates no prestige; can trigger the unused echo. Cooldown 3.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "黄金龙威",
+          "description": "6 AP / 35疲劳 / 3龙鳞＋3威信；2–6格选择敌人，半径2最多5敌，各140+0.6R伤害，对甲1.75、穿甲40%、命中+25，冷却3。目标列表施放前预览，主目标优先。大招不产威信；可触发本轮未使用的回响。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "argente_silver_guard",
+      "icon": "argente_silver_guard",
+      "image": "assets/skills/argente_silver_guard.png",
+      "kind": "passive",
+      "lifetime": "persistent",
+      "spec": {},
+      "text": {
+        "en": {
+          "name": "Silver Guard",
+          "description": "Melee/ranged defense +15; ordinary damage taken -25%. Start with 4/6 scales, regain 1 on subsequent normal turns. Each round, 60 HP damage from paid hostile direct attacks, including own scale-shield absorption, grants 1 scale. First shield granted to another ally each round gives self 30 shield. Guarding shares a cap of 2 hostile actions and 35 transferred HP per action.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "银色守护",
+          "description": "自身近/远防+15、所受普通伤害−25%。每轮首次给其他名册友军施加鳞盾时，自身获得30鳞盾，持续2个自身回合。同源护盾只取较高剩余值并刷新，不相加，上限80。代挡共享每轮最多2个敌方父行动、每父行动最多35生命的转移预算。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "argente_wing_shield_bash",
+      "icon": "argente_wing_shield_bash",
+      "image": "assets/skills/argente_wing_shield_bash.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 3,
+        "Fatigue": 12,
+        "Min": 1,
+        "Max": 2,
+        "Cooldown": 0,
+        "Resource": 0,
+        "Damage": 80,
+        "Resolve": 0.35,
+        "Armor": 1.75,
+        "Pierce": 0.25,
+        "Hit": 20,
+        "Melee": true,
+        "Weapon": false,
+        "IgnoreShield": false
+      },
+      "text": {
+        "en": {
+          "name": "Silver Wing Bash",
+          "description": "At range 1-2, deal 80 + 0.35R damage with +20 melee accuracy, 175% armor damage and 25% penetration. On hit reduce initiative by 30 through the target next normal turn end. Uses fixed base damage, independent of weapon or actual offhand shield.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "银翼盾击",
+          "description": "3 AP / 12疲劳；1–2格近战技能+20，固定80+0.35R伤害，对甲1.75、穿甲25%；命中让目标先攻−30，至目标下次正常行动结束。表现为银翼鳞盾，不额外占用真实副手槽或叠加手持武器伤害。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "argente_silver_shelter",
+      "icon": "argente_silver_shelter",
+      "image": "assets/skills/argente_silver_shelter.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 3,
+        "Fatigue": 15,
+        "Min": 1,
+        "Max": 3,
+        "Cooldown": 2,
+        "Resource": 1,
+        "Damage": 0,
+        "Resolve": 0,
+        "Armor": 1,
+        "Pierce": 0,
+        "Hit": 0,
+        "Melee": true,
+        "Weapon": false,
+        "IgnoreShield": false
+      },
+      "text": {
+        "en": {
+          "name": "Pure Silver Shelter",
+          "description": "Spend 1 scale. Give another roster ally within 3 tiles a 70 HP scale shield for 2 caster normal turns and designate them as the single guarded ally. While visible within 2 tiles, transfer 35% of remaining HP damage after their shield, within the shared budget. Transferred damage bypasses all Argente defenses and can kill her. Cooldown 2.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "纯银庇护",
+          "description": "3 AP / 15疲劳 / 1龙鳞；1–3格选择一名其他名册友军，获得70鳞盾，并建立唯一守护对象，持续2个自身回合，冷却2。该友军在银龙2格内且可见时，鳞盾之后剩余生命伤害的35%由银龙承受，受共享代挡预算限制。换目标撤销旧守护，旧盾可保留至到期。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "argente_silver_oath",
+      "icon": "argente_silver_oath",
+      "image": "assets/skills/argente_silver_oath.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 6,
+        "Fatigue": 30,
+        "Min": 0,
+        "Max": 0,
+        "Cooldown": 3,
+        "Resource": 3,
+        "Damage": 0,
+        "Resolve": 0,
+        "Armor": 1,
+        "Pierce": 0,
+        "Hit": 0,
+        "Melee": true,
+        "Weapon": false,
+        "IgnoreShield": false
+      },
+      "text": {
+        "en": {
+          "name": "Silver Dragon Oath",
+          "description": "Spend 3 scales. Up to 5 roster allies within 2 tiles, including self, lowest HP ratio first: heal 20 HP and grant 55 shield for 2 caster normal turns. Other recipients are guarded until your next normal turn, sharing the same 2-action/35-HP budget. Same-source shields refresh or keep the greater remainder, never add. Cooldown 3.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "银龙之誓",
+          "description": "6 AP / 30疲劳 / 3龙鳞；自身2格内最多5名名册友军（含自己，优先缺血比例）各获得55鳞盾、治疗20，持续2个自身回合，冷却3。除自己外，受术者在接下来1个自身回合内暂视为守护对象，仍需位于2格内并共用两次/35上限；不与单保叠算，不提供AP。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "sekka_distant_home",
+      "icon": "sekka_distant_home",
+      "image": "assets/skills/sekka_distant_home.png",
+      "kind": "passive",
+      "lifetime": "persistent",
+      "spec": {},
+      "text": {
+        "en": {
+          "name": "Distant Home",
+          "description": "Melee/ranged defense +10. Moving grants +15 accuracy to the next paid special attack action; does not stack. Start with 3/9 tailfire. Non-finisher special hits grant 1 tailfire, at most 2 per round. Paid ordinary movement into 2 distinct new tiles grants 2, once per round; teleports and free moves do not count. At 9 tailfire: +30 initiative.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "归处尚远",
+          "description": "近/远防+10。主动移动后的下一次专属付费攻击额外命中+15，整次行动享受，发动即消耗；不与自己再次移动叠加。全部狐火/狐爪攻击用近战技能，固定基伤，不需要同时培养远程技能。尾火满9时先攻+30。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "sekka_foxfire_path",
+      "icon": "sekka_foxfire_path",
+      "image": "assets/skills/sekka_foxfire_path.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 3,
+        "Fatigue": 11,
+        "Min": 1,
+        "Max": 2,
+        "Cooldown": 0,
+        "Resource": 0,
+        "Damage": 60,
+        "Resolve": 0.25,
+        "Armor": 1.5,
+        "Pierce": 0.4,
+        "Hit": 20,
+        "Melee": true,
+        "Weapon": false,
+        "IgnoreShield": false
+      },
+      "text": {
+        "en": {
+          "name": "Foxfire Path",
+          "description": "Deal 60 + 0.25R damage at range 1-2, +20 melee accuracy, 150% armor damage, 40% penetration. On hit mark the surviving target for 2 caster normal turns. Ordinary attacks do not consume the mark.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "狐火穿林",
+          "description": "3 AP / 11疲劳；1–2格，以近战技能+20进行狐爪与狐火攻击，60+0.25R伤害，对甲1.5、穿甲40%。命中后在存活目标留下本人的狐火印，持续2个自身回合；普通攻击不消费印记，供九尾决意识别。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "sekka_returning_shadow",
+      "icon": "sekka_returning_shadow",
+      "image": "assets/skills/sekka_returning_shadow.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 2,
+        "Fatigue": 8,
+        "Min": 1,
+        "Max": 3,
+        "Cooldown": 2,
+        "Resource": 0,
+        "Damage": 0,
+        "Resolve": 0,
+        "Armor": 1,
+        "Pierce": 0,
+        "Hit": 0,
+        "Melee": true,
+        "Weapon": false,
+        "IgnoreShield": false
+      },
+      "text": {
+        "en": {
+          "name": "Returning Shadow",
+          "description": "Move up to 3 empty tiles without attacks of opportunity; gain 2 tailfire. Cooldown 2. After Nine-Tail Resolve kills this turn, one free retreat is available instead: end outside all enemy zones of control, gain no tailfire, no cooldown reset; at most once per round. Rooted actors cannot move.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "逸机返影",
+          "description": "2 AP / 8疲劳；沿最多3格合法空路径移动，不触发借机，获得2尾火，冷却2。若本回合九尾决意亲手击杀过敌人，额外解锁一次0 AP/0疲劳撤离：只可离开所有敌方控制区、终点不能邻敌，不回尾火，不刷新冷却，至回合结束失效；每轮一次。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "sekka_nine_tail_resolve",
+      "icon": "sekka_nine_tail_resolve",
+      "image": "assets/skills/sekka_nine_tail_resolve.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "spec": {
+        "AP": 5,
+        "Fatigue": 30,
+        "Min": 1,
+        "Max": 3,
+        "Cooldown": 2,
+        "Resource": 6,
+        "Damage": 65,
+        "Resolve": 0.25,
+        "Armor": 1.75,
+        "Pierce": 0.5,
+        "Hit": 25,
+        "Melee": true,
+        "Weapon": false,
+        "IgnoreShield": true
+      },
+      "text": {
+        "en": {
+          "name": "Nine-Tail Resolve",
+          "description": "Spend 6 tailfire, or all 9 when full. Three melee-accuracy hits: each 65 + 0.25R at six tails, or 95 + 0.4R at nine. +25 accuracy, ignores shields, 175% armor damage, 50% penetration. Concentrate on the main target; on death only, redirect to up to 2 previewed enemies within 1 tile of it. A personal foxfire mark grants +25% damage to that target and is consumed on the first segment, even on a miss. Cooldown 2; no tailfire refunds.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "九尾决意",
+          "description": "5 AP / 30疲劳；至少6尾火，6–8时消费6，满9时消费9；1–3格指定主目标，并预览其1格内最多2个备用敌人。实际3段伤害：六尾每段65+0.25R，九尾每段95+0.4R；表现为每段2/3束狐火。近战命中+25、忽略盾牌、对甲1.75、穿甲50%，冷却2。优先三段打主目标，死后仅向预选名单仍合法目标转移；有本人狐火印的目标伤害+25%，开始攻击该目标即消费印记，三段共享其快照。终结与撤离不回尾火。",
+          "tooltip": []
+        }
+      }
+    },
+    {
       "key": "qingming_casket_strike",
       "icon": "qingming_casket",
       "image": "assets/skills/qingming_casket.png",
@@ -27445,12 +32021,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Four Oaths",
-          "description": "Once per battle, recover 5 fatigue after successfully completing your signature action.",
+          "description": "Once per battle, recover 5 fatigue after your own Strike Air successfully completes while you remain alive. Rebuilding skills and extra turns do not refresh this.",
           "tooltip": []
         },
         "zh": {
           "name": "四骑誓约",
-          "description": "每战一次，在自己的招牌行动成功完成后恢复 5 疲劳。",
+          "description": "每战一次，自己的风王铁锤成功完成且仍然存活后，恢复 5 疲劳。重建技能或额外回合不刷新次数。",
           "tooltip": []
         }
       }
@@ -27467,12 +32043,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Grail Companionship",
-          "description": "Chosen companion: +20 maximum HP, +15 maximum fatigue, +10 resolve and 2 perk points, with enhanced signature abilities.",
+          "description": "Chosen companion: +20 maximum HP, +15 maximum fatigue, +10 resolve and 2 perk points, with enhanced signature abilities.\nChoose one living roster member of each identity. Each receives +20 max HP, +15 max fatigue, +10 resolve and +2 perks, without healing. Saber starts at 2/4 mana and may use Excalibur twice per battle, paying all 4 mana each time. Morgan starts at 4/6; Camelot still pays 6 upfront and refunds 2 only after complete execution while alive, once per round. Jeanne’s five banner stats rise from +10 to +15; each normal blessing heal gains +10, with unchanged tick count. Alter’s cursed-target weapon bonus becomes 35%; her NP deals 200% or 240% against pre-cursed targets, with 60 fixed damage for the latter. Only these selected individuals benefit; later summons do not.",
           "tooltip": []
         },
         "zh": {
           "name": "圣杯同行祝福",
-          "description": "圣杯指定的同行者：生命上限 +20，疲劳上限 +15，决心 +10，获得 2 天赋点；强化自身招牌技能。",
+          "description": "圣杯指定的同行者：生命上限 +20，疲劳上限 +15，决心 +10，获得 2 天赋点；强化自身招牌技能。\n选择四名在队且存活的具体角色，各 +20 生命上限、+15 疲劳上限、+10 决心、+2 天赋点，不治疗。Saber 初始魔力 2/4，誓约胜利之剑每战可用两次，每次仍支付全部 4 魔力。摩根初始魔力 4/6，无路可归的卡美洛仍先付 6 魔力，完整施放后存活则返还 2，每轮一次。贞德旗帜五项属性各由 +10 变 +15，祝福每次正常治疗 +10，次数不变。黑贞德黑焰猎杀加成 35%，宝具倍率 200% / 预先黑焰 240%，黑焰追加固定伤害 60。仅所选角色获得，后续召唤不继承。",
           "tooltip": []
         }
       }
@@ -27489,12 +32065,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Four Oaths",
-          "description": "Once per battle, recover 5 fatigue after successfully completing your signature action.",
+          "description": "Once per battle, recover 5 fatigue after your own Lake Grace successfully completes while you remain alive. Rebuilding skills and extra turns do not refresh this.",
           "tooltip": []
         },
         "zh": {
           "name": "四骑誓约",
-          "description": "每战一次，在自己的招牌行动成功完成后恢复 5 疲劳。",
+          "description": "每战一次，自己的湖之加护成功完成且仍然存活后，恢复 5 疲劳。重建技能或额外回合不刷新次数。",
           "tooltip": []
         }
       }
@@ -27511,12 +32087,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Grail Companionship",
-          "description": "Chosen companion: +20 maximum HP, +15 maximum fatigue, +10 resolve and 2 perk points, with enhanced signature abilities.",
+          "description": "Chosen companion: +20 maximum HP, +15 maximum fatigue, +10 resolve and 2 perk points, with enhanced signature abilities.\nChoose one living roster member of each identity. Each receives +20 max HP, +15 max fatigue, +10 resolve and +2 perks, without healing. Saber starts at 2/4 mana and may use Excalibur twice per battle, paying all 4 mana each time. Morgan starts at 4/6; Camelot still pays 6 upfront and refunds 2 only after complete execution while alive, once per round. Jeanne’s five banner stats rise from +10 to +15; each normal blessing heal gains +10, with unchanged tick count. Alter’s cursed-target weapon bonus becomes 35%; her NP deals 200% or 240% against pre-cursed targets, with 60 fixed damage for the latter. Only these selected individuals benefit; later summons do not.",
           "tooltip": []
         },
         "zh": {
           "name": "圣杯同行祝福",
-          "description": "圣杯指定的同行者：生命上限 +20，疲劳上限 +15，决心 +10，获得 2 天赋点；强化自身招牌技能。",
+          "description": "圣杯指定的同行者：生命上限 +20，疲劳上限 +15，决心 +10，获得 2 天赋点；强化自身招牌技能。\n选择四名在队且存活的具体角色，各 +20 生命上限、+15 疲劳上限、+10 决心、+2 天赋点，不治疗。Saber 初始魔力 2/4，誓约胜利之剑每战可用两次，每次仍支付全部 4 魔力。摩根初始魔力 4/6，无路可归的卡美洛仍先付 6 魔力，完整施放后存活则返还 2，每轮一次。贞德旗帜五项属性各由 +10 变 +15，祝福每次正常治疗 +10，次数不变。黑贞德黑焰猎杀加成 35%，宝具倍率 200% / 预先黑焰 240%，黑焰追加固定伤害 60。仅所选角色获得，后续召唤不继承。",
           "tooltip": []
         }
       }
@@ -27533,12 +32109,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Four Oaths",
-          "description": "Once per battle, recover 5 fatigue after successfully completing your signature action.",
+          "description": "Once per battle, recover 5 fatigue after your own Luminosite Eternelle successfully completes while you remain alive. Rebuilding skills and extra turns do not refresh this.",
           "tooltip": []
         },
         "zh": {
           "name": "四骑誓约",
-          "description": "每战一次，在自己的招牌行动成功完成后恢复 5 疲劳。",
+          "description": "每战一次，自己的吾主在此成功完成且仍然存活后，恢复 5 疲劳。重建技能或额外回合不刷新次数。",
           "tooltip": []
         }
       }
@@ -27555,12 +32131,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Grail Companionship",
-          "description": "Chosen companion: +20 maximum HP, +15 maximum fatigue, +10 resolve and 2 perk points, with enhanced signature abilities.",
+          "description": "Chosen companion: +20 maximum HP, +15 maximum fatigue, +10 resolve and 2 perk points, with enhanced signature abilities.\nChoose one living roster member of each identity. Each receives +20 max HP, +15 max fatigue, +10 resolve and +2 perks, without healing. Saber starts at 2/4 mana and may use Excalibur twice per battle, paying all 4 mana each time. Morgan starts at 4/6; Camelot still pays 6 upfront and refunds 2 only after complete execution while alive, once per round. Jeanne’s five banner stats rise from +10 to +15; each normal blessing heal gains +10, with unchanged tick count. Alter’s cursed-target weapon bonus becomes 35%; her NP deals 200% or 240% against pre-cursed targets, with 60 fixed damage for the latter. Only these selected individuals benefit; later summons do not.",
           "tooltip": []
         },
         "zh": {
           "name": "圣杯同行祝福",
-          "description": "圣杯指定的同行者：生命上限 +20，疲劳上限 +15，决心 +10，获得 2 天赋点；强化自身招牌技能。",
+          "description": "圣杯指定的同行者：生命上限 +20，疲劳上限 +15，决心 +10，获得 2 天赋点；强化自身招牌技能。\n选择四名在队且存活的具体角色，各 +20 生命上限、+15 疲劳上限、+10 决心、+2 天赋点，不治疗。Saber 初始魔力 2/4，誓约胜利之剑每战可用两次，每次仍支付全部 4 魔力。摩根初始魔力 4/6，无路可归的卡美洛仍先付 6 魔力，完整施放后存活则返还 2，每轮一次。贞德旗帜五项属性各由 +10 变 +15，祝福每次正常治疗 +10，次数不变。黑贞德黑焰猎杀加成 35%，宝具倍率 200% / 预先黑焰 240%，黑焰追加固定伤害 60。仅所选角色获得，后续召唤不继承。",
           "tooltip": []
         }
       }
@@ -27577,12 +32153,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Four Oaths",
-          "description": "Once per battle, recover 5 fatigue after successfully completing your signature action.",
+          "description": "Once per battle, recover 5 fatigue after your own La Grondement Du Haine successfully completes while you remain alive. Rebuilding skills and extra turns do not refresh this.",
           "tooltip": []
         },
         "zh": {
           "name": "四骑誓约",
-          "description": "每战一次，在自己的招牌行动成功完成后恢复 5 疲劳。",
+          "description": "每战一次，自己的咆哮吧，吾之愤怒成功完成且仍然存活后，恢复 5 疲劳。重建技能或额外回合不刷新次数。",
           "tooltip": []
         }
       }
@@ -27599,12 +32175,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Grail Companionship",
-          "description": "Chosen companion: +20 maximum HP, +15 maximum fatigue, +10 resolve and 2 perk points, with enhanced signature abilities.",
+          "description": "Chosen companion: +20 maximum HP, +15 maximum fatigue, +10 resolve and 2 perk points, with enhanced signature abilities.\nChoose one living roster member of each identity. Each receives +20 max HP, +15 max fatigue, +10 resolve and +2 perks, without healing. Saber starts at 2/4 mana and may use Excalibur twice per battle, paying all 4 mana each time. Morgan starts at 4/6; Camelot still pays 6 upfront and refunds 2 only after complete execution while alive, once per round. Jeanne’s five banner stats rise from +10 to +15; each normal blessing heal gains +10, with unchanged tick count. Alter’s cursed-target weapon bonus becomes 35%; her NP deals 200% or 240% against pre-cursed targets, with 60 fixed damage for the latter. Only these selected individuals benefit; later summons do not.",
           "tooltip": []
         },
         "zh": {
           "name": "圣杯同行祝福",
-          "description": "圣杯指定的同行者：生命上限 +20，疲劳上限 +15，决心 +10，获得 2 天赋点；强化自身招牌技能。",
+          "description": "圣杯指定的同行者：生命上限 +20，疲劳上限 +15，决心 +10，获得 2 天赋点；强化自身招牌技能。\n选择四名在队且存活的具体角色，各 +20 生命上限、+15 疲劳上限、+10 决心、+2 天赋点，不治疗。Saber 初始魔力 2/4，誓约胜利之剑每战可用两次，每次仍支付全部 4 魔力。摩根初始魔力 4/6，无路可归的卡美洛仍先付 6 魔力，完整施放后存活则返还 2，每轮一次。贞德旗帜五项属性各由 +10 变 +15，祝福每次正常治疗 +10，次数不变。黑贞德黑焰猎杀加成 35%，宝具倍率 200% / 预先黑焰 240%，黑焰追加固定伤害 60。仅所选角色获得，后续召唤不继承。",
           "tooltip": []
         }
       }
@@ -28449,5 +33025,309 @@ window.BV_WIKI_DATA = {
         }
       }
     }
-  ]
+  ],
+  "memoryAttributes": [
+    {
+      "key": "Hitpoints",
+      "name": {
+        "en": "Hitpoints",
+        "zh": "生命值"
+      },
+      "thresholds": [
+        80,
+        95,
+        110
+      ]
+    },
+    {
+      "key": "Stamina",
+      "name": {
+        "en": "Fatigue",
+        "zh": "疲劳值"
+      },
+      "thresholds": [
+        105,
+        120,
+        135
+      ]
+    },
+    {
+      "key": "Bravery",
+      "name": {
+        "en": "Resolve",
+        "zh": "决心"
+      },
+      "thresholds": [
+        50,
+        65,
+        80
+      ]
+    },
+    {
+      "key": "Initiative",
+      "name": {
+        "en": "Initiative",
+        "zh": "主动值"
+      },
+      "thresholds": [
+        105,
+        125,
+        145
+      ]
+    },
+    {
+      "key": "MeleeSkill",
+      "name": {
+        "en": "Melee Skill",
+        "zh": "近战技能"
+      },
+      "thresholds": [
+        70,
+        80,
+        90
+      ]
+    },
+    {
+      "key": "RangedSkill",
+      "name": {
+        "en": "Ranged Skill",
+        "zh": "远程技能"
+      },
+      "thresholds": [
+        65,
+        75,
+        85
+      ]
+    },
+    {
+      "key": "MeleeDefense",
+      "name": {
+        "en": "Melee Defense",
+        "zh": "近战防御"
+      },
+      "thresholds": [
+        15,
+        25,
+        35
+      ]
+    },
+    {
+      "key": "RangedDefense",
+      "name": {
+        "en": "Ranged Defense",
+        "zh": "远程防御"
+      },
+      "thresholds": [
+        10,
+        20,
+        30
+      ]
+    }
+  ],
+  "hunt": {
+    "milestones": [
+      {
+        "points": 0,
+        "key": "sword_maiden_goblin_codex",
+        "name": {
+          "en": "Sacred Hunt Codex",
+          "zh": "讨伐圣典"
+        },
+        "description": {
+          "en": "Every goblin cruelty and weakness is entered in the codex. Accumulated hunt points permanently strengthen Sword Maiden.",
+          "zh": "哥布林的每一种恶行和弱点都被写入圣典，累积的讨伐点数会永久强化剑之圣女。"
+        }
+      },
+      {
+        "points": 25,
+        "key": "sword_maiden_cave_survivor",
+        "name": {
+          "en": "Cave Survivor",
+          "zh": "洞窟生还者"
+        },
+        "description": {
+          "en": "She returned from the deepest nest; nets, roots, and terror can no longer hold her.",
+          "zh": "她已从最深的巢穴中归来；网索、根须和恐惧再也困不住她。"
+        }
+      },
+      {
+        "points": 75,
+        "key": "sword_maiden_holy_binding_judgment",
+        "name": {
+          "en": "Holy Binding Judgment",
+          "zh": "圣锁缚罪"
+        },
+        "description": {
+          "en": "Call forth the scales' sacred chains to bind the guilty and record the judgment owed at the other end.",
+          "zh": "召出天秤圣锁束缚罪人，并在锁链另一端记录应得的裁决。"
+        }
+      },
+      {
+        "points": 150,
+        "key": "sword_maiden_root_extermination",
+        "name": {
+          "en": "Root Extermination",
+          "zh": "祸根断绝"
+        },
+        "description": {
+          "en": "Every death fuels the next judgment; against goblins, that power rises a second time.",
+          "zh": "每一次死亡都成为继续审判的力量；面对哥布林时，这股力量会再次涌现。"
+        }
+      },
+      {
+        "points": 250,
+        "key": "sword_maiden_balance_final_judgment",
+        "name": {
+          "en": "Balance Blade: Final Judgment",
+          "zh": "天秤剑·终裁"
+        },
+        "description": {
+          "en": "Place the battlefield upon the scales, deliver sword judgment to the main target, and settle every sinner nearby.",
+          "zh": "将整片战场置于天秤之上，对主目标降下剑之裁决，并清算周围所有罪人。"
+        }
+      },
+      {
+        "points": 300,
+        "key": "sword_maiden_light_in_darkness",
+        "name": {
+          "en": "Light Seen in Darkness",
+          "zh": "于黑暗中见光"
+        },
+        "description": {
+          "en": "The long darkness did not take her mercy; it showed her the light she must reach with her own hands.",
+          "zh": "漫长黑暗未曾夺走她的慈悲，反而让她看见了必须亲手抵达的光。"
+        }
+      }
+    ],
+    "targets": [
+      {
+        "id": "fighter_low",
+        "name": {
+          "en": "Goblin Recruit",
+          "zh": "哥布林新兵"
+        },
+        "points": 1
+      },
+      {
+        "id": "ambusher_low",
+        "name": {
+          "en": "Goblin Ambusher Recruit",
+          "zh": "哥布林伏击新兵"
+        },
+        "points": 1
+      },
+      {
+        "id": "fighter",
+        "name": {
+          "en": "Goblin Skirmisher",
+          "zh": "哥布林游击兵"
+        },
+        "points": 2
+      },
+      {
+        "id": "ambusher",
+        "name": {
+          "en": "Goblin Ambusher",
+          "zh": "哥布林伏击者"
+        },
+        "points": 2
+      },
+      {
+        "id": "wolfrider",
+        "name": {
+          "en": "Goblin Wolfrider",
+          "zh": "哥布林狼骑兵"
+        },
+        "points": 3
+      },
+      {
+        "id": "shaman",
+        "name": {
+          "en": "Goblin Shaman",
+          "zh": "哥布林萨满"
+        },
+        "points": 4
+      },
+      {
+        "id": "leader",
+        "name": {
+          "en": "Goblin Overseer",
+          "zh": "哥布林督军"
+        },
+        "points": 5
+      },
+      {
+        "id": "legend_harrier",
+        "name": {
+          "en": "Goblin Harrier",
+          "zh": "哥布林袭扰者"
+        },
+        "points": 3
+      },
+      {
+        "id": "legend_defender",
+        "name": {
+          "en": "Tribe Defender",
+          "zh": "部族守卫"
+        },
+        "points": 3
+      },
+      {
+        "id": "legend_direwolf_rider",
+        "name": {
+          "en": "Direwolf Rider",
+          "zh": "恐狼骑兵"
+        },
+        "points": 4
+      },
+      {
+        "id": "legend_berserker",
+        "name": {
+          "en": "Goblin Berserker",
+          "zh": "哥布林狂战士"
+        },
+        "points": 5
+      },
+      {
+        "id": "legend_witch_doctor",
+        "name": {
+          "en": "Goblin Witch Doctor",
+          "zh": "哥布林巫医"
+        },
+        "points": 6
+      },
+      {
+        "id": "legend_white_rider",
+        "name": {
+          "en": "White Direwolf Rider",
+          "zh": "白恐狼骑兵"
+        },
+        "points": 7
+      },
+      {
+        "id": "other",
+        "name": {
+          "en": "Other Goblin",
+          "zh": "其他哥布林"
+        },
+        "points": 2
+      },
+      {
+        "id": "champion_bonus",
+        "name": {
+          "en": "Champion Bonus",
+          "zh": "冠军额外加分"
+        },
+        "points": 3
+      }
+    ],
+    "rules": {
+      "en": "Gain 1 rank per 25 points, up to rank 12. Each rank grants +2 Hitpoints, +2 Fatigue, +1 Melee Skill, +1 Melee Defense, and +1% total damage.",
+      "zh": "每 25 点提升 1 阶，最多 12 阶；每阶获得 +2 生命、+2 疲劳上限、+1 近战技能、+1 近战防御与 +1% 总伤害。"
+    },
+    "description": {
+      "en": "Records goblins judged personally or through Holy Binding. Points settle after combat and permanently unlock new powers.",
+      "zh": "记录剑之圣女亲手裁决及通过圣锁协助裁决的哥布林。点数在战斗结束后结算，并永久解锁新的能力。"
+    }
+  }
 };

@@ -210,11 +210,9 @@ const variants = {
 };
 
 const valkyrieData = readUtf8(valkyrieCodeRoot, "config", "valkyrie_data.nut");
-const lilyValkyrieData = readUtf8(valkyrieCodeRoot, "config", "lily_valkyrie_data.nut");
 const skillCatalogData = readUtf8(valkyrieCodeRoot, "config", "valkyrie_skill_catalog.nut");
 const lilySkillCatalogData = readUtf8(valkyrieCodeRoot, "config", "lily_skill_catalog.nut");
 const traitData = readUtf8(valkyrieCodeRoot, "config", "valkyrie_trait_data.nut");
-const lilyTraitData = readUtf8(valkyrieCodeRoot, "config", "lily_trait_data.nut");
 const skinData = readUtf8(valkyrieCodeRoot, "config", "skin_data.nut");
 const lilySkinData = readUtf8(valkyrieCodeRoot, "config", "lily_skin_data.nut");
 const summonData = readUtf8(valkyrieCodeRoot, "hooks", "valkyrie_summon.nut");
@@ -228,7 +226,14 @@ if (missingConfigFiles.length) console.warn(`Development snapshot: included conf
 const loadedConfigs = loadedConfigFiles.filter(file => !missingConfigFiles.includes(file)).map((file) => ({ file, source: readUtf8(valkyrieCodeRoot, "config", file) }));
 const supplementalSkins = new Map();
 const supplementalSkills = new Map();
+const supplementalValkyries = new Map();
+const supplementalTraits = new Map();
+const order = [];
 for (const { source } of loadedConfigs) {
+  for (const id of stringsIn(assignedArray(source, "ValkyrieOrder"))) if (!order.includes(id)) order.push(id);
+  for (const match of source.matchAll(/\.ValkyrieOrder\.push\("([^"]+)"\)/g)) if (!order.includes(match[1])) order.push(match[1]);
+  for (const match of source.matchAll(/\.Valkyries\.(\w+)\s*<-/g)) supplementalValkyries.set(match[1], assignedBlock(source, `Valkyries.${match[1]}`));
+  for (const match of source.matchAll(/\.ValkyrieTraitData\.(\w+)\s*<-/g)) supplementalTraits.set(match[1], assignedBlock(source, `ValkyrieTraitData.${match[1]}`));
   for (const match of source.matchAll(/\.Skins\.([\w]+)\s*<-/g)) supplementalSkins.set(match[1], assignedBlock(source, `Skins.${match[1]}`));
   for (const match of source.matchAll(/\.ValkyrieSkillCatalog\.([\w]+)\s*<-/g)) supplementalSkills.set(match[1], assignedBlock(source, `ValkyrieSkillCatalog.${match[1]}`));
   // Compact registration tables used by chapter reward catalogs.
@@ -253,18 +258,17 @@ for (const { source } of loadedConfigs) {
   }
 }
 
-const order = [...stringsIn(assignedArray(valkyrieData, "ValkyrieOrder")), "lily"];
 const valkyriesRoot = assignedBlock(valkyrieData, "Valkyries");
 const skillsRoot = assignedBlock(skillCatalogData, "ValkyrieSkillCatalog");
 const traitsRoot = assignedBlock(traitData, "ValkyrieTraitData");
 const skinsRoot = assignedBlock(skinData, "Skins");
 
 function valkyrieBlock(id) {
-  return id === "lily" ? assignedBlock(lilyValkyrieData, "Valkyries.lily") : namedObject(valkyriesRoot, id);
+  return supplementalValkyries.get(id) || namedObject(valkyriesRoot, id);
 }
 
 function traitBlock(id) {
-  return id === "lily" ? assignedBlock(lilyTraitData, "ValkyrieTraitData.lily") : namedObject(traitsRoot, id);
+  return supplementalTraits.get(id) || namedObject(traitsRoot, id);
 }
 
 function skinBlock(id) {
@@ -301,13 +305,13 @@ function buildSkill(key) {
     spec: { ...numberMap(specBlock), ...booleanMap(specBlock) },
     text: {
       en: {
-        name: translate(en, `skill.${key}.name`, resolveToken(stringField(block, "Name"), en) || key),
-        description: translate(en, `skill.${key}.description`, resolveToken(stringField(block, "Description"), en)),
+        name: resolveToken(stringField(block, "Name"), en) || translate(en, `skill.${key}.name`, key),
+        description: resolveToken(stringField(block, "Description"), en) || translate(en, `skill.${key}.description`),
         tooltip: [...collectPrefixValues(en, `skill.${key}.tooltip`), ...[en[`skill.${key}.rules`], key === "ye_shunguang_heart_recalled" ? en[`skill.${key}.unavailable`] : ""].filter(Boolean)],
       },
       zh: {
-        name: translate(zh, `skill.${key}.name`, resolveToken(stringField(block, "Name"), zh) || translate(en, `skill.${key}.name`, key)),
-        description: translate(zh, `skill.${key}.description`, resolveToken(stringField(block, "Description"), zh) || translate(en, `skill.${key}.description`, "")),
+        name: resolveToken(stringField(block, "Name"), zh) || translate(zh, `skill.${key}.name`, key),
+        description: resolveToken(stringField(block, "Description"), zh) || translate(zh, `skill.${key}.description`),
         tooltip: [...collectPrefixValues(zh, `skill.${key}.tooltip`), ...[zh[`skill.${key}.rules`], key === "ye_shunguang_heart_recalled" ? zh[`skill.${key}.unavailable`] : ""].filter(Boolean)],
       },
     },
@@ -334,6 +338,7 @@ function buildSkin(id, template, valkyrieID) {
   return {
     id,
     unlockChapter: stringField(block, "UnlockChapter"),
+    detailMedia: { poster: !!stringField(objectField(block, "DetailMedia"), "Poster"), animated: !!stringField(objectField(block, "DetailMedia"), "Video") },
     images: { portrait: portraitOut, preview: previewOut },
     text: {
       en: { name: resolveToken(stringField(block, "Name"), en) || id, description: resolveToken(stringField(block, "Description"), en) },
@@ -363,13 +368,14 @@ const valkyries = order.map((id, index) => {
   copyGfxAsset(valkyrieRoot, traitIconPath, traitOut);
   const skills = stringsIn(arrayField(block, "SkillLoadout")).map(buildSkill);
   const skins = skinIDs.filter(Boolean).map((skinID) => buildSkin(skinID, block, id));
+  const resourceBlock = loadedConfigs.map(({ source }) => assignedBlock(source, `EightValkyrieDefinitions.${id}`)).find(Boolean);
   return {
     id,
     order: index + 1,
     level: numberField(block, "Level", 1),
     dailyWage: numberField(block, "DailyWage", 1),
     legendsPerkProfile: stringField(block, "LegendsPerkProfile"),
-    detailLayout: stringField(block, "DetailLayout") || "classic",
+    combatResource: resourceBlock ? numberMap(resourceBlock) : null,
     baseAttributes: numberMap(objectField(block, "BaseAttributes")),
     talents: numberMap(objectField(block, "Talents")),
     traitBonuses: numberMap(objectField(tBlock, "TraitBonuses")),
@@ -400,7 +406,7 @@ const valkyries = order.map((id, index) => {
 copyAsset(path.join(valkyrieRoot, "gfx", "ui", "items", "battle-valkyries", "valkyries_hub_icon.png"), path.join(outAssetsDir, "ui", "valkyries_hub_icon.png"));
 
 const settingDefaults = booleanMap(assignedBlock(skinData, "Settings"));
-const settingsOptions = Array.from(settingsData.matchAll(/^\s*local\s+[A-Za-z_][A-Za-z0-9_]*\s*=\s*page\.addBooleanSetting\("([^"]+)"\s*,[^,]+,\s*"([^"]+)"\);\s*\r?\n\s*[A-Za-z_][A-Za-z0-9_]*\.setDescription\("([^"]+)"\);/gm),
+const settingsOptions = Array.from(settingsData.matchAll(/^\s*local\s+[A-Za-z_][A-Za-z0-9_]*\s*=\s*\w+\.addBooleanSetting\("([^"]+)"\s*,[^,]+,\s*"([^"]+)"\);\s*\r?\n\s*[A-Za-z_][A-Za-z0-9_]*\.setDescription\("([^"]+)"\);/gm),
   ([, id, nameToken, descriptionToken]) => ({
     id,
     type: "boolean",
@@ -411,11 +417,30 @@ const settingsOptions = Array.from(settingsData.matchAll(/^\s*local\s+[A-Za-z_][
     },
   }));
 const numericDefaults = numberMap(assignedBlock(skinData, "Settings"));
-for (const match of settingsData.matchAll(/^\s*local\s+(\w+)\s*=\s*page\.addRangeSetting\("([^"]+)"\s*,[^,]+,\s*(\d+),\s*(\d+),\s*(\d+),\s*"([^"]+)"\);/gm)) {
+for (const match of settingsData.matchAll(/^\s*local\s+(\w+)\s*=\s*\w+\.addRangeSetting\("([^"]+)"\s*,[^,]+,\s*(\d+),\s*(\d+),\s*(\d+),\s*"([^"]+)"\);/gm)) {
   const [, variable, id, min, max, step, nameToken] = match;
   const descriptionToken = new RegExp(`${variable}\\.setDescription\\("([^"\\n]+)"\\)`).exec(settingsData)?.[1] || "";
-  settingsOptions.push({ id, type: "range", default: numericDefaults[id], min: +min, max: +max, step: +step, text: Object.fromEntries([["en", en], ["zh", zh]].map(([lang, dictionary]) => [lang, { name: resolveToken(nameToken, dictionary), description: resolveToken(descriptionToken, dictionary) }])) });
+  settingsOptions.push({ id, type: "range", unit: /Volume/.test(id) ? "%" : "", default: numericDefaults[id], min: +min, max: +max, step: +step, text: Object.fromEntries([["en", en], ["zh", zh]].map(([lang, dictionary]) => [lang, { name: resolveToken(nameToken, dictionary), description: resolveToken(descriptionToken, dictionary) }])) });
 }
+// The roster controls subclass MSU settings to validate safe changes and migrate
+// the retired 28-person option. Read the concrete constructor arguments.
+const rosterSwitch = /rosterSwitchClass\("([^"]+)"\s*,[^,]+,\s*"([^"]+)"\s*,\s*"([^"]+)"/.exec(settingsData);
+if (rosterSwitch) {
+  const [, id, name, description] = rosterSwitch;
+  settingsOptions.push({ id, type: "boolean", default: settingDefaults[id] === true, text: Object.fromEntries([["en", en], ["zh", zh]].map(([lang, dictionary]) => [lang, { name: resolveToken(name, dictionary), description: resolveToken(description, dictionary) }])) });
+}
+const combatSlider = /combatCapacityClass\("([^"]+)"\s*,[^,]+,\s*(\[[^\]]+\])\s*,\s*(\[[^\]]+\])\s*,\s*"([^"]+)"/.exec(settingsData);
+if (combatSlider) {
+  const [, id, values, labels, name] = combatSlider;
+  const description = /combatCapacity\.setDescription\("([^"]+)"/.exec(settingsData)[1];
+  settingsOptions.push({ id, type: "select", default: numericDefaults[id], values: JSON.parse(values), labels: Object.fromEntries([["en", en], ["zh", zh]].map(([lang, dictionary]) => [lang, stringsIn(labels).map(label => resolveToken(label, dictionary))])), text: Object.fromEntries([["en", en], ["zh", zh]].map(([lang, dictionary]) => [lang, { name: resolveToken(name, dictionary), description: resolveToken(description, dictionary) }])) });
+}
+settingsOptions.sort((a, b) => settingsData.indexOf(`"${a.id}"`) - settingsData.indexOf(`"${b.id}"`));
+// The old translated setting description lists only three characters, while
+// load.nut now registers additional audio catalogs. Describe the active control.
+const soundOption = settingsOptions.find(option => option.id === "SkillSoundVolume");
+soundOption.text.en.description = "Adjust registered Valkyrie skill sound effects independently of character voices. Set to 0 to mute; the loaded catalogs include the eight new characters' skill effects.";
+soundOption.text.zh.description = "独立调整已登记的女武神技能效果音，设为 0 可静音，不改变人物语音。当前加载目录也包含八名新角色的技能音效。";
 
 const costSteps = Array.from(summonData.matchAll(/\{\s*Max\s*=\s*(\d+)\s*,\s*Cost\s*=\s*(\d+)\s*\}/g), ([, max, cost]) => ({ max: Number(max), cost: Number(cost) }));
 const gachaCostSteps = Array.from(summonData.matchAll(/\{\s*MaxGuarantees\s*=\s*(\d+)\s*,\s*Cost\s*=\s*(\d+)\s*\}/g), ([, maxGuarantees, cost]) => ({ maxGuarantees: Number(maxGuarantees), cost: Number(cost) }));
@@ -600,7 +625,7 @@ const data = {
   meta: {
     title: "Battle Valkyries Wiki",
     source: "battle-valkyries source",
-    updatedAt: new Date().toISOString().slice(0, 10),
+    updatedAt: new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Shanghai" }).format(new Date()),
     generatedAt: new Date().toISOString(),
     missingConfigFiles,
     sourceRevision: revision,
@@ -621,7 +646,8 @@ const data = {
   statKeys,
   statLabels,
   summon: {
-    rosterMax: numberConstant(summonData, "ValkyrieSummonRosterMax", 20),
+    rosterMax: settingDefaults.EnableRosterExpansion ? numericDefaults.RosterCapacity : numberConstant(summonData, "ValkyrieSummonRosterMax", 20),
+    rosterExpansion: { enabledByDefault: settingDefaults.EnableRosterExpansion === true, capacity: numericDefaults.RosterCapacity, combatDefault: numericDefaults.CombatCapacity, combatChoices: settingsOptions.find(option => option.id === "CombatCapacity")?.values || [] },
     formationSlots: numberConstant(summonData, "ValkyrieSummonFormationSlots", 27),
     combatSlots: numberConstant(summonData, "ValkyrieSummonCombatSlots", 18),
     costSteps,
@@ -636,7 +662,7 @@ const data = {
   valkyries,
 };
 
-Object.assign(data, buildReferenceData({ fs, path, modRoot, valkyrieRoot, valkyrieCodeRoot, workspaceRoot, loadedConfigs, en, zh, valkyries, systems, buildSkill, supplementalSkills, skillsRoot, lilySkillCatalogData, readUtf8, findMatching, assignedBlock, assignedArray, objectField, arrayField, namedObject, stringField, numberField, numberMap, stringsIn, topLevelObjectKeys, resolveToken, copyGfxAsset }));
+Object.assign(data, buildReferenceData({ fs, path, modRoot, valkyrieRoot, valkyrieCodeRoot, workspaceRoot, loadedConfigs, en, zh, valkyries, systems, settingsOptions, buildSkill, supplementalSkills, skillsRoot, lilySkillCatalogData, readUtf8, findMatching, assignedBlock, assignedArray, objectField, arrayField, namedObject, stringField, numberField, numberMap, stringsIn, topLevelObjectKeys, resolveToken, copyGfxAsset }));
 
 ensureDir(outDataDir);
 ensureDir(outAssetsDir);
