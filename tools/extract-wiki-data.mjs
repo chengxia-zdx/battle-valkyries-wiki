@@ -302,6 +302,7 @@ function buildSkill(key) {
     image,
     kind: stringField(block, "Kind") || "active",
     lifetime: stringField(block, "Lifetime") || "persistent",
+    unlockProgressionStage: numberField(block, "OlgaStage", numberField(block, "BlackBeastStage", 0)),
     spec: { ...numberMap(specBlock), ...booleanMap(specBlock) },
     text: {
       en: {
@@ -338,6 +339,7 @@ function buildSkin(id, template, valkyrieID) {
   return {
     id,
     unlockChapter: stringField(block, "UnlockChapter"),
+    unlockProgressionStage: numberField(block, "UnlockOlgaStage", numberField(block, "UnlockBlackBeastStage", 0)),
     detailMedia: { poster: !!stringField(objectField(block, "DetailMedia"), "Poster"), animated: !!stringField(objectField(block, "DetailMedia"), "Video") },
     images: { portrait: portraitOut, preview: previewOut },
     text: {
@@ -368,14 +370,15 @@ const valkyries = order.map((id, index) => {
   copyGfxAsset(valkyrieRoot, traitIconPath, traitOut);
   const skills = stringsIn(arrayField(block, "SkillLoadout")).map(buildSkill);
   const skins = skinIDs.filter(Boolean).map((skinID) => buildSkin(skinID, block, id));
-  const resourceBlock = loadedConfigs.map(({ source }) => assignedBlock(source, `EightValkyrieDefinitions.${id}`)).find(Boolean);
+  const resourceBlock = loadedConfigs.flatMap(({ source }) => [assignedBlock(source, `EightValkyrieDefinitions.${id}`), assignedBlock(source, `FiveDefinitions.${id}`)]).find(Boolean);
   return {
     id,
     order: index + 1,
     level: numberField(block, "Level", 1),
     dailyWage: numberField(block, "DailyWage", 1),
     legendsPerkProfile: stringField(block, "LegendsPerkProfile"),
-    combatResource: resourceBlock ? numberMap(resourceBlock) : null,
+    chapterRecruitOnly: /ChapterRecruitOnly\s*=\s*true/.test(block) || loadedConfigs.some(({ source }) => new RegExp(`Valkyries\\.${escapeRegExp(id)}\\.ChapterRecruitOnly\\s*<-\\s*true`).test(source)),
+    combatResource: resourceBlock ? { Start: numberField(resourceBlock, "Start"), Cap: numberField(resourceBlock, "Cap"), Slots: numberField(resourceBlock, "Slots") } : null,
     baseAttributes: numberMap(objectField(block, "BaseAttributes")),
     talents: numberMap(objectField(block, "Talents")),
     traitBonuses: numberMap(objectField(tBlock, "TraitBonuses")),
@@ -439,8 +442,8 @@ settingsOptions.sort((a, b) => settingsData.indexOf(`"${a.id}"`) - settingsData.
 // The old translated setting description lists only three characters, while
 // load.nut now registers additional audio catalogs. Describe the active control.
 const soundOption = settingsOptions.find(option => option.id === "SkillSoundVolume");
-soundOption.text.en.description = "Adjust registered Valkyrie skill sound effects independently of character voices. Set to 0 to mute; the loaded catalogs include the eight new characters' skill effects.";
-soundOption.text.zh.description = "独立调整已登记的女武神技能效果音，设为 0 可静音，不改变人物语音。当前加载目录也包含八名新角色的技能音效。";
+soundOption.text.en.description = "Adjust skill sound effects from all loaded Valkyrie audio catalogs independently of character voices. Set to 0 to mute.";
+soundOption.text.zh.description = "独立调整所有已加载女武神音效目录中的技能效果音，设为 0 可静音，不改变人物语音。";
 
 const costSteps = Array.from(summonData.matchAll(/\{\s*Max\s*=\s*(\d+)\s*,\s*Cost\s*=\s*(\d+)\s*\}/g), ([, max, cost]) => ({ max: Number(max), cost: Number(cost) }));
 const gachaCostSteps = Array.from(summonData.matchAll(/\{\s*MaxGuarantees\s*=\s*(\d+)\s*,\s*Cost\s*=\s*(\d+)\s*\}/g), ([, maxGuarantees, cost]) => ({ maxGuarantees: Number(maxGuarantees), cost: Number(cost) }));
@@ -646,6 +649,7 @@ const data = {
   statKeys,
   statLabels,
   summon: {
+    poolSize: valkyries.filter(actor => !actor.chapterRecruitOnly).length,
     rosterMax: settingDefaults.EnableRosterExpansion ? numericDefaults.RosterCapacity : numberConstant(summonData, "ValkyrieSummonRosterMax", 20),
     rosterExpansion: { enabledByDefault: settingDefaults.EnableRosterExpansion === true, capacity: numericDefaults.RosterCapacity, combatDefault: numericDefaults.CombatCapacity, combatChoices: settingsOptions.find(option => option.id === "CombatCapacity")?.values || [] },
     formationSlots: numberConstant(summonData, "ValkyrieSummonFormationSlots", 27),

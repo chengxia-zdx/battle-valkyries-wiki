@@ -1,3 +1,4 @@
+import { buildGameplayData } from "./extract-gameplay-data.mjs";
 // Source-derived reference catalogs beyond the initial character loadouts.
 export function buildReferenceData(h) {
   const { fs, path, valkyrieRoot, valkyrieCodeRoot, workspaceRoot, loadedConfigs, en, zh, valkyries, systems, settingsOptions,
@@ -36,7 +37,18 @@ export function buildReferenceData(h) {
         goals: objects(arrayField(stage, "Goals")).map(goal => ({ id: stringField(goal, "Key"), name: text(goal, "Name"), battle: /Battle\s*=\s*true/.test(goal), optional: /Optional\s*=\s*true/.test(goal), requires: stringsIn(arrayField(goal, "Requires")) })),
         materials: objects(arrayField(stage, "Materials")).map(material => ({ id: stringField(material, "Key"), name: text(material, "Name"), source: text(material, "Source"), count: numberField(material, "Count"), sourceGoal: stringField(material, "SourceGoal") })),
       }));
+      const recruitActors = stringsIn(arrayField(block, "RecruitActors"));
+      // Black City uses a fixed pair in its service; Seven Shields declares it in config.
+      if (id === "black_city_falls") {
+        const service = readUtf8(valkyrieCodeRoot, "systems", "black_city_chapter.nut");
+        const recruits = /foreach \(actorID in (\[[^\]]+\])\)/.exec(service);
+        if (!recruits) throw new Error("Missing Black City recruitment definition");
+        recruitActors.push(...stringsIn(recruits[1]));
+      }
       chapters.push({ id, name: text(block, "Name"), description: text(block, "Description"), actors: stringsIn(arrayField(block, "Actors")),
+        requiredChapter: stringField(block, "RequiredChapter"), recruitActors, ending: text(block, "Ending"),
+        repeatable: /Repeatable\s*=\s*true/.test(block),
+        difficulties: objects(arrayField(block, "Difficulties")).map(entry => ({ id: stringField(entry, "ID"), name: text(entry, "Name"), brief: text(entry, "Brief"), enemies: text(entry, "EnemyText"), minimum: numberField(entry, "Minimum"), days: numberField(entry, "Days"), rewards: objects(arrayField(entry, "Rewards")).map(reward => ({ key: stringField(reward, "Key"), count: numberField(reward, "Count") })) })),
         evidence: objects(arrayField(block, "Evidence")).map(entry => ({ id: stringField(entry, "Key"), name: text(entry, "Name"), source: text(entry, "Source"), stage: numberField(entry, "Stage"), goal: stringField(entry, "Goal") })),
         poster: asset(stringField(block, "Poster"), "story"), stages, source: `config/${file}`,
         gallery: objects(assignedArray(chapterCG, `ChapterDefinitions.${id}.Gallery`) || arrayField(block, "Gallery")).map(cg => ({ id: stringField(cg, "ID"), stage: numberField(cg, "Stage"), title: text(cg, "Title"), caption: text(cg, "Caption"), image: asset(stringField(cg, "Image"), "story") })),
@@ -114,12 +126,52 @@ export function buildReferenceData(h) {
   const skillKeys = new Set([...topLevelObjectKeys(skillsRoot), ...supplementalSkills.keys(), ...lilySkillCatalogData.matchAll(/ValkyrieSkillCatalog\.(\w+)\s*<-/g)].map(value => typeof value === "string" ? value : value[1]));
   const skillCatalog = [...skillKeys].filter(key => !key.startsWith("xilian_test_")).map(buildSkill);
   for (const spirit of spirits) skillCatalog.push(buildSkill(`lily_spirit_${spirit.id}`));
+  const progressions = [];
+  const olgaConfig = loadedConfigs.find(entry => entry.file === "olga_corruption_data.nut");
+  const beastConfig = loadedConfigs.find(entry => entry.file === "black_beast_corruption_data.nut");
+  const progressionRules = pair(
+    "Participate, survive and win to gain 4 corruption per battle, capped at 100; gifts can also add progress. Resolve the prologue, then complete the 20 / 40 / 60 / 80 / 100 stories and camps in order. The owner must participate and survive the corresponding camp victory. Reaching a threshold alone does not unlock the stage; pending stage rewards are retried.",
+    "本人实际参战、存活且获胜，每场增加 4 点恶堕值，上限 100；赠礼也可提高数值。先完成序章，再依次完成 20 / 40 / 60 / 80 / 100 的故事和营地挑战。对应角色须亲自参战并存活获胜；仅达到数值不会解锁阶段，待同步的阶段权益会重试。"
+  );
+  const progressionActors = [
+    ...(olgaConfig ? [{ actor: "olga", source: olgaConfig, stages: assignedArray(olgaConfig.source, "OlgaCorruptionStages"), prologue: pair(en["event.olga_corruption.prologue.text"], zh["event.olga_corruption.prologue.text"]) }] : []),
+    ...(beastConfig ? [...beastConfig.source.matchAll(/BlackBeastCorruptionStages\.(\w+)\s*<-/g)].map(([, actor]) => ({ actor, source: beastConfig, stages: assignedArray(beastConfig.source, `BlackBeastCorruptionStages.${actor}`), prologue: text(assignedBlock(beastConfig.source, `BlackBeastCorruptionPrologues.${actor}`), "Text") })) : []),
+  ];
+  for (const entry of progressionActors) {
+    progressions.push({ actor: entry.actor, source: `config/${entry.source.file}`, rules: progressionRules, prologue: entry.prologue,
+      name: pair(en[entry.actor === "olga" ? "olga.corruption.name" : "black_beast.corruption.name"], zh[entry.actor === "olga" ? "olga.corruption.name" : "black_beast.corruption.name"]),
+      stages: objects(entry.stages).map((block, index) => ({
+        number: index + 1, value: numberField(block, "Value"), name: text(block, "Name"), challenge: text(block, "RewardText"),
+        location: text(block, "LocationName"),
+        skills: skillCatalog.filter(skill => skill.key.startsWith(`${entry.actor}_`) && skill.unlockProgressionStage === index + 1).map(skill => skill.key),
+        skins: valkyries.find(actor => actor.id === entry.actor).skins.filter(skin => skin.unlockProgressionStage === index + 1).map(skin => skin.id),
+      })),
+    });
+  }
+  const guideSource = loadedConfigs.find(entry => entry.file === "valkyrie_recruit_guide.nut");
+  const guideRoot = guideSource ? assignedBlock(guideSource.source, "ValkyrieRecruitGuides") : "";
+  const guideBlocks = new Map(topLevelObjectKeys(guideRoot).map(actor => [actor, namedObject(guideRoot, actor)]));
+  for (const { source } of loadedConfigs) {
+    for (const [, actor] of source.matchAll(/ValkyrieRecruitGuides\.(\w+)\s*<-/g)) guideBlocks.set(actor, assignedBlock(source, `ValkyrieRecruitGuides.${actor}`));
+  }
+  const recruitGuide = { version: guideSource ? /ValkyrieRecruitGuideVersion\s*<-\s*"([^"]+)"/.exec(guideSource.source)?.[1] || "" : "",
+    labels: Object.fromEntries(["role", "stage", "investment", "tag"].map(category => {
+      const block = namedObject(assignedBlock(guideSource?.source || "", "ValkyrieRecruitGuideLabels"), category);
+      return [category, Object.fromEntries([...block.matchAll(/\b(\w+)\s*=\s*"/g)].map(([, key]) => [key, text(block, key)]))];
+    })),
+    entries: [...guideBlocks].map(([actor, block]) => {
+      return { actor, roles: stringsIn(arrayField(block, "Roles")), stage: stringField(block, "Stage"), investment: stringField(block, "Investment"), startup: stringField(block, "Startup"), mature: stringField(block, "Mature"), priorities: numberMap(objectField(block, "Priorities")), tags: stringsIn(arrayField(block, "Tags")), summary: text(block, "Summary"), analysis: text(block, "Analysis"), reviewedSkills: stringsIn(arrayField(block, "ReviewedSkills")), sourceFiles: stringsIn(arrayField(block, "Sources")) };
+    }),
+  };
   // Keep chapter/weapon/transform skills visible from the owning profile as well.
   for (const actor of valkyries) {
     const rewardKeys = chapters.flatMap(chapter => chapter.skillRewards.filter(reward => reward.actor === actor.id).map(reward => reward.key));
     if (actor.id === "ye_shunguang") rewardKeys.push("qingming_casket_strike", "qingming_unsheathe");
     actor.additionalSkills = skillCatalog.filter(skill => !actor.skills.some(base => base.key === skill.key) && (skill.key.startsWith(`${actor.id}_`) || rewardKeys.includes(skill.key)));
-    actor.chapters = chapters.filter(chapter => chapter.actors.includes(actor.id)).map(chapter => chapter.id);
+    actor.chapters = chapters.filter(chapter => [...chapter.actors, ...chapter.recruitActors].includes(actor.id)).map(chapter => chapter.id);
+    actor.recruitmentChapter = chapters.find(chapter => chapter.recruitActors.includes(actor.id))?.id || "";
+    actor.progression = progressions.find(entry => entry.actor === actor.id) || null;
+    actor.recruitGuide = recruitGuide.entries.find(entry => entry.actor === actor.id) || null;
     actor.bond = bonds.find(bond => bond.actor === actor.id) || null;
   }
 
@@ -192,7 +244,7 @@ export function buildReferenceData(h) {
     sourceFiles: ["config/valkyrie_bounty_camps.nut", "systems/valkyrie_bounty_camps.nut", "systems/valkyrie_bounty_service.nut", "scripts/contracts/contracts/battle_valkyries/valkyrie_bounty_contract.nut"],
   });
   const card = (id, enTitle, zhTitle, enBody, zhBody, enBullets, zhBullets, sourceFiles) => systems.cards.push({ id, title: pair(enTitle, zhTitle), body: pair(enBody, zhBody), bullets: pair(enBullets, zhBullets), sourceFiles });
-  card("chapters", "Chapter campaigns", "篇章任务", "Recruit every required character, then start a chapter in the Hub. Complete its objectives and submit the requested materials to advance and claim stage rewards.", "招募篇章所需的全部角色后，在 Hub 开启任务。完成当节调查或战斗目标，并提交所需材料，推进剧情并领取奖励。", [`${chapters.length} registered chapters include stage objectives, materials, perk points, character upgrades, weapons, skins and unlockable CG galleries.`, "Rewards follow saved stage completion. Full-stash deliveries can be retried after making room."], [`当前登记 ${chapters.length} 个篇章，涵盖分节任务、材料、Perk 点、角色强化、专武、皮肤及可解锁 CG 画廊。`, "奖励按已完成阶段保存；仓库满时的物品发放可在腾出空间后补领。"], ["config/*_chapter_data.nut", "config/chapter_cg_data.nut", "systems/valkyrie_chapter_service.nut"]);
+  card("chapters", "Chapter campaigns", "篇章任务", "Start chapters in the Hub after meeting their listed requirements. Character campaigns require their cast in the roster; conquest chapters use chapter prerequisites and recruit characters as rewards. Complete objectives and submit materials to advance.", "在 Hub 满足各篇开启条件后启动任务。角色篇章要求参与角色入队；攻伐篇章按前置篇章解锁，并通过通关招募角色。完成目标、提交材料后推进剧情。", [`${chapters.length} registered chapters include stage objectives, materials, perk points, character upgrades, weapons, skins and unlockable CG galleries.`, "Rewards follow saved stage completion. Full-stash deliveries can be retried after making room."], [`当前登记 ${chapters.length} 个篇章，涵盖分节任务、材料、Perk 点、角色强化、专武、皮肤及可解锁 CG 画廊。`, "奖励按已完成阶段保存；仓库满时的物品发放可在腾出空间后补领。"], ["config/*_chapter_data.nut", "config/chapter_cg_data.nut", "systems/valkyrie_chapter_service.nut"]);
   const enemyCount = enemyGroups.reduce((sum, group) => sum + group.enemies.length, 0);
   card("enemy_scaling", "Dynamic difficulty & expanded enemies", "动态难度与扩展敌人", `The current catalog registers ${enemyCount} enemies. Natural spawns use approved host templates and depend on campaign day, Valkyrie count and levels.`, `当前目录登记 ${enemyCount} 个扩展敌人。自然生成按战役天数、女武神人数与等级，在支持的原版编队中替换部分单位。`, ["Threat uses the 12 highest-level living Valkyries: 1 + 0.05 × min(level − 1, 10) per character, capped at 12 total.", "The time multiplier reaches full strength on day 30. Contract / roamer / location budget caps are 3.0× / 2.5× / 2.2×.", "No natural custom units on days 1–10. The quality budget share becomes 35% / 50% / 60% on days 11–20 / 21–30 / 31+. This is a budget share, not an enemy spawn probability.", "Some catalog groups are reserved for dedicated encounters; catalog inclusion alone does not enable natural spawning."], ["威胁取存活女武神中等级最高的 12 人：每人 1 + 0.05 × min(等级 − 1, 10)，总威胁上限 12。", "时间倍率在第 30 天达到完整值。合同 / 游荡队 / 地点预算倍率上限为 3.0 / 2.5 / 2.2。", "第 1–10 天不自然生成扩展单位；第 11–20 / 21–30 / 31 天起，额外预算的品质份额为 35% / 50% / 60%。这不是单个敌人的刷新概率。", "部分目录分组仅供专属遭遇使用；在目录中登记不代表已加入自然生成。"], ["hooks/valkyrie_enemy_scaling.nut", "config/enemy_expansion_catalog.nut", "config/enemy_expansion_spawn.nut", "systems/enemy_expansion_spawn.nut"]);
   card("ye_shunguang", "Ye Shunguang progression & cinematic", "叶瞬光成长与战斗动画", "Yunki Demon Chronicle starts with Yixuan and Ye Shunguang recruited. Stage 1 awards the Qingming Casket; stage 7 restores the permanent Qingming Sword and Unsheathe; stage 8 grants Yixuan upgrades and a skin.", "《云岿山伏魔录》需要仪玄与叶瞬光入队。第 1 节获得青溟剑匣，第 7 节恢复完整青溟剑并解锁青溟出匣，第 8 节奖励仪玄强化技能和皮肤。", ["Entering the enlightened state plays the combat cinematic at most once per battle, with character voices and combat effects.", "Current source calls the weapon Qingming Sword. Ye Shunguang bond files are being written, but their loading and reward chain are not yet connected in this snapshot."], ["进入明心境时播放战斗 CG 动画，每场战斗最多一次，并接入人物语音与战斗特效。", "当前源码名称为“青溟剑”。已发现正在编写的叶瞬光羁绊文件，但本次快照的加载与奖励链路尚未完整接入，暂不将两件防具列为可获取奖励。"], ["systems/valkyrie_combat_cinematic.nut", "config/ye_shunguang_voice_data.nut", "systems/yunki_equipment.nut"]);
@@ -224,10 +276,10 @@ export function buildReferenceData(h) {
   ]) });
   replaceCard("signature_equipment", { bullets: pair([
     "Mika and Hina receive unique firearms on recruitment. Weapon damage, range, fatigue and ownership restrictions are listed below.",
-    `The loaded roster contains ${valkyries.length} characters. New profiles: ${valkyries.slice(-8).map(actor => actor.text.en.name).join(", ")}.`,
+    `The loaded roster contains ${valkyries.length} characters. Chapter recruits have their acquisition routes linked from their profiles.`,
   ], [
     "未花与日奈入队时配发专属枪械，下方补齐伤害、射程、疲劳和使用者限制。",
-    `已加载名册共 ${valkyries.length} 人，本次新增：${valkyries.slice(-8).map(actor => actor.text.zh.name).join("、")}。`,
+    `已加载名册共 ${valkyries.length} 人，篇章招募角色的详情页列出对应获取途径。`,
   ]) });
   card("roster", "Formation and reserves", "编队与后备扩容", "Open Formation from the character screen or Hub. Deploy, swap and reserve members, with one-step undo while the roster is unchanged.", "从人物页或 Hub 打开编队，安排出战、交换站位和转入后备；名册状态未变化时可撤销上一步。", [
     "Enabled by default: 200 total members, adjustable from 50 to 200 in steps of 25. A higher native/other-mod capacity is preserved. Lowering capacity never deletes members; recruitment pauses while full.",
@@ -260,5 +312,17 @@ export function buildReferenceData(h) {
     "人形敌人使用的随机装备就是战后奖励，野兽携带宝物。战损保留，完全损坏的保底装备在胜利后以 1 耐久回收。",
     "召唤物、分裂体、尾部及测试队伍不重复产生奖励。未取走的保底战利品保留待发，腾出仓库后补领。",
   ], ["config/enemy_expansion_combat.nut", "config/enemy_expansion_rewards.nut", "systems/enemy_expansion.nut", "systems/enemy_expansion_rewards.nut"]);
-  return { chapters, enemyGroups, bounty, shop, currencies, bonds, spirits, items, skillCatalog, memoryAttributes, hunt };
+  card("conquest_chapters", "Conquest chapters and recruitment", "攻伐篇章与角色招募", "Start Black City without owning its story cast, then finish Seven Shields Upper and Lower in order. These campaigns recruit their cast after completion.", "《黑之城陷落》无需预先持有剧情角色，完成后依次开启《七盾同盟攻伐战》上、下篇。角色通过通关招募。", [
+    "Black City stage 8 grants Chloe and Olga; Upper stage 8 grants Alicia, Prim and Kaguya; Lower stage 8 grants Maia, Luu Luu, Claudia and Celestine.",
+    "These nine characters are excluded from direct summons, random gacha, guarantee targets and bounty recruitment.",
+    "Each chapter delivers its entire missing group together. Make enough roster space for all missing recruits; a full roster preserves the entitlement for later delivery and does not reset chapter progress.",
+    "Chapter completion recruits the characters; personal corruption stories separately unlock their stage abilities and final skins.",
+  ], [
+    "黑之城第 8 节招募克洛伊、奥利卡；上篇第 8 节招募艾丽西亚、普莉姆、辉夜；下篇第 8 节招募玛雅、露露、克劳迪娅、塞蕾斯汀。",
+    "这九名角色不进入直接召唤、随机抽卡、自选保底或悬赏招募。",
+    "每篇会一次性发放该组尚未持有的角色，须留足相应名册空位。满员时保留待招募权益，腾出位置后补发，不会重置篇章进度。",
+    "通关篇章负责招募；入队后的个人恶堕故事独立解锁阶段能力和最终皮肤。",
+  ], ["config/black_city_chapter_data.nut", "config/seven_shields_chapter_data.nut", "systems/black_city_chapter.nut", "systems/seven_shields_chapter.nut"]);
+  const gameplay = buildGameplayData({ ...h, chapters, items, pair, text, config, objects, asset, card });
+  return { chapters, enemyGroups, bounty, shop, currencies, bonds, spirits, items, skillCatalog, memoryAttributes, hunt, progressions, recruitGuide, gameplay };
 }
