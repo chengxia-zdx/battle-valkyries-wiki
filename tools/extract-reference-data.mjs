@@ -1,4 +1,5 @@
 import { buildGameplayData } from "./extract-gameplay-data.mjs";
+import { buildOrbmentData, addNewBonds } from "./extract-orbment-data.mjs";
 // Source-derived reference catalogs beyond the initial character loadouts.
 export function buildReferenceData(h) {
   const { fs, path, valkyrieRoot, valkyrieCodeRoot, workspaceRoot, loadedConfigs, en, zh, valkyries, systems, settingsOptions,
@@ -58,6 +59,8 @@ export function buildReferenceData(h) {
     }
   }
   const enemySource = config("enemy_expansion_catalog.nut");
+  // This recruit is granted by Septium's runtime reward service, outside the chapter table.
+  chapters.find(chapter => chapter.id === "septium_workshop").recruitActors.push("tio");
   const tiers = assignedBlock(enemySource, "ExpandedEnemyTiers");
   const profiles = assignedBlock(config("enemy_expansion_combat.nut"), "ExpandedEnemyCombatProfiles");
   const spawn = config("enemy_expansion_spawn.nut");
@@ -119,6 +122,7 @@ export function buildReferenceData(h) {
       })),
     });
   }
+  addNewBonds({ ...h, config, objects, text, asset, pair }, bonds);
   const spirits = objects(assignedArray(config("lily_spirit_data.nut"), "LilySpirits")).map(block => {
     const id = stringField(block, "Key");
     return { id, type: stringField(block, "Type"), stats: numberMap(block), name: pair(en[`skill.lily_spirit_${id}.name`], zh[`skill.lily_spirit_${id}.name`]), description: pair(en[`skill.lily_spirit_${id}.description`], zh[`skill.lily_spirit_${id}.description`]) };
@@ -167,6 +171,8 @@ export function buildReferenceData(h) {
   for (const actor of valkyries) {
     const rewardKeys = chapters.flatMap(chapter => chapter.skillRewards.filter(reward => reward.actor === actor.id).map(reward => reward.key));
     if (actor.id === "ye_shunguang") rewardKeys.push("qingming_casket_strike", "qingming_unsheathe");
+    if (actor.id === "kanade_tachibana") rewardKeys.push("kanade_sonic_rotation");
+    if (actor.id === "fate_harlaown") rewardKeys.push("fate_blade", "fate_zanber");
     actor.additionalSkills = skillCatalog.filter(skill => !actor.skills.some(base => base.key === skill.key) && (skill.key.startsWith(`${actor.id}_`) || rewardKeys.includes(skill.key)));
     actor.chapters = chapters.filter(chapter => [...chapter.actors, ...chapter.recruitActors].includes(actor.id)).map(chapter => chapter.id);
     actor.recruitmentChapter = chapters.find(chapter => chapter.recruitActors.includes(actor.id))?.id || "";
@@ -324,5 +330,30 @@ export function buildReferenceData(h) {
     "通关篇章负责招募；入队后的个人恶堕故事独立解锁阶段能力和最终皮肤。",
   ], ["config/black_city_chapter_data.nut", "config/seven_shields_chapter_data.nut", "systems/black_city_chapter.nut", "systems/seven_shields_chapter.nut"]);
   const gameplay = buildGameplayData({ ...h, chapters, items, pair, text, config, objects, asset, card });
+  gameplay.orbments = buildOrbmentData({ ...h, chapters, items, pair, text, config, objects, asset, card });
+  for (const bond of bonds.filter(bond => ["saber", "kanade_tachibana"].includes(bond.actor))) {
+    for (const stage of bond.stages.filter(stage => stage.item)) {
+      const item = items.find(item => item.id === stage.item);
+      item.acquisition = pair(`Complete ${valkyries.find(actor => actor.id === bond.actor).text.en.name}'s bond ${stage.value} challenge.`, `完成${valkyries.find(actor => actor.id === bond.actor).text.zh.name}羁绊 ${stage.value} 挑战后获得。`);
+      if (item.id === "kanade_tachibana_hand_sonic") item.acquisition = pair("Equipped on recruitment; upgraded after completing bond 80. Missing bound equipment can be replaced through Kanade's event shop.", "入队时配发并装备，完成羁绊 80 挑战后升级；丢失的绑定装备可通过立华奏事件商店补购。");
+      if (bond.actor === "kanade_tachibana") {
+        const notes = {
+          20: pair("Armor: 280 base durability → 360 at bond 20; melee defense +5. The stage reward is delivered upgraded.", "护甲基础耐久 280 → 羁绊 20 后 360；近防 +5。该阶段发放时已升级。"),
+          40: pair("Keepsake: +20 HP → +30 HP at bond 40; resolve +10. The stage reward is delivered upgraded.", "信物生命 +20 → 羁绊 40 后 +30；决心 +10。该阶段发放时已升级。"),
+          60: pair("Hairpiece: 220 base durability → 280 at bond 60; resolve +10 and upgraded initiative +10. The stage reward is delivered upgraded.", "发饰基础耐久 220 → 羁绊 60 后 280；决心 +10，升级后主动值 +10。该阶段发放时已升级。"),
+          80: pair("Hand Sonic: 85–105 damage and 120 durability → 105–125 damage and 150 durability after bond 80.", "音速臂刃：伤害 85–105、耐久 120 → 羁绊 80 后伤害 105–125、耐久 150。"),
+        };
+        item.upgradeNote = notes[stage.value];
+      }
+    }
+  }
+  replaceCard("bonds", { body: pair("Seven characters have five-stage bond campaigns: Xilian, Firefly, Himeko, Jeanne, Ye Shunguang, Saber and Kanade. Profiles list their challenges, stories and rewards.", "昔涟、流萤、姬子、贞德、叶瞬光、Saber 与立华奏拥有五阶段羁绊战役，角色详情列出挑战、故事与奖励。") });
+  replaceCard("signature_equipment", { bullets: pair([
+    "New in this snapshot: Si, Tio, Renne, Alisa, Aemeath, Fate T. Harlaown and Kanade Tachibana. Tio joins through the eight-stage Septium Workshop; the other six join the summon pool.",
+    "Kanade's equipment upgrades follow completed bond challenges. Fate's Blade and Zanber techniques are conditional form skills, listed separately from her starting loadout.",
+  ], [
+    "本次快照新增祀、缇欧、玲、亚莉莎、爱弥斯、菲特 T 哈罗温与立华奏。缇欧通过八节导力工房篇章招募，其余六人加入召唤池。",
+    "立华奏的专属装备随已完成的羁绊挑战升级；菲特的双刃与斩舰刀属于形态条件技能，在初始编成外另行列出。",
+  ]) });
   return { chapters, enemyGroups, bounty, shop, currencies, bonds, spirits, items, skillCatalog, memoryAttributes, hunt, progressions, recruitGuide, gameplay };
 }

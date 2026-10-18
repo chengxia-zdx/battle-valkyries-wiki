@@ -2,12 +2,12 @@ window.BV_WIKI_DATA = {
   "meta": {
     "title": "Battle Valkyries Wiki",
     "source": "battle-valkyries source",
-    "updatedAt": "2026-10-15",
-    "generatedAt": "2026-10-14T16:31:02.238Z",
+    "updatedAt": "2026-10-18",
+    "generatedAt": "2026-10-18T06:19:26.710Z",
     "missingConfigFiles": [],
-    "sourceRevision": "6d6f2dd78+working-tree",
-    "valkyrieVersion": "2.0.0",
-    "alchemyVersion": "1.0.1",
+    "sourceRevision": "b87b47c8c+working-tree",
+    "valkyrieVersion": "4.8.0",
+    "alchemyVersion": "1.14.0",
     "contentSource": [
       "src/battle-valkyries/battle-valkyries/config/valkyrie_data.nut",
       "src/battle-valkyries/battle-valkyries/config/lily_valkyrie_data.nut",
@@ -33,13 +33,28 @@ window.BV_WIKI_DATA = {
       "src/battle-valkyries/battle-valkyries/config/tenka_goken_weapons.nut",
       "src/battle-valkyries/battle-valkyries/config/tenka_goken_data.nut",
       "src/battle-valkyries/battle-valkyries/config/shu_data.nut",
+      "src/battle-valkyries/battle-valkyries/config/si_data.nut",
       "src/battle-valkyries/battle-valkyries/config/ryza_data.nut",
+      "src/battle-valkyries/battle-valkyries/config/tio_data.nut",
+      "src/battle-valkyries/battle-valkyries/config/trails_duo_data.nut",
+      "src/battle-valkyries/battle-valkyries/config/aemeath_data.nut",
+      "src/battle-valkyries/battle-valkyries/config/fate_harlaown_data.nut",
+      "src/battle-valkyries/battle-valkyries/config/kanade_tachibana_data.nut",
+      "src/battle-valkyries/battle-valkyries/config/orbment_data.nut",
+      "src/battle-valkyries/battle-valkyries/config/trails_duo_orbments.nut",
+      "src/battle-valkyries/battle-valkyries/config/orbment_ui_data.nut",
       "src/battle-valkyries/battle-valkyries/config/ryza_pet_data.nut",
       "src/battle-valkyries/battle-valkyries/config/ryza_extension_data.nut",
       "src/battle-valkyries/battle-valkyries/config/valkyrie_recruit_guide.nut",
       "src/battle-valkyries/battle-valkyries/config/tenka_goken_recruit_guide.nut",
       "src/battle-valkyries/battle-valkyries/config/shu_recruit_guide.nut",
+      "src/battle-valkyries/battle-valkyries/config/si_recruit_guide.nut",
       "src/battle-valkyries/battle-valkyries/config/ryza_recruit_guide.nut",
+      "src/battle-valkyries/battle-valkyries/config/tio_recruit_guide.nut",
+      "src/battle-valkyries/battle-valkyries/config/trails_duo_recruit_guide.nut",
+      "src/battle-valkyries/battle-valkyries/config/aemeath_recruit_guide.nut",
+      "src/battle-valkyries/battle-valkyries/config/fate_harlaown_recruit_guide.nut",
+      "src/battle-valkyries/battle-valkyries/config/kanade_tachibana_recruit_guide.nut",
       "src/battle-valkyries/battle-valkyries/config/valkyrie_bounty_data.nut",
       "src/battle-valkyries/battle-valkyries/config/valkyrie_skill_catalog.nut",
       "src/battle-valkyries/battle-valkyries/config/lily_spirit_data.nut",
@@ -51,7 +66,14 @@ window.BV_WIKI_DATA = {
       "src/battle-valkyries/battle-valkyries/config/black_beast_skill_catalog.nut",
       "src/battle-valkyries/battle-valkyries/config/tenka_goken_skill_catalog.nut",
       "src/battle-valkyries/battle-valkyries/config/shu_skill_catalog.nut",
+      "src/battle-valkyries/battle-valkyries/config/si_skill_catalog.nut",
       "src/battle-valkyries/battle-valkyries/config/ryza_skill_catalog.nut",
+      "src/battle-valkyries/battle-valkyries/config/orbment_skill_catalog.nut",
+      "src/battle-valkyries/battle-valkyries/config/trails_duo_skill_catalog.nut",
+      "src/battle-valkyries/battle-valkyries/config/aemeath_skill_catalog.nut",
+      "src/battle-valkyries/battle-valkyries/config/fate_harlaown_skill_catalog.nut",
+      "src/battle-valkyries/battle-valkyries/config/kanade_tachibana_skill_catalog.nut",
+      "src/battle-valkyries/battle-valkyries/config/kanade_tachibana_bond_data.nut",
       "src/battle-valkyries/battle-valkyries/config/tenka_goken_notes.nut",
       "src/battle-valkyries/battle-valkyries/config/tenka_goken_festival_skill_catalog.nut",
       "src/battle-valkyries/battle-valkyries/config/black_beast_corruption_data.nut",
@@ -61,6 +83,7 @@ window.BV_WIKI_DATA = {
       "src/battle-valkyries/battle-valkyries/config/painted_harbor_chapter_data.nut",
       "src/battle-valkyries/battle-valkyries/config/grail_chapter_data.nut",
       "src/battle-valkyries/battle-valkyries/config/grail_skill_catalog.nut",
+      "src/battle-valkyries/battle-valkyries/config/saber_bond_data.nut",
       "src/battle-valkyries/battle-valkyries/config/spring_passes_here_chapter_data.nut",
       "src/battle-valkyries/battle-valkyries/config/spring_passes_here_skill_catalog.nut",
       "src/battle-valkyries/battle-valkyries/config/royal_tide_chapter_data.nut",
@@ -72,6 +95,7 @@ window.BV_WIKI_DATA = {
       "src/battle-valkyries/battle-valkyries/config/seven_shields_chapter_data.nut",
       "src/battle-valkyries/battle-valkyries/config/shu_granary_chapter_data.nut",
       "src/battle-valkyries/battle-valkyries/config/ryza_fieldwork_chapter_data.nut",
+      "src/battle-valkyries/battle-valkyries/config/septium_chapter_data.nut",
       "src/battle-valkyries/battle-valkyries/config/tenka_goken_festival_chapter_data.nut",
       "src/battle-valkyries/battle-valkyries/config/chapter_cg_data.nut",
       "src/battle-valkyries/battle-valkyries/config/painted_harbor_skill_catalog.nut",
@@ -86,7 +110,13 @@ window.BV_WIKI_DATA = {
       "src/battle-valkyries/battle-valkyries/config/olga_media.nut",
       "src/battle-valkyries/battle-valkyries/config/black_beast_media.nut",
       "src/battle-valkyries/battle-valkyries/config/shu_media.nut",
+      "src/battle-valkyries/battle-valkyries/config/si_media.nut",
       "src/battle-valkyries/battle-valkyries/config/ryza_media.nut",
+      "src/battle-valkyries/battle-valkyries/config/orbment_media.nut",
+      "src/battle-valkyries/battle-valkyries/config/trails_duo_media.nut",
+      "src/battle-valkyries/battle-valkyries/config/aemeath_media.nut",
+      "src/battle-valkyries/battle-valkyries/config/fate_harlaown_media.nut",
+      "src/battle-valkyries/battle-valkyries/config/kanade_tachibana_media.nut",
       "src/battle-valkyries/battle-valkyries/config/shared_voice_data.nut",
       "src/battle-valkyries/battle-valkyries/config/ye_shunguang_voice_data.nut",
       "src/battle-valkyries/battle-valkyries/config/foreign_banner_origin_data.nut",
@@ -136,7 +166,7 @@ window.BV_WIKI_DATA = {
     }
   },
   "summon": {
-    "poolSize": 69,
+    "poolSize": 75,
     "rosterMax": 200,
     "rosterExpansion": {
       "enabledByDefault": true,
@@ -516,8 +546,8 @@ window.BV_WIKI_DATA = {
           "zh": "角色羁绊战役"
         },
         "body": {
-          "en": "Xilian, Firefly, Himeko, Jeanne and Ye Shunguang have five-stage bond campaigns. Character profiles list the challenge and reward for every stage.",
-          "zh": "昔涟、流萤、姬子、贞德和叶瞬光拥有五阶段羁绊战役，角色详情列出每阶段挑战与奖励。"
+          "en": "Seven characters have five-stage bond campaigns: Xilian, Firefly, Himeko, Jeanne, Ye Shunguang, Saber and Kanade. Profiles list their challenges, stories and rewards.",
+          "zh": "昔涟、流萤、姬子、贞德、叶瞬光、Saber 与立华奏拥有五阶段羁绊战役，角色详情列出挑战、故事与奖励。"
         },
         "bullets": {
           "en": [
@@ -600,11 +630,11 @@ window.BV_WIKI_DATA = {
         },
         "bullets": {
           "en": [
-            "14 registered chapters include stage objectives, materials, perk points, character upgrades, weapons, skins and unlockable CG galleries.",
+            "16 registered chapters include stage objectives, materials, perk points, character upgrades, weapons, skins and unlockable CG galleries.",
             "Rewards follow saved stage completion. Full-stash deliveries can be retried after making room."
           ],
           "zh": [
-            "当前登记 14 个篇章，涵盖分节任务、材料、Perk 点、角色强化、专武、皮肤及可解锁 CG 画廊。",
+            "当前登记 16 个篇章，涵盖分节任务、材料、Perk 点、角色强化、专武、皮肤及可解锁 CG 画廊。",
             "奖励按已完成阶段保存；仓库满时的物品发放可在腾出空间后补领。"
           ]
         },
@@ -744,12 +774,12 @@ window.BV_WIKI_DATA = {
         },
         "bullets": {
           "en": [
-            "Mika and Hina receive unique firearms on recruitment. Weapon damage, range, fatigue and ownership restrictions are listed below.",
-            "The loaded roster contains 78 characters. Chapter recruits have their acquisition routes linked from their profiles."
+            "New in this snapshot: Si, Tio, Renne, Alisa, Aemeath, Fate T. Harlaown and Kanade Tachibana. Tio joins through the eight-stage Septium Workshop; the other six join the summon pool.",
+            "Kanade's equipment upgrades follow completed bond challenges. Fate's Blade and Zanber techniques are conditional form skills, listed separately from her starting loadout."
           ],
           "zh": [
-            "未花与日奈入队时配发专属枪械，下方补齐伤害、射程、疲劳和使用者限制。",
-            "已加载名册共 78 人，篇章招募角色的详情页列出对应获取途径。"
+            "本次快照新增祀、缇欧、玲、亚莉莎、爱弥斯、菲特 T 哈罗温与立华奏。缇欧通过八节导力工房篇章招募，其余六人加入召唤池。",
+            "立华奏的专属装备随已完成的羁绊挑战升级；菲特的双刃与斩舰刀属于形态条件技能，在初始编成外另行列出。"
           ]
         },
         "sourceFiles": [
@@ -1025,6 +1055,41 @@ window.BV_WIKI_DATA = {
           "config/tenka_goken_weapons.nut",
           "items/tenka_goken_sword.nut"
         ]
+      },
+      {
+        "id": "orbments",
+        "title": {
+          "en": "Trails orbments and quartz",
+          "zh": "轨迹系列：导力器与结晶回路"
+        },
+        "body": {
+          "en": "Equip an orbment in the accessory slot and configure its seven sockets and prepared skills.",
+          "zh": "导力器装备在饰品栏，可配置七个孔位与预备技能。"
+        },
+        "bullets": {
+          "en": [
+            "Complete all eight Septium Workshop stages to recruit Tio, receive her configured Star Reader and staff, three generic orbment forms and three rank-I quartz of each of the seven pure elements. Full roster/stash deliveries remain pending.",
+            "Open the orbment workshop outside combat. Unequip the orbment into the stash before configuring it; quartz must also be in the stash. Eight template slots save layouts, but applying them still requires the actual quartz.",
+            "Socket 0 contributes to every connected line; each physical quartz grants its stat bonus once. At most two quartz of the same type across both ranks. A single line must satisfy an entire skill recipe; totals from different lines cannot be pooled.",
+            "Unlocking a recipe does not prepare it automatically. Choose active skills up to the form's slot limit and passive skills within its capacity; advanced passives cost two. Unequipping removes the orbment effects.",
+            "After workshop stage 8, upgrade two identical rank-I quartz with 300 Crowns and 10 sand into one rank-II quartz. Recycle rank I / II for 2 / 6 sand. The same milestone unlocks the repeatable Septium Mine."
+          ],
+          "zh": [
+            "完成异乡的导力工房全部 8 节后招募缇欧，配发装好回路的星读导力器与魔导杖，另发三种通用导力器及七种纯属性 I 阶回路各 3 枚。名册或仓库满时保留待发奖励。",
+            "战斗外打开导力工房；先将导力器卸下放入仓库，所需回路也须在仓库。可保存 8 份模板，套用模板仍须实际持有所需回路。",
+            "中心孔 0 参与每条连线，但每枚实物回路的属性加成只计一次。同种回路两阶合计最多装 2 枚。每项技能要求须由一条线路独立满足，不可把不同线路的属性合并。",
+            "达到配方仅代表可选，仍需手动预备技能。主动技能占机型槽位，被动技能占容量，高级被动消耗 2 点；卸下导力器后移除其效果。",
+            "工房第 8 节后开放加工：2 枚同种 I 阶回路 + 300 克朗 + 10 七曜砂升级成 1 枚 II 阶；回收 I / II 阶分别获得 2 / 6 七曜砂。同时开启可重复七曜矿区。"
+          ]
+        },
+        "sourceFiles": [
+          "config/orbment_data.nut",
+          "config/trails_duo_orbments.nut",
+          "systems/orbment_model.nut",
+          "systems/orbment_workshop.nut",
+          "systems/septium_rewards.nut",
+          "systems/septium_mine.nut"
+        ]
       }
     ],
     "equipment": {
@@ -1032,7 +1097,7 @@ window.BV_WIKI_DATA = {
         "en": "Alchemy & Enchantment System",
         "zh": "附魔炼金系统"
       },
-      "version": "1.0.1",
+      "version": "1.14.0",
       "enabledByDefault": false,
       "body": {
         "en": "This is an independent optional mod. When enabled for a new campaign, weapons, helmets, armor, and shields receive rarity, affixes, enchanting, reforging, locking, affix removal, and single or batch disassembly.",
@@ -4174,6 +4239,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "abigail_williams_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -4513,6 +4579,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "katsushika_hokusai_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -4853,6 +4920,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "c_c_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -5105,6 +5173,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "enterprise_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -5128,6 +5197,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "enterprise_snowline_homecoming_skin",
           "unlockChapter": "grey_falcon_last_order",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -5449,6 +5519,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "togawa_sakiko_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -5472,6 +5543,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "togawa_sakiko_morning_rehearsal_skin",
           "unlockChapter": "silent_city_encore",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -5697,6 +5769,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "m4a1_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -5720,6 +5793,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "m4a1_armistice_day_skin",
           "unlockChapter": "grey_falcon_last_order",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -6075,6 +6149,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "morgan_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -6098,6 +6173,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "morgan_oath_traveler_skin",
           "unlockChapter": "unclaimed_grail_four_oaths",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -6423,6 +6499,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "meltryllis_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -6702,6 +6779,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "saber_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -6725,6 +6803,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "saber_oath_traveler_skin",
           "unlockChapter": "unclaimed_grail_four_oaths",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -6742,6 +6821,30 @@ window.BV_WIKI_DATA = {
             "zh": {
               "name": "同行旅装",
               "description": "不再由圣杯命名的归途。完成无主圣杯与四骑誓约解锁。"
+            }
+          }
+        },
+        {
+          "id": "saber_royal_bunny_skin",
+          "unlockChapter": "",
+          "unlockBond": 100,
+          "unlockProgressionStage": 0,
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
+          "images": {
+            "portrait": "assets/valkyries/saber_royal_bunny_card.png",
+            "preview": "assets/valkyries/saber_royal_bunny_skin_preview.png"
+          },
+          "text": {
+            "en": {
+              "name": "Royal Bunny",
+              "description": "Royal Bunny attire based on Artoria Ruler's initial Saint Graph: white rabbit ears, a golden high ponytail, a white-and-gold bodysuit, royal-blue tights, and a white fur stole. Appearance does not change earned bond upgrades."
+            },
+            "zh": {
+              "name": "皇家兔女郎",
+              "description": "以阿尔托莉雅 Ruler 初始灵基为蓝本的皇家兔女郎礼服：白色兔耳、金色高马尾、白金礼服、蓝色连裤袜与白色毛绒披肩。外观不改变已获得的羁绊强化。"
             }
           }
         }
@@ -6806,7 +6909,7 @@ window.BV_WIKI_DATA = {
               "name": "Strike Air",
               "description": "Release Invisible Air as a crushing wind hammer through every enemy in a straight line.",
               "tooltip": [
-                "Requires 2 Mana and a melee weapon. Select an enemy on a visible straight line at range 1-4; each enemy is attacked separately with +25 chance to hit, no distance penalty, and ignored shield defense.",
+                "Requires a melee weapon; see the Mana cost below. Select an enemy on a visible straight line at range 1-4; each enemy is attacked separately with +25 chance to hit, no distance penalty, and ignored shield defense.",
                 "Deals 100% weapon damage and 200% armor damage to each enemy, resolving farthest to nearest.",
                 "Each surviving hit target is pushed directly away from Saber by up to 2 tiles and Dazed for 1 turn. Failed or immune pushes still attempt Daze."
               ]
@@ -6815,7 +6918,7 @@ window.BV_WIKI_DATA = {
               "name": "风王铁槌",
               "description": "Saber 释放风王结界，将压缩风化为贯穿直线敌阵的铁槌。",
               "tooltip": [
-                "需要 2 点魔力和近战武器。选择 1 至 4 格内直线上一名可见敌人；每名敌人独立判定，命中 +25，不受距离衰减并无视盾牌防御。",
+                "需要近战武器，魔力消耗见下方。选择 1 至 4 格内直线上一名可见敌人；每名敌人独立判定，命中 +25，不受距离衰减并无视盾牌防御。",
                 "对每名敌人造成 100% 武器伤害和 200% 护甲伤害，按距离由远到近结算。",
                 "命中存活目标后，将其沿远离 Saber 的方向击退最多 2 格并施加 1 回合茫然；无法击退或免疫击退时仍尝试施加茫然。"
               ]
@@ -6915,6 +7018,31 @@ window.BV_WIKI_DATA = {
               "tooltip": []
             }
           }
+        },
+        {
+          "key": "saber_mana_release",
+          "icon": "saber_mana_release",
+          "image": "assets/skills/saber_mana_release.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {},
+          "text": {
+            "en": {
+              "name": "Mana Release",
+              "description": "Open the dragon furnace and let the holy sword answer your oath again. Instantly restore Mana to 4.",
+              "tooltip": [
+                "0 AP, 0 Fatigue; twice per battle. Requires no target, weapon or existing Mana. Using at full Mana still spends a charge. Does not reset Excalibur uses."
+              ]
+            },
+            "zh": {
+              "name": "魔力解放",
+              "description": "敞开龙之炉心，让圣剑重新回应你的誓约。立即将魔力恢复至4点。",
+              "tooltip": [
+                "0行动点，0疲劳；每场战斗可用2次。不需要目标、武器或现有魔力；满魔力时也可使用并消耗次数。不重置宝具次数。"
+              ]
+            }
+          }
         }
       ],
       "chapters": [
@@ -6942,17 +7070,18 @@ window.BV_WIKI_DATA = {
           "armor"
         ],
         "summary": {
-          "en": "Ignores shield defense; scales with the equipped weapon.",
-          "zh": "无视盾防，换好武器再发力"
+          "en": "Ignores shields; bond rewards and the exclusive sword accelerate Mana.",
+          "zh": "无视盾防，羁绊与专武加速魔力循环"
         },
         "analysis": {
-          "en": "Melee attacks ignore shield defense, charging mana through attacks and incoming damage. The beam scales with actual gear; Excalibur's story name is not a starting weapon grant.",
-          "zh": "近战攻击无视盾牌，魔力来自攻击和承伤；光炮仍乘当前武器，起步需武器护甲，不能把剧情中的Excalibur视为赠送装备。"
+          "en": "Ordinary melee attacks ignore shield defense. Bond challenges improve starting Mana and regeneration, award a sword at 60, reduce every Strike Air to 1 Mana at 80, and unlock two full Mana refills per battle at 100. Excalibur scales with the equipped weapon and retains one use, or two with the Grail blessing.",
+          "zh": "普通近战无视盾防；羁绊逐步增加开场魔力和每轮回复，60 阶段挑战赠送专武，80 阶段让风王铁槌永久只耗 1 魔力，满羁绊解锁每战两次回满。大招仍按当前武器计算伤害，次数保持一次，圣杯祝福增至两次。"
         },
         "reviewedSkills": [
           "saber_invisible_air",
           "saber_strike_air",
-          "saber_excalibur"
+          "saber_excalibur",
+          "saber_mana_release"
         ],
         "sourceFiles": [
           "src/battle-valkyries/battle-valkyries/config/valkyrie_data.nut",
@@ -6964,7 +7093,216 @@ window.BV_WIKI_DATA = {
           "src/battle-valkyries/scripts/skills/traits/battle_valkyries/saber_trait.nut"
         ]
       },
-      "bond": null
+      "bond": {
+        "actor": "saber",
+        "source": "config/saber_bond_data.nut",
+        "stages": [
+          {
+            "value": 20,
+            "name": {
+              "en": "A Supper Kept Warm",
+              "zh": "为你留的一份晚餐"
+            },
+            "challenge": {
+              "en": "Permanently gain 1 additional starting Mana.",
+              "zh": "开场魔力永久增加1点。"
+            },
+            "location": {
+              "en": "The Stolen Provision Wagon",
+              "zh": "被劫的餐车"
+            },
+            "locationDescription": {
+              "en": "Artoria Bond challenge: A Supper Kept Warm. She must participate and survive the victory.",
+              "zh": "阿尔托莉雅羁绊挑战：为你留的一份晚餐。本人必须参战且存活获胜。"
+            },
+            "story": {
+              "en": "It is late when Artoria returns from her final patrol. She pauses outside the tent, as though stepping inside might leave some danger unattended. You move the covered pot nearer the fire and tell her the next watch has already begun.\n\nShe asks whether the wounded have eaten before accepting the bread and soup kept for her. Her sword remains within reach.\n\n“Only a short rest,” she says. Yet after the first spoonful, her shoulders finally ease.",
+              "zh": "夜已经很深。阿尔托莉雅结束最后一轮巡视，仍在帐篷外停了一会儿，仿佛只要走进去，便会漏掉某种危险。你把一直盖着的锅推到火边，告诉她，今晚的值夜已经有人接替。\n\n她看着为自己留下的面包与浓汤，先问伤员是否吃过，随后才安静坐下。剑仍靠在她触手可及的位置。\n\n“只是休息片刻。”她说。但第一口热汤入口之后，那条绷紧了一整天的肩线终于松了下来。"
+            },
+            "reveal": {
+              "en": "A rescued merchant brings you a gold chip stamped with a lion. The raiders took old relics and provisions, leaving ordinary silver behind. Artoria feels a faint drain of mana when the chip approaches her sword.\n\nShe starts to rise. You put the remaining bread back into her hand. “Finish eating. We will go together.”\n\nThis time she does not object. Together you mark the camp holding the wagon.",
+              "zh": "获救商人带来了一枚带有狮纹的金色筹码。劫匪不要银币，只拿走了他运送的旧遗物，以及准备送往村里的粮食。筹码碰到圣剑时，阿尔托莉雅察觉到细微的魔力流失。\n\n她准备起身，你把剩下的面包放回她手里。“先吃完。我们一起去。”\n\n这一次她没有反驳。地图上那处藏着餐车的营地，被你们共同圈了出来。"
+            },
+            "victory": {
+              "en": "The provisions are loaded onto the wagon again. Artoria entrusts the chip to you, and the disturbance in her mana settles. At supper she carries two bowls to the fire and leaves a place beside her.\n\n“Let us eat here tomorrow as well.”",
+              "zh": "粮袋重新装上餐车。阿尔托莉雅把那枚筹码交给你保存，魔力的紊乱随之平息。晚饭时，她端着两只碗走到火边，在你身旁留了一个位置。\n\n“明天，也在这里吃饭吧。”"
+            },
+            "introImage": "assets/bonds/events/battle-valkyries/saber_bond_20_intro.png",
+            "cgImage": "assets/bonds/events/battle-valkyries/saber_bond_20_cg.png",
+            "victoryImage": "",
+            "item": "",
+            "skin": "",
+            "objective": null,
+            "money": 0,
+            "tools": 0,
+            "medicine": 0
+          },
+          {
+            "value": 40,
+            "name": {
+              "en": "The King Does Not Cheat",
+              "zh": "骑士王不会作弊"
+            },
+            "challenge": {
+              "en": "From round 2, restore 1 Mana at the first normal turn start each round. Also receive 1,000 crowns and 30 tools.",
+              "zh": "从第二轮起，每轮首次正常行动开始时恢复1点魔力。另获得1000克朗、30工具。"
+            },
+            "location": {
+              "en": "The Gilded Counting House",
+              "zh": "镀金账房"
+            },
+            "locationDescription": {
+              "en": "Artoria Bond challenge: The King Does Not Cheat. She must participate and survive the victory.",
+              "zh": "阿尔托莉雅羁绊挑战：骑士王不会作弊。本人必须参战且存活获胜。"
+            },
+            "story": {
+              "en": "To approach the travelling casino buying relics, you teach Artoria a card game in a tavern. She remembers every card played and even weighs the pauses between your moves.\n\nAfter your fourth loss, you deliberately leave an opening. She lays down her cards and looks at you.\n\n“If this is something we are meant to enjoy together, please take my opponent seriously.” She pauses. “That would be yourself.”",
+              "zh": "为了接近那座收购遗物的流动赌庄，你在酒馆里教阿尔托莉雅玩牌。她记住了每一张已经打出的牌，连你的停顿也列入了推演。\n\n第四次输给她以后，你故意留下一个破绽。她却把牌放回桌面，认真地看着你。\n\n“如果这是两个人一起享受的游戏，就请认真对待我的对手。”她停了一下。“也就是你自己。”"
+            },
+            "reveal": {
+              "en": "The counting house holds the truth: anyone signing a debt contract loses a little strength with every wager. Stolen relics merely fuel the mechanism. Artoria spreads out the map, preparing to cover every exit herself.\n\nYou take one corner and claim responsibility for the ledger and rear door. After a pause, she releases her hold on that part of the map.\n\n“Then I leave my back to you.”",
+              "zh": "筹码的秘密藏在账房里：签下借据的人，会在每一次下注时失去少许力量。被盗遗物只是维持这套术式的燃料。阿尔托莉雅摊开地图，准备独自守住全部出口。\n\n你接过地图的一角，把账本和后门交给自己负责。她沉默片刻，松开按住那片地图的手。\n\n“那么，背后就拜托你了。”"
+            },
+            "victory": {
+              "en": "The final debt contract curls in the fire. The wind around the holy sword steadies, and Artoria can feel her mana gathering naturally again. She sets the recovered cards on the table.\n\n“Another game tonight. And this time, no letting me win.”",
+              "zh": "最后一份借据在火中卷曲。圣剑周围的风恢复了平稳，阿尔托莉雅的魔力开始自行积蓄。她把收回的牌放在桌上。\n\n“今晚再来一局。这次，你不许让着我。”"
+            },
+            "introImage": "assets/bonds/events/battle-valkyries/saber_bond_40_intro.png",
+            "cgImage": "assets/bonds/events/battle-valkyries/saber_bond_40_cg.png",
+            "victoryImage": "",
+            "item": "",
+            "skin": "",
+            "objective": null,
+            "money": 1000,
+            "tools": 30,
+            "medicine": 0
+          },
+          {
+            "value": 60,
+            "name": {
+              "en": "The Sword Entrusted to You",
+              "zh": "交到你手中的剑"
+            },
+            "challenge": {
+              "en": "Receive Excalibur: while equipped, the first successful ordinary active melee attack each round restores 1 additional Mana.",
+              "zh": "获得专武誓约胜利之剑：装备时，每轮首次主动普通近战命中额外恢复1点魔力。"
+            },
+            "location": {
+              "en": "The Counterfeit Holy Forge",
+              "zh": "伪造圣剑的熔炉"
+            },
+            "locationDescription": {
+              "en": "Artoria Bond challenge: The Sword Entrusted to You. She must participate and survive the victory.",
+              "zh": "阿尔托莉雅羁绊挑战：交到你手中的剑。本人必须参战且存活获胜。"
+            },
+            "story": {
+              "en": "That night she dreams again of an empty battlefield. The sword is heavy, and no footsteps follow her. On waking, Artoria does not immediately reach for her armour. Instead she calls to you as you pack.\n\n“Could you stay a little longer?”\n\nShe places the sword, wrapped in blue cloth, between you and speaks of the weariness of carrying everything alone. You promise no easy victory. You simply take the hand resting beside it.",
+              "zh": "那晚，她又梦见了空旷的战场。梦里的剑很沉，身后没有脚步声。醒来时，阿尔托莉雅没有像往常那样立刻披上铠甲，而是叫住了正在整理行囊的你。\n\n“可以再待一会儿吗？”\n\n她将覆着蓝布的剑放在两人之间，第一次细说那种必须独自承担一切的疲惫。你没有替她许下胜利，只握住了她搁在剑旁的手。"
+            },
+            "reveal": {
+              "en": "The ledger leads to a forge turning relics into counterfeit holy swords. The copies siphon power from the true blade, repeatedly forcing her mana to begin from nothing.\n\nArtoria will hold the forge at bay while you sever its supply. She brings the hilt closer, letting you feel the pulse of a stable circuit.\n\n“This time, help me hear its full answer.”",
+              "zh": "账本指向一座把遗物熔成假圣剑的工坊。那些仿制品不断抽取真正圣剑的力量，强迫她的魔力一次次从空处开始。\n\n阿尔托莉雅提出由自己正面压住熔炉，你则切断供能。她主动把剑柄递近，让你记住术式稳定时的脉动。\n\n“这次，请和我一起，让它完整地回应。”"
+            },
+            "victory": {
+              "en": "As the forge cools, the holy sword shines with a clear and steady light. Artoria does not raise it to the heavens. First she holds it level between you.\n\n“Excalibur,” she says softly. “And a promise that will bring me home.”\n\nTogether you secure the blade and prepare for the road back.",
+              "zh": "熔炉冷却，圣剑终于显露出清晰而安定的光。阿尔托莉雅没有立刻将它举向天空，而是先把剑平稳地横在你们之间。\n\n“誓约胜利之剑。”她轻声说出它的名字。“以及，会带我回来的约定。”\n\n你们一起将圣剑收好，准备踏上归途。"
+            },
+            "introImage": "assets/bonds/events/battle-valkyries/saber_bond_60_intro.png",
+            "cgImage": "assets/bonds/events/battle-valkyries/saber_bond_60_cg.png",
+            "victoryImage": "",
+            "item": "saber_oath_excalibur",
+            "skin": "",
+            "objective": null,
+            "money": 0,
+            "tools": 0,
+            "medicine": 0
+          },
+          {
+            "value": 80,
+            "name": {
+              "en": "A Special Invitation Tonight",
+              "zh": "今夜的特别邀请"
+            },
+            "challenge": {
+              "en": "Strike Air permanently costs 1 Mana on every cast. Also receive 1,500 crowns and 30 medicine.",
+              "zh": "风王铁槌的魔力消耗永久降为1点，每次施放均生效。另获得1500克朗、30药品。"
+            },
+            "location": {
+              "en": "The Unlit Private Lounge",
+              "zh": "无光贵宾厅"
+            },
+            "locationDescription": {
+              "en": "Artoria Bond challenge: A Special Invitation Tonight. She must participate and survive the victory.",
+              "zh": "阿尔托莉雅羁绊挑战：今夜的特别邀请。本人必须参战且存活获胜。"
+            },
+            "story": {
+              "en": "The last invitation demands that its guests arrive as a dealer and her partner. While you consider an excuse, Artoria has already chosen her outfit: long white bunny ears, a white-and-gold bodysuit, royal-blue tights, and a white fur stole, with a golden high ponytail flowing behind her.\n\nShe stands before the mirror, checking every detail as carefully as armor. Only when she notices your gaze does her hand pause at the small blue neck ornament.\n\n\"If we have decided to attend, we should prepare properly. Do you... think it suits me?\"",
+              "zh": "最后一份邀请函要求来客以荷官与搭档的身份进入。你还在思考借口，阿尔托莉雅已经选好了服装：白色长兔耳、白金礼服、蓝色连裤袜和毛绒披肩，金色高马尾垂在身后。\n\n她站在镜前，像检查铠甲一样确认每一处细节。直到发现你在看，手指才在蓝色领饰上停了一下。\n\n“既然已经决定参与，就应当认真准备。你……觉得合适吗？”"
+            },
+            "reveal": {
+              "en": "She turns over a freshly engraved lion chip and places it in your hand. It is bound to no contract; it identifies only her partner for tonight.\n\nThe private lounge is dark, and its guards are waiting. Artoria parts the wind around her sword. The pressure responds with newfound ease.\n\n“Whatever rules they change, I will recognise you.”",
+              "zh": "她从掌心翻出一枚重新刻过的狮纹筹码，放进你手里。这枚筹码不再连接任何契约，只用来辨认今晚的搭档。\n\n贵宾厅的灯已经熄灭，最后的守卫正在等待。阿尔托莉雅拨开圣剑周围的风，风压变得轻盈而顺从。\n\n“无论他们如何改变规则，我都会认出你。”"
+            },
+            "victory": {
+              "en": "Light returns to the private lounge. Sword in one hand, Artoria straightens a slightly crooked rabbit ear with the other and cannot quite suppress a smile.\n\n“It seems this outfit does not hinder a battle.”\n\nShe slides the chip back toward you. “Keep it for me. Our evening has not begun yet.”",
+              "zh": "贵宾厅重新亮起灯。阿尔托莉雅一手持剑，一手整理稍有倾斜的兔耳，终于忍不住露出一点笑意。\n\n“看来，这身衣服也不会妨碍战斗。”\n\n她随后把那枚筹码推回你身边：“先替我保管。我们的约会，还没有开始。”"
+            },
+            "introImage": "assets/bonds/events/battle-valkyries/saber_bond_80_intro.png",
+            "cgImage": "assets/bonds/events/battle-valkyries/saber_bond_80_cg.png",
+            "victoryImage": "",
+            "item": "",
+            "skin": "",
+            "objective": null,
+            "money": 1500,
+            "tools": 0,
+            "medicine": 30
+          },
+          {
+            "value": 100,
+            "name": {
+              "en": "The King at Rest, an Oath with You",
+              "zh": "王的休假，与你的誓约"
+            },
+            "challenge": {
+              "en": "Gain 1 more starting Mana and refund 1 Mana after Excalibur resolves. Unlock Mana Release: 0 AP, 0 Fatigue, twice per battle, no target required, instantly fill Mana; does not reset Excalibur uses. Permanently unlock and equip the Royal Bunny skin and portrait.",
+              "zh": "开场魔力再增加1点，宝具结算后返还1点魔力。解锁魔力解放：0行动点、0疲劳，每战两次，无需目标，立即回满魔力；不重置宝具次数。永久解锁并换上皇家兔女郎皮肤与立绘。"
+            },
+            "location": {
+              "en": "The Last Dealer",
+              "zh": "最后的庄家"
+            },
+            "locationDescription": {
+              "en": "Artoria Bond challenge: The King at Rest, an Oath with You. She must participate and survive the victory.",
+              "zh": "阿尔托莉雅羁绊挑战：王的休假，与你的誓约。本人必须参战且存活获胜。"
+            },
+            "story": {
+              "en": "The casino core unfolds one final mirror: an unbroken capital, lights that never went out, and a life that appears ready to begin again. It does not hurry her. It simply waits for Artoria to reach out.\n\nShe looks for a long time. You do not answer for her. At last she closes her hand around the lion chip and turns toward the real light beside you.\n\n“I still remember them,” she says. “And I remember that someone is waiting for me to return.”",
+              "zh": "赌庄核心展开最后一面镜子。镜中是完整的王城、没有熄灭的灯火，以及一条似乎可以重来的人生。它不催促，只安静等待阿尔托莉雅伸手。\n\n她看了很久。你也没有替她回答。最终，她握住胸前那枚狮纹筹码，转身望向身旁真实的灯光。\n\n“我仍然记得他们。”她说。“也记得，已经有人在等我回去。”"
+            },
+            "reveal": {
+              "en": "The king in the mirror draws a sword. Artoria raises her own, golden mana flowing through the restored circuit. Her plans for the rest of the night are precise: destroy the core, release every stolen fragment of strength, and spend an evening with you without a mission.\n\n“This is my own choice.”\n\nShe offers her hand and waits for you to take it before approaching the last dealer.",
+              "zh": "镜里的王之影拔出了剑。阿尔托莉雅举起圣剑，金色魔力沿着已经稳定的回路奔涌而出。她把今晚余下的安排说得很清楚：击破核心，释放所有被抵押的力量，然后与你一起度过一个没有任务的晚上。\n\n“这是我自己的决定。”\n\n她向你伸出手，等你握住之后，才走向最后的庄家。"
+            },
+            "victory": {
+              "en": "The last shard goes dark, and every contract is broken. Artoria arrives on time in the restored hall, still wearing her Royal Bunny attire. The holy sword rests safely beside her chair; it need not be drawn again tonight.\n\nShe places the lion chip on the table and slides it toward you.\n\n“I have arranged the evening. No patrols, and no war council.”\n\nShe pauses, allowing her smile to show at last.\n\n“All you need to do is stay with me.”",
+              "zh": "最后的镜片熄灭，所有契约都已解除。阿尔托莉雅准时出现在恢复灯火的大厅里，仍穿着那身皇家兔女郎礼服。圣剑安稳地靠在椅边，今晚无需再出鞘。\n\n她把狮纹筹码放在桌面，推到你面前。\n\n“今晚的行程，我已经安排好了。没有巡逻，也没有作战会议。”\n\n她停了一下，笑意终于不再藏起。\n\n“你只需要陪着我。”"
+            },
+            "introImage": "assets/bonds/events/battle-valkyries/saber_bond_100_intro.png",
+            "cgImage": "assets/bonds/events/battle-valkyries/saber_bond_100_cg.png",
+            "victoryImage": "",
+            "item": "",
+            "skin": "saber_royal_bunny_skin",
+            "objective": null,
+            "money": 0,
+            "tools": 0,
+            "medicine": 0
+          }
+        ],
+        "progression": {
+          "en": "Complete the five bond story challenges in order. Stage 60 grants Oath Excalibur; stage 100 grants Mana Release and the Royal Bunny outfit.",
+          "zh": "按顺序完成五阶段羁绊故事挑战。60 阶段获得誓约胜利之剑；100 阶段获得魔力解放与皇家兔女郎皮肤。"
+        }
+      }
     },
     {
       "id": "silver_wolf",
@@ -7004,6 +7342,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "silver_wolf_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -7027,6 +7366,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "silver_wolf_blackgold_soiree_skin",
           "unlockChapter": "blackgold_thirteenth_lot",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -7295,6 +7635,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "robin_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -7318,6 +7659,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "robin_wind_encore_skin",
           "unlockChapter": "silent_city_encore",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -7635,6 +7977,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "jeanne_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -7658,6 +8001,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "jeanne_summer_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -7681,6 +8025,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "jeanne_beach_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -7704,6 +8049,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "jeanne_oath_traveler_skin",
           "unlockChapter": "unclaimed_grail_four_oaths",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -8165,6 +8511,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "sword_maiden_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -8579,6 +8926,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "jeanne_alter_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -8602,6 +8950,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "jeanne_alter_oath_traveler_skin",
           "unlockChapter": "unclaimed_grail_four_oaths",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -8813,6 +9162,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "jingliu_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -8836,6 +9186,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "jingliu_frostmoon_tide_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -8859,6 +9210,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "jingliu_bride_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -9051,6 +9403,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "skirk_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -9279,6 +9632,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "jinhsi_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -9502,6 +9856,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "nahida_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -9807,6 +10162,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "hakurei_reimu_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -10100,6 +10456,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "yae_miko_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -10299,6 +10656,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "chisaki_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -10501,6 +10859,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "kafka_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -10524,6 +10883,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "kafka_blackgold_soiree_skin",
           "unlockChapter": "blackgold_thirteenth_lot",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -10789,6 +11149,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "ye_shunguang_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -11301,6 +11662,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "himeko_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -11313,17 +11675,18 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Himeko Skin",
-              "description": ""
+              "description": "This character is sponsored by @雾子."
             },
             "zh": {
               "name": "姬子皮肤",
-              "description": ""
+              "description": "该人物由@雾子赞助"
             }
           }
         },
         {
           "id": "himeko_departure_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -11336,11 +11699,11 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Himeko: Departure",
-              "description": "Clad in a red-and-white astral uniform, Himeko raises her spear as a standard and rides the Express toward the next sea of stars.\nThis skin is sponsored by @雾子."
+              "description": "This character is sponsored by @雾子.\nClad in a red-and-white astral uniform, Himeko raises her spear as a standard and rides the Express toward the next sea of stars."
             },
             "zh": {
               "name": "姬子：启行",
-              "description": "身披红白星轨礼装的姬子，以长枪为旗，随列车驶向下一片群星。\n本皮肤由@雾子赞助"
+              "description": "该人物由@雾子赞助\n身披红白星轨礼装的姬子，以长枪为旗，随列车驶向下一片群星。"
             }
           }
         }
@@ -11668,6 +12031,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "feixue_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -11895,6 +12259,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "feixiao_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -12155,6 +12520,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "changli_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -12393,6 +12759,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "raiden_shogun_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -12596,6 +12963,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "yixuan_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -12619,6 +12987,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "yixuan_ink_shadow_skin",
           "unlockChapter": "yunki_demon_chronicle",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -12912,6 +13281,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "xilian_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -13177,6 +13547,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "liuying_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -13531,6 +13902,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "cartethyia_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -13791,6 +14163,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "castorice_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -13814,6 +14187,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "castorice_white_flower_return_skin",
           "unlockChapter": "spring_passes_here",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -14075,6 +14449,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "changyeyue_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -14268,6 +14643,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "hysilens_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -14291,6 +14667,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "hysilens_returning_sword_banner_skin",
           "unlockChapter": "royal_banner_returning_tide",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -14500,6 +14877,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "tilixibiesi_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -14692,6 +15070,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "cipher_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -14916,6 +15295,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "cerydra_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -14939,6 +15319,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "cerydra_tidal_regalia_skin",
           "unlockChapter": "royal_banner_returning_tide",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -15186,6 +15567,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "fengjin_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -15209,6 +15591,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "fengjin_waystation_green_skin",
           "unlockChapter": "spring_passes_here",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -15454,6 +15837,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "yuno_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -15662,6 +16046,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "phoebe_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -15869,6 +16254,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "wisadel_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -16081,6 +16467,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "aglaea_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -16281,6 +16668,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "mai_shiranui_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -16483,6 +16871,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "scarlet_shadow_kimono_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -16704,6 +17093,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "texas_omertosa_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -16966,6 +17356,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "sparxie_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -17224,6 +17615,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "the_herta_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -17471,6 +17863,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "lily_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -18282,6 +18675,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "suisui_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -18548,6 +18942,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "misono_mika_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -18853,6 +19248,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "sorasaki_hina_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -19121,6 +19517,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "xin_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -19387,6 +19784,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "shizuna_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -19562,7 +19960,9 @@ window.BV_WIKI_DATA = {
         }
       },
       "additionalSkills": [],
-      "chapters": [],
+      "chapters": [
+        "septium_workshop"
+      ],
       "recruitmentChapter": "",
       "progression": null,
       "recruitGuide": {
@@ -19652,6 +20052,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "lumiore_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -19917,6 +20318,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "argente_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -20182,6 +20584,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "sekka_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -20447,6 +20850,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "yakumo_yukari_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -20745,6 +21149,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "tokisaki_kurumi_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -21147,6 +21552,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "cirno_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -21443,6 +21849,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "shana_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -21740,6 +22147,7 @@ window.BV_WIKI_DATA = {
         {
           "id": "tohsaka_rin_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
@@ -22174,8 +22582,8 @@ window.BV_WIKI_DATA = {
     {
       "id": "olga",
       "order": 63,
-      "level": 6,
-      "dailyWage": 60,
+      "level": 1,
+      "dailyWage": 1,
       "legendsPerkProfile": "ranged_support",
       "chapterRecruitOnly": true,
       "combatResource": null,
@@ -22209,10 +22617,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "olga_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/olga_card.png",
@@ -22232,10 +22641,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "olga_eclipse_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 5,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/olga_card.png",
@@ -22265,12 +22675,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Dark Queen",
-              "description": "Legal direct weapon attacks add 50% of current Resolve as normal damage, once per target per action. Spell formulas already include this bonus. Each growth stage adds 1 maximum AP (stages 0–5: 9–14 AP).",
+              "description": "Direct weapon attacks add 50% of current Resolve as normal damage, once per target per action. Spell formulas already include this bonus. Each growth stage adds 1 maximum AP (stages 0–5: 9–14 AP).",
               "tooltip": []
             },
             "zh": {
               "name": "黑暗精灵女王",
-              "description": "合法武器直接攻击追加当前决心的 50% 普通伤害；每次施放对同一目标只追加一次。法术公式已包含女王加值。每个成长阶段额外获得 1 点行动点上限（阶段 0–5：9–14 点）。",
+              "description": "武器直接攻击追加当前决心的 50% 普通伤害；每次施放对同一目标只追加一次。法术公式已包含女王加值。每个成长阶段额外获得 1 点行动点上限（阶段 0–5：9–14 点）。",
               "tooltip": []
             }
           }
@@ -22307,12 +22717,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Curse Recovery",
-              "description": "Once per global round, the first offensive spell hit against an enemy already cursed before the cast refunds 10 Fatigue, or 15 from stage 3. Area attacks trigger once; a new Eclipse curse does not qualify.",
+              "description": "Once per round, the first offensive spell hit against an enemy already cursed before the cast refunds 10 Fatigue, or 15 from stage 3. Area attacks trigger once; a new Eclipse curse does not qualify.",
               "tooltip": []
             },
             "zh": {
               "name": "诅咒回疲",
-              "description": "每个全局轮次首次用攻击法术命中施法前已受女王诅咒的敌人，返还 10 点疲劳；阶段 3 起返还 15 点。范围法术只触发一次，月蚀本次新施加的诅咒不触发。",
+              "description": "每轮首次用攻击法术命中施法前已受女王诅咒的敌人，返还 10 点疲劳；阶段 3 起返还 15 点。范围法术只触发一次，月蚀本次新施加的诅咒不触发。",
               "tooltip": []
             }
           }
@@ -22467,12 +22877,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Dark Annihilation",
-              "description": "Unlocked at stage 3. Automatically hits one enemy’s body for 240 + 0.8 × current Resolve; armor damage 200%, penetration 80%. Once per global round. Costs 6 AP and 32 Fatigue; range 1–7.",
+              "description": "Unlocked at stage 3. Automatically hits one enemy’s body for 240 + 0.8 × current Resolve; armor damage 200%, penetration 80%. Once per round. Costs 6 AP and 32 Fatigue; range 1–7.",
               "tooltip": []
             },
             "zh": {
               "name": "黑暗湮灭",
-              "description": "阶段 3 解锁。必定命中单个敌人，造成 240 + 0.8 × 当前决心的躯干伤害；护甲伤害 200%，穿甲 80%。每全局轮次限用一次。6 行动点，32 疲劳，射程 1–7。",
+              "description": "阶段 3 解锁。必定命中单个敌人，造成 240 + 0.8 × 当前决心的躯干伤害；护甲伤害 200%，穿甲 80%。每轮限用一次。6 行动点，32 疲劳，射程 1–7。",
               "tooltip": []
             }
           }
@@ -22499,12 +22909,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Soul Enslavement",
-              "description": "Unlocked at stage 4. Directly control a safe humanoid enemy, including champions, until its next normal turn ends. Existing AP, Fatigue, ammunition and cooldowns are preserved, then original faction and AI are restored. Twice per battle, one target at a time. Excludes special, multi-tile and last enemies. Inventory access and retreat are blocked. Costs 6 AP and 30 Fatigue; range 1–7.",
+              "description": "Unlocked at stage IV. Temporarily control one humanoid enemy, including champions, until the end of its next normal turn, then return it to the enemy side. Preserve its AP, fatigue, ammunition and cooldowns. Twice per battle, one controlled unit at a time. Cannot control special enemies, multi-tile creatures or the last remaining enemy. The controlled unit cannot access its inventory or retreat. Costs 6 AP and 30 fatigue; range 1–7 tiles.",
               "tooltip": []
             },
             "zh": {
               "name": "灵魂奴化",
-              "description": "阶段 4 解锁。直接操作一个可安全控制的人形敌人（包含冠军），直至其下一个正常行动回合结束。保留现有行动点、疲劳、弹药和冷却，结束后恢复原阵营与 AI。每战 2 次，同时最多 1 人；不能控制特殊、多格或最后一个敌人，不能操作背包或撤退。6 行动点，30 疲劳，射程 1–7。",
+              "description": "Ⅳ阶段解锁。暂时直接操控一名人形敌人（包括冠军），直到其下一次正常行动结束，再恢复敌方身份。保留目标现有行动点、疲劳、弹药和冷却。每场战斗最多两次，同时只能控制一人；特殊敌人、多格生物和战场上最后一名敌人不能被控制。受控期间不能操作其背包或令其撤退。消耗6行动点、30疲劳，射程1至7格。",
               "tooltip": []
             }
           }
@@ -22531,12 +22941,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Eclipse",
-              "description": "Unlocked at stage 5. Automatically hits enemies within 2 tiles of a visible center for 220 + current Resolve body damage; armor damage 200%, penetration 75%. Survivors receive Queen’s Curse and webs, respecting root immunity. Cooldown: 3 global rounds. Costs 8 AP and 45 Fatigue; range 2–8.",
+              "description": "Unlocked at stage 5. Automatically hits enemies within 2 tiles of a visible center for 220 + current Resolve body damage; armor damage 200%, penetration 75%. Survivors receive Queen’s Curse and webs, respecting root immunity. Cooldown: 3 rounds. Costs 8 AP and 45 Fatigue; range 2–8.",
               "tooltip": []
             },
             "zh": {
               "name": "月蚀终焉",
-              "description": "阶段 5 解锁。指定可见中心及周围 2 格，仅攻击敌人，必定命中，造成 220 + 当前决心的躯干伤害；护甲伤害 200%，穿甲 75%。存活敌人受到女王诅咒与蛛网束缚（尊重束缚免疫）。全局轮次冷却 3 轮。8 行动点，45 疲劳，射程 2–8。",
+              "description": "阶段 5 解锁。指定可见中心及周围 2 格，仅攻击敌人，必定命中，造成 220 + 当前决心的躯干伤害；护甲伤害 200%，穿甲 75%。存活敌人受到女王诅咒与蛛网束缚（免疫束缚的敌人不受影响）。冷却 3 轮。8 行动点，45 疲劳，射程 2–8。",
               "tooltip": []
             }
           }
@@ -22716,8 +23126,8 @@ window.BV_WIKI_DATA = {
           "zh": "篇章入队，自动命中高穿甲"
         },
         "analysis": {
-          "en": "She joins at level 6 after Black City. Black Flame hits automatically with 60% penetration. Startup excludes later storm, eclipse and control skills; maturity includes five growth stages.",
-          "zh": "黑之城完成后6级入队，黑焰自动命中且60%穿甲；阶段0不含后续风暴、月蚀和奴役，成型包含五阶段成长，法术仍经过护甲减伤。"
+          "en": "Starts with a knife, buckler and basic armor; spells have no weapon requirement. She joins at level 1 after Black City. Black Flame hits automatically with 60% penetration. Startup excludes later storm, eclipse and control skills; maturity includes five growth stages.",
+          "zh": "入队配小刀、轻圆盾和基础防具，施法不要求特定武器。黑之城完成后1级入队，黑焰自动命中且60%穿甲；阶段0不含后续风暴、月蚀和奴役，成型包含五阶段成长，法术仍经过护甲减伤。"
         },
         "reviewedSkills": [
           "olga_dark_queen",
@@ -22747,8 +23157,8 @@ window.BV_WIKI_DATA = {
     {
       "id": "chloe",
       "order": 64,
-      "level": 5,
-      "dailyWage": 45,
+      "level": 1,
+      "dailyWage": 1,
       "legendsPerkProfile": "melee_frontline",
       "chapterRecruitOnly": true,
       "combatResource": null,
@@ -22782,10 +23192,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "chloe_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/chloe_card.png",
@@ -22805,10 +23216,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "chloe_oath_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 5,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/chloe_card.png",
@@ -22838,12 +23250,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Blackblade Guard",
-              "description": "With a one-handed melee weapon and shield: +15 accuracy, +50 percentage points weapon damage and +30 penetration; at V: +25/+100/+50. Recover 10 fatigue on the first normal turn each round, 20 from IV. Fortress unlocks at III and lasts all battle at V. Maximum AP: 9/10/10/11/11/12. Includes the native Shield Expert, Steel Brow, Underdog, Pathfinder, Recover and Footwork perks.",
+              "description": "With a one-handed melee weapon and shield: +15 hit chance, +50 percentage points of weapon damage and +30 percentage points of armor penetration. At stage V these become +25, +100 and +50 respectively. Recover 10 fatigue at the first normal turn each round, or 20 from stage IV. Unlock Obsidian Fortress at III; at V it remains active throughout battle. Maximum AP by stage: 9, 10, 10, 11, 11, 12. Includes Shield Expert, Steel Brow, Underdog, Pathfinder, Recover and Footwork.",
               "tooltip": []
             },
             "zh": {
               "name": "黑刃守势",
-              "description": "单手近战武器与盾牌：命中 +15，武器倍率 +50 个百分点，穿透 +30 个百分点；Ⅴ改为 +25 / +100 / +50。每轮首次正常行动回疲 10，Ⅳ起 20。Ⅲ解锁堡垒，Ⅴ堡垒本场永久。最大 AP 按阶段为 9/10/10/11/11/12。 自带盾牌专家、铁头、独行侠、探路者、恢复与灵巧六项原版能力。",
+              "description": "持单手近战武器和盾牌时，命中提高15点，武器伤害提高50个百分点，穿甲提高30个百分点；Ⅴ阶段分别提高为25点、100个百分点和50个百分点。每轮首次行动开始时恢复10疲劳，Ⅳ阶段起恢复20。Ⅲ阶段解锁黑曜堡垒，Ⅴ阶段自动维持堡垒至战斗结束。最大行动点随阶段依次为9、10、10、11、11、12。自带盾牌专家、铁头、独行侠、探路者、恢复和灵巧。",
               "tooltip": []
             }
           }
@@ -22875,7 +23287,7 @@ window.BV_WIKI_DATA = {
             },
             "zh": {
               "name": "黑月斩",
-              "description": "4 AP / 18 疲劳。相邻单敌。武器倍率190%，Ⅳ210%，Ⅴ260%；护甲125%，总命中+35（Ⅴ+45），穿透为武器原值+45个百分点（Ⅴ+65）；无视盾牌。",
+              "description": "4 AP / 18 疲劳。相邻单敌。武器伤害190%，Ⅳ210%，Ⅴ260%；护甲125%，命中+35（Ⅴ+45），穿透为武器原值+45个百分点（Ⅴ+65）；无视盾牌。",
               "tooltip": []
             }
           }
@@ -22902,12 +23314,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Guard Exchange",
-              "description": "1 AP / 5 fatigue. With shield, exchange with an adjacent movable ally without opportunity attacks and gain Shieldwall. Once each round, twice at V. Next legal paid one-handed attack costs -1 AP/-8 fatigue; I -2/-12 and +30 damage percentage points per hit. Consumed even on a miss, expires this round.",
+              "description": "Costs 1 AP and 5 fatigue. While holding a shield, exchange places with an adjacent movable ally without provoking attacks of opportunity. Gain Shieldwall: add the shield’s defense again and gain further defense alongside adjacent units of the same faction also using Shieldwall. Once per round, twice at stage V. The next active one-handed weapon attack this round costs 1 less AP and 8 less fatigue; from stage I, 2 less AP and 12 less fatigue, plus 30 percentage points of weapon damage per strike. Consumed even on a miss.",
               "tooltip": []
             },
             "zh": {
               "name": "近卫换位",
-              "description": "1 AP / 5 疲劳。持盾，选择可移动的相邻友军交换位置，不触发借机；获得原版盾墙。每轮1次，Ⅴ2次。下次合法付费单手攻击 AP -1、疲劳-8；Ⅰ起 -2/-12且每段倍率+30个百分点，未命中也消费，本轮结束失效。",
+              "description": "消耗1行动点、5疲劳。持盾时与相邻且能够移动的友军交换位置，不触发借机攻击，并获得盾墙：额外增加盾牌提供的近战和远程防御，与相邻正在举盾的同阵营单位互相提高防御。每轮一次，Ⅴ阶段每轮两次。本轮下一次主动单手武器攻击少消耗1行动点、8疲劳；Ⅰ阶段起改为少消耗2行动点、12疲劳，且每次打击增加30个百分点武器伤害。即使失手也会用掉这次强化。",
               "tooltip": []
             }
           }
@@ -22939,7 +23351,7 @@ window.BV_WIKI_DATA = {
             },
             "zh": {
               "name": "黑曜守势",
-              "description": "2 AP / 12 疲劳。自身近防 +30，持续到后续轮次首次正常行动开始。等待与额外行动不提前结束，重复施放只刷新。不限制装备，Ⅲ被黑曜堡垒替换。",
+              "description": "2 AP / 12 疲劳。自身近战防御 +30，持续到后续轮次首次正常行动开始。等待与额外行动不提前结束，重复施放只刷新。不限制装备，Ⅲ被黑曜堡垒替换。",
               "tooltip": []
             }
           }
@@ -22971,7 +23383,7 @@ window.BV_WIKI_DATA = {
             },
             "zh": {
               "name": "暗月双刃",
-              "description": "5 AP / 25 疲劳。每轮1次，进行两段独立攻击；每段倍率140%，Ⅳ160%，Ⅴ210%，护甲125%，命中+35（Ⅴ+45），武器穿透+40个百分点（Ⅴ+60），无视盾牌。Ⅱ至Ⅲ仅原目标；Ⅳ起可选择同一人或两名相邻敌人。死亡后不自动改选。",
+              "description": "5 AP / 25 疲劳。每轮1次，连续攻击两次；每次打击武器伤害140%，Ⅳ160%，Ⅴ210%，护甲125%，命中+35（Ⅴ+45），武器穿透+40个百分点（Ⅴ+60），无视盾牌。Ⅱ至Ⅲ仅原先选择的目标；Ⅳ起可选择同一人或两名相邻敌人。死亡后不自动改选。",
               "tooltip": []
             }
           }
@@ -23003,7 +23415,7 @@ window.BV_WIKI_DATA = {
             },
             "zh": {
               "name": "黑曜堡垒",
-              "description": "2 AP / 18 疲劳。不限制装备。自身双防 +40、直接生命和护甲伤害降低30%、免疫强制位移，至后续轮次首次正常行动开始。Ⅴ成为本场永久被动，不再需要按钮。",
+              "description": "2 AP / 18 疲劳。不限制装备。自身近战和远程防御 +40、直接攻击造成的生命和护甲损失降低30%、免疫强制位移，至后续轮次首次正常行动开始。Ⅴ开战后自动生效至战斗结束，无需施放。",
               "tooltip": []
             }
           }
@@ -23015,7 +23427,7 @@ window.BV_WIKI_DATA = {
           "backgroundName": "Blackblade Guard",
           "backgroundDescription": "The defeated royal guard of the dark city enters the company, torn between her old loyalty and the people now fighting beside her.",
           "traitName": "Blackblade Guard",
-          "traitDescription": "With a one-handed melee weapon and shield: +15 accuracy, +50 percentage points weapon damage and +30 penetration; at V: +25/+100/+50. Recover 10 fatigue on the first normal turn each round, 20 from IV. Fortress unlocks at III and lasts all battle at V. Maximum AP: 9/10/10/11/11/12. Includes the native Shield Expert, Steel Brow, Underdog, Pathfinder, Recover and Footwork perks.",
+          "traitDescription": "With a one-handed melee weapon and shield: +15 hit chance, +50 percentage points of weapon damage and +30 percentage points of armor penetration. At stage V these become +25, +100 and +50 respectively. Recover 10 fatigue at the first normal turn each round, or 20 from stage IV. Unlock Obsidian Fortress at III; at V it remains active throughout battle. Maximum AP by stage: 9, 10, 10, 11, 11, 12. Includes Shield Expert, Steel Brow, Underdog, Pathfinder, Recover and Footwork.",
           "traitTooltip": []
         },
         "zh": {
@@ -23023,7 +23435,7 @@ window.BV_WIKI_DATA = {
           "backgroundName": "黑刃守势",
           "backgroundDescription": "暗之城的近卫在战败后进入战团。她仍牢记旧主的恩情，却必须学习在新的战阵里判断自己真正要守护的人。",
           "traitName": "黑刃守势",
-          "traitDescription": "单手近战武器与盾牌：命中 +15，武器倍率 +50 个百分点，穿透 +30 个百分点；Ⅴ改为 +25 / +100 / +50。每轮首次正常行动回疲 10，Ⅳ起 20。Ⅲ解锁堡垒，Ⅴ堡垒本场永久。最大 AP 按阶段为 9/10/10/11/11/12。 自带盾牌专家、铁头、独行侠、探路者、恢复与灵巧六项原版能力。",
+          "traitDescription": "持单手近战武器和盾牌时，命中提高15点，武器伤害提高50个百分点，穿甲提高30个百分点；Ⅴ阶段分别提高为25点、100个百分点和50个百分点。每轮首次行动开始时恢复10疲劳，Ⅳ阶段起恢复20。Ⅲ阶段解锁黑曜堡垒，Ⅴ阶段自动维持堡垒至战斗结束。最大行动点随阶段依次为9、10、10、11、11、12。自带盾牌专家、铁头、独行侠、探路者、恢复和灵巧。",
           "traitTooltip": []
         }
       },
@@ -23170,8 +23582,8 @@ window.BV_WIKI_DATA = {
           "zh": "篇章赠剑盾，兼顾攻防循环"
         },
         "analysis": {
-          "en": "She joins at level 5 with a sword and shield. Accuracy, penetration and swaps help the front; Fortress and later multi-target attacks require growth and still consume AP and fatigue.",
-          "zh": "篇章5级入队赠剑盾，命中加值、穿透与换位适合前线；后续堡垒和多目标连击需阶段成长，盾墙与主动仍消耗疲劳和AP。"
+          "en": "Starts with a shortsword, wooden shield and basic armor. She joins at level 1 with a sword and shield. Accuracy, penetration and swaps help the front; Fortress and later multi-target attacks require growth and still consume AP and fatigue.",
+          "zh": "入队配短剑、木盾和基础防具。篇章1级入队赠剑盾，命中加值、穿透与换位适合前线；后续堡垒和多目标连击需阶段成长，盾墙与主动仍消耗疲劳和AP。"
         },
         "reviewedSkills": [
           "chloe_passive",
@@ -23197,8 +23609,8 @@ window.BV_WIKI_DATA = {
     {
       "id": "alicia",
       "order": 65,
-      "level": 5,
-      "dailyWage": 45,
+      "level": 1,
+      "dailyWage": 1,
       "legendsPerkProfile": "melee_mobile",
       "chapterRecruitOnly": true,
       "combatResource": null,
@@ -23232,10 +23644,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "alicia_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/alicia_card.png",
@@ -23255,10 +23668,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "alicia_oath_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 5,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/alicia_card.png",
@@ -23288,12 +23702,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Silver Swordmaster",
-              "description": "With a one-handed sword and empty offhand: paid sword skills cost 1 less AP, +10 accuracy and +25 penetration. Sword momentum starts at 2/5 stacks, III at 3/8, V at 5/10. Each stack grants +5 melee skill/defense; from III, an independent 5% weapon-damage bonus. Gain once per paid action that hits; IV adds one extra on the first such action each round. Expires after two full following rounds; permanent in battle at V. I ignores shields and applies -10 melee defense for two normal turns.",
+              "description": "With a one-handed sword and empty offhand: ordinary active weapon attacks cost 1 less AP, with +10 hit chance and +25 percentage points of armor penetration. Start battle with 2 Sword Momentum stacks, maximum 5; stage III starts at 3 with maximum 8, stage V at 5 with maximum 10. Each stack grants +5 Melee Skill and Defense; from III, also +5% weapon damage. Gain one stack per active attack that hits, once for a multi-hit attack; IV adds one more on the first hit each round. Without a refresh, stacks expire at the end of your turn two rounds later; at V they last through battle. From I, ignore shields and reduce a hit enemy’s Melee Defense by 10 for two normal turns.",
               "tooltip": []
             },
             "zh": {
               "name": "白银剑姬",
-              "description": "单手剑且副手空置：主动剑技 AP -1，命中 +10，穿透 +25 个百分点。初始剑势 2 层、上限 5；Ⅲ为 3/8，Ⅴ为 5/10。每层近战技能与防御 +5；Ⅲ起每层独立增加 5% 武器伤害。每次付费攻击命中最多叠一层，Ⅳ每轮首次再叠一层。刷新后保留两个完整后续轮次，Ⅴ本场永久。Ⅰ无视盾牌并施加两次正常行动的近防 -10。",
+              "description": "持单手剑且副手为空时，普通主动武器攻击少消耗1行动点，命中提高10点，穿甲提高25个百分点。开战时获得2层剑势，最多5层；Ⅲ阶段开战3层、最多8层，Ⅴ阶段开战5层、最多10层。每层提高5点近战技能和近战防御；Ⅲ阶段起每层再提高5%武器伤害。每次主动攻击命中增加1层，连击只增加一次；Ⅳ阶段每轮首次命中再加1层。不再刷新时，剑势在下下轮自身行动结束时消失；Ⅴ阶段持续至战斗结束。Ⅰ阶段起无视盾牌，命中还使敌人近战防御降低10点，持续其两次正常行动。",
               "tooltip": []
             }
           }
@@ -23325,7 +23739,7 @@ window.BV_WIKI_DATA = {
             },
             "zh": {
               "name": "荣光突刺",
-              "description": "3 AP / 12 疲劳。相邻单敌，倍率125%，Ⅲ起150%，沿用剑的护甲比例；总命中+30，武器穿透+40个百分点。Ⅳ疲劳降至10。剑势伤害独立结算。",
+              "description": "3 AP / 12 疲劳。相邻单敌，武器伤害125%，Ⅲ起150%，沿用剑的护甲比例；命中+30，武器穿透+40个百分点。Ⅳ疲劳降至10。Ⅲ阶段起，每层剑势再提高5%武器伤害。",
               "tooltip": []
             }
           }
@@ -23352,12 +23766,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Seamless Counter",
-              "description": "2 AP / 12 fatigue. Gain +20 melee defense until the first normal turn in a later round. A paid adjacent single-target melee miss triggers a free 100% counter (IV 150%), +10 accuracy/+25 weapon penetration points. Completed counters restore 5 fatigue, at most 30 per round. No counters to opportunity/ranged/area attacks or while rooted, stunned or disarmed.",
+              "description": "2 AP / 12 fatigue. Gain +20 melee defense until the first normal turn in a later round. An active adjacent single-target melee miss triggers a free 100% counter (IV 150%), +10 accuracy/+25 weapon penetration points. Completed counters restore 5 fatigue, at most 30 per round. No counters to opportunity/ranged/area attacks or while rooted, stunned or disarmed.",
               "tooltip": []
             },
             "zh": {
               "name": "无隙反击",
-              "description": "2 AP / 12 疲劳。近防+20，持续至后续轮次首次正常行动开始。相邻敌人的付费单体近战失手时免费反击，倍率100%（Ⅳ150%）、命中+10、武器穿透+25个百分点；完成反击回疲5，每轮最多30。不反击借机、远程或群攻；被定身/眩晕/缴械时不触发。",
+              "description": "2 AP / 12 疲劳。近战防御+20，持续至后续轮次首次正常行动开始。相邻敌人的主动单体近战攻击失手时免费反击，武器伤害100%（Ⅳ150%）、命中+10、武器穿透+25个百分点；完成反击恢复疲劳5，每轮最多30。不反击借机、远程或群攻；被束缚、眩晕或缴械时不触发。",
               "tooltip": []
             }
           }
@@ -23384,12 +23798,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Endless Sword Breath",
-              "description": "2 AP / 0 fatigue. Once per round, restore 30 fatigue, 40 from IV. Requires one-handed sword, empty offhand and positive current fatigue. Does not attack or add momentum.",
+              "description": "2 AP / 0 fatigue. Once per round, restore 30 fatigue, 40 from IV. Requires a one-handed sword, no separate offhand item equipped and positive current fatigue. Does not attack or add momentum.",
               "tooltip": []
             },
             "zh": {
               "name": "无尽剑息",
-              "description": "2 AP / 0 疲劳。每轮1次，恢复30疲劳，Ⅳ起40。须持单手剑、副手空置且当前疲劳大于0。不攻击、不叠剑势。",
+              "description": "2 AP / 0 疲劳。每轮1次，恢复30疲劳，Ⅳ起40。须持单手剑、未额外装备副手物品且当前疲劳大于0。不攻击、不叠剑势。",
               "tooltip": []
             }
           }
@@ -23421,7 +23835,7 @@ window.BV_WIKI_DATA = {
             },
             "zh": {
               "name": "白银三连",
-              "description": "5 AP / 25 疲劳。每轮1次，同一敌人三段各85%武器伤害，Ⅴ各100%；沿用剑护甲比例，命中+25，武器穿透+25个百分点，剑势另计。死亡即停止。Ⅴ施放前已有10层剑势时费用为4 AP，技能中叠满不退费。",
+              "description": "5 AP / 25 疲劳。每轮1次，同一敌人三次打击各85%武器伤害，Ⅴ各100%；沿用剑护甲比例，命中+25，武器穿透+25个百分点，Ⅲ阶段起，每层剑势再提高5%武器伤害。死亡即停止。Ⅴ施放时已有10层剑势时费用为4 AP，技能中叠满不退费。",
               "tooltip": []
             }
           }
@@ -23433,7 +23847,7 @@ window.BV_WIKI_DATA = {
           "backgroundName": "Silver Sword Stance",
           "backgroundDescription": "A captured knight tests her vows against exacting sword training and the decisions made beside her new comrades.",
           "traitName": "Silver Sword Stance",
-          "traitDescription": "With a one-handed sword and empty offhand: paid sword skills cost 1 less AP, +10 accuracy and +25 penetration. Sword momentum starts at 2/5 stacks, III at 3/8, V at 5/10. Each stack grants +5 melee skill/defense; from III, an independent 5% weapon-damage bonus. Gain once per paid action that hits; IV adds one extra on the first such action each round. Expires after two full following rounds; permanent in battle at V. I ignores shields and applies -10 melee defense for two normal turns.",
+          "traitDescription": "With a one-handed sword and empty offhand: ordinary active weapon attacks cost 1 less AP, with +10 hit chance and +25 percentage points of armor penetration. Start battle with 2 Sword Momentum stacks, maximum 5; stage III starts at 3 with maximum 8, stage V at 5 with maximum 10. Each stack grants +5 Melee Skill and Defense; from III, also +5% weapon damage. Gain one stack per active attack that hits, once for a multi-hit attack; IV adds one more on the first hit each round. Without a refresh, stacks expire at the end of your turn two rounds later; at V they last through battle. From I, ignore shields and reduce a hit enemy’s Melee Defense by 10 for two normal turns.",
           "traitTooltip": []
         },
         "zh": {
@@ -23441,7 +23855,7 @@ window.BV_WIKI_DATA = {
           "backgroundName": "银辉剑势",
           "backgroundDescription": "曾以骑士誓约约束自身的女剑士被战团俘获。严格的剑术训练与并肩作战，让她重新审视誓言的归属。",
           "traitName": "银辉剑势",
-          "traitDescription": "单手剑且副手空置：主动剑技 AP -1，命中 +10，穿透 +25 个百分点。初始剑势 2 层、上限 5；Ⅲ为 3/8，Ⅴ为 5/10。每层近战技能与防御 +5；Ⅲ起每层独立增加 5% 武器伤害。每次付费攻击命中最多叠一层，Ⅳ每轮首次再叠一层。刷新后保留两个完整后续轮次，Ⅴ本场永久。Ⅰ无视盾牌并施加两次正常行动的近防 -10。",
+          "traitDescription": "持单手剑且副手为空时，普通主动武器攻击少消耗1行动点，命中提高10点，穿甲提高25个百分点。开战时获得2层剑势，最多5层；Ⅲ阶段开战3层、最多8层，Ⅴ阶段开战5层、最多10层。每层提高5点近战技能和近战防御；Ⅲ阶段起每层再提高5%武器伤害。每次主动攻击命中增加1层，连击只增加一次；Ⅳ阶段每轮首次命中再加1层。不再刷新时，剑势在下下轮自身行动结束时消失；Ⅴ阶段持续至战斗结束。Ⅰ阶段起无视盾牌，命中还使敌人近战防御降低10点，持续其两次正常行动。",
           "traitTooltip": []
         }
       },
@@ -23584,12 +23998,12 @@ window.BV_WIKI_DATA = {
           "growth"
         ],
         "summary": {
-          "en": "Chapter swordswoman; remove the shield for her stance.",
-          "zh": "篇章剑士，空副手才启用剑势"
+          "en": "Chapter swordswoman; starts with a shortsword and no offhand item.",
+          "zh": "篇章剑士，短剑单持启用剑势"
         },
         "analysis": {
-          "en": "Seven Shields supplies a sword and shield, but sword stacks and AP discounts require an empty offhand. Riposte and Breath sustain combat; maturity includes growth stages.",
-          "zh": "七盾入队赠剑盾，但剑势和减AP要求单手剑且副手空置，需先卸盾；反击与吐纳稳续航，成型包含成长阶段，不能按赠盾状态算全部被动。"
+          "en": "Her starting shortsword enables sword stacks and AP discounts while no shield or other offhand item is equipped. Riposte and Breath sustain combat; maturity includes growth stages.",
+          "zh": "入队配短剑，不装备盾牌或其他副手物品即可启用剑势和减AP；反击与吐纳稳续航，成型包含成长阶段。"
         },
         "reviewedSkills": [
           "alicia_passive",
@@ -23614,8 +24028,8 @@ window.BV_WIKI_DATA = {
     {
       "id": "claudia",
       "order": 66,
-      "level": 5,
-      "dailyWage": 50,
+      "level": 1,
+      "dailyWage": 1,
       "legendsPerkProfile": "melee_frontline",
       "chapterRecruitOnly": true,
       "combatResource": null,
@@ -23649,10 +24063,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "claudia_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/claudia_card.png",
@@ -23672,10 +24087,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "claudia_oath_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 5,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/claudia_card.png",
@@ -23705,12 +24121,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Siegebreaker",
-              "description": "Two-handed hammer: +15 accuracy, +50 armor-damage percentage points and +15 penetration. With body armor, take 20% less armor damage and resist forced movement. Paid hits apply -25 defenses and 1.5x armor damage received after damage; III replaces these with -30, 2x and +25 attacker penetration, permanent at V. III adds 50 weapon-damage percentage points against fully unarmored targets. The first active armor break each round recovers 12 fatigue.",
+              "description": "With a two-handed hammer: +15 hit chance, +50 percentage points of armor damage and +15 percentage points of armor penetration. While body armor remains, take 20% less armor damage and resist forced movement. Active hammer hits apply Siegebreaker Fracture for two normal turns: -25 Melee and Ranged Defense and +50% armor damage taken. At III: -30 defenses, +100% armor damage taken, and attacks against the target gain 25 percentage points of penetration. At V, Fracture lasts through battle. From III, attacks against enemies with neither head nor body armor gain 50 percentage points of weapon damage. Recover 12 fatigue the first time each round you destroy an enemy’s head or body armor.",
               "tooltip": []
             },
             "zh": {
               "name": "破城震击",
-              "description": "双手锤：命中 +15，护甲伤害 +50 个百分点，穿透 +15 个百分点。有身甲时护甲受伤降低 20%，免疫强制位移。付费锤击结算后施加双防 -25、护甲受伤 ×1.5；Ⅲ替换为 -30、×2、攻击者穿透 +25 个百分点，Ⅴ永久。Ⅲ攻击完全无甲目标时武器倍率额外 +50 个百分点。每轮首次主动打破正值护甲回疲 12。",
+              "description": "持双手锤时，命中提高15点，护甲伤害提高50个百分点，穿甲提高15个百分点。身甲尚未耗尽时，受到的护甲伤害降低20%，免疫强制位移。主动锤击命中后施加破城裂隙：敌人近战和远程防御各降低25点，受到的护甲伤害增加50%，持续两次正常行动。Ⅲ阶段改为防御各降低30点、受到的护甲伤害增加100%，攻击该敌人的穿甲额外提高25个百分点；Ⅴ阶段持续至战斗结束。Ⅲ阶段起，对头甲和身甲都已耗尽的敌人额外增加50个百分点武器伤害。每轮首次击毁敌人头甲或身甲时恢复12疲劳。",
               "tooltip": []
             }
           }
@@ -23742,7 +24158,7 @@ window.BV_WIKI_DATA = {
             },
             "zh": {
               "name": "攻城重锤",
-              "description": "4 AP / 20 疲劳。相邻敌人150%武器伤害，护甲250%，穿透50%，总命中+35；命中后施加茫然、踉跄及破城减益。Ⅲ无甲倍率加值另外结算。",
+              "description": "4 AP / 20 疲劳。相邻敌人150%武器伤害，护甲250%，穿透50%，命中+35；命中后施加茫然、踉跄及破城裂隙。Ⅲ阶段起，攻击头甲和身甲均已耗尽的敌人时，再增加50个百分点武器伤害。",
               "tooltip": []
             }
           }
@@ -23769,12 +24185,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Armor-Shattering Wedge",
-              "description": "3 AP / 16 fatigue. Once per round: adjacent enemy, 100% weapon/350% armor/15% penetration/+40 accuracy. After hit damage, remove floor(25% remaining armor) from head and body; misses do not shave armor.",
+              "description": "3 AP / 16 fatigue. Once per round: adjacent enemy, 100% weapon/350% armor/15% penetration/+40 accuracy. After hit damage, remove 25% of remaining armor, rounded down from head and body; misses do not shave armor.",
               "tooltip": []
             },
             "zh": {
               "name": "碎甲楔击",
-              "description": "3 AP / 16 疲劳。每轮1次。相邻敌人倍率100%，护甲350%，穿透15%，命中+40；伤害后再削去当时剩余头甲、身甲各25%，向下取整；失手不削甲。",
+              "description": "3 AP / 16 疲劳。每轮1次。相邻敌人武器伤害100%，护甲350%，穿透15%，命中+40；伤害后再削去当时剩余头甲、身甲各25%，向下取整；失手不削甲。",
               "tooltip": []
             }
           }
@@ -23806,7 +24222,7 @@ window.BV_WIKI_DATA = {
             },
             "zh": {
               "name": "地裂横扫",
-              "description": "5 AP / 26 疲劳。每轮1次，全部相邻敌人各120%武器伤害，护甲275%，穿透40%，命中+30，命中施加茫然、踉跄与破城减益，不伤友军。",
+              "description": "5 AP / 26 疲劳。每轮1次，全部相邻敌人各120%武器伤害，护甲275%，穿透40%，命中+30，命中施加茫然、踉跄与破城裂隙，不伤友军。",
               "tooltip": []
             }
           }
@@ -23838,7 +24254,7 @@ window.BV_WIKI_DATA = {
             },
             "zh": {
               "name": "震城波",
-              "description": "6 AP / 30 疲劳。每轮1次，1至3格中心及第一圈。各敌人140%武器伤害，护甲300%，穿透45%，命中+35，命中附加茫然、踉跄与破城减益；中心尝试眩晕，遵守原有免疫。",
+              "description": "6 AP / 30 疲劳。每轮1次，1至3格中心及周围1格。各敌人140%武器伤害，护甲300%，穿透45%，命中+35，命中附加茫然、踉跄与破城裂隙；中心尝试眩晕，遵守原有免疫。",
               "tooltip": []
             }
           }
@@ -23870,7 +24286,7 @@ window.BV_WIKI_DATA = {
             },
             "zh": {
               "name": "白城陨落",
-              "description": "6 AP / 36 疲劳。每轮1次。首击200%武器伤害、护甲550%、穿透65%、命中+45。命中后剩余头甲和身甲清零；原目标仍存活才追击一次，倍率200%（已含无甲加值）、护甲150%、穿透100%。失手或击杀不追击。",
+              "description": "6 AP / 36 疲劳。每轮1次。首击200%武器伤害、护甲550%、穿透65%、命中+45。命中后剩余头甲和身甲清零；原先选择的目标仍存活才追击一次，武器伤害200%（已含无甲加值）、护甲150%、穿透100%。失手或击杀不追击。",
               "tooltip": []
             }
           }
@@ -23882,7 +24298,7 @@ window.BV_WIKI_DATA = {
           "backgroundName": "Siegebreaker",
           "backgroundDescription": "A hammer knight taken after the white city's defenses fell learns to rebuild responsibility alongside the walls she once trusted.",
           "traitName": "Siegebreaker",
-          "traitDescription": "Two-handed hammer: +15 accuracy, +50 armor-damage percentage points and +15 penetration. With body armor, take 20% less armor damage and resist forced movement. Paid hits apply -25 defenses and 1.5x armor damage received after damage; III replaces these with -30, 2x and +25 attacker penetration, permanent at V. III adds 50 weapon-damage percentage points against fully unarmored targets. The first active armor break each round recovers 12 fatigue.",
+          "traitDescription": "With a two-handed hammer: +15 hit chance, +50 percentage points of armor damage and +15 percentage points of armor penetration. While body armor remains, take 20% less armor damage and resist forced movement. Active hammer hits apply Siegebreaker Fracture for two normal turns: -25 Melee and Ranged Defense and +50% armor damage taken. At III: -30 defenses, +100% armor damage taken, and attacks against the target gain 25 percentage points of penetration. At V, Fracture lasts through battle. From III, attacks against enemies with neither head nor body armor gain 50 percentage points of weapon damage. Recover 12 fatigue the first time each round you destroy an enemy’s head or body armor.",
           "traitTooltip": []
         },
         "zh": {
@@ -23890,7 +24306,7 @@ window.BV_WIKI_DATA = {
           "backgroundName": "破城震击",
           "backgroundDescription": "白城的战锤骑士在城防失守后成为战团俘虏。她习惯命令与城墙，如今要从废墟里学会承担新的责任。",
           "traitName": "破城震击",
-          "traitDescription": "双手锤：命中 +15，护甲伤害 +50 个百分点，穿透 +15 个百分点。有身甲时护甲受伤降低 20%，免疫强制位移。付费锤击结算后施加双防 -25、护甲受伤 ×1.5；Ⅲ替换为 -30、×2、攻击者穿透 +25 个百分点，Ⅴ永久。Ⅲ攻击完全无甲目标时武器倍率额外 +50 个百分点。每轮首次主动打破正值护甲回疲 12。",
+          "traitDescription": "持双手锤时，命中提高15点，护甲伤害提高50个百分点，穿甲提高15个百分点。身甲尚未耗尽时，受到的护甲伤害降低20%，免疫强制位移。主动锤击命中后施加破城裂隙：敌人近战和远程防御各降低25点，受到的护甲伤害增加50%，持续两次正常行动。Ⅲ阶段改为防御各降低30点、受到的护甲伤害增加100%，攻击该敌人的穿甲额外提高25个百分点；Ⅴ阶段持续至战斗结束。Ⅲ阶段起，对头甲和身甲都已耗尽的敌人额外增加50个百分点武器伤害。每轮首次击毁敌人头甲或身甲时恢复12疲劳。",
           "traitTooltip": []
         }
       },
@@ -24040,12 +24456,12 @@ window.BV_WIKI_DATA = {
           "control"
         ],
         "summary": {
-          "en": "A supplied polehammer enables close armor-breaking skills.",
-          "zh": "篇章赠长锤，近身破甲补控场"
+          "en": "Starts with a two-handed wooden hammer for close armor-breaking skills.",
+          "zh": "入队配双手木锤，启用近身破甲战技"
         },
         "analysis": {
-          "en": "The supplied two-handed polehammer meets her exclusive hammer requirements. Exclusive skills use their own range rules; ordinary weapon attacks retain polehammer range. Armor mitigation and team armor debuffs excel against heavy targets; later abilities require stage progression.",
-          "zh": "七盾赠双手长锤，满足专属锤击装备条件；专属技能使用自身距离规则，普通武器攻击仍遵守长锤距离。身甲减伤、削甲和团队破城面对重甲更有价值，城破等能力需阶段成长。"
+          "en": "Her starting two-handed wooden hammer and basic body armor meet her hammer-skill and armor-protection requirements. Exclusive skills use their own ranges. Armor mitigation and team armor debuffs excel against heavy targets; later abilities require stage progression.",
+          "zh": "入队配双手木锤及基础衣甲，满足锤类战技和身甲保护条件。专属战技使用各自射程；减甲伤与团队破甲适合对抗重甲目标，高阶能力需阶段成长。"
         },
         "reviewedSkills": [
           "claudia_passive",
@@ -24071,8 +24487,8 @@ window.BV_WIKI_DATA = {
     {
       "id": "celestine",
       "order": 67,
-      "level": 6,
-      "dailyWage": 60,
+      "level": 1,
+      "dailyWage": 1,
       "legendsPerkProfile": "ranged_support",
       "chapterRecruitOnly": true,
       "combatResource": null,
@@ -24106,10 +24522,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "celestine_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/celestine_card.png",
@@ -24129,10 +24546,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "celestine_oath_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 5,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/celestine_card.png",
@@ -24167,7 +24585,7 @@ window.BV_WIKI_DATA = {
             },
             "zh": {
               "name": "女神神性",
-              "description": "每轮第一次直接攻击行动造成的生命及护甲伤害减半，同一行动的多段攻击共用一次保护；间接伤害不消耗。Ⅰ起每轮首次实际治疗或修甲回疲 10。圣光伤害依据施放时当前生命，法术不需武器。最大 AP 按阶段为 9/10/11/12/13/14。",
+              "description": "每轮第一次直接攻击行动造成的生命及护甲伤害减半，同一行动的多段攻击共用一次保护；间接伤害不消耗。Ⅰ起每轮首次实际治疗或修甲恢复疲劳 10。圣光伤害依据施放时当前生命，法术不需武器。最大 AP 按阶段为 9/10/11/12/13/14。",
               "tooltip": []
             }
           }
@@ -24194,12 +24612,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Holy Judgment",
-              "description": "4 AP / 16 fatigue. Within 8 tiles, automatically hits body for floor(70+50% current HP), 100% armor damage and 50% penetration. Armor and damage reduction still apply.",
+              "description": "4 AP / 16 fatigue. Within 8 tiles, automatically hits body for 70 + 50% of current HP, rounded down, 100% armor damage and 50% penetration. Armor and damage reduction still apply.",
               "tooltip": []
             },
             "zh": {
               "name": "圣光裁决",
-              "description": "4 AP / 16 疲劳。8格内自动命中身体，基础伤害 floor(70+当前生命×50%)，护甲100%、穿透50%；仍经过护甲与减伤结算。",
+              "description": "4 AP / 16 疲劳。8格内自动命中身体，基础伤害 70加当前生命的50%（向下取整），护甲100%、穿透50%；仍经过护甲与减伤结算。",
               "tooltip": []
             }
           }
@@ -24226,12 +24644,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Divine Blessing",
-              "description": "2 AP / 12 fatigue. Self or ally within 8 tiles: +15 attack/defense stats, +20 resolve/initiative for two normal turns. III replaces with +20/+30. Recasts refresh rather than stack.",
+              "description": "Costs 2 AP and 12 fatigue. Bless yourself or an ally within 8 tiles: +15 Melee Skill, Ranged Skill, Melee Defense and Ranged Defense, and +20 Resolve and Initiative. From III, grant +20 skills and defenses and +30 Resolve and Initiative. Lasts two normal turns; recasting refreshes duration without stacking.",
               "tooltip": []
             },
             "zh": {
               "name": "女神赐福",
-              "description": "2 AP / 12 疲劳。8格内自己或友军，攻防四项+15、决心与主动值+20，持续两次正常行动。Ⅲ起替换为+20/+30。重复施放刷新，不叠层。",
+              "description": "消耗2行动点、12疲劳。为8格内自身或友军赐福，近战技能、远程技能、近战防御和远程防御各提高15点，决心和主动值各提高20点。Ⅲ阶段起，四项技能和防御各提高20点，决心和主动值各提高30点。持续目标两次正常行动，重复施放刷新时间，不叠加。",
               "tooltip": []
             }
           }
@@ -24258,12 +24676,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Life Light",
-              "description": "4 AP / 22 fatigue. Main target heals floor(50+25% maximum HP), repairs each head/body armor by floor(50+15% maximum HP), clears bleed/poison. I chooses one most-injured other ally within two tiles for 50% healing/repair; V up to two at 75%, without cleansing. First actual restoration each round refunds 10 fatigue.",
+              "description": "Costs 4 AP and 22 fatigue. Heal yourself or an ally within 8 tiles for 50 + 25% of their maximum HP, and repair both head and body armor by 50 + 15% of their maximum HP, rounded down. Remove bleeding and poison. From stage I, also heal one injured or armor-damaged ally within 2 tiles of the target for 50% of these amounts; stage V affects up to two for 75% each, without cleansing them. From stage I, the first successful heal or repair each round restores 10 fatigue to the caster.",
               "tooltip": []
             },
             "zh": {
               "name": "生命圣光",
-              "description": "4 AP / 22 疲劳。主目标恢复 floor(50+25%最大生命) 生命，头甲身甲各修 floor(50+15%最大生命)，清除流血中毒。Ⅰ从其两格内补选最重伤友军1人，复制50%治疗修甲；Ⅴ最多2人各75%，不复制净化。每轮首次实际恢复回疲10。",
+              "description": "消耗4行动点、22疲劳。为8格内自身或友军恢复相当于50加其最大生命25%的生命，并分别修复相当于50加其最大生命15%的头甲和身甲，数值向下取整；清除其流血和中毒。Ⅰ阶段起额外治疗目标2格内一名受伤或护甲受损的友军，治疗和修甲量为主目标的50%；Ⅴ阶段最多两人，各为75%，额外目标不清除流血或中毒。Ⅰ阶段起每轮首次实际治疗或修甲后，自身恢复10疲劳。",
               "tooltip": []
             }
           }
@@ -24290,12 +24708,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Farshore Gate",
-              "description": "3 AP / 12 fatigue. Across the map, select a legal single-tile unit then a standable empty destination; payment occurs only on step two. Crosses elevation/obstacles/control zones without opportunity attacks or changing target AP, fatigue or turn state. Excludes multi-tile/fixed/story bosses and dead units; cancel clears selection.",
+              "description": "Costs 3 AP and 12 fatigue. Select a movable unit occupying one tile, then a standable empty tile anywhere on the map. Costs are paid only after selecting the destination. Crosses height differences, obstacles and enemy zones of control without provoking attacks of opportunity. Preserves the target’s AP, fatigue and turn state. Cannot move multi-tile creatures, fixed objects, certain special bosses or corpses.",
               "tooltip": []
             },
             "zh": {
               "name": "彼岸之门",
-              "description": "3 AP / 12 疲劳。全地图先选合法单格单位，再选可站立的空地，第二步才付费；可跨高差障碍与控制区，不触发借机，不改变目标AP、疲劳或行动状态。多格、固定物体、特殊剧情Boss和死亡单位不可选，取消清空选择。",
+              "description": "消耗3行动点、12疲劳。先选择一个能够移动、只占一格的单位，再选择可站立的空地；确认落点后才消耗费用。可跨越地形高差、障碍和敌人控制区，不触发借机攻击，保留目标的行动点、疲劳和行动状态。不能传送多格生物、固定物体、部分特殊首领或尸体。",
               "tooltip": []
             }
           }
@@ -24354,12 +24772,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Celestial Judgment",
-              "description": "6 AP / 30 fatigue. Once per round, within 8 tiles, automatically hits body for floor(150+80% current HP), 200% armor and 70% penetration, using normal armor/reduction rules.",
+              "description": "6 AP / 30 fatigue. Once per round, within 8 tiles, automatically hits body for 150 + 80% of current HP, rounded down, 200% armor and 70% penetration, using normal armor/reduction rules.",
               "tooltip": []
             },
             "zh": {
               "name": "天界裁决",
-              "description": "6 AP / 30 疲劳。每轮1次，8格内自动命中身体，基础伤害 floor(150+当前生命×80%)，护甲200%，穿透70%；经过正常护甲与减伤。",
+              "description": "6 AP / 30 疲劳。每轮1次，8格内自动命中身体，基础伤害 150加当前生命的80%（向下取整），护甲200%，穿透70%；经过正常护甲与减伤。",
               "tooltip": []
             }
           }
@@ -24386,12 +24804,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Resurrection Seal",
-              "description": "5 AP / 30 fatigue. At most two casts per battle, each living player target triggers once, range 8. Before the first legal lethal hit, consume seal; set HP/fatigue to 50% maximum, zero AP and end this round's action, clear bleed/poison. Preserve armor, equipment, position and counters. Does not revive corpses.",
+              "description": "5 AP / 30 fatigue. At most two casts per battle, each living player target triggers once, range 8. Before the first lethal hit, consume seal; set HP/fatigue to 50% maximum, zero AP and end this round's action, clear bleed/poison. Preserve armor, equipment, position and counters. Does not revive corpses.",
               "tooltip": []
             },
             "zh": {
               "name": "复生圣印",
-              "description": "5 AP / 30 疲劳。每场最多施放2次，每人最多触发一次，施于8格内存活玩家。首次合法致死伤害在死亡前消耗圣印，生命和当前疲劳设为各最大值50%，AP归零并结束本轮行动，清流血中毒；护甲、装备、位置及次数保留。不能复活已死角色。",
+              "description": "5 AP / 30 疲劳。每场最多施放2次，每人最多触发一次，施于8格内仍然存活的己方队员。首次致命伤害在死亡前消耗圣印，生命和当前疲劳设为各最大值50%，AP归零并结束本轮行动，清流血中毒；护甲、装备、位置及次数保留。不能复活已死角色。",
               "tooltip": []
             }
           }
@@ -24411,7 +24829,7 @@ window.BV_WIKI_DATA = {
           "backgroundName": "女神之躯",
           "backgroundDescription": "被卷入战火的精灵女祭司在战团中受到看管。她以治愈守住信念，又在一次次救援中找到新的精神支柱。",
           "traitName": "女神之躯",
-          "traitDescription": "每轮第一次直接攻击行动造成的生命及护甲伤害减半，同一行动的多段攻击共用一次保护；间接伤害不消耗。Ⅰ起每轮首次实际治疗或修甲回疲 10。圣光伤害依据施放时当前生命，法术不需武器。最大 AP 按阶段为 9/10/11/12/13/14。",
+          "traitDescription": "每轮第一次直接攻击行动造成的生命及护甲伤害减半，同一行动的多段攻击共用一次保护；间接伤害不消耗。Ⅰ起每轮首次实际治疗或修甲恢复疲劳 10。圣光伤害依据施放时当前生命，法术不需武器。最大 AP 按阶段为 9/10/11/12/13/14。",
           "traitTooltip": []
         }
       },
@@ -24568,8 +24986,8 @@ window.BV_WIKI_DATA = {
           "zh": "篇章圣女，自动法术与修甲"
         },
         "analysis": {
-          "en": "She joins at level 6 after lower Seven Shields. Healing repairs both armor slots; spell damage uses current HP. Prevention cannot revive dead actors; maturity includes growth stages.",
-          "zh": "七盾下篇6级入队，治疗同时修头甲身甲，自动法术按当前生命计算；低血会降输出，保护与预防致死不等于复活已死单位，成型含成长阶段。"
+          "en": "Starts with a knife, buckler and basic armor; spells have no weapon requirement. She joins at level 1 after lower Seven Shields. Healing repairs both armor slots; spell damage uses current HP. Prevention cannot revive dead actors; maturity includes growth stages.",
+          "zh": "入队配小刀、轻圆盾和基础防具，施法不要求特定武器。七盾下篇1级入队，治疗同时修头甲身甲，自动法术按当前生命计算；低血会降输出，保护与预防致死不等于复活已死单位，成型含成长阶段。"
         },
         "reviewedSkills": [
           "celestine_passive",
@@ -24597,8 +25015,8 @@ window.BV_WIKI_DATA = {
     {
       "id": "kaguya",
       "order": 68,
-      "level": 5,
-      "dailyWage": 45,
+      "level": 1,
+      "dailyWage": 1,
       "legendsPerkProfile": "melee_mobile",
       "chapterRecruitOnly": true,
       "combatResource": null,
@@ -24632,10 +25050,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "kaguya_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/kaguya_card.png",
@@ -24655,10 +25074,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "kaguya_oath_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 5,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/kaguya_card.png",
@@ -24688,12 +25108,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Solar Priestess",
-              "description": "Two-handed polearm or spear, empty offhand: +20 accuracy. Attacks centered two tiles away gain +50 weapon-damage/+30 penetration percentage points and ignore shields. Paid weapon hits seal targets: -2 maximum AP, -25% direct damage, -10 defenses; I -15 defenses; III -3 AP/-35%/-20 and blocks active displacement; V -4/-40%/-30, permanent in battle. From I, sealing a new target first each round restores 10 fatigue.",
+              "description": "With a two-handed polearm or spear: +20 hit chance. Selecting an attack center 2 tiles away grants +50 percentage points of weapon damage, +30 percentage points of armor penetration, and ignores shields. Active weapon hits apply Divine Seal for two normal turns: -2 maximum AP, -25% direct attack damage and -10 Melee and Ranged Defense; stage I reduces defenses by 15. At III: -3 AP, -35% damage, -20 defenses, and active movement skills are disabled. At V: -4 AP, -40% damage, -30 defenses, lasting through battle. From I, recover 10 fatigue the first time each round you seal a new enemy.",
               "tooltip": []
             },
             "zh": {
               "name": "日轮巫女",
-              "description": "双手长柄或矛且副手空置：命中 +20；两格中心攻击武器倍率 +50、穿透 +30 个百分点，并无视盾牌。付费武器命中施加御神封印：最大 AP -2、直接伤害 -25%、双防 -10；Ⅰ双防 -15；Ⅲ改为 AP -3、伤害 -35%、双防 -20并禁主动位移；Ⅴ为 -4/-40%/-30且本场永久。Ⅰ起每轮首次封印新目标回疲 10。",
+              "description": "持双手长柄武器或矛时，命中提高20点。选择距离2格的攻击中心时，武器伤害增加50个百分点，穿甲增加30个百分点，并无视盾牌。主动武器攻击命中后施加御神封印，持续目标两次正常行动：最大行动点减少2，直接攻击伤害降低25%，近战和远程防御各降低10；Ⅰ阶段防御降低15。Ⅲ阶段改为行动点减少3、伤害降低35%、防御各降低20，并禁止使用主动位移技能。Ⅴ阶段分别为4、40%、30，持续至战斗结束。Ⅰ阶段起每轮首次对一名新敌人施加封印时恢复10疲劳。",
               "tooltip": []
             }
           }
@@ -24725,7 +25145,7 @@ window.BV_WIKI_DATA = {
             },
             "zh": {
               "name": "神威穿刺",
-              "description": "4 AP / 16 疲劳。1至2格单敌。1格倍率130%、穿透50%，2格倍率180%、穿透80%且无视盾牌；护甲150%，命中+40。命中施加当前御神封印。",
+              "description": "4 AP / 16 疲劳。1至2格单敌。1格武器伤害130%、穿透50%，2格武器伤害180%、穿透80%且无视盾牌；护甲150%，命中+40。命中施加御神封印。",
               "tooltip": []
             }
           }
@@ -24757,7 +25177,7 @@ window.BV_WIKI_DATA = {
             },
             "zh": {
               "name": "缚魂神符",
-              "description": "3 AP / 16 疲劳。8格内单敌，自动命中、不造成伤害；蛛网束缚，当前AP额外扣3（同次一次），并施加当前御神封印。",
+              "description": "3 AP / 16 疲劳。8格内单敌，自动命中、不造成伤害；蛛网束缚，当前行动点额外减少3点，并施加御神封印。",
               "tooltip": []
             }
           }
@@ -24784,12 +25204,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Moonwheel Sweep",
-              "description": "5 AP / 24 fatigue. Once per round, center 1-2 tiles away plus two flanks, deduplicated enemies only. 120% damage (two-tile center 170%), 150% armor, 50% penetration (two 80% and ignores shields), +40 accuracy; hits apply seals.",
+              "description": "5 AP / 24 fatigue. Once per round, center 1-2 tiles away plus two flanks, each enemy is struck once. 120% damage (two-tile center 170%), 150% armor, 50% penetration (two 80% and ignores shields), +40 accuracy; hits apply seals.",
               "tooltip": []
             },
             "zh": {
               "name": "月轮薙斩",
-              "description": "5 AP / 24 疲劳。每轮1次，1至2格中心及两翼，实体去重、只伤敌人。每人倍率120%（两格中心170%），护甲150%，穿透50%（两格80%并无视盾），命中+40；封印按命中目标施加。",
+              "description": "5 AP / 24 疲劳。每轮1次，1至2格中心及两翼，只攻击范围内敌人，每名敌人受到一次打击。每人武器伤害120%（两格中心170%），护甲150%，穿透50%（两格80%并无视盾），命中+40；封印施加于被命中的敌人。",
               "tooltip": []
             }
           }
@@ -24816,12 +25236,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Eightfold Seal",
-              "description": "5 AP / 26 fatigue. Once per round, center 2-7 tiles away and first ring: deduplicated enemies automatically receive web and Divine Seal without damage. Allies excluded.",
+              "description": "5 AP / 26 fatigue. Once per round, center 2-7 tiles away and first ring: each enemy will receive web and Divine Seal without damage. Allies excluded.",
               "tooltip": []
             },
             "zh": {
               "name": "八方封阵",
-              "description": "5 AP / 26 疲劳。每轮1次，2至7格中心及第一圈，敌人实体去重，自动蛛网与御神封印，不造成伤害，不伤友军。",
+              "description": "5 AP / 26 疲劳。每轮1次，2至7格中心及周围1格，每名敌人只受影响一次，自动蛛网与御神封印，不造成伤害，不伤友军。",
               "tooltip": []
             }
           }
@@ -24848,12 +25268,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Solar Purge",
-              "description": "7 AP / 36 fatigue. Cooldown two global rounds. Center 1-2 and first ring: 150% damage (two-tile center 200%), armor 150%, penetration 60% (two 90%, ignore shields), +50 accuracy. Regardless of hit, surviving enemies receive web/permanent seal; center forced stun for one normal turn, including bosses.",
+              "description": "7 AP / 36 fatigue. Cooldown two rounds. Center 1-2 and first ring: 150% damage (two-tile center 200%), armor 150%, penetration 60% (two 90%, ignore shields), +50 accuracy. Regardless of hit, surviving enemies receive web/permanent seal; center forced stun for one normal turn, including bosses.",
               "tooltip": []
             },
             "zh": {
               "name": "日轮大祓",
-              "description": "7 AP / 36 疲劳。冷却2个全局轮次。1至2格中心及第一圈，每敌150%武器伤害（两格中心200%）、护甲150%、穿透60%（两格90%无视盾）、命中+50。无论命中与否，存活敌人受蛛网和永久封印，中心强制眩晕一次正常行动，Boss不降级。",
+              "description": "7 AP / 36 疲劳。冷却2轮。1至2格中心及周围1格，每敌150%武器伤害（两格中心200%）、护甲150%、穿透60%（两格90%无视盾）、命中+50。无论命中与否，存活敌人受蛛网和永久封印，中心强制眩晕一次正常行动，对首领也尝试施加眩晕。",
               "tooltip": []
             }
           }
@@ -24865,7 +25285,7 @@ window.BV_WIKI_DATA = {
           "backgroundName": "Divine Seal",
           "backgroundDescription": "A captured shrine priestess holds to old rites until seal training and distant campaigns reshape her understanding of order and faith.",
           "traitName": "Divine Seal",
-          "traitDescription": "Two-handed polearm or spear, empty offhand: +20 accuracy. Attacks centered two tiles away gain +50 weapon-damage/+30 penetration percentage points and ignore shields. Paid weapon hits seal targets: -2 maximum AP, -25% direct damage, -10 defenses; I -15 defenses; III -3 AP/-35%/-20 and blocks active displacement; V -4/-40%/-30, permanent in battle. From I, sealing a new target first each round restores 10 fatigue.",
+          "traitDescription": "With a two-handed polearm or spear: +20 hit chance. Selecting an attack center 2 tiles away grants +50 percentage points of weapon damage, +30 percentage points of armor penetration, and ignores shields. Active weapon hits apply Divine Seal for two normal turns: -2 maximum AP, -25% direct attack damage and -10 Melee and Ranged Defense; stage I reduces defenses by 15. At III: -3 AP, -35% damage, -20 defenses, and active movement skills are disabled. At V: -4 AP, -40% damage, -30 defenses, lasting through battle. From I, recover 10 fatigue the first time each round you seal a new enemy.",
           "traitTooltip": []
         },
         "zh": {
@@ -24873,7 +25293,7 @@ window.BV_WIKI_DATA = {
           "backgroundName": "御神封印",
           "backgroundDescription": "被战团俘获的东方巫女仍遵守旧日祭仪。符术训练与远征让她逐渐改变对秩序和信仰的理解。",
           "traitName": "御神封印",
-          "traitDescription": "双手长柄或矛且副手空置：命中 +20；两格中心攻击武器倍率 +50、穿透 +30 个百分点，并无视盾牌。付费武器命中施加御神封印：最大 AP -2、直接伤害 -25%、双防 -10；Ⅰ双防 -15；Ⅲ改为 AP -3、伤害 -35%、双防 -20并禁主动位移；Ⅴ为 -4/-40%/-30且本场永久。Ⅰ起每轮首次封印新目标回疲 10。",
+          "traitDescription": "持双手长柄武器或矛时，命中提高20点。选择距离2格的攻击中心时，武器伤害增加50个百分点，穿甲增加30个百分点，并无视盾牌。主动武器攻击命中后施加御神封印，持续目标两次正常行动：最大行动点减少2，直接攻击伤害降低25%，近战和远程防御各降低10；Ⅰ阶段防御降低15。Ⅲ阶段改为行动点减少3、伤害降低35%、防御各降低20，并禁止使用主动位移技能。Ⅴ阶段分别为4、40%、30，持续至战斗结束。Ⅰ阶段起每轮首次对一名新敌人施加封印时恢复10疲劳。",
           "traitTooltip": []
         }
       },
@@ -25024,8 +25444,8 @@ window.BV_WIKI_DATA = {
           "zh": "篇章巫女，先备双手矛长柄"
         },
         "analysis": {
-          "en": "No starting weapon is granted. Two-handed spears or polearms with an empty offhand unlock her two-tile advantages; permanent seals and later skills require growth.",
-          "zh": "七盾入队不赠武器，需要双手矛或长柄且空副手才发挥两格穿透；符术可控行动，永久封印和高阶技能需成长，不能当作初始全解锁。"
+          "en": "Her starting pitchfork meets the two-handed polearm requirement for her two-tile advantages. Permanent seals and later skills require growth.",
+          "zh": "入队配草叉，满足双手长柄要求，可发挥两格穿透；符术可控行动，永久封印和高阶技能需成长，不能当作初始全解锁。"
         },
         "reviewedSkills": [
           "kaguya_passive",
@@ -25051,8 +25471,8 @@ window.BV_WIKI_DATA = {
     {
       "id": "prim",
       "order": 69,
-      "level": 5,
-      "dailyWage": 45,
+      "level": 1,
+      "dailyWage": 1,
       "legendsPerkProfile": "melee_support",
       "chapterRecruitOnly": true,
       "combatResource": null,
@@ -25086,10 +25506,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "prim_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/prim_card.png",
@@ -25109,10 +25530,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "prim_oath_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 5,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/prim_card.png",
@@ -25142,12 +25564,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Banner Command",
-              "description": "Two-handed polearm/banner, empty offhand: paid weapon skills cost -1 AP/-5 fatigue, +10+floor(20% current resolve) accuracy. Aura affects other allies only: base radius 5, +20 resolve, +10 four attack/defense stats, +15 initiative. I restores 5 fatigue per round; III radius 6 and +25/+15/+25, restore 8; V radius 8 and +35/+20/+30, restore 10. At V, allies at wavering morale or better deal 15% more direct damage. Matching auras do not stack.",
+              "description": "With a two-handed polearm or standard, ordinary active weapon attacks cost 1 less AP and 5 less fatigue; gain hit chance equal to 10 + 20% of current Resolve, rounded down. Other allies within 5 tiles gain +20 Resolve, +10 Melee Skill, Ranged Skill, Melee Defense and Ranged Defense, and +15 Initiative. From I they recover 5 extra fatigue on their first normal turn each round. At III: radius 6, +25 Resolve, +15 skills and defenses, +25 Initiative, and 8 fatigue recovery. At V: radius 8, +35 Resolve, +20 skills and defenses, +30 Initiative, and 10 fatigue recovery; allies at Wavering morale or better also deal 15% more direct attack damage. Multiple sources do not stack.",
               "tooltip": []
             },
             "zh": {
               "name": "战旗统御",
-              "description": "双手长柄或战旗且副手空置：主动武器技能 AP -1、疲劳 -5，命中 +10+floor(当前决心×20%)。光环仅影响其他友军：基础五格，决心 +20、攻防四项 +10、主动值 +15；Ⅰ每轮回疲 5；Ⅲ六格并提升为 +25/+15/+25、回疲 8；Ⅴ八格为 +35/+20/+30、回疲 10，士气不低于动摇者直接伤害 +15%。同档不叠加。",
+              "description": "持双手长柄武器或战旗时，普通主动武器攻击少消耗1行动点、5疲劳；命中提高10加当前决心20%的点数，向下取整。其他友军在5格内获得决心+20，近战技能、远程技能、近战防御和远程防御各+10，主动值+15；Ⅰ阶段起每轮首次行动开始时额外恢复5疲劳。Ⅲ阶段范围扩大为6格，上述加成分别为决心+25、四项技能防御各+15、主动值+25，恢复8疲劳。Ⅴ阶段范围8格，决心+35、四项各+20、主动值+30，恢复10疲劳；士气不低于动摇的友军直接攻击伤害再提高15%。同类增益取最高值，不叠加。",
               "tooltip": []
             }
           }
@@ -25174,12 +25596,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Banner Thrust",
-              "description": "4 AP / 12 fatigue. Enemy at 1-2 tiles: 140% weapon/125% armor, weapon penetration +20 points. Total accuracy +25+floor(20% current resolve), including own passive. Costs already include reductions.",
+              "description": "4 AP / 12 fatigue. Enemy at 1-2 tiles: 140% weapon/125% armor, weapon penetration +20 points. Total accuracy +25+20% of current Resolve (rounded down), including own passive. Costs already include reductions.",
               "tooltip": []
             },
             "zh": {
               "name": "战旗贯刺",
-              "description": "4 AP / 12 疲劳。1至2格单敌，倍率140%，护甲125%，武器穿透+20个百分点。总命中+25+floor(当前决心×20%)，含本人常驻命中；费用已含减耗。",
+              "description": "4 AP / 12 疲劳。1至2格单敌，武器伤害140%，护甲125%，武器穿透+20个百分点。命中+25+当前决心的20%（向下取整），上述命中和费用已包含自身被动加成。",
               "tooltip": []
             }
           }
@@ -25211,7 +25633,7 @@ window.BV_WIKI_DATA = {
             },
             "zh": {
               "name": "重整军势",
-              "description": "3 AP / 18 疲劳。每轮1次，先支付费用，再让自己及光环范围友军回疲15、士气提升1级；Ⅰ回疲20且士气2级，Ⅴ回疲30、士气2级。各档替换。",
+              "description": "3 AP / 18 疲劳。每轮1次，先支付费用，再让自己及光环范围友军恢复疲劳15、士气提升1级；Ⅰ恢复疲劳20且士气2级，Ⅴ恢复疲劳30、士气2级。成长后的数值替代原数值，不相加。",
               "tooltip": []
             }
           }
@@ -25238,12 +25660,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Twin Star Thrust",
-              "description": "5 AP / 22 fatigue. Two hits on one enemy at 1-2 tiles, each 90% weapon damage+floor(25% current resolve) ordinary damage; V 100%+floor(50% resolve). Weapon armor/penetration, total accuracy +20+floor(20% resolve). Stop on death, no retarget.",
+              "description": "5 AP / 22 fatigue. Two hits on one enemy at 1-2 tiles, each 90% weapon damage+25% of current Resolve (rounded down) ordinary damage; V 100%+50% of current Resolve (rounded down). Weapon armor/penetration, total accuracy +20+20% of current Resolve (rounded down). Stop on death, no retarget.",
               "tooltip": []
             },
             "zh": {
               "name": "双星贯刺",
-              "description": "5 AP / 22 疲劳。1至2格同一敌人两段各90%武器伤害+floor(当前决心×25%)普通伤害；Ⅴ各100%+floor(决心×50%)。沿用武器护甲和穿透，总命中+20+floor(决心×20%)。死亡即停止，不转移。",
+              "description": "5 AP / 22 疲劳。1至2格同一敌人两次打击各90%武器伤害+当前决心的25%（向下取整）普通伤害；Ⅴ各100%+当前决心的50%（向下取整）。沿用武器护甲和穿透，命中+20+当前决心的20%（向下取整）。死亡即停止，不转移。",
               "tooltip": []
             }
           }
@@ -25275,7 +25697,7 @@ window.BV_WIKI_DATA = {
             },
             "zh": {
               "name": "战旗净化",
-              "description": "3 AP / 15 疲劳。每轮1次，6格内自己或友军，再补选其相邻1名友军；移除眩晕、茫然、踉跄、束缚、缴械与击倒，回疲各30。不清流血、中毒、诅咒或伤残。",
+              "description": "3 AP / 15 疲劳。每轮1次，6格内自己或友军，再补选其相邻1名友军；移除眩晕、茫然、踉跄、束缚、缴械与击倒，恢复疲劳各30。不清流血、中毒、诅咒或伤残。",
               "tooltip": []
             }
           }
@@ -25287,7 +25709,7 @@ window.BV_WIKI_DATA = {
           "backgroundName": "Princess Banner",
           "backgroundDescription": "A princess without her court learns to carry the battle banner and accept responsibility for the company's courage.",
           "traitName": "Princess Banner",
-          "traitDescription": "Two-handed polearm/banner, empty offhand: paid weapon skills cost -1 AP/-5 fatigue, +10+floor(20% current resolve) accuracy. Aura affects other allies only: base radius 5, +20 resolve, +10 four attack/defense stats, +15 initiative. I restores 5 fatigue per round; III radius 6 and +25/+15/+25, restore 8; V radius 8 and +35/+20/+30, restore 10. At V, allies at wavering morale or better deal 15% more direct damage. Matching auras do not stack.",
+          "traitDescription": "With a two-handed polearm or standard, ordinary active weapon attacks cost 1 less AP and 5 less fatigue; gain hit chance equal to 10 + 20% of current Resolve, rounded down. Other allies within 5 tiles gain +20 Resolve, +10 Melee Skill, Ranged Skill, Melee Defense and Ranged Defense, and +15 Initiative. From I they recover 5 extra fatigue on their first normal turn each round. At III: radius 6, +25 Resolve, +15 skills and defenses, +25 Initiative, and 8 fatigue recovery. At V: radius 8, +35 Resolve, +20 skills and defenses, +30 Initiative, and 10 fatigue recovery; allies at Wavering morale or better also deal 15% more direct attack damage. Multiple sources do not stack.",
           "traitTooltip": []
         },
         "zh": {
@@ -25295,7 +25717,7 @@ window.BV_WIKI_DATA = {
           "backgroundName": "公主战旗",
           "backgroundDescription": "失去宫廷护卫的公主在战团中学会举起战旗。她从等待他人保护走向承担队伍的士气与选择。",
           "traitName": "公主战旗",
-          "traitDescription": "双手长柄或战旗且副手空置：主动武器技能 AP -1、疲劳 -5，命中 +10+floor(当前决心×20%)。光环仅影响其他友军：基础五格，决心 +20、攻防四项 +10、主动值 +15；Ⅰ每轮回疲 5；Ⅲ六格并提升为 +25/+15/+25、回疲 8；Ⅴ八格为 +35/+20/+30、回疲 10，士气不低于动摇者直接伤害 +15%。同档不叠加。",
+          "traitDescription": "持双手长柄武器或战旗时，普通主动武器攻击少消耗1行动点、5疲劳；命中提高10加当前决心20%的点数，向下取整。其他友军在5格内获得决心+20，近战技能、远程技能、近战防御和远程防御各+10，主动值+15；Ⅰ阶段起每轮首次行动开始时额外恢复5疲劳。Ⅲ阶段范围扩大为6格，上述加成分别为决心+25、四项技能防御各+15、主动值+25，恢复8疲劳。Ⅴ阶段范围8格，决心+35、四项各+20、主动值+30，恢复10疲劳；士气不低于动摇的友军直接攻击伤害再提高15%。同类增益取最高值，不叠加。",
           "traitTooltip": []
         }
       },
@@ -25444,8 +25866,8 @@ window.BV_WIKI_DATA = {
           "zh": "旗手光环强，入队先换双手长柄"
         },
         "analysis": {
-          "en": "The granted spear and shield do not meet the two-handed polearm or banner plus empty-offhand requirement. Her aura, rally and cleansing then support the team; maturity includes growth.",
-          "zh": "七盾赠单手矛盾，旗手被动要求双手长柄或战旗且空副手，需换装；光环、振奋和硬控净化支持团队，成型包括成长阶段。"
+          "en": "Her starting battle standard meets her passive equipment requirement. Her aura, rally and cleansing support the team; maturity includes growth.",
+          "zh": "入队配战旗，满足旗手被动条件；光环、振奋和硬控净化支持团队，成型包括成长阶段。"
         },
         "reviewedSkills": [
           "prim_passive",
@@ -25470,8 +25892,8 @@ window.BV_WIKI_DATA = {
     {
       "id": "maia",
       "order": 70,
-      "level": 5,
-      "dailyWage": 50,
+      "level": 1,
+      "dailyWage": 1,
       "legendsPerkProfile": "melee_frontline",
       "chapterRecruitOnly": true,
       "combatResource": null,
@@ -25505,10 +25927,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "maia_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/maia_card.png",
@@ -25528,10 +25951,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "maia_oath_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 5,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/maia_card.png",
@@ -25566,7 +25990,7 @@ window.BV_WIKI_DATA = {
             },
             "zh": {
               "name": "赤狼盾卫",
-              "description": "持盾时盾牌提供的双防翻倍，自身直接伤害降低 20%，免疫强制位移。相邻其他友军双防 +10，直接伤害降低 25%，盾墙时 50%。Ⅰ每轮首次正常行动回疲 15，盾损耗减半；Ⅲ盾防 ×2.5、自身减伤 35%、光环两格双防 +15、减伤 35%、盾不可毁并免疫眩晕/茫然/踉跄；Ⅴ自身减伤 50%、他人双防 +20、减伤 50%/盾墙65%，并免疫强制位移，回疲25。各档替换。",
+              "description": "持盾时，盾牌提供的近战和远程防御翻倍，自身受到的直接攻击伤害降低 20%，免疫强制位移。相邻其他友军近战和远程防御 +10，受到的直接攻击伤害降低 25%，盾墙时 50%。Ⅰ每轮首次正常行动恢复疲劳 15，盾牌耐久损失减半；Ⅲ盾牌提供的防御变为2.5倍、自身减伤 35%、光环两格近战和远程防御 +15、减伤 35%、盾牌不会被摧毁并免疫眩晕/茫然/踉跄；Ⅴ自身减伤 50%、他人近战和远程防御 +20、减伤 50%/盾墙65%，并免疫强制位移，恢复疲劳25。成长后的数值替代原数值，不相加。",
               "tooltip": []
             }
           }
@@ -25593,12 +26017,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Redwolf Taunt",
-              "description": "2 AP / 10 fatigue. With shield, taunt an enemy within 5 using native target and AI rules. Special enemies are not guaranteed to change target.",
+              "description": "Costs 2 AP and 10 fatigue. Requires a shield. Taunt one enemy within 5 tiles to make it prioritize Maia. This does not give control of the target; some special enemies may be unaffected.",
               "tooltip": []
             },
             "zh": {
               "name": "赤狼挑衅",
-              "description": "2 AP / 10 疲劳。持盾，5格内敌人嘲讽，沿用原版可受影响目标与AI规则，不保证特殊敌人改变攻击目标。",
+              "description": "消耗2行动点、10疲劳。需要持盾。嘲讽5格内一名敌人，使其优先攻击玛雅。不能操控敌人，部分特殊敌人可能不受影响。",
               "tooltip": []
             }
           }
@@ -25625,12 +26049,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Wolf Fang Bash",
-              "description": "3 AP / 14 fatigue. One-handed melee weapon and shield: adjacent enemy 100% damage/150% armor/30% penetration/+30 accuracy. Hit dazes/staggers and knocks one tile; if no legal knockback, force stun for one normal turn.",
+              "description": "3 AP / 14 fatigue. One-handed melee weapon and shield: adjacent enemy 100% damage/150% armor/30% penetration/+30 accuracy. Hit dazes/staggers and knocks one tile; if knockback is impossible, force stun for one normal turn.",
               "tooltip": []
             },
             "zh": {
               "name": "狼牙盾击",
-              "description": "3 AP / 14 疲劳。单手近战武器与盾牌，相邻敌人倍率100%，护甲150%，穿透30%，命中+30；命中施加茫然、踉跄并击退1格，无法合法击退则强制眩晕一次正常行动。",
+              "description": "3 AP / 14 疲劳。单手近战武器与盾牌，相邻敌人武器伤害100%，护甲150%，穿透30%，命中+30；命中施加茫然、踉跄并击退1格，无法击退则强制眩晕一次正常行动。",
               "tooltip": []
             }
           }
@@ -25657,12 +26081,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Covering Shieldwall",
-              "description": "2 AP / 16 fatigue. With shield, +30 own defenses and activate the current shieldwall aura tier until the first normal turn in a later round. Waits do not end it, recasts refresh.",
+              "description": "Requires a shield. Gain +30 Melee and Ranged Defense and strengthen nearby allies against direct attacks: 50% reduction within 1 tile at stages 0–II, 50% within 2 tiles at III–IV, and 65% within 2 tiles at V. Lasts until your first normal turn next round; waits do not end it and recasts do not stack. Costs 2 AP and 16 fatigue.",
               "tooltip": []
             },
             "zh": {
               "name": "掩护盾墙",
-              "description": "2 AP / 16 疲劳。持盾，自身双防+30，并启用当前阶段盾墙保护档，直到后续轮次首次正常行动开始。等待不结束，重复只刷新。",
+              "description": "需要持盾。自身近战和远程防御各提高30点，同时强化周围友军的直接攻击减伤：基础至Ⅱ阶段为1格内50%，Ⅲ至Ⅳ阶段为2格内50%，Ⅴ阶段为2格内65%。持续至下一轮自身首次行动开始，等待不解除，重复施放不叠加。消耗2行动点、16疲劳。",
               "tooltip": []
             }
           }
@@ -25694,7 +26118,7 @@ window.BV_WIKI_DATA = {
             },
             "zh": {
               "name": "赤狼横扫",
-              "description": "5 AP / 25 疲劳。每轮1次，单手近战武器与盾牌，全部相邻敌人倍率100%，护甲150%，穿透30%，命中+20；命中茫然、踉跄，不击退，不伤友军。",
+              "description": "5 AP / 25 疲劳。每轮1次，单手近战武器与盾牌，全部相邻敌人武器伤害100%，护甲150%，穿透30%，命中+20；命中茫然、踉跄，不击退，不伤友军。",
               "tooltip": []
             }
           }
@@ -25721,12 +26145,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Redwolf Battlecry",
-              "description": "4 AP / 24 fatigue. Once per round with shield, taunt all legal enemies within five tiles and gain Covering Shieldwall with no extra wall cost or duplicate effect.",
+              "description": "Costs 4 AP and 24 fatigue, once per round. Requires a shield. Taunt eligible enemies within 5 tiles and activate Covering Shieldwall: +30 Melee and Ranged Defense for Maia; other allies within 2 tiles take 50% less direct attack damage, or 65% at stage V. Lasts until your first normal turn next round, with no additional wall cost or stacking.",
               "tooltip": []
             },
             "zh": {
               "name": "赤狼战吼",
-              "description": "4 AP / 24 疲劳。每轮1次，持盾嘲讽五格内所有合法敌人，同时获得掩护盾墙，不额外付盾墙费用、不叠两份盾墙。",
+              "description": "消耗4行动点、24疲劳，每轮一次。需要持盾。嘲讽5格内可被嘲讽的所有敌人，同时开启掩护盾墙：自身近战和远程防御各+30，2格内其他友军直接攻击减伤50%，Ⅴ阶段提高至65%。持续至下一轮自身首次行动开始；无需另外支付盾墙费用，重复开启不叠加。",
               "tooltip": []
             }
           }
@@ -25746,7 +26170,7 @@ window.BV_WIKI_DATA = {
           "backgroundName": "赤狼守护",
           "backgroundDescription": "赤狼女战士在交锋中落入战团手中。她以盾牌试探新同伴，在守住他们之后重新界定力量与忠诚。",
           "traitName": "赤狼守护",
-          "traitDescription": "持盾时盾牌提供的双防翻倍，自身直接伤害降低 20%，免疫强制位移。相邻其他友军双防 +10，直接伤害降低 25%，盾墙时 50%。Ⅰ每轮首次正常行动回疲 15，盾损耗减半；Ⅲ盾防 ×2.5、自身减伤 35%、光环两格双防 +15、减伤 35%、盾不可毁并免疫眩晕/茫然/踉跄；Ⅴ自身减伤 50%、他人双防 +20、减伤 50%/盾墙65%，并免疫强制位移，回疲25。各档替换。",
+          "traitDescription": "持盾时，盾牌提供的近战和远程防御翻倍，自身受到的直接攻击伤害降低 20%，免疫强制位移。相邻其他友军近战和远程防御 +10，受到的直接攻击伤害降低 25%，盾墙时 50%。Ⅰ每轮首次正常行动恢复疲劳 15，盾牌耐久损失减半；Ⅲ盾牌提供的防御变为2.5倍、自身减伤 35%、光环两格近战和远程防御 +15、减伤 35%、盾牌不会被摧毁并免疫眩晕/茫然/踉跄；Ⅴ自身减伤 50%、他人近战和远程防御 +20、减伤 50%/盾墙65%，并免疫强制位移，恢复疲劳25。成长后的数值替代原数值，不相加。",
           "traitTooltip": []
         }
       },
@@ -25895,8 +26319,8 @@ window.BV_WIKI_DATA = {
           "zh": "篇章赠剑盾，相邻保护稳战线"
         },
         "analysis": {
-          "en": "The supplied sword and shield enable doubled shield defense and protection immediately. Shieldwall costs AP and fatigue; taunt respects vanilla targets, while growth expands coverage.",
-          "zh": "七盾赠剑盾，双倍盾防与相邻保护立刻有效；盾墙仍耗AP疲劳，嘲讽遵守原版目标规则不保证Boss听从，成长后扩大护队范围。"
+          "en": "Starts with a shortsword, wooden shield and basic armor. The supplied sword and shield enable doubled shield defense and protection immediately. Shieldwall costs AP and fatigue; taunt respects vanilla targets, while growth expands coverage.",
+          "zh": "入队配短剑、木盾和基础防具。七盾赠剑盾，双倍盾防与相邻保护立刻有效；盾墙仍耗AP疲劳，嘲讽遵守原版目标规则不保证Boss听从，成长后扩大护队范围。"
         },
         "reviewedSkills": [
           "maia_passive",
@@ -25922,8 +26346,8 @@ window.BV_WIKI_DATA = {
     {
       "id": "luu_luu",
       "order": 71,
-      "level": 5,
-      "dailyWage": 50,
+      "level": 1,
+      "dailyWage": 1,
       "legendsPerkProfile": "melee_mobile",
       "chapterRecruitOnly": true,
       "combatResource": null,
@@ -25957,10 +26381,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "luu_luu_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/luu_luu_card.png",
@@ -25980,10 +26405,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "luu_luu_oath_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 5,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/luu_luu_card.png",
@@ -26013,12 +26439,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Red Furnace Berserker",
-              "description": "Two-handed axe, empty offhand: +15 accuracy, +25 weapon-damage percentage points, +20 penetration and double shield damage. Paid active attacks snapshot fatigue after payment; the first hit on each target adds floor(25% fatigue) ordinary damage. III increases this to 50% and maximum fatigue by 20. Misses, opportunity attacks, counters, vent and furnace do not trigger pressure; repeated hits on one target do not repeat it. Maximum AP: 9/10/10/11/11/12.",
+              "description": "Requires a two-handed axe. +15 hit chance, +25 percentage points of weapon damage, +20 percentage points of armor penetration, and double shield damage. After paying an active attack’s fatigue cost, add 25% of your fatigue at that moment as regular damage, rounded down, on the first hit against each enemy per use. Stage III raises this to 50% and grants +20 maximum fatigue. Attacks of opportunity, counterattacks, Vent and Furnace Release do not trigger this bonus. Maximum AP by stage: 9, 10, 10, 11, 11, 12.",
               "tooltip": []
             },
             "zh": {
               "name": "赤炉战狂",
-              "description": "双手斧且副手空置：命中 +15，武器倍率 +25 个百分点，穿透 +20 个百分点，劈盾伤害翻倍。付费主动攻击以扣费后疲劳快照，每目标首次命中附加 floor(疲劳×25%) 普通伤害；Ⅲ改为50%并最大疲劳 +20。未命中、借机、反击、泄压和熔炉解放不触发，连击不重复计入。最大 AP 9/10/10/11/11/12。",
+              "description": "需要双手斧。命中+15，武器伤害提高25个百分点，穿甲提高20个百分点，劈盾伤害翻倍。主动攻击支付疲劳后，以当时疲劳的25%作为额外普通伤害，向下取整；一次技能对每名敌人只在首次命中时附加。Ⅲ阶段提高为50%，最大疲劳额外+20。借机攻击、反击、泄压和熔炉解放不触发这份附伤。最大行动点随成长阶段依次为9、10、10、11、11、12。",
               "tooltip": []
             }
           }
@@ -26050,7 +26476,7 @@ window.BV_WIKI_DATA = {
             },
             "zh": {
               "name": "断岳斩",
-              "description": "4 AP / 20 疲劳。相邻敌人倍率175%，护甲125%，穿透65%，总命中+35；赤炉压力的每目标首次命中附伤另外结算。",
+              "description": "4 AP / 20 疲劳。相邻敌人武器伤害175%，护甲125%，穿透65%，命中+35；赤炉压力的每目标首次命中附伤另外结算。",
               "tooltip": []
             }
           }
@@ -26077,12 +26503,12 @@ window.BV_WIKI_DATA = {
           "text": {
             "en": {
               "name": "Pressure Vent",
-              "description": "3 AP / 0 fatigue. Once per round, L=min(precast fatigue,40): adjacent 125% weapon+floor(50% L) ordinary damage, weapon armor, weapon penetration +20 points, +15 accuracy; restores L fatigue even on a miss. III cap 60 and bonus L; V replaced by Furnace Release. No extra pressure.",
+              "description": "Costs 3 AP and adds no fatigue, once per round. Strike an adjacent enemy for 125% weapon damage plus half your current fatigue as regular damage, counting up to 40 fatigue and rounding down. Uses the weapon’s armor damage, adds 20 percentage points of armor penetration and +15 hit chance. Recover the counted fatigue even on a miss. At stage III, count up to 60 fatigue and add its full value as damage. Replaced by Furnace Release at V. Does not also trigger Pressure bonus damage.",
               "tooltip": []
             },
             "zh": {
               "name": "单体泄压",
-              "description": "3 AP / 0 疲劳。每轮1次，以施放前疲劳 L=min(疲劳,40) 计算，相邻攻击倍率125%+floor(L×50%)普通伤害，护甲沿用武器、武器穿透+20个百分点、总命中+15；命中与否都回疲L。ⅢL上限60且附伤为L，Ⅴ被熔炉解放替换。不重复触发压力。",
+              "description": "消耗3行动点，不增加疲劳，每轮一次。攻击相邻敌人，造成125%武器伤害，另加施放时当前疲劳的一半作为普通伤害，最多计入40疲劳，附加伤害向下取整。护甲伤害沿用武器，穿甲在武器基础上提高20个百分点，命中+15。无论命中与否，均恢复上述计入的疲劳。Ⅲ阶段最多计入60疲劳，附加伤害改为这部分疲劳的全部数值。Ⅴ阶段由熔炉解放替换；本技能不会再触发赤炉压力的附加伤害。",
               "tooltip": []
             }
           }
@@ -26114,7 +26540,7 @@ window.BV_WIKI_DATA = {
             },
             "zh": {
               "name": "断盾追斩",
-              "description": "3 AP / 15 疲劳。仅相邻持盾敌人，先按原版劈盾流程造成双倍盾伤；实际破盾且原敌仍存活才追击一次，倍率145%、护甲100%、穿透60%、命中+35。未破盾不伤人，压力仅在人身追击首次命中结算。",
+              "description": "3 AP / 15 疲劳。仅相邻持盾敌人，先按劈盾攻击的规则造成双倍盾伤；实际破盾且原敌仍存活才追击一次，武器伤害145%、护甲100%、穿透60%、命中+35。未破盾不伤人，压力仅在人身追击首次命中结算。",
               "tooltip": []
             }
           }
@@ -26146,7 +26572,7 @@ window.BV_WIKI_DATA = {
             },
             "zh": {
               "name": "赤炉回旋",
-              "description": "5 AP / 28 疲劳。每轮1次，全部相邻敌人各倍率160%，护甲125%，穿透55%，命中+30；压力按每个敌人首次命中分别结算，不伤友军。",
+              "description": "5 AP / 28 疲劳。每轮1次，全部相邻敌人各武器伤害160%，护甲125%，穿透55%，命中+30；压力按每个敌人首次命中分别结算，不伤友军。",
               "tooltip": []
             }
           }
@@ -26178,7 +26604,7 @@ window.BV_WIKI_DATA = {
             },
             "zh": {
               "name": "断首连斩",
-              "description": "6 AP / 32 疲劳。每轮1次，同一敌人三段各100%武器伤害，护甲100%、穿透65%、命中+35；压力整次行动只结算一次，原目标死亡停止，不转移。",
+              "description": "6 AP / 32 疲劳。每轮1次，同一敌人三次打击各100%武器伤害，护甲100%、穿透65%、命中+35；压力整次行动只结算一次，原先选择的目标死亡停止，不转移。",
               "tooltip": []
             }
           }
@@ -26222,7 +26648,7 @@ window.BV_WIKI_DATA = {
           "backgroundName": "Pressure Core",
           "backgroundDescription": "An adult master of the great axe, captured after a reckless advance, learns to govern her strength in the workshop and on the battlefield.",
           "traitName": "Pressure Core",
-          "traitDescription": "Two-handed axe, empty offhand: +15 accuracy, +25 weapon-damage percentage points, +20 penetration and double shield damage. Paid active attacks snapshot fatigue after payment; the first hit on each target adds floor(25% fatigue) ordinary damage. III increases this to 50% and maximum fatigue by 20. Misses, opportunity attacks, counters, vent and furnace do not trigger pressure; repeated hits on one target do not repeat it. Maximum AP: 9/10/10/11/11/12.",
+          "traitDescription": "Requires a two-handed axe. +15 hit chance, +25 percentage points of weapon damage, +20 percentage points of armor penetration, and double shield damage. After paying an active attack’s fatigue cost, add 25% of your fatigue at that moment as regular damage, rounded down, on the first hit against each enemy per use. Stage III raises this to 50% and grants +20 maximum fatigue. Attacks of opportunity, counterattacks, Vent and Furnace Release do not trigger this bonus. Maximum AP by stage: 9, 10, 10, 11, 11, 12.",
           "traitTooltip": []
         },
         "zh": {
@@ -26230,7 +26656,7 @@ window.BV_WIKI_DATA = {
           "backgroundName": "高压炉心",
           "backgroundDescription": "百工巨斧的主人在一次冒进后被俘。她在工坊与战场上学习控制自己的力量，最终把它交给值得信任的指挥。",
           "traitName": "高压炉心",
-          "traitDescription": "双手斧且副手空置：命中 +15，武器倍率 +25 个百分点，穿透 +20 个百分点，劈盾伤害翻倍。付费主动攻击以扣费后疲劳快照，每目标首次命中附加 floor(疲劳×25%) 普通伤害；Ⅲ改为50%并最大疲劳 +20。未命中、借机、反击、泄压和熔炉解放不触发，连击不重复计入。最大 AP 9/10/10/11/11/12。",
+          "traitDescription": "需要双手斧。命中+15，武器伤害提高25个百分点，穿甲提高20个百分点，劈盾伤害翻倍。主动攻击支付疲劳后，以当时疲劳的25%作为额外普通伤害，向下取整；一次技能对每名敌人只在首次命中时附加。Ⅲ阶段提高为50%，最大疲劳额外+20。借机攻击、反击、泄压和熔炉解放不触发这份附伤。最大行动点随成长阶段依次为9、10、10、11、11、12。",
           "traitTooltip": []
         }
       },
@@ -26380,12 +26806,12 @@ window.BV_WIKI_DATA = {
           "control"
         ],
         "summary": {
-          "en": "Chapter greataxe fighter converts fatigue into damage.",
-          "zh": "篇章赠巨斧，疲劳换伤再泄压"
+          "en": "Chapter two-handed axe fighter converts fatigue into damage.",
+          "zh": "篇章双手斧战士，用疲劳积压与泄压"
         },
         "analysis": {
-          "en": "The supplied greataxe meets her gear requirement. Pressure uses actual fatigue; incoming hits and attacks reduce remaining capacity, so reserve AP for Vent. Furnace and extra max AP require growth.",
-          "zh": "七盾赠巨斧且空副手，压力按实际疲劳快照附伤；受击和挥斧都会挤占可用疲劳，需留泄压AP，高阶熔炉与AP上限来自成长。"
+          "en": "Her starting woodcutter's axe meets the two-handed axe requirement. Pressure uses actual fatigue; incoming hits and attacks reduce remaining capacity, so reserve AP for Vent. Furnace and extra max AP require growth.",
+          "zh": "入队配伐木斧，满足双手斧要求，压力按实际支付攻击消耗后的疲劳值附伤；受击和挥斧都会挤占可用疲劳，需留泄压AP，高阶熔炉与AP上限来自成长。"
         },
         "reviewedSkills": [
           "luu_luu_passive",
@@ -26413,7 +26839,7 @@ window.BV_WIKI_DATA = {
       "id": "onigawara_rin",
       "order": 72,
       "level": 5,
-      "dailyWage": 35,
+      "dailyWage": 1,
       "legendsPerkProfile": "melee_frontline",
       "chapterRecruitOnly": false,
       "combatResource": null,
@@ -26447,10 +26873,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "onigawara_rin_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/onigawara_rin_card.png",
@@ -26776,7 +27203,7 @@ window.BV_WIKI_DATA = {
       "id": "kikakujo_mary",
       "order": 73,
       "level": 5,
-      "dailyWage": 35,
+      "dailyWage": 1,
       "legendsPerkProfile": "melee_mobile",
       "chapterRecruitOnly": false,
       "combatResource": null,
@@ -26810,10 +27237,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "kikakujo_mary_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/kikakujo_mary_card.png",
@@ -27139,7 +27567,7 @@ window.BV_WIKI_DATA = {
       "id": "tamaba_satori",
       "order": 74,
       "level": 5,
-      "dailyWage": 35,
+      "dailyWage": 1,
       "legendsPerkProfile": "melee_mobile",
       "chapterRecruitOnly": false,
       "combatResource": null,
@@ -27173,10 +27601,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "tamaba_satori_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/tamaba_satori_card.png",
@@ -27501,7 +27930,7 @@ window.BV_WIKI_DATA = {
       "id": "hanasaka_warabi",
       "order": 75,
       "level": 5,
-      "dailyWage": 35,
+      "dailyWage": 1,
       "legendsPerkProfile": "melee_mobile",
       "chapterRecruitOnly": false,
       "combatResource": null,
@@ -27535,10 +27964,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "hanasaka_warabi_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/hanasaka_warabi_card.png",
@@ -27864,7 +28294,7 @@ window.BV_WIKI_DATA = {
       "id": "inaba_tsukuyo",
       "order": 76,
       "level": 5,
-      "dailyWage": 35,
+      "dailyWage": 1,
       "legendsPerkProfile": "melee_mobile",
       "chapterRecruitOnly": false,
       "combatResource": null,
@@ -27898,10 +28328,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "inaba_tsukuyo_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/inaba_tsukuyo_card.png",
@@ -28226,7 +28657,7 @@ window.BV_WIKI_DATA = {
       "id": "shu",
       "order": 77,
       "level": 1,
-      "dailyWage": 20,
+      "dailyWage": 1,
       "legendsPerkProfile": "melee_support",
       "chapterRecruitOnly": false,
       "combatResource": null,
@@ -28260,10 +28691,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "shu_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/shu_card.png",
@@ -28478,10 +28910,299 @@ window.BV_WIKI_DATA = {
       "bond": null
     },
     {
-      "id": "ryza",
+      "id": "si",
       "order": 78,
       "level": 1,
-      "dailyWage": 20,
+      "dailyWage": 1,
+      "legendsPerkProfile": "ranged_support",
+      "chapterRecruitOnly": false,
+      "combatResource": null,
+      "baseAttributes": {
+        "Hitpoints": 90,
+        "Bravery": 90,
+        "Stamina": 135,
+        "MeleeSkill": 55,
+        "RangedSkill": 85,
+        "MeleeDefense": 15,
+        "RangedDefense": 20,
+        "Initiative": 110
+      },
+      "talents": {
+        "Hitpoints": 2,
+        "Bravery": 3,
+        "Stamina": 3,
+        "MeleeSkill": 0,
+        "RangedSkill": 3,
+        "MeleeDefense": 1,
+        "RangedDefense": 2,
+        "Initiative": 2
+      },
+      "traitBonuses": {},
+      "images": {
+        "card": "assets/valkyries/si_card.png",
+        "skin": "assets/valkyries/si_skin_preview.png",
+        "trait": "assets/traits/si_trait_icon.png"
+      },
+      "skins": [
+        {
+          "id": "si_skin",
+          "unlockChapter": "",
+          "unlockBond": 0,
+          "unlockProgressionStage": 0,
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
+          "images": {
+            "portrait": "assets/valkyries/si_card.png",
+            "preview": "assets/valkyries/si_skin_preview.png"
+          },
+          "text": {
+            "en": {
+              "name": "Rain over Lotus Waters",
+              "description": "Silver-sage hair, black-and-gold horns, and ink-patterned robes inspired by a rainy lotus pond."
+            },
+            "zh": {
+              "name": "荷塘听雨",
+              "description": "银绿长发、黑金龙角与墨纹衣装，取意雨中荷塘。"
+            }
+          }
+        }
+      ],
+      "skills": [
+        {
+          "key": "si_myriad",
+          "icon": "si_myriad",
+          "image": "assets/skills/si_myriad.png",
+          "kind": "passive",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "StartInk": 2,
+            "MaxInk": 6,
+            "MarkLimit": 3,
+            "EchoFraction": 0.3,
+            "EchoCap": 40
+          },
+          "text": {
+            "en": {
+              "name": "Myriad Forms in Ink",
+              "description": "Maximum 6 Ink; starts at 2. Gain 1 at each normal turn start, plus 1 once per round when another roster ally directly damages a painted enemy’s HP. Up to 3 enemies remain painted until Si’s second subsequent normal turn. Share 30% of one direct action’s total HP damage to painted enemies with the other painted enemies, capped at 40 each. Enemies already hit by that action are excluded. Follow-ups, opportunity attacks, counters, damage over time and the dragon do not trigger sharing. Ink echoes neither recurse nor receive further amplification.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "万象入画",
+              "description": "墨意上限6，入场2；每个正常回合开始+1，每轮首次由其他友军直接攻击入画敌人并造成生命伤害时再+1。最多3名敌人入画，持续至祀第二个后续正常回合开始。一次直接攻击对画中敌人造成的生命伤害合计30%传递给其余入画敌人，每名上限40；该次已命中的敌人不再承受传递。追击、借机攻击、反击、持续伤害与墨龙不触发。墨魂伤害不递归、不再次增伤。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "si_brush",
+          "icon": "si_brush",
+          "image": "assets/skills/si_brush.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 3,
+            "Fatigue": 12,
+            "Ink": 0,
+            "Range": 5,
+            "Cooldown": 0,
+            "Low": 70,
+            "High": 90,
+            "Armor": 1,
+            "Pierce": 0.3,
+            "Hit": 15,
+            "Attack": true
+          },
+          "text": {
+            "en": {
+              "name": "Winter Brushstroke",
+              "description": "3 AP, 12 Fatigue; range 1–5. Ranged accuracy +15. Deals 70–90 base damage, 100% armor damage and 30% penetration. A hit paints the enemy; repeated hits refresh the mark, and a fourth replaces the oldest. Uses independent skill damage, not weapon base damage.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "落笔生寒",
+              "description": "3行动点、12疲劳；射程1至5格。远程命中+15，造成70至90基础伤害，对护甲100%，穿甲30%；命中后入画。重复命中刷新标记，第四名替换最早标记。独立技能伤害，不继承武器基础伤害。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "si_landscape",
+          "icon": "si_landscape",
+          "image": "assets/skills/si_landscape.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 4,
+            "Fatigue": 20,
+            "Ink": 1,
+            "Range": 5,
+            "Cooldown": 2,
+            "Low": 0,
+            "High": 0,
+            "Armor": 1,
+            "Pierce": 0,
+            "Hit": 0,
+            "Attack": false
+          },
+          "text": {
+            "en": {
+              "name": "Shared Landscape",
+              "description": "4 AP, 20 Fatigue, 1 Ink; range 1–5, cooldown 2 rounds. Replace the painting with the target and up to two adjacent enemies, prioritizing higher remaining HP. Root the primary target until its next normal action ends; it can still attack or cast. No damage or accuracy roll. Root immunity does not prevent painting.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "河山共影",
+              "description": "4行动点、20疲劳、1墨意；射程1至5格，冷却2轮。为目标及其相邻最多两名敌人入画，取代旧画卷；相邻敌人优先选择剩余生命较高者。主目标定身至其下一个正常行动结束，仍可攻击施法。无伤害、无需命中判定，定身免疫不妨碍入画。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "si_sanctuary",
+          "icon": "si_sanctuary",
+          "image": "assets/skills/si_sanctuary.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 3,
+            "Fatigue": 18,
+            "Ink": 2,
+            "Range": 4,
+            "Cooldown": 3,
+            "Low": 0,
+            "High": 0,
+            "Armor": 1,
+            "Pierce": 0,
+            "Hit": 0,
+            "Attack": false
+          },
+          "text": {
+            "en": {
+              "name": "Sanctuary in the Margin",
+              "description": "3 AP, 18 Fatigue, 2 Ink; range 0–4, cooldown 3 rounds. Target and adjacent roster allies gain a 40-point barrier against post-armor HP damage; armor is not protected. While the barrier remains, gain +10 melee and ranged defense until Si’s second subsequent normal turn. Defense ends immediately when depleted. Reapplication refreshes without stacking. Shared fixed HP damage bypasses barriers.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "留白成境",
+              "description": "3行动点、18疲劳、2墨意；射程0至4格，冷却3轮。目标与相邻队友获得40墨障，吸收护甲结算后生命伤害，不保护护甲。墨障存续时近战与远程防御各+10，持续至祀第二个后续正常回合开始；耗尽立即失去防御。重复施加刷新，不叠加吸收量。固定直伤遵循公共盾牌规则，不被墨障吸收。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "si_dragon",
+          "icon": "si_dragon",
+          "image": "assets/skills/si_dragon.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 6,
+            "Fatigue": 32,
+            "Ink": 5,
+            "Range": 5,
+            "Cooldown": 4,
+            "Low": 180,
+            "High": 220,
+            "Armor": 1.25,
+            "Pierce": 0.4,
+            "Hit": 0,
+            "Attack": true
+          },
+          "text": {
+            "en": {
+              "name": "No One Spoils the Fun",
+              "description": "6 AP, 32 Fatigue, 5 Ink; select a painted enemy at range 1–5; cooldown 4 rounds. Guaranteed hit: 180–220 base damage to the primary target and 120–160 to other painted enemies even beyond range; 125% armor damage and 40% penetration. Does not trigger ink echoes. Clears the painting. Si and roster allies within 3 tiles gain Reverberation: +20% damage for their next direct attack action, including all segments, expiring at Si’s next normal turn start.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "谁都不许扫兴",
+              "description": "6行动点、32疲劳、5墨意；射程1至5格内选入画敌人，冷却4轮。墨龙必中主目标180至220基础伤害，其余入画敌人120至160，可超出射程；对护甲125%，穿甲40%。不触发墨魂，随后清除画卷。祀及3格内友军获得余韵：下一次直接攻击伤害+20%，整次多段生效，最迟到祀下个正常回合开始失效。",
+              "tooltip": []
+            }
+          }
+        }
+      ],
+      "text": {
+        "en": {
+          "name": "Si",
+          "backgroundName": "Painter of Living Worlds",
+          "backgroundDescription": "A mysterious painter affiliated with Hongshan Academy of Sciences. She binds enemies within one painting, conducts damage through ink souls, and shelters allies with painted lotus waters.",
+          "traitName": "Beast Proxy",
+          "traitDescription": "Mountains and rivers answer her brush. Specializes in linked focus fire, brief roots, and protective ink barriers.",
+          "traitTooltip": [
+            "Combat abilities belong to Si’s identity. Ink and paintings exist only for the current battle."
+          ]
+        },
+        "zh": {
+          "name": "祀",
+          "backgroundName": "丹青执笔人",
+          "backgroundDescription": "来自宏山科学院的神秘画师，拥有让丹青映照万象的力量。她将敌人纳入同一幅画，以墨魂传递伤害，以荷塘护佑同伴。",
+          "traitName": "巨兽代理人",
+          "traitDescription": "画卷中的山河随心而生。擅长联动集火、短暂定身与墨障保护。",
+          "traitTooltip": [
+            "战斗能力由祀的身份授予。墨意与画卷仅在本场战斗中存在。"
+          ]
+        }
+      },
+      "additionalSkills": [],
+      "chapters": [],
+      "recruitmentChapter": "",
+      "progression": null,
+      "recruitGuide": {
+        "actor": "si",
+        "roles": [
+          "mage",
+          "control"
+        ],
+        "stage": "mid",
+        "investment": "low",
+        "startup": "A",
+        "mature": "A",
+        "priorities": {
+          "early": 2,
+          "mid": 3,
+          "late": 3
+        },
+        "tags": [
+          "weapon_free",
+          "protection",
+          "team"
+        ],
+        "summary": {
+          "en": "Mid/backline painter: linked focus fire, brief control and barriers, followed by an ink-dragon finisher.",
+          "zh": "中后排画卷辅助：联动集火、短控与护盾，积墨后以墨龙收卷。"
+        },
+        "analysis": {
+          "en": "No signature weapon required; prioritize ranged accuracy and stamina. Ink echoes need real HP damage, so break heavy armor first. Barriers and the finisher compete for Ink. Ratings are source-level estimates, not in-game balance results.",
+          "zh": "无需专属武器；优先远程命中与疲劳。墨魂依赖队友打出真实生命伤害，重甲敌人面前应先破甲。护盾与大招争用墨意。评级为源码机制估计，未实机验证平衡。"
+        },
+        "reviewedSkills": [
+          "si_myriad",
+          "si_brush",
+          "si_landscape",
+          "si_sanctuary",
+          "si_dragon"
+        ],
+        "sourceFiles": [
+          "src/battle-valkyries/battle-valkyries/config/si_skill_catalog.nut",
+          "src/battle-valkyries/battle-valkyries/systems/si.nut"
+        ]
+      },
+      "bond": null
+    },
+    {
+      "id": "ryza",
+      "order": 79,
+      "level": 1,
+      "dailyWage": 1,
       "legendsPerkProfile": "ranged_support",
       "chapterRecruitOnly": false,
       "combatResource": {
@@ -28519,10 +29240,11 @@ window.BV_WIKI_DATA = {
         {
           "id": "ryza_skin",
           "unlockChapter": "",
+          "unlockBond": 0,
           "unlockProgressionStage": 0,
           "detailMedia": {
             "poster": true,
-            "animated": false
+            "animated": true
           },
           "images": {
             "portrait": "assets/valkyries/ryza_card.png",
@@ -28800,6 +29522,2560 @@ window.BV_WIKI_DATA = {
         ]
       },
       "bond": null
+    },
+    {
+      "id": "tio",
+      "order": 80,
+      "level": 1,
+      "dailyWage": 1,
+      "legendsPerkProfile": "ranged_support",
+      "chapterRecruitOnly": true,
+      "combatResource": null,
+      "baseAttributes": {
+        "Hitpoints": 60,
+        "Bravery": 65,
+        "Stamina": 110,
+        "MeleeSkill": 45,
+        "RangedSkill": 75,
+        "MeleeDefense": 5,
+        "RangedDefense": 15,
+        "Initiative": 100
+      },
+      "talents": {
+        "Hitpoints": 1,
+        "Bravery": 2,
+        "Stamina": 3,
+        "MeleeSkill": 0,
+        "RangedSkill": 3,
+        "MeleeDefense": 0,
+        "RangedDefense": 2,
+        "Initiative": 1
+      },
+      "traitBonuses": {},
+      "images": {
+        "card": "assets/valkyries/tio_card.png",
+        "skin": "assets/valkyries/tio_skin_preview.png",
+        "trait": "assets/traits/tio_trait_icon.png"
+      },
+      "skins": [
+        {
+          "id": "tio_skin",
+          "unlockChapter": "",
+          "unlockBond": 0,
+          "unlockProgressionStage": 0,
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
+          "images": {
+            "portrait": "assets/valkyries/tio_card.png",
+            "preview": "assets/valkyries/tio_skin_preview.png"
+          },
+          "text": {
+            "en": {
+              "name": "Special Support Section Uniform",
+              "description": "Pale blue hair, sensory headgear and her dark blue uniform."
+            },
+            "zh": {
+              "name": "特别支援科制服",
+              "description": "浅蓝长发、感知头饰与深蓝制服。"
+            }
+          }
+        }
+      ],
+      "skills": [
+        {
+          "key": "tio_aion_sense",
+          "icon": "tio_aion_sense",
+          "image": "assets/skills/tio_aion_sense.png",
+          "kind": "passive",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {},
+          "text": {
+            "en": {
+              "name": "Aion Sense",
+              "description": "+10 ranged skill and defense; analysis is shared with allies.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "艾恩感知",
+              "description": "远程技能 +10，远程防御 +10；解析信息共享给友军。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "tio_septium_attunement",
+          "icon": "tio_septium_attunement",
+          "image": "assets/skills/tio_septium_attunement.png",
+          "kind": "passive",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {},
+          "text": {
+            "en": {
+              "name": "Septium Attunement",
+              "description": "Per physical socket element point: earth +1 melee defense, water +2% healing, fire +2% orbal damage, wind +2 initiative, time +2 fatigue capacity, space +1 ranged defense, mirage +2 resolve. Center quartz counts once.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "七曜调律",
+              "description": "每点宝石属性：地 +1 近防，水 +2% 治疗，火 +2% 导力伤害，风 +2 先攻，时 +2 最大疲劳，空 +1 远防，幻 +2 决心。中央石只计一次。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "tio_orbal_pulse",
+          "icon": "tio_orbal_pulse",
+          "image": "assets/skills/tio_orbal_pulse.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 4,
+            "Fatigue": 12,
+            "Cooldown": 0,
+            "Min": 1,
+            "Max": 4,
+            "Radius": 0,
+            "DamageMin": 50,
+            "DamageMax": 70,
+            "Armor": 1,
+            "Pierce": 0.25,
+            "Limit": 0,
+            "Scale": 0.4,
+            "Accuracy": 0,
+            "Line": false
+          },
+          "text": {
+            "en": {
+              "name": "Orbal Pulse",
+              "description": "Ranged orbal attack: 50–70 + 0.4R damage, 100% armor damage, 25% penetration. Cooldown: 0 rounds. R is own ranged skill.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "魔导脉冲",
+              "description": "单体远程导力攻击，50—70 + 0.4R 伤害，对甲 100%，穿甲 25%。 冷却 0 自然轮；R 为自身远程技能。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "tio_analyzer",
+          "icon": "tio_analyzer",
+          "image": "assets/skills/tio_analyzer.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 2,
+            "Fatigue": 10,
+            "Cooldown": 1,
+            "Min": 1,
+            "Max": 6,
+            "Radius": 0,
+            "DamageMin": 0,
+            "DamageMax": 0,
+            "Armor": 0,
+            "Pierce": 0,
+            "Limit": 0,
+            "Scale": 0,
+            "Accuracy": 0,
+            "Line": false
+          },
+          "text": {
+            "en": {
+              "name": "Analyzer",
+              "description": "Apply one analysis stack for 3 rounds: allied attacks gain +5 accuracy, +5 percentage points penetration and +10% armor damage per stack. Stacks and refreshes without a cap. Cooldown: 1 rounds. R is own ranged skill.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "情报解析",
+              "description": "必定施加 1 层解析，持续 3 自然轮；友军攻击该敌人每层获得命中 +5、穿甲 +5 个百分点、对甲伤害 +10%。叠层并刷新到期，不封顶。 冷却 1 自然轮；R 为自身远程技能。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "tio_beam_zanber",
+          "icon": "tio_beam_zanber",
+          "image": "assets/skills/tio_beam_zanber.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 5,
+            "Fatigue": 22,
+            "Cooldown": 2,
+            "Min": 1,
+            "Max": 3,
+            "Radius": 0,
+            "DamageMin": 65,
+            "DamageMax": 85,
+            "Armor": 1.3,
+            "Pierce": 0.3,
+            "Limit": 0,
+            "Scale": 0.5,
+            "Accuracy": 0,
+            "Line": true
+          },
+          "text": {
+            "en": {
+              "name": "Beam Zanber",
+              "description": "Straight hex line up to 3 tiles: 65–85 + 0.5R damage, 130% armor damage, 30% penetration; ignores allies. Cooldown: 2 rounds. R is own ranged skill.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "光束斩剑",
+              "description": "六方向直线最远 3 格，65—85 + 0.5R 伤害，对甲 130%，穿甲 30%；不伤友军。 冷却 2 自然轮；R 为自身远程技能。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "tio_absolute_zero",
+          "icon": "tio_absolute_zero",
+          "image": "assets/skills/tio_absolute_zero.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 6,
+            "Fatigue": 30,
+            "Cooldown": 3,
+            "Min": 2,
+            "Max": 4,
+            "Radius": 1,
+            "DamageMin": 55,
+            "DamageMax": 75,
+            "Armor": 0.8,
+            "Pierce": 0.3,
+            "Limit": 0,
+            "Scale": 0.4,
+            "Accuracy": 0,
+            "Line": false
+          },
+          "text": {
+            "en": {
+              "name": "Absolute Zero",
+              "description": "Target and adjacent enemies: 55–75 + 0.4R damage, 80% armor damage, 30% penetration. Hits apply stacking chill for 2 rounds: -25 initiative and +1 movement AP. Cooldown: 3 rounds. R is own ranged skill.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "绝对零度",
+              "description": "目标及邻格敌人各受 55—75 + 0.4R 伤害，对甲 80%，穿甲 30%；命中施加寒滞：先攻 -25、移动 AP +1，持续 2 自然轮，可叠加。 冷却 3 自然轮；R 为自身远程技能。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "tio_ether_buster",
+          "icon": "tio_ether_buster",
+          "image": "assets/skills/tio_ether_buster.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 8,
+            "Fatigue": 45,
+            "Cooldown": 4,
+            "Min": 1,
+            "Max": 6,
+            "Radius": 0,
+            "DamageMin": 110,
+            "DamageMax": 150,
+            "Armor": 1.6,
+            "Pierce": 0.4,
+            "Limit": 0,
+            "Scale": 0.8,
+            "Accuracy": 0,
+            "Line": true
+          },
+          "text": {
+            "en": {
+              "name": "Ether Buster",
+              "description": "Straight hex line up to 6 tiles: 110–150 + 0.8R damage, 160% armor damage, 40% penetration. +10% damage per target analysis stack without consuming it. Cooldown: 4 rounds. R is own ranged skill.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "以太爆裂",
+              "description": "六方向直线最远 6 格，110—150 + 0.8R 伤害，对甲 160%，穿甲 40%；目标每层解析额外增加 10% 伤害，不消耗解析。 冷却 4 自然轮；R 为自身远程技能。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "tio_zero_field",
+          "icon": "tio_zero_field",
+          "image": "assets/skills/tio_zero_field.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 6,
+            "Fatigue": 40,
+            "Cooldown": 4,
+            "Min": 0,
+            "Max": 0,
+            "Radius": 3,
+            "DamageMin": 0,
+            "DamageMax": 0,
+            "Armor": 0,
+            "Pierce": 0,
+            "Limit": 0,
+            "Scale": 0,
+            "Accuracy": 0,
+            "Line": false
+          },
+          "text": {
+            "en": {
+              "name": "Zero Field",
+              "description": "Self and allies within 3 gain 2 stacking barrier charges for 3 rounds. One charge blocks all direct hitpoint and armor damage from one attack action. Misses and zero damage do not consume charges; damage over time and control bypass it. Cooldown: 4 rounds. R is own ranged skill.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "零之领域",
+              "description": "自己及 3 格内友军各得 2 层屏障，持续 3 自然轮，可叠加；一层抵挡一次攻击行动的全部直接生命和护甲伤害。未命中、零伤害不消耗；不抵挡持续伤害和控制。 冷却 4 自然轮；R 为自身远程技能。",
+              "tooltip": []
+            }
+          }
+        }
+      ],
+      "text": {
+        "en": {
+          "name": "Tio Plato",
+          "backgroundName": "Orbal Staff Tester",
+          "backgroundDescription": "After investigating the Septium Workshop, Tio joins the company to study orbal phenomena in this unfamiliar world.",
+          "traitName": "Eyes of Aion",
+          "traitDescription": "A quiet observer who supports the company with analysis, an orbal staff and protective fields.",
+          "traitTooltip": [
+            "Chapter recruit; innate abilities do not require an orbment or a specific weapon."
+          ]
+        },
+        "zh": {
+          "name": "缇欧 普拉托",
+          "backgroundName": "魔导杖测试员",
+          "backgroundDescription": "在七曜工房的调查结束后，缇欧决定与战团同行，继续记录异世界的导力现象。",
+          "traitName": "艾恩之眼",
+          "traitDescription": "冷静的观测者，以解析、魔导杖和屏障支援战团。",
+          "traitTooltip": [
+            "篇章专属角色；固有能力不依赖导力器或武器。"
+          ]
+        }
+      },
+      "additionalSkills": [],
+      "chapters": [
+        "septium_workshop"
+      ],
+      "recruitmentChapter": "septium_workshop",
+      "progression": null,
+      "recruitGuide": {
+        "actor": "tio",
+        "roles": [
+          "ranged",
+          "healer"
+        ],
+        "stage": "mid",
+        "investment": "medium",
+        "startup": "A",
+        "mature": "S",
+        "priorities": {
+          "early": 1,
+          "mid": 3,
+          "late": 3
+        },
+        "tags": [
+          "weapon_free",
+          "healing",
+          "team"
+        ],
+        "summary": {
+          "en": "Complete the Septium Workshop chapter to recruit Tio. Unavailable for summoning.",
+          "zh": "完成「七曜工房」篇章后入队，不可召唤。"
+        },
+        "analysis": {
+          "en": "A quiet observer who supports the company with analysis, an orbal staff and protective fields.",
+          "zh": "冷静的观测者，以解析、魔导杖和屏障支援战团。"
+        },
+        "reviewedSkills": [
+          "tio_aion_sense",
+          "tio_septium_attunement",
+          "tio_orbal_pulse",
+          "tio_analyzer",
+          "tio_beam_zanber",
+          "tio_absolute_zero",
+          "tio_ether_buster",
+          "tio_zero_field"
+        ],
+        "sourceFiles": [
+          "src/battle-valkyries/battle-valkyries/config/tio_data.nut",
+          "src/battle-valkyries/battle-valkyries/config/orbment_skill_catalog.nut"
+        ]
+      },
+      "bond": null
+    },
+    {
+      "id": "renne",
+      "order": 81,
+      "level": 5,
+      "dailyWage": 1,
+      "legendsPerkProfile": "melee_mobile",
+      "chapterRecruitOnly": false,
+      "combatResource": null,
+      "baseAttributes": {
+        "Hitpoints": 75,
+        "Bravery": 80,
+        "Stamina": 125,
+        "MeleeSkill": 80,
+        "RangedSkill": 75,
+        "MeleeDefense": 15,
+        "RangedDefense": 10,
+        "Initiative": 115
+      },
+      "talents": {
+        "Hitpoints": 1,
+        "Bravery": 2,
+        "Stamina": 3,
+        "MeleeSkill": 3,
+        "RangedSkill": 2,
+        "MeleeDefense": 2,
+        "RangedDefense": 1,
+        "Initiative": 2
+      },
+      "traitBonuses": {},
+      "images": {
+        "card": "assets/valkyries/renne_card.png",
+        "skin": "assets/valkyries/renne_skin_preview.png",
+        "trait": "assets/traits/renne_trait_icon.png"
+      },
+      "skins": [
+        {
+          "id": "renne_skin",
+          "unlockChapter": "",
+          "unlockBond": 0,
+          "unlockProgressionStage": 0,
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
+          "images": {
+            "portrait": "assets/valkyries/renne_card.png",
+            "preview": "assets/valkyries/renne_skin_preview.png"
+          },
+          "text": {
+            "en": {
+              "name": "Angel of Slaughter",
+              "description": "A brilliant violet-haired wielder of orbal arts and a great scythe. She marks enemies with magic before closing in for a decisive sweep."
+            },
+            "zh": {
+              "name": "歼灭天使",
+              "description": "紫发少女以精密导力术与巨镰并肩作战。先用魔法刻下歼灭印记，再踏入近身距离完成收割。"
+            }
+          }
+        }
+      ],
+      "skills": [
+        {
+          "key": "renne_genius_executor",
+          "icon": "renne_genius_executor",
+          "image": "assets/skills/renne_genius_executor.png",
+          "kind": "passive",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {},
+          "text": {
+            "en": {
+              "name": "Genius Executor",
+              "description": "Innate attacks and offensive orbment arts use the higher of current melee and ranged skill for accuracy, retaining the original defense type, terrain and other modifiers. Orbment active skills cost 15% less fatigue while an orbment is equipped.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "天才执行者",
+              "description": "玲的固有攻击及导力器攻击魔法，以当前近战、远程技能中的较高值进行命中判定，仍保留攻击类型对应的防御、地形与其他修正。佩戴导力器时，导力器主动技能疲劳消耗降低15%。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "renne_annihilation_mark",
+          "icon": "renne_annihilation_mark",
+          "image": "assets/skills/renne_annihilation_mark.png",
+          "kind": "passive",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {},
+          "text": {
+            "en": {
+              "name": "Annihilation Mark",
+              "description": "Calamity Projection and offensive orbment arts add one mark on hit, up to 3, lasting 3 natural rounds. Innate scythe hits consume this Renne's marks for +15% damage per stack (+25% for Annihilation Angel). Each action applies or detonates marks once per target; misses preserve marks.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "歼灭刻印",
+              "description": "灾厄投射与导力器攻击魔法命中后施加1层刻印，最多3层，持续3个自然轮次。玲的镰刀固有技能命中时消耗自己的全部刻印，每层伤害+15%；S歼灭天使每层+25%。每次行动对每个目标仅施加或引爆一次，落空不消耗。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "renne_calamity_projection",
+          "icon": "renne_calamity_projection",
+          "image": "assets/skills/renne_calamity_projection.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 4,
+            "Fatigue": 16,
+            "Cooldown": 0,
+            "Min": 1,
+            "Max": 4,
+            "Radius": 0,
+            "DamageMin": 45,
+            "DamageMax": 60,
+            "Scale": 0.35,
+            "Armor": 0.8,
+            "Pierce": 0.3
+          },
+          "text": {
+            "en": {
+              "name": "Calamity Projection",
+              "description": "4 AP, 16 fatigue, 0 natural rounds cooldown. Range 1–4. Ranged orbal attack; applies a mark on hit. Damage 45–60 + 0.35 × max(current melee, ranged skill); armor multiplier 0.8, penetration 30%.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "灾厄投射",
+              "description": "4行动点，16疲劳，冷却0个自然轮次。射程1–4格。导力远程攻击，命中施加刻印。 伤害45–60+0.35×S（当前近战与远程技能较高值），对甲倍率0.8，穿甲率30%。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "renne_death_scythe",
+          "icon": "renne_death_scythe",
+          "image": "assets/skills/renne_death_scythe.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 4,
+            "Fatigue": 18,
+            "Cooldown": 0,
+            "Min": 1,
+            "Max": 2,
+            "Radius": 0,
+            "DamageMin": 60,
+            "DamageMax": 80,
+            "Scale": 0.4,
+            "Armor": 1.2,
+            "Pierce": 0.3
+          },
+          "text": {
+            "en": {
+              "name": "Death Scythe",
+              "description": "4 AP, 18 fatigue, 0 natural rounds cooldown. Range 1–2. Melee scythe attack; detonates marks on hit. Killing a target bearing your marks restores 10 fatigue. Damage 60–80 + 0.4 × max(current melee, ranged skill); armor multiplier 1.2, penetration 30%. Requires the intact signature weapon. Damage replaces weapon base values; applicable perks and orbment bonuses remain.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "死亡之镰",
+              "description": "4行动点，18疲劳，冷却0个自然轮次。射程1–2格。近战镰击，命中引爆刻印；亲自击杀带有自己刻印的目标时恢复10疲劳。 伤害60–80+0.4×S（当前近战与远程技能较高值），对甲倍率1.2，穿甲率30%。 需装备完好的专属武器；伤害独立于武器基础值，保留适用的特技和导力器加成。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "renne_shadow_step",
+          "icon": "renne_shadow_step",
+          "image": "assets/skills/renne_shadow_step.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 2,
+            "Fatigue": 12,
+            "Cooldown": 2,
+            "Min": 1,
+            "Max": 3,
+            "Radius": 0,
+            "DamageMin": 0,
+            "DamageMax": 0,
+            "Scale": 0,
+            "Armor": 0,
+            "Pierce": 0
+          },
+          "text": {
+            "en": {
+              "name": "Shadow Step",
+              "description": "2 AP, 12 fatigue, 2 natural rounds cooldown. Range 1–3. Teleport to a visible empty standable tile within one elevation, without disengagement attacks. Gain +10 melee defense until the end of your next normal turn. Cannot be used while rooted.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "暗影踏步",
+              "description": "2行动点，12疲劳，冷却2个自然轮次。射程1–3格。瞬移至可见、可站立且高差不超过1的空地，不触发脱离攻击。近战防御+10，持续至下一个正常回合结束；定身时不可使用。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "renne_calamity_waltz",
+          "icon": "renne_calamity_waltz",
+          "image": "assets/skills/renne_calamity_waltz.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 6,
+            "Fatigue": 30,
+            "Cooldown": 2,
+            "Min": 0,
+            "Max": 0,
+            "Radius": 1,
+            "DamageMin": 55,
+            "DamageMax": 75,
+            "Scale": 0.35,
+            "Armor": 1.2,
+            "Pierce": 0.25
+          },
+          "text": {
+            "en": {
+              "name": "Calamity Waltz",
+              "description": "6 AP, 30 fatigue, 2 natural rounds cooldown. Range 0–0. Strike all adjacent enemies, with independent hit rolls and mark detonations. Does not harm allies. Damage 55–75 + 0.35 × max(current melee, ranged skill); armor multiplier 1.2, penetration 25%. Requires the intact signature weapon. Damage replaces weapon base values; applicable perks and orbment bonuses remain.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "灾厄轮舞",
+              "description": "6行动点，30疲劳，冷却2个自然轮次。射程0–0格。攻击身边所有敌人，每个目标独立命中与引爆刻印，不伤害友军。 伤害55–75+0.35×S（当前近战与远程技能较高值），对甲倍率1.2，穿甲率25%。 需装备完好的专属武器；伤害独立于武器基础值，保留适用的特技和导力器加成。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "renne_annihilation_angel",
+          "icon": "renne_annihilation_angel",
+          "image": "assets/skills/renne_annihilation_angel.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 8,
+            "Fatigue": 45,
+            "Cooldown": 4,
+            "Min": 1,
+            "Max": 2,
+            "Radius": 1,
+            "DamageMin": 110,
+            "DamageMax": 145,
+            "Scale": 0.7,
+            "Armor": 1.5,
+            "Pierce": 0.4
+          },
+          "text": {
+            "en": {
+              "name": "S-Craft: Annihilation Angel",
+              "description": "8 AP, 45 fatigue, 4 natural rounds cooldown. Range 1–2. Strike an enemy and all adjacent enemies. Each detonated mark adds 25% damage. Damage 110–145 + 0.7 × max(current melee, ranged skill); armor multiplier 1.5, penetration 40%. Requires the intact signature weapon. Damage replaces weapon base values; applicable perks and orbment bonuses remain.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "S歼灭天使",
+              "description": "8行动点，45疲劳，冷却4个自然轮次。射程1–2格。以敌人为中心攻击相邻范围的所有敌人，刻印每层增加25%伤害。 伤害110–145+0.7×S（当前近战与远程技能较高值），对甲倍率1.5，穿甲率40%。 需装备完好的专属武器；伤害独立于武器基础值，保留适用的特技和导力器加成。",
+              "tooltip": []
+            }
+          }
+        }
+      ],
+      "text": {
+        "en": {
+          "name": "Renne",
+          "backgroundName": "Angel of Slaughter",
+          "backgroundDescription": "A brilliant violet-haired wielder of orbal arts and a great scythe. She marks enemies with magic before closing in for a decisive sweep.",
+          "traitName": "Angel of Slaughter",
+          "traitDescription": "A brilliant violet-haired wielder of orbal arts and a great scythe. She marks enemies with magic before closing in for a decisive sweep.",
+          "traitTooltip": [
+            "A brilliant violet-haired wielder of orbal arts and a great scythe. She marks enemies with magic before closing in for a decisive sweep."
+          ]
+        },
+        "zh": {
+          "name": "玲",
+          "backgroundName": "歼灭天使",
+          "backgroundDescription": "紫发少女以精密导力术与巨镰并肩作战。先用魔法刻下歼灭印记，再踏入近身距离完成收割。",
+          "traitName": "歼灭天使",
+          "traitDescription": "紫发少女以精密导力术与巨镰并肩作战。先用魔法刻下歼灭印记，再踏入近身距离完成收割。",
+          "traitTooltip": [
+            "紫发少女以精密导力术与巨镰并肩作战。先用魔法刻下歼灭印记，再踏入近身距离完成收割。"
+          ]
+        }
+      },
+      "additionalSkills": [],
+      "chapters": [
+        "septium_workshop"
+      ],
+      "recruitmentChapter": "",
+      "progression": null,
+      "recruitGuide": {
+        "actor": "renne",
+        "roles": [
+          "warrior",
+          "ranged"
+        ],
+        "stage": "mid",
+        "investment": "medium",
+        "startup": "A",
+        "mature": "S",
+        "priorities": {
+          "early": 2,
+          "mid": 3,
+          "late": 3
+        },
+        "tags": [
+          "signature",
+          "area"
+        ],
+        "summary": {
+          "en": "A brilliant violet-haired wielder of orbal arts and a great scythe. She marks enemies with magic before closing in for a decisive sweep.",
+          "zh": "紫发少女以精密导力术与巨镰并肩作战。先用魔法刻下歼灭印记，再踏入近身距离完成收割。"
+        },
+        "analysis": {
+          "en": "Calamity Projection and offensive orbment arts add one mark on hit, up to 3, lasting 3 natural rounds. Innate scythe hits consume this Renne's marks for +15% damage per stack (+25% for Annihilation Angel). Each action applies or detonates marks once per target; misses preserve marks.",
+          "zh": "灾厄投射与导力器攻击魔法命中后施加1层刻印，最多3层，持续3个自然轮次。玲的镰刀固有技能命中时消耗自己的全部刻印，每层伤害+15%；S歼灭天使每层+25%。每次行动对每个目标仅施加或引爆一次，落空不消耗。"
+        },
+        "reviewedSkills": [
+          "renne_genius_executor",
+          "renne_annihilation_mark",
+          "renne_calamity_projection",
+          "renne_death_scythe",
+          "renne_shadow_step",
+          "renne_calamity_waltz",
+          "renne_annihilation_angel"
+        ],
+        "sourceFiles": [
+          "src/battle-valkyries/battle-valkyries/config/trails_duo_data.nut",
+          "src/battle-valkyries/battle-valkyries/config/trails_duo_skill_catalog.nut"
+        ]
+      },
+      "bond": null
+    },
+    {
+      "id": "alisa",
+      "order": 82,
+      "level": 5,
+      "dailyWage": 1,
+      "legendsPerkProfile": "ranged_support",
+      "chapterRecruitOnly": false,
+      "combatResource": null,
+      "baseAttributes": {
+        "Hitpoints": 70,
+        "Bravery": 70,
+        "Stamina": 125,
+        "MeleeSkill": 45,
+        "RangedSkill": 80,
+        "MeleeDefense": 8,
+        "RangedDefense": 18,
+        "Initiative": 110
+      },
+      "talents": {
+        "Hitpoints": 1,
+        "Bravery": 2,
+        "Stamina": 3,
+        "MeleeSkill": 0,
+        "RangedSkill": 3,
+        "MeleeDefense": 1,
+        "RangedDefense": 2,
+        "Initiative": 2
+      },
+      "traitBonuses": {},
+      "images": {
+        "card": "assets/valkyries/alisa_card.png",
+        "skin": "assets/valkyries/alisa_skin_preview.png",
+        "trait": "assets/traits/alisa_trait_icon.png"
+      },
+      "skins": [
+        {
+          "id": "alisa_skin",
+          "unlockChapter": "",
+          "unlockBond": 0,
+          "unlockProgressionStage": 0,
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
+          "images": {
+            "portrait": "assets/valkyries/alisa_card.png",
+            "preview": "assets/valkyries/alisa_skin_preview.png"
+          },
+          "text": {
+            "en": {
+              "name": "Blazing Wing Archer",
+              "description": "An orbal archer of House Reinford who suppresses enemies with blazing arrows and sustains her companions with restorative blessings."
+            },
+            "zh": {
+              "name": "炽翼射手",
+              "description": "莱恩福尔特家的导力弓手，以炽烈箭矢压制敌阵，并以祝福维系队伍的体力与战线。"
+            }
+          }
+        }
+      ],
+      "skills": [
+        {
+          "key": "alisa_orbal_bow_expert",
+          "icon": "alisa_orbal_bow_expert",
+          "image": "assets/skills/alisa_orbal_bow_expert.png",
+          "kind": "passive",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {},
+          "text": {
+            "en": {
+              "name": "Orbal Bow Expert",
+              "description": "Attacks with the signature orbal bow gain +10 accuracy, require no arrows and can be fired while engaged. Other range, terrain, defense and accuracy modifiers still apply.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "导力弓专家",
+              "description": "使用专属导力弓攻击时命中+10。导力弓不消耗箭矢，被近身时仍可射击；其他射程、地形、防御与命中修正照常生效。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "alisa_radiant_resonance",
+          "icon": "alisa_radiant_resonance",
+          "image": "assets/skills/alisa_radiant_resonance.png",
+          "kind": "passive",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {},
+          "text": {
+            "en": {
+              "name": "Radiant Resonance",
+              "description": "Successful active healing, fatigue recovery or support buffs on another ally grant Radiance (maximum 1), including orbment support arts. The next orbal bow attack action gains +25% damage and +10 percentage points armor penetration for its entire area; even an all-miss action consumes it. Self support and regeneration ticks do not trigger it.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "炽辉共鸣",
+              "description": "主动治疗、恢复疲劳或增益成功作用于其他友军时获得炽辉，最多1层，导力器支援魔法同样可触发。下一次导力弓攻击行动伤害+25%，穿甲率+10个百分点，整次群攻共享加成，全部落空也消耗。自我支援与持续恢复不触发。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "alisa_flame_arrow",
+          "icon": "alisa_flame_arrow",
+          "image": "assets/skills/alisa_flame_arrow.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 4,
+            "Fatigue": 15,
+            "Cooldown": 0,
+            "Min": 1,
+            "Max": 6,
+            "Radius": 0,
+            "DamageMin": 45,
+            "DamageMax": 65,
+            "Scale": 0.4,
+            "Armor": 0.9,
+            "Pierce": 0.3
+          },
+          "text": {
+            "en": {
+              "name": "Flame Arrow",
+              "description": "4 AP, 15 fatigue, 0 natural rounds cooldown. Range 1–6. Orbal bow attack. Hits burn the target for 8 HP at the start of its next 2 normal turns. Refreshes without stacking; fire and debuff immunity apply. Damage 45–65 + 0.4 × current ranged skill; armor multiplier 0.9, penetration 30%. Requires the intact signature weapon. Damage replaces weapon base values; applicable perks and orbment bonuses remain.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "烈焰箭",
+              "description": "4行动点，15疲劳，冷却0个自然轮次。射程1–6格。导力弓攻击；命中后施加燃烧，在目标接下来2个正常回合开始时各造成8点生命伤害。重复施加刷新，不叠加，火焰及减益免疫有效。 伤害45–65+0.4×R（当前远程技能），对甲倍率0.9，穿甲率30%。 需装备完好的专属武器；伤害独立于武器基础值，保留适用的特技和导力器加成。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "alisa_molten_arrow_rain",
+          "icon": "alisa_molten_arrow_rain",
+          "image": "assets/skills/alisa_molten_arrow_rain.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 6,
+            "Fatigue": 28,
+            "Cooldown": 2,
+            "Min": 2,
+            "Max": 5,
+            "Radius": 1,
+            "DamageMin": 40,
+            "DamageMax": 55,
+            "Scale": 0.3,
+            "Armor": 1.2,
+            "Pierce": 0.2
+          },
+          "text": {
+            "en": {
+              "name": "Molten Arrow Rain",
+              "description": "6 AP, 28 fatigue, 2 natural rounds cooldown. Range 2–5. Attack enemies on and adjacent to the selected tile, applying the same burn as Flame Arrow on hit. Does not harm allies. Damage 40–55 + 0.3 × current ranged skill; armor multiplier 1.2, penetration 20%. Requires the intact signature weapon. Damage replaces weapon base values; applicable perks and orbment bonuses remain.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "熔光箭雨",
+              "description": "6行动点，28疲劳，冷却2个自然轮次。射程2–5格。攻击选定格及相邻格的所有敌人，命中施加与烈焰箭相同的燃烧，不伤害友军。 伤害40–55+0.3×R（当前远程技能），对甲倍率1.2，穿甲率20%。 需装备完好的专属武器；伤害独立于武器基础值，保留适用的特技和导力器加成。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "alisa_holy_blessing",
+          "icon": "alisa_holy_blessing",
+          "image": "assets/skills/alisa_holy_blessing.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 4,
+            "Fatigue": 24,
+            "Cooldown": 2,
+            "Min": 1,
+            "Max": 4,
+            "Radius": 0,
+            "DamageMin": 0,
+            "DamageMax": 0,
+            "Scale": 0,
+            "Armor": 0,
+            "Pierce": 0
+          },
+          "text": {
+            "en": {
+              "name": "Holy Blessing",
+              "description": "4 AP, 24 fatigue, 2 natural rounds cooldown. Range 1–4. Restore 25 HP and 18 fatigue to another ally and remove one bleed or poison effect, prioritizing bleeding. Cannot revive. Radiance requires actual recovery or cleansing.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "圣洁祝福",
+              "description": "4行动点，24疲劳，冷却2个自然轮次。射程1–4格。为其他友军恢复25生命与18疲劳，并移除1个流血或中毒效果（优先流血）。不能复活；必须实际产生恢复或净化才获得炽辉。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "alisa_heavens_gift",
+          "icon": "alisa_heavens_gift",
+          "image": "assets/skills/alisa_heavens_gift.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 5,
+            "Fatigue": 32,
+            "Cooldown": 3,
+            "Min": 1,
+            "Max": 4,
+            "Radius": 1,
+            "DamageMin": 0,
+            "DamageMax": 0,
+            "Scale": 0,
+            "Armor": 0,
+            "Pierce": 0
+          },
+          "text": {
+            "en": {
+              "name": "Heaven's Gift",
+              "description": "5 AP, 32 fatigue, 3 natural rounds cooldown. Range 1–4. Bless the target and adjacent allies, excluding Alisa. At the start of their next 2 normal turns, restore 10 HP and 6 fatigue. Gain +8 melee and ranged defense until the second turn ends. Reapplication refreshes the duration.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "天堂赠礼",
+              "description": "5行动点，32疲劳，冷却3个自然轮次。射程1–4格。为目标及其相邻的其他友军施加祝福，排除亚莉莎。接下来2个正常回合开始时恢复10生命与6疲劳，期间近战及远程防御+8；重复施加刷新。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "alisa_celestial_blazing_wings",
+          "icon": "alisa_celestial_blazing_wings",
+          "image": "assets/skills/alisa_celestial_blazing_wings.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 8,
+            "Fatigue": 42,
+            "Cooldown": 4,
+            "Min": 2,
+            "Max": 6,
+            "Radius": 1,
+            "DamageMin": 95,
+            "DamageMax": 125,
+            "Scale": 0.65,
+            "Armor": 1.4,
+            "Pierce": 0.35
+          },
+          "text": {
+            "en": {
+              "name": "S-Craft: Celestial Blazing Wings",
+              "description": "8 AP, 42 fatigue, 4 natural rounds cooldown. Range 2–6. Attack enemies on and adjacent to the selected tile. When Radiance is consumed, restore 12 fatigue once to other allies within 3 tiles after the entire attack. Damage 95–125 + 0.65 × current ranged skill; armor multiplier 1.4, penetration 35%. Requires the intact signature weapon. Damage replaces weapon base values; applicable perks and orbment bonuses remain.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "S天穹炽翼",
+              "description": "8行动点，42疲劳，冷却4个自然轮次。射程2–6格。攻击选定格及相邻格的所有敌人。消耗炽辉时，整次攻击结束后为自身3格内其他友军各恢复12疲劳，仅结算一次。 伤害95–125+0.65×R（当前远程技能），对甲倍率1.4，穿甲率35%。 需装备完好的专属武器；伤害独立于武器基础值，保留适用的特技和导力器加成。",
+              "tooltip": []
+            }
+          }
+        }
+      ],
+      "text": {
+        "en": {
+          "name": "Alisa",
+          "backgroundName": "Blazing Wing Archer",
+          "backgroundDescription": "An orbal archer of House Reinford who suppresses enemies with blazing arrows and sustains her companions with restorative blessings.",
+          "traitName": "Blazing Wing Archer",
+          "traitDescription": "An orbal archer of House Reinford who suppresses enemies with blazing arrows and sustains her companions with restorative blessings.",
+          "traitTooltip": [
+            "An orbal archer of House Reinford who suppresses enemies with blazing arrows and sustains her companions with restorative blessings."
+          ]
+        },
+        "zh": {
+          "name": "亚莉莎",
+          "backgroundName": "炽翼射手",
+          "backgroundDescription": "莱恩福尔特家的导力弓手，以炽烈箭矢压制敌阵，并以祝福维系队伍的体力与战线。",
+          "traitName": "炽翼射手",
+          "traitDescription": "莱恩福尔特家的导力弓手，以炽烈箭矢压制敌阵，并以祝福维系队伍的体力与战线。",
+          "traitTooltip": [
+            "莱恩福尔特家的导力弓手，以炽烈箭矢压制敌阵，并以祝福维系队伍的体力与战线。"
+          ]
+        }
+      },
+      "additionalSkills": [],
+      "chapters": [
+        "septium_workshop"
+      ],
+      "recruitmentChapter": "",
+      "progression": null,
+      "recruitGuide": {
+        "actor": "alisa",
+        "roles": [
+          "ranged",
+          "healer"
+        ],
+        "stage": "mid",
+        "investment": "medium",
+        "startup": "A",
+        "mature": "S",
+        "priorities": {
+          "early": 2,
+          "mid": 3,
+          "late": 3
+        },
+        "tags": [
+          "healing",
+          "team"
+        ],
+        "summary": {
+          "en": "An orbal archer of House Reinford who suppresses enemies with blazing arrows and sustains her companions with restorative blessings.",
+          "zh": "莱恩福尔特家的导力弓手，以炽烈箭矢压制敌阵，并以祝福维系队伍的体力与战线。"
+        },
+        "analysis": {
+          "en": "Successful active healing, fatigue recovery or support buffs on another ally grant Radiance (maximum 1), including orbment support arts. The next orbal bow attack action gains +25% damage and +10 percentage points armor penetration for its entire area; even an all-miss action consumes it. Self support and regeneration ticks do not trigger it.",
+          "zh": "主动治疗、恢复疲劳或增益成功作用于其他友军时获得炽辉，最多1层，导力器支援魔法同样可触发。下一次导力弓攻击行动伤害+25%，穿甲率+10个百分点，整次群攻共享加成，全部落空也消耗。自我支援与持续恢复不触发。"
+        },
+        "reviewedSkills": [
+          "alisa_orbal_bow_expert",
+          "alisa_radiant_resonance",
+          "alisa_flame_arrow",
+          "alisa_molten_arrow_rain",
+          "alisa_holy_blessing",
+          "alisa_heavens_gift",
+          "alisa_celestial_blazing_wings"
+        ],
+        "sourceFiles": [
+          "src/battle-valkyries/battle-valkyries/config/trails_duo_data.nut",
+          "src/battle-valkyries/battle-valkyries/config/trails_duo_skill_catalog.nut"
+        ]
+      },
+      "bond": null
+    },
+    {
+      "id": "aemeath",
+      "order": 83,
+      "level": 1,
+      "dailyWage": 1,
+      "legendsPerkProfile": "melee_mobile",
+      "chapterRecruitOnly": false,
+      "combatResource": null,
+      "baseAttributes": {
+        "Hitpoints": 65,
+        "Bravery": 60,
+        "Stamina": 110,
+        "MeleeSkill": 65,
+        "RangedSkill": 50,
+        "MeleeDefense": 15,
+        "RangedDefense": 10,
+        "Initiative": 110
+      },
+      "talents": {
+        "Hitpoints": 2,
+        "Bravery": 3,
+        "Stamina": 2,
+        "MeleeSkill": 3,
+        "RangedSkill": 3,
+        "MeleeDefense": 2,
+        "RangedDefense": 1,
+        "Initiative": 1
+      },
+      "traitBonuses": {
+        "MeleeSkill": 20,
+        "Bravery": 20,
+        "Initiative": 15,
+        "ActionPoints": 5
+      },
+      "images": {
+        "card": "assets/valkyries/aemeath_card.png",
+        "skin": "assets/valkyries/aemeath_skin_preview.png",
+        "trait": "assets/traits/aemeath_trait_icon.png"
+      },
+      "skins": [
+        {
+          "id": "aemeath_skin",
+          "unlockChapter": "",
+          "unlockBond": 0,
+          "unlockProgressionStage": 0,
+          "detailMedia": {
+            "poster": false,
+            "animated": false
+          },
+          "images": {
+            "portrait": "assets/valkyries/aemeath_card.png",
+            "preview": "assets/valkyries/aemeath_skin_preview.png"
+          },
+          "text": {
+            "en": {
+              "name": "Unseen Starlight",
+              "description": "The white-and-blue pilot attire of the Digital Ghost."
+            },
+            "zh": {
+              "name": "不可见星辉",
+              "description": "电子幽灵形态的白蓝驾驶服。"
+            }
+          }
+        }
+      ],
+      "skills": [
+        {
+          "key": "aemeath_voyage",
+          "icon": "aemeath_voyage",
+          "image": "assets/skills/aemeath_voyage.png",
+          "kind": "passive",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {},
+          "text": {
+            "en": {
+              "name": "Voyage Together",
+              "description": "Starts in Digital Ghost form with 2 Synchronization (cap 6). From round two, recover 1 at the first normal turn each round. An active attack that damages health or armor restores 1 per whole action. Each damaged target gains 1 Syntony in Ghost form or 1 Fusion in Mech form, once per target per action, at the attack's legal range without propagation. The ultimate only restores Synchronization. Reactions, damage over time and bonus damage do not trigger this. Each transformation skill grants 1 Resonance (cap 6); each point adds 5 percentage points of armor penetration.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "共赴长航",
+              "description": "以电子幽灵开始战斗。同步率初始2、上限6；从第二轮起，每轮首次正常回合开始回复1。主动攻击实际造成生命或护甲伤害后，整次行动回复1同步率。电子幽灵给实际受伤目标施加1层震谐，长航机兵施加1层聚爆；每目标每行动限一次，无距离附加限制，不扩散。大招只回复同步率。反击、借机、持续与附加伤害不触发。变身技能每次实际切换获得1共鸣率，上限6，每点增加5个百分点穿甲。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "aemeath_interference",
+          "icon": "aemeath_interference",
+          "image": "assets/skills/aemeath_interference.png",
+          "kind": "passive",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {},
+          "text": {
+            "en": {
+              "name": "Syntony Interference",
+              "description": "Digital Ghost only. Enemies with Syntony suffer -10 accuracy per stack when attacking Aemeath, capped at -30. Aemeath gains +20 accuracy against targets with Syntony. Normal hit-chance limits apply.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "震谐干涉",
+              "description": "仅电子幽灵生效。持有震谐的敌人攻击爱弥斯时，每层命中判定-10，最多-30；爱弥斯攻击持有震谐的敌人时命中判定+20。遵守普通命中上下限。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "aemeath_trajectory",
+          "icon": "aemeath_trajectory",
+          "image": "assets/skills/aemeath_trajectory.png",
+          "kind": "passive",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {},
+          "text": {
+            "en": {
+              "name": "Fusion Trajectory",
+              "description": "Voyage Mech only. Add 5 base weapon damage per Fusion stack present at action start, up to 30, on the first damaging strike against each target per action. Armor and damage reduction apply. The ultimate and reactions do not trigger this.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "聚爆轨迹",
+              "description": "仅长航机兵生效。对持有聚爆的敌人，增加行动开始时聚爆层数x5的基础武器伤害，上限30。每目标每行动仅首个实际伤害段生效，正常结算护甲与减伤。大招与反应攻击不触发。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "aemeath_starlight",
+          "icon": "aemeath_starlight",
+          "image": "assets/skills/aemeath_starlight.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 6,
+            "Fatigue": 18,
+            "Sync": 1,
+            "Resonance": 0,
+            "Range": 1,
+            "Targets": 1,
+            "Mult": 0.8
+          },
+          "text": {
+            "en": {
+              "name": "Starlight Descends",
+              "description": "Digital Ghost; melee weapon; 6 AP, 18 Fatigue, 1 Synchronization. Strike one enemy within 1 tile for 80% weapon damage and apply 2 Syntony. If the first strike damages a target that had Fusion before casting, consume 1 Fusion for one independent 80% follow-up. The follow-up does not repeat the explicit marks; up to 3 Syntony including Voyage Together.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "携星辉降临于此",
+              "description": "电子幽灵；近战武器；6行动点、18疲劳、1同步率。攻击1格内一名敌人，造成80%武器伤害并施加2层震谐。若目标施放前已有聚爆且首段造成伤害，消耗1层聚爆再攻击一次，造成80%武器伤害。追击独立命中，不再添加技能自带印记；含共通被动最多添加3层震谐。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "aemeath_armament",
+          "icon": "aemeath_armament",
+          "image": "assets/skills/aemeath_armament.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 6,
+            "Fatigue": 18,
+            "Sync": 2,
+            "Resonance": 0,
+            "Range": 2,
+            "Targets": 3,
+            "Mult": 0.7
+          },
+          "text": {
+            "en": {
+              "name": "Coordinated Thrust: Armament Fusion",
+              "description": "Digital Ghost; melee weapon; 6 AP, 18 Fatigue, 2 Synchronization. Strike a primary enemy and up to two adjacent enemies, all within 2 tiles, for 70% weapon damage each. Damaged targets gain 1 Fusion and 1 Syntony from Voyage Together. Then change in place to Voyage Mech and gain 1 Resonance, even if all attacks miss. No friendly fire.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "合击突刺 兵装融合",
+              "description": "电子幽灵；近战武器；6行动点、18疲劳、2同步率。攻击2格内主目标及其相邻、仍在自身2格内的至多两名敌人，各造成70%武器伤害；实际受伤者获得1层聚爆，并由共通被动获得1层震谐。结算后原地切换长航机兵，获得1共鸣率；全部落空也变身。不伤友军。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "aemeath_melody",
+          "icon": "aemeath_melody",
+          "image": "assets/skills/aemeath_melody.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 6,
+            "Fatigue": 18,
+            "Sync": 1,
+            "Resonance": 0,
+            "Range": 3,
+            "Targets": 3,
+            "Mult": 0.9
+          },
+          "text": {
+            "en": {
+              "name": "Melody Across the Sky",
+              "description": "Voyage Mech; melee weapon; 6 AP, 18 Fatigue, 1 Synchronization. Strike a visible enemy and up to two adjacent enemies, all within 3 tiles, for 90% weapon damage and 2 Fusion each. A target damaged by the first strike that had Syntony before casting loses 1 Syntony and receives one independent 90% follow-up. Up to 3 Fusion per target including Voyage Together. No friendly fire.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "以旋律穿越长空",
+              "description": "长航机兵；近战武器；6行动点、18疲劳、1同步率。锁定3格内可见敌人及其相邻、仍在自身3格内的至多两名敌人，各造成90%武器伤害并施加2层聚爆。对施放前已有震谐且首段受到伤害者，消耗1层震谐再独立攻击一次，造成90%武器伤害。每目标含共通被动最多添加3层聚爆。不伤友军。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "aemeath_dawn",
+          "icon": "aemeath_dawn",
+          "image": "assets/skills/aemeath_dawn.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 6,
+            "Fatigue": 18,
+            "Sync": 2,
+            "Resonance": 0,
+            "Range": 3,
+            "Targets": 1,
+            "Mult": 1
+          },
+          "text": {
+            "en": {
+              "name": "Coordinated Thrust: Dawn Chorus",
+              "description": "Voyage Mech; melee weapon; 6 AP, 18 Fatigue, 2 Synchronization. Project a thrust at one visible enemy within 3 tiles for 100% weapon damage and 1 Syntony, plus 1 Fusion from Voyage Together. Then return in place to Digital Ghost and gain 1 Resonance, even on a miss. Does not move Aemeath.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "合击突刺 启明之音",
+              "description": "长航机兵；近战武器；6行动点、18疲劳、2同步率。投射突刺攻击3格内一名可见敌人，造成100%武器伤害并施加1层震谐，共通被动另加1层聚爆。结算后原地恢复电子幽灵，获得1共鸣率；未命中也变身。本体不移动。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "aemeath_ultimate",
+          "icon": "aemeath_ultimate",
+          "image": "assets/skills/aemeath_ultimate.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 8,
+            "Fatigue": 0,
+            "Sync": 0,
+            "Resonance": 4,
+            "Range": 7,
+            "Targets": 7,
+            "Mult": 2.5
+          },
+          "text": {
+            "en": {
+              "name": "Starlight Beyond the Boundary",
+              "description": "Both forms; melee weapon; 8 AP, 0 Fatigue, 4 Resonance. Strike a visible enemy within 7 tiles for 250% weapon damage + 10 per mark; adjacent enemies take 125% weapon damage + 5 per mark, with independent hit and defense rolls. Snapshot Aemeath's marks on living enemies, capped at 20, without consuming them. Uses pre-spend penetration. No form marks or Fusion bonus damage. Returns to Digital Ghost without granting Resonance. No friendly fire.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "星辉破界而来",
+              "description": "两形态共用；近战武器；8行动点、0疲劳、4共鸣率。对7格内可见主目标造成250%武器伤害+印记总层数x10；其周围1格敌人受到125%武器伤害+层数x5，各自命中和结算防御。统计存活敌人身上由爱弥斯施加的两类印记，最多20层，不消耗印记。使用扣费前穿甲；不触发形态印记或聚爆附伤。结束恢复电子幽灵，不额外获得共鸣率。不伤友军。",
+              "tooltip": []
+            }
+          }
+        }
+      ],
+      "text": {
+        "en": {
+          "name": "Aemeath",
+          "backgroundName": "Exostrider Synchronist",
+          "backgroundDescription": "A digital ghost from Startorch Academy, bringing starlight and the power of her Voyage Mech to this battlefield.",
+          "traitName": "Starlight of the Voyage / Synchronist",
+          "traitDescription": "Alternate between Digital Ghost and Voyage Mech, weaving Syntony and Fusion into a voyage among the stars.",
+          "traitTooltip": [
+            "+20 Melee Skill, +20 Resolve, +15 Initiative and +5 AP. See Voyage Together for Synchronization and Resonance."
+          ]
+        },
+        "zh": {
+          "name": "爱弥斯",
+          "backgroundName": "星炬学院隧者适格者",
+          "backgroundDescription": "来自星炬学院的电子幽灵，将轻盈的星辉与长航机兵的力量带入这片战场。",
+          "traitName": "长航的星辉／隧者适格者",
+          "traitDescription": "在电子幽灵与长航机兵之间切换，以震谐与聚爆编织长航。",
+          "traitTooltip": [
+            "近战技能+20，决心+20，主动值+15，行动点+5。同步率与共鸣率详见共赴长航。"
+          ]
+        }
+      },
+      "additionalSkills": [],
+      "chapters": [],
+      "recruitmentChapter": "",
+      "progression": null,
+      "recruitGuide": {
+        "actor": "aemeath",
+        "roles": [
+          "warrior",
+          "ranged"
+        ],
+        "stage": "mid",
+        "investment": "medium",
+        "startup": "A",
+        "mature": "S",
+        "priorities": {
+          "early": 2,
+          "mid": 3,
+          "late": 3
+        },
+        "tags": [
+          "area",
+          "team"
+        ],
+        "summary": {
+          "en": "Alternate between Digital Ghost and Voyage Mech, weaving Syntony and Fusion into a voyage among the stars.",
+          "zh": "在电子幽灵与长航机兵之间切换，以震谐与聚爆编织长航。"
+        },
+        "analysis": {
+          "en": "Starts in Digital Ghost form with 2 Synchronization (cap 6). From round two, recover 1 at the first normal turn each round. An active attack that damages health or armor restores 1 per whole action. Each damaged target gains 1 Syntony in Ghost form or 1 Fusion in Mech form, once per target per action, at the attack's legal range without propagation. The ultimate only restores Synchronization. Reactions, damage over time and bonus damage do not trigger this. Each transformation skill grants 1 Resonance (cap 6); each point adds 5 percentage points of armor penetration.",
+          "zh": "以电子幽灵开始战斗。同步率初始2、上限6；从第二轮起，每轮首次正常回合开始回复1。主动攻击实际造成生命或护甲伤害后，整次行动回复1同步率。电子幽灵给实际受伤目标施加1层震谐，长航机兵施加1层聚爆；每目标每行动限一次，无距离附加限制，不扩散。大招只回复同步率。反击、借机、持续与附加伤害不触发。变身技能每次实际切换获得1共鸣率，上限6，每点增加5个百分点穿甲。"
+        },
+        "reviewedSkills": [
+          "aemeath_voyage",
+          "aemeath_interference",
+          "aemeath_trajectory",
+          "aemeath_starlight",
+          "aemeath_armament",
+          "aemeath_melody",
+          "aemeath_dawn",
+          "aemeath_ultimate"
+        ],
+        "sourceFiles": [
+          "src/battle-valkyries/battle-valkyries/config/aemeath_data.nut",
+          "src/battle-valkyries/battle-valkyries/config/aemeath_skill_catalog.nut"
+        ]
+      },
+      "bond": null
+    },
+    {
+      "id": "fate_harlaown",
+      "order": 84,
+      "level": 1,
+      "dailyWage": 1,
+      "legendsPerkProfile": "melee_mobile",
+      "chapterRecruitOnly": false,
+      "combatResource": null,
+      "baseAttributes": {
+        "Hitpoints": 80,
+        "Bravery": 70,
+        "Stamina": 140,
+        "MeleeSkill": 85,
+        "RangedSkill": 80,
+        "MeleeDefense": 20,
+        "RangedDefense": 15,
+        "Initiative": 120
+      },
+      "talents": {
+        "Hitpoints": 2,
+        "Bravery": 3,
+        "Stamina": 3,
+        "MeleeSkill": 3,
+        "RangedSkill": 2,
+        "MeleeDefense": 1,
+        "RangedDefense": 2,
+        "Initiative": 2
+      },
+      "traitBonuses": {},
+      "images": {
+        "card": "assets/valkyries/fate_harlaown_card.png",
+        "skin": "assets/valkyries/fate_harlaown_skin_preview.png",
+        "trait": "assets/traits/fate_harlaown_trait_icon.png"
+      },
+      "skins": [
+        {
+          "id": "fate_harlaown_skin",
+          "unlockChapter": "",
+          "unlockBond": 0,
+          "unlockProgressionStage": 0,
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
+          "images": {
+            "portrait": "assets/valkyries/fate_harlaown_card.png",
+            "preview": "assets/valkyries/fate_harlaown_skin_preview.png"
+          },
+          "text": {
+            "en": {
+              "name": "White-Caped Lightning",
+              "description": "Adult Fate with a white cape, black battle dress and restrained red ribbons. Appearance only."
+            },
+            "zh": {
+              "name": "白翼雷光",
+              "description": "成年菲特的白披风、黑色战衣与少量红色饰带。仅改变外观。"
+            }
+          }
+        }
+      ],
+      "skills": [
+        {
+          "key": "fate_lightning",
+          "icon": "fate_lightning",
+          "image": "assets/skills/fate_lightning.png",
+          "kind": "passive",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {},
+          "text": {
+            "en": {
+              "name": "Gentle Lightning",
+              "description": "Gain +15 Initiative. Voluntarily move 2 tiles during a normal turn to charge the next signature damage skill: +10 hit chance and +20% damage for every strike of that action, consumed even on misses. Once per normal turn; forced movement and extra turns do not count. Charge expires at turn end.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "温柔的雷光",
+              "description": "先攻+15。每个正常回合内主动移动累计2格，获得1次雷光充能：下一次专属伤害技能整次命中+10、伤害+20%，未命中也消耗。每回合只触发一次；强制位移与额外行动不积累，回合结束清除。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "fate_scythe",
+          "icon": "fate_scythe",
+          "image": "assets/skills/fate_scythe.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 4,
+            "Fatigue": 15,
+            "Min": 1,
+            "Range": 1,
+            "Cooldown": 0,
+            "Low": 65,
+            "High": 85,
+            "Armor": 1.2,
+            "Pierce": 0.25,
+            "Hit": 0,
+            "Strikes": 1,
+            "Attack": true,
+            "Ranged": false
+          },
+          "text": {
+            "en": {
+              "name": "Lightning Scythe",
+              "description": "Strike an adjacent enemy for 65-85 damage, 120% armor damage and 25% armor penetration. Costs 4 AP and 15 fatigue.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "雷光镰刃",
+              "description": "近战攻击相邻敌人，造成65-85伤害，120%护甲伤害，25%穿甲。消耗4行动点、15疲劳。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "fate_move",
+          "icon": "fate_move",
+          "image": "assets/skills/fate_move.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 2,
+            "Fatigue": 12,
+            "Min": 1,
+            "Range": 3,
+            "Cooldown": 2,
+            "Low": 0,
+            "High": 0,
+            "Armor": 1,
+            "Pierce": 0,
+            "Hit": 0,
+            "Strikes": 0,
+            "Attack": false,
+            "Ranged": false
+          },
+          "text": {
+            "en": {
+              "name": "Sonic Move",
+              "description": "Move along a walkable route of up to 3 steps without attacks of opportunity. Cannot cross units, obstacles or adjacent elevation differences greater than 1; unavailable while rooted. Stops at the last valid tile if interrupted. Costs 2 AP (1 in Sonic Form) and 12 fatigue; 2 normal-turn cooldown.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "音速移动",
+              "description": "沿最多3步的可行走路线高速移动至空格，不触发借机攻击。不能穿过单位、障碍或超过1级的相邻高差；被定身时无法使用。途中受阻停在最后有效落点。消耗2行动点、12疲劳，真音速形态降为1行动点；冷却2个正常回合。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "fate_lancer",
+          "icon": "fate_lancer",
+          "image": "assets/skills/fate_lancer.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 4,
+            "Fatigue": 22,
+            "Min": 2,
+            "Range": 5,
+            "Cooldown": 1,
+            "Low": 25,
+            "High": 35,
+            "Armor": 1,
+            "Pierce": 0.25,
+            "Hit": 10,
+            "Strikes": 3,
+            "Attack": true,
+            "Ranged": true
+          },
+          "text": {
+            "en": {
+              "name": "Photon Lancer",
+              "description": "Fire 3 lances at a visible enemy 2-5 tiles away. Each independently hits for 25-35 damage with +10 hit chance, 100% armor damage and 25% armor penetration. Stops if the target dies; cannot be used while engaged. Costs 4 AP and 22 fatigue; 1 normal-turn cooldown.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "光子灵枪",
+              "description": "向2-5格内可见敌人连续射出3发雷枪，每发25-35伤害，命中+10，100%护甲伤害，25%穿甲。目标死亡即停止，不转移目标；被敌人贴身时无法使用。消耗4行动点、22疲劳；冷却1个正常回合。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "fate_form",
+          "icon": "fate_form",
+          "image": "assets/skills/fate_form.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 2,
+            "Fatigue": 20,
+            "Min": 0,
+            "Range": 0,
+            "Cooldown": 0,
+            "Low": 0,
+            "High": 0,
+            "Armor": 1,
+            "Pierce": 0,
+            "Hit": 0,
+            "Strikes": 0,
+            "Attack": false,
+            "Ranged": false
+          },
+          "text": {
+            "en": {
+              "name": "Sonic Form",
+              "description": "Once per battle. Gain an additional 25 Initiative but take 25% more damage. Sonic Move costs 1 AP; Lightning Scythe becomes Twin Blades and Riot Zanber is unlocked. Lasts until the end of the next normal turn. Costs 2 AP and 20 fatigue.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "真音速形态",
+              "description": "每场战斗一次。额外获得25先攻，受到的伤害增加25%；音速移动改为1行动点，雷光镰刃替换为双刃连斩并解锁雷光斩舰刀。持续至下一个正常回合结束。消耗2行动点、20疲劳。",
+              "tooltip": []
+            }
+          }
+        }
+      ],
+      "text": {
+        "en": {
+          "name": "Fate T. Harlaown",
+          "backgroundName": "Lightning Enforcer",
+          "backgroundDescription": "An enforcer of the Time-Space Administration Bureau. She brings golden lightning and her device Bardiche to this battlefield, choosing to use her strength to protect others.",
+          "traitName": "Gentle Lightning",
+          "traitDescription": "A mobile mage who builds lightning through movement and fights with close slashes and ranged lances.",
+          "traitTooltip": [
+            "Signature magic uses its own base damage, independent of held weapons. Sonic Form increases burst potential but also damage received."
+          ]
+        },
+        "zh": {
+          "name": "菲特 T 哈罗温",
+          "backgroundName": "雷光执行官",
+          "backgroundDescription": "来自时空管理局的执行官。金色雷光与魔导器巴鲁迪修随她来到这片战场；温柔是她选择保护他人的理由。",
+          "traitName": "温柔的雷光",
+          "traitDescription": "以机动蓄积雷光，兼具近战连斩与中距离雷枪的高速魔导师。",
+          "traitTooltip": [
+            "专属魔法以技能固定基础伤害结算，不依赖手持武器。真音速形态提升爆发，但会增加受到的伤害。"
+          ]
+        }
+      },
+      "additionalSkills": [
+        {
+          "key": "fate_blade",
+          "icon": "fate_blade",
+          "image": "assets/skills/fate_blade.png",
+          "kind": "active",
+          "lifetime": "transient",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 4,
+            "Fatigue": 18,
+            "Min": 1,
+            "Range": 1,
+            "Cooldown": 0,
+            "Low": 40,
+            "High": 50,
+            "Armor": 1.2,
+            "Pierce": 0.25,
+            "Hit": 0,
+            "Strikes": 2,
+            "Attack": true,
+            "Ranged": false
+          },
+          "text": {
+            "en": {
+              "name": "Twin Blades",
+              "description": "Sonic Form only. Strike an adjacent enemy twice for 40-50 damage per hit, 120% armor damage and 25% armor penetration. Stops immediately if either combatant dies. Costs 4 AP and 18 fatigue.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "双刃连斩",
+              "description": "真音速形态限定。对相邻敌人连续攻击2次，每次40-50伤害，120%护甲伤害，25%穿甲。任一方死亡立即停止。消耗4行动点、18疲劳。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "fate_zanber",
+          "icon": "fate_zanber",
+          "image": "assets/skills/fate_zanber.png",
+          "kind": "active",
+          "lifetime": "transient",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 6,
+            "Fatigue": 35,
+            "Min": 1,
+            "Range": 3,
+            "Cooldown": 0,
+            "Low": 150,
+            "High": 190,
+            "Armor": 1.8,
+            "Pierce": 0.35,
+            "Hit": 15,
+            "Strikes": 1,
+            "Attack": true,
+            "Ranged": false
+          },
+          "text": {
+            "en": {
+              "name": "Riot Zanber",
+              "description": "Sonic Form only. Slash a straight hex line up to 3 tiles, hitting each enemy once for 150-190 damage with +15 hit chance, 180% armor damage and 35% armor penetration. Allies, obstacles and impassable height changes block the line. Immediately ends the form even if all attacks miss. Costs 6 AP and 35 fatigue.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "雷光斩舰刀",
+              "description": "真音速形态限定。沿六边格直线斩击最多3格内的敌人，每个目标一次150-190伤害，命中+15，180%护甲伤害，35%穿甲；友军、障碍和不可跨越高差截断攻击。施放后立即结束形态，即使全部未命中。消耗6行动点、35疲劳。",
+              "tooltip": []
+            }
+          }
+        }
+      ],
+      "chapters": [],
+      "recruitmentChapter": "",
+      "progression": null,
+      "recruitGuide": {
+        "actor": "fate_harlaown",
+        "roles": [
+          "mobile",
+          "warrior"
+        ],
+        "stage": "mid",
+        "investment": "low",
+        "startup": "A",
+        "mature": "A",
+        "priorities": {
+          "early": 2,
+          "mid": 3,
+          "late": 3
+        },
+        "tags": [
+          "weapon_free",
+          "mobility",
+          "armor"
+        ],
+        "summary": {
+          "en": "Fast repositioning and a brief burst window; signature attacks require no weapon.",
+          "zh": "高速机动与短窗口爆发，专属攻击不依赖武器。"
+        },
+        "analysis": {
+          "en": "Move 2 tiles to charge lightning, then spend it on lances or twin blades. Sonic Form increases incoming damage; check the line and allied positions before Riot Zanber. Movement follows a real walkable route. This assessment is based on source design; live balance remains unverified.",
+          "zh": "先移动2格积累雷光，再用雷枪或双刃消耗充能。形态会放大承伤，斩舰刀应先确认直线与友军位置。移动只走真实可达路线，不能穿墙。此评价来自源码设计，尚待实机平衡验证。"
+        },
+        "reviewedSkills": [
+          "fate_lightning",
+          "fate_scythe",
+          "fate_move",
+          "fate_lancer",
+          "fate_form"
+        ],
+        "sourceFiles": [
+          "src/battle-valkyries/battle-valkyries/config/fate_harlaown_skill_catalog.nut",
+          "src/battle-valkyries/battle-valkyries/systems/fate_harlaown.nut"
+        ]
+      },
+      "bond": null
+    },
+    {
+      "id": "kanade_tachibana",
+      "order": 85,
+      "level": 1,
+      "dailyWage": 1,
+      "legendsPerkProfile": "melee_mobile",
+      "chapterRecruitOnly": false,
+      "combatResource": null,
+      "baseAttributes": {
+        "Hitpoints": 110,
+        "Bravery": 90,
+        "Stamina": 150,
+        "MeleeSkill": 100,
+        "RangedSkill": 60,
+        "MeleeDefense": 35,
+        "RangedDefense": 25,
+        "Initiative": 125
+      },
+      "talents": {
+        "Hitpoints": 2,
+        "Bravery": 3,
+        "Stamina": 3,
+        "MeleeSkill": 3,
+        "RangedSkill": 0,
+        "MeleeDefense": 3,
+        "RangedDefense": 2,
+        "Initiative": 3
+      },
+      "traitBonuses": {},
+      "images": {
+        "card": "assets/valkyries/kanade_tachibana_bond_00_card.png",
+        "skin": "assets/valkyries/kanade_tachibana_skin_preview.png",
+        "trait": "assets/traits/kanade_tachibana_trait_icon.png"
+      },
+      "skins": [
+        {
+          "id": "kanade_tachibana_skin",
+          "unlockChapter": "",
+          "unlockBond": 0,
+          "unlockProgressionStage": 0,
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
+          "images": {
+            "portrait": "assets/valkyries/kanade_tachibana_bond_00_card.png",
+            "preview": "assets/valkyries/kanade_tachibana_skin_preview.png"
+          },
+          "text": {
+            "en": {
+              "name": "Student Council Uniform",
+              "description": "This character is sponsored by @铖.\nHer familiar student council uniform accompanies her on a new journey."
+            },
+            "zh": {
+              "name": "学生会长制服",
+              "description": "该人物由@铖赞助\n熟悉的学生会长制服，伴她走向新的旅途。"
+            }
+          }
+        },
+        {
+          "id": "kanade_tachibana_campfire_skin",
+          "unlockChapter": "",
+          "unlockBond": 20,
+          "unlockProgressionStage": 0,
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
+          "images": {
+            "portrait": "assets/valkyries/kanade_tachibana_bond_20_card.png",
+            "preview": "assets/valkyries/kanade_tachibana_campfire_skin_preview.png"
+          },
+          "text": {
+            "en": {
+              "name": "Campfire Travelwear",
+              "description": "This character is sponsored by @铖.\nA scarf and short cape from her companions, and a place of her own beside the campfire. Unlocked by completing 'Save Her a Warm Meal'."
+            },
+            "zh": {
+              "name": "灯火旅装",
+              "description": "该人物由@铖赞助\n披上同伴赠予的围巾与短斗篷，营火旁也有了属于她的位置。完成“给她留一份热饭”后解锁。"
+            }
+          }
+        },
+        {
+          "id": "kanade_tachibana_whitewing_skin",
+          "unlockChapter": "",
+          "unlockBond": 40,
+          "unlockProgressionStage": 0,
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
+          "images": {
+            "portrait": "assets/valkyries/kanade_tachibana_bond_40_card.png",
+            "preview": "assets/valkyries/kanade_tachibana_whitewing_skin_preview.png"
+          },
+          "text": {
+            "en": {
+              "name": "White Wing Battle Dress",
+              "description": "This character is sponsored by @铖.\nLight white battle dress lets her move freely toward those who need protecting. Unlocked by completing 'Say Who You Want to Protect'."
+            },
+            "zh": {
+              "name": "轻盈白翼战装",
+              "description": "该人物由@铖赞助\n轻盈的白色战装，让她能从容奔向需要守护的人。完成“先说出你想保护谁”后解锁。"
+            }
+          }
+        },
+        {
+          "id": "kanade_tachibana_harmonics_skin",
+          "unlockChapter": "",
+          "unlockBond": 60,
+          "unlockProgressionStage": 0,
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
+          "images": {
+            "portrait": "assets/valkyries/kanade_tachibana_bond_60_card.png",
+            "preview": "assets/valkyries/kanade_tachibana_harmonics_skin_preview.png"
+          },
+          "text": {
+            "en": {
+              "name": "Azure Harmonics",
+              "description": "This character is sponsored by @铖.\nAzure cloth with a white lining, embracing every voice within her. Unlocked by completing 'Every Voice of Mine'."
+            },
+            "zh": {
+              "name": "苍蓝谐律",
+              "description": "该人物由@铖赞助\n苍蓝衣裙保留着纯白的内衬，如同她接纳的每一种声音。完成“每一个我都听得见”后解锁。"
+            }
+          }
+        },
+        {
+          "id": "kanade_tachibana_lamplight_skin",
+          "unlockChapter": "",
+          "unlockBond": 80,
+          "unlockProgressionStage": 0,
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
+          "images": {
+            "portrait": "assets/valkyries/kanade_tachibana_bond_80_card.png",
+            "preview": "assets/valkyries/kanade_tachibana_lamplight_skin_preview.png"
+          },
+          "text": {
+            "en": {
+              "name": "Lamplight Casualwear",
+              "description": "This character is sponsored by @铖.\nA warm cardigan and dark blue skirt for an evening writing to her companions by lamplight. Unlocked by completing 'The Unsent Letter'."
+            },
+            "zh": {
+              "name": "晚灯常服",
+              "description": "该人物由@铖赞助\n温暖的开衫与深蓝裙装，陪她在灯下写给如今的同伴。完成“未能寄出的那封信”后解锁。"
+            }
+          }
+        },
+        {
+          "id": "kanade_tachibana_whitefeather_skin",
+          "unlockChapter": "",
+          "unlockBond": 100,
+          "unlockProgressionStage": 0,
+          "detailMedia": {
+            "poster": true,
+            "animated": true
+          },
+          "images": {
+            "portrait": "assets/valkyries/kanade_tachibana_bond_100_card.png",
+            "preview": "assets/valkyries/kanade_tachibana_whitefeather_skin_preview.png"
+          },
+          "text": {
+            "en": {
+              "name": "White Feather Homecoming Dress",
+              "description": "This character is sponsored by @铖.\nWhite feathers for a homecoming celebration, and words of thanks for those still beside her. Unlocked by completing 'A Seat for Tomorrow'."
+            },
+            "zh": {
+              "name": "白羽归来礼服",
+              "description": "该人物由@铖赞助\n为归来的庆典穿上白羽礼服，将感谢说给仍在身边的人。完成“明天的座位”后解锁。"
+            }
+          }
+        }
+      ],
+      "skills": [
+        {
+          "key": "kanade_overdrive",
+          "icon": "kanade_tachibana_overdrive",
+          "image": "assets/skills/kanade_tachibana_overdrive.png",
+          "kind": "passive",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {},
+          "text": {
+            "en": {
+              "name": "Overdrive",
+              "description": "+25% melee damage and +20 initiative. After the first round, recover 8 extra fatigue at the first normal turn each round, increased to 12 after completing 'Say Who You Want to Protect'. Completing 'Save Her a Warm Meal', 'Every Voice of Mine' and 'A Seat for Tomorrow' each grants +1 maximum AP.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "Overdrive 身体强化",
+              "description": "近战伤害+25%，主动值+20。首轮之后，每轮首次正常行动时额外恢复8疲劳；完成“先说出你想保护谁”后增至12。完成“给她留一份热饭”“每一个我都听得见”和“明天的座位”各获得最大AP+1。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "kanade_hand_sonic_slash",
+          "icon": "kanade_tachibana_hand_sonic_slash",
+          "image": "assets/skills/kanade_tachibana_hand_sonic_slash.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 3,
+            "Fatigue": 10,
+            "Range": 1,
+            "Cooldown": 0,
+            "Damage": 1.3,
+            "Armor": 1.3,
+            "Pierce": 0.35,
+            "Hit": 15,
+            "Attack": true
+          },
+          "text": {
+            "en": {
+              "name": "Hand Sonic: Slash",
+              "description": "3 AP, 10 fatigue. Adjacent attack: 130% weapon damage, +15 accuracy, 130% armor damage, 35% penetration.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "音速斩击",
+              "description": "3AP，10疲劳。相邻敌人承受130%武器伤害，命中+15，破甲130%，穿透35%。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "kanade_hand_sonic_pierce",
+          "icon": "kanade_tachibana_hand_sonic_pierce",
+          "image": "assets/skills/kanade_tachibana_hand_sonic_pierce.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 4,
+            "Fatigue": 15,
+            "Range": 1,
+            "Cooldown": 0,
+            "Damage": 1.1,
+            "Armor": 2,
+            "Pierce": 0.5,
+            "Hit": 10,
+            "Attack": true
+          },
+          "text": {
+            "en": {
+              "name": "Hand Sonic: Pierce",
+              "description": "4 AP, 15 fatigue. 110% weapon damage, +10 accuracy, ignores shield defense, 200% armor damage and 50% penetration (220%/55% with upgraded Hand Sonic).",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "音速贯穿",
+              "description": "4AP，15疲劳。110%武器伤害，命中+10，忽略盾牌防御，破甲200%、穿透50%。强化音速臂刃后提升至220%、55%。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "kanade_hand_sonic_sweep",
+          "icon": "kanade_tachibana_hand_sonic_sweep",
+          "image": "assets/skills/kanade_tachibana_hand_sonic_sweep.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 4,
+            "Fatigue": 18,
+            "Range": 1,
+            "Cooldown": 0,
+            "Damage": 0.9,
+            "Armor": 1.3,
+            "Pierce": 0.35,
+            "Hit": 5,
+            "Attack": true
+          },
+          "text": {
+            "en": {
+              "name": "Hand Sonic: Sweep",
+              "description": "4 AP, 18 fatigue. Strike enemies in a three-hex adjacent arc for 90% weapon damage, +5 accuracy, 130% armor damage and 35% penetration. Allies are excluded.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "音速横扫",
+              "description": "4AP，18疲劳。选择方向及两侧相邻格的敌人各承受90%武器伤害，命中+5，破甲130%、穿透35%。不伤友军。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "kanade_distortion",
+          "icon": "kanade_tachibana_distortion",
+          "image": "assets/skills/kanade_tachibana_distortion.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 2,
+            "Fatigue": 12,
+            "Range": 1,
+            "Cooldown": 2,
+            "Damage": 0,
+            "Armor": 1,
+            "Pierce": 0,
+            "Hit": 0,
+            "Attack": false
+          },
+          "text": {
+            "en": {
+              "name": "Distortion",
+              "description": "2 AP, 12 fatigue, 2-round cooldown. Nullify direct physical projectiles and their attached effects until the next normal turn or a committed active attack. Completing the stage 60 challenge 'Every Voice of Mine' also grants the caster +20 melee defense and 25% less damage received while the barrier is active; stacks with Delay. Angel Uniform also protects one selected adjacent ally against one otherwise successful projectile. The ally does not receive the defense or damage reduction.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "Distortion 偏转",
+              "description": "2AP，12疲劳，冷却2轮。至下次正常回合开始，免疫直接物理投射物及附带效果；主动攻击即结束。完成60阶段挑战“每一个我都听得见”后，屏障期间自身额外近战防御+20、受到的伤害降低25%，可与高速残像叠加。装备天使制服护甲后可选择一名邻接同伴，期间为其挡下一次本应命中的投射物；同伴不获得近防和减伤。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "kanade_delay",
+          "icon": "kanade_tachibana_delay",
+          "image": "assets/skills/kanade_tachibana_delay.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 1,
+            "Fatigue": 10,
+            "Range": 6,
+            "Cooldown": 0,
+            "Damage": 0,
+            "Armor": 1,
+            "Pierce": 0,
+            "Hit": 0,
+            "Attack": false
+          },
+          "text": {
+            "en": {
+              "name": "Delay",
+              "description": "1 AP, 10 fatigue, once per round. Stay in place or dash up to 4 steps along a passable route, increased to 6 after completing 'Every Voice of Mine'. Ignore opportunity attacks, but still trigger terrain hazards. Gain +20 melee defense and evade 2 otherwise successful single-target melee attacks (3 with Quiet Feather equipped) until the next normal turn. After completing 'The Unsent Letter', killing an enemy with Kanade's own blade attack that costs AP grants an extra 3-step dash without renewing the defense bonus or evasions.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "Delay 高速残像",
+              "description": "1AP，10疲劳。每轮一次，可原地施展或沿可通行路线突进4步；完成“每一个我都听得见”后增至6步。忽略借机攻击，但仍会触发地形危险。至下次正常回合，近防+20，并规避2次本应命中的单体近战攻击；装备静羽发饰后为3次。完成“未能寄出的那封信”后，亲自使用消耗行动点的臂刃攻击击杀敌人，可额外突进3步，但不会重新获得防御加成或规避次数。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "kanade_harmonics",
+          "icon": "kanade_tachibana_harmonics",
+          "image": "assets/skills/kanade_tachibana_harmonics.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 4,
+            "Fatigue": 25,
+            "Range": 1,
+            "Cooldown": 4,
+            "Damage": 0,
+            "Armor": 1,
+            "Pierce": 0,
+            "Hit": 0,
+            "Attack": false
+          },
+          "text": {
+            "en": {
+              "name": "Harmonics",
+              "description": "Requires Hand Sonic. 4 AP, 25 fatigue, 4-round cooldown. Summon up to 2 controllable clones in empty adjacent spaces (3 with Unsent Thanks equipped). Each has 6 AP and 60% of Kanade's maximum HP, current armor and damage at the time of summoning, plus three blade attacks and a 3-step dash. Clones are absorbed at the start of Kanade's second subsequent normal turn. Dead clones restore no fatigue.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "Harmonics 谐波分身",
+              "description": "需要装备音速臂刃。4AP，25疲劳，冷却4轮。在相邻空位召唤至多2个可操作分身，装备未寄出的感谢后为3个。分身拥有6AP，生命上限、当前护甲和伤害分别为召唤时本体的60%，可使用三种臂刃攻击和3步突进。在奏接下来的第二个正常回合开始时自动回收；分身死亡不会恢复疲劳。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "kanade_absorb",
+          "icon": "kanade_tachibana_absorb",
+          "image": "assets/skills/kanade_tachibana_absorb.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 2,
+            "Fatigue": 0,
+            "Range": 0,
+            "Cooldown": 0,
+            "Damage": 0,
+            "Armor": 1,
+            "Pierce": 0,
+            "Hit": 0,
+            "Attack": false
+          },
+          "text": {
+            "en": {
+              "name": "Absorb",
+              "description": "2 AP, no fatigue. Absorb all living clones, recovering 8 fatigue each, increased to 12 after completing 'The Unsent Letter'. Does not restore HP or reset skill cooldowns.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "Absorb 回收",
+              "description": "2AP，0疲劳。回收全部存活分身，每个恢复8疲劳；完成“未能寄出的那封信”后增至12。不会恢复生命或重置技能冷却。",
+              "tooltip": []
+            }
+          }
+        },
+        {
+          "key": "kanade_howling",
+          "icon": "kanade_tachibana_howling",
+          "image": "assets/skills/kanade_tachibana_howling.png",
+          "kind": "active",
+          "lifetime": "persistent",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 4,
+            "Fatigue": 25,
+            "Range": 0,
+            "Cooldown": 3,
+            "Damage": 0,
+            "Armor": 1,
+            "Pierce": 0,
+            "Hit": 20,
+            "Attack": false
+          },
+          "text": {
+            "en": {
+              "name": "Howling",
+              "description": "4 AP, 25 fatigue, 3-round cooldown (2 with Unsent Thanks equipped). Roll melee accuracy +20 against visible enemies within 2 hexes to stun for one turn. Stun-immune targets instead lose 20% damage and 20 initiative for one turn. Has no effect on enemies immune to sound or negative status effects.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "Howling 咆哮",
+              "description": "4AP，25疲劳，冷却3轮，装备未寄出的感谢后为2轮。对2格内视野中的敌人以近战命中+20进行命中判定，命中后眩晕一回合；免疫眩晕的敌人改为伤害-20%、主动-20，持续一回合。对免疫声音或负面状态的敌人无效。",
+              "tooltip": []
+            }
+          }
+        }
+      ],
+      "text": {
+        "en": {
+          "name": "Kanade Tachibana",
+          "backgroundName": "Angel",
+          "backgroundDescription": "The quiet student council president from Angel Beats! turns her arms into sonic blades and shields her companions from arrows. She remembers a past farewell while learning to share tomorrow with new companions.",
+          "traitName": "Thanks for Tomorrow",
+          "traitDescription": "A quiet girl who meets her enemies with sonic blades and shields her companions behind a barrier. Holding unspoken thanks close to her heart, she hopes to share tomorrow with those beside her.",
+          "traitTooltip": []
+        },
+        "zh": {
+          "name": "立华奏",
+          "backgroundName": "天使",
+          "backgroundDescription": "来自《Angel Beats!》的学生会长。安静的银发少女将双臂化作音速刀刃，也愿意为同伴挡下迎面的箭。她记得曾经的告别，仍在学习如何与新的同伴一起迎接明天。",
+          "traitName": "把感谢说给明天",
+          "traitDescription": "沉默的少女以音速臂刃迎击敌人，以偏转屏障守护同伴。她将未说尽的感谢藏在心中，愿与身边的人一起迎接明天。",
+          "traitTooltip": []
+        }
+      },
+      "additionalSkills": [
+        {
+          "key": "kanade_sonic_rotation",
+          "icon": "kanade_tachibana_sonic_rotation",
+          "image": "assets/skills/kanade_tachibana_sonic_rotation.png",
+          "kind": "active",
+          "lifetime": "transient",
+          "unlockProgressionStage": 0,
+          "spec": {
+            "AP": 6,
+            "Fatigue": 35,
+            "Range": 2,
+            "Cooldown": 4,
+            "Damage": 1.7,
+            "Armor": 1.8,
+            "Pierce": 0.4,
+            "Hit": 15,
+            "Attack": true
+          },
+          "text": {
+            "en": {
+              "name": "Sonic Rotation",
+              "description": "Unlocked by completing A Seat for Tomorrow. 6 AP, 35 fatigue, 4-round cooldown, twice per battle. Attack visible enemies within 2 tiles of Kanade regardless of elevation, excluding allies: 170% weapon damage, +15 accuracy, 180% armor damage and 40% penetration. Clones are optional; at least one valid enemy must be in range. Click to preview, then confirm to spend resources and cast. Each able clone may follow up once per round against one surviving enemy hit by Kanade and adjacent to that clone, prioritizing the lowest HP.",
+              "tooltip": []
+            },
+            "zh": {
+              "name": "音速回旋",
+              "description": "完成“明天的座位”后解锁。6AP，35疲劳，冷却4轮，每战2次。以自身为中心攻击周围2格内的可见敌人，不限制高度差，不伤友军；各承受170%武器伤害，命中+15、破甲180%、穿透40%。无需分身，但范围内须有可攻击的敌人。点击先预览，确认后才消耗并释放。每个可行动的分身会追击一名被奏命中、仍然存活且与分身相邻的敌人，优先选择生命最低者；每个分身每轮至多追击一次。",
+              "tooltip": []
+            }
+          }
+        }
+      ],
+      "chapters": [],
+      "recruitmentChapter": "",
+      "progression": null,
+      "recruitGuide": {
+        "actor": "kanade_tachibana",
+        "roles": [
+          "mobile",
+          "warrior"
+        ],
+        "stage": "mid",
+        "investment": "medium",
+        "startup": "S",
+        "mature": "S",
+        "priorities": {
+          "early": 3,
+          "mid": 3,
+          "late": 3
+        },
+        "tags": [
+          "mobility",
+          "armor"
+        ],
+        "summary": {
+          "en": "A mobile melee protector who arrives with Hand Sonic and earns her other signature equipment through companion bonds.",
+          "zh": "高机动近战护卫，入队自带音速臂刃，其余专属装备随同伴羁绊获得。"
+        },
+        "analysis": {
+          "en": "Starts with blade attacks, harmonic clones, Delay, Distortion and Howling. 'Save Her a Warm Meal' grants her armor, followed by the silver keepsake in 'Say Who You Want to Protect'. Later stories grant her headpiece and strengthen Hand Sonic, with maximum AP eventually reaching 12.",
+          "zh": "入队即可使用臂刃攻击、谐波分身、突进、偏转与咆哮。完成“给她留一份热饭”后获得护甲，完成“先说出你想保护谁”后获得银匣；随后获得发饰并强化臂刃，最大行动点可提升至12。"
+        },
+        "reviewedSkills": [
+          "kanade_overdrive",
+          "kanade_hand_sonic_slash",
+          "kanade_hand_sonic_pierce",
+          "kanade_hand_sonic_sweep",
+          "kanade_distortion",
+          "kanade_delay",
+          "kanade_harmonics",
+          "kanade_absorb",
+          "kanade_howling"
+        ],
+        "sourceFiles": [
+          "src/battle-valkyries/battle-valkyries/config/kanade_tachibana_skill_catalog.nut",
+          "src/battle-valkyries/battle-valkyries/systems/kanade_tachibana.nut"
+        ]
+      },
+      "bond": {
+        "actor": "kanade_tachibana",
+        "source": "config/kanade_tachibana_bond_data.nut",
+        "stages": [
+          {
+            "value": 20,
+            "name": {
+              "en": "Save Her a Warm Meal",
+              "zh": "给她留一份热饭"
+            },
+            "challenge": {
+              "en": "+1 maximum AP; receive Angel Uniform; Campfire outfit.",
+              "zh": "最大AP+1；获得天使制服护甲；灯火旅装。"
+            },
+            "location": {
+              "en": "The Interrupted Supper",
+              "zh": "被截下的晚餐"
+            },
+            "locationDescription": {
+              "en": "Defeat all hostiles; at least 2 of 3 supply carts must survive.",
+              "zh": "清除敌军，3辆粮车至少2辆存活。"
+            },
+            "story": {
+              "en": "Kanade is still standing by the cooking pot when supper is served a second time. You ask whether she dislikes the food. \"There are no bowls left.\" Someone finds one. After trying the mapo tofu, she says seriously, \"It could be spicier.\" When a spare blanket is placed beside her, she spreads it to shelter her neighbor too.",
+              "zh": "晚饭已经分到第二轮，奏还站在锅边。团长以为她不喜欢今天的菜，她看了一眼大家手里的碗：“没有餐具了。”\n\n有人赶紧找来一副。她尝过改良的麻婆豆腐，认真地想了想：“可以再辣一点。”旁边的人笑起来，她不明白笑点，却在下一次添饭时把空碗递了过去。\n\n夜风吹进营地。她仍穿着来到这里时的制服，婉拒了值夜人的披肩，说对方也会冷。团长把多余的毯子放到她身边：“这份是给你的。”她没有立刻道谢，只把毯子展开，替邻座也挡住了一点风。"
+            },
+            "reveal": {
+              "en": "The relief camp supply caravan has not returned. Kanade recognizes the driver who once saved his portion of tofu for her. This time she stops to ask who is coming and marks a rendezvous on the map. She covers her unfinished supper. \"We can eat when we return. He needs a portion too.\"",
+              "zh": "给安置营运粮的车队迟迟未归。奏认出名单上的车夫，那个人曾把自己的一份豆腐留给她。\n\n她起身时，团长已经在整理地图。奏停下脚步，先问了同行的人数，又把路线指给负责接应的新兵：“这里等我们。”\n\n出发前她把没吃完的那份饭盖好。团长问要不要带上，她摇头：“回来再吃。他也需要一份。”"
+            },
+            "victory": {
+              "en": "The rescued tailor makes a short cape and travel skirt; the driver brings a scarf. \"Everyone else has one. This is yours.\" Kanade accepts. Back at camp she finds her own seat. \"Will it still be here tomorrow?\" You place a bowl on the table. She nods. The rescued travelers give her protective armor as thanks.",
+              "zh": "车队中获救的裁缝用备用衣料做了短披肩和旅行裙，车夫送来一条围巾。奏下意识看向其他人的衣服，裁缝抢先说：“他们都有。这份是你的。”\n\n她终于点头。回到营地时，大家第一眼注意到的是围巾，第二眼才发现她已自己找到了座位。\n\n“明天，也留在这里吗？”她问的是座位。团长把餐具放在桌上，她轻轻应了一声。"
+            },
+            "introImage": "assets/bonds/valkyries/bond/kanade_tachibana_20_1.png",
+            "cgImage": "assets/bonds/valkyries/bond/kanade_tachibana_20_2.png",
+            "victoryImage": "assets/bonds/valkyries/kanade_tachibana_bond_20_card.png",
+            "item": "kanade_tachibana_uniform_armor",
+            "skin": "kanade_tachibana_campfire_skin",
+            "objective": {
+              "en": "Win while keeping at least two of the three supply carts alive.",
+              "zh": "获胜且三辆补给车至少存活两辆。"
+            },
+            "money": 0,
+            "tools": 0,
+            "medicine": 0
+          },
+          {
+            "value": 40,
+            "name": {
+              "en": "Say Who You Want to Protect",
+              "zh": "先说出你想保护谁"
+            },
+            "challenge": {
+              "en": "Receive Unsent Thanks; Overdrive recovers 12 fatigue; White Wing outfit.",
+              "zh": "获得未寄出的感谢；Overdrive恢复12疲劳；白翼战装。"
+            },
+            "location": {
+              "en": "The Silent Checkpoint",
+              "zh": "无声的关卡"
+            },
+            "locationDescription": {
+              "en": "Defeat all hostiles to complete the challenge.",
+              "zh": "消灭全部敌军即可完成挑战。"
+            },
+            "story": {
+              "en": "Kanade blocks a recruit from pursuing an enemy. He thinks he has disappointed her, until you uncover a pitfall ahead. Later she finally explains, \"There was a trap.\" You suggest saying it sooner next time. She practices the sentence, then asks the tailor for clothes that will not catch on branches during a rescue.",
+              "zh": "新兵追赶逃敌，奏突然拦住他。对方以为自己的表现让她失望，低头收起武器。奏指向前面的草丛，团长扒开草，露出一处设好的陷坑。\n\n直到回营，新兵还不敢和她说话。奏想了很久，才补上一句：“那里有陷阱。”\n\n团长建议她下次提前说这句话。她没有辩解，只试着重复了一遍。检查装备时，她又发现披肩边缘被灌木钩破，于是主动向裁缝询问，能否做一套便于快速接近伤员、也不会拖住手臂的衣服。"
+            },
+            "reveal": {
+              "en": "Crossbowmen have trapped wounded soldiers and civilians at a checkpoint. Kanade studies their firing intervals and points out cover and evacuation routes. \"I will stop the arrows. You bring them out.\" The recruit asks when to follow. \"When I call you.\" Everyone understands the plan.",
+              "zh": "关卡里的伤兵与居民被弩手封住去路。奏没有立刻冲进去，而是看完射击间隔，把藏身位置和撤离路线逐一指给同伴。\n\n“我挡住箭。你们把他们带出来。”\n\n新兵问什么时候跟上，她回头回答：“等我叫你。”这是一个很短的计划，所有人却都知道自己该做什么。她检查两臂刀刃，然后走向关卡。"
+            },
+            "victory": {
+              "en": "The tailor presents a light white battle dress. Kanade tests her arm movement and adjusts the bracers herself. She folds her travel clothes carefully. When the recruit thanks her, she says, \"I do not want you to be hurt. Next time, I will say so first.\" As she raises her arms, the sonic blades take their full shape once more.",
+              "zh": "返回时，裁缝将做好的轻型白色战装送来。奏试着抬臂、转身，又自己调整了护臂位置。她把旅装仔细叠好，留下那条围巾给下一次远行。\n\n新兵向她道谢，她这次没有只点头：“我不想你受伤。下次，我会先说。”"
+            },
+            "introImage": "assets/bonds/valkyries/bond/kanade_tachibana_40_1.png",
+            "cgImage": "assets/bonds/valkyries/bond/kanade_tachibana_40_2.png",
+            "victoryImage": "assets/bonds/valkyries/kanade_tachibana_bond_40_card.png",
+            "item": "kanade_tachibana_unsent_thanks",
+            "skin": "kanade_tachibana_whitewing_skin",
+            "objective": {
+              "en": "Eliminate all enemies; the rescue is narrative, with no escort objective.",
+              "zh": "消灭全部敌人；营救属于剧情描述，无额外护送目标。"
+            },
+            "money": 0,
+            "tools": 0,
+            "medicine": 0
+          },
+          {
+            "value": 60,
+            "name": {
+              "en": "Every Voice of Mine",
+              "zh": "每一个我都听得见"
+            },
+            "challenge": {
+              "en": "+1 maximum AP; receive Quiet Feather; 6-step dash; Distortion grants the caster +20 melee defense and 25% less damage received; Azure Harmonics outfit.",
+              "zh": "最大AP+1；获得静羽发饰；突进6步；偏转期间自身近防+20、受到伤害降低25%；苍蓝谐律。"
+            },
+            "location": {
+              "en": "Harmonic Corridor",
+              "zh": "谐波回廊"
+            },
+            "locationDescription": {
+              "en": "Destroy 3 nodes and all enemies. Each node spawns one guard per round, capped at two. Destroying all nodes summons an Overloaded Echo.",
+              "zh": "摧毁3个节点并清除敌军。每节点每轮增援1名，最多2名；节点全毁后出现过载回声。"
+            },
+            "story": {
+              "en": "The copies disagree about tomorrow. One wants to scout, another worries about the wounded, a third thinks everyone needs rest. Kanade begins to absorb them, then realizes she agrees with all three. White and blue cloth lie side by side on the table. This time she lets the others share the work.",
+              "zh": "短暂留在营地的复制体对明天的安排给出了不同意见：一个要尽早侦察，一个担心伤员，还有一个拿着没缝完的衣料，说大家该休息了。\n\n奏习惯性地准备回收，却发现自己同样赞成这些意见。谐波残留与疲惫让她难以集中注意，她暂时停了下来。\n\n裁缝原本请她选一种衣料，不同的“她”分别留下白色和蓝色。两块布摆在桌上，谁也没有把另一块收走。\n\n团长把第二天的安排分给愿意承担的人，奏第一次没有抢过所有任务。"
+            },
+            "reveal": {
+              "en": "A device in the nearby ruins is amplifying residual harmonics into hostile echoes. Kanade offers to shut it down alone. You bring scouting reports and a duty roster showing that each concern has been heard. She listens to the copies. \"Together. First, let the wounded leave.\"",
+              "zh": "附近遗迹的装置不断放大谐波残留，已经形成攻击路人的回声。奏担心自己的能力伤到同伴，提议独自去关掉它。\n\n团长带来其他人的侦察结果和轮换名单，让她看见各项担忧都有了回应。奏重新听完复制体的话，才说：“一起去。先让受伤的人离开。”"
+            },
+            "victory": {
+              "en": "After absorbing the surviving copies, Kanade asks everyone to wait while she rests. She gives the tailor both white and blue cloth and begins braiding two cords together. \"Keep both.\" Her new azure outfit retains a white lining. She no longer needs every thought to become a single voice.",
+              "zh": "回收结束后，奏坐下来，请大家等她休息一会儿。回营时，她把白蓝两块衣料一起交给裁缝，自己动手编起配套的双股系带。\n\n“都留下。”她说。\n\n苍蓝衣装保留白色内衬，两个颜色都清楚可见。她不再急着让所有想法只剩一个声音，也愿意让同伴分担接下来的一段路。"
+            },
+            "introImage": "assets/bonds/valkyries/bond/kanade_tachibana_60_1.png",
+            "cgImage": "assets/bonds/valkyries/bond/kanade_tachibana_60_2.png",
+            "victoryImage": "assets/bonds/valkyries/kanade_tachibana_bond_60_card.png",
+            "item": "kanade_tachibana_feather_hairpiece",
+            "skin": "kanade_tachibana_harmonics_skin",
+            "objective": {
+              "en": "Destroy all three nodes, then defeat the overloaded echo. Each surviving node can spawn two echoes.",
+              "zh": "摧毁三个节点，再击败出现的过载分身；每个存活节点最多生成两个分身。"
+            },
+            "money": 0,
+            "tools": 0,
+            "medicine": 0
+          },
+          {
+            "value": 80,
+            "name": {
+              "en": "The Unsent Letter",
+              "zh": "未能寄出的那封信"
+            },
+            "challenge": {
+              "en": "Strengthen Hand Sonic; Absorb recovers 12 fatigue per clone; kill dash; Lamplight outfit.",
+              "zh": "强化音速臂刃；回收每分身12疲劳；击杀后再突进；晚灯常服。"
+            },
+            "location": {
+              "en": "Heartbeats in the Snow",
+              "zh": "雪路上的心跳"
+            },
+            "locationDescription": {
+              "en": "Defeat all hostiles to complete the challenge.",
+              "zh": "消灭全部敌军即可完成挑战。"
+            },
+            "story": {
+              "en": "Under a lamp, Kanade crosses out a sentence and writes it again. When you return the repaired silver box, she asks whether there is someone you have not seen for a long time. She speaks about Otonashi, the life she received, and the thanks she already expressed at graduation. You brighten the lamp. Beside her folded letter she leaves a new blank note.",
+              "zh": "奏坐在灯下，把写好的句子划去，又重新写了一遍。团长送来修好的银匣，准备离开时，她主动问：“你有很久没有见到的人吗？”\n\n随后她讲起音无，讲起自己得到过的生命，也讲起毕业时已经说出口的感谢。她不是在寻找替代那个人的人，也没有忘记那场告别。只是有了新的日子之后，有些话又想重新记下来。\n\n团长听完，把灯芯拨亮一点。她将那封记录往事的信叠好，旁边留下了一张新的空白便笺。"
+            },
+            "reveal": {
+              "en": "A medical convoy is trapped on a snowy road. Someone suggests taking only those who can walk. A badly wounded traveler silently gives a blanket to another. Kanade kneels and puts it back. \"We will take you home.\" She asks her companions to secure a route and places her copies at separate junctions.",
+              "zh": "雪路上的医疗队遭到围困。有人提议先带走能行走的人，重伤者听见后没有求救，只把毯子让给身旁的人。\n\n奏蹲下来，把毯子重新盖好：“我们会带你回去。”\n\n她请同伴先确认撤离路线，再把分身安排到不同路口。她记得自己接受过什么，也愿意为眼前的人争取继续生活的机会。这次救援不需要重演原作器官捐赠情节。"
+            },
+            "victory": {
+              "en": "Her soaked battle clothes are sent for repair. The medics give her a dry cardigan and dark blue skirt. She looks toward the watch post, but the companion on duty waves her back inside. Under the lamp she writes to the people now beside her. The silver box holds two different memories. \"I want to remember all of this.\"",
+              "zh": "战装沾满雪水，被送去清洗和修补。医疗队递来干燥的开衫与深蓝裙。奏换好衣服走出帐篷，又习惯性看向守夜的位置。\n\n轮值的同伴朝她摆手。她站了一会儿，终于回到灯下，在新便笺上写下给眼前同伴的话。\n\n银匣里放着两份不同的记忆。她把盒盖合上：“这些，我都想记住。”"
+            },
+            "introImage": "assets/bonds/valkyries/bond/kanade_tachibana_80_1.png",
+            "cgImage": "assets/bonds/valkyries/bond/kanade_tachibana_80_2.png",
+            "victoryImage": "assets/bonds/valkyries/kanade_tachibana_bond_80_card.png",
+            "item": "kanade_tachibana_hand_sonic",
+            "skin": "kanade_tachibana_lamplight_skin",
+            "objective": {
+              "en": "Eliminate all enemies and win; no separate wounded-ally rescue check.",
+              "zh": "消灭全部敌人并获胜，无额外伤员救援判定。"
+            },
+            "money": 0,
+            "tools": 0,
+            "medicine": 0
+          },
+          {
+            "value": 100,
+            "name": {
+              "en": "A Seat for Tomorrow",
+              "zh": "明天的座位"
+            },
+            "challenge": {
+              "en": "+1 maximum AP; Sonic Rotation; White Feather dress.",
+              "zh": "最大AP+1；音速回旋；白羽归来礼服。"
+            },
+            "location": {
+              "en": "The Classroom without Graduation",
+              "zh": "没有毕业的教室"
+            },
+            "locationDescription": {
+              "en": "Destroy 3 anchors and all enemies. Each anchor grants the terminal 25% damage reduction. The terminal summons 2 echoes every 3 rounds, up to 6 total.",
+              "zh": "摧毁3个记忆锚点并清除敌军。每锚点使终端减伤25%；终端每3轮增援2名，累计最多6名。"
+            },
+            "story": {
+              "en": "The rescued travelers are recovering and the caravan runs again. A tailor brings a white dress for a homecoming celebration. \"Who is it for?\" Kanade asks. \"Someone who wants to join us. We hope you will.\" You hand her tomorrow's breakfast and duty plans. There is an ordinary day beyond this celebration. She promises to try the dress when she returns.",
+              "zh": "获救的伤员陆续康复，车队也重新通行。大家准备了一场归来庆典。曾经受助的裁缝拿出白色礼服，紫色缎带和青色吊坠都已整理妥当。\n\n奏问：“是给谁的？”\n\n“给愿意来参加的人。我们希望你来。”\n\n她伸手摸了摸衣料，说自己从前也参加过一场重要的仪式。她记得那次告别，却不确定现在该怎样站到人群中间。团长把明天值班和早餐的安排递给她；庆典之后，仍有普通的一天等着所有人。\n\n她答应回来后试穿。"
+            },
+            "reveal": {
+              "en": "The last abnormal terminal projects a sealed classroom. Everyone smiles and nobody leaves, but every conversation repeats the same answer. Kanade remembers real school life and knows what is missing. She recalls yesterday's complaints about bland food and the snowy road, and the dress waiting at camp. \"Let us go back. Everyone is waiting.\"",
+              "zh": "遗迹最后的异常终端显露出一间封闭的校园幻景。那里总有人微笑，谁也不会离开，可每次交谈都只得到同样的回答。\n\n奏曾经珍惜过真实的校园生活，因而更清楚眼前少了什么。她想起昨天有人嫌饭太淡、有人抱怨雪路难走，也想起那件等待试穿的礼服。\n\n“回去吧。”她对同伴说，“大家还在等。”\n\n幻景只呈现空白记录与终端投影；不把音无做成需要击杀的敌人，不将异常终端冒称原作程序员或神。"
+            },
+            "victory": {
+              "en": "Kanade returns in the White Feather dress and opens her silver box. Her note remembers a first bowl, a scarf, and a night someone else kept watch. She looks up instead of reading. \"Thank you.\" The lamps stay lit; people are still discussing supper. She reaches toward the companion at the doorway and sets a bowl beside her. \"Let us eat together tomorrow too.\"",
+              "zh": "归来时庆典还没开始。奏把刀刃收起，走进裁缝的帐篷，再出现时已换上白羽礼服。有人给她让出中间的位置，她却先拿出银匣里的新便笺。\n\n上面记着许多小事：第一副餐具、一条围巾、有人替她守过的夜。她没有照着念，只认真看向围在一起的同伴。\n\n“谢谢你们。”\n\n说完之后，灯火没有熄灭，大家还在谈论晚饭。奏伸出手，招呼仍站在门边的人过来，又把一套餐具摆到身旁。\n\n“明天也一起吃饭吧。”"
+            },
+            "introImage": "assets/bonds/valkyries/bond/kanade_tachibana_100_1.png",
+            "cgImage": "assets/bonds/valkyries/bond/kanade_tachibana_100_2.png",
+            "victoryImage": "assets/bonds/valkyries/bond/kanade_tachibana_100_finale.png",
+            "item": "",
+            "skin": "kanade_tachibana_whitefeather_skin",
+            "objective": {
+              "en": "Destroy three anchors and the terminal, and clear all enemies. The terminal summons two reinforcements every three rounds, up to six.",
+              "zh": "摧毁三个锚点与终端，并消灭全部敌人；终端每三回合召唤两个增援，最多六个。"
+            },
+            "money": 0,
+            "tools": 0,
+            "medicine": 0
+          }
+        ],
+        "progression": {
+          "en": "Participate, survive and win to gain 4 bond. Complete the 20 / 40 / 60 / 80 / 100 stories and camps in order with Kanade participating and surviving. Each cleared stage unlocks an outfit; stage 100 adds Sonic Rotation. Reaching a number alone does not grant rewards.",
+          "zh": "本人参战、存活并获胜，每场获得 4 点羁绊。按 20 / 40 / 60 / 80 / 100 顺序完成故事与营地，立华奏须亲自参战并存活获胜。每阶段解锁一套服装，100 阶段追加音速回旋；仅达到数值不发奖励。"
+        }
+      }
     }
   ],
   "chapters": [
@@ -34380,6 +37656,1045 @@ window.BV_WIKI_DATA = {
       "cooldownHours": 72
     },
     {
+      "id": "septium_workshop",
+      "name": {
+        "en": "The Orbal Workshop",
+        "zh": "异乡的导力工房"
+      },
+      "description": {
+        "en": "Trace an orbal distress signal and repair the mine with Tio. Complete the chapter to recruit her and recover a finite set of orbments.",
+        "zh": "追踪异常导力讯号，与提欧修复失控矿区。完成篇章后招募提欧并获得有限的导力器。"
+      },
+      "actors": [],
+      "requiredChapter": "",
+      "recruitActors": [
+        "tio"
+      ],
+      "ending": {
+        "en": "The workshop is restored. Orbments cannot be crafted; quartz can be recovered from the Septium Mine.",
+        "zh": "工房已经恢复。导力器不能制作；新的结晶可从七曜矿区获取。"
+      },
+      "repeatable": false,
+      "difficulties": [],
+      "evidence": [],
+      "poster": "assets/story/chapters/septium_workshop/circuits.jpg",
+      "stages": [
+        {
+          "number": 1,
+          "name": {
+            "en": "An unfamiliar frequency",
+            "zh": "陌生的频率"
+          },
+          "brief": {
+            "en": "Visit An unfamiliar frequency, inspect the records, then submit this stage.",
+            "zh": "前往陌生的频率，调查现场记录，再提交阶段。"
+          },
+          "reward": {
+            "en": "",
+            "zh": ""
+          },
+          "money": 0,
+          "medicine": 0,
+          "tools": 0,
+          "perksEach": 0,
+          "requiredEvidence": [],
+          "goals": [
+            {
+              "id": "node1",
+              "name": {
+                "en": "An unfamiliar frequency",
+                "zh": "陌生的频率"
+              },
+              "battle": false,
+              "optional": false,
+              "requires": []
+            }
+          ],
+          "materials": []
+        },
+        {
+          "number": 2,
+          "name": {
+            "en": "A severed supply route",
+            "zh": "截断的运输线"
+          },
+          "brief": {
+            "en": "Defeat the defenders at A severed supply route and submit this stage.",
+            "zh": "击败截断的运输线的敌人，再返回篇章页提交。"
+          },
+          "reward": {
+            "en": "",
+            "zh": ""
+          },
+          "money": 0,
+          "medicine": 0,
+          "tools": 0,
+          "perksEach": 0,
+          "requiredEvidence": [],
+          "goals": [
+            {
+              "id": "node2",
+              "name": {
+                "en": "A severed supply route",
+                "zh": "截断的运输线"
+              },
+              "battle": true,
+              "optional": false,
+              "requires": []
+            }
+          ],
+          "materials": []
+        },
+        {
+          "number": 3,
+          "name": {
+            "en": "Seven circuits",
+            "zh": "七曜回路"
+          },
+          "brief": {
+            "en": "Visit Seven circuits, inspect the records, then submit this stage.",
+            "zh": "前往七曜回路，调查现场记录，再提交阶段。"
+          },
+          "reward": {
+            "en": "",
+            "zh": ""
+          },
+          "money": 0,
+          "medicine": 0,
+          "tools": 0,
+          "perksEach": 0,
+          "requiredEvidence": [],
+          "goals": [
+            {
+              "id": "node3",
+              "name": {
+                "en": "Seven circuits",
+                "zh": "七曜回路"
+              },
+              "battle": false,
+              "optional": false,
+              "requires": []
+            }
+          ],
+          "materials": []
+        },
+        {
+          "number": 4,
+          "name": {
+            "en": "Guards in the mine",
+            "zh": "矿道里的守卫"
+          },
+          "brief": {
+            "en": "Defeat the defenders at Guards in the mine and submit this stage.",
+            "zh": "击败矿道里的守卫的敌人，再返回篇章页提交。"
+          },
+          "reward": {
+            "en": "",
+            "zh": ""
+          },
+          "money": 0,
+          "medicine": 0,
+          "tools": 0,
+          "perksEach": 0,
+          "requiredEvidence": [],
+          "goals": [
+            {
+              "id": "node4",
+              "name": {
+                "en": "Guards in the mine",
+                "zh": "矿道里的守卫"
+              },
+              "battle": true,
+              "optional": false,
+              "requires": []
+            }
+          ],
+          "materials": []
+        },
+        {
+          "number": 5,
+          "name": {
+            "en": "Memories of another world",
+            "zh": "不属于这里的记忆"
+          },
+          "brief": {
+            "en": "Visit Memories of another world, inspect the records, then submit this stage.",
+            "zh": "前往不属于这里的记忆，调查现场记录，再提交阶段。"
+          },
+          "reward": {
+            "en": "",
+            "zh": ""
+          },
+          "money": 0,
+          "medicine": 0,
+          "tools": 0,
+          "perksEach": 0,
+          "requiredEvidence": [],
+          "goals": [
+            {
+              "id": "node5",
+              "name": {
+                "en": "Memories of another world",
+                "zh": "不属于这里的记忆"
+              },
+              "battle": false,
+              "optional": false,
+              "requires": []
+            }
+          ],
+          "materials": []
+        },
+        {
+          "number": 6,
+          "name": {
+            "en": "The broken relay",
+            "zh": "失控的中继站"
+          },
+          "brief": {
+            "en": "Defeat the defenders at The broken relay and submit this stage.",
+            "zh": "击败失控的中继站的敌人，再返回篇章页提交。"
+          },
+          "reward": {
+            "en": "",
+            "zh": ""
+          },
+          "money": 0,
+          "medicine": 0,
+          "tools": 0,
+          "perksEach": 0,
+          "requiredEvidence": [],
+          "goals": [
+            {
+              "id": "node6",
+              "name": {
+                "en": "The broken relay",
+                "zh": "失控的中继站"
+              },
+              "battle": true,
+              "optional": false,
+              "requires": []
+            }
+          ],
+          "materials": []
+        },
+        {
+          "number": 7,
+          "name": {
+            "en": "Before the restart",
+            "zh": "重启之前"
+          },
+          "brief": {
+            "en": "Visit Before the restart, inspect the records, then submit this stage.",
+            "zh": "前往重启之前，调查现场记录，再提交阶段。"
+          },
+          "reward": {
+            "en": "",
+            "zh": ""
+          },
+          "money": 0,
+          "medicine": 0,
+          "tools": 0,
+          "perksEach": 0,
+          "requiredEvidence": [],
+          "goals": [
+            {
+              "id": "node7",
+              "name": {
+                "en": "Before the restart",
+                "zh": "重启之前"
+              },
+              "battle": false,
+              "optional": false,
+              "requires": []
+            }
+          ],
+          "materials": []
+        },
+        {
+          "number": 8,
+          "name": {
+            "en": "Circuits rekindled",
+            "zh": "回路再次点亮"
+          },
+          "brief": {
+            "en": "Defeat the defenders at Circuits rekindled and submit this stage.",
+            "zh": "击败回路再次点亮的敌人，再返回篇章页提交。"
+          },
+          "reward": {
+            "en": "Final reward: Tio, four orbments including her equipped Star Reader, and 21 rank I quartz. Unclaimed items remain pending.",
+            "zh": "最终奖励：提欧、4 台导力器（含提欧佩戴的星之解析器）、21 颗 I 级结晶。满仓奖励保留待领。"
+          },
+          "money": 0,
+          "medicine": 0,
+          "tools": 0,
+          "perksEach": 0,
+          "requiredEvidence": [],
+          "goals": [
+            {
+              "id": "node8",
+              "name": {
+                "en": "Circuits rekindled",
+                "zh": "回路再次点亮"
+              },
+              "battle": true,
+              "optional": false,
+              "requires": []
+            }
+          ],
+          "materials": []
+        }
+      ],
+      "source": "config/septium_chapter_data.nut",
+      "gallery": [
+        {
+          "id": "circuits",
+          "stage": 3,
+          "title": {
+            "en": "Seven circuits",
+            "zh": "七曜回路"
+          },
+          "caption": {
+            "en": "Septium circuits on the workbench",
+            "zh": "桌上的七曜回路"
+          },
+          "image": "assets/story/chapters/septium_workshop/circuits.jpg"
+        },
+        {
+          "id": "mine",
+          "stage": 5,
+          "title": {
+            "en": "Memories of another world",
+            "zh": "不属于这里的记忆"
+          },
+          "caption": {
+            "en": "A memory from beyond the mine",
+            "zh": "矿道中不属于这里的记忆"
+          },
+          "image": "assets/story/chapters/septium_workshop/mine.jpg"
+        },
+        {
+          "id": "reboot",
+          "stage": 8,
+          "title": {
+            "en": "Circuits rekindled",
+            "zh": "回路再次点亮"
+          },
+          "caption": {
+            "en": "A new journey together",
+            "zh": "与你们一起继续旅程"
+          },
+          "image": "assets/story/chapters/septium_workshop/reboot.jpg"
+        }
+      ],
+      "skillRewards": [],
+      "skinRewards": [],
+      "relatedActors": [
+        "tio",
+        "renne",
+        "alisa",
+        "shizuna"
+      ]
+    },
+    {
+      "id": "septium_mine",
+      "name": {
+        "en": "Septium Mine Survey",
+        "zh": "七曜矿区勘察"
+      },
+      "description": {
+        "en": "Unlocked by completing the workshop. Seven districts and three depths share a 72-hour cooldown after victory.",
+        "zh": "工房篇章完成后开放。七个矿区、三档深度，共用胜利后 72 小时冷却。"
+      },
+      "actors": [],
+      "requiredChapter": "septium_workshop",
+      "recruitActors": [],
+      "ending": {
+        "en": "",
+        "zh": ""
+      },
+      "repeatable": true,
+      "difficulties": [
+        {
+          "id": "earth_1",
+          "name": {
+            "en": "Earth / Shallow",
+            "zh": "地曜矿区 / 浅层"
+          },
+          "brief": {
+            "en": "Victory grants 3 rank I and 0 rank II quartz plus 10 dust. Allocate between the two quartz types before first entering battle.",
+            "zh": "胜利固定获得 3 颗 I 级、0 颗 II 级结晶和 10 晶砂。首次入战前分配两种结晶的数量。"
+          },
+          "enemies": {
+            "en": "8 defenders. Armored guards.",
+            "zh": "8 个防卫单位。重甲前排，优先破甲。"
+          },
+          "minimum": 0,
+          "days": 0,
+          "rewards": [],
+          "allocation": {
+            "pair": [
+              "rockheart",
+              "irontrace"
+            ],
+            "normal": 3,
+            "rare": 0,
+            "sand": 10,
+            "enemies": 8
+          }
+        },
+        {
+          "id": "earth_2",
+          "name": {
+            "en": "Earth / Deep",
+            "zh": "地曜矿区 / 深层"
+          },
+          "brief": {
+            "en": "Victory grants 3 rank I and 1 rank II quartz plus 20 dust. Allocate between the two quartz types before first entering battle.",
+            "zh": "胜利固定获得 3 颗 I 级、1 颗 II 级结晶和 20 晶砂。首次入战前分配两种结晶的数量。"
+          },
+          "enemies": {
+            "en": "12 defenders. Armored guards.",
+            "zh": "12 个防卫单位。重甲前排，优先破甲。"
+          },
+          "minimum": 0,
+          "days": 0,
+          "rewards": [],
+          "allocation": {
+            "pair": [
+              "rockheart",
+              "irontrace"
+            ],
+            "normal": 3,
+            "rare": 1,
+            "sand": 20,
+            "enemies": 12
+          }
+        },
+        {
+          "id": "earth_3",
+          "name": {
+            "en": "Earth / Core",
+            "zh": "地曜矿区 / 核心"
+          },
+          "brief": {
+            "en": "Victory grants 4 rank I and 2 rank II quartz plus 35 dust. Allocate between the two quartz types before first entering battle.",
+            "zh": "胜利固定获得 4 颗 I 级、2 颗 II 级结晶和 35 晶砂。首次入战前分配两种结晶的数量。"
+          },
+          "enemies": {
+            "en": "16 defenders. Armored guards.",
+            "zh": "16 个防卫单位。重甲前排，优先破甲。"
+          },
+          "minimum": 0,
+          "days": 0,
+          "rewards": [],
+          "allocation": {
+            "pair": [
+              "rockheart",
+              "irontrace"
+            ],
+            "normal": 4,
+            "rare": 2,
+            "sand": 35,
+            "enemies": 16
+          }
+        },
+        {
+          "id": "water_1",
+          "name": {
+            "en": "Water / Shallow",
+            "zh": "水曜矿区 / 浅层"
+          },
+          "brief": {
+            "en": "Victory grants 3 rank I and 0 rank II quartz plus 10 dust. Allocate between the two quartz types before first entering battle.",
+            "zh": "胜利固定获得 3 颗 I 级、0 颗 II 级结晶和 10 晶砂。首次入战前分配两种结晶的数量。"
+          },
+          "enemies": {
+            "en": "8 defenders. Healing support.",
+            "zh": "8 个防卫单位。支援恢复，优先击杀支援。"
+          },
+          "minimum": 0,
+          "days": 0,
+          "rewards": [],
+          "allocation": {
+            "pair": [
+              "clearflow",
+              "rainfeather"
+            ],
+            "normal": 3,
+            "rare": 0,
+            "sand": 10,
+            "enemies": 8
+          }
+        },
+        {
+          "id": "water_2",
+          "name": {
+            "en": "Water / Deep",
+            "zh": "水曜矿区 / 深层"
+          },
+          "brief": {
+            "en": "Victory grants 3 rank I and 1 rank II quartz plus 20 dust. Allocate between the two quartz types before first entering battle.",
+            "zh": "胜利固定获得 3 颗 I 级、1 颗 II 级结晶和 20 晶砂。首次入战前分配两种结晶的数量。"
+          },
+          "enemies": {
+            "en": "12 defenders. Healing support.",
+            "zh": "12 个防卫单位。支援恢复，优先击杀支援。"
+          },
+          "minimum": 0,
+          "days": 0,
+          "rewards": [],
+          "allocation": {
+            "pair": [
+              "clearflow",
+              "rainfeather"
+            ],
+            "normal": 3,
+            "rare": 1,
+            "sand": 20,
+            "enemies": 12
+          }
+        },
+        {
+          "id": "water_3",
+          "name": {
+            "en": "Water / Core",
+            "zh": "水曜矿区 / 核心"
+          },
+          "brief": {
+            "en": "Victory grants 4 rank I and 2 rank II quartz plus 35 dust. Allocate between the two quartz types before first entering battle.",
+            "zh": "胜利固定获得 4 颗 I 级、2 颗 II 级结晶和 35 晶砂。首次入战前分配两种结晶的数量。"
+          },
+          "enemies": {
+            "en": "16 defenders. Healing support.",
+            "zh": "16 个防卫单位。支援恢复，优先击杀支援。"
+          },
+          "minimum": 0,
+          "days": 0,
+          "rewards": [],
+          "allocation": {
+            "pair": [
+              "clearflow",
+              "rainfeather"
+            ],
+            "normal": 4,
+            "rare": 2,
+            "sand": 35,
+            "enemies": 16
+          }
+        },
+        {
+          "id": "fire_1",
+          "name": {
+            "en": "Fire / Shallow",
+            "zh": "火曜矿区 / 浅层"
+          },
+          "brief": {
+            "en": "Victory grants 3 rank I and 0 rank II quartz plus 10 dust. Allocate between the two quartz types before first entering battle.",
+            "zh": "胜利固定获得 3 颗 I 级、0 颗 II 级结晶和 10 晶砂。首次入战前分配两种结晶的数量。"
+          },
+          "enemies": {
+            "en": "8 defenders. Telegraphed blasts.",
+            "zh": "8 个防卫单位。蓄能爆破，分散站位。"
+          },
+          "minimum": 0,
+          "days": 0,
+          "rewards": [],
+          "allocation": {
+            "pair": [
+              "redblade",
+              "boilflow"
+            ],
+            "normal": 3,
+            "rare": 0,
+            "sand": 10,
+            "enemies": 8
+          }
+        },
+        {
+          "id": "fire_2",
+          "name": {
+            "en": "Fire / Deep",
+            "zh": "火曜矿区 / 深层"
+          },
+          "brief": {
+            "en": "Victory grants 3 rank I and 1 rank II quartz plus 20 dust. Allocate between the two quartz types before first entering battle.",
+            "zh": "胜利固定获得 3 颗 I 级、1 颗 II 级结晶和 20 晶砂。首次入战前分配两种结晶的数量。"
+          },
+          "enemies": {
+            "en": "12 defenders. Telegraphed blasts.",
+            "zh": "12 个防卫单位。蓄能爆破，分散站位。"
+          },
+          "minimum": 0,
+          "days": 0,
+          "rewards": [],
+          "allocation": {
+            "pair": [
+              "redblade",
+              "boilflow"
+            ],
+            "normal": 3,
+            "rare": 1,
+            "sand": 20,
+            "enemies": 12
+          }
+        },
+        {
+          "id": "fire_3",
+          "name": {
+            "en": "Fire / Core",
+            "zh": "火曜矿区 / 核心"
+          },
+          "brief": {
+            "en": "Victory grants 4 rank I and 2 rank II quartz plus 35 dust. Allocate between the two quartz types before first entering battle.",
+            "zh": "胜利固定获得 4 颗 I 级、2 颗 II 级结晶和 35 晶砂。首次入战前分配两种结晶的数量。"
+          },
+          "enemies": {
+            "en": "16 defenders. Telegraphed blasts.",
+            "zh": "16 个防卫单位。蓄能爆破，分散站位。"
+          },
+          "minimum": 0,
+          "days": 0,
+          "rewards": [],
+          "allocation": {
+            "pair": [
+              "redblade",
+              "boilflow"
+            ],
+            "normal": 4,
+            "rare": 2,
+            "sand": 35,
+            "enemies": 16
+          }
+        },
+        {
+          "id": "wind_1",
+          "name": {
+            "en": "Wind / Shallow",
+            "zh": "风曜矿区 / 浅层"
+          },
+          "brief": {
+            "en": "Victory grants 3 rank I and 0 rank II quartz plus 10 dust. Allocate between the two quartz types before first entering battle.",
+            "zh": "胜利固定获得 3 颗 I 级、0 颗 II 级结晶和 10 晶砂。首次入战前分配两种结晶的数量。"
+          },
+          "enemies": {
+            "en": "8 defenders. Fast flankers.",
+            "zh": "8 个防卫单位。快速侧翼，保护后排。"
+          },
+          "minimum": 0,
+          "days": 0,
+          "rewards": [],
+          "allocation": {
+            "pair": [
+              "swiftwind",
+              "swiftshade"
+            ],
+            "normal": 3,
+            "rare": 0,
+            "sand": 10,
+            "enemies": 8
+          }
+        },
+        {
+          "id": "wind_2",
+          "name": {
+            "en": "Wind / Deep",
+            "zh": "风曜矿区 / 深层"
+          },
+          "brief": {
+            "en": "Victory grants 3 rank I and 1 rank II quartz plus 20 dust. Allocate between the two quartz types before first entering battle.",
+            "zh": "胜利固定获得 3 颗 I 级、1 颗 II 级结晶和 20 晶砂。首次入战前分配两种结晶的数量。"
+          },
+          "enemies": {
+            "en": "12 defenders. Fast flankers.",
+            "zh": "12 个防卫单位。快速侧翼，保护后排。"
+          },
+          "minimum": 0,
+          "days": 0,
+          "rewards": [],
+          "allocation": {
+            "pair": [
+              "swiftwind",
+              "swiftshade"
+            ],
+            "normal": 3,
+            "rare": 1,
+            "sand": 20,
+            "enemies": 12
+          }
+        },
+        {
+          "id": "wind_3",
+          "name": {
+            "en": "Wind / Core",
+            "zh": "风曜矿区 / 核心"
+          },
+          "brief": {
+            "en": "Victory grants 4 rank I and 2 rank II quartz plus 35 dust. Allocate between the two quartz types before first entering battle.",
+            "zh": "胜利固定获得 4 颗 I 级、2 颗 II 级结晶和 35 晶砂。首次入战前分配两种结晶的数量。"
+          },
+          "enemies": {
+            "en": "16 defenders. Fast flankers.",
+            "zh": "16 个防卫单位。快速侧翼，保护后排。"
+          },
+          "minimum": 0,
+          "days": 0,
+          "rewards": [],
+          "allocation": {
+            "pair": [
+              "swiftwind",
+              "swiftshade"
+            ],
+            "normal": 4,
+            "rare": 2,
+            "sand": 35,
+            "enemies": 16
+          }
+        },
+        {
+          "id": "time_1",
+          "name": {
+            "en": "Time / Shallow",
+            "zh": "时曜矿区 / 浅层"
+          },
+          "brief": {
+            "en": "Victory grants 3 rank I and 0 rank II quartz plus 10 dust. Allocate between the two quartz types before first entering battle.",
+            "zh": "胜利固定获得 3 颗 I 级、0 颗 II 级结晶和 10 晶砂。首次入战前分配两种结晶的数量。"
+          },
+          "enemies": {
+            "en": "8 defenders. Initiative disruption.",
+            "zh": "8 个防卫单位。时序干扰，降低敌方先攻。"
+          },
+          "minimum": 0,
+          "days": 0,
+          "rewards": [],
+          "allocation": {
+            "pair": [
+              "timesand",
+              "starcut"
+            ],
+            "normal": 3,
+            "rare": 0,
+            "sand": 10,
+            "enemies": 8
+          }
+        },
+        {
+          "id": "time_2",
+          "name": {
+            "en": "Time / Deep",
+            "zh": "时曜矿区 / 深层"
+          },
+          "brief": {
+            "en": "Victory grants 3 rank I and 1 rank II quartz plus 20 dust. Allocate between the two quartz types before first entering battle.",
+            "zh": "胜利固定获得 3 颗 I 级、1 颗 II 级结晶和 20 晶砂。首次入战前分配两种结晶的数量。"
+          },
+          "enemies": {
+            "en": "12 defenders. Initiative disruption.",
+            "zh": "12 个防卫单位。时序干扰，降低敌方先攻。"
+          },
+          "minimum": 0,
+          "days": 0,
+          "rewards": [],
+          "allocation": {
+            "pair": [
+              "timesand",
+              "starcut"
+            ],
+            "normal": 3,
+            "rare": 1,
+            "sand": 20,
+            "enemies": 12
+          }
+        },
+        {
+          "id": "time_3",
+          "name": {
+            "en": "Time / Core",
+            "zh": "时曜矿区 / 核心"
+          },
+          "brief": {
+            "en": "Victory grants 4 rank I and 2 rank II quartz plus 35 dust. Allocate between the two quartz types before first entering battle.",
+            "zh": "胜利固定获得 4 颗 I 级、2 颗 II 级结晶和 35 晶砂。首次入战前分配两种结晶的数量。"
+          },
+          "enemies": {
+            "en": "16 defenders. Initiative disruption.",
+            "zh": "16 个防卫单位。时序干扰，降低敌方先攻。"
+          },
+          "minimum": 0,
+          "days": 0,
+          "rewards": [],
+          "allocation": {
+            "pair": [
+              "timesand",
+              "starcut"
+            ],
+            "normal": 4,
+            "rare": 2,
+            "sand": 35,
+            "enemies": 16
+          }
+        },
+        {
+          "id": "space_1",
+          "name": {
+            "en": "Space / Shallow",
+            "zh": "空曜矿区 / 浅层"
+          },
+          "brief": {
+            "en": "Victory grants 3 rank I and 0 rank II quartz plus 10 dust. Allocate between the two quartz types before first entering battle.",
+            "zh": "胜利固定获得 3 颗 I 级、0 颗 II 级结晶和 10 晶砂。首次入战前分配两种结晶的数量。"
+          },
+          "enemies": {
+            "en": "8 defenders. Ranged sentries.",
+            "zh": "8 个防卫单位。远程射击，利用掩体。"
+          },
+          "minimum": 0,
+          "days": 0,
+          "rewards": [],
+          "allocation": {
+            "pair": [
+              "brightsky",
+              "mirrorlight"
+            ],
+            "normal": 3,
+            "rare": 0,
+            "sand": 10,
+            "enemies": 8
+          }
+        },
+        {
+          "id": "space_2",
+          "name": {
+            "en": "Space / Deep",
+            "zh": "空曜矿区 / 深层"
+          },
+          "brief": {
+            "en": "Victory grants 3 rank I and 1 rank II quartz plus 20 dust. Allocate between the two quartz types before first entering battle.",
+            "zh": "胜利固定获得 3 颗 I 级、1 颗 II 级结晶和 20 晶砂。首次入战前分配两种结晶的数量。"
+          },
+          "enemies": {
+            "en": "12 defenders. Ranged sentries.",
+            "zh": "12 个防卫单位。远程射击，利用掩体。"
+          },
+          "minimum": 0,
+          "days": 0,
+          "rewards": [],
+          "allocation": {
+            "pair": [
+              "brightsky",
+              "mirrorlight"
+            ],
+            "normal": 3,
+            "rare": 1,
+            "sand": 20,
+            "enemies": 12
+          }
+        },
+        {
+          "id": "space_3",
+          "name": {
+            "en": "Space / Core",
+            "zh": "空曜矿区 / 核心"
+          },
+          "brief": {
+            "en": "Victory grants 4 rank I and 2 rank II quartz plus 35 dust. Allocate between the two quartz types before first entering battle.",
+            "zh": "胜利固定获得 4 颗 I 级、2 颗 II 级结晶和 35 晶砂。首次入战前分配两种结晶的数量。"
+          },
+          "enemies": {
+            "en": "16 defenders. Ranged sentries.",
+            "zh": "16 个防卫单位。远程射击，利用掩体。"
+          },
+          "minimum": 0,
+          "days": 0,
+          "rewards": [],
+          "allocation": {
+            "pair": [
+              "brightsky",
+              "mirrorlight"
+            ],
+            "normal": 4,
+            "rare": 2,
+            "sand": 35,
+            "enemies": 16
+          }
+        },
+        {
+          "id": "mirage_1",
+          "name": {
+            "en": "Mirage / Shallow",
+            "zh": "幻曜矿区 / 浅层"
+          },
+          "brief": {
+            "en": "Victory grants 3 rank I and 0 rank II quartz plus 10 dust. Allocate between the two quartz types before first entering battle.",
+            "zh": "胜利固定获得 3 颗 I 级、0 颗 II 级结晶和 10 晶砂。首次入战前分配两种结晶的数量。"
+          },
+          "enemies": {
+            "en": "8 defenders. Accuracy disruption.",
+            "zh": "8 个防卫单位。幻光干扰，降低敌方命中。"
+          },
+          "minimum": 0,
+          "days": 0,
+          "rewards": [],
+          "allocation": {
+            "pair": [
+              "phantomeye",
+              "duskmarl"
+            ],
+            "normal": 3,
+            "rare": 0,
+            "sand": 10,
+            "enemies": 8
+          }
+        },
+        {
+          "id": "mirage_2",
+          "name": {
+            "en": "Mirage / Deep",
+            "zh": "幻曜矿区 / 深层"
+          },
+          "brief": {
+            "en": "Victory grants 3 rank I and 1 rank II quartz plus 20 dust. Allocate between the two quartz types before first entering battle.",
+            "zh": "胜利固定获得 3 颗 I 级、1 颗 II 级结晶和 20 晶砂。首次入战前分配两种结晶的数量。"
+          },
+          "enemies": {
+            "en": "12 defenders. Accuracy disruption.",
+            "zh": "12 个防卫单位。幻光干扰，降低敌方命中。"
+          },
+          "minimum": 0,
+          "days": 0,
+          "rewards": [],
+          "allocation": {
+            "pair": [
+              "phantomeye",
+              "duskmarl"
+            ],
+            "normal": 3,
+            "rare": 1,
+            "sand": 20,
+            "enemies": 12
+          }
+        },
+        {
+          "id": "mirage_3",
+          "name": {
+            "en": "Mirage / Core",
+            "zh": "幻曜矿区 / 核心"
+          },
+          "brief": {
+            "en": "Victory grants 4 rank I and 2 rank II quartz plus 35 dust. Allocate between the two quartz types before first entering battle.",
+            "zh": "胜利固定获得 4 颗 I 级、2 颗 II 级结晶和 35 晶砂。首次入战前分配两种结晶的数量。"
+          },
+          "enemies": {
+            "en": "16 defenders. Accuracy disruption.",
+            "zh": "16 个防卫单位。幻光干扰，降低敌方命中。"
+          },
+          "minimum": 0,
+          "days": 0,
+          "rewards": [],
+          "allocation": {
+            "pair": [
+              "phantomeye",
+              "duskmarl"
+            ],
+            "normal": 4,
+            "rare": 2,
+            "sand": 35,
+            "enemies": 16
+          }
+        }
+      ],
+      "evidence": [],
+      "poster": "assets/story/chapters/septium_mine/survey.jpg",
+      "stages": [
+        {
+          "number": 1,
+          "name": {
+            "en": "Mine survey",
+            "zh": "矿区勘察"
+          },
+          "brief": {
+            "en": "Select a route and allocate quartz before entering battle. Claim quartz and dust after victory.",
+            "zh": "先选择路线并分配奖励，进入战斗后锁定。胜利后领取结晶与晶砂。"
+          },
+          "reward": {
+            "en": "",
+            "zh": ""
+          },
+          "money": 0,
+          "medicine": 0,
+          "tools": 0,
+          "perksEach": 0,
+          "requiredEvidence": [],
+          "goals": [
+            {
+              "id": "field_victory",
+              "name": {
+                "en": "Defeat all defenders",
+                "zh": "击败全部守军"
+              },
+              "battle": true,
+              "optional": false,
+              "requires": []
+            }
+          ],
+          "materials": []
+        }
+      ],
+      "source": "config/septium_chapter_data.nut",
+      "gallery": [
+        {
+          "id": "survey",
+          "stage": 1,
+          "title": {
+            "en": "Opening",
+            "zh": "勘察记录"
+          },
+          "caption": {
+            "en": "Opening",
+            "zh": "勘察记录"
+          },
+          "image": "assets/story/chapters/septium_mine/survey.jpg"
+        },
+        {
+          "id": "defense",
+          "stage": 1,
+          "title": {
+            "en": "Guard",
+            "zh": "进入矿区"
+          },
+          "caption": {
+            "en": "Guard",
+            "zh": "进入矿区"
+          },
+          "image": "assets/story/chapters/septium_mine/defense.jpg"
+        },
+        {
+          "id": "sorting",
+          "stage": 1,
+          "title": {
+            "en": "Ending",
+            "zh": "结晶分拣"
+          },
+          "caption": {
+            "en": "Ending",
+            "zh": "结晶分拣"
+          },
+          "image": "assets/story/chapters/septium_mine/sorting.jpg"
+        }
+      ],
+      "skillRewards": [],
+      "skinRewards": [],
+      "cooldownHours": 72,
+      "rules": {
+        "en": "Select a route and allocate quartz before entering battle. Claim quartz and dust after victory.",
+        "zh": "先选择路线并分配奖励，进入战斗后锁定。胜利后领取结晶与晶砂。"
+      },
+      "allocationNote": {
+        "en": "Allocate each rank's total between the two listed quartz types before first battle entry. Entry freezes the allocation; the table shows totals, not two full sets of rewards. All 21 routes share a 72-hour cooldown after victory.",
+        "zh": "首次进战前，将各阶回路总数分配给所列的两种回路；进战即锁定。表中是可分配总量，不是每种都获得一整份。21 条路线共享胜利后的 72 游戏小时冷却。"
+      }
+    },
+    {
       "id": "tenka_goken_festival",
       "name": {
         "en": "Mistbound Academy: Festival of Five Swords",
@@ -38425,6 +42740,441 @@ window.BV_WIKI_DATA = {
           "medicine": 0
         }
       ]
+    },
+    {
+      "actor": "saber",
+      "source": "config/saber_bond_data.nut",
+      "stages": [
+        {
+          "value": 20,
+          "name": {
+            "en": "A Supper Kept Warm",
+            "zh": "为你留的一份晚餐"
+          },
+          "challenge": {
+            "en": "Permanently gain 1 additional starting Mana.",
+            "zh": "开场魔力永久增加1点。"
+          },
+          "location": {
+            "en": "The Stolen Provision Wagon",
+            "zh": "被劫的餐车"
+          },
+          "locationDescription": {
+            "en": "Artoria Bond challenge: A Supper Kept Warm. She must participate and survive the victory.",
+            "zh": "阿尔托莉雅羁绊挑战：为你留的一份晚餐。本人必须参战且存活获胜。"
+          },
+          "story": {
+            "en": "It is late when Artoria returns from her final patrol. She pauses outside the tent, as though stepping inside might leave some danger unattended. You move the covered pot nearer the fire and tell her the next watch has already begun.\n\nShe asks whether the wounded have eaten before accepting the bread and soup kept for her. Her sword remains within reach.\n\n“Only a short rest,” she says. Yet after the first spoonful, her shoulders finally ease.",
+            "zh": "夜已经很深。阿尔托莉雅结束最后一轮巡视，仍在帐篷外停了一会儿，仿佛只要走进去，便会漏掉某种危险。你把一直盖着的锅推到火边，告诉她，今晚的值夜已经有人接替。\n\n她看着为自己留下的面包与浓汤，先问伤员是否吃过，随后才安静坐下。剑仍靠在她触手可及的位置。\n\n“只是休息片刻。”她说。但第一口热汤入口之后，那条绷紧了一整天的肩线终于松了下来。"
+          },
+          "reveal": {
+            "en": "A rescued merchant brings you a gold chip stamped with a lion. The raiders took old relics and provisions, leaving ordinary silver behind. Artoria feels a faint drain of mana when the chip approaches her sword.\n\nShe starts to rise. You put the remaining bread back into her hand. “Finish eating. We will go together.”\n\nThis time she does not object. Together you mark the camp holding the wagon.",
+            "zh": "获救商人带来了一枚带有狮纹的金色筹码。劫匪不要银币，只拿走了他运送的旧遗物，以及准备送往村里的粮食。筹码碰到圣剑时，阿尔托莉雅察觉到细微的魔力流失。\n\n她准备起身，你把剩下的面包放回她手里。“先吃完。我们一起去。”\n\n这一次她没有反驳。地图上那处藏着餐车的营地，被你们共同圈了出来。"
+          },
+          "victory": {
+            "en": "The provisions are loaded onto the wagon again. Artoria entrusts the chip to you, and the disturbance in her mana settles. At supper she carries two bowls to the fire and leaves a place beside her.\n\n“Let us eat here tomorrow as well.”",
+            "zh": "粮袋重新装上餐车。阿尔托莉雅把那枚筹码交给你保存，魔力的紊乱随之平息。晚饭时，她端着两只碗走到火边，在你身旁留了一个位置。\n\n“明天，也在这里吃饭吧。”"
+          },
+          "introImage": "assets/bonds/events/battle-valkyries/saber_bond_20_intro.png",
+          "cgImage": "assets/bonds/events/battle-valkyries/saber_bond_20_cg.png",
+          "victoryImage": "",
+          "item": "",
+          "skin": "",
+          "objective": null,
+          "money": 0,
+          "tools": 0,
+          "medicine": 0
+        },
+        {
+          "value": 40,
+          "name": {
+            "en": "The King Does Not Cheat",
+            "zh": "骑士王不会作弊"
+          },
+          "challenge": {
+            "en": "From round 2, restore 1 Mana at the first normal turn start each round. Also receive 1,000 crowns and 30 tools.",
+            "zh": "从第二轮起，每轮首次正常行动开始时恢复1点魔力。另获得1000克朗、30工具。"
+          },
+          "location": {
+            "en": "The Gilded Counting House",
+            "zh": "镀金账房"
+          },
+          "locationDescription": {
+            "en": "Artoria Bond challenge: The King Does Not Cheat. She must participate and survive the victory.",
+            "zh": "阿尔托莉雅羁绊挑战：骑士王不会作弊。本人必须参战且存活获胜。"
+          },
+          "story": {
+            "en": "To approach the travelling casino buying relics, you teach Artoria a card game in a tavern. She remembers every card played and even weighs the pauses between your moves.\n\nAfter your fourth loss, you deliberately leave an opening. She lays down her cards and looks at you.\n\n“If this is something we are meant to enjoy together, please take my opponent seriously.” She pauses. “That would be yourself.”",
+            "zh": "为了接近那座收购遗物的流动赌庄，你在酒馆里教阿尔托莉雅玩牌。她记住了每一张已经打出的牌，连你的停顿也列入了推演。\n\n第四次输给她以后，你故意留下一个破绽。她却把牌放回桌面，认真地看着你。\n\n“如果这是两个人一起享受的游戏，就请认真对待我的对手。”她停了一下。“也就是你自己。”"
+          },
+          "reveal": {
+            "en": "The counting house holds the truth: anyone signing a debt contract loses a little strength with every wager. Stolen relics merely fuel the mechanism. Artoria spreads out the map, preparing to cover every exit herself.\n\nYou take one corner and claim responsibility for the ledger and rear door. After a pause, she releases her hold on that part of the map.\n\n“Then I leave my back to you.”",
+            "zh": "筹码的秘密藏在账房里：签下借据的人，会在每一次下注时失去少许力量。被盗遗物只是维持这套术式的燃料。阿尔托莉雅摊开地图，准备独自守住全部出口。\n\n你接过地图的一角，把账本和后门交给自己负责。她沉默片刻，松开按住那片地图的手。\n\n“那么，背后就拜托你了。”"
+          },
+          "victory": {
+            "en": "The final debt contract curls in the fire. The wind around the holy sword steadies, and Artoria can feel her mana gathering naturally again. She sets the recovered cards on the table.\n\n“Another game tonight. And this time, no letting me win.”",
+            "zh": "最后一份借据在火中卷曲。圣剑周围的风恢复了平稳，阿尔托莉雅的魔力开始自行积蓄。她把收回的牌放在桌上。\n\n“今晚再来一局。这次，你不许让着我。”"
+          },
+          "introImage": "assets/bonds/events/battle-valkyries/saber_bond_40_intro.png",
+          "cgImage": "assets/bonds/events/battle-valkyries/saber_bond_40_cg.png",
+          "victoryImage": "",
+          "item": "",
+          "skin": "",
+          "objective": null,
+          "money": 1000,
+          "tools": 30,
+          "medicine": 0
+        },
+        {
+          "value": 60,
+          "name": {
+            "en": "The Sword Entrusted to You",
+            "zh": "交到你手中的剑"
+          },
+          "challenge": {
+            "en": "Receive Excalibur: while equipped, the first successful ordinary active melee attack each round restores 1 additional Mana.",
+            "zh": "获得专武誓约胜利之剑：装备时，每轮首次主动普通近战命中额外恢复1点魔力。"
+          },
+          "location": {
+            "en": "The Counterfeit Holy Forge",
+            "zh": "伪造圣剑的熔炉"
+          },
+          "locationDescription": {
+            "en": "Artoria Bond challenge: The Sword Entrusted to You. She must participate and survive the victory.",
+            "zh": "阿尔托莉雅羁绊挑战：交到你手中的剑。本人必须参战且存活获胜。"
+          },
+          "story": {
+            "en": "That night she dreams again of an empty battlefield. The sword is heavy, and no footsteps follow her. On waking, Artoria does not immediately reach for her armour. Instead she calls to you as you pack.\n\n“Could you stay a little longer?”\n\nShe places the sword, wrapped in blue cloth, between you and speaks of the weariness of carrying everything alone. You promise no easy victory. You simply take the hand resting beside it.",
+            "zh": "那晚，她又梦见了空旷的战场。梦里的剑很沉，身后没有脚步声。醒来时，阿尔托莉雅没有像往常那样立刻披上铠甲，而是叫住了正在整理行囊的你。\n\n“可以再待一会儿吗？”\n\n她将覆着蓝布的剑放在两人之间，第一次细说那种必须独自承担一切的疲惫。你没有替她许下胜利，只握住了她搁在剑旁的手。"
+          },
+          "reveal": {
+            "en": "The ledger leads to a forge turning relics into counterfeit holy swords. The copies siphon power from the true blade, repeatedly forcing her mana to begin from nothing.\n\nArtoria will hold the forge at bay while you sever its supply. She brings the hilt closer, letting you feel the pulse of a stable circuit.\n\n“This time, help me hear its full answer.”",
+            "zh": "账本指向一座把遗物熔成假圣剑的工坊。那些仿制品不断抽取真正圣剑的力量，强迫她的魔力一次次从空处开始。\n\n阿尔托莉雅提出由自己正面压住熔炉，你则切断供能。她主动把剑柄递近，让你记住术式稳定时的脉动。\n\n“这次，请和我一起，让它完整地回应。”"
+          },
+          "victory": {
+            "en": "As the forge cools, the holy sword shines with a clear and steady light. Artoria does not raise it to the heavens. First she holds it level between you.\n\n“Excalibur,” she says softly. “And a promise that will bring me home.”\n\nTogether you secure the blade and prepare for the road back.",
+            "zh": "熔炉冷却，圣剑终于显露出清晰而安定的光。阿尔托莉雅没有立刻将它举向天空，而是先把剑平稳地横在你们之间。\n\n“誓约胜利之剑。”她轻声说出它的名字。“以及，会带我回来的约定。”\n\n你们一起将圣剑收好，准备踏上归途。"
+          },
+          "introImage": "assets/bonds/events/battle-valkyries/saber_bond_60_intro.png",
+          "cgImage": "assets/bonds/events/battle-valkyries/saber_bond_60_cg.png",
+          "victoryImage": "",
+          "item": "saber_oath_excalibur",
+          "skin": "",
+          "objective": null,
+          "money": 0,
+          "tools": 0,
+          "medicine": 0
+        },
+        {
+          "value": 80,
+          "name": {
+            "en": "A Special Invitation Tonight",
+            "zh": "今夜的特别邀请"
+          },
+          "challenge": {
+            "en": "Strike Air permanently costs 1 Mana on every cast. Also receive 1,500 crowns and 30 medicine.",
+            "zh": "风王铁槌的魔力消耗永久降为1点，每次施放均生效。另获得1500克朗、30药品。"
+          },
+          "location": {
+            "en": "The Unlit Private Lounge",
+            "zh": "无光贵宾厅"
+          },
+          "locationDescription": {
+            "en": "Artoria Bond challenge: A Special Invitation Tonight. She must participate and survive the victory.",
+            "zh": "阿尔托莉雅羁绊挑战：今夜的特别邀请。本人必须参战且存活获胜。"
+          },
+          "story": {
+            "en": "The last invitation demands that its guests arrive as a dealer and her partner. While you consider an excuse, Artoria has already chosen her outfit: long white bunny ears, a white-and-gold bodysuit, royal-blue tights, and a white fur stole, with a golden high ponytail flowing behind her.\n\nShe stands before the mirror, checking every detail as carefully as armor. Only when she notices your gaze does her hand pause at the small blue neck ornament.\n\n\"If we have decided to attend, we should prepare properly. Do you... think it suits me?\"",
+            "zh": "最后一份邀请函要求来客以荷官与搭档的身份进入。你还在思考借口，阿尔托莉雅已经选好了服装：白色长兔耳、白金礼服、蓝色连裤袜和毛绒披肩，金色高马尾垂在身后。\n\n她站在镜前，像检查铠甲一样确认每一处细节。直到发现你在看，手指才在蓝色领饰上停了一下。\n\n“既然已经决定参与，就应当认真准备。你……觉得合适吗？”"
+          },
+          "reveal": {
+            "en": "She turns over a freshly engraved lion chip and places it in your hand. It is bound to no contract; it identifies only her partner for tonight.\n\nThe private lounge is dark, and its guards are waiting. Artoria parts the wind around her sword. The pressure responds with newfound ease.\n\n“Whatever rules they change, I will recognise you.”",
+            "zh": "她从掌心翻出一枚重新刻过的狮纹筹码，放进你手里。这枚筹码不再连接任何契约，只用来辨认今晚的搭档。\n\n贵宾厅的灯已经熄灭，最后的守卫正在等待。阿尔托莉雅拨开圣剑周围的风，风压变得轻盈而顺从。\n\n“无论他们如何改变规则，我都会认出你。”"
+          },
+          "victory": {
+            "en": "Light returns to the private lounge. Sword in one hand, Artoria straightens a slightly crooked rabbit ear with the other and cannot quite suppress a smile.\n\n“It seems this outfit does not hinder a battle.”\n\nShe slides the chip back toward you. “Keep it for me. Our evening has not begun yet.”",
+            "zh": "贵宾厅重新亮起灯。阿尔托莉雅一手持剑，一手整理稍有倾斜的兔耳，终于忍不住露出一点笑意。\n\n“看来，这身衣服也不会妨碍战斗。”\n\n她随后把那枚筹码推回你身边：“先替我保管。我们的约会，还没有开始。”"
+          },
+          "introImage": "assets/bonds/events/battle-valkyries/saber_bond_80_intro.png",
+          "cgImage": "assets/bonds/events/battle-valkyries/saber_bond_80_cg.png",
+          "victoryImage": "",
+          "item": "",
+          "skin": "",
+          "objective": null,
+          "money": 1500,
+          "tools": 0,
+          "medicine": 30
+        },
+        {
+          "value": 100,
+          "name": {
+            "en": "The King at Rest, an Oath with You",
+            "zh": "王的休假，与你的誓约"
+          },
+          "challenge": {
+            "en": "Gain 1 more starting Mana and refund 1 Mana after Excalibur resolves. Unlock Mana Release: 0 AP, 0 Fatigue, twice per battle, no target required, instantly fill Mana; does not reset Excalibur uses. Permanently unlock and equip the Royal Bunny skin and portrait.",
+            "zh": "开场魔力再增加1点，宝具结算后返还1点魔力。解锁魔力解放：0行动点、0疲劳，每战两次，无需目标，立即回满魔力；不重置宝具次数。永久解锁并换上皇家兔女郎皮肤与立绘。"
+          },
+          "location": {
+            "en": "The Last Dealer",
+            "zh": "最后的庄家"
+          },
+          "locationDescription": {
+            "en": "Artoria Bond challenge: The King at Rest, an Oath with You. She must participate and survive the victory.",
+            "zh": "阿尔托莉雅羁绊挑战：王的休假，与你的誓约。本人必须参战且存活获胜。"
+          },
+          "story": {
+            "en": "The casino core unfolds one final mirror: an unbroken capital, lights that never went out, and a life that appears ready to begin again. It does not hurry her. It simply waits for Artoria to reach out.\n\nShe looks for a long time. You do not answer for her. At last she closes her hand around the lion chip and turns toward the real light beside you.\n\n“I still remember them,” she says. “And I remember that someone is waiting for me to return.”",
+            "zh": "赌庄核心展开最后一面镜子。镜中是完整的王城、没有熄灭的灯火，以及一条似乎可以重来的人生。它不催促，只安静等待阿尔托莉雅伸手。\n\n她看了很久。你也没有替她回答。最终，她握住胸前那枚狮纹筹码，转身望向身旁真实的灯光。\n\n“我仍然记得他们。”她说。“也记得，已经有人在等我回去。”"
+          },
+          "reveal": {
+            "en": "The king in the mirror draws a sword. Artoria raises her own, golden mana flowing through the restored circuit. Her plans for the rest of the night are precise: destroy the core, release every stolen fragment of strength, and spend an evening with you without a mission.\n\n“This is my own choice.”\n\nShe offers her hand and waits for you to take it before approaching the last dealer.",
+            "zh": "镜里的王之影拔出了剑。阿尔托莉雅举起圣剑，金色魔力沿着已经稳定的回路奔涌而出。她把今晚余下的安排说得很清楚：击破核心，释放所有被抵押的力量，然后与你一起度过一个没有任务的晚上。\n\n“这是我自己的决定。”\n\n她向你伸出手，等你握住之后，才走向最后的庄家。"
+          },
+          "victory": {
+            "en": "The last shard goes dark, and every contract is broken. Artoria arrives on time in the restored hall, still wearing her Royal Bunny attire. The holy sword rests safely beside her chair; it need not be drawn again tonight.\n\nShe places the lion chip on the table and slides it toward you.\n\n“I have arranged the evening. No patrols, and no war council.”\n\nShe pauses, allowing her smile to show at last.\n\n“All you need to do is stay with me.”",
+            "zh": "最后的镜片熄灭，所有契约都已解除。阿尔托莉雅准时出现在恢复灯火的大厅里，仍穿着那身皇家兔女郎礼服。圣剑安稳地靠在椅边，今晚无需再出鞘。\n\n她把狮纹筹码放在桌面，推到你面前。\n\n“今晚的行程，我已经安排好了。没有巡逻，也没有作战会议。”\n\n她停了一下，笑意终于不再藏起。\n\n“你只需要陪着我。”"
+          },
+          "introImage": "assets/bonds/events/battle-valkyries/saber_bond_100_intro.png",
+          "cgImage": "assets/bonds/events/battle-valkyries/saber_bond_100_cg.png",
+          "victoryImage": "",
+          "item": "",
+          "skin": "saber_royal_bunny_skin",
+          "objective": null,
+          "money": 0,
+          "tools": 0,
+          "medicine": 0
+        }
+      ],
+      "progression": {
+        "en": "Complete the five bond story challenges in order. Stage 60 grants Oath Excalibur; stage 100 grants Mana Release and the Royal Bunny outfit.",
+        "zh": "按顺序完成五阶段羁绊故事挑战。60 阶段获得誓约胜利之剑；100 阶段获得魔力解放与皇家兔女郎皮肤。"
+      }
+    },
+    {
+      "actor": "kanade_tachibana",
+      "source": "config/kanade_tachibana_bond_data.nut",
+      "stages": [
+        {
+          "value": 20,
+          "name": {
+            "en": "Save Her a Warm Meal",
+            "zh": "给她留一份热饭"
+          },
+          "challenge": {
+            "en": "+1 maximum AP; receive Angel Uniform; Campfire outfit.",
+            "zh": "最大AP+1；获得天使制服护甲；灯火旅装。"
+          },
+          "location": {
+            "en": "The Interrupted Supper",
+            "zh": "被截下的晚餐"
+          },
+          "locationDescription": {
+            "en": "Defeat all hostiles; at least 2 of 3 supply carts must survive.",
+            "zh": "清除敌军，3辆粮车至少2辆存活。"
+          },
+          "story": {
+            "en": "Kanade is still standing by the cooking pot when supper is served a second time. You ask whether she dislikes the food. \"There are no bowls left.\" Someone finds one. After trying the mapo tofu, she says seriously, \"It could be spicier.\" When a spare blanket is placed beside her, she spreads it to shelter her neighbor too.",
+            "zh": "晚饭已经分到第二轮，奏还站在锅边。团长以为她不喜欢今天的菜，她看了一眼大家手里的碗：“没有餐具了。”\n\n有人赶紧找来一副。她尝过改良的麻婆豆腐，认真地想了想：“可以再辣一点。”旁边的人笑起来，她不明白笑点，却在下一次添饭时把空碗递了过去。\n\n夜风吹进营地。她仍穿着来到这里时的制服，婉拒了值夜人的披肩，说对方也会冷。团长把多余的毯子放到她身边：“这份是给你的。”她没有立刻道谢，只把毯子展开，替邻座也挡住了一点风。"
+          },
+          "reveal": {
+            "en": "The relief camp supply caravan has not returned. Kanade recognizes the driver who once saved his portion of tofu for her. This time she stops to ask who is coming and marks a rendezvous on the map. She covers her unfinished supper. \"We can eat when we return. He needs a portion too.\"",
+            "zh": "给安置营运粮的车队迟迟未归。奏认出名单上的车夫，那个人曾把自己的一份豆腐留给她。\n\n她起身时，团长已经在整理地图。奏停下脚步，先问了同行的人数，又把路线指给负责接应的新兵：“这里等我们。”\n\n出发前她把没吃完的那份饭盖好。团长问要不要带上，她摇头：“回来再吃。他也需要一份。”"
+          },
+          "victory": {
+            "en": "The rescued tailor makes a short cape and travel skirt; the driver brings a scarf. \"Everyone else has one. This is yours.\" Kanade accepts. Back at camp she finds her own seat. \"Will it still be here tomorrow?\" You place a bowl on the table. She nods. The rescued travelers give her protective armor as thanks.",
+            "zh": "车队中获救的裁缝用备用衣料做了短披肩和旅行裙，车夫送来一条围巾。奏下意识看向其他人的衣服，裁缝抢先说：“他们都有。这份是你的。”\n\n她终于点头。回到营地时，大家第一眼注意到的是围巾，第二眼才发现她已自己找到了座位。\n\n“明天，也留在这里吗？”她问的是座位。团长把餐具放在桌上，她轻轻应了一声。"
+          },
+          "introImage": "assets/bonds/valkyries/bond/kanade_tachibana_20_1.png",
+          "cgImage": "assets/bonds/valkyries/bond/kanade_tachibana_20_2.png",
+          "victoryImage": "assets/bonds/valkyries/kanade_tachibana_bond_20_card.png",
+          "item": "kanade_tachibana_uniform_armor",
+          "skin": "kanade_tachibana_campfire_skin",
+          "objective": {
+            "en": "Win while keeping at least two of the three supply carts alive.",
+            "zh": "获胜且三辆补给车至少存活两辆。"
+          },
+          "money": 0,
+          "tools": 0,
+          "medicine": 0
+        },
+        {
+          "value": 40,
+          "name": {
+            "en": "Say Who You Want to Protect",
+            "zh": "先说出你想保护谁"
+          },
+          "challenge": {
+            "en": "Receive Unsent Thanks; Overdrive recovers 12 fatigue; White Wing outfit.",
+            "zh": "获得未寄出的感谢；Overdrive恢复12疲劳；白翼战装。"
+          },
+          "location": {
+            "en": "The Silent Checkpoint",
+            "zh": "无声的关卡"
+          },
+          "locationDescription": {
+            "en": "Defeat all hostiles to complete the challenge.",
+            "zh": "消灭全部敌军即可完成挑战。"
+          },
+          "story": {
+            "en": "Kanade blocks a recruit from pursuing an enemy. He thinks he has disappointed her, until you uncover a pitfall ahead. Later she finally explains, \"There was a trap.\" You suggest saying it sooner next time. She practices the sentence, then asks the tailor for clothes that will not catch on branches during a rescue.",
+            "zh": "新兵追赶逃敌，奏突然拦住他。对方以为自己的表现让她失望，低头收起武器。奏指向前面的草丛，团长扒开草，露出一处设好的陷坑。\n\n直到回营，新兵还不敢和她说话。奏想了很久，才补上一句：“那里有陷阱。”\n\n团长建议她下次提前说这句话。她没有辩解，只试着重复了一遍。检查装备时，她又发现披肩边缘被灌木钩破，于是主动向裁缝询问，能否做一套便于快速接近伤员、也不会拖住手臂的衣服。"
+          },
+          "reveal": {
+            "en": "Crossbowmen have trapped wounded soldiers and civilians at a checkpoint. Kanade studies their firing intervals and points out cover and evacuation routes. \"I will stop the arrows. You bring them out.\" The recruit asks when to follow. \"When I call you.\" Everyone understands the plan.",
+            "zh": "关卡里的伤兵与居民被弩手封住去路。奏没有立刻冲进去，而是看完射击间隔，把藏身位置和撤离路线逐一指给同伴。\n\n“我挡住箭。你们把他们带出来。”\n\n新兵问什么时候跟上，她回头回答：“等我叫你。”这是一个很短的计划，所有人却都知道自己该做什么。她检查两臂刀刃，然后走向关卡。"
+          },
+          "victory": {
+            "en": "The tailor presents a light white battle dress. Kanade tests her arm movement and adjusts the bracers herself. She folds her travel clothes carefully. When the recruit thanks her, she says, \"I do not want you to be hurt. Next time, I will say so first.\" As she raises her arms, the sonic blades take their full shape once more.",
+            "zh": "返回时，裁缝将做好的轻型白色战装送来。奏试着抬臂、转身，又自己调整了护臂位置。她把旅装仔细叠好，留下那条围巾给下一次远行。\n\n新兵向她道谢，她这次没有只点头：“我不想你受伤。下次，我会先说。”"
+          },
+          "introImage": "assets/bonds/valkyries/bond/kanade_tachibana_40_1.png",
+          "cgImage": "assets/bonds/valkyries/bond/kanade_tachibana_40_2.png",
+          "victoryImage": "assets/bonds/valkyries/kanade_tachibana_bond_40_card.png",
+          "item": "kanade_tachibana_unsent_thanks",
+          "skin": "kanade_tachibana_whitewing_skin",
+          "objective": {
+            "en": "Eliminate all enemies; the rescue is narrative, with no escort objective.",
+            "zh": "消灭全部敌人；营救属于剧情描述，无额外护送目标。"
+          },
+          "money": 0,
+          "tools": 0,
+          "medicine": 0
+        },
+        {
+          "value": 60,
+          "name": {
+            "en": "Every Voice of Mine",
+            "zh": "每一个我都听得见"
+          },
+          "challenge": {
+            "en": "+1 maximum AP; receive Quiet Feather; 6-step dash; Distortion grants the caster +20 melee defense and 25% less damage received; Azure Harmonics outfit.",
+            "zh": "最大AP+1；获得静羽发饰；突进6步；偏转期间自身近防+20、受到伤害降低25%；苍蓝谐律。"
+          },
+          "location": {
+            "en": "Harmonic Corridor",
+            "zh": "谐波回廊"
+          },
+          "locationDescription": {
+            "en": "Destroy 3 nodes and all enemies. Each node spawns one guard per round, capped at two. Destroying all nodes summons an Overloaded Echo.",
+            "zh": "摧毁3个节点并清除敌军。每节点每轮增援1名，最多2名；节点全毁后出现过载回声。"
+          },
+          "story": {
+            "en": "The copies disagree about tomorrow. One wants to scout, another worries about the wounded, a third thinks everyone needs rest. Kanade begins to absorb them, then realizes she agrees with all three. White and blue cloth lie side by side on the table. This time she lets the others share the work.",
+            "zh": "短暂留在营地的复制体对明天的安排给出了不同意见：一个要尽早侦察，一个担心伤员，还有一个拿着没缝完的衣料，说大家该休息了。\n\n奏习惯性地准备回收，却发现自己同样赞成这些意见。谐波残留与疲惫让她难以集中注意，她暂时停了下来。\n\n裁缝原本请她选一种衣料，不同的“她”分别留下白色和蓝色。两块布摆在桌上，谁也没有把另一块收走。\n\n团长把第二天的安排分给愿意承担的人，奏第一次没有抢过所有任务。"
+          },
+          "reveal": {
+            "en": "A device in the nearby ruins is amplifying residual harmonics into hostile echoes. Kanade offers to shut it down alone. You bring scouting reports and a duty roster showing that each concern has been heard. She listens to the copies. \"Together. First, let the wounded leave.\"",
+            "zh": "附近遗迹的装置不断放大谐波残留，已经形成攻击路人的回声。奏担心自己的能力伤到同伴，提议独自去关掉它。\n\n团长带来其他人的侦察结果和轮换名单，让她看见各项担忧都有了回应。奏重新听完复制体的话，才说：“一起去。先让受伤的人离开。”"
+          },
+          "victory": {
+            "en": "After absorbing the surviving copies, Kanade asks everyone to wait while she rests. She gives the tailor both white and blue cloth and begins braiding two cords together. \"Keep both.\" Her new azure outfit retains a white lining. She no longer needs every thought to become a single voice.",
+            "zh": "回收结束后，奏坐下来，请大家等她休息一会儿。回营时，她把白蓝两块衣料一起交给裁缝，自己动手编起配套的双股系带。\n\n“都留下。”她说。\n\n苍蓝衣装保留白色内衬，两个颜色都清楚可见。她不再急着让所有想法只剩一个声音，也愿意让同伴分担接下来的一段路。"
+          },
+          "introImage": "assets/bonds/valkyries/bond/kanade_tachibana_60_1.png",
+          "cgImage": "assets/bonds/valkyries/bond/kanade_tachibana_60_2.png",
+          "victoryImage": "assets/bonds/valkyries/kanade_tachibana_bond_60_card.png",
+          "item": "kanade_tachibana_feather_hairpiece",
+          "skin": "kanade_tachibana_harmonics_skin",
+          "objective": {
+            "en": "Destroy all three nodes, then defeat the overloaded echo. Each surviving node can spawn two echoes.",
+            "zh": "摧毁三个节点，再击败出现的过载分身；每个存活节点最多生成两个分身。"
+          },
+          "money": 0,
+          "tools": 0,
+          "medicine": 0
+        },
+        {
+          "value": 80,
+          "name": {
+            "en": "The Unsent Letter",
+            "zh": "未能寄出的那封信"
+          },
+          "challenge": {
+            "en": "Strengthen Hand Sonic; Absorb recovers 12 fatigue per clone; kill dash; Lamplight outfit.",
+            "zh": "强化音速臂刃；回收每分身12疲劳；击杀后再突进；晚灯常服。"
+          },
+          "location": {
+            "en": "Heartbeats in the Snow",
+            "zh": "雪路上的心跳"
+          },
+          "locationDescription": {
+            "en": "Defeat all hostiles to complete the challenge.",
+            "zh": "消灭全部敌军即可完成挑战。"
+          },
+          "story": {
+            "en": "Under a lamp, Kanade crosses out a sentence and writes it again. When you return the repaired silver box, she asks whether there is someone you have not seen for a long time. She speaks about Otonashi, the life she received, and the thanks she already expressed at graduation. You brighten the lamp. Beside her folded letter she leaves a new blank note.",
+            "zh": "奏坐在灯下，把写好的句子划去，又重新写了一遍。团长送来修好的银匣，准备离开时，她主动问：“你有很久没有见到的人吗？”\n\n随后她讲起音无，讲起自己得到过的生命，也讲起毕业时已经说出口的感谢。她不是在寻找替代那个人的人，也没有忘记那场告别。只是有了新的日子之后，有些话又想重新记下来。\n\n团长听完，把灯芯拨亮一点。她将那封记录往事的信叠好，旁边留下了一张新的空白便笺。"
+          },
+          "reveal": {
+            "en": "A medical convoy is trapped on a snowy road. Someone suggests taking only those who can walk. A badly wounded traveler silently gives a blanket to another. Kanade kneels and puts it back. \"We will take you home.\" She asks her companions to secure a route and places her copies at separate junctions.",
+            "zh": "雪路上的医疗队遭到围困。有人提议先带走能行走的人，重伤者听见后没有求救，只把毯子让给身旁的人。\n\n奏蹲下来，把毯子重新盖好：“我们会带你回去。”\n\n她请同伴先确认撤离路线，再把分身安排到不同路口。她记得自己接受过什么，也愿意为眼前的人争取继续生活的机会。这次救援不需要重演原作器官捐赠情节。"
+          },
+          "victory": {
+            "en": "Her soaked battle clothes are sent for repair. The medics give her a dry cardigan and dark blue skirt. She looks toward the watch post, but the companion on duty waves her back inside. Under the lamp she writes to the people now beside her. The silver box holds two different memories. \"I want to remember all of this.\"",
+            "zh": "战装沾满雪水，被送去清洗和修补。医疗队递来干燥的开衫与深蓝裙。奏换好衣服走出帐篷，又习惯性看向守夜的位置。\n\n轮值的同伴朝她摆手。她站了一会儿，终于回到灯下，在新便笺上写下给眼前同伴的话。\n\n银匣里放着两份不同的记忆。她把盒盖合上：“这些，我都想记住。”"
+          },
+          "introImage": "assets/bonds/valkyries/bond/kanade_tachibana_80_1.png",
+          "cgImage": "assets/bonds/valkyries/bond/kanade_tachibana_80_2.png",
+          "victoryImage": "assets/bonds/valkyries/kanade_tachibana_bond_80_card.png",
+          "item": "kanade_tachibana_hand_sonic",
+          "skin": "kanade_tachibana_lamplight_skin",
+          "objective": {
+            "en": "Eliminate all enemies and win; no separate wounded-ally rescue check.",
+            "zh": "消灭全部敌人并获胜，无额外伤员救援判定。"
+          },
+          "money": 0,
+          "tools": 0,
+          "medicine": 0
+        },
+        {
+          "value": 100,
+          "name": {
+            "en": "A Seat for Tomorrow",
+            "zh": "明天的座位"
+          },
+          "challenge": {
+            "en": "+1 maximum AP; Sonic Rotation; White Feather dress.",
+            "zh": "最大AP+1；音速回旋；白羽归来礼服。"
+          },
+          "location": {
+            "en": "The Classroom without Graduation",
+            "zh": "没有毕业的教室"
+          },
+          "locationDescription": {
+            "en": "Destroy 3 anchors and all enemies. Each anchor grants the terminal 25% damage reduction. The terminal summons 2 echoes every 3 rounds, up to 6 total.",
+            "zh": "摧毁3个记忆锚点并清除敌军。每锚点使终端减伤25%；终端每3轮增援2名，累计最多6名。"
+          },
+          "story": {
+            "en": "The rescued travelers are recovering and the caravan runs again. A tailor brings a white dress for a homecoming celebration. \"Who is it for?\" Kanade asks. \"Someone who wants to join us. We hope you will.\" You hand her tomorrow's breakfast and duty plans. There is an ordinary day beyond this celebration. She promises to try the dress when she returns.",
+            "zh": "获救的伤员陆续康复，车队也重新通行。大家准备了一场归来庆典。曾经受助的裁缝拿出白色礼服，紫色缎带和青色吊坠都已整理妥当。\n\n奏问：“是给谁的？”\n\n“给愿意来参加的人。我们希望你来。”\n\n她伸手摸了摸衣料，说自己从前也参加过一场重要的仪式。她记得那次告别，却不确定现在该怎样站到人群中间。团长把明天值班和早餐的安排递给她；庆典之后，仍有普通的一天等着所有人。\n\n她答应回来后试穿。"
+          },
+          "reveal": {
+            "en": "The last abnormal terminal projects a sealed classroom. Everyone smiles and nobody leaves, but every conversation repeats the same answer. Kanade remembers real school life and knows what is missing. She recalls yesterday's complaints about bland food and the snowy road, and the dress waiting at camp. \"Let us go back. Everyone is waiting.\"",
+            "zh": "遗迹最后的异常终端显露出一间封闭的校园幻景。那里总有人微笑，谁也不会离开，可每次交谈都只得到同样的回答。\n\n奏曾经珍惜过真实的校园生活，因而更清楚眼前少了什么。她想起昨天有人嫌饭太淡、有人抱怨雪路难走，也想起那件等待试穿的礼服。\n\n“回去吧。”她对同伴说，“大家还在等。”\n\n幻景只呈现空白记录与终端投影；不把音无做成需要击杀的敌人，不将异常终端冒称原作程序员或神。"
+          },
+          "victory": {
+            "en": "Kanade returns in the White Feather dress and opens her silver box. Her note remembers a first bowl, a scarf, and a night someone else kept watch. She looks up instead of reading. \"Thank you.\" The lamps stay lit; people are still discussing supper. She reaches toward the companion at the doorway and sets a bowl beside her. \"Let us eat together tomorrow too.\"",
+            "zh": "归来时庆典还没开始。奏把刀刃收起，走进裁缝的帐篷，再出现时已换上白羽礼服。有人给她让出中间的位置，她却先拿出银匣里的新便笺。\n\n上面记着许多小事：第一副餐具、一条围巾、有人替她守过的夜。她没有照着念，只认真看向围在一起的同伴。\n\n“谢谢你们。”\n\n说完之后，灯火没有熄灭，大家还在谈论晚饭。奏伸出手，招呼仍站在门边的人过来，又把一套餐具摆到身旁。\n\n“明天也一起吃饭吧。”"
+          },
+          "introImage": "assets/bonds/valkyries/bond/kanade_tachibana_100_1.png",
+          "cgImage": "assets/bonds/valkyries/bond/kanade_tachibana_100_2.png",
+          "victoryImage": "assets/bonds/valkyries/bond/kanade_tachibana_100_finale.png",
+          "item": "",
+          "skin": "kanade_tachibana_whitefeather_skin",
+          "objective": {
+            "en": "Destroy three anchors and the terminal, and clear all enemies. The terminal summons two reinforcements every three rounds, up to six.",
+            "zh": "摧毁三个锚点与终端，并消灭全部敌人；终端每三回合召唤两个增援，最多六个。"
+          },
+          "money": 0,
+          "tools": 0,
+          "medicine": 0
+        }
+      ],
+      "progression": {
+        "en": "Participate, survive and win to gain 4 bond. Complete the 20 / 40 / 60 / 80 / 100 stories and camps in order with Kanade participating and surviving. Each cleared stage unlocks an outfit; stage 100 adds Sonic Rotation. Reaching a number alone does not grant rewards.",
+        "zh": "本人参战、存活并获胜，每场获得 4 点羁绊。按 20 / 40 / 60 / 80 / 100 顺序完成故事与营地，立华奏须亲自参战并存活获胜。每阶段解锁一套服装，100 阶段追加音速回旋；仅达到数值不发奖励。"
+      }
     }
   ],
   "spirits": [
@@ -39096,6 +43846,36 @@ window.BV_WIKI_DATA = {
       "source": "scripts/items/accessory/battle_valkyries/himeko_trailblazer_summoner.nut"
     },
     {
+      "id": "kanade_tachibana_unsent_thanks",
+      "name": {
+        "en": "Unsent Thanks",
+        "zh": "未寄出的感谢"
+      },
+      "description": {
+        "en": "Kanade only. Earned by completing 'Say Who You Want to Protect'. +30 HP and +10 resolve. Allows 3 clones and a 2-round Howling cooldown while equipped. Removing it leaves summoned clones and skill cooldowns already in progress unchanged.",
+        "zh": "完成“先说出你想保护谁”后获得的立华奏专用银匣。生命+30，决心+10。装备时分身上限增至3个，咆哮冷却缩短至2轮。卸下后，已召唤的分身和正在进行的技能冷却保持不变。"
+      },
+      "acquisition": {
+        "en": "Complete Kanade Tachibana's bond 40 challenge.",
+        "zh": "完成立华奏羁绊 40 挑战后获得。"
+      },
+      "stats": {
+        "Value": 3000,
+        "ConditionMax": 1,
+        "StaminaModifier": 0
+      },
+      "image": "assets/items/items/battle-valkyries/kanade_tachibana_unsent_thanks.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
+      "source": "scripts/items/accessory/battle_valkyries/kanade_tachibana_unsent_thanks.nut",
+      "upgradeNote": {
+        "en": "Keepsake: +20 HP → +30 HP at bond 40; resolve +10. The stage reward is delivered upgraded.",
+        "zh": "信物生命 +20 → 羁绊 40 后 +30；决心 +10。该阶段发放时已升级。"
+      }
+    },
+    {
       "id": "liuying_sam_core_item",
       "name": {
         "en": "SAM Activation Core",
@@ -39170,6 +43950,36 @@ window.BV_WIKI_DATA = {
         "zh": ""
       },
       "source": "scripts/items/armor/battle_valkyries/himeko_navigator_armor.nut"
+    },
+    {
+      "id": "kanade_tachibana_uniform_armor",
+      "name": {
+        "en": "Angel Uniform",
+        "zh": "天使制服护甲"
+      },
+      "description": {
+        "en": "Kanade only. Earned by completing 'Save Her a Warm Meal'. 360 armor, -8 fatigue, +5 melee defense. Allows Distortion to block one projectile for an adjacent ally while equipped.",
+        "zh": "完成“给她留一份热饭”后获得的立华奏专用护甲。护甲360，疲劳-8，近防+5。装备时偏转可为一名邻接同伴挡下一次投射物。"
+      },
+      "acquisition": {
+        "en": "Complete Kanade Tachibana's bond 20 challenge.",
+        "zh": "完成立华奏羁绊 20 挑战后获得。"
+      },
+      "stats": {
+        "Value": 3000,
+        "ConditionMax": 280,
+        "StaminaModifier": -8
+      },
+      "image": "assets/items/items/battle-valkyries/kanade_tachibana_uniform_armor.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
+      "source": "scripts/items/armor/battle_valkyries/kanade_tachibana_uniform_armor.nut",
+      "upgradeNote": {
+        "en": "Armor: 280 base durability → 360 at bond 20; melee defense +5. The stage reward is delivered upgraded.",
+        "zh": "护甲基础耐久 280 → 羁绊 20 后 360；近防 +5。该阶段发放时已升级。"
+      }
     },
     {
       "id": "ye_shunguang_homeward_vestment",
@@ -39258,6 +44068,36 @@ window.BV_WIKI_DATA = {
       "source": "scripts/items/helmets/battle_valkyries/himeko_navigator_circlet.nut"
     },
     {
+      "id": "kanade_tachibana_feather_hairpiece",
+      "name": {
+        "en": "Quiet Feather",
+        "zh": "静羽发饰"
+      },
+      "description": {
+        "en": "Kanade only. Earned by completing 'Every Voice of Mine'. 280 armor, -3 fatigue, +10 resolve, +10 initiative, no vision penalty. Grants 3 Delay evasions while equipped.",
+        "zh": "完成“每一个我都听得见”后获得的立华奏专用发饰。护甲280，疲劳-3，决心+10，主动+10，无视野惩罚。装备时高速残像的规避次数增至3次。"
+      },
+      "acquisition": {
+        "en": "Complete Kanade Tachibana's bond 60 challenge.",
+        "zh": "完成立华奏羁绊 60 挑战后获得。"
+      },
+      "stats": {
+        "Value": 3000,
+        "ConditionMax": 220,
+        "StaminaModifier": -3
+      },
+      "image": "assets/items/items/battle-valkyries/kanade_tachibana_feather_hairpiece.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
+      "source": "scripts/items/helmets/battle_valkyries/kanade_tachibana_feather_hairpiece.nut",
+      "upgradeNote": {
+        "en": "Hairpiece: 220 base durability → 280 at bond 60; resolve +10 and upgraded initiative +10. The stage reward is delivered upgraded.",
+        "zh": "发饰基础耐久 220 → 羁绊 60 后 280；决心 +10，升级后主动值 +10。该阶段发放时已升级。"
+      }
+    },
+    {
       "id": "ye_shunguang_heartbound_circlet",
       "name": {
         "en": "Heartbound Circlet",
@@ -39314,6 +44154,38 @@ window.BV_WIKI_DATA = {
         "zh": ""
       },
       "source": "scripts/items/misc/battle_valkyries/four_oaths_grail.nut"
+    },
+    {
+      "id": "alisa_orbal_bow",
+      "name": {
+        "en": "Blazing Wing Orbal Bow",
+        "zh": "炽翼导力弓"
+      },
+      "description": {
+        "en": "An orbal bow that needs no physical arrows and can fire while engaged. Enables Alisa's innate arrow skills.",
+        "zh": "无需实体箭矢的导力弓，可在被近身时射击。亚莉莎用它释放固有箭技。"
+      },
+      "acquisition": {
+        "en": "Alisa's starter weapon on recruitment.",
+        "zh": "亚莉莎入队时配发的专属武器。"
+      },
+      "stats": {
+        "Value": 750,
+        "ConditionMax": 80,
+        "StaminaModifier": -8,
+        "RegularDamage": 40,
+        "RegularDamageMax": 55,
+        "ArmorDamageMult": 0.8,
+        "DirectDamageMult": 0.2,
+        "RangeMin": 1,
+        "RangeMax": 6
+      },
+      "image": "assets/items/items/battle-valkyries/alisa_orbal_bow.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
+      "source": "scripts/items/weapons/battle_valkyries/alisa_orbal_bow.nut"
     },
     {
       "id": "castorice_liuchun",
@@ -39612,6 +44484,42 @@ window.BV_WIKI_DATA = {
       ]
     },
     {
+      "id": "kanade_tachibana_hand_sonic",
+      "name": {
+        "en": "Hand Sonic",
+        "zh": "Hand Sonic 音速臂刃"
+      },
+      "description": {
+        "en": "Kanade arrives with these paired arm blades, classified as a two-handed sword. 85–105 damage, 130% armor damage, 35% penetration, 120 durability, -6 fatigue. Completing 'The Unsent Letter' increases damage to 105–125 and durability to 150; Hand Sonic: Pierce gains 220% armor damage and 55% penetration.",
+        "zh": "立华奏入队自带的双臂刀刃，属于双手剑类武器。伤害85至105，破甲130%，穿透35%，耐久120，疲劳-6。完成“未能寄出的那封信”后，伤害提升至105至125、耐久提升至150，音速贯穿的破甲提升至220%、穿透提升至55%。"
+      },
+      "acquisition": {
+        "en": "Equipped on recruitment; upgraded after completing bond 80. Missing bound equipment can be replaced through Kanade's event shop.",
+        "zh": "入队时配发并装备，完成羁绊 80 挑战后升级；丢失的绑定装备可通过立华奏事件商店补购。"
+      },
+      "stats": {
+        "Value": 3000,
+        "ConditionMax": 120,
+        "StaminaModifier": -6,
+        "RangeMin": 1,
+        "RangeMax": 1,
+        "RegularDamage": 85,
+        "RegularDamageMax": 105,
+        "ArmorDamageMult": 1.3,
+        "DirectDamageMult": 0.35
+      },
+      "image": "assets/items/items/battle-valkyries/kanade_tachibana_hand_sonic.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
+      "source": "scripts/items/weapons/battle_valkyries/kanade_tachibana_hand_sonic.nut",
+      "upgradeNote": {
+        "en": "Hand Sonic: 85–105 damage and 120 durability → 105–125 damage and 150 durability after bond 80.",
+        "zh": "音速臂刃：伤害 85–105、耐久 120 → 羁绊 80 后伤害 105–125、耐久 150。"
+      }
+    },
+    {
       "id": "m4a1_homecoming_rifle",
       "name": {
         "en": "M4A1: Homecoming",
@@ -39784,6 +44692,100 @@ window.BV_WIKI_DATA = {
       ]
     },
     {
+      "id": "renne_annihilation_scythe",
+      "name": {
+        "en": "Annihilation Scythe",
+        "zh": "歼灭巨镰"
+      },
+      "description": {
+        "en": "Renne's black-and-gold great scythe, enabling her innate scythe skills. Ordinary attacks use the weapon's own damage.",
+        "zh": "玲的黑金巨镰。用于固有镰技；普通攻击仍使用武器自身伤害。"
+      },
+      "acquisition": {
+        "en": "Renne's starter weapon on recruitment.",
+        "zh": "玲入队时配发的专属武器。"
+      },
+      "stats": {
+        "Value": 750,
+        "ConditionMax": 80,
+        "StaminaModifier": -12,
+        "RegularDamage": 55,
+        "RegularDamageMax": 80,
+        "ArmorDamageMult": 1.05,
+        "DirectDamageMult": 0.3,
+        "RangeMin": 1,
+        "RangeMax": 2
+      },
+      "image": "assets/items/items/battle-valkyries/renne_annihilation_scythe.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
+      "source": "scripts/items/weapons/battle_valkyries/renne_annihilation_scythe.nut"
+    },
+    {
+      "id": "saber_oath_excalibur",
+      "name": {
+        "en": "Excalibur",
+        "zh": "誓约胜利之剑"
+      },
+      "description": {
+        "en": "The holy sword manifested through a restored mana circuit. Its blue-and-gold hilt is familiar, but its bearer has learned to entrust her road home to another.",
+        "zh": "供能回路恢复完整后显现的圣剑。蓝金剑柄仍然熟悉，握住它的人却已经学会将归途交付给另一个人。"
+      },
+      "acquisition": {
+        "en": "Complete Saber's bond 60 challenge.",
+        "zh": "完成Saber羁绊 60 挑战后获得。"
+      },
+      "stats": {
+        "Value": 6000,
+        "ConditionMax": 120,
+        "StaminaModifier": -12,
+        "RegularDamage": 80,
+        "RegularDamageMax": 100,
+        "ArmorDamageMult": 1.3,
+        "DirectDamageMult": 0.25
+      },
+      "image": "assets/items/items/battle-valkyries/saber_oath_excalibur.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
+      "source": "scripts/items/weapons/battle_valkyries/saber_oath_excalibur.nut"
+    },
+    {
+      "id": "tio_orbal_staff",
+      "name": {
+        "en": "Basic Orbal Staff",
+        "zh": "基础魔导杖"
+      },
+      "description": {
+        "en": "Tio’s prototype staff. Fires short-range orbal pulses without ammunition.",
+        "zh": "提欧使用的测试型魔导杖。无需弹药，发射短程导力脉冲。"
+      },
+      "acquisition": {
+        "en": "Tio's starter equipment, delivered after Septium Workshop stage 8.",
+        "zh": "异乡的导力工房第 8 节后随缇欧配发。"
+      },
+      "stats": {
+        "Value": 450,
+        "ConditionMax": 80,
+        "StaminaModifier": -8,
+        "RegularDamage": 30,
+        "RegularDamageMax": 45,
+        "ArmorDamageMult": 0.8,
+        "DirectDamageMult": 0.2,
+        "RangeMin": 1,
+        "RangeMax": 3
+      },
+      "image": "assets/items/items/battle-valkyries/tio_orbal_staff.png",
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
+      "source": "scripts/items/weapons/battle_valkyries/tio_orbal_staff.nut"
+    },
+    {
       "id": "xilian_infinite_oath_bow",
       "name": {
         "en": "\"Infinity\"'s Oath",
@@ -39841,6 +44843,150 @@ window.BV_WIKI_DATA = {
         "zh": ""
       },
       "source": "scripts/items/weapons/battle_valkyries/ye_shunguang_qingming_casket.nut"
+    },
+    {
+      "id": "orbment_starrail",
+      "name": {
+        "en": "Starrail Orbment",
+        "zh": "星轨导力器"
+      },
+      "description": {
+        "en": "A seven-socket orbment. Prepare active and passive skills from circuit elements. Not craftable; obtained from chapters and the first acquisition of Trails characters.",
+        "zh": "七孔导力器。通过线路属性组合准备主动与被动技能。无法制作，仅由篇章和轨迹角色首次加入提供。"
+      },
+      "acquisition": {
+        "en": "Septium Workshop, stage 8.",
+        "zh": "异乡的导力工房第 8 节。"
+      },
+      "stats": {
+        "Value": 3500
+      },
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
+      "source": "scripts/items/accessory/battle_valkyries/orbment_item.nut",
+      "image": "assets/orbments/items/battle-valkyries/orbment_starrail.png"
+    },
+    {
+      "id": "orbment_twinwing",
+      "name": {
+        "en": "Twinwing Orbment",
+        "zh": "双翼导力器"
+      },
+      "description": {
+        "en": "A seven-socket orbment. Prepare active and passive skills from circuit elements. Not craftable; obtained from chapters and the first acquisition of Trails characters.",
+        "zh": "七孔导力器。通过线路属性组合准备主动与被动技能。无法制作，仅由篇章和轨迹角色首次加入提供。"
+      },
+      "acquisition": {
+        "en": "Septium Workshop stage 8; Shizuna also receives one on recruitment.",
+        "zh": "异乡的导力工房第 8 节；静名入队也配发一台。"
+      },
+      "stats": {
+        "Value": 3500
+      },
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
+      "source": "scripts/items/accessory/battle_valkyries/orbment_item.nut",
+      "image": "assets/orbments/items/battle-valkyries/orbment_twinwing.png"
+    },
+    {
+      "id": "orbment_triskelion",
+      "name": {
+        "en": "Triskelion Orbment",
+        "zh": "三棱导力器"
+      },
+      "description": {
+        "en": "A seven-socket orbment. Prepare active and passive skills from circuit elements. Not craftable; obtained from chapters and the first acquisition of Trails characters.",
+        "zh": "七孔导力器。通过线路属性组合准备主动与被动技能。无法制作，仅由篇章和轨迹角色首次加入提供。"
+      },
+      "acquisition": {
+        "en": "Septium Workshop, stage 8.",
+        "zh": "异乡的导力工房第 8 节。"
+      },
+      "stats": {
+        "Value": 3500
+      },
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
+      "source": "scripts/items/accessory/battle_valkyries/orbment_item.nut",
+      "image": "assets/orbments/items/battle-valkyries/orbment_triskelion.png"
+    },
+    {
+      "id": "orbment_star_reader",
+      "name": {
+        "en": "Star Reader",
+        "zh": "星读"
+      },
+      "description": {
+        "en": "A seven-socket orbment. Prepare active and passive skills from circuit elements. Not craftable; obtained from chapters and the first acquisition of Trails characters.",
+        "zh": "七孔导力器。通过线路属性组合准备主动与被动技能。无法制作，仅由篇章和轨迹角色首次加入提供。"
+      },
+      "acquisition": {
+        "en": "Tio's starter equipment, delivered after Septium Workshop stage 8.",
+        "zh": "异乡的导力工房第 8 节后随缇欧配发。"
+      },
+      "stats": {
+        "Value": 3500
+      },
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
+      "source": "scripts/items/accessory/battle_valkyries/orbment_item.nut",
+      "image": "assets/orbments/items/battle-valkyries/tio_star_reader_orbment.png"
+    },
+    {
+      "id": "orbment_renne_aster",
+      "name": {
+        "en": "Aster",
+        "zh": "紫苑"
+      },
+      "description": {
+        "en": "A seven-socket orbment. Prepare active and passive skills from circuit elements. Not craftable; obtained from chapters and the first acquisition of Trails characters.",
+        "zh": "七孔导力器。通过线路属性组合准备主动与被动技能。无法制作，仅由篇章和轨迹角色首次加入提供。"
+      },
+      "acquisition": {
+        "en": "Equipped on Renne's recruitment, with a configured circuit.",
+        "zh": "玲入队配发，附带已装配回路。"
+      },
+      "stats": {
+        "Value": 3500
+      },
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
+      "source": "scripts/items/accessory/battle_valkyries/orbment_item.nut",
+      "image": "assets/orbments/items/battle-valkyries/renne_aster_orbment.png"
+    },
+    {
+      "id": "orbment_alisa_blazing_wing",
+      "name": {
+        "en": "Blazing Wing",
+        "zh": "炽翼"
+      },
+      "description": {
+        "en": "A seven-socket orbment. Prepare active and passive skills from circuit elements. Not craftable; obtained from chapters and the first acquisition of Trails characters.",
+        "zh": "七孔导力器。通过线路属性组合准备主动与被动技能。无法制作，仅由篇章和轨迹角色首次加入提供。"
+      },
+      "acquisition": {
+        "en": "Equipped on Alisa's recruitment, with a configured circuit.",
+        "zh": "亚莉莎入队配发，附带已装配回路。"
+      },
+      "stats": {
+        "Value": 3500
+      },
+      "tooltip": {
+        "en": "",
+        "zh": ""
+      },
+      "source": "scripts/items/accessory/battle_valkyries/orbment_item.nut",
+      "image": "assets/orbments/items/battle-valkyries/alisa_blazing_wing_orbment.png"
     }
   ],
   "skillCatalog": [
@@ -41081,7 +46227,7 @@ window.BV_WIKI_DATA = {
           "name": "Strike Air",
           "description": "Release Invisible Air as a crushing wind hammer through every enemy in a straight line.",
           "tooltip": [
-            "Requires 2 Mana and a melee weapon. Select an enemy on a visible straight line at range 1-4; each enemy is attacked separately with +25 chance to hit, no distance penalty, and ignored shield defense.",
+            "Requires a melee weapon; see the Mana cost below. Select an enemy on a visible straight line at range 1-4; each enemy is attacked separately with +25 chance to hit, no distance penalty, and ignored shield defense.",
             "Deals 100% weapon damage and 200% armor damage to each enemy, resolving farthest to nearest.",
             "Each surviving hit target is pushed directly away from Saber by up to 2 tiles and Dazed for 1 turn. Failed or immune pushes still attempt Daze."
           ]
@@ -41090,7 +46236,7 @@ window.BV_WIKI_DATA = {
           "name": "风王铁槌",
           "description": "Saber 释放风王结界，将压缩风化为贯穿直线敌阵的铁槌。",
           "tooltip": [
-            "需要 2 点魔力和近战武器。选择 1 至 4 格内直线上一名可见敌人；每名敌人独立判定，命中 +25，不受距离衰减并无视盾牌防御。",
+            "需要近战武器，魔力消耗见下方。选择 1 至 4 格内直线上一名可见敌人；每名敌人独立判定，命中 +25，不受距离衰减并无视盾牌防御。",
             "对每名敌人造成 100% 武器伤害和 200% 护甲伤害，按距离由远到近结算。",
             "命中存活目标后，将其沿远离 Saber 的方向击退最多 2 格并施加 1 回合茫然；无法击退或免疫击退时仍尝试施加茫然。"
           ]
@@ -47392,12 +52538,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Dark Queen",
-          "description": "Legal direct weapon attacks add 50% of current Resolve as normal damage, once per target per action. Spell formulas already include this bonus. Each growth stage adds 1 maximum AP (stages 0–5: 9–14 AP).",
+          "description": "Direct weapon attacks add 50% of current Resolve as normal damage, once per target per action. Spell formulas already include this bonus. Each growth stage adds 1 maximum AP (stages 0–5: 9–14 AP).",
           "tooltip": []
         },
         "zh": {
           "name": "黑暗精灵女王",
-          "description": "合法武器直接攻击追加当前决心的 50% 普通伤害；每次施放对同一目标只追加一次。法术公式已包含女王加值。每个成长阶段额外获得 1 点行动点上限（阶段 0–5：9–14 点）。",
+          "description": "武器直接攻击追加当前决心的 50% 普通伤害；每次施放对同一目标只追加一次。法术公式已包含女王加值。每个成长阶段额外获得 1 点行动点上限（阶段 0–5：9–14 点）。",
           "tooltip": []
         }
       }
@@ -47434,12 +52580,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Curse Recovery",
-          "description": "Once per global round, the first offensive spell hit against an enemy already cursed before the cast refunds 10 Fatigue, or 15 from stage 3. Area attacks trigger once; a new Eclipse curse does not qualify.",
+          "description": "Once per round, the first offensive spell hit against an enemy already cursed before the cast refunds 10 Fatigue, or 15 from stage 3. Area attacks trigger once; a new Eclipse curse does not qualify.",
           "tooltip": []
         },
         "zh": {
           "name": "诅咒回疲",
-          "description": "每个全局轮次首次用攻击法术命中施法前已受女王诅咒的敌人，返还 10 点疲劳；阶段 3 起返还 15 点。范围法术只触发一次，月蚀本次新施加的诅咒不触发。",
+          "description": "每轮首次用攻击法术命中施法前已受女王诅咒的敌人，返还 10 点疲劳；阶段 3 起返还 15 点。范围法术只触发一次，月蚀本次新施加的诅咒不触发。",
           "tooltip": []
         }
       }
@@ -47594,12 +52740,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Dark Annihilation",
-          "description": "Unlocked at stage 3. Automatically hits one enemy’s body for 240 + 0.8 × current Resolve; armor damage 200%, penetration 80%. Once per global round. Costs 6 AP and 32 Fatigue; range 1–7.",
+          "description": "Unlocked at stage 3. Automatically hits one enemy’s body for 240 + 0.8 × current Resolve; armor damage 200%, penetration 80%. Once per round. Costs 6 AP and 32 Fatigue; range 1–7.",
           "tooltip": []
         },
         "zh": {
           "name": "黑暗湮灭",
-          "description": "阶段 3 解锁。必定命中单个敌人，造成 240 + 0.8 × 当前决心的躯干伤害；护甲伤害 200%，穿甲 80%。每全局轮次限用一次。6 行动点，32 疲劳，射程 1–7。",
+          "description": "阶段 3 解锁。必定命中单个敌人，造成 240 + 0.8 × 当前决心的躯干伤害；护甲伤害 200%，穿甲 80%。每轮限用一次。6 行动点，32 疲劳，射程 1–7。",
           "tooltip": []
         }
       }
@@ -47626,12 +52772,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Soul Enslavement",
-          "description": "Unlocked at stage 4. Directly control a safe humanoid enemy, including champions, until its next normal turn ends. Existing AP, Fatigue, ammunition and cooldowns are preserved, then original faction and AI are restored. Twice per battle, one target at a time. Excludes special, multi-tile and last enemies. Inventory access and retreat are blocked. Costs 6 AP and 30 Fatigue; range 1–7.",
+          "description": "Unlocked at stage IV. Temporarily control one humanoid enemy, including champions, until the end of its next normal turn, then return it to the enemy side. Preserve its AP, fatigue, ammunition and cooldowns. Twice per battle, one controlled unit at a time. Cannot control special enemies, multi-tile creatures or the last remaining enemy. The controlled unit cannot access its inventory or retreat. Costs 6 AP and 30 fatigue; range 1–7 tiles.",
           "tooltip": []
         },
         "zh": {
           "name": "灵魂奴化",
-          "description": "阶段 4 解锁。直接操作一个可安全控制的人形敌人（包含冠军），直至其下一个正常行动回合结束。保留现有行动点、疲劳、弹药和冷却，结束后恢复原阵营与 AI。每战 2 次，同时最多 1 人；不能控制特殊、多格或最后一个敌人，不能操作背包或撤退。6 行动点，30 疲劳，射程 1–7。",
+          "description": "Ⅳ阶段解锁。暂时直接操控一名人形敌人（包括冠军），直到其下一次正常行动结束，再恢复敌方身份。保留目标现有行动点、疲劳、弹药和冷却。每场战斗最多两次，同时只能控制一人；特殊敌人、多格生物和战场上最后一名敌人不能被控制。受控期间不能操作其背包或令其撤退。消耗6行动点、30疲劳，射程1至7格。",
           "tooltip": []
         }
       }
@@ -47658,12 +52804,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Eclipse",
-          "description": "Unlocked at stage 5. Automatically hits enemies within 2 tiles of a visible center for 220 + current Resolve body damage; armor damage 200%, penetration 75%. Survivors receive Queen’s Curse and webs, respecting root immunity. Cooldown: 3 global rounds. Costs 8 AP and 45 Fatigue; range 2–8.",
+          "description": "Unlocked at stage 5. Automatically hits enemies within 2 tiles of a visible center for 220 + current Resolve body damage; armor damage 200%, penetration 75%. Survivors receive Queen’s Curse and webs, respecting root immunity. Cooldown: 3 rounds. Costs 8 AP and 45 Fatigue; range 2–8.",
           "tooltip": []
         },
         "zh": {
           "name": "月蚀终焉",
-          "description": "阶段 5 解锁。指定可见中心及周围 2 格，仅攻击敌人，必定命中，造成 220 + 当前决心的躯干伤害；护甲伤害 200%，穿甲 75%。存活敌人受到女王诅咒与蛛网束缚（尊重束缚免疫）。全局轮次冷却 3 轮。8 行动点，45 疲劳，射程 2–8。",
+          "description": "阶段 5 解锁。指定可见中心及周围 2 格，仅攻击敌人，必定命中，造成 220 + 当前决心的躯干伤害；护甲伤害 200%，穿甲 75%。存活敌人受到女王诅咒与蛛网束缚（免疫束缚的敌人不受影响）。冷却 3 轮。8 行动点，45 疲劳，射程 2–8。",
           "tooltip": []
         }
       }
@@ -47679,12 +52825,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Blackblade Guard",
-          "description": "With a one-handed melee weapon and shield: +15 accuracy, +50 percentage points weapon damage and +30 penetration; at V: +25/+100/+50. Recover 10 fatigue on the first normal turn each round, 20 from IV. Fortress unlocks at III and lasts all battle at V. Maximum AP: 9/10/10/11/11/12. Includes the native Shield Expert, Steel Brow, Underdog, Pathfinder, Recover and Footwork perks.",
+          "description": "With a one-handed melee weapon and shield: +15 hit chance, +50 percentage points of weapon damage and +30 percentage points of armor penetration. At stage V these become +25, +100 and +50 respectively. Recover 10 fatigue at the first normal turn each round, or 20 from stage IV. Unlock Obsidian Fortress at III; at V it remains active throughout battle. Maximum AP by stage: 9, 10, 10, 11, 11, 12. Includes Shield Expert, Steel Brow, Underdog, Pathfinder, Recover and Footwork.",
           "tooltip": []
         },
         "zh": {
           "name": "黑刃守势",
-          "description": "单手近战武器与盾牌：命中 +15，武器倍率 +50 个百分点，穿透 +30 个百分点；Ⅴ改为 +25 / +100 / +50。每轮首次正常行动回疲 10，Ⅳ起 20。Ⅲ解锁堡垒，Ⅴ堡垒本场永久。最大 AP 按阶段为 9/10/10/11/11/12。 自带盾牌专家、铁头、独行侠、探路者、恢复与灵巧六项原版能力。",
+          "description": "持单手近战武器和盾牌时，命中提高15点，武器伤害提高50个百分点，穿甲提高30个百分点；Ⅴ阶段分别提高为25点、100个百分点和50个百分点。每轮首次行动开始时恢复10疲劳，Ⅳ阶段起恢复20。Ⅲ阶段解锁黑曜堡垒，Ⅴ阶段自动维持堡垒至战斗结束。最大行动点随阶段依次为9、10、10、11、11、12。自带盾牌专家、铁头、独行侠、探路者、恢复和灵巧。",
           "tooltip": []
         }
       }
@@ -47716,7 +52862,7 @@ window.BV_WIKI_DATA = {
         },
         "zh": {
           "name": "黑月斩",
-          "description": "4 AP / 18 疲劳。相邻单敌。武器倍率190%，Ⅳ210%，Ⅴ260%；护甲125%，总命中+35（Ⅴ+45），穿透为武器原值+45个百分点（Ⅴ+65）；无视盾牌。",
+          "description": "4 AP / 18 疲劳。相邻单敌。武器伤害190%，Ⅳ210%，Ⅴ260%；护甲125%，命中+35（Ⅴ+45），穿透为武器原值+45个百分点（Ⅴ+65）；无视盾牌。",
           "tooltip": []
         }
       }
@@ -47743,12 +52889,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Guard Exchange",
-          "description": "1 AP / 5 fatigue. With shield, exchange with an adjacent movable ally without opportunity attacks and gain Shieldwall. Once each round, twice at V. Next legal paid one-handed attack costs -1 AP/-8 fatigue; I -2/-12 and +30 damage percentage points per hit. Consumed even on a miss, expires this round.",
+          "description": "Costs 1 AP and 5 fatigue. While holding a shield, exchange places with an adjacent movable ally without provoking attacks of opportunity. Gain Shieldwall: add the shield’s defense again and gain further defense alongside adjacent units of the same faction also using Shieldwall. Once per round, twice at stage V. The next active one-handed weapon attack this round costs 1 less AP and 8 less fatigue; from stage I, 2 less AP and 12 less fatigue, plus 30 percentage points of weapon damage per strike. Consumed even on a miss.",
           "tooltip": []
         },
         "zh": {
           "name": "近卫换位",
-          "description": "1 AP / 5 疲劳。持盾，选择可移动的相邻友军交换位置，不触发借机；获得原版盾墙。每轮1次，Ⅴ2次。下次合法付费单手攻击 AP -1、疲劳-8；Ⅰ起 -2/-12且每段倍率+30个百分点，未命中也消费，本轮结束失效。",
+          "description": "消耗1行动点、5疲劳。持盾时与相邻且能够移动的友军交换位置，不触发借机攻击，并获得盾墙：额外增加盾牌提供的近战和远程防御，与相邻正在举盾的同阵营单位互相提高防御。每轮一次，Ⅴ阶段每轮两次。本轮下一次主动单手武器攻击少消耗1行动点、8疲劳；Ⅰ阶段起改为少消耗2行动点、12疲劳，且每次打击增加30个百分点武器伤害。即使失手也会用掉这次强化。",
           "tooltip": []
         }
       }
@@ -47780,7 +52926,7 @@ window.BV_WIKI_DATA = {
         },
         "zh": {
           "name": "黑曜守势",
-          "description": "2 AP / 12 疲劳。自身近防 +30，持续到后续轮次首次正常行动开始。等待与额外行动不提前结束，重复施放只刷新。不限制装备，Ⅲ被黑曜堡垒替换。",
+          "description": "2 AP / 12 疲劳。自身近战防御 +30，持续到后续轮次首次正常行动开始。等待与额外行动不提前结束，重复施放只刷新。不限制装备，Ⅲ被黑曜堡垒替换。",
           "tooltip": []
         }
       }
@@ -47812,7 +52958,7 @@ window.BV_WIKI_DATA = {
         },
         "zh": {
           "name": "暗月双刃",
-          "description": "5 AP / 25 疲劳。每轮1次，进行两段独立攻击；每段倍率140%，Ⅳ160%，Ⅴ210%，护甲125%，命中+35（Ⅴ+45），武器穿透+40个百分点（Ⅴ+60），无视盾牌。Ⅱ至Ⅲ仅原目标；Ⅳ起可选择同一人或两名相邻敌人。死亡后不自动改选。",
+          "description": "5 AP / 25 疲劳。每轮1次，连续攻击两次；每次打击武器伤害140%，Ⅳ160%，Ⅴ210%，护甲125%，命中+35（Ⅴ+45），武器穿透+40个百分点（Ⅴ+60），无视盾牌。Ⅱ至Ⅲ仅原先选择的目标；Ⅳ起可选择同一人或两名相邻敌人。死亡后不自动改选。",
           "tooltip": []
         }
       }
@@ -47844,7 +52990,7 @@ window.BV_WIKI_DATA = {
         },
         "zh": {
           "name": "黑曜堡垒",
-          "description": "2 AP / 18 疲劳。不限制装备。自身双防 +40、直接生命和护甲伤害降低30%、免疫强制位移，至后续轮次首次正常行动开始。Ⅴ成为本场永久被动，不再需要按钮。",
+          "description": "2 AP / 18 疲劳。不限制装备。自身近战和远程防御 +40、直接攻击造成的生命和护甲损失降低30%、免疫强制位移，至后续轮次首次正常行动开始。Ⅴ开战后自动生效至战斗结束，无需施放。",
           "tooltip": []
         }
       }
@@ -47860,12 +53006,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Silver Swordmaster",
-          "description": "With a one-handed sword and empty offhand: paid sword skills cost 1 less AP, +10 accuracy and +25 penetration. Sword momentum starts at 2/5 stacks, III at 3/8, V at 5/10. Each stack grants +5 melee skill/defense; from III, an independent 5% weapon-damage bonus. Gain once per paid action that hits; IV adds one extra on the first such action each round. Expires after two full following rounds; permanent in battle at V. I ignores shields and applies -10 melee defense for two normal turns.",
+          "description": "With a one-handed sword and empty offhand: ordinary active weapon attacks cost 1 less AP, with +10 hit chance and +25 percentage points of armor penetration. Start battle with 2 Sword Momentum stacks, maximum 5; stage III starts at 3 with maximum 8, stage V at 5 with maximum 10. Each stack grants +5 Melee Skill and Defense; from III, also +5% weapon damage. Gain one stack per active attack that hits, once for a multi-hit attack; IV adds one more on the first hit each round. Without a refresh, stacks expire at the end of your turn two rounds later; at V they last through battle. From I, ignore shields and reduce a hit enemy’s Melee Defense by 10 for two normal turns.",
           "tooltip": []
         },
         "zh": {
           "name": "白银剑姬",
-          "description": "单手剑且副手空置：主动剑技 AP -1，命中 +10，穿透 +25 个百分点。初始剑势 2 层、上限 5；Ⅲ为 3/8，Ⅴ为 5/10。每层近战技能与防御 +5；Ⅲ起每层独立增加 5% 武器伤害。每次付费攻击命中最多叠一层，Ⅳ每轮首次再叠一层。刷新后保留两个完整后续轮次，Ⅴ本场永久。Ⅰ无视盾牌并施加两次正常行动的近防 -10。",
+          "description": "持单手剑且副手为空时，普通主动武器攻击少消耗1行动点，命中提高10点，穿甲提高25个百分点。开战时获得2层剑势，最多5层；Ⅲ阶段开战3层、最多8层，Ⅴ阶段开战5层、最多10层。每层提高5点近战技能和近战防御；Ⅲ阶段起每层再提高5%武器伤害。每次主动攻击命中增加1层，连击只增加一次；Ⅳ阶段每轮首次命中再加1层。不再刷新时，剑势在下下轮自身行动结束时消失；Ⅴ阶段持续至战斗结束。Ⅰ阶段起无视盾牌，命中还使敌人近战防御降低10点，持续其两次正常行动。",
           "tooltip": []
         }
       }
@@ -47897,7 +53043,7 @@ window.BV_WIKI_DATA = {
         },
         "zh": {
           "name": "荣光突刺",
-          "description": "3 AP / 12 疲劳。相邻单敌，倍率125%，Ⅲ起150%，沿用剑的护甲比例；总命中+30，武器穿透+40个百分点。Ⅳ疲劳降至10。剑势伤害独立结算。",
+          "description": "3 AP / 12 疲劳。相邻单敌，武器伤害125%，Ⅲ起150%，沿用剑的护甲比例；命中+30，武器穿透+40个百分点。Ⅳ疲劳降至10。Ⅲ阶段起，每层剑势再提高5%武器伤害。",
           "tooltip": []
         }
       }
@@ -47924,12 +53070,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Seamless Counter",
-          "description": "2 AP / 12 fatigue. Gain +20 melee defense until the first normal turn in a later round. A paid adjacent single-target melee miss triggers a free 100% counter (IV 150%), +10 accuracy/+25 weapon penetration points. Completed counters restore 5 fatigue, at most 30 per round. No counters to opportunity/ranged/area attacks or while rooted, stunned or disarmed.",
+          "description": "2 AP / 12 fatigue. Gain +20 melee defense until the first normal turn in a later round. An active adjacent single-target melee miss triggers a free 100% counter (IV 150%), +10 accuracy/+25 weapon penetration points. Completed counters restore 5 fatigue, at most 30 per round. No counters to opportunity/ranged/area attacks or while rooted, stunned or disarmed.",
           "tooltip": []
         },
         "zh": {
           "name": "无隙反击",
-          "description": "2 AP / 12 疲劳。近防+20，持续至后续轮次首次正常行动开始。相邻敌人的付费单体近战失手时免费反击，倍率100%（Ⅳ150%）、命中+10、武器穿透+25个百分点；完成反击回疲5，每轮最多30。不反击借机、远程或群攻；被定身/眩晕/缴械时不触发。",
+          "description": "2 AP / 12 疲劳。近战防御+20，持续至后续轮次首次正常行动开始。相邻敌人的主动单体近战攻击失手时免费反击，武器伤害100%（Ⅳ150%）、命中+10、武器穿透+25个百分点；完成反击恢复疲劳5，每轮最多30。不反击借机、远程或群攻；被束缚、眩晕或缴械时不触发。",
           "tooltip": []
         }
       }
@@ -47956,12 +53102,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Endless Sword Breath",
-          "description": "2 AP / 0 fatigue. Once per round, restore 30 fatigue, 40 from IV. Requires one-handed sword, empty offhand and positive current fatigue. Does not attack or add momentum.",
+          "description": "2 AP / 0 fatigue. Once per round, restore 30 fatigue, 40 from IV. Requires a one-handed sword, no separate offhand item equipped and positive current fatigue. Does not attack or add momentum.",
           "tooltip": []
         },
         "zh": {
           "name": "无尽剑息",
-          "description": "2 AP / 0 疲劳。每轮1次，恢复30疲劳，Ⅳ起40。须持单手剑、副手空置且当前疲劳大于0。不攻击、不叠剑势。",
+          "description": "2 AP / 0 疲劳。每轮1次，恢复30疲劳，Ⅳ起40。须持单手剑、未额外装备副手物品且当前疲劳大于0。不攻击、不叠剑势。",
           "tooltip": []
         }
       }
@@ -47993,7 +53139,7 @@ window.BV_WIKI_DATA = {
         },
         "zh": {
           "name": "白银三连",
-          "description": "5 AP / 25 疲劳。每轮1次，同一敌人三段各85%武器伤害，Ⅴ各100%；沿用剑护甲比例，命中+25，武器穿透+25个百分点，剑势另计。死亡即停止。Ⅴ施放前已有10层剑势时费用为4 AP，技能中叠满不退费。",
+          "description": "5 AP / 25 疲劳。每轮1次，同一敌人三次打击各85%武器伤害，Ⅴ各100%；沿用剑护甲比例，命中+25，武器穿透+25个百分点，Ⅲ阶段起，每层剑势再提高5%武器伤害。死亡即停止。Ⅴ施放时已有10层剑势时费用为4 AP，技能中叠满不退费。",
           "tooltip": []
         }
       }
@@ -48009,12 +53155,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Siegebreaker",
-          "description": "Two-handed hammer: +15 accuracy, +50 armor-damage percentage points and +15 penetration. With body armor, take 20% less armor damage and resist forced movement. Paid hits apply -25 defenses and 1.5x armor damage received after damage; III replaces these with -30, 2x and +25 attacker penetration, permanent at V. III adds 50 weapon-damage percentage points against fully unarmored targets. The first active armor break each round recovers 12 fatigue.",
+          "description": "With a two-handed hammer: +15 hit chance, +50 percentage points of armor damage and +15 percentage points of armor penetration. While body armor remains, take 20% less armor damage and resist forced movement. Active hammer hits apply Siegebreaker Fracture for two normal turns: -25 Melee and Ranged Defense and +50% armor damage taken. At III: -30 defenses, +100% armor damage taken, and attacks against the target gain 25 percentage points of penetration. At V, Fracture lasts through battle. From III, attacks against enemies with neither head nor body armor gain 50 percentage points of weapon damage. Recover 12 fatigue the first time each round you destroy an enemy’s head or body armor.",
           "tooltip": []
         },
         "zh": {
           "name": "破城震击",
-          "description": "双手锤：命中 +15，护甲伤害 +50 个百分点，穿透 +15 个百分点。有身甲时护甲受伤降低 20%，免疫强制位移。付费锤击结算后施加双防 -25、护甲受伤 ×1.5；Ⅲ替换为 -30、×2、攻击者穿透 +25 个百分点，Ⅴ永久。Ⅲ攻击完全无甲目标时武器倍率额外 +50 个百分点。每轮首次主动打破正值护甲回疲 12。",
+          "description": "持双手锤时，命中提高15点，护甲伤害提高50个百分点，穿甲提高15个百分点。身甲尚未耗尽时，受到的护甲伤害降低20%，免疫强制位移。主动锤击命中后施加破城裂隙：敌人近战和远程防御各降低25点，受到的护甲伤害增加50%，持续两次正常行动。Ⅲ阶段改为防御各降低30点、受到的护甲伤害增加100%，攻击该敌人的穿甲额外提高25个百分点；Ⅴ阶段持续至战斗结束。Ⅲ阶段起，对头甲和身甲都已耗尽的敌人额外增加50个百分点武器伤害。每轮首次击毁敌人头甲或身甲时恢复12疲劳。",
           "tooltip": []
         }
       }
@@ -48046,7 +53192,7 @@ window.BV_WIKI_DATA = {
         },
         "zh": {
           "name": "攻城重锤",
-          "description": "4 AP / 20 疲劳。相邻敌人150%武器伤害，护甲250%，穿透50%，总命中+35；命中后施加茫然、踉跄及破城减益。Ⅲ无甲倍率加值另外结算。",
+          "description": "4 AP / 20 疲劳。相邻敌人150%武器伤害，护甲250%，穿透50%，命中+35；命中后施加茫然、踉跄及破城裂隙。Ⅲ阶段起，攻击头甲和身甲均已耗尽的敌人时，再增加50个百分点武器伤害。",
           "tooltip": []
         }
       }
@@ -48073,12 +53219,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Armor-Shattering Wedge",
-          "description": "3 AP / 16 fatigue. Once per round: adjacent enemy, 100% weapon/350% armor/15% penetration/+40 accuracy. After hit damage, remove floor(25% remaining armor) from head and body; misses do not shave armor.",
+          "description": "3 AP / 16 fatigue. Once per round: adjacent enemy, 100% weapon/350% armor/15% penetration/+40 accuracy. After hit damage, remove 25% of remaining armor, rounded down from head and body; misses do not shave armor.",
           "tooltip": []
         },
         "zh": {
           "name": "碎甲楔击",
-          "description": "3 AP / 16 疲劳。每轮1次。相邻敌人倍率100%，护甲350%，穿透15%，命中+40；伤害后再削去当时剩余头甲、身甲各25%，向下取整；失手不削甲。",
+          "description": "3 AP / 16 疲劳。每轮1次。相邻敌人武器伤害100%，护甲350%，穿透15%，命中+40；伤害后再削去当时剩余头甲、身甲各25%，向下取整；失手不削甲。",
           "tooltip": []
         }
       }
@@ -48110,7 +53256,7 @@ window.BV_WIKI_DATA = {
         },
         "zh": {
           "name": "地裂横扫",
-          "description": "5 AP / 26 疲劳。每轮1次，全部相邻敌人各120%武器伤害，护甲275%，穿透40%，命中+30，命中施加茫然、踉跄与破城减益，不伤友军。",
+          "description": "5 AP / 26 疲劳。每轮1次，全部相邻敌人各120%武器伤害，护甲275%，穿透40%，命中+30，命中施加茫然、踉跄与破城裂隙，不伤友军。",
           "tooltip": []
         }
       }
@@ -48142,7 +53288,7 @@ window.BV_WIKI_DATA = {
         },
         "zh": {
           "name": "震城波",
-          "description": "6 AP / 30 疲劳。每轮1次，1至3格中心及第一圈。各敌人140%武器伤害，护甲300%，穿透45%，命中+35，命中附加茫然、踉跄与破城减益；中心尝试眩晕，遵守原有免疫。",
+          "description": "6 AP / 30 疲劳。每轮1次，1至3格中心及周围1格。各敌人140%武器伤害，护甲300%，穿透45%，命中+35，命中附加茫然、踉跄与破城裂隙；中心尝试眩晕，遵守原有免疫。",
           "tooltip": []
         }
       }
@@ -48174,7 +53320,7 @@ window.BV_WIKI_DATA = {
         },
         "zh": {
           "name": "白城陨落",
-          "description": "6 AP / 36 疲劳。每轮1次。首击200%武器伤害、护甲550%、穿透65%、命中+45。命中后剩余头甲和身甲清零；原目标仍存活才追击一次，倍率200%（已含无甲加值）、护甲150%、穿透100%。失手或击杀不追击。",
+          "description": "6 AP / 36 疲劳。每轮1次。首击200%武器伤害、护甲550%、穿透65%、命中+45。命中后剩余头甲和身甲清零；原先选择的目标仍存活才追击一次，武器伤害200%（已含无甲加值）、护甲150%、穿透100%。失手或击杀不追击。",
           "tooltip": []
         }
       }
@@ -48195,7 +53341,7 @@ window.BV_WIKI_DATA = {
         },
         "zh": {
           "name": "女神神性",
-          "description": "每轮第一次直接攻击行动造成的生命及护甲伤害减半，同一行动的多段攻击共用一次保护；间接伤害不消耗。Ⅰ起每轮首次实际治疗或修甲回疲 10。圣光伤害依据施放时当前生命，法术不需武器。最大 AP 按阶段为 9/10/11/12/13/14。",
+          "description": "每轮第一次直接攻击行动造成的生命及护甲伤害减半，同一行动的多段攻击共用一次保护；间接伤害不消耗。Ⅰ起每轮首次实际治疗或修甲恢复疲劳 10。圣光伤害依据施放时当前生命，法术不需武器。最大 AP 按阶段为 9/10/11/12/13/14。",
           "tooltip": []
         }
       }
@@ -48222,12 +53368,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Holy Judgment",
-          "description": "4 AP / 16 fatigue. Within 8 tiles, automatically hits body for floor(70+50% current HP), 100% armor damage and 50% penetration. Armor and damage reduction still apply.",
+          "description": "4 AP / 16 fatigue. Within 8 tiles, automatically hits body for 70 + 50% of current HP, rounded down, 100% armor damage and 50% penetration. Armor and damage reduction still apply.",
           "tooltip": []
         },
         "zh": {
           "name": "圣光裁决",
-          "description": "4 AP / 16 疲劳。8格内自动命中身体，基础伤害 floor(70+当前生命×50%)，护甲100%、穿透50%；仍经过护甲与减伤结算。",
+          "description": "4 AP / 16 疲劳。8格内自动命中身体，基础伤害 70加当前生命的50%（向下取整），护甲100%、穿透50%；仍经过护甲与减伤结算。",
           "tooltip": []
         }
       }
@@ -48254,12 +53400,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Divine Blessing",
-          "description": "2 AP / 12 fatigue. Self or ally within 8 tiles: +15 attack/defense stats, +20 resolve/initiative for two normal turns. III replaces with +20/+30. Recasts refresh rather than stack.",
+          "description": "Costs 2 AP and 12 fatigue. Bless yourself or an ally within 8 tiles: +15 Melee Skill, Ranged Skill, Melee Defense and Ranged Defense, and +20 Resolve and Initiative. From III, grant +20 skills and defenses and +30 Resolve and Initiative. Lasts two normal turns; recasting refreshes duration without stacking.",
           "tooltip": []
         },
         "zh": {
           "name": "女神赐福",
-          "description": "2 AP / 12 疲劳。8格内自己或友军，攻防四项+15、决心与主动值+20，持续两次正常行动。Ⅲ起替换为+20/+30。重复施放刷新，不叠层。",
+          "description": "消耗2行动点、12疲劳。为8格内自身或友军赐福，近战技能、远程技能、近战防御和远程防御各提高15点，决心和主动值各提高20点。Ⅲ阶段起，四项技能和防御各提高20点，决心和主动值各提高30点。持续目标两次正常行动，重复施放刷新时间，不叠加。",
           "tooltip": []
         }
       }
@@ -48286,12 +53432,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Life Light",
-          "description": "4 AP / 22 fatigue. Main target heals floor(50+25% maximum HP), repairs each head/body armor by floor(50+15% maximum HP), clears bleed/poison. I chooses one most-injured other ally within two tiles for 50% healing/repair; V up to two at 75%, without cleansing. First actual restoration each round refunds 10 fatigue.",
+          "description": "Costs 4 AP and 22 fatigue. Heal yourself or an ally within 8 tiles for 50 + 25% of their maximum HP, and repair both head and body armor by 50 + 15% of their maximum HP, rounded down. Remove bleeding and poison. From stage I, also heal one injured or armor-damaged ally within 2 tiles of the target for 50% of these amounts; stage V affects up to two for 75% each, without cleansing them. From stage I, the first successful heal or repair each round restores 10 fatigue to the caster.",
           "tooltip": []
         },
         "zh": {
           "name": "生命圣光",
-          "description": "4 AP / 22 疲劳。主目标恢复 floor(50+25%最大生命) 生命，头甲身甲各修 floor(50+15%最大生命)，清除流血中毒。Ⅰ从其两格内补选最重伤友军1人，复制50%治疗修甲；Ⅴ最多2人各75%，不复制净化。每轮首次实际恢复回疲10。",
+          "description": "消耗4行动点、22疲劳。为8格内自身或友军恢复相当于50加其最大生命25%的生命，并分别修复相当于50加其最大生命15%的头甲和身甲，数值向下取整；清除其流血和中毒。Ⅰ阶段起额外治疗目标2格内一名受伤或护甲受损的友军，治疗和修甲量为主目标的50%；Ⅴ阶段最多两人，各为75%，额外目标不清除流血或中毒。Ⅰ阶段起每轮首次实际治疗或修甲后，自身恢复10疲劳。",
           "tooltip": []
         }
       }
@@ -48318,12 +53464,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Farshore Gate",
-          "description": "3 AP / 12 fatigue. Across the map, select a legal single-tile unit then a standable empty destination; payment occurs only on step two. Crosses elevation/obstacles/control zones without opportunity attacks or changing target AP, fatigue or turn state. Excludes multi-tile/fixed/story bosses and dead units; cancel clears selection.",
+          "description": "Costs 3 AP and 12 fatigue. Select a movable unit occupying one tile, then a standable empty tile anywhere on the map. Costs are paid only after selecting the destination. Crosses height differences, obstacles and enemy zones of control without provoking attacks of opportunity. Preserves the target’s AP, fatigue and turn state. Cannot move multi-tile creatures, fixed objects, certain special bosses or corpses.",
           "tooltip": []
         },
         "zh": {
           "name": "彼岸之门",
-          "description": "3 AP / 12 疲劳。全地图先选合法单格单位，再选可站立的空地，第二步才付费；可跨高差障碍与控制区，不触发借机，不改变目标AP、疲劳或行动状态。多格、固定物体、特殊剧情Boss和死亡单位不可选，取消清空选择。",
+          "description": "消耗3行动点、12疲劳。先选择一个能够移动、只占一格的单位，再选择可站立的空地；确认落点后才消耗费用。可跨越地形高差、障碍和敌人控制区，不触发借机攻击，保留目标的行动点、疲劳和行动状态。不能传送多格生物、固定物体、部分特殊首领或尸体。",
           "tooltip": []
         }
       }
@@ -48382,12 +53528,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Celestial Judgment",
-          "description": "6 AP / 30 fatigue. Once per round, within 8 tiles, automatically hits body for floor(150+80% current HP), 200% armor and 70% penetration, using normal armor/reduction rules.",
+          "description": "6 AP / 30 fatigue. Once per round, within 8 tiles, automatically hits body for 150 + 80% of current HP, rounded down, 200% armor and 70% penetration, using normal armor/reduction rules.",
           "tooltip": []
         },
         "zh": {
           "name": "天界裁决",
-          "description": "6 AP / 30 疲劳。每轮1次，8格内自动命中身体，基础伤害 floor(150+当前生命×80%)，护甲200%，穿透70%；经过正常护甲与减伤。",
+          "description": "6 AP / 30 疲劳。每轮1次，8格内自动命中身体，基础伤害 150加当前生命的80%（向下取整），护甲200%，穿透70%；经过正常护甲与减伤。",
           "tooltip": []
         }
       }
@@ -48414,12 +53560,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Resurrection Seal",
-          "description": "5 AP / 30 fatigue. At most two casts per battle, each living player target triggers once, range 8. Before the first legal lethal hit, consume seal; set HP/fatigue to 50% maximum, zero AP and end this round's action, clear bleed/poison. Preserve armor, equipment, position and counters. Does not revive corpses.",
+          "description": "5 AP / 30 fatigue. At most two casts per battle, each living player target triggers once, range 8. Before the first lethal hit, consume seal; set HP/fatigue to 50% maximum, zero AP and end this round's action, clear bleed/poison. Preserve armor, equipment, position and counters. Does not revive corpses.",
           "tooltip": []
         },
         "zh": {
           "name": "复生圣印",
-          "description": "5 AP / 30 疲劳。每场最多施放2次，每人最多触发一次，施于8格内存活玩家。首次合法致死伤害在死亡前消耗圣印，生命和当前疲劳设为各最大值50%，AP归零并结束本轮行动，清流血中毒；护甲、装备、位置及次数保留。不能复活已死角色。",
+          "description": "5 AP / 30 疲劳。每场最多施放2次，每人最多触发一次，施于8格内仍然存活的己方队员。首次致命伤害在死亡前消耗圣印，生命和当前疲劳设为各最大值50%，AP归零并结束本轮行动，清流血中毒；护甲、装备、位置及次数保留。不能复活已死角色。",
           "tooltip": []
         }
       }
@@ -48435,12 +53581,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Solar Priestess",
-          "description": "Two-handed polearm or spear, empty offhand: +20 accuracy. Attacks centered two tiles away gain +50 weapon-damage/+30 penetration percentage points and ignore shields. Paid weapon hits seal targets: -2 maximum AP, -25% direct damage, -10 defenses; I -15 defenses; III -3 AP/-35%/-20 and blocks active displacement; V -4/-40%/-30, permanent in battle. From I, sealing a new target first each round restores 10 fatigue.",
+          "description": "With a two-handed polearm or spear: +20 hit chance. Selecting an attack center 2 tiles away grants +50 percentage points of weapon damage, +30 percentage points of armor penetration, and ignores shields. Active weapon hits apply Divine Seal for two normal turns: -2 maximum AP, -25% direct attack damage and -10 Melee and Ranged Defense; stage I reduces defenses by 15. At III: -3 AP, -35% damage, -20 defenses, and active movement skills are disabled. At V: -4 AP, -40% damage, -30 defenses, lasting through battle. From I, recover 10 fatigue the first time each round you seal a new enemy.",
           "tooltip": []
         },
         "zh": {
           "name": "日轮巫女",
-          "description": "双手长柄或矛且副手空置：命中 +20；两格中心攻击武器倍率 +50、穿透 +30 个百分点，并无视盾牌。付费武器命中施加御神封印：最大 AP -2、直接伤害 -25%、双防 -10；Ⅰ双防 -15；Ⅲ改为 AP -3、伤害 -35%、双防 -20并禁主动位移；Ⅴ为 -4/-40%/-30且本场永久。Ⅰ起每轮首次封印新目标回疲 10。",
+          "description": "持双手长柄武器或矛时，命中提高20点。选择距离2格的攻击中心时，武器伤害增加50个百分点，穿甲增加30个百分点，并无视盾牌。主动武器攻击命中后施加御神封印，持续目标两次正常行动：最大行动点减少2，直接攻击伤害降低25%，近战和远程防御各降低10；Ⅰ阶段防御降低15。Ⅲ阶段改为行动点减少3、伤害降低35%、防御各降低20，并禁止使用主动位移技能。Ⅴ阶段分别为4、40%、30，持续至战斗结束。Ⅰ阶段起每轮首次对一名新敌人施加封印时恢复10疲劳。",
           "tooltip": []
         }
       }
@@ -48472,7 +53618,7 @@ window.BV_WIKI_DATA = {
         },
         "zh": {
           "name": "神威穿刺",
-          "description": "4 AP / 16 疲劳。1至2格单敌。1格倍率130%、穿透50%，2格倍率180%、穿透80%且无视盾牌；护甲150%，命中+40。命中施加当前御神封印。",
+          "description": "4 AP / 16 疲劳。1至2格单敌。1格武器伤害130%、穿透50%，2格武器伤害180%、穿透80%且无视盾牌；护甲150%，命中+40。命中施加御神封印。",
           "tooltip": []
         }
       }
@@ -48504,7 +53650,7 @@ window.BV_WIKI_DATA = {
         },
         "zh": {
           "name": "缚魂神符",
-          "description": "3 AP / 16 疲劳。8格内单敌，自动命中、不造成伤害；蛛网束缚，当前AP额外扣3（同次一次），并施加当前御神封印。",
+          "description": "3 AP / 16 疲劳。8格内单敌，自动命中、不造成伤害；蛛网束缚，当前行动点额外减少3点，并施加御神封印。",
           "tooltip": []
         }
       }
@@ -48531,12 +53677,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Moonwheel Sweep",
-          "description": "5 AP / 24 fatigue. Once per round, center 1-2 tiles away plus two flanks, deduplicated enemies only. 120% damage (two-tile center 170%), 150% armor, 50% penetration (two 80% and ignores shields), +40 accuracy; hits apply seals.",
+          "description": "5 AP / 24 fatigue. Once per round, center 1-2 tiles away plus two flanks, each enemy is struck once. 120% damage (two-tile center 170%), 150% armor, 50% penetration (two 80% and ignores shields), +40 accuracy; hits apply seals.",
           "tooltip": []
         },
         "zh": {
           "name": "月轮薙斩",
-          "description": "5 AP / 24 疲劳。每轮1次，1至2格中心及两翼，实体去重、只伤敌人。每人倍率120%（两格中心170%），护甲150%，穿透50%（两格80%并无视盾），命中+40；封印按命中目标施加。",
+          "description": "5 AP / 24 疲劳。每轮1次，1至2格中心及两翼，只攻击范围内敌人，每名敌人受到一次打击。每人武器伤害120%（两格中心170%），护甲150%，穿透50%（两格80%并无视盾），命中+40；封印施加于被命中的敌人。",
           "tooltip": []
         }
       }
@@ -48563,12 +53709,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Eightfold Seal",
-          "description": "5 AP / 26 fatigue. Once per round, center 2-7 tiles away and first ring: deduplicated enemies automatically receive web and Divine Seal without damage. Allies excluded.",
+          "description": "5 AP / 26 fatigue. Once per round, center 2-7 tiles away and first ring: each enemy will receive web and Divine Seal without damage. Allies excluded.",
           "tooltip": []
         },
         "zh": {
           "name": "八方封阵",
-          "description": "5 AP / 26 疲劳。每轮1次，2至7格中心及第一圈，敌人实体去重，自动蛛网与御神封印，不造成伤害，不伤友军。",
+          "description": "5 AP / 26 疲劳。每轮1次，2至7格中心及周围1格，每名敌人只受影响一次，自动蛛网与御神封印，不造成伤害，不伤友军。",
           "tooltip": []
         }
       }
@@ -48595,12 +53741,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Solar Purge",
-          "description": "7 AP / 36 fatigue. Cooldown two global rounds. Center 1-2 and first ring: 150% damage (two-tile center 200%), armor 150%, penetration 60% (two 90%, ignore shields), +50 accuracy. Regardless of hit, surviving enemies receive web/permanent seal; center forced stun for one normal turn, including bosses.",
+          "description": "7 AP / 36 fatigue. Cooldown two rounds. Center 1-2 and first ring: 150% damage (two-tile center 200%), armor 150%, penetration 60% (two 90%, ignore shields), +50 accuracy. Regardless of hit, surviving enemies receive web/permanent seal; center forced stun for one normal turn, including bosses.",
           "tooltip": []
         },
         "zh": {
           "name": "日轮大祓",
-          "description": "7 AP / 36 疲劳。冷却2个全局轮次。1至2格中心及第一圈，每敌150%武器伤害（两格中心200%）、护甲150%、穿透60%（两格90%无视盾）、命中+50。无论命中与否，存活敌人受蛛网和永久封印，中心强制眩晕一次正常行动，Boss不降级。",
+          "description": "7 AP / 36 疲劳。冷却2轮。1至2格中心及周围1格，每敌150%武器伤害（两格中心200%）、护甲150%、穿透60%（两格90%无视盾）、命中+50。无论命中与否，存活敌人受蛛网和永久封印，中心强制眩晕一次正常行动，对首领也尝试施加眩晕。",
           "tooltip": []
         }
       }
@@ -48616,12 +53762,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Banner Command",
-          "description": "Two-handed polearm/banner, empty offhand: paid weapon skills cost -1 AP/-5 fatigue, +10+floor(20% current resolve) accuracy. Aura affects other allies only: base radius 5, +20 resolve, +10 four attack/defense stats, +15 initiative. I restores 5 fatigue per round; III radius 6 and +25/+15/+25, restore 8; V radius 8 and +35/+20/+30, restore 10. At V, allies at wavering morale or better deal 15% more direct damage. Matching auras do not stack.",
+          "description": "With a two-handed polearm or standard, ordinary active weapon attacks cost 1 less AP and 5 less fatigue; gain hit chance equal to 10 + 20% of current Resolve, rounded down. Other allies within 5 tiles gain +20 Resolve, +10 Melee Skill, Ranged Skill, Melee Defense and Ranged Defense, and +15 Initiative. From I they recover 5 extra fatigue on their first normal turn each round. At III: radius 6, +25 Resolve, +15 skills and defenses, +25 Initiative, and 8 fatigue recovery. At V: radius 8, +35 Resolve, +20 skills and defenses, +30 Initiative, and 10 fatigue recovery; allies at Wavering morale or better also deal 15% more direct attack damage. Multiple sources do not stack.",
           "tooltip": []
         },
         "zh": {
           "name": "战旗统御",
-          "description": "双手长柄或战旗且副手空置：主动武器技能 AP -1、疲劳 -5，命中 +10+floor(当前决心×20%)。光环仅影响其他友军：基础五格，决心 +20、攻防四项 +10、主动值 +15；Ⅰ每轮回疲 5；Ⅲ六格并提升为 +25/+15/+25、回疲 8；Ⅴ八格为 +35/+20/+30、回疲 10，士气不低于动摇者直接伤害 +15%。同档不叠加。",
+          "description": "持双手长柄武器或战旗时，普通主动武器攻击少消耗1行动点、5疲劳；命中提高10加当前决心20%的点数，向下取整。其他友军在5格内获得决心+20，近战技能、远程技能、近战防御和远程防御各+10，主动值+15；Ⅰ阶段起每轮首次行动开始时额外恢复5疲劳。Ⅲ阶段范围扩大为6格，上述加成分别为决心+25、四项技能防御各+15、主动值+25，恢复8疲劳。Ⅴ阶段范围8格，决心+35、四项各+20、主动值+30，恢复10疲劳；士气不低于动摇的友军直接攻击伤害再提高15%。同类增益取最高值，不叠加。",
           "tooltip": []
         }
       }
@@ -48648,12 +53794,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Banner Thrust",
-          "description": "4 AP / 12 fatigue. Enemy at 1-2 tiles: 140% weapon/125% armor, weapon penetration +20 points. Total accuracy +25+floor(20% current resolve), including own passive. Costs already include reductions.",
+          "description": "4 AP / 12 fatigue. Enemy at 1-2 tiles: 140% weapon/125% armor, weapon penetration +20 points. Total accuracy +25+20% of current Resolve (rounded down), including own passive. Costs already include reductions.",
           "tooltip": []
         },
         "zh": {
           "name": "战旗贯刺",
-          "description": "4 AP / 12 疲劳。1至2格单敌，倍率140%，护甲125%，武器穿透+20个百分点。总命中+25+floor(当前决心×20%)，含本人常驻命中；费用已含减耗。",
+          "description": "4 AP / 12 疲劳。1至2格单敌，武器伤害140%，护甲125%，武器穿透+20个百分点。命中+25+当前决心的20%（向下取整），上述命中和费用已包含自身被动加成。",
           "tooltip": []
         }
       }
@@ -48685,7 +53831,7 @@ window.BV_WIKI_DATA = {
         },
         "zh": {
           "name": "重整军势",
-          "description": "3 AP / 18 疲劳。每轮1次，先支付费用，再让自己及光环范围友军回疲15、士气提升1级；Ⅰ回疲20且士气2级，Ⅴ回疲30、士气2级。各档替换。",
+          "description": "3 AP / 18 疲劳。每轮1次，先支付费用，再让自己及光环范围友军恢复疲劳15、士气提升1级；Ⅰ恢复疲劳20且士气2级，Ⅴ恢复疲劳30、士气2级。成长后的数值替代原数值，不相加。",
           "tooltip": []
         }
       }
@@ -48712,12 +53858,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Twin Star Thrust",
-          "description": "5 AP / 22 fatigue. Two hits on one enemy at 1-2 tiles, each 90% weapon damage+floor(25% current resolve) ordinary damage; V 100%+floor(50% resolve). Weapon armor/penetration, total accuracy +20+floor(20% resolve). Stop on death, no retarget.",
+          "description": "5 AP / 22 fatigue. Two hits on one enemy at 1-2 tiles, each 90% weapon damage+25% of current Resolve (rounded down) ordinary damage; V 100%+50% of current Resolve (rounded down). Weapon armor/penetration, total accuracy +20+20% of current Resolve (rounded down). Stop on death, no retarget.",
           "tooltip": []
         },
         "zh": {
           "name": "双星贯刺",
-          "description": "5 AP / 22 疲劳。1至2格同一敌人两段各90%武器伤害+floor(当前决心×25%)普通伤害；Ⅴ各100%+floor(决心×50%)。沿用武器护甲和穿透，总命中+20+floor(决心×20%)。死亡即停止，不转移。",
+          "description": "5 AP / 22 疲劳。1至2格同一敌人两次打击各90%武器伤害+当前决心的25%（向下取整）普通伤害；Ⅴ各100%+当前决心的50%（向下取整）。沿用武器护甲和穿透，命中+20+当前决心的20%（向下取整）。死亡即停止，不转移。",
           "tooltip": []
         }
       }
@@ -48749,7 +53895,7 @@ window.BV_WIKI_DATA = {
         },
         "zh": {
           "name": "战旗净化",
-          "description": "3 AP / 15 疲劳。每轮1次，6格内自己或友军，再补选其相邻1名友军；移除眩晕、茫然、踉跄、束缚、缴械与击倒，回疲各30。不清流血、中毒、诅咒或伤残。",
+          "description": "3 AP / 15 疲劳。每轮1次，6格内自己或友军，再补选其相邻1名友军；移除眩晕、茫然、踉跄、束缚、缴械与击倒，恢复疲劳各30。不清流血、中毒、诅咒或伤残。",
           "tooltip": []
         }
       }
@@ -48770,7 +53916,7 @@ window.BV_WIKI_DATA = {
         },
         "zh": {
           "name": "赤狼盾卫",
-          "description": "持盾时盾牌提供的双防翻倍，自身直接伤害降低 20%，免疫强制位移。相邻其他友军双防 +10，直接伤害降低 25%，盾墙时 50%。Ⅰ每轮首次正常行动回疲 15，盾损耗减半；Ⅲ盾防 ×2.5、自身减伤 35%、光环两格双防 +15、减伤 35%、盾不可毁并免疫眩晕/茫然/踉跄；Ⅴ自身减伤 50%、他人双防 +20、减伤 50%/盾墙65%，并免疫强制位移，回疲25。各档替换。",
+          "description": "持盾时，盾牌提供的近战和远程防御翻倍，自身受到的直接攻击伤害降低 20%，免疫强制位移。相邻其他友军近战和远程防御 +10，受到的直接攻击伤害降低 25%，盾墙时 50%。Ⅰ每轮首次正常行动恢复疲劳 15，盾牌耐久损失减半；Ⅲ盾牌提供的防御变为2.5倍、自身减伤 35%、光环两格近战和远程防御 +15、减伤 35%、盾牌不会被摧毁并免疫眩晕/茫然/踉跄；Ⅴ自身减伤 50%、他人近战和远程防御 +20、减伤 50%/盾墙65%，并免疫强制位移，恢复疲劳25。成长后的数值替代原数值，不相加。",
           "tooltip": []
         }
       }
@@ -48797,12 +53943,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Redwolf Taunt",
-          "description": "2 AP / 10 fatigue. With shield, taunt an enemy within 5 using native target and AI rules. Special enemies are not guaranteed to change target.",
+          "description": "Costs 2 AP and 10 fatigue. Requires a shield. Taunt one enemy within 5 tiles to make it prioritize Maia. This does not give control of the target; some special enemies may be unaffected.",
           "tooltip": []
         },
         "zh": {
           "name": "赤狼挑衅",
-          "description": "2 AP / 10 疲劳。持盾，5格内敌人嘲讽，沿用原版可受影响目标与AI规则，不保证特殊敌人改变攻击目标。",
+          "description": "消耗2行动点、10疲劳。需要持盾。嘲讽5格内一名敌人，使其优先攻击玛雅。不能操控敌人，部分特殊敌人可能不受影响。",
           "tooltip": []
         }
       }
@@ -48829,12 +53975,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Wolf Fang Bash",
-          "description": "3 AP / 14 fatigue. One-handed melee weapon and shield: adjacent enemy 100% damage/150% armor/30% penetration/+30 accuracy. Hit dazes/staggers and knocks one tile; if no legal knockback, force stun for one normal turn.",
+          "description": "3 AP / 14 fatigue. One-handed melee weapon and shield: adjacent enemy 100% damage/150% armor/30% penetration/+30 accuracy. Hit dazes/staggers and knocks one tile; if knockback is impossible, force stun for one normal turn.",
           "tooltip": []
         },
         "zh": {
           "name": "狼牙盾击",
-          "description": "3 AP / 14 疲劳。单手近战武器与盾牌，相邻敌人倍率100%，护甲150%，穿透30%，命中+30；命中施加茫然、踉跄并击退1格，无法合法击退则强制眩晕一次正常行动。",
+          "description": "3 AP / 14 疲劳。单手近战武器与盾牌，相邻敌人武器伤害100%，护甲150%，穿透30%，命中+30；命中施加茫然、踉跄并击退1格，无法击退则强制眩晕一次正常行动。",
           "tooltip": []
         }
       }
@@ -48861,12 +54007,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Covering Shieldwall",
-          "description": "2 AP / 16 fatigue. With shield, +30 own defenses and activate the current shieldwall aura tier until the first normal turn in a later round. Waits do not end it, recasts refresh.",
+          "description": "Requires a shield. Gain +30 Melee and Ranged Defense and strengthen nearby allies against direct attacks: 50% reduction within 1 tile at stages 0–II, 50% within 2 tiles at III–IV, and 65% within 2 tiles at V. Lasts until your first normal turn next round; waits do not end it and recasts do not stack. Costs 2 AP and 16 fatigue.",
           "tooltip": []
         },
         "zh": {
           "name": "掩护盾墙",
-          "description": "2 AP / 16 疲劳。持盾，自身双防+30，并启用当前阶段盾墙保护档，直到后续轮次首次正常行动开始。等待不结束，重复只刷新。",
+          "description": "需要持盾。自身近战和远程防御各提高30点，同时强化周围友军的直接攻击减伤：基础至Ⅱ阶段为1格内50%，Ⅲ至Ⅳ阶段为2格内50%，Ⅴ阶段为2格内65%。持续至下一轮自身首次行动开始，等待不解除，重复施放不叠加。消耗2行动点、16疲劳。",
           "tooltip": []
         }
       }
@@ -48898,7 +54044,7 @@ window.BV_WIKI_DATA = {
         },
         "zh": {
           "name": "赤狼横扫",
-          "description": "5 AP / 25 疲劳。每轮1次，单手近战武器与盾牌，全部相邻敌人倍率100%，护甲150%，穿透30%，命中+20；命中茫然、踉跄，不击退，不伤友军。",
+          "description": "5 AP / 25 疲劳。每轮1次，单手近战武器与盾牌，全部相邻敌人武器伤害100%，护甲150%，穿透30%，命中+20；命中茫然、踉跄，不击退，不伤友军。",
           "tooltip": []
         }
       }
@@ -48925,12 +54071,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Redwolf Battlecry",
-          "description": "4 AP / 24 fatigue. Once per round with shield, taunt all legal enemies within five tiles and gain Covering Shieldwall with no extra wall cost or duplicate effect.",
+          "description": "Costs 4 AP and 24 fatigue, once per round. Requires a shield. Taunt eligible enemies within 5 tiles and activate Covering Shieldwall: +30 Melee and Ranged Defense for Maia; other allies within 2 tiles take 50% less direct attack damage, or 65% at stage V. Lasts until your first normal turn next round, with no additional wall cost or stacking.",
           "tooltip": []
         },
         "zh": {
           "name": "赤狼战吼",
-          "description": "4 AP / 24 疲劳。每轮1次，持盾嘲讽五格内所有合法敌人，同时获得掩护盾墙，不额外付盾墙费用、不叠两份盾墙。",
+          "description": "消耗4行动点、24疲劳，每轮一次。需要持盾。嘲讽5格内可被嘲讽的所有敌人，同时开启掩护盾墙：自身近战和远程防御各+30，2格内其他友军直接攻击减伤50%，Ⅴ阶段提高至65%。持续至下一轮自身首次行动开始；无需另外支付盾墙费用，重复开启不叠加。",
           "tooltip": []
         }
       }
@@ -48946,12 +54092,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Red Furnace Berserker",
-          "description": "Two-handed axe, empty offhand: +15 accuracy, +25 weapon-damage percentage points, +20 penetration and double shield damage. Paid active attacks snapshot fatigue after payment; the first hit on each target adds floor(25% fatigue) ordinary damage. III increases this to 50% and maximum fatigue by 20. Misses, opportunity attacks, counters, vent and furnace do not trigger pressure; repeated hits on one target do not repeat it. Maximum AP: 9/10/10/11/11/12.",
+          "description": "Requires a two-handed axe. +15 hit chance, +25 percentage points of weapon damage, +20 percentage points of armor penetration, and double shield damage. After paying an active attack’s fatigue cost, add 25% of your fatigue at that moment as regular damage, rounded down, on the first hit against each enemy per use. Stage III raises this to 50% and grants +20 maximum fatigue. Attacks of opportunity, counterattacks, Vent and Furnace Release do not trigger this bonus. Maximum AP by stage: 9, 10, 10, 11, 11, 12.",
           "tooltip": []
         },
         "zh": {
           "name": "赤炉战狂",
-          "description": "双手斧且副手空置：命中 +15，武器倍率 +25 个百分点，穿透 +20 个百分点，劈盾伤害翻倍。付费主动攻击以扣费后疲劳快照，每目标首次命中附加 floor(疲劳×25%) 普通伤害；Ⅲ改为50%并最大疲劳 +20。未命中、借机、反击、泄压和熔炉解放不触发，连击不重复计入。最大 AP 9/10/10/11/11/12。",
+          "description": "需要双手斧。命中+15，武器伤害提高25个百分点，穿甲提高20个百分点，劈盾伤害翻倍。主动攻击支付疲劳后，以当时疲劳的25%作为额外普通伤害，向下取整；一次技能对每名敌人只在首次命中时附加。Ⅲ阶段提高为50%，最大疲劳额外+20。借机攻击、反击、泄压和熔炉解放不触发这份附伤。最大行动点随成长阶段依次为9、10、10、11、11、12。",
           "tooltip": []
         }
       }
@@ -48983,7 +54129,7 @@ window.BV_WIKI_DATA = {
         },
         "zh": {
           "name": "断岳斩",
-          "description": "4 AP / 20 疲劳。相邻敌人倍率175%，护甲125%，穿透65%，总命中+35；赤炉压力的每目标首次命中附伤另外结算。",
+          "description": "4 AP / 20 疲劳。相邻敌人武器伤害175%，护甲125%，穿透65%，命中+35；赤炉压力的每目标首次命中附伤另外结算。",
           "tooltip": []
         }
       }
@@ -49010,12 +54156,12 @@ window.BV_WIKI_DATA = {
       "text": {
         "en": {
           "name": "Pressure Vent",
-          "description": "3 AP / 0 fatigue. Once per round, L=min(precast fatigue,40): adjacent 125% weapon+floor(50% L) ordinary damage, weapon armor, weapon penetration +20 points, +15 accuracy; restores L fatigue even on a miss. III cap 60 and bonus L; V replaced by Furnace Release. No extra pressure.",
+          "description": "Costs 3 AP and adds no fatigue, once per round. Strike an adjacent enemy for 125% weapon damage plus half your current fatigue as regular damage, counting up to 40 fatigue and rounding down. Uses the weapon’s armor damage, adds 20 percentage points of armor penetration and +15 hit chance. Recover the counted fatigue even on a miss. At stage III, count up to 60 fatigue and add its full value as damage. Replaced by Furnace Release at V. Does not also trigger Pressure bonus damage.",
           "tooltip": []
         },
         "zh": {
           "name": "单体泄压",
-          "description": "3 AP / 0 疲劳。每轮1次，以施放前疲劳 L=min(疲劳,40) 计算，相邻攻击倍率125%+floor(L×50%)普通伤害，护甲沿用武器、武器穿透+20个百分点、总命中+15；命中与否都回疲L。ⅢL上限60且附伤为L，Ⅴ被熔炉解放替换。不重复触发压力。",
+          "description": "消耗3行动点，不增加疲劳，每轮一次。攻击相邻敌人，造成125%武器伤害，另加施放时当前疲劳的一半作为普通伤害，最多计入40疲劳，附加伤害向下取整。护甲伤害沿用武器，穿甲在武器基础上提高20个百分点，命中+15。无论命中与否，均恢复上述计入的疲劳。Ⅲ阶段最多计入60疲劳，附加伤害改为这部分疲劳的全部数值。Ⅴ阶段由熔炉解放替换；本技能不会再触发赤炉压力的附加伤害。",
           "tooltip": []
         }
       }
@@ -49047,7 +54193,7 @@ window.BV_WIKI_DATA = {
         },
         "zh": {
           "name": "断盾追斩",
-          "description": "3 AP / 15 疲劳。仅相邻持盾敌人，先按原版劈盾流程造成双倍盾伤；实际破盾且原敌仍存活才追击一次，倍率145%、护甲100%、穿透60%、命中+35。未破盾不伤人，压力仅在人身追击首次命中结算。",
+          "description": "3 AP / 15 疲劳。仅相邻持盾敌人，先按劈盾攻击的规则造成双倍盾伤；实际破盾且原敌仍存活才追击一次，武器伤害145%、护甲100%、穿透60%、命中+35。未破盾不伤人，压力仅在人身追击首次命中结算。",
           "tooltip": []
         }
       }
@@ -49079,7 +54225,7 @@ window.BV_WIKI_DATA = {
         },
         "zh": {
           "name": "赤炉回旋",
-          "description": "5 AP / 28 疲劳。每轮1次，全部相邻敌人各倍率160%，护甲125%，穿透55%，命中+30；压力按每个敌人首次命中分别结算，不伤友军。",
+          "description": "5 AP / 28 疲劳。每轮1次，全部相邻敌人各武器伤害160%，护甲125%，穿透55%，命中+30；压力按每个敌人首次命中分别结算，不伤友军。",
           "tooltip": []
         }
       }
@@ -49111,7 +54257,7 @@ window.BV_WIKI_DATA = {
         },
         "zh": {
           "name": "断首连斩",
-          "description": "6 AP / 32 疲劳。每轮1次，同一敌人三段各100%武器伤害，护甲100%、穿透65%、命中+35；压力整次行动只结算一次，原目标死亡停止，不转移。",
+          "description": "6 AP / 32 疲劳。每轮1次，同一敌人三次打击各100%武器伤害，护甲100%、穿透65%、命中+35；压力整次行动只结算一次，原先选择的目标死亡停止，不转移。",
           "tooltip": []
         }
       }
@@ -50255,6 +55401,165 @@ window.BV_WIKI_DATA = {
       }
     },
     {
+      "key": "si_myriad",
+      "icon": "si_myriad",
+      "image": "assets/skills/si_myriad.png",
+      "kind": "passive",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "StartInk": 2,
+        "MaxInk": 6,
+        "MarkLimit": 3,
+        "EchoFraction": 0.3,
+        "EchoCap": 40
+      },
+      "text": {
+        "en": {
+          "name": "Myriad Forms in Ink",
+          "description": "Maximum 6 Ink; starts at 2. Gain 1 at each normal turn start, plus 1 once per round when another roster ally directly damages a painted enemy’s HP. Up to 3 enemies remain painted until Si’s second subsequent normal turn. Share 30% of one direct action’s total HP damage to painted enemies with the other painted enemies, capped at 40 each. Enemies already hit by that action are excluded. Follow-ups, opportunity attacks, counters, damage over time and the dragon do not trigger sharing. Ink echoes neither recurse nor receive further amplification.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "万象入画",
+          "description": "墨意上限6，入场2；每个正常回合开始+1，每轮首次由其他友军直接攻击入画敌人并造成生命伤害时再+1。最多3名敌人入画，持续至祀第二个后续正常回合开始。一次直接攻击对画中敌人造成的生命伤害合计30%传递给其余入画敌人，每名上限40；该次已命中的敌人不再承受传递。追击、借机攻击、反击、持续伤害与墨龙不触发。墨魂伤害不递归、不再次增伤。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "si_brush",
+      "icon": "si_brush",
+      "image": "assets/skills/si_brush.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 3,
+        "Fatigue": 12,
+        "Ink": 0,
+        "Range": 5,
+        "Cooldown": 0,
+        "Low": 70,
+        "High": 90,
+        "Armor": 1,
+        "Pierce": 0.3,
+        "Hit": 15,
+        "Attack": true
+      },
+      "text": {
+        "en": {
+          "name": "Winter Brushstroke",
+          "description": "3 AP, 12 Fatigue; range 1–5. Ranged accuracy +15. Deals 70–90 base damage, 100% armor damage and 30% penetration. A hit paints the enemy; repeated hits refresh the mark, and a fourth replaces the oldest. Uses independent skill damage, not weapon base damage.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "落笔生寒",
+          "description": "3行动点、12疲劳；射程1至5格。远程命中+15，造成70至90基础伤害，对护甲100%，穿甲30%；命中后入画。重复命中刷新标记，第四名替换最早标记。独立技能伤害，不继承武器基础伤害。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "si_landscape",
+      "icon": "si_landscape",
+      "image": "assets/skills/si_landscape.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 4,
+        "Fatigue": 20,
+        "Ink": 1,
+        "Range": 5,
+        "Cooldown": 2,
+        "Low": 0,
+        "High": 0,
+        "Armor": 1,
+        "Pierce": 0,
+        "Hit": 0,
+        "Attack": false
+      },
+      "text": {
+        "en": {
+          "name": "Shared Landscape",
+          "description": "4 AP, 20 Fatigue, 1 Ink; range 1–5, cooldown 2 rounds. Replace the painting with the target and up to two adjacent enemies, prioritizing higher remaining HP. Root the primary target until its next normal action ends; it can still attack or cast. No damage or accuracy roll. Root immunity does not prevent painting.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "河山共影",
+          "description": "4行动点、20疲劳、1墨意；射程1至5格，冷却2轮。为目标及其相邻最多两名敌人入画，取代旧画卷；相邻敌人优先选择剩余生命较高者。主目标定身至其下一个正常行动结束，仍可攻击施法。无伤害、无需命中判定，定身免疫不妨碍入画。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "si_sanctuary",
+      "icon": "si_sanctuary",
+      "image": "assets/skills/si_sanctuary.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 3,
+        "Fatigue": 18,
+        "Ink": 2,
+        "Range": 4,
+        "Cooldown": 3,
+        "Low": 0,
+        "High": 0,
+        "Armor": 1,
+        "Pierce": 0,
+        "Hit": 0,
+        "Attack": false
+      },
+      "text": {
+        "en": {
+          "name": "Sanctuary in the Margin",
+          "description": "3 AP, 18 Fatigue, 2 Ink; range 0–4, cooldown 3 rounds. Target and adjacent roster allies gain a 40-point barrier against post-armor HP damage; armor is not protected. While the barrier remains, gain +10 melee and ranged defense until Si’s second subsequent normal turn. Defense ends immediately when depleted. Reapplication refreshes without stacking. Shared fixed HP damage bypasses barriers.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "留白成境",
+          "description": "3行动点、18疲劳、2墨意；射程0至4格，冷却3轮。目标与相邻队友获得40墨障，吸收护甲结算后生命伤害，不保护护甲。墨障存续时近战与远程防御各+10，持续至祀第二个后续正常回合开始；耗尽立即失去防御。重复施加刷新，不叠加吸收量。固定直伤遵循公共盾牌规则，不被墨障吸收。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "si_dragon",
+      "icon": "si_dragon",
+      "image": "assets/skills/si_dragon.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 6,
+        "Fatigue": 32,
+        "Ink": 5,
+        "Range": 5,
+        "Cooldown": 4,
+        "Low": 180,
+        "High": 220,
+        "Armor": 1.25,
+        "Pierce": 0.4,
+        "Hit": 0,
+        "Attack": true
+      },
+      "text": {
+        "en": {
+          "name": "No One Spoils the Fun",
+          "description": "6 AP, 32 Fatigue, 5 Ink; select a painted enemy at range 1–5; cooldown 4 rounds. Guaranteed hit: 180–220 base damage to the primary target and 120–160 to other painted enemies even beyond range; 125% armor damage and 40% penetration. Does not trigger ink echoes. Clears the painting. Si and roster allies within 3 tiles gain Reverberation: +20% damage for their next direct attack action, including all segments, expiring at Si’s next normal turn start.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "谁都不许扫兴",
+          "description": "6行动点、32疲劳、5墨意；射程1至5格内选入画敌人，冷却4轮。墨龙必中主目标180至220基础伤害，其余入画敌人120至160，可超出射程；对护甲125%，穿甲40%。不触发墨魂，随后清除画卷。祀及3格内友军获得余韵：下一次直接攻击伤害+20%，整次多段生效，最迟到祀下个正常回合开始失效。",
+          "tooltip": []
+        }
+      }
+    },
+    {
       "key": "ryza_core_crystal",
       "icon": "ryza_core_crystal",
       "image": "assets/skills/ryza_core_crystal.png",
@@ -50436,6 +55741,2266 @@ window.BV_WIKI_DATA = {
         "zh": {
           "name": "核心驱动",
           "description": "7 AP，30疲劳，6 CC，射程2–4；中心及邻格敌人各受一次命中检定，90–120伤害，150%破甲，30%穿透。冷却3回合。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_stonewall",
+      "icon": "orbment_stonewall",
+      "image": "assets/skills/orbment_stonewall.png",
+      "kind": "passive",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "MeleeDefense": 5
+      },
+      "text": {
+        "en": {
+          "name": "Stonewall",
+          "description": "+5 melee defense.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "岩壁",
+          "description": "近战防御 +5。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_vitality",
+      "icon": "orbment_vitality",
+      "image": "assets/skills/orbment_vitality.png",
+      "kind": "passive",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "Hitpoints": 15
+      },
+      "text": {
+        "en": {
+          "name": "Vitality",
+          "description": "+15 maximum hitpoints.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "生机",
+          "description": "最大生命 +15。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_onslaught",
+      "icon": "orbment_onslaught",
+      "image": "assets/skills/orbment_onslaught.png",
+      "kind": "passive",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "Damage": 0.08
+      },
+      "text": {
+        "en": {
+          "name": "Onslaught",
+          "description": "+8% direct attack damage.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "猛攻",
+          "description": "直接攻击伤害 +8%。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_swiftness",
+      "icon": "orbment_swiftness",
+      "image": "assets/skills/orbment_swiftness.png",
+      "kind": "passive",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "Initiative": 15
+      },
+      "text": {
+        "en": {
+          "name": "Swiftness",
+          "description": "+15 initiative.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "迅捷",
+          "description": "先攻 +15。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_breathing",
+      "icon": "orbment_breathing",
+      "image": "assets/skills/orbment_breathing.png",
+      "kind": "passive",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "Recovery": 2
+      },
+      "text": {
+        "en": {
+          "name": "Breathing",
+          "description": "Recover 2 extra fatigue at each normal turn start.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "调息",
+          "description": "每个正常行动回合开始额外恢复 2 疲劳。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_far_guard",
+      "icon": "orbment_far_guard",
+      "image": "assets/skills/orbment_far_guard.png",
+      "kind": "passive",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "RangedDefense": 5
+      },
+      "text": {
+        "en": {
+          "name": "Far Guard",
+          "description": "+5 ranged defense.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "远御",
+          "description": "远程防御 +5。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_composure",
+      "icon": "orbment_composure",
+      "image": "assets/skills/orbment_composure.png",
+      "kind": "passive",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "Bravery": 10
+      },
+      "text": {
+        "en": {
+          "name": "Composure",
+          "description": "+10 resolve.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "定心",
+          "description": "决心 +10。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_piercing",
+      "icon": "orbment_piercing",
+      "image": "assets/skills/orbment_piercing.png",
+      "kind": "passive",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "Pierce": 0.15
+      },
+      "text": {
+        "en": {
+          "name": "Piercing",
+          "description": "+15 percentage points of direct attack penetration; excess over 100% becomes damage.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "贯甲",
+          "description": "直接攻击穿甲增加 15 个百分点；超过 100% 转为伤害加成。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_shatter",
+      "icon": "orbment_shatter",
+      "image": "assets/skills/orbment_shatter.png",
+      "kind": "passive",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "Armor": 0.2
+      },
+      "text": {
+        "en": {
+          "name": "Shatter",
+          "description": "+20% armor damage for direct attacks.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "碎铠",
+          "description": "直接攻击对护甲伤害 +20%。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_citadel",
+      "icon": "orbment_citadel",
+      "image": "assets/skills/orbment_citadel.png",
+      "kind": "passive",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "Reduction": 0.1
+      },
+      "text": {
+        "en": {
+          "name": "Citadel",
+          "description": "Take 10% less direct hitpoint damage, multiplicative with other reductions.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "坚城",
+          "description": "直接生命伤害降低 10%，与其他减伤乘算。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_circulation",
+      "icon": "orbment_circulation",
+      "image": "assets/skills/orbment_circulation.png",
+      "kind": "passive",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "FatigueMult": 0.9
+      },
+      "text": {
+        "en": {
+          "name": "Circulation",
+          "description": "Active skills cost 10% less fatigue.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "循环呼吸",
+          "description": "主动技能疲劳消耗降低 10%。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_insight",
+      "icon": "orbment_insight",
+      "image": "assets/skills/orbment_insight.png",
+      "kind": "passive",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "MeleeSkill": 8,
+        "RangedSkill": 8
+      },
+      "text": {
+        "en": {
+          "name": "Insight",
+          "description": "+8 melee and ranged skill.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "洞察",
+          "description": "近战、远程命中各 +8。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_unyielding",
+      "icon": "orbment_unyielding",
+      "image": "assets/skills/orbment_unyielding.png",
+      "kind": "passive",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "Bravery": 15,
+        "Stamina": 10
+      },
+      "text": {
+        "en": {
+          "name": "Unyielding",
+          "description": "+15 resolve and +10 maximum fatigue.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "不屈",
+          "description": "决心 +15，最大疲劳 +10。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_battle_return",
+      "icon": "orbment_battle_return",
+      "image": "assets/skills/orbment_battle_return.png",
+      "kind": "passive",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "KillRecovery": 4
+      },
+      "text": {
+        "en": {
+          "name": "Battle Return",
+          "description": "Recover 4 fatigue on a personal kill, once per round.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "战意回流",
+          "description": "亲自击杀敌人恢复 4 疲劳，每自然轮一次。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_stone_lance",
+      "icon": "orbment_stone_lance",
+      "image": "assets/skills/orbment_stone_lance.png",
+      "kind": "active",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 4,
+        "Fatigue": 18,
+        "Cooldown": 2,
+        "Min": 1,
+        "Max": 4,
+        "Radius": 0,
+        "DamageMin": 45,
+        "DamageMax": 60,
+        "Armor": 1,
+        "Pierce": 0.2,
+        "Limit": 0,
+        "Scale": 0,
+        "Accuracy": 0,
+        "Line": false
+      },
+      "text": {
+        "en": {
+          "name": "Stone Lance",
+          "description": "45–60 independent damage; 100% armor damage, 20% penetration. Cooldown: 2 rounds.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "岩枪",
+          "description": "45—60 独立伤害；对甲 100%，穿甲 20%。 冷却 2 自然轮。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_healing_drop",
+      "icon": "orbment_healing_drop",
+      "image": "assets/skills/orbment_healing_drop.png",
+      "kind": "active",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 4,
+        "Fatigue": 15,
+        "Cooldown": 2,
+        "Min": 0,
+        "Max": 3,
+        "Radius": 0,
+        "DamageMin": 0,
+        "DamageMax": 0,
+        "Armor": 0,
+        "Pierce": 0,
+        "Limit": 2,
+        "Scale": 0,
+        "Accuracy": 0,
+        "Line": false
+      },
+      "text": {
+        "en": {
+          "name": "Healing Drop",
+          "description": "Restore 25 allied hitpoints, twice per battle. Cooldown: 2 rounds.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "治愈水滴",
+          "description": "恢复友方 25 生命，每战 2 次。 冷却 2 自然轮。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_fire_bolt",
+      "icon": "orbment_fire_bolt",
+      "image": "assets/skills/orbment_fire_bolt.png",
+      "kind": "active",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 4,
+        "Fatigue": 20,
+        "Cooldown": 1,
+        "Min": 2,
+        "Max": 4,
+        "Radius": 0,
+        "DamageMin": 40,
+        "DamageMax": 55,
+        "Armor": 0.7,
+        "Pierce": 0.3,
+        "Limit": 0,
+        "Scale": 0,
+        "Accuracy": 0,
+        "Line": false
+      },
+      "text": {
+        "en": {
+          "name": "Fire Bolt",
+          "description": "40–55 independent damage; 70% armor damage, 30% penetration. Cooldown: 1 rounds.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "火矢",
+          "description": "40—55 独立伤害；对甲 70%，穿甲 30%。 冷却 1 自然轮。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_wind_blade",
+      "icon": "orbment_wind_blade",
+      "image": "assets/skills/orbment_wind_blade.png",
+      "kind": "active",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 4,
+        "Fatigue": 15,
+        "Cooldown": 1,
+        "Min": 2,
+        "Max": 5,
+        "Radius": 0,
+        "DamageMin": 30,
+        "DamageMax": 40,
+        "Armor": 0.7,
+        "Pierce": 0.2,
+        "Limit": 0,
+        "Scale": 0,
+        "Accuracy": 10,
+        "Line": false
+      },
+      "text": {
+        "en": {
+          "name": "Wind Blade",
+          "description": "30–40 independent damage, +10 accuracy; 70% armor damage, 20% penetration. Cooldown: 1 rounds.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "风刃",
+          "description": "30—40 独立伤害，命中 +10；对甲 70%，穿甲 20%。 冷却 1 自然轮。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_temporal_boost",
+      "icon": "orbment_temporal_boost",
+      "image": "assets/skills/orbment_temporal_boost.png",
+      "kind": "active",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 4,
+        "Fatigue": 15,
+        "Cooldown": 3,
+        "Min": 0,
+        "Max": 3,
+        "Radius": 0,
+        "DamageMin": 0,
+        "DamageMax": 0,
+        "Armor": 0,
+        "Pierce": 0,
+        "Limit": 0,
+        "Scale": 0,
+        "Accuracy": 0,
+        "Line": false
+      },
+      "text": {
+        "en": {
+          "name": "Temporal Boost",
+          "description": "Restore 10 fatigue; +30 initiative until the end of the next normal turn. Cooldown: 3 rounds.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "时序激励",
+          "description": "友方恢复 10 疲劳，先攻 +30，至其下个正常回合结束。 冷却 3 自然轮。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_space_barrier",
+      "icon": "orbment_space_barrier",
+      "image": "assets/skills/orbment_space_barrier.png",
+      "kind": "active",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 4,
+        "Fatigue": 20,
+        "Cooldown": 2,
+        "Min": 0,
+        "Max": 3,
+        "Radius": 0,
+        "DamageMin": 0,
+        "DamageMax": 0,
+        "Armor": 0,
+        "Pierce": 0,
+        "Limit": 0,
+        "Scale": 0,
+        "Accuracy": 0,
+        "Line": false
+      },
+      "text": {
+        "en": {
+          "name": "Space Barrier",
+          "description": "+10 melee and ranged defense until the end of the next normal turn. Cooldown: 2 rounds.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "空之屏障",
+          "description": "友方近战、远程防御 +10，至其下个正常回合结束。 冷却 2 自然轮。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_phantom_noise",
+      "icon": "orbment_phantom_noise",
+      "image": "assets/skills/orbment_phantom_noise.png",
+      "kind": "active",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 4,
+        "Fatigue": 15,
+        "Cooldown": 2,
+        "Min": 1,
+        "Max": 4,
+        "Radius": 0,
+        "DamageMin": 0,
+        "DamageMax": 0,
+        "Armor": 0,
+        "Pierce": 0,
+        "Limit": 0,
+        "Scale": 0,
+        "Accuracy": 0,
+        "Line": false
+      },
+      "text": {
+        "en": {
+          "name": "Phantom Noise",
+          "description": "On hit: -15 melee and ranged skill until the end of the next normal turn. Cooldown: 2 rounds.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "幻扰",
+          "description": "命中后敌方近战、远程命中 -15，至其下个正常回合结束。 冷却 2 自然轮。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_rock_bulwark",
+      "icon": "orbment_rock_bulwark",
+      "image": "assets/skills/orbment_rock_bulwark.png",
+      "kind": "active",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 6,
+        "Fatigue": 30,
+        "Cooldown": 3,
+        "Min": 0,
+        "Max": 0,
+        "Radius": 1,
+        "DamageMin": 0,
+        "DamageMax": 0,
+        "Armor": 0,
+        "Pierce": 0,
+        "Limit": 0,
+        "Scale": 0,
+        "Accuracy": 0,
+        "Line": false
+      },
+      "text": {
+        "en": {
+          "name": "Rock Bulwark",
+          "description": "Self and adjacent allies take 10% less direct hitpoint damage until their next normal turn ends; repeated applications multiply. Cooldown: 3 rounds.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "岩垒结界",
+          "description": "自己和邻接友军获得 10% 直接生命减伤，至各自下个正常回合结束；重复施加乘算。 冷却 3 自然轮。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_spring_prayer",
+      "icon": "orbment_spring_prayer",
+      "image": "assets/skills/orbment_spring_prayer.png",
+      "kind": "active",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 6,
+        "Fatigue": 30,
+        "Cooldown": 3,
+        "Min": 0,
+        "Max": 3,
+        "Radius": 1,
+        "DamageMin": 0,
+        "DamageMax": 0,
+        "Armor": 0,
+        "Pierce": 0,
+        "Limit": 2,
+        "Scale": 0,
+        "Accuracy": 0,
+        "Line": false
+      },
+      "text": {
+        "en": {
+          "name": "Spring Prayer",
+          "description": "Restore 20 hitpoints and remove one bleed or poison layer from allies on the target and adjacent tiles; twice per battle. Cooldown: 3 rounds.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "清泉祷告",
+          "description": "目标及邻格友军恢复 20 生命，各移除一层流血或中毒；每战 2 次。 冷却 3 自然轮。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_flame_gale",
+      "icon": "orbment_flame_gale",
+      "image": "assets/skills/orbment_flame_gale.png",
+      "kind": "active",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 6,
+        "Fatigue": 35,
+        "Cooldown": 3,
+        "Min": 2,
+        "Max": 4,
+        "Radius": 1,
+        "DamageMin": 40,
+        "DamageMax": 55,
+        "Armor": 0.7,
+        "Pierce": 0.3,
+        "Limit": 0,
+        "Scale": 0,
+        "Accuracy": 0,
+        "Line": false
+      },
+      "text": {
+        "en": {
+          "name": "Flame Gale",
+          "description": "40–55 independent damage to enemies on the target and adjacent tiles; 70% armor damage, 30% penetration. Cooldown: 3 rounds.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "炎风爆裂",
+          "description": "目标及邻格敌人各受 40—55 独立伤害；对甲 70%，穿甲 30%。 冷却 3 自然轮。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_gale_slash",
+      "icon": "orbment_gale_slash",
+      "image": "assets/skills/orbment_gale_slash.png",
+      "kind": "active",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 5,
+        "Fatigue": 25,
+        "Cooldown": 2,
+        "Min": 1,
+        "Max": 1,
+        "Radius": 0,
+        "DamageMin": 0,
+        "DamageMax": 0,
+        "Armor": 1,
+        "Pierce": 0,
+        "Limit": 0,
+        "Scale": 0,
+        "Accuracy": 0,
+        "Line": false
+      },
+      "text": {
+        "en": {
+          "name": "Gale Slash",
+          "description": "Melee weapon attack using weapon range and penetration, with +20% damage. Cooldown: 2 rounds.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "烈风斩",
+          "description": "近战武器攻击，沿用武器射程与穿甲，伤害 +20%。 冷却 2 自然轮。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_temporal_haste",
+      "icon": "orbment_temporal_haste",
+      "image": "assets/skills/orbment_temporal_haste.png",
+      "kind": "active",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 4,
+        "Fatigue": 20,
+        "Cooldown": 3,
+        "Min": 0,
+        "Max": 3,
+        "Radius": 0,
+        "DamageMin": 0,
+        "DamageMax": 0,
+        "Armor": 0,
+        "Pierce": 0,
+        "Limit": 0,
+        "Scale": 0,
+        "Accuracy": 0,
+        "Line": false
+      },
+      "text": {
+        "en": {
+          "name": "Temporal Haste",
+          "description": "Grant 2 temporary AP next normal turn; each target can benefit once per battle. Cooldown: 3 rounds.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "时序加速",
+          "description": "目标下个正常回合获得 2 点临时 AP；每目标每战一次。 冷却 3 自然轮。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_warp",
+      "icon": "orbment_warp",
+      "image": "assets/skills/orbment_warp.png",
+      "kind": "active",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 4,
+        "Fatigue": 20,
+        "Cooldown": 3,
+        "Min": 1,
+        "Max": 3,
+        "Radius": 0,
+        "DamageMin": 0,
+        "DamageMax": 0,
+        "Armor": 0,
+        "Pierce": 0,
+        "Limit": 1,
+        "Scale": 0,
+        "Accuracy": 0,
+        "Line": false
+      },
+      "text": {
+        "en": {
+          "name": "Warp",
+          "description": "Move to a visible empty tile within 3 without triggering disengagement attacks; once per battle. Cooldown: 3 rounds.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "折跃",
+          "description": "移动至 3 格内可见空地，不触发借机攻击；每战一次。 冷却 3 自然轮。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_phantom_veil",
+      "icon": "orbment_phantom_veil",
+      "image": "assets/skills/orbment_phantom_veil.png",
+      "kind": "active",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 6,
+        "Fatigue": 30,
+        "Cooldown": 3,
+        "Min": 1,
+        "Max": 4,
+        "Radius": 1,
+        "DamageMin": 0,
+        "DamageMax": 0,
+        "Armor": 0,
+        "Pierce": 0,
+        "Limit": 0,
+        "Scale": 0,
+        "Accuracy": 0,
+        "Line": false
+      },
+      "text": {
+        "en": {
+          "name": "Phantom Veil",
+          "description": "Roll separately for each enemy in the area; on hit, -15 melee skill, ranged skill and resolve until the next normal turn ends. Cooldown: 3 rounds.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "幻幕",
+          "description": "范围内敌人分别命中检定；命中后近战、远程命中及决心 -15，至下个正常回合结束。 冷却 3 自然轮。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "orbment_socket_bonus",
+      "icon": "tio_septium_attunement",
+      "image": "assets/skills/tio_septium_attunement.png",
+      "kind": "passive",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {},
+      "text": {
+        "en": {
+          "name": "Quartz Circuits",
+          "description": "Base bonuses of the physically socketed quartz.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "结晶回路",
+          "description": "实际镶嵌宝石的基础收益。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "tio_orbal_pulse",
+      "icon": "tio_orbal_pulse",
+      "image": "assets/skills/tio_orbal_pulse.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 4,
+        "Fatigue": 12,
+        "Cooldown": 0,
+        "Min": 1,
+        "Max": 4,
+        "Radius": 0,
+        "DamageMin": 50,
+        "DamageMax": 70,
+        "Armor": 1,
+        "Pierce": 0.25,
+        "Limit": 0,
+        "Scale": 0.4,
+        "Accuracy": 0,
+        "Line": false
+      },
+      "text": {
+        "en": {
+          "name": "Orbal Pulse",
+          "description": "Ranged orbal attack: 50–70 + 0.4R damage, 100% armor damage, 25% penetration. Cooldown: 0 rounds. R is own ranged skill.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "魔导脉冲",
+          "description": "单体远程导力攻击，50—70 + 0.4R 伤害，对甲 100%，穿甲 25%。 冷却 0 自然轮；R 为自身远程技能。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "tio_analyzer",
+      "icon": "tio_analyzer",
+      "image": "assets/skills/tio_analyzer.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 2,
+        "Fatigue": 10,
+        "Cooldown": 1,
+        "Min": 1,
+        "Max": 6,
+        "Radius": 0,
+        "DamageMin": 0,
+        "DamageMax": 0,
+        "Armor": 0,
+        "Pierce": 0,
+        "Limit": 0,
+        "Scale": 0,
+        "Accuracy": 0,
+        "Line": false
+      },
+      "text": {
+        "en": {
+          "name": "Analyzer",
+          "description": "Apply one analysis stack for 3 rounds: allied attacks gain +5 accuracy, +5 percentage points penetration and +10% armor damage per stack. Stacks and refreshes without a cap. Cooldown: 1 rounds. R is own ranged skill.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "情报解析",
+          "description": "必定施加 1 层解析，持续 3 自然轮；友军攻击该敌人每层获得命中 +5、穿甲 +5 个百分点、对甲伤害 +10%。叠层并刷新到期，不封顶。 冷却 1 自然轮；R 为自身远程技能。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "tio_beam_zanber",
+      "icon": "tio_beam_zanber",
+      "image": "assets/skills/tio_beam_zanber.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 5,
+        "Fatigue": 22,
+        "Cooldown": 2,
+        "Min": 1,
+        "Max": 3,
+        "Radius": 0,
+        "DamageMin": 65,
+        "DamageMax": 85,
+        "Armor": 1.3,
+        "Pierce": 0.3,
+        "Limit": 0,
+        "Scale": 0.5,
+        "Accuracy": 0,
+        "Line": true
+      },
+      "text": {
+        "en": {
+          "name": "Beam Zanber",
+          "description": "Straight hex line up to 3 tiles: 65–85 + 0.5R damage, 130% armor damage, 30% penetration; ignores allies. Cooldown: 2 rounds. R is own ranged skill.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "光束斩剑",
+          "description": "六方向直线最远 3 格，65—85 + 0.5R 伤害，对甲 130%，穿甲 30%；不伤友军。 冷却 2 自然轮；R 为自身远程技能。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "tio_absolute_zero",
+      "icon": "tio_absolute_zero",
+      "image": "assets/skills/tio_absolute_zero.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 6,
+        "Fatigue": 30,
+        "Cooldown": 3,
+        "Min": 2,
+        "Max": 4,
+        "Radius": 1,
+        "DamageMin": 55,
+        "DamageMax": 75,
+        "Armor": 0.8,
+        "Pierce": 0.3,
+        "Limit": 0,
+        "Scale": 0.4,
+        "Accuracy": 0,
+        "Line": false
+      },
+      "text": {
+        "en": {
+          "name": "Absolute Zero",
+          "description": "Target and adjacent enemies: 55–75 + 0.4R damage, 80% armor damage, 30% penetration. Hits apply stacking chill for 2 rounds: -25 initiative and +1 movement AP. Cooldown: 3 rounds. R is own ranged skill.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "绝对零度",
+          "description": "目标及邻格敌人各受 55—75 + 0.4R 伤害，对甲 80%，穿甲 30%；命中施加寒滞：先攻 -25、移动 AP +1，持续 2 自然轮，可叠加。 冷却 3 自然轮；R 为自身远程技能。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "tio_ether_buster",
+      "icon": "tio_ether_buster",
+      "image": "assets/skills/tio_ether_buster.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 8,
+        "Fatigue": 45,
+        "Cooldown": 4,
+        "Min": 1,
+        "Max": 6,
+        "Radius": 0,
+        "DamageMin": 110,
+        "DamageMax": 150,
+        "Armor": 1.6,
+        "Pierce": 0.4,
+        "Limit": 0,
+        "Scale": 0.8,
+        "Accuracy": 0,
+        "Line": true
+      },
+      "text": {
+        "en": {
+          "name": "Ether Buster",
+          "description": "Straight hex line up to 6 tiles: 110–150 + 0.8R damage, 160% armor damage, 40% penetration. +10% damage per target analysis stack without consuming it. Cooldown: 4 rounds. R is own ranged skill.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "以太爆裂",
+          "description": "六方向直线最远 6 格，110—150 + 0.8R 伤害，对甲 160%，穿甲 40%；目标每层解析额外增加 10% 伤害，不消耗解析。 冷却 4 自然轮；R 为自身远程技能。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "tio_zero_field",
+      "icon": "tio_zero_field",
+      "image": "assets/skills/tio_zero_field.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 6,
+        "Fatigue": 40,
+        "Cooldown": 4,
+        "Min": 0,
+        "Max": 0,
+        "Radius": 3,
+        "DamageMin": 0,
+        "DamageMax": 0,
+        "Armor": 0,
+        "Pierce": 0,
+        "Limit": 0,
+        "Scale": 0,
+        "Accuracy": 0,
+        "Line": false
+      },
+      "text": {
+        "en": {
+          "name": "Zero Field",
+          "description": "Self and allies within 3 gain 2 stacking barrier charges for 3 rounds. One charge blocks all direct hitpoint and armor damage from one attack action. Misses and zero damage do not consume charges; damage over time and control bypass it. Cooldown: 4 rounds. R is own ranged skill.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "零之领域",
+          "description": "自己及 3 格内友军各得 2 层屏障，持续 3 自然轮，可叠加；一层抵挡一次攻击行动的全部直接生命和护甲伤害。未命中、零伤害不消耗；不抵挡持续伤害和控制。 冷却 4 自然轮；R 为自身远程技能。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "tio_aion_sense",
+      "icon": "tio_aion_sense",
+      "image": "assets/skills/tio_aion_sense.png",
+      "kind": "passive",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {},
+      "text": {
+        "en": {
+          "name": "Aion Sense",
+          "description": "+10 ranged skill and defense; analysis is shared with allies.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "艾恩感知",
+          "description": "远程技能 +10，远程防御 +10；解析信息共享给友军。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "tio_septium_attunement",
+      "icon": "tio_septium_attunement",
+      "image": "assets/skills/tio_septium_attunement.png",
+      "kind": "passive",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {},
+      "text": {
+        "en": {
+          "name": "Septium Attunement",
+          "description": "Per physical socket element point: earth +1 melee defense, water +2% healing, fire +2% orbal damage, wind +2 initiative, time +2 fatigue capacity, space +1 ranged defense, mirage +2 resolve. Center quartz counts once.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "七曜调律",
+          "description": "每点宝石属性：地 +1 近防，水 +2% 治疗，火 +2% 导力伤害，风 +2 先攻，时 +2 最大疲劳，空 +1 远防，幻 +2 决心。中央石只计一次。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "renne_genius_executor",
+      "icon": "renne_genius_executor",
+      "image": "assets/skills/renne_genius_executor.png",
+      "kind": "passive",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {},
+      "text": {
+        "en": {
+          "name": "Genius Executor",
+          "description": "Innate attacks and offensive orbment arts use the higher of current melee and ranged skill for accuracy, retaining the original defense type, terrain and other modifiers. Orbment active skills cost 15% less fatigue while an orbment is equipped.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "天才执行者",
+          "description": "玲的固有攻击及导力器攻击魔法，以当前近战、远程技能中的较高值进行命中判定，仍保留攻击类型对应的防御、地形与其他修正。佩戴导力器时，导力器主动技能疲劳消耗降低15%。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "renne_annihilation_mark",
+      "icon": "renne_annihilation_mark",
+      "image": "assets/skills/renne_annihilation_mark.png",
+      "kind": "passive",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {},
+      "text": {
+        "en": {
+          "name": "Annihilation Mark",
+          "description": "Calamity Projection and offensive orbment arts add one mark on hit, up to 3, lasting 3 natural rounds. Innate scythe hits consume this Renne's marks for +15% damage per stack (+25% for Annihilation Angel). Each action applies or detonates marks once per target; misses preserve marks.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "歼灭刻印",
+          "description": "灾厄投射与导力器攻击魔法命中后施加1层刻印，最多3层，持续3个自然轮次。玲的镰刀固有技能命中时消耗自己的全部刻印，每层伤害+15%；S歼灭天使每层+25%。每次行动对每个目标仅施加或引爆一次，落空不消耗。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "alisa_orbal_bow_expert",
+      "icon": "alisa_orbal_bow_expert",
+      "image": "assets/skills/alisa_orbal_bow_expert.png",
+      "kind": "passive",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {},
+      "text": {
+        "en": {
+          "name": "Orbal Bow Expert",
+          "description": "Attacks with the signature orbal bow gain +10 accuracy, require no arrows and can be fired while engaged. Other range, terrain, defense and accuracy modifiers still apply.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "导力弓专家",
+          "description": "使用专属导力弓攻击时命中+10。导力弓不消耗箭矢，被近身时仍可射击；其他射程、地形、防御与命中修正照常生效。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "alisa_radiant_resonance",
+      "icon": "alisa_radiant_resonance",
+      "image": "assets/skills/alisa_radiant_resonance.png",
+      "kind": "passive",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {},
+      "text": {
+        "en": {
+          "name": "Radiant Resonance",
+          "description": "Successful active healing, fatigue recovery or support buffs on another ally grant Radiance (maximum 1), including orbment support arts. The next orbal bow attack action gains +25% damage and +10 percentage points armor penetration for its entire area; even an all-miss action consumes it. Self support and regeneration ticks do not trigger it.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "炽辉共鸣",
+          "description": "主动治疗、恢复疲劳或增益成功作用于其他友军时获得炽辉，最多1层，导力器支援魔法同样可触发。下一次导力弓攻击行动伤害+25%，穿甲率+10个百分点，整次群攻共享加成，全部落空也消耗。自我支援与持续恢复不触发。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "renne_calamity_projection",
+      "icon": "renne_calamity_projection",
+      "image": "assets/skills/renne_calamity_projection.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 4,
+        "Fatigue": 16,
+        "Cooldown": 0,
+        "Min": 1,
+        "Max": 4,
+        "Radius": 0,
+        "DamageMin": 45,
+        "DamageMax": 60,
+        "Scale": 0.35,
+        "Armor": 0.8,
+        "Pierce": 0.3
+      },
+      "text": {
+        "en": {
+          "name": "Calamity Projection",
+          "description": "4 AP, 16 fatigue, 0 natural rounds cooldown. Range 1–4. Ranged orbal attack; applies a mark on hit. Damage 45–60 + 0.35 × max(current melee, ranged skill); armor multiplier 0.8, penetration 30%.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "灾厄投射",
+          "description": "4行动点，16疲劳，冷却0个自然轮次。射程1–4格。导力远程攻击，命中施加刻印。 伤害45–60+0.35×S（当前近战与远程技能较高值），对甲倍率0.8，穿甲率30%。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "renne_death_scythe",
+      "icon": "renne_death_scythe",
+      "image": "assets/skills/renne_death_scythe.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 4,
+        "Fatigue": 18,
+        "Cooldown": 0,
+        "Min": 1,
+        "Max": 2,
+        "Radius": 0,
+        "DamageMin": 60,
+        "DamageMax": 80,
+        "Scale": 0.4,
+        "Armor": 1.2,
+        "Pierce": 0.3
+      },
+      "text": {
+        "en": {
+          "name": "Death Scythe",
+          "description": "4 AP, 18 fatigue, 0 natural rounds cooldown. Range 1–2. Melee scythe attack; detonates marks on hit. Killing a target bearing your marks restores 10 fatigue. Damage 60–80 + 0.4 × max(current melee, ranged skill); armor multiplier 1.2, penetration 30%. Requires the intact signature weapon. Damage replaces weapon base values; applicable perks and orbment bonuses remain.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "死亡之镰",
+          "description": "4行动点，18疲劳，冷却0个自然轮次。射程1–2格。近战镰击，命中引爆刻印；亲自击杀带有自己刻印的目标时恢复10疲劳。 伤害60–80+0.4×S（当前近战与远程技能较高值），对甲倍率1.2，穿甲率30%。 需装备完好的专属武器；伤害独立于武器基础值，保留适用的特技和导力器加成。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "renne_shadow_step",
+      "icon": "renne_shadow_step",
+      "image": "assets/skills/renne_shadow_step.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 2,
+        "Fatigue": 12,
+        "Cooldown": 2,
+        "Min": 1,
+        "Max": 3,
+        "Radius": 0,
+        "DamageMin": 0,
+        "DamageMax": 0,
+        "Scale": 0,
+        "Armor": 0,
+        "Pierce": 0
+      },
+      "text": {
+        "en": {
+          "name": "Shadow Step",
+          "description": "2 AP, 12 fatigue, 2 natural rounds cooldown. Range 1–3. Teleport to a visible empty standable tile within one elevation, without disengagement attacks. Gain +10 melee defense until the end of your next normal turn. Cannot be used while rooted.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "暗影踏步",
+          "description": "2行动点，12疲劳，冷却2个自然轮次。射程1–3格。瞬移至可见、可站立且高差不超过1的空地，不触发脱离攻击。近战防御+10，持续至下一个正常回合结束；定身时不可使用。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "renne_calamity_waltz",
+      "icon": "renne_calamity_waltz",
+      "image": "assets/skills/renne_calamity_waltz.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 6,
+        "Fatigue": 30,
+        "Cooldown": 2,
+        "Min": 0,
+        "Max": 0,
+        "Radius": 1,
+        "DamageMin": 55,
+        "DamageMax": 75,
+        "Scale": 0.35,
+        "Armor": 1.2,
+        "Pierce": 0.25
+      },
+      "text": {
+        "en": {
+          "name": "Calamity Waltz",
+          "description": "6 AP, 30 fatigue, 2 natural rounds cooldown. Range 0–0. Strike all adjacent enemies, with independent hit rolls and mark detonations. Does not harm allies. Damage 55–75 + 0.35 × max(current melee, ranged skill); armor multiplier 1.2, penetration 25%. Requires the intact signature weapon. Damage replaces weapon base values; applicable perks and orbment bonuses remain.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "灾厄轮舞",
+          "description": "6行动点，30疲劳，冷却2个自然轮次。射程0–0格。攻击身边所有敌人，每个目标独立命中与引爆刻印，不伤害友军。 伤害55–75+0.35×S（当前近战与远程技能较高值），对甲倍率1.2，穿甲率25%。 需装备完好的专属武器；伤害独立于武器基础值，保留适用的特技和导力器加成。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "renne_annihilation_angel",
+      "icon": "renne_annihilation_angel",
+      "image": "assets/skills/renne_annihilation_angel.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 8,
+        "Fatigue": 45,
+        "Cooldown": 4,
+        "Min": 1,
+        "Max": 2,
+        "Radius": 1,
+        "DamageMin": 110,
+        "DamageMax": 145,
+        "Scale": 0.7,
+        "Armor": 1.5,
+        "Pierce": 0.4
+      },
+      "text": {
+        "en": {
+          "name": "S-Craft: Annihilation Angel",
+          "description": "8 AP, 45 fatigue, 4 natural rounds cooldown. Range 1–2. Strike an enemy and all adjacent enemies. Each detonated mark adds 25% damage. Damage 110–145 + 0.7 × max(current melee, ranged skill); armor multiplier 1.5, penetration 40%. Requires the intact signature weapon. Damage replaces weapon base values; applicable perks and orbment bonuses remain.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "S歼灭天使",
+          "description": "8行动点，45疲劳，冷却4个自然轮次。射程1–2格。以敌人为中心攻击相邻范围的所有敌人，刻印每层增加25%伤害。 伤害110–145+0.7×S（当前近战与远程技能较高值），对甲倍率1.5，穿甲率40%。 需装备完好的专属武器；伤害独立于武器基础值，保留适用的特技和导力器加成。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "alisa_flame_arrow",
+      "icon": "alisa_flame_arrow",
+      "image": "assets/skills/alisa_flame_arrow.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 4,
+        "Fatigue": 15,
+        "Cooldown": 0,
+        "Min": 1,
+        "Max": 6,
+        "Radius": 0,
+        "DamageMin": 45,
+        "DamageMax": 65,
+        "Scale": 0.4,
+        "Armor": 0.9,
+        "Pierce": 0.3
+      },
+      "text": {
+        "en": {
+          "name": "Flame Arrow",
+          "description": "4 AP, 15 fatigue, 0 natural rounds cooldown. Range 1–6. Orbal bow attack. Hits burn the target for 8 HP at the start of its next 2 normal turns. Refreshes without stacking; fire and debuff immunity apply. Damage 45–65 + 0.4 × current ranged skill; armor multiplier 0.9, penetration 30%. Requires the intact signature weapon. Damage replaces weapon base values; applicable perks and orbment bonuses remain.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "烈焰箭",
+          "description": "4行动点，15疲劳，冷却0个自然轮次。射程1–6格。导力弓攻击；命中后施加燃烧，在目标接下来2个正常回合开始时各造成8点生命伤害。重复施加刷新，不叠加，火焰及减益免疫有效。 伤害45–65+0.4×R（当前远程技能），对甲倍率0.9，穿甲率30%。 需装备完好的专属武器；伤害独立于武器基础值，保留适用的特技和导力器加成。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "alisa_molten_arrow_rain",
+      "icon": "alisa_molten_arrow_rain",
+      "image": "assets/skills/alisa_molten_arrow_rain.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 6,
+        "Fatigue": 28,
+        "Cooldown": 2,
+        "Min": 2,
+        "Max": 5,
+        "Radius": 1,
+        "DamageMin": 40,
+        "DamageMax": 55,
+        "Scale": 0.3,
+        "Armor": 1.2,
+        "Pierce": 0.2
+      },
+      "text": {
+        "en": {
+          "name": "Molten Arrow Rain",
+          "description": "6 AP, 28 fatigue, 2 natural rounds cooldown. Range 2–5. Attack enemies on and adjacent to the selected tile, applying the same burn as Flame Arrow on hit. Does not harm allies. Damage 40–55 + 0.3 × current ranged skill; armor multiplier 1.2, penetration 20%. Requires the intact signature weapon. Damage replaces weapon base values; applicable perks and orbment bonuses remain.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "熔光箭雨",
+          "description": "6行动点，28疲劳，冷却2个自然轮次。射程2–5格。攻击选定格及相邻格的所有敌人，命中施加与烈焰箭相同的燃烧，不伤害友军。 伤害40–55+0.3×R（当前远程技能），对甲倍率1.2，穿甲率20%。 需装备完好的专属武器；伤害独立于武器基础值，保留适用的特技和导力器加成。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "alisa_holy_blessing",
+      "icon": "alisa_holy_blessing",
+      "image": "assets/skills/alisa_holy_blessing.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 4,
+        "Fatigue": 24,
+        "Cooldown": 2,
+        "Min": 1,
+        "Max": 4,
+        "Radius": 0,
+        "DamageMin": 0,
+        "DamageMax": 0,
+        "Scale": 0,
+        "Armor": 0,
+        "Pierce": 0
+      },
+      "text": {
+        "en": {
+          "name": "Holy Blessing",
+          "description": "4 AP, 24 fatigue, 2 natural rounds cooldown. Range 1–4. Restore 25 HP and 18 fatigue to another ally and remove one bleed or poison effect, prioritizing bleeding. Cannot revive. Radiance requires actual recovery or cleansing.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "圣洁祝福",
+          "description": "4行动点，24疲劳，冷却2个自然轮次。射程1–4格。为其他友军恢复25生命与18疲劳，并移除1个流血或中毒效果（优先流血）。不能复活；必须实际产生恢复或净化才获得炽辉。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "alisa_heavens_gift",
+      "icon": "alisa_heavens_gift",
+      "image": "assets/skills/alisa_heavens_gift.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 5,
+        "Fatigue": 32,
+        "Cooldown": 3,
+        "Min": 1,
+        "Max": 4,
+        "Radius": 1,
+        "DamageMin": 0,
+        "DamageMax": 0,
+        "Scale": 0,
+        "Armor": 0,
+        "Pierce": 0
+      },
+      "text": {
+        "en": {
+          "name": "Heaven's Gift",
+          "description": "5 AP, 32 fatigue, 3 natural rounds cooldown. Range 1–4. Bless the target and adjacent allies, excluding Alisa. At the start of their next 2 normal turns, restore 10 HP and 6 fatigue. Gain +8 melee and ranged defense until the second turn ends. Reapplication refreshes the duration.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "天堂赠礼",
+          "description": "5行动点，32疲劳，冷却3个自然轮次。射程1–4格。为目标及其相邻的其他友军施加祝福，排除亚莉莎。接下来2个正常回合开始时恢复10生命与6疲劳，期间近战及远程防御+8；重复施加刷新。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "alisa_celestial_blazing_wings",
+      "icon": "alisa_celestial_blazing_wings",
+      "image": "assets/skills/alisa_celestial_blazing_wings.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 8,
+        "Fatigue": 42,
+        "Cooldown": 4,
+        "Min": 2,
+        "Max": 6,
+        "Radius": 1,
+        "DamageMin": 95,
+        "DamageMax": 125,
+        "Scale": 0.65,
+        "Armor": 1.4,
+        "Pierce": 0.35
+      },
+      "text": {
+        "en": {
+          "name": "S-Craft: Celestial Blazing Wings",
+          "description": "8 AP, 42 fatigue, 4 natural rounds cooldown. Range 2–6. Attack enemies on and adjacent to the selected tile. When Radiance is consumed, restore 12 fatigue once to other allies within 3 tiles after the entire attack. Damage 95–125 + 0.65 × current ranged skill; armor multiplier 1.4, penetration 35%. Requires the intact signature weapon. Damage replaces weapon base values; applicable perks and orbment bonuses remain.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "S天穹炽翼",
+          "description": "8行动点，42疲劳，冷却4个自然轮次。射程2–6格。攻击选定格及相邻格的所有敌人。消耗炽辉时，整次攻击结束后为自身3格内其他友军各恢复12疲劳，仅结算一次。 伤害95–125+0.65×R（当前远程技能），对甲倍率1.4，穿甲率35%。 需装备完好的专属武器；伤害独立于武器基础值，保留适用的特技和导力器加成。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "aemeath_voyage",
+      "icon": "aemeath_voyage",
+      "image": "assets/skills/aemeath_voyage.png",
+      "kind": "passive",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {},
+      "text": {
+        "en": {
+          "name": "Voyage Together",
+          "description": "Starts in Digital Ghost form with 2 Synchronization (cap 6). From round two, recover 1 at the first normal turn each round. An active attack that damages health or armor restores 1 per whole action. Each damaged target gains 1 Syntony in Ghost form or 1 Fusion in Mech form, once per target per action, at the attack's legal range without propagation. The ultimate only restores Synchronization. Reactions, damage over time and bonus damage do not trigger this. Each transformation skill grants 1 Resonance (cap 6); each point adds 5 percentage points of armor penetration.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "共赴长航",
+          "description": "以电子幽灵开始战斗。同步率初始2、上限6；从第二轮起，每轮首次正常回合开始回复1。主动攻击实际造成生命或护甲伤害后，整次行动回复1同步率。电子幽灵给实际受伤目标施加1层震谐，长航机兵施加1层聚爆；每目标每行动限一次，无距离附加限制，不扩散。大招只回复同步率。反击、借机、持续与附加伤害不触发。变身技能每次实际切换获得1共鸣率，上限6，每点增加5个百分点穿甲。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "aemeath_interference",
+      "icon": "aemeath_interference",
+      "image": "assets/skills/aemeath_interference.png",
+      "kind": "passive",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {},
+      "text": {
+        "en": {
+          "name": "Syntony Interference",
+          "description": "Digital Ghost only. Enemies with Syntony suffer -10 accuracy per stack when attacking Aemeath, capped at -30. Aemeath gains +20 accuracy against targets with Syntony. Normal hit-chance limits apply.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "震谐干涉",
+          "description": "仅电子幽灵生效。持有震谐的敌人攻击爱弥斯时，每层命中判定-10，最多-30；爱弥斯攻击持有震谐的敌人时命中判定+20。遵守普通命中上下限。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "aemeath_trajectory",
+      "icon": "aemeath_trajectory",
+      "image": "assets/skills/aemeath_trajectory.png",
+      "kind": "passive",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {},
+      "text": {
+        "en": {
+          "name": "Fusion Trajectory",
+          "description": "Voyage Mech only. Add 5 base weapon damage per Fusion stack present at action start, up to 30, on the first damaging strike against each target per action. Armor and damage reduction apply. The ultimate and reactions do not trigger this.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "聚爆轨迹",
+          "description": "仅长航机兵生效。对持有聚爆的敌人，增加行动开始时聚爆层数x5的基础武器伤害，上限30。每目标每行动仅首个实际伤害段生效，正常结算护甲与减伤。大招与反应攻击不触发。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "aemeath_starlight",
+      "icon": "aemeath_starlight",
+      "image": "assets/skills/aemeath_starlight.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 6,
+        "Fatigue": 18,
+        "Sync": 1,
+        "Resonance": 0,
+        "Range": 1,
+        "Targets": 1,
+        "Mult": 0.8
+      },
+      "text": {
+        "en": {
+          "name": "Starlight Descends",
+          "description": "Digital Ghost; melee weapon; 6 AP, 18 Fatigue, 1 Synchronization. Strike one enemy within 1 tile for 80% weapon damage and apply 2 Syntony. If the first strike damages a target that had Fusion before casting, consume 1 Fusion for one independent 80% follow-up. The follow-up does not repeat the explicit marks; up to 3 Syntony including Voyage Together.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "携星辉降临于此",
+          "description": "电子幽灵；近战武器；6行动点、18疲劳、1同步率。攻击1格内一名敌人，造成80%武器伤害并施加2层震谐。若目标施放前已有聚爆且首段造成伤害，消耗1层聚爆再攻击一次，造成80%武器伤害。追击独立命中，不再添加技能自带印记；含共通被动最多添加3层震谐。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "aemeath_armament",
+      "icon": "aemeath_armament",
+      "image": "assets/skills/aemeath_armament.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 6,
+        "Fatigue": 18,
+        "Sync": 2,
+        "Resonance": 0,
+        "Range": 2,
+        "Targets": 3,
+        "Mult": 0.7
+      },
+      "text": {
+        "en": {
+          "name": "Coordinated Thrust: Armament Fusion",
+          "description": "Digital Ghost; melee weapon; 6 AP, 18 Fatigue, 2 Synchronization. Strike a primary enemy and up to two adjacent enemies, all within 2 tiles, for 70% weapon damage each. Damaged targets gain 1 Fusion and 1 Syntony from Voyage Together. Then change in place to Voyage Mech and gain 1 Resonance, even if all attacks miss. No friendly fire.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "合击突刺 兵装融合",
+          "description": "电子幽灵；近战武器；6行动点、18疲劳、2同步率。攻击2格内主目标及其相邻、仍在自身2格内的至多两名敌人，各造成70%武器伤害；实际受伤者获得1层聚爆，并由共通被动获得1层震谐。结算后原地切换长航机兵，获得1共鸣率；全部落空也变身。不伤友军。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "aemeath_melody",
+      "icon": "aemeath_melody",
+      "image": "assets/skills/aemeath_melody.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 6,
+        "Fatigue": 18,
+        "Sync": 1,
+        "Resonance": 0,
+        "Range": 3,
+        "Targets": 3,
+        "Mult": 0.9
+      },
+      "text": {
+        "en": {
+          "name": "Melody Across the Sky",
+          "description": "Voyage Mech; melee weapon; 6 AP, 18 Fatigue, 1 Synchronization. Strike a visible enemy and up to two adjacent enemies, all within 3 tiles, for 90% weapon damage and 2 Fusion each. A target damaged by the first strike that had Syntony before casting loses 1 Syntony and receives one independent 90% follow-up. Up to 3 Fusion per target including Voyage Together. No friendly fire.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "以旋律穿越长空",
+          "description": "长航机兵；近战武器；6行动点、18疲劳、1同步率。锁定3格内可见敌人及其相邻、仍在自身3格内的至多两名敌人，各造成90%武器伤害并施加2层聚爆。对施放前已有震谐且首段受到伤害者，消耗1层震谐再独立攻击一次，造成90%武器伤害。每目标含共通被动最多添加3层聚爆。不伤友军。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "aemeath_dawn",
+      "icon": "aemeath_dawn",
+      "image": "assets/skills/aemeath_dawn.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 6,
+        "Fatigue": 18,
+        "Sync": 2,
+        "Resonance": 0,
+        "Range": 3,
+        "Targets": 1,
+        "Mult": 1
+      },
+      "text": {
+        "en": {
+          "name": "Coordinated Thrust: Dawn Chorus",
+          "description": "Voyage Mech; melee weapon; 6 AP, 18 Fatigue, 2 Synchronization. Project a thrust at one visible enemy within 3 tiles for 100% weapon damage and 1 Syntony, plus 1 Fusion from Voyage Together. Then return in place to Digital Ghost and gain 1 Resonance, even on a miss. Does not move Aemeath.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "合击突刺 启明之音",
+          "description": "长航机兵；近战武器；6行动点、18疲劳、2同步率。投射突刺攻击3格内一名可见敌人，造成100%武器伤害并施加1层震谐，共通被动另加1层聚爆。结算后原地恢复电子幽灵，获得1共鸣率；未命中也变身。本体不移动。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "aemeath_ultimate",
+      "icon": "aemeath_ultimate",
+      "image": "assets/skills/aemeath_ultimate.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 8,
+        "Fatigue": 0,
+        "Sync": 0,
+        "Resonance": 4,
+        "Range": 7,
+        "Targets": 7,
+        "Mult": 2.5
+      },
+      "text": {
+        "en": {
+          "name": "Starlight Beyond the Boundary",
+          "description": "Both forms; melee weapon; 8 AP, 0 Fatigue, 4 Resonance. Strike a visible enemy within 7 tiles for 250% weapon damage + 10 per mark; adjacent enemies take 125% weapon damage + 5 per mark, with independent hit and defense rolls. Snapshot Aemeath's marks on living enemies, capped at 20, without consuming them. Uses pre-spend penetration. No form marks or Fusion bonus damage. Returns to Digital Ghost without granting Resonance. No friendly fire.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "星辉破界而来",
+          "description": "两形态共用；近战武器；8行动点、0疲劳、4共鸣率。对7格内可见主目标造成250%武器伤害+印记总层数x10；其周围1格敌人受到125%武器伤害+层数x5，各自命中和结算防御。统计存活敌人身上由爱弥斯施加的两类印记，最多20层，不消耗印记。使用扣费前穿甲；不触发形态印记或聚爆附伤。结束恢复电子幽灵，不额外获得共鸣率。不伤友军。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "fate_lightning",
+      "icon": "fate_lightning",
+      "image": "assets/skills/fate_lightning.png",
+      "kind": "passive",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {},
+      "text": {
+        "en": {
+          "name": "Gentle Lightning",
+          "description": "Gain +15 Initiative. Voluntarily move 2 tiles during a normal turn to charge the next signature damage skill: +10 hit chance and +20% damage for every strike of that action, consumed even on misses. Once per normal turn; forced movement and extra turns do not count. Charge expires at turn end.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "温柔的雷光",
+          "description": "先攻+15。每个正常回合内主动移动累计2格，获得1次雷光充能：下一次专属伤害技能整次命中+10、伤害+20%，未命中也消耗。每回合只触发一次；强制位移与额外行动不积累，回合结束清除。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "fate_scythe",
+      "icon": "fate_scythe",
+      "image": "assets/skills/fate_scythe.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 4,
+        "Fatigue": 15,
+        "Min": 1,
+        "Range": 1,
+        "Cooldown": 0,
+        "Low": 65,
+        "High": 85,
+        "Armor": 1.2,
+        "Pierce": 0.25,
+        "Hit": 0,
+        "Strikes": 1,
+        "Attack": true,
+        "Ranged": false
+      },
+      "text": {
+        "en": {
+          "name": "Lightning Scythe",
+          "description": "Strike an adjacent enemy for 65-85 damage, 120% armor damage and 25% armor penetration. Costs 4 AP and 15 fatigue.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "雷光镰刃",
+          "description": "近战攻击相邻敌人，造成65-85伤害，120%护甲伤害，25%穿甲。消耗4行动点、15疲劳。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "fate_move",
+      "icon": "fate_move",
+      "image": "assets/skills/fate_move.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 2,
+        "Fatigue": 12,
+        "Min": 1,
+        "Range": 3,
+        "Cooldown": 2,
+        "Low": 0,
+        "High": 0,
+        "Armor": 1,
+        "Pierce": 0,
+        "Hit": 0,
+        "Strikes": 0,
+        "Attack": false,
+        "Ranged": false
+      },
+      "text": {
+        "en": {
+          "name": "Sonic Move",
+          "description": "Move along a walkable route of up to 3 steps without attacks of opportunity. Cannot cross units, obstacles or adjacent elevation differences greater than 1; unavailable while rooted. Stops at the last valid tile if interrupted. Costs 2 AP (1 in Sonic Form) and 12 fatigue; 2 normal-turn cooldown.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "音速移动",
+          "description": "沿最多3步的可行走路线高速移动至空格，不触发借机攻击。不能穿过单位、障碍或超过1级的相邻高差；被定身时无法使用。途中受阻停在最后有效落点。消耗2行动点、12疲劳，真音速形态降为1行动点；冷却2个正常回合。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "fate_lancer",
+      "icon": "fate_lancer",
+      "image": "assets/skills/fate_lancer.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 4,
+        "Fatigue": 22,
+        "Min": 2,
+        "Range": 5,
+        "Cooldown": 1,
+        "Low": 25,
+        "High": 35,
+        "Armor": 1,
+        "Pierce": 0.25,
+        "Hit": 10,
+        "Strikes": 3,
+        "Attack": true,
+        "Ranged": true
+      },
+      "text": {
+        "en": {
+          "name": "Photon Lancer",
+          "description": "Fire 3 lances at a visible enemy 2-5 tiles away. Each independently hits for 25-35 damage with +10 hit chance, 100% armor damage and 25% armor penetration. Stops if the target dies; cannot be used while engaged. Costs 4 AP and 22 fatigue; 1 normal-turn cooldown.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "光子灵枪",
+          "description": "向2-5格内可见敌人连续射出3发雷枪，每发25-35伤害，命中+10，100%护甲伤害，25%穿甲。目标死亡即停止，不转移目标；被敌人贴身时无法使用。消耗4行动点、22疲劳；冷却1个正常回合。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "fate_form",
+      "icon": "fate_form",
+      "image": "assets/skills/fate_form.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 2,
+        "Fatigue": 20,
+        "Min": 0,
+        "Range": 0,
+        "Cooldown": 0,
+        "Low": 0,
+        "High": 0,
+        "Armor": 1,
+        "Pierce": 0,
+        "Hit": 0,
+        "Strikes": 0,
+        "Attack": false,
+        "Ranged": false
+      },
+      "text": {
+        "en": {
+          "name": "Sonic Form",
+          "description": "Once per battle. Gain an additional 25 Initiative but take 25% more damage. Sonic Move costs 1 AP; Lightning Scythe becomes Twin Blades and Riot Zanber is unlocked. Lasts until the end of the next normal turn. Costs 2 AP and 20 fatigue.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "真音速形态",
+          "description": "每场战斗一次。额外获得25先攻，受到的伤害增加25%；音速移动改为1行动点，雷光镰刃替换为双刃连斩并解锁雷光斩舰刀。持续至下一个正常回合结束。消耗2行动点、20疲劳。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "fate_blade",
+      "icon": "fate_blade",
+      "image": "assets/skills/fate_blade.png",
+      "kind": "active",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 4,
+        "Fatigue": 18,
+        "Min": 1,
+        "Range": 1,
+        "Cooldown": 0,
+        "Low": 40,
+        "High": 50,
+        "Armor": 1.2,
+        "Pierce": 0.25,
+        "Hit": 0,
+        "Strikes": 2,
+        "Attack": true,
+        "Ranged": false
+      },
+      "text": {
+        "en": {
+          "name": "Twin Blades",
+          "description": "Sonic Form only. Strike an adjacent enemy twice for 40-50 damage per hit, 120% armor damage and 25% armor penetration. Stops immediately if either combatant dies. Costs 4 AP and 18 fatigue.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "双刃连斩",
+          "description": "真音速形态限定。对相邻敌人连续攻击2次，每次40-50伤害，120%护甲伤害，25%穿甲。任一方死亡立即停止。消耗4行动点、18疲劳。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "fate_zanber",
+      "icon": "fate_zanber",
+      "image": "assets/skills/fate_zanber.png",
+      "kind": "active",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 6,
+        "Fatigue": 35,
+        "Min": 1,
+        "Range": 3,
+        "Cooldown": 0,
+        "Low": 150,
+        "High": 190,
+        "Armor": 1.8,
+        "Pierce": 0.35,
+        "Hit": 15,
+        "Strikes": 1,
+        "Attack": true,
+        "Ranged": false
+      },
+      "text": {
+        "en": {
+          "name": "Riot Zanber",
+          "description": "Sonic Form only. Slash a straight hex line up to 3 tiles, hitting each enemy once for 150-190 damage with +15 hit chance, 180% armor damage and 35% armor penetration. Allies, obstacles and impassable height changes block the line. Immediately ends the form even if all attacks miss. Costs 6 AP and 35 fatigue.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "雷光斩舰刀",
+          "description": "真音速形态限定。沿六边格直线斩击最多3格内的敌人，每个目标一次150-190伤害，命中+15，180%护甲伤害，35%穿甲；友军、障碍和不可跨越高差截断攻击。施放后立即结束形态，即使全部未命中。消耗6行动点、35疲劳。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "kanade_overdrive",
+      "icon": "kanade_tachibana_overdrive",
+      "image": "assets/skills/kanade_tachibana_overdrive.png",
+      "kind": "passive",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {},
+      "text": {
+        "en": {
+          "name": "Overdrive",
+          "description": "+25% melee damage and +20 initiative. After the first round, recover 8 extra fatigue at the first normal turn each round, increased to 12 after completing 'Say Who You Want to Protect'. Completing 'Save Her a Warm Meal', 'Every Voice of Mine' and 'A Seat for Tomorrow' each grants +1 maximum AP.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "Overdrive 身体强化",
+          "description": "近战伤害+25%，主动值+20。首轮之后，每轮首次正常行动时额外恢复8疲劳；完成“先说出你想保护谁”后增至12。完成“给她留一份热饭”“每一个我都听得见”和“明天的座位”各获得最大AP+1。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "kanade_hand_sonic_slash",
+      "icon": "kanade_tachibana_hand_sonic_slash",
+      "image": "assets/skills/kanade_tachibana_hand_sonic_slash.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 3,
+        "Fatigue": 10,
+        "Range": 1,
+        "Cooldown": 0,
+        "Damage": 1.3,
+        "Armor": 1.3,
+        "Pierce": 0.35,
+        "Hit": 15,
+        "Attack": true
+      },
+      "text": {
+        "en": {
+          "name": "Hand Sonic: Slash",
+          "description": "3 AP, 10 fatigue. Adjacent attack: 130% weapon damage, +15 accuracy, 130% armor damage, 35% penetration.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "音速斩击",
+          "description": "3AP，10疲劳。相邻敌人承受130%武器伤害，命中+15，破甲130%，穿透35%。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "kanade_hand_sonic_pierce",
+      "icon": "kanade_tachibana_hand_sonic_pierce",
+      "image": "assets/skills/kanade_tachibana_hand_sonic_pierce.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 4,
+        "Fatigue": 15,
+        "Range": 1,
+        "Cooldown": 0,
+        "Damage": 1.1,
+        "Armor": 2,
+        "Pierce": 0.5,
+        "Hit": 10,
+        "Attack": true
+      },
+      "text": {
+        "en": {
+          "name": "Hand Sonic: Pierce",
+          "description": "4 AP, 15 fatigue. 110% weapon damage, +10 accuracy, ignores shield defense, 200% armor damage and 50% penetration (220%/55% with upgraded Hand Sonic).",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "音速贯穿",
+          "description": "4AP，15疲劳。110%武器伤害，命中+10，忽略盾牌防御，破甲200%、穿透50%。强化音速臂刃后提升至220%、55%。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "kanade_hand_sonic_sweep",
+      "icon": "kanade_tachibana_hand_sonic_sweep",
+      "image": "assets/skills/kanade_tachibana_hand_sonic_sweep.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 4,
+        "Fatigue": 18,
+        "Range": 1,
+        "Cooldown": 0,
+        "Damage": 0.9,
+        "Armor": 1.3,
+        "Pierce": 0.35,
+        "Hit": 5,
+        "Attack": true
+      },
+      "text": {
+        "en": {
+          "name": "Hand Sonic: Sweep",
+          "description": "4 AP, 18 fatigue. Strike enemies in a three-hex adjacent arc for 90% weapon damage, +5 accuracy, 130% armor damage and 35% penetration. Allies are excluded.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "音速横扫",
+          "description": "4AP，18疲劳。选择方向及两侧相邻格的敌人各承受90%武器伤害，命中+5，破甲130%、穿透35%。不伤友军。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "kanade_distortion",
+      "icon": "kanade_tachibana_distortion",
+      "image": "assets/skills/kanade_tachibana_distortion.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 2,
+        "Fatigue": 12,
+        "Range": 1,
+        "Cooldown": 2,
+        "Damage": 0,
+        "Armor": 1,
+        "Pierce": 0,
+        "Hit": 0,
+        "Attack": false
+      },
+      "text": {
+        "en": {
+          "name": "Distortion",
+          "description": "2 AP, 12 fatigue, 2-round cooldown. Nullify direct physical projectiles and their attached effects until the next normal turn or a committed active attack. Completing the stage 60 challenge 'Every Voice of Mine' also grants the caster +20 melee defense and 25% less damage received while the barrier is active; stacks with Delay. Angel Uniform also protects one selected adjacent ally against one otherwise successful projectile. The ally does not receive the defense or damage reduction.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "Distortion 偏转",
+          "description": "2AP，12疲劳，冷却2轮。至下次正常回合开始，免疫直接物理投射物及附带效果；主动攻击即结束。完成60阶段挑战“每一个我都听得见”后，屏障期间自身额外近战防御+20、受到的伤害降低25%，可与高速残像叠加。装备天使制服护甲后可选择一名邻接同伴，期间为其挡下一次本应命中的投射物；同伴不获得近防和减伤。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "kanade_delay",
+      "icon": "kanade_tachibana_delay",
+      "image": "assets/skills/kanade_tachibana_delay.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 1,
+        "Fatigue": 10,
+        "Range": 6,
+        "Cooldown": 0,
+        "Damage": 0,
+        "Armor": 1,
+        "Pierce": 0,
+        "Hit": 0,
+        "Attack": false
+      },
+      "text": {
+        "en": {
+          "name": "Delay",
+          "description": "1 AP, 10 fatigue, once per round. Stay in place or dash up to 4 steps along a passable route, increased to 6 after completing 'Every Voice of Mine'. Ignore opportunity attacks, but still trigger terrain hazards. Gain +20 melee defense and evade 2 otherwise successful single-target melee attacks (3 with Quiet Feather equipped) until the next normal turn. After completing 'The Unsent Letter', killing an enemy with Kanade's own blade attack that costs AP grants an extra 3-step dash without renewing the defense bonus or evasions.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "Delay 高速残像",
+          "description": "1AP，10疲劳。每轮一次，可原地施展或沿可通行路线突进4步；完成“每一个我都听得见”后增至6步。忽略借机攻击，但仍会触发地形危险。至下次正常回合，近防+20，并规避2次本应命中的单体近战攻击；装备静羽发饰后为3次。完成“未能寄出的那封信”后，亲自使用消耗行动点的臂刃攻击击杀敌人，可额外突进3步，但不会重新获得防御加成或规避次数。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "kanade_harmonics",
+      "icon": "kanade_tachibana_harmonics",
+      "image": "assets/skills/kanade_tachibana_harmonics.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 4,
+        "Fatigue": 25,
+        "Range": 1,
+        "Cooldown": 4,
+        "Damage": 0,
+        "Armor": 1,
+        "Pierce": 0,
+        "Hit": 0,
+        "Attack": false
+      },
+      "text": {
+        "en": {
+          "name": "Harmonics",
+          "description": "Requires Hand Sonic. 4 AP, 25 fatigue, 4-round cooldown. Summon up to 2 controllable clones in empty adjacent spaces (3 with Unsent Thanks equipped). Each has 6 AP and 60% of Kanade's maximum HP, current armor and damage at the time of summoning, plus three blade attacks and a 3-step dash. Clones are absorbed at the start of Kanade's second subsequent normal turn. Dead clones restore no fatigue.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "Harmonics 谐波分身",
+          "description": "需要装备音速臂刃。4AP，25疲劳，冷却4轮。在相邻空位召唤至多2个可操作分身，装备未寄出的感谢后为3个。分身拥有6AP，生命上限、当前护甲和伤害分别为召唤时本体的60%，可使用三种臂刃攻击和3步突进。在奏接下来的第二个正常回合开始时自动回收；分身死亡不会恢复疲劳。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "kanade_absorb",
+      "icon": "kanade_tachibana_absorb",
+      "image": "assets/skills/kanade_tachibana_absorb.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 2,
+        "Fatigue": 0,
+        "Range": 0,
+        "Cooldown": 0,
+        "Damage": 0,
+        "Armor": 1,
+        "Pierce": 0,
+        "Hit": 0,
+        "Attack": false
+      },
+      "text": {
+        "en": {
+          "name": "Absorb",
+          "description": "2 AP, no fatigue. Absorb all living clones, recovering 8 fatigue each, increased to 12 after completing 'The Unsent Letter'. Does not restore HP or reset skill cooldowns.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "Absorb 回收",
+          "description": "2AP，0疲劳。回收全部存活分身，每个恢复8疲劳；完成“未能寄出的那封信”后增至12。不会恢复生命或重置技能冷却。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "kanade_howling",
+      "icon": "kanade_tachibana_howling",
+      "image": "assets/skills/kanade_tachibana_howling.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 4,
+        "Fatigue": 25,
+        "Range": 0,
+        "Cooldown": 3,
+        "Damage": 0,
+        "Armor": 1,
+        "Pierce": 0,
+        "Hit": 20,
+        "Attack": false
+      },
+      "text": {
+        "en": {
+          "name": "Howling",
+          "description": "4 AP, 25 fatigue, 3-round cooldown (2 with Unsent Thanks equipped). Roll melee accuracy +20 against visible enemies within 2 hexes to stun for one turn. Stun-immune targets instead lose 20% damage and 20 initiative for one turn. Has no effect on enemies immune to sound or negative status effects.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "Howling 咆哮",
+          "description": "4AP，25疲劳，冷却3轮，装备未寄出的感谢后为2轮。对2格内视野中的敌人以近战命中+20进行命中判定，命中后眩晕一回合；免疫眩晕的敌人改为伤害-20%、主动-20，持续一回合。对免疫声音或负面状态的敌人无效。",
+          "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "kanade_sonic_rotation",
+      "icon": "kanade_tachibana_sonic_rotation",
+      "image": "assets/skills/kanade_tachibana_sonic_rotation.png",
+      "kind": "active",
+      "lifetime": "transient",
+      "unlockProgressionStage": 0,
+      "spec": {
+        "AP": 6,
+        "Fatigue": 35,
+        "Range": 2,
+        "Cooldown": 4,
+        "Damage": 1.7,
+        "Armor": 1.8,
+        "Pierce": 0.4,
+        "Hit": 15,
+        "Attack": true
+      },
+      "text": {
+        "en": {
+          "name": "Sonic Rotation",
+          "description": "Unlocked by completing A Seat for Tomorrow. 6 AP, 35 fatigue, 4-round cooldown, twice per battle. Attack visible enemies within 2 tiles of Kanade regardless of elevation, excluding allies: 170% weapon damage, +15 accuracy, 180% armor damage and 40% penetration. Clones are optional; at least one valid enemy must be in range. Click to preview, then confirm to spend resources and cast. Each able clone may follow up once per round against one surviving enemy hit by Kanade and adjacent to that clone, prioritizing the lowest HP.",
+          "tooltip": []
+        },
+        "zh": {
+          "name": "音速回旋",
+          "description": "完成“明天的座位”后解锁。6AP，35疲劳，冷却4轮，每战2次。以自身为中心攻击周围2格内的可见敌人，不限制高度差，不伤友军；各承受170%武器伤害，命中+15、破甲180%、穿透40%。无需分身，但范围内须有可攻击的敌人。点击先预览，确认后才消耗并释放。每个可行动的分身会追击一名被奏命中、仍然存活且与分身相邻的敌人，优先选择生命最低者；每个分身每轮至多追击一次。",
           "tooltip": []
         }
       }
@@ -50929,6 +58494,31 @@ window.BV_WIKI_DATA = {
           "name": "誓约突刺",
           "description": "每全局轮首次正常使用跳过命中判定，仍受攻击免疫影响。换装、换人和额外回合不刷新。",
           "tooltip": []
+        }
+      }
+    },
+    {
+      "key": "saber_mana_release",
+      "icon": "saber_mana_release",
+      "image": "assets/skills/saber_mana_release.png",
+      "kind": "active",
+      "lifetime": "persistent",
+      "unlockProgressionStage": 0,
+      "spec": {},
+      "text": {
+        "en": {
+          "name": "Mana Release",
+          "description": "Open the dragon furnace and let the holy sword answer your oath again. Instantly restore Mana to 4.",
+          "tooltip": [
+            "0 AP, 0 Fatigue; twice per battle. Requires no target, weapon or existing Mana. Using at full Mana still spends a charge. Does not reset Excalibur uses."
+          ]
+        },
+        "zh": {
+          "name": "魔力解放",
+          "description": "敞开龙之炉心，让圣剑重新回应你的誓约。立即将魔力恢复至4点。",
+          "tooltip": [
+            "0行动点，0疲劳；每场战斗可用2次。不需要目标、武器或现有魔力；满魔力时也可使用并消耗次数。不重置宝具次数。"
+          ]
         }
       }
     },
@@ -53645,17 +61235,18 @@ window.BV_WIKI_DATA = {
           "armor"
         ],
         "summary": {
-          "en": "Ignores shield defense; scales with the equipped weapon.",
-          "zh": "无视盾防，换好武器再发力"
+          "en": "Ignores shields; bond rewards and the exclusive sword accelerate Mana.",
+          "zh": "无视盾防，羁绊与专武加速魔力循环"
         },
         "analysis": {
-          "en": "Melee attacks ignore shield defense, charging mana through attacks and incoming damage. The beam scales with actual gear; Excalibur's story name is not a starting weapon grant.",
-          "zh": "近战攻击无视盾牌，魔力来自攻击和承伤；光炮仍乘当前武器，起步需武器护甲，不能把剧情中的Excalibur视为赠送装备。"
+          "en": "Ordinary melee attacks ignore shield defense. Bond challenges improve starting Mana and regeneration, award a sword at 60, reduce every Strike Air to 1 Mana at 80, and unlock two full Mana refills per battle at 100. Excalibur scales with the equipped weapon and retains one use, or two with the Grail blessing.",
+          "zh": "普通近战无视盾防；羁绊逐步增加开场魔力和每轮回复，60 阶段挑战赠送专武，80 阶段让风王铁槌永久只耗 1 魔力，满羁绊解锁每战两次回满。大招仍按当前武器计算伤害，次数保持一次，圣杯祝福增至两次。"
         },
         "reviewedSkills": [
           "saber_invisible_air",
           "saber_strike_air",
-          "saber_excalibur"
+          "saber_excalibur",
+          "saber_mana_release"
         ],
         "sourceFiles": [
           "src/battle-valkyries/battle-valkyries/config/valkyrie_data.nut",
@@ -55984,8 +63575,8 @@ window.BV_WIKI_DATA = {
           "zh": "篇章入队，自动命中高穿甲"
         },
         "analysis": {
-          "en": "She joins at level 6 after Black City. Black Flame hits automatically with 60% penetration. Startup excludes later storm, eclipse and control skills; maturity includes five growth stages.",
-          "zh": "黑之城完成后6级入队，黑焰自动命中且60%穿甲；阶段0不含后续风暴、月蚀和奴役，成型包含五阶段成长，法术仍经过护甲减伤。"
+          "en": "Starts with a knife, buckler and basic armor; spells have no weapon requirement. She joins at level 1 after Black City. Black Flame hits automatically with 60% penetration. Startup excludes later storm, eclipse and control skills; maturity includes five growth stages.",
+          "zh": "入队配小刀、轻圆盾和基础防具，施法不要求特定武器。黑之城完成后1级入队，黑焰自动命中且60%穿甲；阶段0不含后续风暴、月蚀和奴役，成型包含五阶段成长，法术仍经过护甲减伤。"
         },
         "reviewedSkills": [
           "olga_dark_queen",
@@ -56034,8 +63625,8 @@ window.BV_WIKI_DATA = {
           "zh": "篇章赠剑盾，兼顾攻防循环"
         },
         "analysis": {
-          "en": "She joins at level 5 with a sword and shield. Accuracy, penetration and swaps help the front; Fortress and later multi-target attacks require growth and still consume AP and fatigue.",
-          "zh": "篇章5级入队赠剑盾，命中加值、穿透与换位适合前线；后续堡垒和多目标连击需阶段成长，盾墙与主动仍消耗疲劳和AP。"
+          "en": "Starts with a shortsword, wooden shield and basic armor. She joins at level 1 with a sword and shield. Accuracy, penetration and swaps help the front; Fortress and later multi-target attacks require growth and still consume AP and fatigue.",
+          "zh": "入队配短剑、木盾和基础防具。篇章1级入队赠剑盾，命中加值、穿透与换位适合前线；后续堡垒和多目标连击需阶段成长，盾墙与主动仍消耗疲劳和AP。"
         },
         "reviewedSkills": [
           "chloe_passive",
@@ -56076,12 +63667,12 @@ window.BV_WIKI_DATA = {
           "growth"
         ],
         "summary": {
-          "en": "Chapter swordswoman; remove the shield for her stance.",
-          "zh": "篇章剑士，空副手才启用剑势"
+          "en": "Chapter swordswoman; starts with a shortsword and no offhand item.",
+          "zh": "篇章剑士，短剑单持启用剑势"
         },
         "analysis": {
-          "en": "Seven Shields supplies a sword and shield, but sword stacks and AP discounts require an empty offhand. Riposte and Breath sustain combat; maturity includes growth stages.",
-          "zh": "七盾入队赠剑盾，但剑势和减AP要求单手剑且副手空置，需先卸盾；反击与吐纳稳续航，成型包含成长阶段，不能按赠盾状态算全部被动。"
+          "en": "Her starting shortsword enables sword stacks and AP discounts while no shield or other offhand item is equipped. Riposte and Breath sustain combat; maturity includes growth stages.",
+          "zh": "入队配短剑，不装备盾牌或其他副手物品即可启用剑势和减AP；反击与吐纳稳续航，成型包含成长阶段。"
         },
         "reviewedSkills": [
           "alicia_passive",
@@ -56124,12 +63715,12 @@ window.BV_WIKI_DATA = {
           "control"
         ],
         "summary": {
-          "en": "A supplied polehammer enables close armor-breaking skills.",
-          "zh": "篇章赠长锤，近身破甲补控场"
+          "en": "Starts with a two-handed wooden hammer for close armor-breaking skills.",
+          "zh": "入队配双手木锤，启用近身破甲战技"
         },
         "analysis": {
-          "en": "The supplied two-handed polehammer meets her exclusive hammer requirements. Exclusive skills use their own range rules; ordinary weapon attacks retain polehammer range. Armor mitigation and team armor debuffs excel against heavy targets; later abilities require stage progression.",
-          "zh": "七盾赠双手长锤，满足专属锤击装备条件；专属技能使用自身距离规则，普通武器攻击仍遵守长锤距离。身甲减伤、削甲和团队破城面对重甲更有价值，城破等能力需阶段成长。"
+          "en": "Her starting two-handed wooden hammer and basic body armor meet her hammer-skill and armor-protection requirements. Exclusive skills use their own ranges. Armor mitigation and team armor debuffs excel against heavy targets; later abilities require stage progression.",
+          "zh": "入队配双手木锤及基础衣甲，满足锤类战技和身甲保护条件。专属战技使用各自射程；减甲伤与团队破甲适合对抗重甲目标，高阶能力需阶段成长。"
         },
         "reviewedSkills": [
           "claudia_passive",
@@ -56180,8 +63771,8 @@ window.BV_WIKI_DATA = {
           "zh": "篇章圣女，自动法术与修甲"
         },
         "analysis": {
-          "en": "She joins at level 6 after lower Seven Shields. Healing repairs both armor slots; spell damage uses current HP. Prevention cannot revive dead actors; maturity includes growth stages.",
-          "zh": "七盾下篇6级入队，治疗同时修头甲身甲，自动法术按当前生命计算；低血会降输出，保护与预防致死不等于复活已死单位，成型含成长阶段。"
+          "en": "Starts with a knife, buckler and basic armor; spells have no weapon requirement. She joins at level 1 after lower Seven Shields. Healing repairs both armor slots; spell damage uses current HP. Prevention cannot revive dead actors; maturity includes growth stages.",
+          "zh": "入队配小刀、轻圆盾和基础防具，施法不要求特定武器。七盾下篇1级入队，治疗同时修头甲身甲，自动法术按当前生命计算；低血会降输出，保护与预防致死不等于复活已死单位，成型含成长阶段。"
         },
         "reviewedSkills": [
           "celestine_passive",
@@ -56230,8 +63821,8 @@ window.BV_WIKI_DATA = {
           "zh": "篇章巫女，先备双手矛长柄"
         },
         "analysis": {
-          "en": "No starting weapon is granted. Two-handed spears or polearms with an empty offhand unlock her two-tile advantages; permanent seals and later skills require growth.",
-          "zh": "七盾入队不赠武器，需要双手矛或长柄且空副手才发挥两格穿透；符术可控行动，永久封印和高阶技能需成长，不能当作初始全解锁。"
+          "en": "Her starting pitchfork meets the two-handed polearm requirement for her two-tile advantages. Permanent seals and later skills require growth.",
+          "zh": "入队配草叉，满足双手长柄要求，可发挥两格穿透；符术可控行动，永久封印和高阶技能需成长，不能当作初始全解锁。"
         },
         "reviewedSkills": [
           "kaguya_passive",
@@ -56278,8 +63869,8 @@ window.BV_WIKI_DATA = {
           "zh": "旗手光环强，入队先换双手长柄"
         },
         "analysis": {
-          "en": "The granted spear and shield do not meet the two-handed polearm or banner plus empty-offhand requirement. Her aura, rally and cleansing then support the team; maturity includes growth.",
-          "zh": "七盾赠单手矛盾，旗手被动要求双手长柄或战旗且空副手，需换装；光环、振奋和硬控净化支持团队，成型包括成长阶段。"
+          "en": "Her starting battle standard meets her passive equipment requirement. Her aura, rally and cleansing support the team; maturity includes growth.",
+          "zh": "入队配战旗，满足旗手被动条件；光环、振奋和硬控净化支持团队，成型包括成长阶段。"
         },
         "reviewedSkills": [
           "prim_passive",
@@ -56325,8 +63916,8 @@ window.BV_WIKI_DATA = {
           "zh": "篇章赠剑盾，相邻保护稳战线"
         },
         "analysis": {
-          "en": "The supplied sword and shield enable doubled shield defense and protection immediately. Shieldwall costs AP and fatigue; taunt respects vanilla targets, while growth expands coverage.",
-          "zh": "七盾赠剑盾，双倍盾防与相邻保护立刻有效；盾墙仍耗AP疲劳，嘲讽遵守原版目标规则不保证Boss听从，成长后扩大护队范围。"
+          "en": "Starts with a shortsword, wooden shield and basic armor. The supplied sword and shield enable doubled shield defense and protection immediately. Shieldwall costs AP and fatigue; taunt respects vanilla targets, while growth expands coverage.",
+          "zh": "入队配短剑、木盾和基础防具。七盾赠剑盾，双倍盾防与相邻保护立刻有效；盾墙仍耗AP疲劳，嘲讽遵守原版目标规则不保证Boss听从，成长后扩大护队范围。"
         },
         "reviewedSkills": [
           "maia_passive",
@@ -56370,12 +63961,12 @@ window.BV_WIKI_DATA = {
           "control"
         ],
         "summary": {
-          "en": "Chapter greataxe fighter converts fatigue into damage.",
-          "zh": "篇章赠巨斧，疲劳换伤再泄压"
+          "en": "Chapter two-handed axe fighter converts fatigue into damage.",
+          "zh": "篇章双手斧战士，用疲劳积压与泄压"
         },
         "analysis": {
-          "en": "The supplied greataxe meets her gear requirement. Pressure uses actual fatigue; incoming hits and attacks reduce remaining capacity, so reserve AP for Vent. Furnace and extra max AP require growth.",
-          "zh": "七盾赠巨斧且空副手，压力按实际疲劳快照附伤；受击和挥斧都会挤占可用疲劳，需留泄压AP，高阶熔炉与AP上限来自成长。"
+          "en": "Her starting woodcutter's axe meets the two-handed axe requirement. Pressure uses actual fatigue; incoming hits and attacks reduce remaining capacity, so reserve AP for Vent. Furnace and extra max AP require growth.",
+          "zh": "入队配伐木斧，满足双手斧要求，压力按实际支付攻击消耗后的疲劳值附伤；受击和挥斧都会挤占可用疲劳，需留泄压AP，高阶熔炉与AP上限来自成长。"
         },
         "reviewedSkills": [
           "luu_luu_passive",
@@ -56654,6 +64245,46 @@ window.BV_WIKI_DATA = {
         ]
       },
       {
+        "actor": "si",
+        "roles": [
+          "mage",
+          "control"
+        ],
+        "stage": "mid",
+        "investment": "low",
+        "startup": "A",
+        "mature": "A",
+        "priorities": {
+          "early": 2,
+          "mid": 3,
+          "late": 3
+        },
+        "tags": [
+          "weapon_free",
+          "protection",
+          "team"
+        ],
+        "summary": {
+          "en": "Mid/backline painter: linked focus fire, brief control and barriers, followed by an ink-dragon finisher.",
+          "zh": "中后排画卷辅助：联动集火、短控与护盾，积墨后以墨龙收卷。"
+        },
+        "analysis": {
+          "en": "No signature weapon required; prioritize ranged accuracy and stamina. Ink echoes need real HP damage, so break heavy armor first. Barriers and the finisher compete for Ink. Ratings are source-level estimates, not in-game balance results.",
+          "zh": "无需专属武器；优先远程命中与疲劳。墨魂依赖队友打出真实生命伤害，重甲敌人面前应先破甲。护盾与大招争用墨意。评级为源码机制估计，未实机验证平衡。"
+        },
+        "reviewedSkills": [
+          "si_myriad",
+          "si_brush",
+          "si_landscape",
+          "si_sanctuary",
+          "si_dragon"
+        ],
+        "sourceFiles": [
+          "src/battle-valkyries/battle-valkyries/config/si_skill_catalog.nut",
+          "src/battle-valkyries/battle-valkyries/systems/si.nut"
+        ]
+      },
+      {
         "actor": "ryza",
         "roles": [
           "ranged",
@@ -56694,6 +64325,256 @@ window.BV_WIKI_DATA = {
           "src/battle-valkyries/battle-valkyries/config/ryza_data.nut",
           "src/battle-valkyries/battle-valkyries/config/ryza_skill_catalog.nut",
           "src/battle-valkyries/battle-valkyries/systems/ryza.nut"
+        ]
+      },
+      {
+        "actor": "tio",
+        "roles": [
+          "ranged",
+          "healer"
+        ],
+        "stage": "mid",
+        "investment": "medium",
+        "startup": "A",
+        "mature": "S",
+        "priorities": {
+          "early": 1,
+          "mid": 3,
+          "late": 3
+        },
+        "tags": [
+          "weapon_free",
+          "healing",
+          "team"
+        ],
+        "summary": {
+          "en": "Complete the Septium Workshop chapter to recruit Tio. Unavailable for summoning.",
+          "zh": "完成「七曜工房」篇章后入队，不可召唤。"
+        },
+        "analysis": {
+          "en": "A quiet observer who supports the company with analysis, an orbal staff and protective fields.",
+          "zh": "冷静的观测者，以解析、魔导杖和屏障支援战团。"
+        },
+        "reviewedSkills": [
+          "tio_aion_sense",
+          "tio_septium_attunement",
+          "tio_orbal_pulse",
+          "tio_analyzer",
+          "tio_beam_zanber",
+          "tio_absolute_zero",
+          "tio_ether_buster",
+          "tio_zero_field"
+        ],
+        "sourceFiles": [
+          "src/battle-valkyries/battle-valkyries/config/tio_data.nut",
+          "src/battle-valkyries/battle-valkyries/config/orbment_skill_catalog.nut"
+        ]
+      },
+      {
+        "actor": "renne",
+        "roles": [
+          "warrior",
+          "ranged"
+        ],
+        "stage": "mid",
+        "investment": "medium",
+        "startup": "A",
+        "mature": "S",
+        "priorities": {
+          "early": 2,
+          "mid": 3,
+          "late": 3
+        },
+        "tags": [
+          "signature",
+          "area"
+        ],
+        "summary": {
+          "en": "A brilliant violet-haired wielder of orbal arts and a great scythe. She marks enemies with magic before closing in for a decisive sweep.",
+          "zh": "紫发少女以精密导力术与巨镰并肩作战。先用魔法刻下歼灭印记，再踏入近身距离完成收割。"
+        },
+        "analysis": {
+          "en": "Calamity Projection and offensive orbment arts add one mark on hit, up to 3, lasting 3 natural rounds. Innate scythe hits consume this Renne's marks for +15% damage per stack (+25% for Annihilation Angel). Each action applies or detonates marks once per target; misses preserve marks.",
+          "zh": "灾厄投射与导力器攻击魔法命中后施加1层刻印，最多3层，持续3个自然轮次。玲的镰刀固有技能命中时消耗自己的全部刻印，每层伤害+15%；S歼灭天使每层+25%。每次行动对每个目标仅施加或引爆一次，落空不消耗。"
+        },
+        "reviewedSkills": [
+          "renne_genius_executor",
+          "renne_annihilation_mark",
+          "renne_calamity_projection",
+          "renne_death_scythe",
+          "renne_shadow_step",
+          "renne_calamity_waltz",
+          "renne_annihilation_angel"
+        ],
+        "sourceFiles": [
+          "src/battle-valkyries/battle-valkyries/config/trails_duo_data.nut",
+          "src/battle-valkyries/battle-valkyries/config/trails_duo_skill_catalog.nut"
+        ]
+      },
+      {
+        "actor": "alisa",
+        "roles": [
+          "ranged",
+          "healer"
+        ],
+        "stage": "mid",
+        "investment": "medium",
+        "startup": "A",
+        "mature": "S",
+        "priorities": {
+          "early": 2,
+          "mid": 3,
+          "late": 3
+        },
+        "tags": [
+          "healing",
+          "team"
+        ],
+        "summary": {
+          "en": "An orbal archer of House Reinford who suppresses enemies with blazing arrows and sustains her companions with restorative blessings.",
+          "zh": "莱恩福尔特家的导力弓手，以炽烈箭矢压制敌阵，并以祝福维系队伍的体力与战线。"
+        },
+        "analysis": {
+          "en": "Successful active healing, fatigue recovery or support buffs on another ally grant Radiance (maximum 1), including orbment support arts. The next orbal bow attack action gains +25% damage and +10 percentage points armor penetration for its entire area; even an all-miss action consumes it. Self support and regeneration ticks do not trigger it.",
+          "zh": "主动治疗、恢复疲劳或增益成功作用于其他友军时获得炽辉，最多1层，导力器支援魔法同样可触发。下一次导力弓攻击行动伤害+25%，穿甲率+10个百分点，整次群攻共享加成，全部落空也消耗。自我支援与持续恢复不触发。"
+        },
+        "reviewedSkills": [
+          "alisa_orbal_bow_expert",
+          "alisa_radiant_resonance",
+          "alisa_flame_arrow",
+          "alisa_molten_arrow_rain",
+          "alisa_holy_blessing",
+          "alisa_heavens_gift",
+          "alisa_celestial_blazing_wings"
+        ],
+        "sourceFiles": [
+          "src/battle-valkyries/battle-valkyries/config/trails_duo_data.nut",
+          "src/battle-valkyries/battle-valkyries/config/trails_duo_skill_catalog.nut"
+        ]
+      },
+      {
+        "actor": "aemeath",
+        "roles": [
+          "warrior",
+          "ranged"
+        ],
+        "stage": "mid",
+        "investment": "medium",
+        "startup": "A",
+        "mature": "S",
+        "priorities": {
+          "early": 2,
+          "mid": 3,
+          "late": 3
+        },
+        "tags": [
+          "area",
+          "team"
+        ],
+        "summary": {
+          "en": "Alternate between Digital Ghost and Voyage Mech, weaving Syntony and Fusion into a voyage among the stars.",
+          "zh": "在电子幽灵与长航机兵之间切换，以震谐与聚爆编织长航。"
+        },
+        "analysis": {
+          "en": "Starts in Digital Ghost form with 2 Synchronization (cap 6). From round two, recover 1 at the first normal turn each round. An active attack that damages health or armor restores 1 per whole action. Each damaged target gains 1 Syntony in Ghost form or 1 Fusion in Mech form, once per target per action, at the attack's legal range without propagation. The ultimate only restores Synchronization. Reactions, damage over time and bonus damage do not trigger this. Each transformation skill grants 1 Resonance (cap 6); each point adds 5 percentage points of armor penetration.",
+          "zh": "以电子幽灵开始战斗。同步率初始2、上限6；从第二轮起，每轮首次正常回合开始回复1。主动攻击实际造成生命或护甲伤害后，整次行动回复1同步率。电子幽灵给实际受伤目标施加1层震谐，长航机兵施加1层聚爆；每目标每行动限一次，无距离附加限制，不扩散。大招只回复同步率。反击、借机、持续与附加伤害不触发。变身技能每次实际切换获得1共鸣率，上限6，每点增加5个百分点穿甲。"
+        },
+        "reviewedSkills": [
+          "aemeath_voyage",
+          "aemeath_interference",
+          "aemeath_trajectory",
+          "aemeath_starlight",
+          "aemeath_armament",
+          "aemeath_melody",
+          "aemeath_dawn",
+          "aemeath_ultimate"
+        ],
+        "sourceFiles": [
+          "src/battle-valkyries/battle-valkyries/config/aemeath_data.nut",
+          "src/battle-valkyries/battle-valkyries/config/aemeath_skill_catalog.nut"
+        ]
+      },
+      {
+        "actor": "fate_harlaown",
+        "roles": [
+          "mobile",
+          "warrior"
+        ],
+        "stage": "mid",
+        "investment": "low",
+        "startup": "A",
+        "mature": "A",
+        "priorities": {
+          "early": 2,
+          "mid": 3,
+          "late": 3
+        },
+        "tags": [
+          "weapon_free",
+          "mobility",
+          "armor"
+        ],
+        "summary": {
+          "en": "Fast repositioning and a brief burst window; signature attacks require no weapon.",
+          "zh": "高速机动与短窗口爆发，专属攻击不依赖武器。"
+        },
+        "analysis": {
+          "en": "Move 2 tiles to charge lightning, then spend it on lances or twin blades. Sonic Form increases incoming damage; check the line and allied positions before Riot Zanber. Movement follows a real walkable route. This assessment is based on source design; live balance remains unverified.",
+          "zh": "先移动2格积累雷光，再用雷枪或双刃消耗充能。形态会放大承伤，斩舰刀应先确认直线与友军位置。移动只走真实可达路线，不能穿墙。此评价来自源码设计，尚待实机平衡验证。"
+        },
+        "reviewedSkills": [
+          "fate_lightning",
+          "fate_scythe",
+          "fate_move",
+          "fate_lancer",
+          "fate_form"
+        ],
+        "sourceFiles": [
+          "src/battle-valkyries/battle-valkyries/config/fate_harlaown_skill_catalog.nut",
+          "src/battle-valkyries/battle-valkyries/systems/fate_harlaown.nut"
+        ]
+      },
+      {
+        "actor": "kanade_tachibana",
+        "roles": [
+          "mobile",
+          "warrior"
+        ],
+        "stage": "mid",
+        "investment": "medium",
+        "startup": "S",
+        "mature": "S",
+        "priorities": {
+          "early": 3,
+          "mid": 3,
+          "late": 3
+        },
+        "tags": [
+          "mobility",
+          "armor"
+        ],
+        "summary": {
+          "en": "A mobile melee protector who arrives with Hand Sonic and earns her other signature equipment through companion bonds.",
+          "zh": "高机动近战护卫，入队自带音速臂刃，其余专属装备随同伴羁绊获得。"
+        },
+        "analysis": {
+          "en": "Starts with blade attacks, harmonic clones, Delay, Distortion and Howling. 'Save Her a Warm Meal' grants her armor, followed by the silver keepsake in 'Say Who You Want to Protect'. Later stories grant her headpiece and strengthen Hand Sonic, with maximum AP eventually reaching 12.",
+          "zh": "入队即可使用臂刃攻击、谐波分身、突进、偏转与咆哮。完成“给她留一份热饭”后获得护甲，完成“先说出你想保护谁”后获得银匣；随后获得发饰并强化臂刃，最大行动点可提升至12。"
+        },
+        "reviewedSkills": [
+          "kanade_overdrive",
+          "kanade_hand_sonic_slash",
+          "kanade_hand_sonic_pierce",
+          "kanade_hand_sonic_sweep",
+          "kanade_distortion",
+          "kanade_delay",
+          "kanade_harmonics",
+          "kanade_absorb",
+          "kanade_howling"
+        ],
+        "sourceFiles": [
+          "src/battle-valkyries/battle-valkyries/config/kanade_tachibana_skill_catalog.nut",
+          "src/battle-valkyries/battle-valkyries/systems/kanade_tachibana.nut"
         ]
       }
     ]
@@ -59820,6 +67701,1152 @@ window.BV_WIKI_DATA = {
           ]
         }
       ]
+    },
+    "orbments": {
+      "forms": [
+        {
+          "id": "starrail",
+          "name": {
+            "en": "Starrail Orbment",
+            "zh": "星轨导力器"
+          },
+          "lines": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          ],
+          "activeSlots": 3,
+          "passiveCapacity": 3,
+          "image": "assets/orbments/items/battle-valkyries/orbment_starrail.png",
+          "acquisition": {
+            "en": "Septium Workshop, stage 8.",
+            "zh": "异乡的导力工房第 8 节。"
+          }
+        },
+        {
+          "id": "twinwing",
+          "name": {
+            "en": "Twinwing Orbment",
+            "zh": "双翼导力器"
+          },
+          "lines": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              0,
+              4,
+              5,
+              6
+            ]
+          ],
+          "activeSlots": 2,
+          "passiveCapacity": 5,
+          "image": "assets/orbments/items/battle-valkyries/orbment_twinwing.png",
+          "acquisition": {
+            "en": "Septium Workshop stage 8; Shizuna also receives one on recruitment.",
+            "zh": "异乡的导力工房第 8 节；静名入队也配发一台。"
+          }
+        },
+        {
+          "id": "triskelion",
+          "name": {
+            "en": "Triskelion Orbment",
+            "zh": "三棱导力器"
+          },
+          "lines": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              3,
+              4
+            ],
+            [
+              0,
+              5,
+              6
+            ]
+          ],
+          "activeSlots": 1,
+          "passiveCapacity": 7,
+          "image": "assets/orbments/items/battle-valkyries/orbment_triskelion.png",
+          "acquisition": {
+            "en": "Septium Workshop, stage 8.",
+            "zh": "异乡的导力工房第 8 节。"
+          }
+        },
+        {
+          "id": "star_reader",
+          "name": {
+            "en": "Star Reader",
+            "zh": "星读"
+          },
+          "lines": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          ],
+          "activeSlots": 3,
+          "passiveCapacity": 3,
+          "image": "assets/orbments/items/battle-valkyries/tio_star_reader_orbment.png",
+          "acquisition": {
+            "en": "Tio's starter equipment, delivered after Septium Workshop stage 8.",
+            "zh": "异乡的导力工房第 8 节后随缇欧配发。"
+          }
+        },
+        {
+          "id": "renne_aster",
+          "name": {
+            "en": "Aster",
+            "zh": "紫苑"
+          },
+          "lines": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          ],
+          "activeSlots": 3,
+          "passiveCapacity": 3,
+          "image": "assets/orbments/items/battle-valkyries/renne_aster_orbment.png",
+          "acquisition": {
+            "en": "Equipped on Renne's recruitment, with a configured circuit.",
+            "zh": "玲入队配发，附带已装配回路。"
+          }
+        },
+        {
+          "id": "alisa_blazing_wing",
+          "name": {
+            "en": "Blazing Wing",
+            "zh": "炽翼"
+          },
+          "lines": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              0,
+              4,
+              5,
+              6
+            ]
+          ],
+          "activeSlots": 2,
+          "passiveCapacity": 5,
+          "image": "assets/orbments/items/battle-valkyries/alisa_blazing_wing_orbment.png",
+          "acquisition": {
+            "en": "Equipped on Alisa's recruitment, with a configured circuit.",
+            "zh": "亚莉莎入队配发，附带已装配回路。"
+          }
+        }
+      ],
+      "gems": [
+        {
+          "id": "rockheart",
+          "name": {
+            "en": "Rockheart",
+            "zh": "岩心石"
+          },
+          "bonus": "MeleeDefense",
+          "image": "assets/orbments/items/battle-valkyries/orbment_gem_rockheart.png",
+          "tiers": [
+            {
+              "rank": 1,
+              "elements": {
+                "earth": 2
+              },
+              "value": 1
+            },
+            {
+              "rank": 2,
+              "elements": {
+                "earth": 3
+              },
+              "value": 2
+            }
+          ]
+        },
+        {
+          "id": "clearflow",
+          "name": {
+            "en": "Clearflow",
+            "zh": "澄流石"
+          },
+          "bonus": "Hitpoints",
+          "image": "assets/orbments/items/battle-valkyries/orbment_gem_clearflow.png",
+          "tiers": [
+            {
+              "rank": 1,
+              "elements": {
+                "water": 2
+              },
+              "value": 3
+            },
+            {
+              "rank": 2,
+              "elements": {
+                "water": 3
+              },
+              "value": 5
+            }
+          ]
+        },
+        {
+          "id": "redblade",
+          "name": {
+            "en": "Redblade",
+            "zh": "赤刃石"
+          },
+          "bonus": "Damage",
+          "image": "assets/orbments/items/battle-valkyries/orbment_gem_redblade.png",
+          "tiers": [
+            {
+              "rank": 1,
+              "elements": {
+                "fire": 2
+              },
+              "value": 0.02
+            },
+            {
+              "rank": 2,
+              "elements": {
+                "fire": 3
+              },
+              "value": 0.03
+            }
+          ]
+        },
+        {
+          "id": "swiftwind",
+          "name": {
+            "en": "Swiftwind",
+            "zh": "疾风石"
+          },
+          "bonus": "Initiative",
+          "image": "assets/orbments/items/battle-valkyries/orbment_gem_swiftwind.png",
+          "tiers": [
+            {
+              "rank": 1,
+              "elements": {
+                "wind": 2
+              },
+              "value": 3
+            },
+            {
+              "rank": 2,
+              "elements": {
+                "wind": 3
+              },
+              "value": 5
+            }
+          ]
+        },
+        {
+          "id": "timesand",
+          "name": {
+            "en": "Timesand",
+            "zh": "时砂石"
+          },
+          "bonus": "Stamina",
+          "image": "assets/orbments/items/battle-valkyries/orbment_gem_timesand.png",
+          "tiers": [
+            {
+              "rank": 1,
+              "elements": {
+                "time": 2
+              },
+              "value": 3
+            },
+            {
+              "rank": 2,
+              "elements": {
+                "time": 3
+              },
+              "value": 5
+            }
+          ]
+        },
+        {
+          "id": "brightsky",
+          "name": {
+            "en": "Brightsky",
+            "zh": "空明石"
+          },
+          "bonus": "RangedDefense",
+          "image": "assets/orbments/items/battle-valkyries/orbment_gem_brightsky.png",
+          "tiers": [
+            {
+              "rank": 1,
+              "elements": {
+                "space": 2
+              },
+              "value": 1
+            },
+            {
+              "rank": 2,
+              "elements": {
+                "space": 3
+              },
+              "value": 2
+            }
+          ]
+        },
+        {
+          "id": "phantomeye",
+          "name": {
+            "en": "Phantomeye",
+            "zh": "幻瞳石"
+          },
+          "bonus": "Bravery",
+          "image": "assets/orbments/items/battle-valkyries/orbment_gem_phantomeye.png",
+          "tiers": [
+            {
+              "rank": 1,
+              "elements": {
+                "mirage": 2
+              },
+              "value": 2
+            },
+            {
+              "rank": 2,
+              "elements": {
+                "mirage": 3
+              },
+              "value": 3
+            }
+          ]
+        },
+        {
+          "id": "irontrace",
+          "name": {
+            "en": "Irontrace",
+            "zh": "铁纹石"
+          },
+          "bonus": "Pierce",
+          "image": "assets/orbments/items/battle-valkyries/orbment_gem_irontrace.png",
+          "tiers": [
+            {
+              "rank": 1,
+              "elements": {
+                "earth": 1,
+                "fire": 1
+              },
+              "value": 0.01
+            },
+            {
+              "rank": 2,
+              "elements": {
+                "earth": 2,
+                "fire": 1
+              },
+              "value": 0.02
+            }
+          ]
+        },
+        {
+          "id": "boilflow",
+          "name": {
+            "en": "Boilflow",
+            "zh": "沸流石"
+          },
+          "bonus": "Damage",
+          "image": "assets/orbments/items/battle-valkyries/orbment_gem_boilflow.png",
+          "tiers": [
+            {
+              "rank": 1,
+              "elements": {
+                "fire": 1,
+                "water": 1
+              },
+              "value": 0.01
+            },
+            {
+              "rank": 2,
+              "elements": {
+                "fire": 2,
+                "water": 1
+              },
+              "value": 0.02
+            }
+          ]
+        },
+        {
+          "id": "rainfeather",
+          "name": {
+            "en": "Rainfeather",
+            "zh": "雨羽石"
+          },
+          "bonus": "Hitpoints",
+          "image": "assets/orbments/items/battle-valkyries/orbment_gem_rainfeather.png",
+          "tiers": [
+            {
+              "rank": 1,
+              "elements": {
+                "water": 1,
+                "wind": 1
+              },
+              "value": 2
+            },
+            {
+              "rank": 2,
+              "elements": {
+                "water": 2,
+                "wind": 1
+              },
+              "value": 3
+            }
+          ]
+        },
+        {
+          "id": "swiftshade",
+          "name": {
+            "en": "Swiftshade",
+            "zh": "迅影石"
+          },
+          "bonus": "Initiative",
+          "image": "assets/orbments/items/battle-valkyries/orbment_gem_swiftshade.png",
+          "tiers": [
+            {
+              "rank": 1,
+              "elements": {
+                "wind": 1,
+                "time": 1
+              },
+              "value": 2
+            },
+            {
+              "rank": 2,
+              "elements": {
+                "wind": 2,
+                "time": 1
+              },
+              "value": 3
+            }
+          ]
+        },
+        {
+          "id": "starcut",
+          "name": {
+            "en": "Starcut",
+            "zh": "星刻石"
+          },
+          "bonus": "Stamina",
+          "image": "assets/orbments/items/battle-valkyries/orbment_gem_starcut.png",
+          "tiers": [
+            {
+              "rank": 1,
+              "elements": {
+                "time": 1,
+                "space": 1
+              },
+              "value": 2
+            },
+            {
+              "rank": 2,
+              "elements": {
+                "time": 2,
+                "space": 1
+              },
+              "value": 3
+            }
+          ]
+        },
+        {
+          "id": "mirrorlight",
+          "name": {
+            "en": "Mirrorlight",
+            "zh": "镜辉石"
+          },
+          "bonus": "RangedSkill",
+          "image": "assets/orbments/items/battle-valkyries/orbment_gem_mirrorlight.png",
+          "tiers": [
+            {
+              "rank": 1,
+              "elements": {
+                "space": 1,
+                "mirage": 1
+              },
+              "value": 1
+            },
+            {
+              "rank": 2,
+              "elements": {
+                "space": 2,
+                "mirage": 1
+              },
+              "value": 2
+            }
+          ]
+        },
+        {
+          "id": "duskmarl",
+          "name": {
+            "en": "Duskmarl",
+            "zh": "幽岩石"
+          },
+          "bonus": "Reduction",
+          "image": "assets/orbments/items/battle-valkyries/orbment_gem_duskmarl.png",
+          "tiers": [
+            {
+              "rank": 1,
+              "elements": {
+                "mirage": 1,
+                "earth": 1
+              },
+              "value": 0.01
+            },
+            {
+              "rank": 2,
+              "elements": {
+                "mirage": 2,
+                "earth": 1
+              },
+              "value": 0.02
+            }
+          ]
+        }
+      ],
+      "recipes": [
+        {
+          "id": "orbment_stonewall",
+          "name": {
+            "en": "Stonewall",
+            "zh": "岩壁"
+          },
+          "description": {
+            "en": "+5 melee defense.",
+            "zh": "近战防御 +5。"
+          },
+          "kind": "passive",
+          "cost": 1,
+          "requirements": {
+            "earth": 3
+          }
+        },
+        {
+          "id": "orbment_vitality",
+          "name": {
+            "en": "Vitality",
+            "zh": "生机"
+          },
+          "description": {
+            "en": "+15 maximum hitpoints.",
+            "zh": "最大生命 +15。"
+          },
+          "kind": "passive",
+          "cost": 1,
+          "requirements": {
+            "water": 3
+          }
+        },
+        {
+          "id": "orbment_onslaught",
+          "name": {
+            "en": "Onslaught",
+            "zh": "猛攻"
+          },
+          "description": {
+            "en": "+8% direct attack damage.",
+            "zh": "直接攻击伤害 +8%。"
+          },
+          "kind": "passive",
+          "cost": 1,
+          "requirements": {
+            "fire": 3
+          }
+        },
+        {
+          "id": "orbment_swiftness",
+          "name": {
+            "en": "Swiftness",
+            "zh": "迅捷"
+          },
+          "description": {
+            "en": "+15 initiative.",
+            "zh": "先攻 +15。"
+          },
+          "kind": "passive",
+          "cost": 1,
+          "requirements": {
+            "wind": 3
+          }
+        },
+        {
+          "id": "orbment_breathing",
+          "name": {
+            "en": "Breathing",
+            "zh": "调息"
+          },
+          "description": {
+            "en": "Recover 2 extra fatigue at each normal turn start.",
+            "zh": "每个正常行动回合开始额外恢复 2 疲劳。"
+          },
+          "kind": "passive",
+          "cost": 1,
+          "requirements": {
+            "time": 3
+          }
+        },
+        {
+          "id": "orbment_far_guard",
+          "name": {
+            "en": "Far Guard",
+            "zh": "远御"
+          },
+          "description": {
+            "en": "+5 ranged defense.",
+            "zh": "远程防御 +5。"
+          },
+          "kind": "passive",
+          "cost": 1,
+          "requirements": {
+            "space": 3
+          }
+        },
+        {
+          "id": "orbment_composure",
+          "name": {
+            "en": "Composure",
+            "zh": "定心"
+          },
+          "description": {
+            "en": "+10 resolve.",
+            "zh": "决心 +10。"
+          },
+          "kind": "passive",
+          "cost": 1,
+          "requirements": {
+            "mirage": 3
+          }
+        },
+        {
+          "id": "orbment_piercing",
+          "name": {
+            "en": "Piercing",
+            "zh": "贯甲"
+          },
+          "description": {
+            "en": "+15 percentage points of direct attack penetration; excess over 100% becomes damage.",
+            "zh": "直接攻击穿甲增加 15 个百分点；超过 100% 转为伤害加成。"
+          },
+          "kind": "passive",
+          "cost": 2,
+          "requirements": {
+            "fire": 5,
+            "space": 3
+          }
+        },
+        {
+          "id": "orbment_shatter",
+          "name": {
+            "en": "Shatter",
+            "zh": "碎铠"
+          },
+          "description": {
+            "en": "+20% armor damage for direct attacks.",
+            "zh": "直接攻击对护甲伤害 +20%。"
+          },
+          "kind": "passive",
+          "cost": 2,
+          "requirements": {
+            "fire": 5,
+            "earth": 3
+          }
+        },
+        {
+          "id": "orbment_citadel",
+          "name": {
+            "en": "Citadel",
+            "zh": "坚城"
+          },
+          "description": {
+            "en": "Take 10% less direct hitpoint damage, multiplicative with other reductions.",
+            "zh": "直接生命伤害降低 10%，与其他减伤乘算。"
+          },
+          "kind": "passive",
+          "cost": 2,
+          "requirements": {
+            "earth": 5,
+            "water": 3
+          }
+        },
+        {
+          "id": "orbment_circulation",
+          "name": {
+            "en": "Circulation",
+            "zh": "循环呼吸"
+          },
+          "description": {
+            "en": "Active skills cost 10% less fatigue.",
+            "zh": "主动技能疲劳消耗降低 10%。"
+          },
+          "kind": "passive",
+          "cost": 2,
+          "requirements": {
+            "water": 3,
+            "time": 5
+          }
+        },
+        {
+          "id": "orbment_insight",
+          "name": {
+            "en": "Insight",
+            "zh": "洞察"
+          },
+          "description": {
+            "en": "+8 melee and ranged skill.",
+            "zh": "近战、远程命中各 +8。"
+          },
+          "kind": "passive",
+          "cost": 2,
+          "requirements": {
+            "wind": 5,
+            "mirage": 3
+          }
+        },
+        {
+          "id": "orbment_unyielding",
+          "name": {
+            "en": "Unyielding",
+            "zh": "不屈"
+          },
+          "description": {
+            "en": "+15 resolve and +10 maximum fatigue.",
+            "zh": "决心 +15，最大疲劳 +10。"
+          },
+          "kind": "passive",
+          "cost": 2,
+          "requirements": {
+            "mirage": 5,
+            "earth": 3
+          }
+        },
+        {
+          "id": "orbment_battle_return",
+          "name": {
+            "en": "Battle Return",
+            "zh": "战意回流"
+          },
+          "description": {
+            "en": "Recover 4 fatigue on a personal kill, once per round.",
+            "zh": "亲自击杀敌人恢复 4 疲劳，每自然轮一次。"
+          },
+          "kind": "passive",
+          "cost": 2,
+          "requirements": {
+            "space": 5,
+            "time": 3
+          }
+        },
+        {
+          "id": "orbment_stone_lance",
+          "name": {
+            "en": "Stone Lance",
+            "zh": "岩枪"
+          },
+          "description": {
+            "en": "45–60 independent damage; 100% armor damage, 20% penetration. Cooldown: 2 rounds.",
+            "zh": "45—60 独立伤害；对甲 100%，穿甲 20%。 冷却 2 自然轮。"
+          },
+          "kind": "active",
+          "cost": 1,
+          "requirements": {
+            "earth": 3
+          }
+        },
+        {
+          "id": "orbment_healing_drop",
+          "name": {
+            "en": "Healing Drop",
+            "zh": "治愈水滴"
+          },
+          "description": {
+            "en": "Restore 25 allied hitpoints, twice per battle. Cooldown: 2 rounds.",
+            "zh": "恢复友方 25 生命，每战 2 次。 冷却 2 自然轮。"
+          },
+          "kind": "active",
+          "cost": 1,
+          "requirements": {
+            "water": 3
+          }
+        },
+        {
+          "id": "orbment_fire_bolt",
+          "name": {
+            "en": "Fire Bolt",
+            "zh": "火矢"
+          },
+          "description": {
+            "en": "40–55 independent damage; 70% armor damage, 30% penetration. Cooldown: 1 rounds.",
+            "zh": "40—55 独立伤害；对甲 70%，穿甲 30%。 冷却 1 自然轮。"
+          },
+          "kind": "active",
+          "cost": 1,
+          "requirements": {
+            "fire": 3
+          }
+        },
+        {
+          "id": "orbment_wind_blade",
+          "name": {
+            "en": "Wind Blade",
+            "zh": "风刃"
+          },
+          "description": {
+            "en": "30–40 independent damage, +10 accuracy; 70% armor damage, 20% penetration. Cooldown: 1 rounds.",
+            "zh": "30—40 独立伤害，命中 +10；对甲 70%，穿甲 20%。 冷却 1 自然轮。"
+          },
+          "kind": "active",
+          "cost": 1,
+          "requirements": {
+            "wind": 3
+          }
+        },
+        {
+          "id": "orbment_temporal_boost",
+          "name": {
+            "en": "Temporal Boost",
+            "zh": "时序激励"
+          },
+          "description": {
+            "en": "Restore 10 fatigue; +30 initiative until the end of the next normal turn. Cooldown: 3 rounds.",
+            "zh": "友方恢复 10 疲劳，先攻 +30，至其下个正常回合结束。 冷却 3 自然轮。"
+          },
+          "kind": "active",
+          "cost": 1,
+          "requirements": {
+            "time": 3
+          }
+        },
+        {
+          "id": "orbment_space_barrier",
+          "name": {
+            "en": "Space Barrier",
+            "zh": "空之屏障"
+          },
+          "description": {
+            "en": "+10 melee and ranged defense until the end of the next normal turn. Cooldown: 2 rounds.",
+            "zh": "友方近战、远程防御 +10，至其下个正常回合结束。 冷却 2 自然轮。"
+          },
+          "kind": "active",
+          "cost": 1,
+          "requirements": {
+            "space": 3
+          }
+        },
+        {
+          "id": "orbment_phantom_noise",
+          "name": {
+            "en": "Phantom Noise",
+            "zh": "幻扰"
+          },
+          "description": {
+            "en": "On hit: -15 melee and ranged skill until the end of the next normal turn. Cooldown: 2 rounds.",
+            "zh": "命中后敌方近战、远程命中 -15，至其下个正常回合结束。 冷却 2 自然轮。"
+          },
+          "kind": "active",
+          "cost": 1,
+          "requirements": {
+            "mirage": 3
+          }
+        },
+        {
+          "id": "orbment_rock_bulwark",
+          "name": {
+            "en": "Rock Bulwark",
+            "zh": "岩垒结界"
+          },
+          "description": {
+            "en": "Self and adjacent allies take 10% less direct hitpoint damage until their next normal turn ends; repeated applications multiply. Cooldown: 3 rounds.",
+            "zh": "自己和邻接友军获得 10% 直接生命减伤，至各自下个正常回合结束；重复施加乘算。 冷却 3 自然轮。"
+          },
+          "kind": "active",
+          "cost": 1,
+          "requirements": {
+            "earth": 6,
+            "water": 3
+          }
+        },
+        {
+          "id": "orbment_spring_prayer",
+          "name": {
+            "en": "Spring Prayer",
+            "zh": "清泉祷告"
+          },
+          "description": {
+            "en": "Restore 20 hitpoints and remove one bleed or poison layer from allies on the target and adjacent tiles; twice per battle. Cooldown: 3 rounds.",
+            "zh": "目标及邻格友军恢复 20 生命，各移除一层流血或中毒；每战 2 次。 冷却 3 自然轮。"
+          },
+          "kind": "active",
+          "cost": 1,
+          "requirements": {
+            "water": 6,
+            "space": 3
+          }
+        },
+        {
+          "id": "orbment_flame_gale",
+          "name": {
+            "en": "Flame Gale",
+            "zh": "炎风爆裂"
+          },
+          "description": {
+            "en": "40–55 independent damage to enemies on the target and adjacent tiles; 70% armor damage, 30% penetration. Cooldown: 3 rounds.",
+            "zh": "目标及邻格敌人各受 40—55 独立伤害；对甲 70%，穿甲 30%。 冷却 3 自然轮。"
+          },
+          "kind": "active",
+          "cost": 1,
+          "requirements": {
+            "fire": 6,
+            "wind": 3
+          }
+        },
+        {
+          "id": "orbment_gale_slash",
+          "name": {
+            "en": "Gale Slash",
+            "zh": "烈风斩"
+          },
+          "description": {
+            "en": "Melee weapon attack using weapon range and penetration, with +20% damage. Cooldown: 2 rounds.",
+            "zh": "近战武器攻击，沿用武器射程与穿甲，伤害 +20%。 冷却 2 自然轮。"
+          },
+          "kind": "active",
+          "cost": 1,
+          "requirements": {
+            "fire": 4,
+            "wind": 3
+          }
+        },
+        {
+          "id": "orbment_temporal_haste",
+          "name": {
+            "en": "Temporal Haste",
+            "zh": "时序加速"
+          },
+          "description": {
+            "en": "Grant 2 temporary AP next normal turn; each target can benefit once per battle. Cooldown: 3 rounds.",
+            "zh": "目标下个正常回合获得 2 点临时 AP；每目标每战一次。 冷却 3 自然轮。"
+          },
+          "kind": "active",
+          "cost": 1,
+          "requirements": {
+            "time": 6,
+            "wind": 3
+          }
+        },
+        {
+          "id": "orbment_warp",
+          "name": {
+            "en": "Warp",
+            "zh": "折跃"
+          },
+          "description": {
+            "en": "Move to a visible empty tile within 3 without triggering disengagement attacks; once per battle. Cooldown: 3 rounds.",
+            "zh": "移动至 3 格内可见空地，不触发借机攻击；每战一次。 冷却 3 自然轮。"
+          },
+          "kind": "active",
+          "cost": 1,
+          "requirements": {
+            "space": 6,
+            "mirage": 3
+          }
+        },
+        {
+          "id": "orbment_phantom_veil",
+          "name": {
+            "en": "Phantom Veil",
+            "zh": "幻幕"
+          },
+          "description": {
+            "en": "Roll separately for each enemy in the area; on hit, -15 melee skill, ranged skill and resolve until the next normal turn ends. Cooldown: 3 rounds.",
+            "zh": "范围内敌人分别命中检定；命中后近战、远程命中及决心 -15，至下个正常回合结束。 冷却 3 自然轮。"
+          },
+          "kind": "active",
+          "cost": 1,
+          "requirements": {
+            "mirage": 6,
+            "time": 3
+          }
+        }
+      ],
+      "starters": [
+        {
+          "actor": "tio",
+          "form": "star_reader",
+          "slots": [
+            "clearflow:1",
+            "clearflow:1",
+            "brightsky:1",
+            "brightsky:1",
+            "phantomeye:1",
+            "phantomeye:1",
+            "starcut:1"
+          ],
+          "active": [
+            "orbment_healing_drop",
+            "orbment_space_barrier",
+            "orbment_phantom_noise"
+          ],
+          "passive": [
+            "orbment_vitality",
+            "orbment_far_guard",
+            "orbment_composure"
+          ]
+        },
+        {
+          "actor": "renne",
+          "form": "renne_aster",
+          "slots": [
+            "timesand:1",
+            "timesand:1",
+            "brightsky:1",
+            "brightsky:1",
+            "phantomeye:1",
+            "phantomeye:1",
+            "swiftwind:1"
+          ],
+          "active": [
+            "orbment_temporal_boost",
+            "orbment_space_barrier",
+            "orbment_phantom_noise"
+          ],
+          "passive": [
+            "orbment_breathing",
+            "orbment_far_guard",
+            "orbment_composure"
+          ]
+        },
+        {
+          "actor": "alisa",
+          "form": "alisa_blazing_wing",
+          "slots": [
+            "timesand:1",
+            "redblade:1",
+            "redblade:1",
+            "starcut:1",
+            "swiftwind:1",
+            "swiftwind:1",
+            "brightsky:1"
+          ],
+          "active": [
+            "orbment_fire_bolt",
+            "orbment_temporal_boost"
+          ],
+          "passive": [
+            "orbment_onslaught",
+            "orbment_breathing",
+            "orbment_swiftness"
+          ]
+        }
+      ],
+      "elements": {
+        "earth": {
+          "en": "Earth",
+          "zh": "地"
+        },
+        "water": {
+          "en": "Water",
+          "zh": "水"
+        },
+        "fire": {
+          "en": "Fire",
+          "zh": "火"
+        },
+        "wind": {
+          "en": "Wind",
+          "zh": "风"
+        },
+        "time": {
+          "en": "Time",
+          "zh": "时"
+        },
+        "space": {
+          "en": "Space",
+          "zh": "空"
+        },
+        "mirage": {
+          "en": "Mirage",
+          "zh": "幻"
+        }
+      },
+      "bonusNames": {
+        "MeleeDefense": {
+          "en": "Melee defense",
+          "zh": "近战防御"
+        },
+        "RangedDefense": {
+          "en": "Ranged defense",
+          "zh": "远程防御"
+        },
+        "Hitpoints": {
+          "en": "Hitpoints",
+          "zh": "生命"
+        },
+        "Damage": {
+          "en": "Direct damage",
+          "zh": "直接伤害"
+        },
+        "Armor": {
+          "en": "Armor damage",
+          "zh": "破甲伤害"
+        },
+        "Pierce": {
+          "en": "Armor penetration",
+          "zh": "穿甲"
+        },
+        "Reduction": {
+          "en": "Damage reduction",
+          "zh": "减伤"
+        },
+        "Initiative": {
+          "en": "Initiative",
+          "zh": "先攻"
+        },
+        "Stamina": {
+          "en": "Maximum fatigue",
+          "zh": "最大疲劳"
+        },
+        "Bravery": {
+          "en": "Resolve",
+          "zh": "决心"
+        },
+        "MeleeSkill": {
+          "en": "Melee skill",
+          "zh": "近战技能"
+        },
+        "RangedSkill": {
+          "en": "Ranged skill",
+          "zh": "远程技能"
+        }
+      }
     }
   }
 };

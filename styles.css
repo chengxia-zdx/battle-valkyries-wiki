@@ -1497,3 +1497,9 @@ code {
     height: 48px;
   }
 }
+
+/* Keep circuit columns readable while allowing keyboard/touch horizontal scrolling. */
+#orbments .matrix-table, #chapter-septium_mine .matrix-table { min-width: 720px; }
+#orbments .matrix-table td:first-child { min-width: 140px; }
+#orbments .matrix-table td:last-child { min-width: 220px; }
+.orbment-icon { display: inline-block; width: 40px; height: 40px; object-fit: contain; vertical-align: middle; margin-right: 8px; }

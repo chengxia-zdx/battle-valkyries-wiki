@@ -52,7 +52,7 @@ export function buildGameplayData(h) {
   const bases = Object.fromEntries(["wardog", "warhound", "wolf", "falcon"].map(id => [id, keyText(`ryza.base.${id}`)]));
 
   const fieldRewards = assignedBlock(config("ryza_fieldwork_chapter_data.nut"), "RyzaFieldRewards");
-  for (const chapter of chapters.filter(entry => entry.repeatable)) {
+  for (const chapter of chapters.filter(entry => ["shu_granary", "ryza_fieldwork"].includes(entry.id))) {
     chapter.rules = keyText(`chapter.${chapter.id}.rules`);
     chapter.cooldownHours = 72;
     for (const difficulty of chapter.difficulties) {

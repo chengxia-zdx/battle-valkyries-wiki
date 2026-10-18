@@ -225,17 +225,41 @@ const missingConfigFiles = loadedConfigFiles.filter(file => !fs.existsSync(path.
 if (missingConfigFiles.length) console.warn(`Development snapshot: included config files are still missing: ${missingConfigFiles.join(", ")}. Their content is not exported.`);
 const loadedConfigs = loadedConfigFiles.filter(file => !missingConfigFiles.includes(file)).map((file) => ({ file, source: readUtf8(valkyrieCodeRoot, "config", file) }));
 const supplementalSkins = new Map();
+const tableSkinIDs = new Map();
 const supplementalSkills = new Map();
 const supplementalValkyries = new Map();
 const supplementalTraits = new Map();
 const order = [];
-for (const { source } of loadedConfigs) {
+for (const { file, source } of loadedConfigs) {
   for (const id of stringsIn(assignedArray(source, "ValkyrieOrder"))) if (!order.includes(id)) order.push(id);
   for (const match of source.matchAll(/\.ValkyrieOrder\.push\("([^"]+)"\)/g)) if (!order.includes(match[1])) order.push(match[1]);
   for (const match of source.matchAll(/\.Valkyries\.(\w+)\s*<-/g)) supplementalValkyries.set(match[1], assignedBlock(source, `Valkyries.${match[1]}`));
   for (const match of source.matchAll(/\.ValkyrieTraitData\.(\w+)\s*<-/g)) supplementalTraits.set(match[1], assignedBlock(source, `ValkyrieTraitData.${match[1]}`));
   for (const match of source.matchAll(/\.Skins\.([\w]+)\s*<-/g)) supplementalSkins.set(match[1], assignedBlock(source, `Skins.${match[1]}`));
+  // Kanade registers six outfits from rows, rather than literal Skins.id assignments.
+  if (file === "kanade_tachibana_data.nut") {
+    const rows = JSON.parse(arrayField(source, "outfits"));
+    const ids = [];
+    for (const [stage, suffix, name, description] of rows) {
+      const key = `kanade_tachibana${suffix}`, id = `${key}_skin`;
+      ids.push(id);
+      supplementalSkins.set(id, `{ Name=${JSON.stringify(name)}, Description=${JSON.stringify(description)}, UnlockKanadeBond=${stage}, Portrait="ui/valkyries/kanade_tachibana_bond_${String(stage).padStart(2, "0")}_card.png", Preview="ui/valkyries/${key}_skin_preview.png", DetailMedia={Poster="ui/valkyries/detail/${key}_poster.jpg",Video="ui/valkyries/detail/${key}_idle.webm"} }`);
+    }
+    tableSkinIDs.set("kanade_tachibana", ids);
+  }
   for (const match of source.matchAll(/\.ValkyrieSkillCatalog\.([\w]+)\s*<-/g)) supplementalSkills.set(match[1], assignedBlock(source, `ValkyrieSkillCatalog.${match[1]}`));
+  if (file === "kanade_tachibana_skill_catalog.nut") {
+    const specs = objectField(source, "specs"), names = objectField(source, "names"), descriptions = objectField(source, "descriptions");
+    for (const key of topLevelObjectKeys(specs)) {
+      supplementalSkills.set(`kanade_${key}`, `{ Name=${JSON.stringify(stringField(names, key))}, Description=${JSON.stringify(stringField(descriptions, key))}, Icon="kanade_tachibana_${key}", Kind="active", Lifetime="${key === "sonic_rotation" ? "transient" : "persistent"}", Spec=${namedObject(specs, key)} }`);
+    }
+  }
+  if (["si_skill_catalog.nut", "fate_harlaown_skill_catalog.nut"].includes(file)) {
+    const specs = objectField(source, "specs"), names = objectField(source, "names"), descriptions = objectField(source, "descs");
+    for (const key of topLevelObjectKeys(specs)) {
+      supplementalSkills.set(key, `{ Name=${JSON.stringify(stringField(names, key))}, Description=${JSON.stringify(stringField(descriptions, key))}, Icon="${key}", Kind="active", Lifetime="${["fate_blade", "fate_zanber"].includes(key) ? "transient" : "persistent"}", Spec=${namedObject(specs, key)} }`);
+    }
+  }
   // Compact registration tables used by chapter reward catalogs.
   if (source.includes("ValkyrieSkillCatalog[entry.Key]")) {
     for (const match of source.matchAll(/\{\s*Key\s*=\s*"([^"]+)"[^{}]*\}/g)) supplementalSkills.set(match[1], match[0]);
@@ -339,6 +363,7 @@ function buildSkin(id, template, valkyrieID) {
   return {
     id,
     unlockChapter: stringField(block, "UnlockChapter"),
+    unlockBond: numberField(block, "UnlockKanadeBond", numberField(block, "UnlockSaberBond", 0)),
     unlockProgressionStage: numberField(block, "UnlockOlgaStage", numberField(block, "UnlockBlackBeastStage", 0)),
     detailMedia: { poster: !!stringField(objectField(block, "DetailMedia"), "Poster"), animated: !!stringField(objectField(block, "DetailMedia"), "Video") },
     images: { portrait: portraitOut, preview: previewOut },
@@ -355,6 +380,7 @@ const valkyries = order.map((id, index) => {
   const tBlock = traitBlock(id);
   const defaultSkinId = stringField(block, "SkinID");
   const skinIDs = stringsIn(arrayField(block, "SkinIDs"));
+  for (const skinID of tableSkinIDs.get(id) || []) if (!skinIDs.includes(skinID)) skinIDs.push(skinID);
   for (const { source } of loadedConfigs) {
     for (const skinID of stringsIn(assignedArray(source, `Valkyries.${id}.SkinIDs`))) {
       if (!skinIDs.includes(skinID)) skinIDs.push(skinID);
