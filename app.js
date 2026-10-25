@@ -3,6 +3,7 @@
 
   const data = window.BV_WIKI_DATA;
   const downloadUrl = "https://www.nexusmods.com/battlebrothers/mods/1053";
+  const qqGroupImage = "assets/community/qq-group-583558357.jpg";
   if (!data || !Array.isArray(data.valkyries)) {
     document.body.innerHTML = '<main class="empty-state">Battle Valkyries wiki data is missing.</main>';
     return;
@@ -12,7 +13,7 @@
     en: {
       brandSub: "Source-driven Mod Wiki", navOverview: "Overview", navValkyries: "Valkyries", navChapters: "Chapters", navMechanics: "Summoning", navSystems: "Systems", navAlchemy: "Alchemy", navSettings: "Settings", navDownload: "Download",
       rosterEyebrow: "Current roster", rosterTitle: "Valkyrie Index", searchPlaceholder: "Search names, traits, and skills", overviewTitle: "The current Battle Valkyries reference", overviewBody: "A bilingual wiki generated from the latest local source tree, covering every built-in Valkyrie, full skill loadouts, summoning, progression systems, and the standalone Alchemy & Enchantment mod.",
-      downloadLabel: "Download on Nexus Mods", downloadHint: "Public releases and optional files are hosted on Nexus Mods.", metricValkyries: "built-in Valkyries", metricSkills: "loadout skills", metricSkins: "selectable skins", metricAffixes: "equipment affixes",
+      downloadLabel: "Download on Nexus Mods", downloadHint: "Download on Nexus Mods, or join the QQ group and download from the group files.", qqDownloadLabel: "Join QQ group to download", qqGroupName: "Battle Valkyries mod group", qqGroupNumber: "QQ group: 583558357", qqGroupHint: "Scan to join · Click the image to view or save it", qqGroupImageAlt: "Battle Valkyries mod QQ group invitation QR code, group 583558357", metricValkyries: "built-in Valkyries", metricSkills: "loadout skills", metricSkins: "selectable skins", metricAffixes: "equipment affixes",
       sourceRevision: "Source revision", updated: "Generated", selectedPrefix: "No.", idLabel: "ID", wageLabel: "Daily wage", levelLabel: "Level", profileLabel: "Legends profile", layoutLabel: "Detail layout", skinsLabel: "Skins", skillsLabel: "Skills", summonArt: "Summon art", skinArt: "Battlefield preview", statsTitle: "Base Attributes", talentsTitle: "Talent Stars", traitTitle: "Character Trait", skillsTitle: "Complete Loadout", passiveTitle: "Passive", activeTitle: "Active", transientTitle: "Transient", skinCollection: "Skin Collection", traitBonuses: "Trait bonuses",
       mechanicsTitle: "Summoning & Gacha", mechanicsBody: "There are more available Valkyries than the active roster cap. Direct summoning follows the Crown cost ladder; gacha mode is enabled by default and uses a four-pull target guarantee.", rosterMax: "Roster cap", formationSlots: "Formation slots", combatSlots: "Combat slots", availableRoster: "Available Valkyries", directCosts: "Direct summon costs", summonNumber: "Summon number", crowns: "Crowns", gachaCosts: "Gacha costs", completedGuarantees: "Completed guarantees", guaranteeProgress: "Target guarantee", pulls: "pulls",
       systemsTitle: "Implemented Systems", systemsBody: "These are implemented code paths in the current source tree, not roadmap items.", sourceFiles: "Source files",
@@ -23,7 +24,7 @@
     zh: {
       brandSub: "源码驱动 Mod 百科", navOverview: "总览", navValkyries: "女武神", navChapters: "篇章", navMechanics: "召唤", navSystems: "系统", navAlchemy: "附魔炼金", navSettings: "设置", navDownload: "下载",
       rosterEyebrow: "当前名册", rosterTitle: "女武神索引", searchPlaceholder: "搜索角色、特性与技能", overviewTitle: "最新 Battle Valkyries 内容百科", overviewBody: "这是一份从当前本地源码直接生成的双语 Wiki，覆盖全部内置女武神、完整技能编成、召唤与养成系统，以及独立的附魔炼金模组。",
-      downloadLabel: "前往 Nexus Mods 下载", downloadHint: "公开版本与可选文件发布在 Nexus Mods 页面。", metricValkyries: "名内置女武神", metricSkills: "项编成技能", metricSkins: "套可选皮肤", metricAffixes: "条装备词条",
+      downloadLabel: "N网下载", downloadHint: "可前往 N网（Nexus Mods）下载，或扫码加入QQ群，在群文件中下载。", qqDownloadLabel: "加QQ群下载", qqGroupName: "战场女武神 mod 群", qqGroupNumber: "QQ群号：583558357", qqGroupHint: "扫码加入群聊 · 点击图片查看或保存原图", qqGroupImageAlt: "战场女武神 mod 群加群二维码，群号 583558357", metricValkyries: "名内置女武神", metricSkills: "项编成技能", metricSkins: "套可选皮肤", metricAffixes: "条装备词条",
       sourceRevision: "源码版本", updated: "生成日期", selectedPrefix: "序号", idLabel: "ID", wageLabel: "日薪", levelLabel: "等级", profileLabel: "Legends 定位", layoutLabel: "详情页布局", skinsLabel: "皮肤", skillsLabel: "技能", summonArt: "召唤立绘", skinArt: "战场预览", statsTitle: "基础属性", talentsTitle: "天赋星级", traitTitle: "人物特性", skillsTitle: "完整技能编成", passiveTitle: "被动", activeTitle: "主动", transientTitle: "临时", skinCollection: "皮肤收藏", traitBonuses: "特性加成",
       mechanicsTitle: "召唤与抽卡", mechanicsBody: "可选女武神数量已经超过实际名册上限。直接召唤按克朗阶梯计价；抽卡模式默认开启，并使用四抽定向保底。", rosterMax: "名册上限", formationSlots: "阵型槽位", combatSlots: "战斗槽位", availableRoster: "可选女武神", directCosts: "直接召唤费用", summonNumber: "召唤序号", crowns: "克朗", gachaCosts: "抽卡费用", completedGuarantees: "已完成保底", guaranteeProgress: "定向保底", pulls: "抽",
       systemsTitle: "已实现系统", systemsBody: "以下内容均来自当前源码中的已实现路径，不包含仅停留在规划阶段的功能。", sourceFiles: "对应源码",
@@ -127,7 +128,6 @@
   }
 
   function renderOverview() {
-    const first = selectedValkyrie();
     refs.overview.innerHTML = `
       <div class="overview-hero">
         <div class="overview-copy">
@@ -135,9 +135,14 @@
           <h2>${escapeHtml(t("overviewTitle"))}</h2>
           <p>${escapeHtml(t("overviewBody"))}</p>
           <div class="source-meta"><span>${escapeHtml(t("sourceRevision"))}: <code>${escapeHtml(data.meta.sourceRevision)}</code></span><span>${escapeHtml(t("updated"))}: ${escapeHtml(data.meta.updatedAt)}</span></div>
-          <div class="download-row"><a class="download-button" href="${downloadUrl}" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.2l3.6-3.6L17 11l-5 5-5-5 1.4-1.4 3.6 3.6V3h2Zm-7 15h14v2H5v-2Z"/></svg><span>${escapeHtml(t("downloadLabel"))}</span></a><span>${escapeHtml(t("downloadHint"))}</span></div>
+          <div id="downloads" class="download-row"><a class="download-button" href="${downloadUrl}" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.2l3.6-3.6L17 11l-5 5-5-5 1.4-1.4 3.6 3.6V3h2Zm-7 15h14v2H5v-2Z"/></svg><span>${escapeHtml(t("downloadLabel"))}</span></a><a class="download-button" href="#qq-group"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20v14H9l-5 4v-4H2V4Zm2 2v10h2v1.8L8.3 16H20V6H4Zm3 3h10v2H7V9Zm0 4h7v2H7v-2Z"/></svg><span>${escapeHtml(t("qqDownloadLabel"))}</span></a><span>${escapeHtml(t("downloadHint"))}</span></div>
         </div>
-        <div class="overview-art"><img src="${escapeHtml(first.images.card)}" alt="${escapeHtml(textFor(first).name)}"></div>
+        <aside id="qq-group" class="qq-group-card" aria-labelledby="qqGroupTitle">
+          <h3 id="qqGroupTitle">${escapeHtml(t("qqGroupName"))}</h3>
+          <p class="qq-group-number">${escapeHtml(t("qqGroupNumber"))}</p>
+          <a class="qq-group-image" href="${qqGroupImage}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(t("qqGroupImageAlt"))}"><img src="${qqGroupImage}" width="1284" height="2283" alt="${escapeHtml(t("qqGroupImageAlt"))}"></a>
+          <p class="qq-group-hint">${escapeHtml(t("qqGroupHint"))}</p>
+        </aside>
       </div>
       <div class="metric-grid">
         <div class="metric"><strong>${data.valkyries.length}</strong><span>${escapeHtml(t("metricValkyries"))}</span></div>
